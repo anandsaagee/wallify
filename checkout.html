@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout via WhatsApp | Wallify Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checkout-page {
+            padding: 160px 0 100px;
+        }
+
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Form (Glassmorphism) */
+        .checkout-form {
+            background: var(--surface-color);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(15px);
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #FFF;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #FFF;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.05);
+        }
+
+        /* Summary Panel (Glass) */
+        .order-summary {
+            background: var(--glass-bg);
+            padding: 40px 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 120px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            backdrop-filter: blur(20px);
+        }
+
+        .order-summary h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #FFF;
+        }
+
+        .checkout-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .checkout-item-img {
+            width: 70px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .checkout-item-details {
+            flex-grow: 1;
+        }
+
+        .checkout-item-title {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .checkout-item-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .checkout-item-price {
+            font-weight: 600;
+            color: #E2E2E2;
+        }
+        
+        .qty-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #FFF;
+            color: #000;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .totals {
+            margin-top: 32px;
+            padding-top: 24px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        .summary-row.total {
+            color: var(--text-main);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            align-items: center;
+        }
+        .summary-row.total span:last-child { color: #FFF; }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 24px;
+            padding: 18px;
+            font-size: 1.15rem;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .submit-btn::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+        .submit-btn:hover::after { left: 150%; }
+
+        @media (max-width: 900px) {
+            .checkout-layout { grid-template-columns: 1fr; }
+            .checkout-page { padding: 120px 0 60px; }
+            .order-summary { position: relative; top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar reveal">
+        <a href="index.html" class="logo">Wallify<span style="color:#FFF;">.</span></a>
+        <div class="nav-links">
+            <a href="cart.html" style="color:var(--text-main); font-size:1rem;"><i class="fas fa-arrow-left"></i> Return to Cart</a>
+        </div>
+    </nav>
+
+    <main class="container checkout-page">
+        <h1 class="section-title reveal" style="text-align:left; margin-bottom: 50px;">Complete Order</h1>
+
+        <div class="checkout-layout">
+            
+            <!-- Left: Form -->
+            <form id="checkoutForm" class="checkout-form reveal reveal-delay-1">
+                <!-- Contact Info -->
+                <div class="form-section">
+                    <h3>Your Details</h3>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="custName" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp / Phone Number</label>
+                        <input type="tel" id="custPhone" class="form-control" required placeholder="+1 (555) 000-0000">
+                    </div>
+                </div>
+
+                <!-- Shipping -->
+                <div class="form-section">
+                    <h3>Delivery Address</h3>
+                    <div class="form-group">
+                        <label>Full Address (House, Street, City, ZIP)</label>
+                        <textarea id="custAddress" class="form-control" required placeholder="123 Art Lane, New York, NY 10001" rows="3" style="resize: vertical;"></textarea>
+                    </div>
+                </div>
+
+                <!-- Info Box -->
+                <div style="background: rgba(37, 211, 102, 0.1); border-left: 4px solid #25D366; padding: 20px; border-radius: 8px; margin-bottom: 16px; backdrop-filter: blur(5px);">
+                    <p style="color: #25D366; font-weight: 500;"><i class="fas fa-info-circle"></i> Payments and confirmation will be handled securely through WhatsApp directly with our team.</p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border-left: 4px solid #FFF; padding: 20px; border-radius: 8px; margin-bottom: 32px; backdrop-filter: blur(5px);">
+                    <p style="color: var(--text-main); font-weight: 500;"><i class="fas fa-truck" style="margin-right: 8px;"></i> Fast delivery after confirmation.</p>
+                </div>
+
+                <button type="submit" class="submit-btn" id="sendOrderBtn">Send Order on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 10px; font-size:1.2rem;"></i></button>
+            </form>
+
+            <!-- Right: Order Summary -->
+            <div class="order-summary reveal reveal-delay-2">
+                <h3>Order Outline</h3>
+                <div id="checkoutItemsList">
+                    <!-- Populated by JS -->
+                </div>
+                
+                <div class="totals" id="checkoutTotals">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="footer reveal" style="margin-top: 60px;">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0; padding-top: 24px; border-color: rgba(255,255,255,0.05);">
+                <p>&copy; 2026 Wallify Store. Designed with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = getCart();
+            
+            if(cart.length === 0) {
+                alert("Your cart is empty. Redirecting to shop.");
+                window.location.href = 'shop.html';
+                return;
+            }
+
+            // Render Items
+            const itemsList = document.getElementById('checkoutItemsList');
+            itemsList.innerHTML = cart.map(item => `
+                <div class="checkout-item">
+                    <div style="position: relative;">
+                        <img src="${item.image}" alt="${item.title}" class="checkout-item-img">
+                        <span class="qty-badge">${item.quantity}</span>
+                    </div>
+                    <div class="checkout-item-details">
+                        <h4 class="checkout-item-title">${item.title}</h4>
+                        <div class="checkout-item-meta">${item.size} • ${item.frame}</div>
+                        <div class="checkout-item-price">${formatPrice(item.price * item.quantity)}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Totals
+            const subtotal = getCartTotal();
+            const finalTotal = subtotal; // Simplified pricing for WhatsApp payload
+            
+            document.getElementById('checkoutTotals').innerHTML = `
+                <div class="summary-row total">
+                    <span>Grand Total</span>
+                    <span>${formatPrice(finalTotal)}</span>
+                </div>
+            `;
+
+            // Form Submit -> WhatsApp Link
+            const checkoutForm = document.getElementById('checkoutForm');
+
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const btn = document.getElementById('sendOrderBtn');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing Order...';
+                
+                setTimeout(() => {
+                    const name = document.getElementById('custName').value;
+                    const phone = document.getElementById('custPhone').value;
+                    const address = document.getElementById('custAddress').value;
+
+                    generateWaLinkCart(cart, finalTotal, name, address, phone);
+                    
+                    clearCart();
+                    setTimeout(() => window.location.href = 'index.html', 1000);
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>

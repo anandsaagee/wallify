@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Wallify Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .shop-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: radial-gradient(circle at top center, rgba(30,30,30,1) 0%, var(--bg-color) 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .shop-layout {
+            display: flex;
+            gap: 50px;
+            padding-bottom: 80px;
+            margin-top: 60px;
+        }
+
+        .shop-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        .filter-section {
+            margin-bottom: 32px;
+            background: var(--surface-color);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+        }
+
+        .filter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition);
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .filter-item:hover {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-main);
+            transform: translateX(4px);
+        }
+
+        .filter-item.active {
+            background: rgba(255,255,255,0.1);
+            color: var(--accent-color);
+            font-weight: 500;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 30px;
+            font-family: inherit;
+            margin-bottom: 32px;
+            transition: var(--transition);
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.4);
+            box-shadow: 0 0 15px rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .shop-main {
+            flex-grow: 1;
+        }
+        
+        .shop-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+            background: var(--surface-color);
+            border-radius: 16px;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* Pagination Styles */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            min-width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .page-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .page-btn.active {
+            background: #FFF;
+            color: #000;
+            border-color: #FFF;
+        }
+
+        @media (max-width: 900px) {
+            .shop-layout {
+                flex-direction: column;
+            }
+            .shop-sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+        </div>
+        <div class="nav-icons">
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="shop-header">
+        <div class="container reveal">
+            <h1 class="section-title">The Collection</h1>
+            <p class="section-subtitle">Discover our complete range of premium quality posters.</p>
+        </div>
+    </header>
+
+    <!-- MAIN SHOP AREA -->
+    <section class="container shop-layout">
+        <!-- SIDEBAR -->
+        <aside class="shop-sidebar reveal reveal-delay-1">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search artworks...">
+            
+            <div class="filter-section">
+                <h3>Categories</h3>
+                <div class="filter-list" id="categoryFilters">
+                    <div class="filter-item active" data-cat="All">All Items</div>
+                    <div class="filter-item" data-cat="Automotive">Automotive</div>
+                    <div class="filter-item" data-cat="Anime">Anime</div>
+                    <div class="filter-item" data-cat="Minimalist">Minimalist</div>
+                    <div class="filter-item" data-cat="Cinematic">Cinematic</div>
+                    <div class="filter-item" data-cat="Abstract">Abstract</div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Sort By Price</h3>
+                <select id="sortSelect" class="search-box" style="margin-bottom:0">
+                    <option value="default" style="background:#111">Featured</option>
+                    <option value="low" style="background:#111">Price: Low to High</option>
+                    <option value="high" style="background:#111">Price: High to Low</option>
+                </select>
+            </div>
+        </aside>
+
+        <!-- GRID -->
+        <main class="shop-main">
+            <div class="shop-toolbar reveal reveal-delay-2">
+                <p id="resultsCount">Showing all results</p>
+            </div>
+            
+            <div class="product-grid reveal reveal-delay-3" id="shopGrid">
+                <!-- Products dynamically rendered here -->
+            </div>
+
+            <!-- Pagination Container -->
+            <div id="paginationContainer" class="pagination-container reveal"></div>
+        </main>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" id="about">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: block;">Wallify<span style="color:#FFF">.</span></a>
+                    <p>Transforming empty walls into inspiring spaces with premium, hand-picked digital art prints.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop All</a>
+                    <a href="cart.html">View Cart</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <a href="https://www.instagram.com/wallifystore.in/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://wa.me/919497242251" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wallify Store. Designed with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const shopGrid = document.getElementById('shopGrid');
+            const categoryFilters = document.querySelectorAll('.filter-item');
+            const searchInput = document.getElementById('searchInput');
+            const sortSelect = document.getElementById('sortSelect');
+            const resultsCount = document.getElementById('resultsCount');
+
+            let currentCategory = 'All';
+            let searchQuery = '';
+            let currentSort = 'default';
+            let currentPage = 1;
+            const itemsPerPage = 15;
+
+            // Check URL for initial category
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCategory = urlParams.get('category');
+            if (urlCategory) {
+                currentCategory = urlCategory;
+                categoryFilters.forEach(f => {
+                    if (f.dataset.cat === urlCategory) f.classList.add('active');
+                    else f.classList.remove('active');
+                });
+            }
+
+            function renderProducts() {
+                let filtered = products.filter(p => {
+                    const matchCategory = currentCategory === 'All' || p.category === currentCategory;
+                    const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
+                    return matchCategory && matchSearch;
+                });
+
+                if (currentSort === 'low') {
+                    filtered.sort((a, b) => a.basePrice - b.basePrice);
+                } else if (currentSort === 'high') {
+                    filtered.sort((a, b) => b.basePrice - a.basePrice);
+                }
+
+                resultsCount.textContent = `Showing ${filtered.length} result(s)`;
+
+                const paginationContainer = document.getElementById('paginationContainer');
+                
+                if (filtered.length === 0) {
+                    shopGrid.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 16px; color: var(--border-color);"></i>
+                            <h3>No artworks found</h3>
+                            <p>Try adjusting your search or category filters.</p>
+                        </div>
+                    `;
+                    if (paginationContainer) paginationContainer.innerHTML = '';
+                    return;
+                }
+
+                // Pagination logic
+                const totalPages = Math.ceil(filtered.length / itemsPerPage);
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const paginatedItems = filtered.slice(startIndex, startIndex + itemsPerPage);
+
+                shopGrid.innerHTML = paginatedItems.map((product, index) => `
+                    <div class="product-card" style="animation: revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity:0; animation-delay: ${index * 0.05}s">
+                        <a href="product.html?id=${product.id}" class="card-img-wrapper">
+                            <img src="${product.image}" loading="lazy" alt="${product.title}">
+                        </a>
+                        <div class="card-content">
+                            <span class="card-category">${product.category}</span>
+                            <h3 class="card-title">${product.title}</h3>
+                            <div class="card-footer">
+                                <span class="card-price">Starts at ₹33</span>
+                                <a href="product.html?id=${product.id}" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">View <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Define inline animation for grid items that updates nicely
+                if(!document.getElementById('gridAnim')){
+                    const style = document.createElement('style');
+                    style.id = 'gridAnim';
+                    style.innerHTML = `@keyframes revealItem { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }`;
+                    document.head.appendChild(style);
+                }
+
+                // Render Pagination Controls
+                if (totalPages > 1) {
+                    let pageBtns = '';
+                    for (let i = 1; i <= totalPages; i++) {
+                        const activeClass = i === currentPage ? 'active' : '';
+                        pageBtns += `<button class="page-btn ${activeClass}" onclick="window.goToPage(${i})">${i}</button>`;
+                    }
+                    paginationContainer.innerHTML = pageBtns;
+                } else {
+                    paginationContainer.innerHTML = '';
+                }
+            }
+
+            // Expose goToPage to window context
+            window.goToPage = function(page) {
+                currentPage = page;
+                renderProducts();
+                window.scrollTo({ top: 300, behavior: 'smooth' }); // Scroll to top of grid
+            };
+
+            // Events
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', (e) => {
+                    categoryFilters.forEach(f => f.classList.remove('active'));
+                    e.currentTarget.classList.add('active'); // Use currentTarget
+                    currentCategory = e.currentTarget.dataset.cat;
+                    currentPage = 1;
+                    renderProducts();
+                });
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                currentPage = 1;
+                renderProducts();
+            });
+
+            sortSelect.addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                currentPage = 1;
+                renderProducts();
+            });
+
+            // Initial Render
+            renderProducts();
+        });
+    </script>
+</body>
+</html>

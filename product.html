@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | Wallify Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-section { padding: 140px 0 100px; } 
+        
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .product-gallery {
+            border-radius: 20px;
+            overflow: hidden;
+            background: #111;
+            position: relative;
+            cursor: crosshair;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .product-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .product-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .product-category {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .offer-text {
+            color: #E2E2E2;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .option-group { margin-bottom: 24px; }
+        .option-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .selector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 12px;
+        }
+
+        .selector-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 14px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .selector-btn:not(:disabled):hover { 
+            border-color: rgba(255, 255, 255, 0.3); 
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .selector-btn.active {
+            border-color: var(--accent-color);
+            color: #000;
+            background: var(--accent-color);
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.2);
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            overflow: hidden;
+            width: fit-content;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .qty-btn {
+            padding: 12px 20px;
+            background: transparent;
+            color: var(--text-main);
+            font-size: 1.2rem;
+        }
+        
+        .qty-btn:hover { background: rgba(255,255,255,0.1); }
+
+        .qty-input {
+            width: 50px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .qty-input:focus { outline: none; }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .btn-wa {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+        .btn-wa::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+        .btn-wa:hover::after { left: 150%; }
+
+        .info-box {
+            margin-bottom: 24px; padding: 20px;
+            background: rgba(255, 255, 255, 0.03); 
+            border-radius: 16px; 
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group-modal { margin-bottom: 20px; text-align: left; }
+        .form-group-modal label { display:block; font-size:0.9rem; font-weight: 500; color:var(--text-muted); margin-bottom:8px; text-transform: uppercase; letter-spacing: 1px; }
+        .form-control-modal {
+            width: 100%; padding: 14px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px; font-family: inherit;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+        .form-control-modal:focus {
+            outline: none; border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .product-layout { grid-template-columns: 1fr 1fr; gap: 60px; }
+            .product-info h1 { font-size: 3rem; }
+            .product-section { padding: 160px 0 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar reveal">
+        <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+        </div>
+        <div class="nav-icons">
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="container product-section" id="productContainer">
+        <!-- Injected via JS -->
+    </main>
+
+    <!-- Buy WhatsApp Modal -->
+    <div id="waModal" class="modal-overlay">
+        <div class="modal-content" style="text-align:center;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
+                <h3 style="font-size:1.5rem; margin:0; color: var(--text-main); font-family: 'Outfit', sans-serif;">Complete Order</h3>
+                <button id="closeModal" style="font-size:1.5rem; color:var(--text-muted);"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <form id="waDirectForm">
+                <div class="form-group-modal">
+                    <label>Full Name</label>
+                    <input type="text" id="modalName" class="form-control-modal" required placeholder="John Doe">
+                </div>
+                <div class="form-group-modal">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" id="modalPhone" class="form-control-modal" required placeholder="+1 555-0000">
+                </div>
+                <div class="form-group-modal">
+                    <label>Delivery Address</label>
+                    <textarea id="modalAddress" class="form-control-modal" required placeholder="123 Street..." rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-wa" style="width:100%; margin-top:12px; padding: 16px;">
+                    Order on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sticky Buy Button Mobile -->
+    <div class="mobile-sticky-buy" id="mobileStickyDiv" style="display: none;">
+        <button class="btn-primary btn-wa" id="mobileBuyBtn" style="width: 100%; font-size:1.1rem; padding: 16px; border-radius: 30px;">
+            Buy Now (WhatsApp) <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
+        </button>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('productContainer');
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const product = products.find(p => p.id === productId);
+
+            if (!product) {
+                container.innerHTML = `<div style="text-align:center; padding:100px;" class="reveal"><h2>Product Not Found</h2></div>`;
+                return;
+            }
+
+            let currentSize = "A4"; 
+            let currentFrame = "None"; 
+            let currentQty = 1;
+
+            container.innerHTML = `
+                <div class="product-layout">
+                    <div class="product-gallery reveal" id="gallery">
+                        <img src="${product.image}" id="mainImg">
+                    </div>
+                    <div class="product-info reveal reveal-delay-1">
+                        <span class="product-category">${product.category}</span>
+                        <h1>${product.title}</h1>
+                        <div class="product-price" id="priceDisplay">...</div>
+                        <div class="offer-text" id="offerText">Buy 5 GET 1 FREE • Buy 7 GET 2 FREE • Buy 10 GET 3 FREE</div>
+                        <p class="product-desc">${product.description}</p>
+                        
+                        <div class="info-box">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <i class="fas fa-scroll" style="color: #FFF; font-size: 1.2rem; width: 24px; text-align: center;"></i>
+                                <span style="font-weight: 500; color: var(--text-main);">Premium 300 GSM paper quality</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <i class="fas fa-truck" style="color: #FFF; font-size: 1.2rem; width: 24px; text-align: center;"></i>
+                                <span style="font-weight: 500; color: var(--text-main);">Fast delivery</span>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Print Size</label>
+                            <div class="selector-grid" id="sizeSelectors">
+                                <button class="selector-btn" data-val="A5">A5</button>
+                                <button class="selector-btn" data-val="A4">A4 (12x14)</button>
+                                <button class="selector-btn" data-val="A3">A3</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Frame Specification</label>
+                            <div class="selector-grid" id="frameSelectors">
+                                <button class="selector-btn" data-val="None">No Frame</button>
+                                <button class="selector-btn" data-val="Black">Black Frame</button>
+                                <button class="selector-btn" data-val="White">White Frame</button>
+                                <button class="selector-btn" data-val="Wooden">Wooden Frame</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Select Quantity</label>
+                            <div class="qty-controls">
+                                <button class="qty-btn" id="btnMinus"><i class="fas fa-minus"></i></button>
+                                <input type="number" class="qty-input" id="qtyInput" value="1" readonly>
+                                <button class="qty-btn" id="btnPlus"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons" style="display: none;" id="desktopActions">
+                            <button class="btn-primary btn-wa" id="buyNowBtn">
+                                Buy Now (WhatsApp) <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
+                            </button>
+                            <button class="btn-outline" id="addCartBtn">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            if (window.innerWidth >= 768) {
+                document.getElementById('desktopActions').style.display = 'grid';
+            } else {
+                document.getElementById('mobileStickyDiv').style.display = 'block';
+                document.getElementById('desktopActions').style.display = 'grid'; 
+            }
+
+            const priceDisplay = document.getElementById('priceDisplay');
+            const offerText = document.getElementById('offerText');
+            const sizeBtns = document.querySelectorAll('#sizeSelectors .selector-btn');
+            const frameBtns = document.querySelectorAll('#frameSelectors .selector-btn');
+            
+            // Hardcoded Strict Prices provided by Client
+            function getUnitPrice() {
+                if (currentFrame === "None") {
+                    if (currentSize === "A5") return 33;
+                    if (currentSize === "A4") return 49;
+                    if (currentSize === "A3") return 99;
+                } else {
+                    if (currentSize === "A5") return 249;
+                    if (currentSize === "A4") return 399;
+                    if (currentSize === "A3") return 399; // Fallback
+                }
+                return 49;
+            }
+
+            function updateUI() {
+                // A3 Frames restriction
+                if (currentSize === "A3") {
+                    currentFrame = "None"; // Force No Frame
+                    frameBtns.forEach(btn => {
+                        if (btn.dataset.val !== "None") {
+                            btn.disabled = true;
+                            btn.style.opacity = "0.3";
+                            btn.style.cursor = "not-allowed";
+                            btn.innerHTML = `<del>${btn.innerHTML.replace(/<.*?>/g, '')}</del>`;
+                        } else {
+                            btn.innerHTML = "No Frame";
+                        }
+                    });
+                } else {
+                    frameBtns.forEach(btn => {
+                        btn.disabled = false;
+                        btn.style.opacity = "1";
+                        btn.style.cursor = "pointer";
+                        if(btn.dataset.val === "None") btn.textContent = "No Frame";
+                        if(btn.dataset.val === "Black") btn.textContent = "Black Frame";
+                        if(btn.dataset.val === "White") btn.textContent = "White Frame";
+                        if(btn.dataset.val === "Wooden") btn.textContent = "Wooden Frame";
+                    });
+                }
+
+                sizeBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.val === currentSize));
+                frameBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.val === currentFrame));
+                document.getElementById('qtyInput').value = currentQty;
+                
+                // Calculate unit total
+                const unitPrice = getUnitPrice();
+                let effectiveQty = currentQty;
+                
+                // Offers text logic 
+                if (currentQty >= 10) {
+                    offerText.innerHTML = "🎉 Incredible! You are getting <strong style='color:#FFF'>3 FREE</strong> items included!";
+                } else if (currentQty >= 7) {
+                    offerText.innerHTML = "🎉 Amazing! You are getting <strong style='color:#FFF'>2 FREE</strong> items included!";
+                } else if (currentQty >= 5) {
+                    offerText.innerHTML = "🎉 Nice! You are getting <strong style='color:#FFF'>1 FREE</strong> item included!";
+                } else {
+                    offerText.innerHTML = "Buy 5 GET 1 FREE • Buy 7 GET 2 FREE • Buy 10 GET 3 FREE";
+                }
+
+                const totalGrossPrice = unitPrice * effectiveQty;
+                priceDisplay.textContent = formatPrice(totalGrossPrice);
+                return totalGrossPrice;
+            }
+
+            sizeBtns.forEach(b => b.addEventListener('click', () => { currentSize = b.dataset.val; updateUI(); }));
+            frameBtns.forEach(b => b.addEventListener('click', () => { if(!b.disabled){ currentFrame = b.dataset.val; updateUI(); }}));
+            
+            document.getElementById('btnMinus').addEventListener('click', () => { if(currentQty>1){currentQty--; updateUI();} });
+            document.getElementById('btnPlus').addEventListener('click', () => { currentQty++; updateUI(); });
+
+            // Hover Zoom
+            const gallery = document.getElementById('gallery');
+            const mainImg = document.getElementById('mainImg');
+            if(window.innerWidth >= 768) {
+                gallery.addEventListener('mousemove', (e) => {
+                    const { left, top, width, height } = gallery.getBoundingClientRect();
+                    mainImg.style.transformOrigin = `${((e.clientX - left) / width) * 100}% ${((e.clientY - top) / height) * 100}%`;
+                    mainImg.style.transform = 'scale(1.5)';
+                });
+                gallery.addEventListener('mouseleave', () => {
+                    mainImg.style.transformOrigin = 'center center';
+                    mainImg.style.transform = 'scale(1)';
+                });
+            }
+
+            // Integrations
+            const waModal = document.getElementById('waModal');
+            document.getElementById('addCartBtn').addEventListener('click', () => {
+                const finalSubTotal = updatePrice();
+                const unitPrice = finalSubTotal / currentQty; // normalize
+                addToCart(product, currentSize, currentFrame, unitPrice, currentQty);
+                // Update button state to show success briefly
+                const originalText = document.getElementById('addCartBtn').innerHTML;
+                document.getElementById('addCartBtn').innerHTML = '<i class="fas fa-check"></i> Added';
+                document.getElementById('addCartBtn').style.borderColor = '#25D366';
+                document.getElementById('addCartBtn').style.color = '#25D366';
+                setTimeout(() => {
+                    document.getElementById('addCartBtn').innerHTML = originalText;
+                    document.getElementById('addCartBtn').style.borderColor = '';
+                    document.getElementById('addCartBtn').style.color = '';
+                }, 1500);
+            });
+
+            // Proxy alias since I named the func updateUI above to refactor out the global var
+            function updatePrice() { return updateUI(); }
+
+            const openWaModal = () => waModal.classList.add('active');
+            document.getElementById('buyNowBtn').addEventListener('click', openWaModal);
+            document.getElementById('mobileBuyBtn').addEventListener('click', openWaModal);
+            
+            document.getElementById('closeModal').addEventListener('click', () => waModal.classList.remove('active'));
+
+            document.getElementById('waDirectForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const totalAmt = updatePrice();
+                const name = document.getElementById('modalName').value;
+                const phone = document.getElementById('modalPhone').value;
+                const address = document.getElementById('modalAddress').value;
+
+                let freeDisclaimer = "";
+                if(currentQty >= 10) freeDisclaimer = "(Includes 3 FREE items based on promo!)";
+                else if(currentQty >= 7) freeDisclaimer = "(Includes 2 FREE items based on promo!)";
+                else if(currentQty >= 5) freeDisclaimer = "(Includes 1 FREE item based on promo!)";
+
+                const textPayload = `Hello, I want to order from Wallify Store:
+
+Product: ${product.title}
+Size: ${currentSize}
+Frame: ${currentFrame}
+Quantity: ${currentQty} ${freeDisclaimer}
+Total Gross Price: ₹${totalAmt}
+
+Customer Details:
+Name: ${name}
+Address: ${address}
+Phone: ${phone}
+
+Please confirm my order!`;
+                
+                redirectToWhatsApp(textPayload);
+                waModal.classList.remove('active');
+            });
+
+            updateUI();
+        });
+    </script>
+</body>
+</html>
