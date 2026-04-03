@@ -8,7 +8,8 @@ def generate_db():
         "Aesthetic": "assets/aesthe/",
         "Anime": "assets/anime/",
         "Football": "assets/football/",
-        "Classic Cars": "assets/classic-cars/"
+        "Classic Cars": "assets/classic-cars/",
+        "Automotive": "assets/AM/"
     }
 
     allowed_exts = {'.jpg', '.jpeg', '.png', '.webp'}
