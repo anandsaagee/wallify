@@ -2,7 +2,8 @@
    CART & WHATSAPP LOGIC
 ======================= */
 
-const WA_BUSINESS_PHONE = "919497242251"; // User's business number
+// ✅ FIXED: Updated to correct WhatsApp business number
+const WA_BUSINESS_PHONE = "917736497186";
 
 function getCart() {
     const cartData = localStorage.getItem('wallifyCart');
@@ -85,11 +86,30 @@ function formatPrice(value) {
 // WHATSAPP GENERATORS
 // =======================
 
+/**
+ * ✅ FIXED: Redirects to WhatsApp with pre-filled message.
+ * Includes try/catch for graceful error handling.
+ */
 function redirectToWhatsApp(text) {
-    const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/${WA_BUSINESS_PHONE}?text=${encoded}`, '_blank');
+    try {
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_BUSINESS_PHONE}?text=${encoded}`;
+        const newWin = window.open(url, '_blank');
+        // Fallback: if popup blocked, navigate in same tab
+        if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+            console.warn('[Wallify] Popup blocked — navigating in same tab as fallback.');
+            window.location.href = url;
+        }
+    } catch (err) {
+        console.error('[Wallify] Failed to open WhatsApp:', err);
+        alert('Could not open WhatsApp. Please contact us at wa.me/917736497186');
+    }
 }
 
+/**
+ * Sends a single product order via WhatsApp.
+ * Used by the product page modal form.
+ */
 function generateWaLinkSingle(productTitle, size, frame, qty, totalAmt, name, address, phone) {
     const text = `Hello, I want to order from Wallify Store:
 
@@ -108,6 +128,10 @@ Please confirm my order.`;
     redirectToWhatsApp(text);
 }
 
+/**
+ * Sends the full cart order via WhatsApp.
+ * Used by the cart/checkout page.
+ */
 function generateWaLinkCart(cart, totalAmt, name, address, phone) {
     let itemsText = cart.map(i => `- ${i.title} (${i.size}, ${i.frame}) x${i.quantity} = ₹${i.price * i.quantity}`).join('\n');
     

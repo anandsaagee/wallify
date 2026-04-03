@@ -257,33 +257,9 @@
         <!-- Injected via JS -->
     </main>
 
-    <!-- Buy WhatsApp Modal -->
-    <div id="waModal" class="modal-overlay">
-        <div class="modal-content" style="text-align:center;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
-                <h3 style="font-size:1.5rem; margin:0; color: var(--text-main); font-family: 'Outfit', sans-serif;">Complete Order</h3>
-                <button id="closeModal" style="font-size:1.5rem; color:var(--text-muted);"><i class="fas fa-times"></i></button>
-            </div>
-            
-            <form id="waDirectForm">
-                <div class="form-group-modal">
-                    <label>Full Name</label>
-                    <input type="text" id="modalName" class="form-control-modal" required placeholder="John Doe">
-                </div>
-                <div class="form-group-modal">
-                    <label>WhatsApp Number</label>
-                    <input type="tel" id="modalPhone" class="form-control-modal" required placeholder="+1 555-0000">
-                </div>
-                <div class="form-group-modal">
-                    <label>Delivery Address</label>
-                    <textarea id="modalAddress" class="form-control-modal" required placeholder="123 Street..." rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn-primary btn-wa" style="width:100%; margin-top:12px; padding: 16px;">
-                    Order on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
-                </button>
-            </form>
-        </div>
-    </div>
+
+    <!-- WhatsApp Buy Modal: REMOVED - now using direct redirect per requirements -->
+
 
     <!-- Sticky Buy Button Mobile -->
     <div class="mobile-sticky-buy" id="mobileStickyDiv" style="display: none;">
@@ -492,62 +468,73 @@
                 });
             }
 
-            // Integrations
-            const waModal = document.getElementById('waModal');
-            document.getElementById('addCartBtn').addEventListener('click', () => {
-                const finalSubTotal = updatePrice();
-                const unitPrice = finalSubTotal / currentQty; // normalize
-                addToCart(product, currentSize, currentFrame, unitPrice, currentQty);
-                // Update button state to show success briefly
-                const originalText = document.getElementById('addCartBtn').innerHTML;
-                document.getElementById('addCartBtn').innerHTML = '<i class="fas fa-check"></i> Added';
-                document.getElementById('addCartBtn').style.borderColor = '#25D366';
-                document.getElementById('addCartBtn').style.color = '#25D366';
-                setTimeout(() => {
-                    document.getElementById('addCartBtn').innerHTML = originalText;
-                    document.getElementById('addCartBtn').style.borderColor = '';
-                    document.getElementById('addCartBtn').style.color = '';
-                }, 1500);
-            });
+            // ---------------------------------------------------------
+            // BUY NOW — Direct WhatsApp redirect (no modal required)
+            // ✅ FIXED: Removed modal, now sends direct WA message with
+            //          poster file name + category as required.
+            // ---------------------------------------------------------
 
-            // Proxy alias since I named the func updateUI above to refactor out the global var
-            function updatePrice() { return updateUI(); }
+            /**
+             * Debounce guard — prevents rapid double-clicks.
+             * Button is disabled for 3 s after each click.
+             */
+            function triggerBuyNow(btn) {
+                if (btn.disabled) return; // Guard against double-click
 
-            const openWaModal = () => waModal.classList.add('active');
-            document.getElementById('buyNowBtn').addEventListener('click', openWaModal);
-            document.getElementById('mobileBuyBtn').addEventListener('click', openWaModal);
-            
-            document.getElementById('closeModal').addEventListener('click', () => waModal.classList.remove('active'));
+                // Visual feedback: disable + loading text
+                const originalHTML = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i> Opening WhatsApp…';
 
-            document.getElementById('waDirectForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const totalAmt = updatePrice();
-                const name = document.getElementById('modalName').value;
-                const phone = document.getElementById('modalPhone').value;
-                const address = document.getElementById('modalAddress').value;
+                try {
+                    const totalAmt = updateUI(); // recalculate price
 
-                let freeDisclaimer = "";
-                if(currentQty >= 10) freeDisclaimer = "(Includes 3 FREE items based on promo!)";
-                else if(currentQty >= 7) freeDisclaimer = "(Includes 2 FREE items based on promo!)";
-                else if(currentQty >= 5) freeDisclaimer = "(Includes 1 FREE item based on promo!)";
+                    // Extract image file name from the path (e.g. "img/nature/sunset.jpg" → "sunset.jpg")
+                    const imageFileName = product.image
+                        ? product.image.split('/').pop()
+                        : product.title;
 
-                const textPayload = `Hello, I want to order from Wallify Store:
+                    let freeDisclaimer = '';
+                    if (currentQty >= 10) freeDisclaimer = ' (Includes 3 FREE items!)';
+                    else if (currentQty >= 7) freeDisclaimer = ' (Includes 2 FREE items!)';
+                    else if (currentQty >= 5) freeDisclaimer = ' (Includes 1 FREE item!)';
 
-Product: ${product.title}
+                    // ✅ Message format as specified in requirements
+                    const message =
+`Hello, I want to order this poster:
+Name: ${imageFileName}
+Category: ${product.category}
+
+Product Details:
+Title: ${product.title}
 Size: ${currentSize}
 Frame: ${currentFrame}
-Quantity: ${currentQty} ${freeDisclaimer}
-Total Gross Price: ₹${totalAmt}
-
-Customer Details:
-Name: ${name}
-Address: ${address}
-Phone: ${phone}
+Quantity: ${currentQty}${freeDisclaimer}
+Total: ₹${totalAmt}
 
 Please confirm my order!`;
-                
-                redirectToWhatsApp(textPayload);
-                waModal.classList.remove('active');
+
+                    console.log('[Wallify] Opening WhatsApp with order:', { imageFileName, category: product.category, currentSize, currentFrame, currentQty, totalAmt });
+                    redirectToWhatsApp(message);
+
+                } catch (err) {
+                    console.error('[Wallify] Buy Now error:', err);
+                    alert('Something went wrong. Please try again or contact us directly on WhatsApp.');
+                } finally {
+                    // Re-enable button after 3 seconds
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalHTML;
+                    }, 3000);
+                }
+            }
+
+            // Attach Buy Now handler to both desktop and mobile buttons
+            document.getElementById('buyNowBtn').addEventListener('click', () => {
+                triggerBuyNow(document.getElementById('buyNowBtn'));
+            });
+            document.getElementById('mobileBuyBtn').addEventListener('click', () => {
+                triggerBuyNow(document.getElementById('mobileBuyBtn'));
             });
 
             updateUI();
