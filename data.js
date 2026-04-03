@@ -1054,5 +1054,255 @@ const products = [
         basePrice: 33.00,
         image: "img/dec2732f406587b5cb637f1a09e131c1.jpg",
         description: "High-quality premium automotive poster. Perfect for any car enthusiast's wall."
+    },
+
+    /* ── Mollywood ──────────────────────────── */
+    {
+        id: "mw1",
+        title: "Mohanlal Legend – Golden Era",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800",
+        description: "Iconic tribute to Malayalam cinema's golden era. Premium print on museum-grade paper."
+    },
+    {
+        id: "mw2",
+        title: "Mammootty – The Complete Actor",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800",
+        description: "A cinematic tribute to the legendary Mammootty. Perfect for any film lover's wall."
+    },
+    {
+        id: "mw3",
+        title: "Premam – Romance in Frames",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800",
+        description: "Inspired by the cult classic Premam. A romantic, artistic poster for your space."
+    },
+    {
+        id: "mw4",
+        title: "Lucifer – Rise of Power",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1606041011872-596597976b25?auto=format&fit=crop&q=80&w=800",
+        description: "Bold and dramatic poster inspired by the blockbuster Lucifer."
+    },
+    {
+        id: "mw5",
+        title: "Drishyam – Cinematic Masterpiece",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=800",
+        description: "Inspired by the suspense thriller Drishyam. A must-have for Malayalam cinema fans."
+    },
+    {
+        id: "mw6",
+        title: "Kerala Café – Art House Vibes",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=800",
+        description: "Minimalist art-house poster inspired by Kerala Café's anthology style."
+    },
+
+    /* ── Football ───────────────────────────── */
+    {
+        id: "fb1",
+        title: "Champions League – Glory Nights",
+        category: "Football",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=800",
+        description: "Electric atmosphere of Champions League nights. Every fan's dream poster."
+    },
+    {
+        id: "fb2",
+        title: "Ronaldo – CR7 Legacy",
+        category: "Football",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1551958219-acbc595d6119?auto=format&fit=crop&q=80&w=800",
+        description: "Tribute to the greatest of all time. A premium CR7 art poster."
+    },
+    {
+        id: "fb3",
+        title: "Messi – The GOAT Era",
+        category: "Football",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=800",
+        description: "Lionel Messi tribute print. Celebrate the magic of the little magician."
+    },
+    {
+        id: "fb4",
+        title: "World Cup 2026 – The Dream",
+        category: "Football",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&q=80&w=800",
+        description: "The grandeur of the FIFA World Cup. Inspired by football's biggest stage."
+    },
+    {
+        id: "fb5",
+        title: "Premier League – Sunday Fever",
+        category: "Football",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&q=80&w=800",
+        description: "The passion of Premier League Sundays captured in a stunning print."
+    },
+    {
+        id: "fb6",
+        title: "The Beautiful Game – Abstract",
+        category: "Football",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&q=80&w=800",
+        description: "Abstract football art celebrating the beauty of the sport."
+    },
+
+    /* ── Anime ──────────────────────────────── */
+    {
+        id: "an1",
+        title: "Naruto – Path of the Hokage",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=800",
+        description: "Epic Naruto inspired art print. The journey of a ninja legend."
+    },
+    {
+        id: "an2",
+        title: "Attack on Titan – Beyond the Walls",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=800",
+        description: "AoT inspired dark-themed art poster. For the brave who face the unknown."
+    },
+    {
+        id: "an3",
+        title: "Demon Slayer – Hashira",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?auto=format&fit=crop&q=80&w=800",
+        description: "Stunning Demon Slayer inspired artwork with striking color contrasts."
+    },
+    {
+        id: "an4",
+        title: "One Piece – King of Pirates",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?auto=format&fit=crop&q=80&w=800",
+        description: "Celebrate Luffy's grand adventure with this One Piece art poster."
+    },
+    {
+        id: "an5",
+        title: "Spirited Away – Miyazaki Dreams",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&q=80&w=800",
+        description: "Studio Ghibli inspired art print capturing the magic of Spirited Away."
+    },
+    {
+        id: "an6",
+        title: "Tokyo Ghoul – Duality",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1493514789931-586cb221d7a7?auto=format&fit=crop&q=80&w=800",
+        description: "Dark and dramatic Tokyo Ghoul inspired poster exploring themes of duality."
+    },
+
+    /* ── Aesthetic ──────────────────────────── */
+    {
+        id: "ae1",
+        title: "Neon Dreams – City at Midnight",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=800",
+        description: "Neon-soaked cityscape aesthetic print. Perfect for modern bedrooms."
+    },
+    {
+        id: "ae2",
+        title: "Lo-Fi Girl – Study Vibes",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1596496181871-9681eacf9764?auto=format&fit=crop&q=80&w=800",
+        description: "Chill lo-fi aesthetic print capturing the mood of a rainy study session."
+    },
+    {
+        id: "ae3",
+        title: "Cherry Blossom – Sakura Season",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=800",
+        description: "Soft and dreamy cherry blossom art for a tranquil aesthetic space."
+    },
+    {
+        id: "ae4",
+        title: "Solitude – Minimal Mood Board",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+        description: "Minimalist aesthetic poster perfect for a clean, modern living space."
+    },
+    {
+        id: "ae5",
+        title: "Golden Hour – Warm Gradient",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?auto=format&fit=crop&q=80&w=800",
+        description: "Warm golden-hour gradient art print for a cozy, aesthetic atmosphere."
+    },
+    {
+        id: "ae6",
+        title: "Pastel Sky – Soft Clouds",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
+        description: "Dreamy pastel sky art for calm, aesthetic bedroom wall decor."
+    },
+
+    /* ── Classic Cars ───────────────────────── */
+    {
+        id: "cc1",
+        title: "Ferrari 250 GTO – Italian Legend",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800",
+        description: "The Ferrari 250 GTO – the most legendary racing car ever built. A collector's print."
+    },
+    {
+        id: "cc2",
+        title: "Porsche 911 – Timeless Classic",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800",
+        description: "The iconic Porsche 911 silhouette. A timeless art print for every enthusiast."
+    },
+    {
+        id: "cc3",
+        title: "Mustang 1967 – American Muscle",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+        description: "The legendary 1967 Ford Mustang. Raw American muscle in a premium print."
+    },
+    {
+        id: "cc4",
+        title: "Jaguar E-Type – Pure Elegance",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800",
+        description: "Enzo Ferrari called it the most beautiful car ever made. Now on your wall."
+    },
+    {
+        id: "cc5",
+        title: "Lamborghini Miura – The Pioneer",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=800",
+        description: "The Miura that started it all. The first supercar, now a timeless art piece."
+    },
+    {
+        id: "cc6",
+        title: "Mercedes 300SL – Gullwing Glory",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80&w=800",
+        description: "The iconic 300SL Gullwing. Mercedes-Benz's most celebrated classic on your wall."
     }
 ];

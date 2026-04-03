@@ -14,7 +14,7 @@
             border-bottom: 1px solid var(--border-color);
             position: relative;
         }
-        
+
         .shop-layout {
             display: flex;
             gap: 50px;
@@ -47,7 +47,7 @@
         .filter-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
 
         .filter-item {
@@ -58,8 +58,20 @@
             color: var(--text-muted);
             transition: var(--transition);
             font-size: 0.95rem;
-            padding: 8px 12px;
-            border-radius: 8px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .filter-item .cat-count {
+            margin-left: auto;
+            font-size: 0.72rem;
+            background: rgba(255,255,255,0.07);
+            border-radius: 20px;
+            padding: 2px 8px;
+            color: var(--text-muted);
+            transition: var(--transition);
         }
 
         .filter-item:hover {
@@ -69,12 +81,78 @@
         }
 
         .filter-item.active {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,215,0,0.07);
             color: var(--accent-color);
             font-weight: 500;
-            border-left: 3px solid var(--accent-color);
+            border-color: rgba(255,215,0,0.2);
+        }
+        .filter-item.active .cat-count {
+            background: rgba(255,215,0,0.15);
+            color: var(--accent-color);
         }
 
+        /* ── Horizontal filter tabs ───────────────── */
+        .filter-tabs-wrapper {
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            margin-bottom: 32px;
+            padding-bottom: 2px;
+        }
+        .filter-tabs-wrapper::-webkit-scrollbar { display: none; }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            min-width: max-content;
+            padding: 4px 2px;
+        }
+
+        .filter-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: var(--surface-color);
+            color: var(--text-muted);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.88rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            backdrop-filter: blur(10px);
+            letter-spacing: 0.3px;
+            min-height: 42px;
+        }
+
+        .filter-tab i {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .filter-tab:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.25);
+            color: var(--text-main);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .filter-tab.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+            box-shadow: 0 6px 24px rgba(255,215,0,0.3);
+            transform: translateY(-1px);
+        }
+
+        .filter-tab.active i { opacity: 1; }
+
+        /* ── Search ────────────────────────────────── */
         .search-box {
             width: 100%;
             padding: 14px 20px;
@@ -85,8 +163,11 @@
             font-family: inherit;
             margin-bottom: 32px;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
-        
+
+        .search-box::placeholder { color: var(--text-muted); }
+
         .search-box:focus {
             outline: none;
             border-color: rgba(255,255,255,0.4);
@@ -94,15 +175,14 @@
             background: rgba(255,255,255,0.05);
         }
 
-        .shop-main {
-            flex-grow: 1;
-        }
-        
+        /* ── Grid + Layout ─────────────────────────── */
+        .shop-main { flex-grow: 1; }
+
         .shop-toolbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             padding-bottom: 16px;
             border-bottom: 1px solid var(--border-color);
             color: var(--text-muted);
@@ -110,10 +190,41 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 28px;
         }
 
+        /* ── Skeleton Loading ──────────────────────── */
+        .skeleton-card {
+            background: var(--surface-color);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .skeleton-img {
+            aspect-ratio: 3/4;
+            background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.04) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.6s infinite;
+        }
+        .skeleton-body { padding: 1.25rem; }
+        .skeleton-line {
+            height: 12px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.04) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.6s infinite;
+            margin-bottom: 10px;
+        }
+        .skeleton-line:nth-child(1) { width: 40%; }
+        .skeleton-line:nth-child(2) { width: 75%; }
+        .skeleton-line:nth-child(3) { width: 55%; margin-top: 14px; }
+        @keyframes shimmer {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* ── Empty state ───────────────────────────── */
         .empty-state {
             text-align: center;
             padding: 80px 20px;
@@ -124,7 +235,7 @@
             border: 1px dashed var(--border-color);
         }
 
-        /* Pagination Styles */
+        /* ── Pagination ─────────────────────────────── */
         .pagination-container {
             display: flex;
             justify-content: center;
@@ -142,23 +253,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 500;
             transition: var(--transition);
             cursor: pointer;
+            font-size: 0.9rem;
         }
 
         .page-btn:hover {
             background: rgba(255,255,255,0.1);
             border-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
         }
 
         .page-btn.active {
-            background: #FFF;
+            background: var(--accent-color);
             color: #000;
-            border-color: #FFF;
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 15px rgba(255,215,0,0.25);
         }
 
+        /* ── Responsive ─────────────────────────────── */
         @media (max-width: 900px) {
             .shop-layout {
                 flex-direction: column;
@@ -171,9 +286,14 @@
         @media (max-width: 767px) {
             .shop-header { padding: 120px 0 50px; }
             .shop-layout { margin-top: 30px; gap: 24px; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .filter-section { padding: 16px; }
             .search-box { padding: 12px 16px; }
+            .filter-tab { padding: 8px 16px; font-size: 0.82rem; }
+        }
+
+        @media (max-width: 380px) {
+            .product-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -219,38 +339,91 @@
     <section class="container shop-layout">
         <!-- SIDEBAR -->
         <aside class="shop-sidebar reveal reveal-delay-1">
-            <input type="text" id="searchInput" class="search-box" placeholder="Search artworks...">
-            
+            <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search artworks...">
+
             <div class="filter-section">
                 <h3>Categories</h3>
                 <div class="filter-list" id="categoryFilters">
-                    <div class="filter-item active" data-cat="All">All Items</div>
-                    <div class="filter-item" data-cat="Automotive">Automotive</div>
-                    <div class="filter-item" data-cat="Anime">Anime</div>
-                    <div class="filter-item" data-cat="Minimalist">Minimalist</div>
-                    <div class="filter-item" data-cat="Cinematic">Cinematic</div>
-                    <div class="filter-item" data-cat="Abstract">Abstract</div>
+                    <div class="filter-item active" data-cat="All">
+                        All Collections
+                        <span class="cat-count" id="count-All">—</span>
+                    </div>
+                    <div class="filter-item" data-cat="Mollywood">
+                        <i class="fas fa-film" style="width:16px;opacity:0.7"></i> Mollywood
+                        <span class="cat-count" id="count-Mollywood">—</span>
+                    </div>
+                    <div class="filter-item" data-cat="Football">
+                        <i class="fas fa-futbol" style="width:16px;opacity:0.7"></i> Football
+                        <span class="cat-count" id="count-Football">—</span>
+                    </div>
+                    <div class="filter-item" data-cat="Anime">
+                        <i class="fas fa-star" style="width:16px;opacity:0.7"></i> Anime
+                        <span class="cat-count" id="count-Anime">—</span>
+                    </div>
+                    <div class="filter-item" data-cat="Aesthetic">
+                        <i class="fas fa-palette" style="width:16px;opacity:0.7"></i> Aesthetic
+                        <span class="cat-count" id="count-Aesthetic">—</span>
+                    </div>
+                    <div class="filter-item" data-cat="Classic Cars">
+                        <i class="fas fa-car" style="width:16px;opacity:0.7"></i> Classic Cars
+                        <span class="cat-count" id="count-Classic Cars">—</span>
+                    </div>
+                    <div class="filter-item" data-cat="Automotive">
+                        <i class="fas fa-gauge-high" style="width:16px;opacity:0.7"></i> Automotive
+                        <span class="cat-count" id="count-Automotive">—</span>
+                    </div>
                 </div>
             </div>
 
             <div class="filter-section">
-                <h3>Sort By Price</h3>
-                <select id="sortSelect" class="search-box" style="margin-bottom:0">
+                <h3>Sort By</h3>
+                <select id="sortSelect" class="search-box" style="margin-bottom:0; border-radius:10px; cursor:pointer;">
                     <option value="default" style="background:#111">Featured</option>
-                    <option value="low" style="background:#111">Price: Low to High</option>
-                    <option value="high" style="background:#111">Price: High to Low</option>
+                    <option value="low"     style="background:#111">Price: Low to High</option>
+                    <option value="high"    style="background:#111">Price: High to Low</option>
                 </select>
             </div>
         </aside>
 
         <!-- GRID -->
         <main class="shop-main">
-            <div class="shop-toolbar reveal reveal-delay-2">
-                <p id="resultsCount">Showing all results</p>
+            <!-- ── Horizontal Filter Tabs ── -->
+            <div class="filter-tabs-wrapper reveal reveal-delay-2" id="filterTabsWrapper">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-tab active" data-cat="All" id="tab-All">
+                        <i class="fas fa-border-all"></i> All
+                    </button>
+                    <button class="filter-tab" data-cat="Mollywood" id="tab-Mollywood">
+                        <i class="fas fa-film"></i> Mollywood
+                    </button>
+                    <button class="filter-tab" data-cat="Football" id="tab-Football">
+                        <i class="fas fa-futbol"></i> Football
+                    </button>
+                    <button class="filter-tab" data-cat="Anime" id="tab-Anime">
+                        <i class="fas fa-star"></i> Anime
+                    </button>
+                    <button class="filter-tab" data-cat="Aesthetic" id="tab-Aesthetic">
+                        <i class="fas fa-palette"></i> Aesthetic
+                    </button>
+                    <button class="filter-tab" data-cat="Classic Cars" id="tab-Classic-Cars">
+                        <i class="fas fa-car"></i> Classic Cars
+                    </button>
+                    <button class="filter-tab" data-cat="Automotive" id="tab-Automotive">
+                        <i class="fas fa-gauge-high"></i> Automotive
+                    </button>
+                </div>
             </div>
-            
-            <div class="product-grid reveal reveal-delay-3" id="shopGrid">
-                <!-- Products dynamically rendered here -->
+
+            <div class="shop-toolbar reveal reveal-delay-3">
+                <p id="resultsCount">Loading...</p>
+            </div>
+
+            <div class="product-grid" id="shopGrid">
+                <!-- Skeleton placeholders shown while JS loads -->
+                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
+                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
+                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
+                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
             </div>
 
             <!-- Pagination Container -->
@@ -316,132 +489,155 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const shopGrid = document.getElementById('shopGrid');
-            const categoryFilters = document.querySelectorAll('.filter-item');
-            const searchInput = document.getElementById('searchInput');
-            const sortSelect = document.getElementById('sortSelect');
-            const resultsCount = document.getElementById('resultsCount');
+            const shopGrid           = document.getElementById('shopGrid');
+            const sidebarFilters     = document.querySelectorAll('#categoryFilters .filter-item');
+            const tabFilters         = document.querySelectorAll('#filterTabs .filter-tab');
+            const searchInput        = document.getElementById('searchInput');
+            const sortSelect         = document.getElementById('sortSelect');
+            const resultsCount       = document.getElementById('resultsCount');
+            const paginationContainer= document.getElementById('paginationContainer');
 
             let currentCategory = 'All';
-            let searchQuery = '';
-            let currentSort = 'default';
-            let currentPage = 1;
-            const itemsPerPage = 15;
+            let searchQuery     = '';
+            let currentSort     = 'default';
+            let currentPage     = 1;
+            const itemsPerPage  = 15;
 
-            // Check URL for initial category
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlCategory = urlParams.get('category');
-            if (urlCategory) {
-                currentCategory = urlCategory;
-                categoryFilters.forEach(f => {
-                    if (f.dataset.cat === urlCategory) f.classList.add('active');
-                    else f.classList.remove('active');
-                });
+            const CATEGORIES    = ['All','Mollywood','Football','Anime','Aesthetic','Classic Cars','Automotive'];
+
+            // ── Inject grid animation keyframe once ────────────────
+            if (!document.getElementById('gridAnim')) {
+                const s = document.createElement('style');
+                s.id = 'gridAnim';
+                s.innerHTML = `@keyframes revealItem{from{opacity:0;transform:translateY(24px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}`;
+                document.head.appendChild(s);
             }
 
+            // ── Count products per category ─────────────────────────
+            function buildCounts() {
+                const counts = {};
+                CATEGORIES.forEach(c => counts[c] = 0);
+                products.forEach(p => {
+                    if (counts[p.category] !== undefined) counts[p.category]++;
+                });
+                counts['All'] = products.length;
+                CATEGORIES.forEach(cat => {
+                    const el = document.getElementById(`count-${cat}`);
+                    if (el) el.textContent = counts[cat] || 0;
+                });
+            }
+            buildCounts();
+
+            // ── Sync both filter surfaces to a category ─────────────
+            function setActiveCategory(cat) {
+                currentCategory = cat;
+                currentPage = 1;
+
+                sidebarFilters.forEach(f => f.classList.toggle('active', f.dataset.cat === cat));
+                tabFilters.forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+
+                // Smooth scroll active tab into view
+                const activeTab = document.querySelector(`#filterTabs [data-cat="${cat}"]`);
+                if (activeTab) activeTab.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+
+                renderProducts();
+            }
+
+            // ── Check URL for initial category ─────────────────────
+            const urlParams   = new URLSearchParams(window.location.search);
+            const urlCategory = urlParams.get('category');
+            if (urlCategory && CATEGORIES.includes(urlCategory)) {
+                setActiveCategory(urlCategory);
+            } else {
+                renderProducts();
+            }
+
+            // ── Render ──────────────────────────────────────────────
             function renderProducts() {
                 let filtered = products.filter(p => {
-                    const matchCategory = currentCategory === 'All' || p.category === currentCategory;
+                    const matchCat    = currentCategory === 'All' || p.category === currentCategory;
                     const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
-                    return matchCategory && matchSearch;
+                    return matchCat && matchSearch;
                 });
 
-                if (currentSort === 'low') {
-                    filtered.sort((a, b) => a.basePrice - b.basePrice);
-                } else if (currentSort === 'high') {
-                    filtered.sort((a, b) => b.basePrice - a.basePrice);
-                }
+                if (currentSort === 'low')  filtered.sort((a,b) => a.basePrice - b.basePrice);
+                if (currentSort === 'high') filtered.sort((a,b) => b.basePrice - a.basePrice);
 
-                resultsCount.textContent = `Showing ${filtered.length} result(s)`;
+                resultsCount.textContent = `Showing ${filtered.length} poster${filtered.length !== 1 ? 's' : ''}`;
 
-                const paginationContainer = document.getElementById('paginationContainer');
-                
                 if (filtered.length === 0) {
                     shopGrid.innerHTML = `
                         <div class="empty-state">
-                            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 16px; color: var(--border-color);"></i>
+                            <i class="fas fa-search" style="font-size:3rem;margin-bottom:16px;color:var(--border-color)"></i>
                             <h3>No artworks found</h3>
-                            <p>Try adjusting your search or category filters.</p>
-                        </div>
-                    `;
-                    if (paginationContainer) paginationContainer.innerHTML = '';
+                            <p>Try a different category or search term.</p>
+                        </div>`;
+                    paginationContainer.innerHTML = '';
                     return;
                 }
 
-                // Pagination logic
-                const totalPages = Math.ceil(filtered.length / itemsPerPage);
-                const startIndex = (currentPage - 1) * itemsPerPage;
-                const paginatedItems = filtered.slice(startIndex, startIndex + itemsPerPage);
+                // Pagination
+                const totalPages    = Math.ceil(filtered.length / itemsPerPage);
+                if (currentPage > totalPages) currentPage = 1;
+                const start         = (currentPage - 1) * itemsPerPage;
+                const pageItems     = filtered.slice(start, start + itemsPerPage);
 
-                shopGrid.innerHTML = paginatedItems.map((product, index) => `
-                    <div class="product-card" style="animation: revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity:0; animation-delay: ${index * 0.05}s">
-                        <a href="product.html?id=${product.id}" class="card-img-wrapper">
-                            <img src="${product.image}" loading="lazy" alt="${product.title}">
+                shopGrid.innerHTML = pageItems.map((p, i) => `
+                    <div class="product-card" style="animation:revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;opacity:0;animation-delay:${i * 0.04}s">
+                        <a href="product.html?id=${p.id}" class="card-img-wrapper">
+                            <img src="${p.image}" loading="lazy" alt="${p.title}">
                         </a>
                         <div class="card-content">
-                            <span class="card-category">${product.category}</span>
-                            <h3 class="card-title">${product.title}</h3>
+                            <span class="card-category">${p.category}</span>
+                            <h3 class="card-title">${p.title}</h3>
                             <div class="card-footer">
                                 <span class="card-price">Starts at ₹33</span>
-                                <a href="product.html?id=${product.id}" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">View <i class="fas fa-arrow-right"></i></a>
+                                <a href="product.html?id=${p.id}" class="btn-primary" style="padding:9px 18px;font-size:0.85rem;">View <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 `).join('');
-                
-                // Define inline animation for grid items that updates nicely
-                if(!document.getElementById('gridAnim')){
-                    const style = document.createElement('style');
-                    style.id = 'gridAnim';
-                    style.innerHTML = `@keyframes revealItem { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }`;
-                    document.head.appendChild(style);
-                }
 
-                // Render Pagination Controls
+                // Pagination buttons
                 if (totalPages > 1) {
-                    let pageBtns = '';
-                    for (let i = 1; i <= totalPages; i++) {
-                        const activeClass = i === currentPage ? 'active' : '';
-                        pageBtns += `<button class="page-btn ${activeClass}" onclick="window.goToPage(${i})">${i}</button>`;
+                    let btns = '';
+                    if (currentPage > 1)       btns += `<button class="page-btn" onclick="goToPage(${currentPage-1})"><i class="fas fa-chevron-left"></i></button>`;
+                    for (let i=1; i<=totalPages; i++) {
+                        btns += `<button class="page-btn${i===currentPage?' active':''}" onclick="goToPage(${i})">${i}</button>`;
                     }
-                    paginationContainer.innerHTML = pageBtns;
+                    if (currentPage < totalPages) btns += `<button class="page-btn" onclick="goToPage(${currentPage+1})"><i class="fas fa-chevron-right"></i></button>`;
+                    paginationContainer.innerHTML = btns;
                 } else {
                     paginationContainer.innerHTML = '';
                 }
             }
 
-            // Expose goToPage to window context
             window.goToPage = function(page) {
                 currentPage = page;
                 renderProducts();
-                window.scrollTo({ top: 300, behavior: 'smooth' }); // Scroll to top of grid
+                window.scrollTo({ top: 250, behavior:'smooth' });
             };
 
-            // Events
-            categoryFilters.forEach(filter => {
-                filter.addEventListener('click', (e) => {
-                    categoryFilters.forEach(f => f.classList.remove('active'));
-                    e.currentTarget.classList.add('active'); // Use currentTarget
-                    currentCategory = e.currentTarget.dataset.cat;
-                    currentPage = 1;
-                    renderProducts();
-                });
-            });
+            // ── Events ──────────────────────────────────────────────
+            sidebarFilters.forEach(f =>
+                f.addEventListener('click', () => setActiveCategory(f.dataset.cat))
+            );
 
-            searchInput.addEventListener('input', (e) => {
+            tabFilters.forEach(t =>
+                t.addEventListener('click', () => setActiveCategory(t.dataset.cat))
+            );
+
+            searchInput.addEventListener('input', e => {
                 searchQuery = e.target.value;
                 currentPage = 1;
                 renderProducts();
             });
 
-            sortSelect.addEventListener('change', (e) => {
+            sortSelect.addEventListener('change', e => {
                 currentSort = e.target.value;
                 currentPage = 1;
                 renderProducts();
             });
-
-            // Initial Render
-            renderProducts();
         });
     </script>
 </body>

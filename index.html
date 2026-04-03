@@ -69,43 +69,131 @@
         /* ── Category Cards Grid ─────────────────── */
         .categories-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
+
         .category-card {
             position: relative;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            min-height: 200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            min-height: 220px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1),
+                        box-shadow 0.5s ease,
+                        border-color 0.5s ease;
         }
+
+        .category-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 30px rgba(255,215,0,0.08);
+            border-color: rgba(255,215,0,0.25);
+        }
+
+        /* Featured (tall) card */
+        .cat-featured { grid-column: span 2; min-height: 280px; }
+
         .category-card img {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             object-fit: cover;
-            transition: transform 1s cubic-bezier(0.2,0.8,0.2,1);
+            transition: transform 1.2s cubic-bezier(0.2,0.8,0.2,1),
+                        filter 0.7s ease;
             z-index: 0;
-            filter: brightness(0.5) contrast(1.1);
+            filter: brightness(0.45) saturate(1.15);
         }
         .category-card:hover img {
-            transform: scale(1.1);
-            filter: brightness(0.7) contrast(1.1);
+            transform: scale(1.08);
+            filter: brightness(0.6) saturate(1.3);
         }
-        .category-card h3 {
-            font-size: clamp(1.4rem, 4vw, 2.5rem);
-            color: #FFF;
+
+        /* Glass overlay gradient */
+        .category-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.85) 0%,
+                rgba(0,0,0,0.3) 45%,
+                transparent 100%
+            );
             z-index: 1;
+        }
+
+        .category-card-body {
+            position: relative;
+            z-index: 2;
+            padding: 1.25rem 1.5rem;
+            width: 100%;
+        }
+
+        .category-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            color: var(--accent-color);
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.25);
+            border-radius: 30px;
+            padding: 3px 10px;
+            margin-bottom: 0.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .category-card h3 {
+            font-size: clamp(1.2rem, 3.5vw, 2rem);
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             pointer-events: none;
-            text-shadow: 0 6px 24px rgba(0,0,0,0.9);
-            -webkit-text-fill-color: #FFF;            /* override global gradient fill */
+            text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+            -webkit-text-fill-color: #FFF;
             background: none;
+            margin-bottom: 0.25rem;
+            line-height: 1.15;
+        }
+
+        .category-card p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            margin: 0;
+            display: none;
+        }
+
+        /* Arrow icon */
+        .cat-arrow {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 2;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem;
+            color: #FFF;
+            backdrop-filter: blur(6px);
+            transition: background 0.3s ease, transform 0.35s ease;
+            opacity: 0;
+        }
+        .category-card:hover .cat-arrow {
+            opacity: 1;
+            transform: rotate(-45deg);
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
         }
 
         /* ── Featured Grid ───────────────────────── */
@@ -165,26 +253,24 @@
         }
 
         /* ── Responsive overrides ────────────────── */
-        /* Tablet (≥ 600px): 2-col categories */
-        @media (min-width: 600px) {
-            .categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 240px);
-            }
-            .category-card { min-height: unset; }
-            .cat-automotive { grid-column: span 2; }
-            .cat-cinematic  { grid-column: span 2; }
+        @media (min-width: 480px) {
+            .category-card p { display: block; }
         }
 
-        /* Tablet (≥768px): 3-col categories */
+        /* Tablet (≥600px): taller cards */
+        @media (min-width: 600px) {
+            .categories-grid { gap: 1.25rem; }
+            .category-card { min-height: 260px; }
+            .cat-featured { min-height: 340px; }
+        }
+
+        /* Tablet (≥768px): 3-col bento  */
         @media (min-width: 768px) {
             .categories-grid {
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(2, 320px);
                 gap: 1.25rem;
             }
-            .cat-automotive { grid-column: span 2; }
-            .cat-cinematic  { grid-column: span 2; }
+            .cat-featured { grid-column: span 2; min-height: 380px; }
 
             .featured-grid {
                 grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -199,9 +285,20 @@
         /* Desktop (≥1024px) */
         @media (min-width: 1024px) {
             .categories-grid {
-                grid-template-rows: repeat(2, 360px);
-                gap: 1.5rem;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 200px 200px;
+                gap: 1.25rem;
             }
+            /* Row 1: Mollywood (wide) + Football */
+            .cat-mollywood  { grid-column: span 3; grid-row: 1; }
+            .cat-football   { grid-column: span 2; grid-row: 1; }
+            /* Row 2: Anime + Aesthetic (wide) + Classic Cars */
+            .cat-anime      { grid-column: span 2; grid-row: 2; }
+            .cat-aesthetic  { grid-column: span 2; grid-row: 2; }
+            .cat-classic    { grid-column: span 1; grid-row: 2; }
+
+            .cat-featured { grid-column: unset; min-height: unset; }
+
             .featured-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 2.5rem;
@@ -209,8 +306,10 @@
             .benefits-grid { gap: 2.5rem; }
         }
 
-        /* Very small (≤380px): 1-col benefits */
+        /* Very small (≤380px): 1-col */
         @media (max-width: 380px) {
+            .categories-grid { grid-template-columns: 1fr; }
+            .cat-featured { grid-column: 1; }
             .benefits-grid { grid-template-columns: 1fr; }
             .featured-grid { grid-template-columns: 1fr; }
         }
@@ -266,22 +365,62 @@
             <p class="section-subtitle">Discover pieces that speak to your passion</p>
         </div>
         <div class="categories-grid">
-            <a href="shop.html?category=Automotive" class="category-card cat-automotive reveal">
-                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=1200" alt="Automotive collection" loading="lazy">
-                <h3>Automotive</h3>
+
+            <!-- Mollywood -->
+            <a href="shop.html?category=Mollywood" class="category-card cat-mollywood cat-featured reveal" id="cat-mollywood">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood collection" loading="lazy">
+                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <div class="category-card-body">
+                    <span class="category-tag">Cinema</span>
+                    <h3>Mollywood</h3>
+                    <p>Malayalam cinema's finest moments on your wall</p>
+                </div>
             </a>
-            <a href="shop.html?category=Anime" class="category-card reveal reveal-delay-1">
-                <img src="https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=800" alt="Anime collection" loading="lazy">
-                <h3>Anime</h3>
+
+            <!-- Football -->
+            <a href="shop.html?category=Football" class="category-card cat-football reveal reveal-delay-1" id="cat-football">
+                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=1000" alt="Football collection" loading="lazy">
+                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <div class="category-card-body">
+                    <span class="category-tag">Sport</span>
+                    <h3>Football</h3>
+                    <p>Legends of the beautiful game</p>
+                </div>
             </a>
-            <a href="shop.html?category=Minimalist" class="category-card reveal reveal-delay-2">
-                <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800" alt="Minimalist collection" loading="lazy">
-                <h3>Minimalist</h3>
+
+            <!-- Anime -->
+            <a href="shop.html?category=Anime" class="category-card cat-anime reveal reveal-delay-1" id="cat-anime">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime collection" loading="lazy">
+                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <div class="category-card-body">
+                    <span class="category-tag">Animation</span>
+                    <h3>Anime</h3>
+                    <p>Epic art from iconic anime worlds</p>
+                </div>
             </a>
-            <a href="shop.html?category=Cinematic" class="category-card cat-cinematic reveal reveal-delay-1">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1200" alt="Cinematic collection" loading="lazy">
-                <h3>Cinematic</h3>
+
+            <!-- Aesthetic -->
+            <a href="shop.html?category=Aesthetic" class="category-card cat-aesthetic reveal reveal-delay-2" id="cat-aesthetic">
+                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic collection" loading="lazy">
+                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <div class="category-card-body">
+                    <span class="category-tag">Vibe</span>
+                    <h3>Aesthetic</h3>
+                    <p>Curated moods for your space</p>
+                </div>
             </a>
+
+            <!-- Classic Cars -->
+            <a href="shop.html?category=Classic Cars" class="category-card cat-classic reveal reveal-delay-3" id="cat-classic-cars">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars collection" loading="lazy">
+                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <div class="category-card-body">
+                    <span class="category-tag">Vintage</span>
+                    <h3>Classic Cars</h3>
+                    <p>Timeless automotive art</p>
+                </div>
+            </a>
+
         </div>
     </section>
 
