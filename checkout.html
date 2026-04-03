@@ -263,8 +263,12 @@
                 <div class="form-section">
                     <h3>Delivery Address</h3>
                     <div class="form-group">
-                        <label>Full Address (House, Street, City, ZIP)</label>
+                        <label>Full Address (House, Street, City, State)</label>
                         <textarea id="custAddress" class="form-control" required placeholder="123 Art Lane, New York, NY 10001" rows="3" style="resize: vertical;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Pincode / ZIP</label>
+                        <input type="text" id="custPincode" class="form-control" required placeholder="10001">
                     </div>
                 </div>
 
@@ -303,6 +307,7 @@
         </div>
     </footer>
 
+    <script src="data.js"></script>
     <script src="script.js"></script>
     <script>
         // Mobile Nav Toggle
@@ -328,33 +333,58 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const cart = getCart();
+            const urlParams = new URLSearchParams(window.location.search);
+            const buyNowId = urlParams.get('buyNow');
             
-            if(cart.length === 0) {
-                alert("Your cart is empty. Redirecting to shop.");
-                window.location.href = 'shop.html';
-                return;
+            let checkoutItems = [];
+            let isSingleItem = false;
+            let singleProduct = null;
+
+            if (buyNowId) {
+                // Single item checkout
+                singleProduct = products.find(p => p.id === buyNowId);
+                if (singleProduct) {
+                    checkoutItems = [{
+                        title: singleProduct.title,
+                        category: singleProduct.category,
+                        image: singleProduct.image,
+                        price: singleProduct.basePrice || 33,
+                        quantity: 1
+                    }];
+                    isSingleItem = true;
+                } else {
+                    alert("Product not found. Redirecting to shop.");
+                    window.location.href = 'shop.html';
+                    return;
+                }
+            } else {
+                // Cart checkout
+                checkoutItems = getCart();
+                if(checkoutItems.length === 0) {
+                    alert("Your cart is empty. Redirecting to shop.");
+                    window.location.href = 'shop.html';
+                    return;
+                }
             }
 
             // Render Items
             const itemsList = document.getElementById('checkoutItemsList');
-            itemsList.innerHTML = cart.map(item => `
+            itemsList.innerHTML = checkoutItems.map(item => `
                 <div class="checkout-item">
                     <div style="position: relative;">
-                        <img src="${item.image}" alt="${item.title}" class="checkout-item-img">
+                        <img src="${item.image || ''}" alt="${item.title}" class="checkout-item-img">
                         <span class="qty-badge">${item.quantity}</span>
                     </div>
                     <div class="checkout-item-details">
                         <h4 class="checkout-item-title">${item.title}</h4>
-                        <div class="checkout-item-meta">${item.size} • ${item.frame}</div>
+                        <div class="checkout-item-meta">${item.category || ''}</div>
                         <div class="checkout-item-price">${formatPrice(item.price * item.quantity)}</div>
                     </div>
                 </div>
             `).join('');
 
             // Totals
-            const subtotal = getCartTotal();
-            const finalTotal = subtotal; // Simplified pricing for WhatsApp payload
+            const finalTotal = checkoutItems.reduce((total, item) => total + (item.price * item.quantity), 0);
             
             document.getElementById('checkoutTotals').innerHTML = `
                 <div class="summary-row total">
@@ -369,17 +399,26 @@
             checkoutForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
+                const name = document.getElementById('custName').value.trim();
+                const phone = document.getElementById('custPhone').value.trim();
+                const address = document.getElementById('custAddress').value.trim();
+                const pincode = document.getElementById('custPincode').value.trim();
+
+                if (!name || !phone || !address || !pincode) {
+                    alert("Please fill all required fields correctly.");
+                    return;
+                }
+                
                 const btn = document.getElementById('sendOrderBtn');
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing Order...';
                 
                 setTimeout(() => {
-                    const name = document.getElementById('custName').value;
-                    const phone = document.getElementById('custPhone').value;
-                    const address = document.getElementById('custAddress').value;
-
-                    generateWaLinkCart(cart, finalTotal, name, address, phone);
-                    
-                    clearCart();
+                    if (isSingleItem) {
+                        generateWaLinkSingle(singleProduct.title, singleProduct.category, name, address, phone, pincode);
+                    } else {
+                        generateWaLinkCart(checkoutItems, name, address, phone, pincode);
+                        clearCart();
+                    }
                     setTimeout(() => window.location.href = 'index.html', 1000);
                 }, 800);
             });

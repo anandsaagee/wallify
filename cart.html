@@ -331,7 +331,6 @@
                     return;
                 }
 
-                // Render Items
                 const itemsHtml = cart.map((item, idx) => `
                     <div class="cart-item" style="animation: revealItem 0.5s ease forwards; opacity:0; animation-delay:${idx*0.1}s">
                         <img src="${item.image}" alt="${item.title}" class="cart-item-img">
@@ -340,9 +339,7 @@
                         <div class="cart-item-info">
                             <h3 class="cart-item-title">${item.title}</h3>
                             <div class="cart-item-meta">
-                                <span><strong>Size:</strong> ${item.size}</span>
-                                <span><strong>Frame:</strong> ${item.frame}</span>
-                                <span><strong>Price:</strong> ${formatPrice(item.price)} each</span>
+                                <span><strong>Category:</strong> ${item.category}</span>
                             </div>
                             
                             <div class="cart-item-actions">

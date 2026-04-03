@@ -1,1612 +1,2898 @@
 const products = [
-/* ── Automotive (AM directory) ──────────────────────────── */
     {
-        id: "am001",
-        title: "1 - AM  001.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20001.jpg",
-        description: "Premium Automotive wall art. 1 - AM  001.jpg",
-        label: "1 - AM  001.jpg"
-    },
-    {
-        id: "am002",
-        title: "2 - AM  002.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20002.jpg",
-        description: "Premium Automotive wall art. 2 - AM  002.jpg",
-        label: "2 - AM  002.jpg"
-    },
-    {
-        id: "am003",
-        title: "3 - AM  003.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20003.jpg",
-        description: "Premium Automotive wall art. 3 - AM  003.jpg",
-        label: "3 - AM  003.jpg"
-    },
-    {
-        id: "am004",
-        title: "4 - AM  004.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20004.jpg",
-        description: "Premium Automotive wall art. 4 - AM  004.jpg",
-        label: "4 - AM  004.jpg"
-    },
-    {
-        id: "am005",
-        title: "5 - AM  005.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20005.jpg",
-        description: "Premium Automotive wall art. 5 - AM  005.jpg",
-        label: "5 - AM  005.jpg"
-    },
-    {
-        id: "am006",
-        title: "6 - AM  006.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20006.jpg",
-        description: "Premium Automotive wall art. 6 - AM  006.jpg",
-        label: "6 - AM  006.jpg"
-    },
-    {
-        id: "am007",
-        title: "7 - AM  007.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20007.jpg",
-        description: "Premium Automotive wall art. 7 - AM  007.jpg",
-        label: "7 - AM  007.jpg"
-    },
-    {
-        id: "am008",
-        title: "8 - AM  008.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20008.png",
-        description: "Premium Automotive wall art. 8 - AM  008.png",
-        label: "8 - AM  008.png"
-    },
-    {
-        id: "am009",
-        title: "9 - AM  009.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20009.jpg",
-        description: "Premium Automotive wall art. 9 - AM  009.jpg",
-        label: "9 - AM  009.jpg"
-    },
-    {
-        id: "am010",
-        title: "10 - AM  010.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20010.jpg",
-        description: "Premium Automotive wall art. 10 - AM  010.jpg",
-        label: "10 - AM  010.jpg"
-    },
-    {
-        id: "am011",
-        title: "11 - AM  011.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20011.jpg",
-        description: "Premium Automotive wall art. 11 - AM  011.jpg",
-        label: "11 - AM  011.jpg"
-    },
-    {
-        id: "am012",
-        title: "12 - AM  012.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20012.jpg",
-        description: "Premium Automotive wall art. 12 - AM  012.jpg",
-        label: "12 - AM  012.jpg"
-    },
-    {
-        id: "am013",
-        title: "13 - AM  013.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20013.jpg",
-        description: "Premium Automotive wall art. 13 - AM  013.jpg",
-        label: "13 - AM  013.jpg"
-    },
-    {
-        id: "am014",
-        title: "14 - AM  014.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20014.jpg",
-        description: "Premium Automotive wall art. 14 - AM  014.jpg",
-        label: "14 - AM  014.jpg"
-    },
-    {
-        id: "am015",
-        title: "15 - AM  015.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20015.jpg",
-        description: "Premium Automotive wall art. 15 - AM  015.jpg",
-        label: "15 - AM  015.jpg"
-    },
-    {
-        id: "am016",
-        title: "16 - AM  016.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20016.png",
-        description: "Premium Automotive wall art. 16 - AM  016.png",
-        label: "16 - AM  016.png"
-    },
-    {
-        id: "am017",
-        title: "17 - AM  017.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20017.png",
-        description: "Premium Automotive wall art. 17 - AM  017.png",
-        label: "17 - AM  017.png"
-    },
-    {
-        id: "am018",
-        title: "18 - AM  018.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20018.png",
-        description: "Premium Automotive wall art. 18 - AM  018.png",
-        label: "18 - AM  018.png"
-    },
-    {
-        id: "am019",
-        title: "19 - AM  019.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20019.png",
-        description: "Premium Automotive wall art. 19 - AM  019.png",
-        label: "19 - AM  019.png"
-    },
-    {
-        id: "am020",
-        title: "20 - AM  020.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20020.png",
-        description: "Premium Automotive wall art. 20 - AM  020.png",
-        label: "20 - AM  020.png"
-    },
-    {
-        id: "am021",
-        title: "21 - AM  021.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20021.png",
-        description: "Premium Automotive wall art. 21 - AM  021.png",
-        label: "21 - AM  021.png"
-    },
-    {
-        id: "am022",
-        title: "22 - AM  022.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20022.jpg",
-        description: "Premium Automotive wall art. 22 - AM  022.jpg",
-        label: "22 - AM  022.jpg"
-    },
-    {
-        id: "am023",
-        title: "23 - AM  023.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20023.png",
-        description: "Premium Automotive wall art. 23 - AM  023.png",
-        label: "23 - AM  023.png"
-    },
-    {
-        id: "am024",
-        title: "24 - AM  024.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20024.png",
-        description: "Premium Automotive wall art. 24 - AM  024.png",
-        label: "24 - AM  024.png"
-    },
-    {
-        id: "am025",
-        title: "25 - AM  025.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20025.jpg",
-        description: "Premium Automotive wall art. 25 - AM  025.jpg",
-        label: "25 - AM  025.jpg"
-    },
-    {
-        id: "am026",
-        title: "26 - AM  026.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20026.png",
-        description: "Premium Automotive wall art. 26 - AM  026.png",
-        label: "26 - AM  026.png"
-    },
-    {
-        id: "am027",
-        title: "27 - AM  027.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20027.jpg",
-        description: "Premium Automotive wall art. 27 - AM  027.jpg",
-        label: "27 - AM  027.jpg"
-    },
-    {
-        id: "am028",
-        title: "28 - AM  028.png",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20028.png",
-        description: "Premium Automotive wall art. 28 - AM  028.png",
-        label: "28 - AM  028.png"
-    },
-    {
-        id: "am029",
-        title: "29 - AM  029.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20029.jpg",
-        description: "Premium Automotive wall art. 29 - AM  029.jpg",
-        label: "29 - AM  029.jpg"
-    },
-    {
-        id: "am030",
-        title: "30 - AM  030.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20030.jpg",
-        description: "Premium Automotive wall art. 30 - AM  030.jpg",
-        label: "30 - AM  030.jpg"
-    },
-    {
-        id: "am031",
-        title: "31 - AM  031.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20031.jpg",
-        description: "Premium Automotive wall art. 31 - AM  031.jpg",
-        label: "31 - AM  031.jpg"
-    },
-    {
-        id: "am032",
-        title: "32 - AM  032.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20032.jpg",
-        description: "Premium Automotive wall art. 32 - AM  032.jpg",
-        label: "32 - AM  032.jpg"
-    },
-    {
-        id: "am033",
-        title: "33 - AM  033.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20033.jpg",
-        description: "Premium Automotive wall art. 33 - AM  033.jpg",
-        label: "33 - AM  033.jpg"
-    },
-    {
-        id: "am034",
-        title: "34 - AM  034.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20034.jpg",
-        description: "Premium Automotive wall art. 34 - AM  034.jpg",
-        label: "34 - AM  034.jpg"
-    },
-    {
-        id: "am035",
-        title: "35 - AM  035.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20035.jpg",
-        description: "Premium Automotive wall art. 35 - AM  035.jpg",
-        label: "35 - AM  035.jpg"
-    },
-    {
-        id: "am036",
-        title: "36 - AM  036.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20036.jpg",
-        description: "Premium Automotive wall art. 36 - AM  036.jpg",
-        label: "36 - AM  036.jpg"
-    },
-    {
-        id: "am037",
-        title: "37 - AM  037.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20037.jpg",
-        description: "Premium Automotive wall art. 37 - AM  037.jpg",
-        label: "37 - AM  037.jpg"
-    },
-    {
-        id: "am038",
-        title: "38 - AM  038.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20038.jpg",
-        description: "Premium Automotive wall art. 38 - AM  038.jpg",
-        label: "38 - AM  038.jpg"
-    },
-    {
-        id: "am039",
-        title: "39 - AM  039.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20039.jpg",
-        description: "Premium Automotive wall art. 39 - AM  039.jpg",
-        label: "39 - AM  039.jpg"
-    },
-    {
-        id: "am040",
-        title: "40 - AM  040.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20040.jpg",
-        description: "Premium Automotive wall art. 40 - AM  040.jpg",
-        label: "40 - AM  040.jpg"
-    },
-    {
-        id: "am041",
-        title: "41 - AM  041.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20041.jpg",
-        description: "Premium Automotive wall art. 41 - AM  041.jpg",
-        label: "41 - AM  041.jpg"
-    },
-    {
-        id: "am042",
-        title: "42 - AM  042.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20042.jpg",
-        description: "Premium Automotive wall art. 42 - AM  042.jpg",
-        label: "42 - AM  042.jpg"
-    },
-    {
-        id: "am043",
-        title: "43 - AM  043.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20043.jpg",
-        description: "Premium Automotive wall art. 43 - AM  043.jpg",
-        label: "43 - AM  043.jpg"
-    },
-    {
-        id: "am044",
-        title: "44 - AM  044.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20044.jpg",
-        description: "Premium Automotive wall art. 44 - AM  044.jpg",
-        label: "44 - AM  044.jpg"
-    },
-    {
-        id: "am045",
-        title: "45 - AM  045.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20045.jpg",
-        description: "Premium Automotive wall art. 45 - AM  045.jpg",
-        label: "45 - AM  045.jpg"
-    },
-    {
-        id: "am046",
-        title: "46 - AM  046.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20046.jpg",
-        description: "Premium Automotive wall art. 46 - AM  046.jpg",
-        label: "46 - AM  046.jpg"
-    },
-    {
-        id: "am047",
-        title: "47 - AM  047.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20047.jpg",
-        description: "Premium Automotive wall art. 47 - AM  047.jpg",
-        label: "47 - AM  047.jpg"
-    },
-    {
-        id: "am048",
-        title: "48 - AM  048.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20048.jpg",
-        description: "Premium Automotive wall art. 48 - AM  048.jpg",
-        label: "48 - AM  048.jpg"
-    },
-    {
-        id: "am049",
-        title: "49 - AM  049.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20049.jpg",
-        description: "Premium Automotive wall art. 49 - AM  049.jpg",
-        label: "49 - AM  049.jpg"
-    },
-    {
-        id: "am050",
-        title: "50 - AM  050.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20050.jpg",
-        description: "Premium Automotive wall art. 50 - AM  050.jpg",
-        label: "50 - AM  050.jpg"
-    },
-    {
-        id: "am051",
-        title: "51 - AM  051.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20051.jpg",
-        description: "Premium Automotive wall art. 51 - AM  051.jpg",
-        label: "51 - AM  051.jpg"
-    },
-    {
-        id: "am052",
-        title: "52 - AM  052.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20052.jpg",
-        description: "Premium Automotive wall art. 52 - AM  052.jpg",
-        label: "52 - AM  052.jpg"
-    },
-    {
-        id: "am053",
-        title: "53 - AM  053.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20053.jpg",
-        description: "Premium Automotive wall art. 53 - AM  053.jpg",
-        label: "53 - AM  053.jpg"
-    },
-    {
-        id: "am054",
-        title: "54 - AM  054.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20054.jpg",
-        description: "Premium Automotive wall art. 54 - AM  054.jpg",
-        label: "54 - AM  054.jpg"
-    },
-    {
-        id: "am055",
-        title: "55 - AM  055.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20055.jpg",
-        description: "Premium Automotive wall art. 55 - AM  055.jpg",
-        label: "55 - AM  055.jpg"
-    },
-    {
-        id: "am056",
-        title: "56 - AM  056.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20056.jpg",
-        description: "Premium Automotive wall art. 56 - AM  056.jpg",
-        label: "56 - AM  056.jpg"
-    },
-    {
-        id: "am057",
-        title: "57 - AM  057.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20057.jpg",
-        description: "Premium Automotive wall art. 57 - AM  057.jpg",
-        label: "57 - AM  057.jpg"
-    },
-    {
-        id: "am058",
-        title: "58 - AM  058.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20058.jpg",
-        description: "Premium Automotive wall art. 58 - AM  058.jpg",
-        label: "58 - AM  058.jpg"
-    },
-    {
-        id: "am059",
-        title: "59 - AM  059.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20059.jpg",
-        description: "Premium Automotive wall art. 59 - AM  059.jpg",
-        label: "59 - AM  059.jpg"
-    },
-    {
-        id: "am060",
-        title: "60 - AM  060.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20060.jpg",
-        description: "Premium Automotive wall art. 60 - AM  060.jpg",
-        label: "60 - AM  060.jpg"
-    },
-    {
-        id: "am061",
-        title: "61 - AM  061.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20061.jpg",
-        description: "Premium Automotive wall art. 61 - AM  061.jpg",
-        label: "61 - AM  061.jpg"
-    },
-    {
-        id: "am062",
-        title: "62 - AM  062.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20062.jpg",
-        description: "Premium Automotive wall art. 62 - AM  062.jpg",
-        label: "62 - AM  062.jpg"
-    },
-    {
-        id: "am063",
-        title: "63 - AM  063.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20063.jpg",
-        description: "Premium Automotive wall art. 63 - AM  063.jpg",
-        label: "63 - AM  063.jpg"
-    },
-    {
-        id: "am064",
-        title: "64 - AM  064.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20064.jpg",
-        description: "Premium Automotive wall art. 64 - AM  064.jpg",
-        label: "64 - AM  064.jpg"
-    },
-    {
-        id: "am065",
-        title: "65 - AM  065.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20065.jpg",
-        description: "Premium Automotive wall art. 65 - AM  065.jpg",
-        label: "65 - AM  065.jpg"
-    },
-    {
-        id: "am066",
-        title: "66 - AM  066.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20066.jpg",
-        description: "Premium Automotive wall art. 66 - AM  066.jpg",
-        label: "66 - AM  066.jpg"
-    },
-    {
-        id: "am067",
-        title: "67 - AM  067.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20067.jpg",
-        description: "Premium Automotive wall art. 67 - AM  067.jpg",
-        label: "67 - AM  067.jpg"
-    },
-    {
-        id: "am068",
-        title: "68 - AM  068.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20068.jpg",
-        description: "Premium Automotive wall art. 68 - AM  068.jpg",
-        label: "68 - AM  068.jpg"
-    },
-    {
-        id: "am069",
-        title: "69 - AM  069.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20069.jpg",
-        description: "Premium Automotive wall art. 69 - AM  069.jpg",
-        label: "69 - AM  069.jpg"
-    },
-    {
-        id: "am070",
-        title: "70 - AM  070.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20070.jpg",
-        description: "Premium Automotive wall art. 70 - AM  070.jpg",
-        label: "70 - AM  070.jpg"
-    },
-    {
-        id: "am071",
-        title: "71 - AM  071.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20071.jpg",
-        description: "Premium Automotive wall art. 71 - AM  071.jpg",
-        label: "71 - AM  071.jpg"
-    },
-    {
-        id: "am072",
-        title: "72 - AM  072.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20072.jpg",
-        description: "Premium Automotive wall art. 72 - AM  072.jpg",
-        label: "72 - AM  072.jpg"
-    },
-    {
-        id: "am073",
-        title: "73 - AM  073.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20073.jpg",
-        description: "Premium Automotive wall art. 73 - AM  073.jpg",
-        label: "73 - AM  073.jpg"
-    },
-    {
-        id: "am074",
-        title: "74 - AM  074.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20074.jpg",
-        description: "Premium Automotive wall art. 74 - AM  074.jpg",
-        label: "74 - AM  074.jpg"
-    },
-    {
-        id: "am075",
-        title: "75 - AM  075.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20075.jpg",
-        description: "Premium Automotive wall art. 75 - AM  075.jpg",
-        label: "75 - AM  075.jpg"
-    },
-    {
-        id: "am076",
-        title: "76 - AM  076.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20076.jpg",
-        description: "Premium Automotive wall art. 76 - AM  076.jpg",
-        label: "76 - AM  076.jpg"
-    },
-    {
-        id: "am077",
-        title: "77 - AM  077.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20077.jpg",
-        description: "Premium Automotive wall art. 77 - AM  077.jpg",
-        label: "77 - AM  077.jpg"
-    },
-    {
-        id: "am078",
-        title: "78 - AM  078.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20078.jpg",
-        description: "Premium Automotive wall art. 78 - AM  078.jpg",
-        label: "78 - AM  078.jpg"
-    },
-    {
-        id: "am079",
-        title: "79 - AM  079.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20079.jpg",
-        description: "Premium Automotive wall art. 79 - AM  079.jpg",
-        label: "79 - AM  079.jpg"
-    },
-    {
-        id: "am080",
-        title: "80 - AM  080.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20080.jpg",
-        description: "Premium Automotive wall art. 80 - AM  080.jpg",
-        label: "80 - AM  080.jpg"
-    },
-    {
-        id: "am081",
-        title: "81 - AM  081.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20081.jpg",
-        description: "Premium Automotive wall art. 81 - AM  081.jpg",
-        label: "81 - AM  081.jpg"
-    },
-    {
-        id: "am082",
-        title: "82 - AM  082.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20082.jpg",
-        description: "Premium Automotive wall art. 82 - AM  082.jpg",
-        label: "82 - AM  082.jpg"
-    },
-    {
-        id: "am083",
-        title: "83 - AM  083.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20083.jpg",
-        description: "Premium Automotive wall art. 83 - AM  083.jpg",
-        label: "83 - AM  083.jpg"
-    },
-    {
-        id: "am084",
-        title: "84 - AM  084.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20084.jpg",
-        description: "Premium Automotive wall art. 84 - AM  084.jpg",
-        label: "84 - AM  084.jpg"
-    },
-    {
-        id: "am085",
-        title: "85 - AM  085.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20085.jpg",
-        description: "Premium Automotive wall art. 85 - AM  085.jpg",
-        label: "85 - AM  085.jpg"
-    },
-    {
-        id: "am086",
-        title: "86 - AM  086.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20086.jpg",
-        description: "Premium Automotive wall art. 86 - AM  086.jpg",
-        label: "86 - AM  086.jpg"
-    },
-    {
-        id: "am087",
-        title: "87 - AM  087.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20087.jpg",
-        description: "Premium Automotive wall art. 87 - AM  087.jpg",
-        label: "87 - AM  087.jpg"
-    },
-    {
-        id: "am088",
-        title: "88 - AM  088.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20088.jpg",
-        description: "Premium Automotive wall art. 88 - AM  088.jpg",
-        label: "88 - AM  088.jpg"
-    },
-    {
-        id: "am089",
-        title: "89 - AM  089.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20089.jpg",
-        description: "Premium Automotive wall art. 89 - AM  089.jpg",
-        label: "89 - AM  089.jpg"
-    },
-    {
-        id: "am090",
-        title: "90 - AM  090.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20090.jpg",
-        description: "Premium Automotive wall art. 90 - AM  090.jpg",
-        label: "90 - AM  090.jpg"
-    },
-    {
-        id: "am091",
-        title: "91 - AM  091.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20091.jpg",
-        description: "Premium Automotive wall art. 91 - AM  091.jpg",
-        label: "91 - AM  091.jpg"
-    },
-    {
-        id: "am092",
-        title: "92 - AM  092.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20092.jpg",
-        description: "Premium Automotive wall art. 92 - AM  092.jpg",
-        label: "92 - AM  092.jpg"
-    },
-    {
-        id: "am093",
-        title: "93 - AM  093.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20093.jpg",
-        description: "Premium Automotive wall art. 93 - AM  093.jpg",
-        label: "93 - AM  093.jpg"
-    },
-    {
-        id: "am094",
-        title: "94 - AM  094.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20094.jpg",
-        description: "Premium Automotive wall art. 94 - AM  094.jpg",
-        label: "94 - AM  094.jpg"
-    },
-    {
-        id: "am095",
-        title: "95 - AM  095.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20095.jpg",
-        description: "Premium Automotive wall art. 95 - AM  095.jpg",
-        label: "95 - AM  095.jpg"
-    },
-    {
-        id: "am096",
-        title: "96 - AM  096.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20096.jpg",
-        description: "Premium Automotive wall art. 96 - AM  096.jpg",
-        label: "96 - AM  096.jpg"
-    },
-    {
-        id: "am097",
-        title: "97 - AM  097.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20097.jpg",
-        description: "Premium Automotive wall art. 97 - AM  097.jpg",
-        label: "97 - AM  097.jpg"
-    },
-    {
-        id: "am098",
-        title: "98 - AM  098.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20098.jpg",
-        description: "Premium Automotive wall art. 98 - AM  098.jpg",
-        label: "98 - AM  098.jpg"
-    },
-    {
-        id: "am099",
-        title: "99 - AM  099.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20099.jpg",
-        description: "Premium Automotive wall art. 99 - AM  099.jpg",
-        label: "99 - AM  099.jpg"
-    },
-    {
-        id: "am100",
-        title: "100 - AM  100.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20100.jpg",
-        description: "Premium Automotive wall art. 100 - AM  100.jpg",
-        label: "100 - AM  100.jpg"
-    },
-    {
-        id: "am101",
-        title: "101 - AM  101.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20101.jpg",
-        description: "Premium Automotive wall art. 101 - AM  101.jpg",
-        label: "101 - AM  101.jpg"
-    },
-    {
-        id: "am102",
-        title: "102 - AM  102.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20102.jpg",
-        description: "Premium Automotive wall art. 102 - AM  102.jpg",
-        label: "102 - AM  102.jpg"
-    },
-    {
-        id: "am103",
-        title: "103 - AM  103.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20103.jpg",
-        description: "Premium Automotive wall art. 103 - AM  103.jpg",
-        label: "103 - AM  103.jpg"
-    },
-    {
-        id: "am104",
-        title: "104 - AM  104.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20104.jpg",
-        description: "Premium Automotive wall art. 104 - AM  104.jpg",
-        label: "104 - AM  104.jpg"
-    },
-    {
-        id: "am105",
-        title: "105 - AM  105.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20105.jpg",
-        description: "Premium Automotive wall art. 105 - AM  105.jpg",
-        label: "105 - AM  105.jpg"
-    },
-    {
-        id: "am106",
-        title: "106 - AM  106.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20106.jpg",
-        description: "Premium Automotive wall art. 106 - AM  106.jpg",
-        label: "106 - AM  106.jpg"
-    },
-    {
-        id: "am107",
-        title: "107 - AM  107.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20107.jpg",
-        description: "Premium Automotive wall art. 107 - AM  107.jpg",
-        label: "107 - AM  107.jpg"
-    },
-    {
-        id: "am108",
-        title: "108 - AM  108.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20108.jpg",
-        description: "Premium Automotive wall art. 108 - AM  108.jpg",
-        label: "108 - AM  108.jpg"
-    },
-    {
-        id: "am109",
-        title: "109 - AM  109.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20109.jpg",
-        description: "Premium Automotive wall art. 109 - AM  109.jpg",
-        label: "109 - AM  109.jpg"
-    },
-    {
-        id: "am110",
-        title: "110 - AM  110.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20110.jpg",
-        description: "Premium Automotive wall art. 110 - AM  110.jpg",
-        label: "110 - AM  110.jpg"
-    },
-    {
-        id: "am111",
-        title: "111 - AM  111.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20111.jpg",
-        description: "Premium Automotive wall art. 111 - AM  111.jpg",
-        label: "111 - AM  111.jpg"
-    },
-    {
-        id: "am112",
-        title: "112 - AM  112.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20112.jpg",
-        description: "Premium Automotive wall art. 112 - AM  112.jpg",
-        label: "112 - AM  112.jpg"
-    },
-    {
-        id: "am113",
-        title: "113 - AM  113.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20113.jpg",
-        description: "Premium Automotive wall art. 113 - AM  113.jpg",
-        label: "113 - AM  113.jpg"
-    },
-    {
-        id: "am114",
-        title: "114 - AM  114.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20114.jpg",
-        description: "Premium Automotive wall art. 114 - AM  114.jpg",
-        label: "114 - AM  114.jpg"
-    },
-    {
-        id: "am115",
-        title: "115 - AM  115.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20115.jpg",
-        description: "Premium Automotive wall art. 115 - AM  115.jpg",
-        label: "115 - AM  115.jpg"
-    },
-    {
-        id: "am116",
-        title: "116 - AM  116.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20116.jpg",
-        description: "Premium Automotive wall art. 116 - AM  116.jpg",
-        label: "116 - AM  116.jpg"
-    },
-    {
-        id: "am117",
-        title: "117 - AM  117.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20117.jpg",
-        description: "Premium Automotive wall art. 117 - AM  117.jpg",
-        label: "117 - AM  117.jpg"
-    },
-    {
-        id: "am118",
-        title: "118 - AM  118.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20118.jpg",
-        description: "Premium Automotive wall art. 118 - AM  118.jpg",
-        label: "118 - AM  118.jpg"
-    },
-    {
-        id: "am119",
-        title: "119 - AM  119.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20119.jpg",
-        description: "Premium Automotive wall art. 119 - AM  119.jpg",
-        label: "119 - AM  119.jpg"
-    },
-    {
-        id: "am120",
-        title: "120 - AM  120.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20120.jpg",
-        description: "Premium Automotive wall art. 120 - AM  120.jpg",
-        label: "120 - AM  120.jpg"
-    },
-    {
-        id: "am121",
-        title: "121 - AM  121.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20121.jpg",
-        description: "Premium Automotive wall art. 121 - AM  121.jpg",
-        label: "121 - AM  121.jpg"
-    },
-    {
-        id: "am122",
-        title: "122 - AM  122.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20122.jpg",
-        description: "Premium Automotive wall art. 122 - AM  122.jpg",
-        label: "122 - AM  122.jpg"
-    },
-    {
-        id: "am123",
-        title: "123 - AM  123.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20123.jpg",
-        description: "Premium Automotive wall art. 123 - AM  123.jpg",
-        label: "123 - AM  123.jpg"
-    },
-    {
-        id: "am124",
-        title: "124 - AM  124.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20124.jpg",
-        description: "Premium Automotive wall art. 124 - AM  124.jpg",
-        label: "124 - AM  124.jpg"
-    },
-    {
-        id: "am125",
-        title: "125 - AM  125.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20125.jpg",
-        description: "Premium Automotive wall art. 125 - AM  125.jpg",
-        label: "125 - AM  125.jpg"
-    },
-    {
-        id: "am126",
-        title: "126 - AM  126.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20126.jpg",
-        description: "Premium Automotive wall art. 126 - AM  126.jpg",
-        label: "126 - AM  126.jpg"
-    },
-    {
-        id: "am127",
-        title: "127 - AM  127.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20127.jpg",
-        description: "Premium Automotive wall art. 127 - AM  127.jpg",
-        label: "127 - AM  127.jpg"
-    },
-    {
-        id: "am128",
-        title: "128 - AM  128.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20128.jpg",
-        description: "Premium Automotive wall art. 128 - AM  128.jpg",
-        label: "128 - AM  128.jpg"
-    },
-    {
-        id: "am129",
-        title: "129 - AM  129.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20129.jpg",
-        description: "Premium Automotive wall art. 129 - AM  129.jpg",
-        label: "129 - AM  129.jpg"
-    },
-    {
-        id: "am130",
-        title: "130 - AM  130.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20130.jpg",
-        description: "Premium Automotive wall art. 130 - AM  130.jpg",
-        label: "130 - AM  130.jpg"
-    },
-    {
-        id: "am131",
-        title: "131 - AM  131.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20131.jpg",
-        description: "Premium Automotive wall art. 131 - AM  131.jpg",
-        label: "131 - AM  131.jpg"
-    },
-    {
-        id: "am132",
-        title: "132 - AM  132.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20132.jpg",
-        description: "Premium Automotive wall art. 132 - AM  132.jpg",
-        label: "132 - AM  132.jpg"
-    },
-    {
-        id: "am133",
-        title: "133 - AM  133.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20133.jpg",
-        description: "Premium Automotive wall art. 133 - AM  133.jpg",
-        label: "133 - AM  133.jpg"
-    },
-    {
-        id: "am134",
-        title: "134 - AM  134.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20134.jpg",
-        description: "Premium Automotive wall art. 134 - AM  134.jpg",
-        label: "134 - AM  134.jpg"
-    },
-    {
-        id: "am135",
-        title: "135 - AM  135.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20135.jpg",
-        description: "Premium Automotive wall art. 135 - AM  135.jpg",
-        label: "135 - AM  135.jpg"
-    },
-    {
-        id: "am136",
-        title: "136 - AM  136.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20136.jpg",
-        description: "Premium Automotive wall art. 136 - AM  136.jpg",
-        label: "136 - AM  136.jpg"
-    },
-    {
-        id: "am137",
-        title: "137 - AM  137.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20137.jpg",
-        description: "Premium Automotive wall art. 137 - AM  137.jpg",
-        label: "137 - AM  137.jpg"
-    },
-    {
-        id: "am138",
-        title: "138 - AM  138.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20138.jpg",
-        description: "Premium Automotive wall art. 138 - AM  138.jpg",
-        label: "138 - AM  138.jpg"
-    },
-    {
-        id: "am139",
-        title: "139 - AM  139.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20139.jpg",
-        description: "Premium Automotive wall art. 139 - AM  139.jpg",
-        label: "139 - AM  139.jpg"
-    },
-    {
-        id: "am140",
-        title: "140 - AM  140.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20140.jpg",
-        description: "Premium Automotive wall art. 140 - AM  140.jpg",
-        label: "140 - AM  140.jpg"
-    },
-    {
-        id: "am141",
-        title: "141 - AM  141.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20141.jpg",
-        description: "Premium Automotive wall art. 141 - AM  141.jpg",
-        label: "141 - AM  141.jpg"
-    },
-    {
-        id: "am142",
-        title: "142 - AM  142.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20142.jpg",
-        description: "Premium Automotive wall art. 142 - AM  142.jpg",
-        label: "142 - AM  142.jpg"
-    },
-    {
-        id: "am143",
-        title: "143 - AM  143.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20143.jpg",
-        description: "Premium Automotive wall art. 143 - AM  143.jpg",
-        label: "143 - AM  143.jpg"
-    },
-    {
-        id: "am144",
-        title: "144 - AM  144.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20144.jpg",
-        description: "Premium Automotive wall art. 144 - AM  144.jpg",
-        label: "144 - AM  144.jpg"
-    },
-    {
-        id: "am145",
-        title: "145 - AM  145.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20145.jpg",
-        description: "Premium Automotive wall art. 145 - AM  145.jpg",
-        label: "145 - AM  145.jpg"
-    },
-    {
-        id: "am146",
-        title: "146 - AM  146.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20146.jpg",
-        description: "Premium Automotive wall art. 146 - AM  146.jpg",
-        label: "146 - AM  146.jpg"
-    },
-    {
-        id: "am147",
-        title: "147 - AM  147.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20147.jpg",
-        description: "Premium Automotive wall art. 147 - AM  147.jpg",
-        label: "147 - AM  147.jpg"
-    },
-    {
-        id: "am148",
-        title: "148 - AM  148.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20148.jpg",
-        description: "Premium Automotive wall art. 148 - AM  148.jpg",
-        label: "148 - AM  148.jpg"
-    },
-    {
-        id: "am149",
-        title: "149 - AM  149.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20149.jpg",
-        description: "Premium Automotive wall art. 149 - AM  149.jpg",
-        label: "149 - AM  149.jpg"
-    },
-    {
-        id: "am150",
-        title: "150 - AM  150.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20150.jpg",
-        description: "Premium Automotive wall art. 150 - AM  150.jpg",
-        label: "150 - AM  150.jpg"
-    },
-    {
-        id: "am151",
-        title: "151 - AM  151.jpg",
-        category: "Automotive",
-        basePrice: 33.00,
-        image: "assets/AM/AM%20%20151.jpg",
-        description: "Premium Automotive wall art. 151 - AM  151.jpg",
-        label: "151 - AM  151.jpg"
-    },
-
-    /* ── Mollywood ──────────────────────────── */
-    {
-        id: "mw1",
-        title: "Mohanlal Legend – Golden Era",
+        id: "p1",
+        title: "1 - .trashed-1774769249-0498d6f7356b908d8ad9483a483aeb58.jpg",
         category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800",
-        description: "Iconic tribute to Malayalam cinema's golden era. Premium print on museum-grade paper."
+        image: "assets/Mollywood/.trashed-1774769249-0498d6f7356b908d8ad9483a483aeb58.jpg",
+        description: "Premium Mollywood wall art. 1 - .trashed-1774769249-0498d6f7356b908d8ad9483a483aeb58.jpg"
     },
     {
-        id: "mw2",
-        title: "Mammootty – The Complete Actor",
+        id: "p2",
+        title: "2 - .trashed-1774769251-af3dbc55927ab6a1b1c47c3070f5d18c.jpg",
         category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800",
-        description: "A cinematic tribute to the legendary Mammootty. Perfect for any film lover's wall."
+        image: "assets/Mollywood/.trashed-1774769251-af3dbc55927ab6a1b1c47c3070f5d18c.jpg",
+        description: "Premium Mollywood wall art. 2 - .trashed-1774769251-af3dbc55927ab6a1b1c47c3070f5d18c.jpg"
     },
     {
-        id: "mw3",
-        title: "Premam – Romance in Frames",
+        id: "p3",
+        title: "3 - .trashed-1774769266-7d0180e50dcd3dc8e2ee1c59a52909b1.jpg",
         category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800",
-        description: "Inspired by the cult classic Premam. A romantic, artistic poster for your space."
+        image: "assets/Mollywood/.trashed-1774769266-7d0180e50dcd3dc8e2ee1c59a52909b1.jpg",
+        description: "Premium Mollywood wall art. 3 - .trashed-1774769266-7d0180e50dcd3dc8e2ee1c59a52909b1.jpg"
     },
     {
-        id: "mw4",
-        title: "Lucifer – Rise of Power",
+        id: "p4",
+        title: "4 - mollywood 001.jpg",
         category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1606041011872-596597976b25?auto=format&fit=crop&q=80&w=800",
-        description: "Bold and dramatic poster inspired by the blockbuster Lucifer."
+        image: "assets/Mollywood/mollywood 001.jpg",
+        description: "Premium Mollywood wall art. 4 - mollywood 001.jpg"
     },
     {
-        id: "mw5",
-        title: "Drishyam – Cinematic Masterpiece",
+        id: "p5",
+        title: "5 - mollywood 002.jpg",
         category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=800",
-        description: "Inspired by the suspense thriller Drishyam. A must-have for Malayalam cinema fans."
+        image: "assets/Mollywood/mollywood 002.jpg",
+        description: "Premium Mollywood wall art. 5 - mollywood 002.jpg"
     },
     {
-        id: "mw6",
-        title: "Kerala Café – Art House Vibes",
+        id: "p6",
+        title: "6 - mollywood 003.jpg",
         category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=800",
-        description: "Minimalist art-house poster inspired by Kerala Café's anthology style."
+        image: "assets/Mollywood/mollywood 003.jpg",
+        description: "Premium Mollywood wall art. 6 - mollywood 003.jpg"
     },
-
-    /* ── Football ───────────────────────────── */
     {
-        id: "fb1",
-        title: "Champions League – Glory Nights",
-        category: "Football",
+        id: "p7",
+        title: "7 - mollywood 004.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=800",
-        description: "Electric atmosphere of Champions League nights. Every fan's dream poster."
+        image: "assets/Mollywood/mollywood 004.jpg",
+        description: "Premium Mollywood wall art. 7 - mollywood 004.jpg"
     },
     {
-        id: "fb2",
-        title: "Ronaldo – CR7 Legacy",
-        category: "Football",
+        id: "p8",
+        title: "8 - mollywood 005.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1551958219-acbc595d6119?auto=format&fit=crop&q=80&w=800",
-        description: "Tribute to the greatest of all time. A premium CR7 art poster."
+        image: "assets/Mollywood/mollywood 005.jpg",
+        description: "Premium Mollywood wall art. 8 - mollywood 005.jpg"
     },
     {
-        id: "fb3",
-        title: "Messi – The GOAT Era",
-        category: "Football",
+        id: "p9",
+        title: "9 - mollywood 006.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=800",
-        description: "Lionel Messi tribute print. Celebrate the magic of the little magician."
+        image: "assets/Mollywood/mollywood 006.jpg",
+        description: "Premium Mollywood wall art. 9 - mollywood 006.jpg"
     },
     {
-        id: "fb4",
-        title: "World Cup 2026 – The Dream",
-        category: "Football",
+        id: "p10",
+        title: "10 - mollywood 007.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&q=80&w=800",
-        description: "The grandeur of the FIFA World Cup. Inspired by football's biggest stage."
+        image: "assets/Mollywood/mollywood 007.jpg",
+        description: "Premium Mollywood wall art. 10 - mollywood 007.jpg"
     },
     {
-        id: "fb5",
-        title: "Premier League – Sunday Fever",
-        category: "Football",
+        id: "p11",
+        title: "11 - mollywood 008.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&q=80&w=800",
-        description: "The passion of Premier League Sundays captured in a stunning print."
+        image: "assets/Mollywood/mollywood 008.jpg",
+        description: "Premium Mollywood wall art. 11 - mollywood 008.jpg"
     },
     {
-        id: "fb6",
-        title: "The Beautiful Game – Abstract",
-        category: "Football",
+        id: "p12",
+        title: "12 - mollywood 009.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&q=80&w=800",
-        description: "Abstract football art celebrating the beauty of the sport."
+        image: "assets/Mollywood/mollywood 009.jpg",
+        description: "Premium Mollywood wall art. 12 - mollywood 009.jpg"
     },
-
-    /* ── Anime ──────────────────────────────── */
     {
-        id: "an1",
-        title: "Naruto – Path of the Hokage",
-        category: "Anime",
+        id: "p13",
+        title: "13 - mollywood 010.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=800",
-        description: "Epic Naruto inspired art print. The journey of a ninja legend."
+        image: "assets/Mollywood/mollywood 010.jpg",
+        description: "Premium Mollywood wall art. 13 - mollywood 010.jpg"
     },
     {
-        id: "an2",
-        title: "Attack on Titan – Beyond the Walls",
-        category: "Anime",
+        id: "p14",
+        title: "14 - mollywood 011.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=800",
-        description: "AoT inspired dark-themed art poster. For the brave who face the unknown."
+        image: "assets/Mollywood/mollywood 011.jpg",
+        description: "Premium Mollywood wall art. 14 - mollywood 011.jpg"
     },
     {
-        id: "an3",
-        title: "Demon Slayer – Hashira",
-        category: "Anime",
+        id: "p15",
+        title: "15 - mollywood 012.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?auto=format&fit=crop&q=80&w=800",
-        description: "Stunning Demon Slayer inspired artwork with striking color contrasts."
+        image: "assets/Mollywood/mollywood 012.jpg",
+        description: "Premium Mollywood wall art. 15 - mollywood 012.jpg"
     },
     {
-        id: "an4",
-        title: "One Piece – King of Pirates",
-        category: "Anime",
+        id: "p16",
+        title: "16 - mollywood 013.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?auto=format&fit=crop&q=80&w=800",
-        description: "Celebrate Luffy's grand adventure with this One Piece art poster."
+        image: "assets/Mollywood/mollywood 013.jpg",
+        description: "Premium Mollywood wall art. 16 - mollywood 013.jpg"
     },
     {
-        id: "an5",
-        title: "Spirited Away – Miyazaki Dreams",
-        category: "Anime",
+        id: "p17",
+        title: "17 - mollywood 014.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&q=80&w=800",
-        description: "Studio Ghibli inspired art print capturing the magic of Spirited Away."
+        image: "assets/Mollywood/mollywood 014.jpg",
+        description: "Premium Mollywood wall art. 17 - mollywood 014.jpg"
     },
     {
-        id: "an6",
-        title: "Tokyo Ghoul – Duality",
-        category: "Anime",
+        id: "p18",
+        title: "18 - mollywood 015.jpg",
+        category: "Mollywood",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1493514789931-586cb221d7a7?auto=format&fit=crop&q=80&w=800",
-        description: "Dark and dramatic Tokyo Ghoul inspired poster exploring themes of duality."
+        image: "assets/Mollywood/mollywood 015.jpg",
+        description: "Premium Mollywood wall art. 18 - mollywood 015.jpg"
     },
-
-    /* ── Aesthetic ──────────────────────────── */
     {
-        id: "ae1",
-        title: "Neon Dreams – City at Midnight",
+        id: "p19",
+        title: "19 - mollywood 016.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 016.jpg",
+        description: "Premium Mollywood wall art. 19 - mollywood 016.jpg"
+    },
+    {
+        id: "p20",
+        title: "20 - mollywood 017.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 017.jpg",
+        description: "Premium Mollywood wall art. 20 - mollywood 017.jpg"
+    },
+    {
+        id: "p21",
+        title: "21 - mollywood 018.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 018.jpg",
+        description: "Premium Mollywood wall art. 21 - mollywood 018.jpg"
+    },
+    {
+        id: "p22",
+        title: "22 - mollywood 019.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 019.jpg",
+        description: "Premium Mollywood wall art. 22 - mollywood 019.jpg"
+    },
+    {
+        id: "p23",
+        title: "23 - mollywood 020.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 020.jpg",
+        description: "Premium Mollywood wall art. 23 - mollywood 020.jpg"
+    },
+    {
+        id: "p24",
+        title: "24 - mollywood 021.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 021.jpg",
+        description: "Premium Mollywood wall art. 24 - mollywood 021.jpg"
+    },
+    {
+        id: "p25",
+        title: "25 - mollywood 022.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 022.jpg",
+        description: "Premium Mollywood wall art. 25 - mollywood 022.jpg"
+    },
+    {
+        id: "p26",
+        title: "26 - mollywood 023.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 023.jpg",
+        description: "Premium Mollywood wall art. 26 - mollywood 023.jpg"
+    },
+    {
+        id: "p27",
+        title: "27 - mollywood 024.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 024.jpg",
+        description: "Premium Mollywood wall art. 27 - mollywood 024.jpg"
+    },
+    {
+        id: "p28",
+        title: "28 - mollywood 025.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 025.jpg",
+        description: "Premium Mollywood wall art. 28 - mollywood 025.jpg"
+    },
+    {
+        id: "p29",
+        title: "29 - mollywood 026.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 026.jpg",
+        description: "Premium Mollywood wall art. 29 - mollywood 026.jpg"
+    },
+    {
+        id: "p30",
+        title: "30 - mollywood 027.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 027.jpg",
+        description: "Premium Mollywood wall art. 30 - mollywood 027.jpg"
+    },
+    {
+        id: "p31",
+        title: "31 - mollywood 028.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 028.jpg",
+        description: "Premium Mollywood wall art. 31 - mollywood 028.jpg"
+    },
+    {
+        id: "p32",
+        title: "32 - mollywood 029.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 029.jpg",
+        description: "Premium Mollywood wall art. 32 - mollywood 029.jpg"
+    },
+    {
+        id: "p33",
+        title: "33 - mollywood 030.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 030.jpg",
+        description: "Premium Mollywood wall art. 33 - mollywood 030.jpg"
+    },
+    {
+        id: "p34",
+        title: "34 - mollywood 031.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 031.jpg",
+        description: "Premium Mollywood wall art. 34 - mollywood 031.jpg"
+    },
+    {
+        id: "p35",
+        title: "35 - mollywood 032.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 032.jpg",
+        description: "Premium Mollywood wall art. 35 - mollywood 032.jpg"
+    },
+    {
+        id: "p36",
+        title: "36 - mollywood 033.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 033.jpg",
+        description: "Premium Mollywood wall art. 36 - mollywood 033.jpg"
+    },
+    {
+        id: "p37",
+        title: "37 - mollywood 034.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 034.jpg",
+        description: "Premium Mollywood wall art. 37 - mollywood 034.jpg"
+    },
+    {
+        id: "p38",
+        title: "38 - mollywood 035.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 035.jpg",
+        description: "Premium Mollywood wall art. 38 - mollywood 035.jpg"
+    },
+    {
+        id: "p39",
+        title: "39 - mollywood 036.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 036.jpg",
+        description: "Premium Mollywood wall art. 39 - mollywood 036.jpg"
+    },
+    {
+        id: "p40",
+        title: "40 - mollywood 037.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 037.jpg",
+        description: "Premium Mollywood wall art. 40 - mollywood 037.jpg"
+    },
+    {
+        id: "p41",
+        title: "41 - mollywood 038.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 038.jpg",
+        description: "Premium Mollywood wall art. 41 - mollywood 038.jpg"
+    },
+    {
+        id: "p42",
+        title: "42 - mollywood 039.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 039.jpg",
+        description: "Premium Mollywood wall art. 42 - mollywood 039.jpg"
+    },
+    {
+        id: "p43",
+        title: "43 - mollywood 040.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 040.jpg",
+        description: "Premium Mollywood wall art. 43 - mollywood 040.jpg"
+    },
+    {
+        id: "p44",
+        title: "44 - mollywood 041.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 041.jpg",
+        description: "Premium Mollywood wall art. 44 - mollywood 041.jpg"
+    },
+    {
+        id: "p45",
+        title: "45 - mollywood 042.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 042.jpg",
+        description: "Premium Mollywood wall art. 45 - mollywood 042.jpg"
+    },
+    {
+        id: "p46",
+        title: "46 - mollywood 043.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 043.jpg",
+        description: "Premium Mollywood wall art. 46 - mollywood 043.jpg"
+    },
+    {
+        id: "p47",
+        title: "47 - mollywood 044.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 044.jpg",
+        description: "Premium Mollywood wall art. 47 - mollywood 044.jpg"
+    },
+    {
+        id: "p48",
+        title: "48 - mollywood 045.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 045.jpg",
+        description: "Premium Mollywood wall art. 48 - mollywood 045.jpg"
+    },
+    {
+        id: "p49",
+        title: "49 - mollywood 046.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 046.jpg",
+        description: "Premium Mollywood wall art. 49 - mollywood 046.jpg"
+    },
+    {
+        id: "p50",
+        title: "50 - mollywood 047.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 047.jpg",
+        description: "Premium Mollywood wall art. 50 - mollywood 047.jpg"
+    },
+    {
+        id: "p51",
+        title: "51 - mollywood 048.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 048.jpg",
+        description: "Premium Mollywood wall art. 51 - mollywood 048.jpg"
+    },
+    {
+        id: "p52",
+        title: "52 - mollywood 049.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 049.jpg",
+        description: "Premium Mollywood wall art. 52 - mollywood 049.jpg"
+    },
+    {
+        id: "p53",
+        title: "53 - mollywood 050.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 050.jpg",
+        description: "Premium Mollywood wall art. 53 - mollywood 050.jpg"
+    },
+    {
+        id: "p54",
+        title: "54 - mollywood 051.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 051.jpg",
+        description: "Premium Mollywood wall art. 54 - mollywood 051.jpg"
+    },
+    {
+        id: "p55",
+        title: "55 - mollywood 052.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 052.jpg",
+        description: "Premium Mollywood wall art. 55 - mollywood 052.jpg"
+    },
+    {
+        id: "p56",
+        title: "56 - mollywood 053.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 053.jpg",
+        description: "Premium Mollywood wall art. 56 - mollywood 053.jpg"
+    },
+    {
+        id: "p57",
+        title: "57 - mollywood 054.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 054.jpg",
+        description: "Premium Mollywood wall art. 57 - mollywood 054.jpg"
+    },
+    {
+        id: "p58",
+        title: "58 - mollywood 055.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 055.jpg",
+        description: "Premium Mollywood wall art. 58 - mollywood 055.jpg"
+    },
+    {
+        id: "p59",
+        title: "59 - mollywood 056.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 056.jpg",
+        description: "Premium Mollywood wall art. 59 - mollywood 056.jpg"
+    },
+    {
+        id: "p60",
+        title: "60 - mollywood 057.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 057.jpg",
+        description: "Premium Mollywood wall art. 60 - mollywood 057.jpg"
+    },
+    {
+        id: "p61",
+        title: "61 - mollywood 058.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 058.jpg",
+        description: "Premium Mollywood wall art. 61 - mollywood 058.jpg"
+    },
+    {
+        id: "p62",
+        title: "62 - mollywood 059.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 059.jpg",
+        description: "Premium Mollywood wall art. 62 - mollywood 059.jpg"
+    },
+    {
+        id: "p63",
+        title: "63 - mollywood 060.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 060.jpg",
+        description: "Premium Mollywood wall art. 63 - mollywood 060.jpg"
+    },
+    {
+        id: "p64",
+        title: "64 - mollywood 061.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 061.jpg",
+        description: "Premium Mollywood wall art. 64 - mollywood 061.jpg"
+    },
+    {
+        id: "p65",
+        title: "65 - mollywood 062.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 062.jpg",
+        description: "Premium Mollywood wall art. 65 - mollywood 062.jpg"
+    },
+    {
+        id: "p66",
+        title: "66 - mollywood 063.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 063.jpg",
+        description: "Premium Mollywood wall art. 66 - mollywood 063.jpg"
+    },
+    {
+        id: "p67",
+        title: "67 - mollywood 064.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 064.jpg",
+        description: "Premium Mollywood wall art. 67 - mollywood 064.jpg"
+    },
+    {
+        id: "p68",
+        title: "68 - mollywood 065.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 065.jpg",
+        description: "Premium Mollywood wall art. 68 - mollywood 065.jpg"
+    },
+    {
+        id: "p69",
+        title: "69 - mollywood 066.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 066.jpg",
+        description: "Premium Mollywood wall art. 69 - mollywood 066.jpg"
+    },
+    {
+        id: "p70",
+        title: "70 - mollywood 067.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 067.jpg",
+        description: "Premium Mollywood wall art. 70 - mollywood 067.jpg"
+    },
+    {
+        id: "p71",
+        title: "71 - mollywood 068.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 068.jpg",
+        description: "Premium Mollywood wall art. 71 - mollywood 068.jpg"
+    },
+    {
+        id: "p72",
+        title: "72 - mollywood 069.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 069.jpg",
+        description: "Premium Mollywood wall art. 72 - mollywood 069.jpg"
+    },
+    {
+        id: "p73",
+        title: "73 - mollywood 070.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 070.jpg",
+        description: "Premium Mollywood wall art. 73 - mollywood 070.jpg"
+    },
+    {
+        id: "p74",
+        title: "74 - mollywood 071.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 071.jpg",
+        description: "Premium Mollywood wall art. 74 - mollywood 071.jpg"
+    },
+    {
+        id: "p75",
+        title: "75 - mollywood 072.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 072.jpg",
+        description: "Premium Mollywood wall art. 75 - mollywood 072.jpg"
+    },
+    {
+        id: "p76",
+        title: "76 - mollywood 073.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 073.jpg",
+        description: "Premium Mollywood wall art. 76 - mollywood 073.jpg"
+    },
+    {
+        id: "p77",
+        title: "77 - mollywood 074.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 074.jpg",
+        description: "Premium Mollywood wall art. 77 - mollywood 074.jpg"
+    },
+    {
+        id: "p78",
+        title: "78 - mollywood 075.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 075.jpg",
+        description: "Premium Mollywood wall art. 78 - mollywood 075.jpg"
+    },
+    {
+        id: "p79",
+        title: "79 - mollywood 076.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 076.jpg",
+        description: "Premium Mollywood wall art. 79 - mollywood 076.jpg"
+    },
+    {
+        id: "p80",
+        title: "80 - mollywood 077.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 077.jpg",
+        description: "Premium Mollywood wall art. 80 - mollywood 077.jpg"
+    },
+    {
+        id: "p81",
+        title: "81 - mollywood 078.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 078.jpg",
+        description: "Premium Mollywood wall art. 81 - mollywood 078.jpg"
+    },
+    {
+        id: "p82",
+        title: "82 - mollywood 079.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 079.jpg",
+        description: "Premium Mollywood wall art. 82 - mollywood 079.jpg"
+    },
+    {
+        id: "p83",
+        title: "83 - mollywood 080.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 080.jpg",
+        description: "Premium Mollywood wall art. 83 - mollywood 080.jpg"
+    },
+    {
+        id: "p84",
+        title: "84 - mollywood 081.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 081.jpg",
+        description: "Premium Mollywood wall art. 84 - mollywood 081.jpg"
+    },
+    {
+        id: "p85",
+        title: "85 - mollywood 082.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 082.jpg",
+        description: "Premium Mollywood wall art. 85 - mollywood 082.jpg"
+    },
+    {
+        id: "p86",
+        title: "86 - mollywood 083.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 083.jpg",
+        description: "Premium Mollywood wall art. 86 - mollywood 083.jpg"
+    },
+    {
+        id: "p87",
+        title: "87 - mollywood 084.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 084.jpg",
+        description: "Premium Mollywood wall art. 87 - mollywood 084.jpg"
+    },
+    {
+        id: "p88",
+        title: "88 - mollywood 085.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 085.jpg",
+        description: "Premium Mollywood wall art. 88 - mollywood 085.jpg"
+    },
+    {
+        id: "p89",
+        title: "89 - mollywood 086.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 086.jpg",
+        description: "Premium Mollywood wall art. 89 - mollywood 086.jpg"
+    },
+    {
+        id: "p90",
+        title: "90 - mollywood 087.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 087.jpg",
+        description: "Premium Mollywood wall art. 90 - mollywood 087.jpg"
+    },
+    {
+        id: "p91",
+        title: "91 - mollywood 088.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 088.jpg",
+        description: "Premium Mollywood wall art. 91 - mollywood 088.jpg"
+    },
+    {
+        id: "p92",
+        title: "92 - mollywood 089.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 089.jpg",
+        description: "Premium Mollywood wall art. 92 - mollywood 089.jpg"
+    },
+    {
+        id: "p93",
+        title: "93 - mollywood 090.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 090.jpg",
+        description: "Premium Mollywood wall art. 93 - mollywood 090.jpg"
+    },
+    {
+        id: "p94",
+        title: "94 - mollywood 091.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 091.jpg",
+        description: "Premium Mollywood wall art. 94 - mollywood 091.jpg"
+    },
+    {
+        id: "p95",
+        title: "95 - mollywood 092.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 092.jpg",
+        description: "Premium Mollywood wall art. 95 - mollywood 092.jpg"
+    },
+    {
+        id: "p96",
+        title: "96 - mollywood 093.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 093.jpg",
+        description: "Premium Mollywood wall art. 96 - mollywood 093.jpg"
+    },
+    {
+        id: "p97",
+        title: "97 - mollywood 094.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 094.jpg",
+        description: "Premium Mollywood wall art. 97 - mollywood 094.jpg"
+    },
+    {
+        id: "p98",
+        title: "98 - mollywood 095.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 095.jpg",
+        description: "Premium Mollywood wall art. 98 - mollywood 095.jpg"
+    },
+    {
+        id: "p99",
+        title: "99 - mollywood 096.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 096.jpg",
+        description: "Premium Mollywood wall art. 99 - mollywood 096.jpg"
+    },
+    {
+        id: "p100",
+        title: "100 - mollywood 097.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 097.jpg",
+        description: "Premium Mollywood wall art. 100 - mollywood 097.jpg"
+    },
+    {
+        id: "p101",
+        title: "101 - mollywood 098.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 098.jpg",
+        description: "Premium Mollywood wall art. 101 - mollywood 098.jpg"
+    },
+    {
+        id: "p102",
+        title: "102 - mollywood 099.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 099.jpg",
+        description: "Premium Mollywood wall art. 102 - mollywood 099.jpg"
+    },
+    {
+        id: "p103",
+        title: "103 - mollywood 100.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 100.jpg",
+        description: "Premium Mollywood wall art. 103 - mollywood 100.jpg"
+    },
+    {
+        id: "p104",
+        title: "104 - mollywood 101.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 101.jpg",
+        description: "Premium Mollywood wall art. 104 - mollywood 101.jpg"
+    },
+    {
+        id: "p105",
+        title: "105 - mollywood 102.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 102.jpg",
+        description: "Premium Mollywood wall art. 105 - mollywood 102.jpg"
+    },
+    {
+        id: "p106",
+        title: "106 - mollywood 103.jpg",
+        category: "Mollywood",
+        basePrice: 33.00,
+        image: "assets/Mollywood/mollywood 103.jpg",
+        description: "Premium Mollywood wall art. 106 - mollywood 103.jpg"
+    },
+    {
+        id: "p107",
+        title: "107 - .trashed-1776755305-Picsart_25-12-29_11-39-37-989.jpg",
         category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=800",
-        description: "Neon-soaked cityscape aesthetic print. Perfect for modern bedrooms."
+        image: "assets/aesthe/.trashed-1776755305-Picsart_25-12-29_11-39-37-989.jpg",
+        description: "Premium Aesthetic wall art. 107 - .trashed-1776755305-Picsart_25-12-29_11-39-37-989.jpg"
     },
     {
-        id: "ae2",
-        title: "Lo-Fi Girl – Study Vibes",
+        id: "p108",
+        title: "108 - .trashed-1776755305-Picsart_26-02-04_13-54-12-826.jpg",
         category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1596496181871-9681eacf9764?auto=format&fit=crop&q=80&w=800",
-        description: "Chill lo-fi aesthetic print capturing the mood of a rainy study session."
+        image: "assets/aesthe/.trashed-1776755305-Picsart_26-02-04_13-54-12-826.jpg",
+        description: "Premium Aesthetic wall art. 108 - .trashed-1776755305-Picsart_26-02-04_13-54-12-826.jpg"
     },
     {
-        id: "ae3",
-        title: "Cherry Blossom – Sakura Season",
+        id: "p109",
+        title: "109 - .trashed-1776755310-Picsart_26-02-07_23-39-29-644.jpg",
         category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=800",
-        description: "Soft and dreamy cherry blossom art for a tranquil aesthetic space."
+        image: "assets/aesthe/.trashed-1776755310-Picsart_26-02-07_23-39-29-644.jpg",
+        description: "Premium Aesthetic wall art. 109 - .trashed-1776755310-Picsart_26-02-07_23-39-29-644.jpg"
     },
     {
-        id: "ae4",
-        title: "Solitude – Minimal Mood Board",
+        id: "p110",
+        title: "110 - abstract 001.jpg",
         category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
-        description: "Minimalist aesthetic poster perfect for a clean, modern living space."
+        image: "assets/aesthe/abstract 001.jpg",
+        description: "Premium Aesthetic wall art. 110 - abstract 001.jpg"
     },
     {
-        id: "ae5",
-        title: "Golden Hour – Warm Gradient",
+        id: "p111",
+        title: "111 - abstract 002.jpg",
         category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?auto=format&fit=crop&q=80&w=800",
-        description: "Warm golden-hour gradient art print for a cozy, aesthetic atmosphere."
+        image: "assets/aesthe/abstract 002.jpg",
+        description: "Premium Aesthetic wall art. 111 - abstract 002.jpg"
     },
     {
-        id: "ae6",
-        title: "Pastel Sky – Soft Clouds",
+        id: "p112",
+        title: "112 - abstract 003.jpg",
         category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
-        description: "Dreamy pastel sky art for calm, aesthetic bedroom wall decor."
-    },
-
-    /* ── Classic Cars ───────────────────────── */
-    {
-        id: "cc1",
-        title: "Ferrari 250 GTO – Italian Legend",
-        category: "Classic Cars",
-        basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800",
-        description: "The Ferrari 250 GTO – the most legendary racing car ever built. A collector's print."
+        image: "assets/aesthe/abstract 003.jpg",
+        description: "Premium Aesthetic wall art. 112 - abstract 003.jpg"
     },
     {
-        id: "cc2",
-        title: "Porsche 911 – Timeless Classic",
-        category: "Classic Cars",
+        id: "p113",
+        title: "113 - abstract 004.png",
+        category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800",
-        description: "The iconic Porsche 911 silhouette. A timeless art print for every enthusiast."
+        image: "assets/aesthe/abstract 004.png",
+        description: "Premium Aesthetic wall art. 113 - abstract 004.png"
     },
     {
-        id: "cc3",
-        title: "Mustang 1967 – American Muscle",
-        category: "Classic Cars",
+        id: "p114",
+        title: "114 - abstract 005.jpg",
+        category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
-        description: "The legendary 1967 Ford Mustang. Raw American muscle in a premium print."
+        image: "assets/aesthe/abstract 005.jpg",
+        description: "Premium Aesthetic wall art. 114 - abstract 005.jpg"
     },
     {
-        id: "cc4",
-        title: "Jaguar E-Type – Pure Elegance",
-        category: "Classic Cars",
+        id: "p115",
+        title: "115 - abstract 006.jpg",
+        category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800",
-        description: "Enzo Ferrari called it the most beautiful car ever made. Now on your wall."
+        image: "assets/aesthe/abstract 006.jpg",
+        description: "Premium Aesthetic wall art. 115 - abstract 006.jpg"
     },
     {
-        id: "cc5",
-        title: "Lamborghini Miura – The Pioneer",
-        category: "Classic Cars",
+        id: "p116",
+        title: "116 - abstract 007.png",
+        category: "Aesthetic",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=800",
-        description: "The Miura that started it all. The first supercar, now a timeless art piece."
+        image: "assets/aesthe/abstract 007.png",
+        description: "Premium Aesthetic wall art. 116 - abstract 007.png"
     },
     {
-        id: "cc6",
-        title: "Mercedes 300SL – Gullwing Glory",
+        id: "p117",
+        title: "117 - abstract 008.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 008.jpg",
+        description: "Premium Aesthetic wall art. 117 - abstract 008.jpg"
+    },
+    {
+        id: "p118",
+        title: "118 - abstract 009.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 009.jpg",
+        description: "Premium Aesthetic wall art. 118 - abstract 009.jpg"
+    },
+    {
+        id: "p119",
+        title: "119 - abstract 010.webp",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 010.webp",
+        description: "Premium Aesthetic wall art. 119 - abstract 010.webp"
+    },
+    {
+        id: "p120",
+        title: "120 - abstract 011.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 011.jpg",
+        description: "Premium Aesthetic wall art. 120 - abstract 011.jpg"
+    },
+    {
+        id: "p121",
+        title: "121 - abstract 012.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 012.jpg",
+        description: "Premium Aesthetic wall art. 121 - abstract 012.jpg"
+    },
+    {
+        id: "p122",
+        title: "122 - abstract 013.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 013.jpg",
+        description: "Premium Aesthetic wall art. 122 - abstract 013.jpg"
+    },
+    {
+        id: "p123",
+        title: "123 - abstract 014.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 014.jpg",
+        description: "Premium Aesthetic wall art. 123 - abstract 014.jpg"
+    },
+    {
+        id: "p124",
+        title: "124 - abstract 015.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 015.jpg",
+        description: "Premium Aesthetic wall art. 124 - abstract 015.jpg"
+    },
+    {
+        id: "p125",
+        title: "125 - abstract 016.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 016.jpg",
+        description: "Premium Aesthetic wall art. 125 - abstract 016.jpg"
+    },
+    {
+        id: "p126",
+        title: "126 - abstract 017.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 017.jpg",
+        description: "Premium Aesthetic wall art. 126 - abstract 017.jpg"
+    },
+    {
+        id: "p127",
+        title: "127 - abstract 018.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 018.jpg",
+        description: "Premium Aesthetic wall art. 127 - abstract 018.jpg"
+    },
+    {
+        id: "p128",
+        title: "128 - abstract 019.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 019.jpg",
+        description: "Premium Aesthetic wall art. 128 - abstract 019.jpg"
+    },
+    {
+        id: "p129",
+        title: "129 - abstract 020.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 020.jpg",
+        description: "Premium Aesthetic wall art. 129 - abstract 020.jpg"
+    },
+    {
+        id: "p130",
+        title: "130 - abstract 021.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 021.jpg",
+        description: "Premium Aesthetic wall art. 130 - abstract 021.jpg"
+    },
+    {
+        id: "p131",
+        title: "131 - abstract 022.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 022.jpg",
+        description: "Premium Aesthetic wall art. 131 - abstract 022.jpg"
+    },
+    {
+        id: "p132",
+        title: "132 - abstract 023.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 023.jpg",
+        description: "Premium Aesthetic wall art. 132 - abstract 023.jpg"
+    },
+    {
+        id: "p133",
+        title: "133 - abstract 024.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 024.jpg",
+        description: "Premium Aesthetic wall art. 133 - abstract 024.jpg"
+    },
+    {
+        id: "p134",
+        title: "134 - abstract 025.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 025.jpg",
+        description: "Premium Aesthetic wall art. 134 - abstract 025.jpg"
+    },
+    {
+        id: "p135",
+        title: "135 - abstract 026.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 026.jpg",
+        description: "Premium Aesthetic wall art. 135 - abstract 026.jpg"
+    },
+    {
+        id: "p136",
+        title: "136 - abstract 027.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 027.jpg",
+        description: "Premium Aesthetic wall art. 136 - abstract 027.jpg"
+    },
+    {
+        id: "p137",
+        title: "137 - abstract 028.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 028.jpg",
+        description: "Premium Aesthetic wall art. 137 - abstract 028.jpg"
+    },
+    {
+        id: "p138",
+        title: "138 - abstract 029.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 029.jpg",
+        description: "Premium Aesthetic wall art. 138 - abstract 029.jpg"
+    },
+    {
+        id: "p139",
+        title: "139 - abstract 030.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 030.jpg",
+        description: "Premium Aesthetic wall art. 139 - abstract 030.jpg"
+    },
+    {
+        id: "p140",
+        title: "140 - abstract 031.png",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 031.png",
+        description: "Premium Aesthetic wall art. 140 - abstract 031.png"
+    },
+    {
+        id: "p141",
+        title: "141 - abstract 032.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 032.jpg",
+        description: "Premium Aesthetic wall art. 141 - abstract 032.jpg"
+    },
+    {
+        id: "p142",
+        title: "142 - abstract 033.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 033.jpg",
+        description: "Premium Aesthetic wall art. 142 - abstract 033.jpg"
+    },
+    {
+        id: "p143",
+        title: "143 - abstract 034.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 034.jpg",
+        description: "Premium Aesthetic wall art. 143 - abstract 034.jpg"
+    },
+    {
+        id: "p144",
+        title: "144 - abstract 035.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 035.jpg",
+        description: "Premium Aesthetic wall art. 144 - abstract 035.jpg"
+    },
+    {
+        id: "p145",
+        title: "145 - abstract 036.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 036.jpg",
+        description: "Premium Aesthetic wall art. 145 - abstract 036.jpg"
+    },
+    {
+        id: "p146",
+        title: "146 - abstract 037.png",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 037.png",
+        description: "Premium Aesthetic wall art. 146 - abstract 037.png"
+    },
+    {
+        id: "p147",
+        title: "147 - abstract 038.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 038.jpg",
+        description: "Premium Aesthetic wall art. 147 - abstract 038.jpg"
+    },
+    {
+        id: "p148",
+        title: "148 - abstract 039.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 039.jpg",
+        description: "Premium Aesthetic wall art. 148 - abstract 039.jpg"
+    },
+    {
+        id: "p149",
+        title: "149 - abstract 040.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 040.jpg",
+        description: "Premium Aesthetic wall art. 149 - abstract 040.jpg"
+    },
+    {
+        id: "p150",
+        title: "150 - abstract 041.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 041.jpg",
+        description: "Premium Aesthetic wall art. 150 - abstract 041.jpg"
+    },
+    {
+        id: "p151",
+        title: "151 - abstract 042.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 042.jpg",
+        description: "Premium Aesthetic wall art. 151 - abstract 042.jpg"
+    },
+    {
+        id: "p152",
+        title: "152 - abstract 043.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 043.jpg",
+        description: "Premium Aesthetic wall art. 152 - abstract 043.jpg"
+    },
+    {
+        id: "p153",
+        title: "153 - abstract 044.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 044.jpg",
+        description: "Premium Aesthetic wall art. 153 - abstract 044.jpg"
+    },
+    {
+        id: "p154",
+        title: "154 - abstract 045.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 045.jpg",
+        description: "Premium Aesthetic wall art. 154 - abstract 045.jpg"
+    },
+    {
+        id: "p155",
+        title: "155 - abstract 046.png",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 046.png",
+        description: "Premium Aesthetic wall art. 155 - abstract 046.png"
+    },
+    {
+        id: "p156",
+        title: "156 - abstract 047.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 047.jpg",
+        description: "Premium Aesthetic wall art. 156 - abstract 047.jpg"
+    },
+    {
+        id: "p157",
+        title: "157 - abstract 048.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 048.jpg",
+        description: "Premium Aesthetic wall art. 157 - abstract 048.jpg"
+    },
+    {
+        id: "p158",
+        title: "158 - abstract 049.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 049.jpg",
+        description: "Premium Aesthetic wall art. 158 - abstract 049.jpg"
+    },
+    {
+        id: "p159",
+        title: "159 - abstract 050.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 050.jpg",
+        description: "Premium Aesthetic wall art. 159 - abstract 050.jpg"
+    },
+    {
+        id: "p160",
+        title: "160 - abstract 051.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 051.jpg",
+        description: "Premium Aesthetic wall art. 160 - abstract 051.jpg"
+    },
+    {
+        id: "p161",
+        title: "161 - abstract 052.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 052.jpg",
+        description: "Premium Aesthetic wall art. 161 - abstract 052.jpg"
+    },
+    {
+        id: "p162",
+        title: "162 - abstract 053.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 053.jpg",
+        description: "Premium Aesthetic wall art. 162 - abstract 053.jpg"
+    },
+    {
+        id: "p163",
+        title: "163 - abstract 054.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 054.jpg",
+        description: "Premium Aesthetic wall art. 163 - abstract 054.jpg"
+    },
+    {
+        id: "p164",
+        title: "164 - abstract 055.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 055.jpg",
+        description: "Premium Aesthetic wall art. 164 - abstract 055.jpg"
+    },
+    {
+        id: "p165",
+        title: "165 - abstract 056.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 056.jpg",
+        description: "Premium Aesthetic wall art. 165 - abstract 056.jpg"
+    },
+    {
+        id: "p166",
+        title: "166 - abstract 057.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 057.jpg",
+        description: "Premium Aesthetic wall art. 166 - abstract 057.jpg"
+    },
+    {
+        id: "p167",
+        title: "167 - abstract 058.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 058.jpg",
+        description: "Premium Aesthetic wall art. 167 - abstract 058.jpg"
+    },
+    {
+        id: "p168",
+        title: "168 - abstract 059.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 059.jpg",
+        description: "Premium Aesthetic wall art. 168 - abstract 059.jpg"
+    },
+    {
+        id: "p169",
+        title: "169 - abstract 060.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 060.jpg",
+        description: "Premium Aesthetic wall art. 169 - abstract 060.jpg"
+    },
+    {
+        id: "p170",
+        title: "170 - abstract 061.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 061.jpg",
+        description: "Premium Aesthetic wall art. 170 - abstract 061.jpg"
+    },
+    {
+        id: "p171",
+        title: "171 - abstract 062.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 062.jpg",
+        description: "Premium Aesthetic wall art. 171 - abstract 062.jpg"
+    },
+    {
+        id: "p172",
+        title: "172 - abstract 063.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 063.jpg",
+        description: "Premium Aesthetic wall art. 172 - abstract 063.jpg"
+    },
+    {
+        id: "p173",
+        title: "173 - abstract 064.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 064.jpg",
+        description: "Premium Aesthetic wall art. 173 - abstract 064.jpg"
+    },
+    {
+        id: "p174",
+        title: "174 - abstract 065.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 065.jpg",
+        description: "Premium Aesthetic wall art. 174 - abstract 065.jpg"
+    },
+    {
+        id: "p175",
+        title: "175 - abstract 066.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 066.jpg",
+        description: "Premium Aesthetic wall art. 175 - abstract 066.jpg"
+    },
+    {
+        id: "p176",
+        title: "176 - abstract 067.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 067.jpg",
+        description: "Premium Aesthetic wall art. 176 - abstract 067.jpg"
+    },
+    {
+        id: "p177",
+        title: "177 - abstract 068.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 068.jpg",
+        description: "Premium Aesthetic wall art. 177 - abstract 068.jpg"
+    },
+    {
+        id: "p178",
+        title: "178 - abstract 069.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 069.jpg",
+        description: "Premium Aesthetic wall art. 178 - abstract 069.jpg"
+    },
+    {
+        id: "p179",
+        title: "179 - abstract 070.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 070.jpg",
+        description: "Premium Aesthetic wall art. 179 - abstract 070.jpg"
+    },
+    {
+        id: "p180",
+        title: "180 - abstract 071.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 071.jpg",
+        description: "Premium Aesthetic wall art. 180 - abstract 071.jpg"
+    },
+    {
+        id: "p181",
+        title: "181 - abstract 072.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 072.jpg",
+        description: "Premium Aesthetic wall art. 181 - abstract 072.jpg"
+    },
+    {
+        id: "p182",
+        title: "182 - abstract 073.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 073.jpg",
+        description: "Premium Aesthetic wall art. 182 - abstract 073.jpg"
+    },
+    {
+        id: "p183",
+        title: "183 - abstract 074.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 074.jpg",
+        description: "Premium Aesthetic wall art. 183 - abstract 074.jpg"
+    },
+    {
+        id: "p184",
+        title: "184 - abstract 075.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 075.jpg",
+        description: "Premium Aesthetic wall art. 184 - abstract 075.jpg"
+    },
+    {
+        id: "p185",
+        title: "185 - abstract 076.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 076.jpg",
+        description: "Premium Aesthetic wall art. 185 - abstract 076.jpg"
+    },
+    {
+        id: "p186",
+        title: "186 - abstract 077.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 077.jpg",
+        description: "Premium Aesthetic wall art. 186 - abstract 077.jpg"
+    },
+    {
+        id: "p187",
+        title: "187 - abstract 078.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 078.jpg",
+        description: "Premium Aesthetic wall art. 187 - abstract 078.jpg"
+    },
+    {
+        id: "p188",
+        title: "188 - abstract 079.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 079.jpg",
+        description: "Premium Aesthetic wall art. 188 - abstract 079.jpg"
+    },
+    {
+        id: "p189",
+        title: "189 - abstract 080.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 080.jpg",
+        description: "Premium Aesthetic wall art. 189 - abstract 080.jpg"
+    },
+    {
+        id: "p190",
+        title: "190 - abstract 081.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 081.jpg",
+        description: "Premium Aesthetic wall art. 190 - abstract 081.jpg"
+    },
+    {
+        id: "p191",
+        title: "191 - abstract 082.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 082.jpg",
+        description: "Premium Aesthetic wall art. 191 - abstract 082.jpg"
+    },
+    {
+        id: "p192",
+        title: "192 - abstract 083.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 083.jpg",
+        description: "Premium Aesthetic wall art. 192 - abstract 083.jpg"
+    },
+    {
+        id: "p193",
+        title: "193 - abstract 084.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 084.jpg",
+        description: "Premium Aesthetic wall art. 193 - abstract 084.jpg"
+    },
+    {
+        id: "p194",
+        title: "194 - abstract 085.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 085.jpg",
+        description: "Premium Aesthetic wall art. 194 - abstract 085.jpg"
+    },
+    {
+        id: "p195",
+        title: "195 - abstract 086.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 086.jpg",
+        description: "Premium Aesthetic wall art. 195 - abstract 086.jpg"
+    },
+    {
+        id: "p196",
+        title: "196 - abstract 087.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 087.jpg",
+        description: "Premium Aesthetic wall art. 196 - abstract 087.jpg"
+    },
+    {
+        id: "p197",
+        title: "197 - abstract 088.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 088.jpg",
+        description: "Premium Aesthetic wall art. 197 - abstract 088.jpg"
+    },
+    {
+        id: "p198",
+        title: "198 - abstract 089.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 089.jpg",
+        description: "Premium Aesthetic wall art. 198 - abstract 089.jpg"
+    },
+    {
+        id: "p199",
+        title: "199 - abstract 090.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 090.jpg",
+        description: "Premium Aesthetic wall art. 199 - abstract 090.jpg"
+    },
+    {
+        id: "p200",
+        title: "200 - abstract 091.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 091.jpg",
+        description: "Premium Aesthetic wall art. 200 - abstract 091.jpg"
+    },
+    {
+        id: "p201",
+        title: "201 - abstract 092.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 092.jpg",
+        description: "Premium Aesthetic wall art. 201 - abstract 092.jpg"
+    },
+    {
+        id: "p202",
+        title: "202 - abstract 093.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 093.jpg",
+        description: "Premium Aesthetic wall art. 202 - abstract 093.jpg"
+    },
+    {
+        id: "p203",
+        title: "203 - abstract 094.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 094.jpg",
+        description: "Premium Aesthetic wall art. 203 - abstract 094.jpg"
+    },
+    {
+        id: "p204",
+        title: "204 - abstract 095.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 095.jpg",
+        description: "Premium Aesthetic wall art. 204 - abstract 095.jpg"
+    },
+    {
+        id: "p205",
+        title: "205 - abstract 096.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 096.jpg",
+        description: "Premium Aesthetic wall art. 205 - abstract 096.jpg"
+    },
+    {
+        id: "p206",
+        title: "206 - abstract 097.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 097.jpg",
+        description: "Premium Aesthetic wall art. 206 - abstract 097.jpg"
+    },
+    {
+        id: "p207",
+        title: "207 - abstract 098.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 098.jpg",
+        description: "Premium Aesthetic wall art. 207 - abstract 098.jpg"
+    },
+    {
+        id: "p208",
+        title: "208 - abstract 099.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 099.jpg",
+        description: "Premium Aesthetic wall art. 208 - abstract 099.jpg"
+    },
+    {
+        id: "p209",
+        title: "209 - abstract 100.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 100.jpg",
+        description: "Premium Aesthetic wall art. 209 - abstract 100.jpg"
+    },
+    {
+        id: "p210",
+        title: "210 - abstract 101.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 101.jpg",
+        description: "Premium Aesthetic wall art. 210 - abstract 101.jpg"
+    },
+    {
+        id: "p211",
+        title: "211 - abstract 102.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 102.jpg",
+        description: "Premium Aesthetic wall art. 211 - abstract 102.jpg"
+    },
+    {
+        id: "p212",
+        title: "212 - abstract 103.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 103.jpg",
+        description: "Premium Aesthetic wall art. 212 - abstract 103.jpg"
+    },
+    {
+        id: "p213",
+        title: "213 - abstract 104.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 104.jpg",
+        description: "Premium Aesthetic wall art. 213 - abstract 104.jpg"
+    },
+    {
+        id: "p214",
+        title: "214 - abstract 105.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 105.jpg",
+        description: "Premium Aesthetic wall art. 214 - abstract 105.jpg"
+    },
+    {
+        id: "p215",
+        title: "215 - abstract 106.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 106.jpg",
+        description: "Premium Aesthetic wall art. 215 - abstract 106.jpg"
+    },
+    {
+        id: "p216",
+        title: "216 - abstract 107.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 107.jpg",
+        description: "Premium Aesthetic wall art. 216 - abstract 107.jpg"
+    },
+    {
+        id: "p217",
+        title: "217 - abstract 108.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 108.jpg",
+        description: "Premium Aesthetic wall art. 217 - abstract 108.jpg"
+    },
+    {
+        id: "p218",
+        title: "218 - abstract 109.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 109.jpg",
+        description: "Premium Aesthetic wall art. 218 - abstract 109.jpg"
+    },
+    {
+        id: "p219",
+        title: "219 - abstract 110.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 110.jpg",
+        description: "Premium Aesthetic wall art. 219 - abstract 110.jpg"
+    },
+    {
+        id: "p220",
+        title: "220 - abstract 111.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 111.jpg",
+        description: "Premium Aesthetic wall art. 220 - abstract 111.jpg"
+    },
+    {
+        id: "p221",
+        title: "221 - abstract 112.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 112.jpg",
+        description: "Premium Aesthetic wall art. 221 - abstract 112.jpg"
+    },
+    {
+        id: "p222",
+        title: "222 - abstract 113.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 113.jpg",
+        description: "Premium Aesthetic wall art. 222 - abstract 113.jpg"
+    },
+    {
+        id: "p223",
+        title: "223 - abstract 114.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 114.jpg",
+        description: "Premium Aesthetic wall art. 223 - abstract 114.jpg"
+    },
+    {
+        id: "p224",
+        title: "224 - abstract 115.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 115.jpg",
+        description: "Premium Aesthetic wall art. 224 - abstract 115.jpg"
+    },
+    {
+        id: "p225",
+        title: "225 - abstract 116.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 116.jpg",
+        description: "Premium Aesthetic wall art. 225 - abstract 116.jpg"
+    },
+    {
+        id: "p226",
+        title: "226 - abstract 117.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 117.jpg",
+        description: "Premium Aesthetic wall art. 226 - abstract 117.jpg"
+    },
+    {
+        id: "p227",
+        title: "227 - abstract 118.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 118.jpg",
+        description: "Premium Aesthetic wall art. 227 - abstract 118.jpg"
+    },
+    {
+        id: "p228",
+        title: "228 - abstract 119.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 119.jpg",
+        description: "Premium Aesthetic wall art. 228 - abstract 119.jpg"
+    },
+    {
+        id: "p229",
+        title: "229 - abstract 120.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 120.jpg",
+        description: "Premium Aesthetic wall art. 229 - abstract 120.jpg"
+    },
+    {
+        id: "p230",
+        title: "230 - abstract 121.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 121.jpg",
+        description: "Premium Aesthetic wall art. 230 - abstract 121.jpg"
+    },
+    {
+        id: "p231",
+        title: "231 - abstract 122.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 122.jpg",
+        description: "Premium Aesthetic wall art. 231 - abstract 122.jpg"
+    },
+    {
+        id: "p232",
+        title: "232 - abstract 123.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 123.jpg",
+        description: "Premium Aesthetic wall art. 232 - abstract 123.jpg"
+    },
+    {
+        id: "p233",
+        title: "233 - abstract 124.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 124.jpg",
+        description: "Premium Aesthetic wall art. 233 - abstract 124.jpg"
+    },
+    {
+        id: "p234",
+        title: "234 - abstract 125.jpg",
+        category: "Aesthetic",
+        basePrice: 33.00,
+        image: "assets/aesthe/abstract 125.jpg",
+        description: "Premium Aesthetic wall art. 234 - abstract 125.jpg"
+    },
+    {
+        id: "p235",
+        title: "235 - anime 001.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 001.jpg",
+        description: "Premium Anime wall art. 235 - anime 001.jpg"
+    },
+    {
+        id: "p236",
+        title: "236 - anime 002.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 002.jpg",
+        description: "Premium Anime wall art. 236 - anime 002.jpg"
+    },
+    {
+        id: "p237",
+        title: "237 - anime 003.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 003.jpg",
+        description: "Premium Anime wall art. 237 - anime 003.jpg"
+    },
+    {
+        id: "p238",
+        title: "238 - anime 004.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 004.jpg",
+        description: "Premium Anime wall art. 238 - anime 004.jpg"
+    },
+    {
+        id: "p239",
+        title: "239 - anime 005.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 005.jpg",
+        description: "Premium Anime wall art. 239 - anime 005.jpg"
+    },
+    {
+        id: "p240",
+        title: "240 - anime 006.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 006.jpg",
+        description: "Premium Anime wall art. 240 - anime 006.jpg"
+    },
+    {
+        id: "p241",
+        title: "241 - anime 007.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 007.jpg",
+        description: "Premium Anime wall art. 241 - anime 007.jpg"
+    },
+    {
+        id: "p242",
+        title: "242 - anime 008.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 008.jpg",
+        description: "Premium Anime wall art. 242 - anime 008.jpg"
+    },
+    {
+        id: "p243",
+        title: "243 - anime 009.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 009.jpg",
+        description: "Premium Anime wall art. 243 - anime 009.jpg"
+    },
+    {
+        id: "p244",
+        title: "244 - anime 010.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 010.jpg",
+        description: "Premium Anime wall art. 244 - anime 010.jpg"
+    },
+    {
+        id: "p245",
+        title: "245 - anime 011.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 011.jpg",
+        description: "Premium Anime wall art. 245 - anime 011.jpg"
+    },
+    {
+        id: "p246",
+        title: "246 - anime 012.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 012.jpg",
+        description: "Premium Anime wall art. 246 - anime 012.jpg"
+    },
+    {
+        id: "p247",
+        title: "247 - anime 013.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 013.jpg",
+        description: "Premium Anime wall art. 247 - anime 013.jpg"
+    },
+    {
+        id: "p248",
+        title: "248 - anime 014.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 014.jpg",
+        description: "Premium Anime wall art. 248 - anime 014.jpg"
+    },
+    {
+        id: "p249",
+        title: "249 - anime 015.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 015.jpg",
+        description: "Premium Anime wall art. 249 - anime 015.jpg"
+    },
+    {
+        id: "p250",
+        title: "250 - anime 016.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 016.jpg",
+        description: "Premium Anime wall art. 250 - anime 016.jpg"
+    },
+    {
+        id: "p251",
+        title: "251 - anime 017.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 017.jpg",
+        description: "Premium Anime wall art. 251 - anime 017.jpg"
+    },
+    {
+        id: "p252",
+        title: "252 - anime 018.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 018.jpg",
+        description: "Premium Anime wall art. 252 - anime 018.jpg"
+    },
+    {
+        id: "p253",
+        title: "253 - anime 019.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 019.jpg",
+        description: "Premium Anime wall art. 253 - anime 019.jpg"
+    },
+    {
+        id: "p254",
+        title: "254 - anime 020.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 020.jpg",
+        description: "Premium Anime wall art. 254 - anime 020.jpg"
+    },
+    {
+        id: "p255",
+        title: "255 - anime 021.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 021.jpg",
+        description: "Premium Anime wall art. 255 - anime 021.jpg"
+    },
+    {
+        id: "p256",
+        title: "256 - anime 022.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 022.jpg",
+        description: "Premium Anime wall art. 256 - anime 022.jpg"
+    },
+    {
+        id: "p257",
+        title: "257 - anime 023.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 023.jpg",
+        description: "Premium Anime wall art. 257 - anime 023.jpg"
+    },
+    {
+        id: "p258",
+        title: "258 - anime 024.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 024.jpg",
+        description: "Premium Anime wall art. 258 - anime 024.jpg"
+    },
+    {
+        id: "p259",
+        title: "259 - anime 025.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 025.jpg",
+        description: "Premium Anime wall art. 259 - anime 025.jpg"
+    },
+    {
+        id: "p260",
+        title: "260 - anime 026.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 026.jpg",
+        description: "Premium Anime wall art. 260 - anime 026.jpg"
+    },
+    {
+        id: "p261",
+        title: "261 - anime 027.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 027.jpg",
+        description: "Premium Anime wall art. 261 - anime 027.jpg"
+    },
+    {
+        id: "p262",
+        title: "262 - anime 028.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 028.jpg",
+        description: "Premium Anime wall art. 262 - anime 028.jpg"
+    },
+    {
+        id: "p263",
+        title: "263 - anime 029.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 029.jpg",
+        description: "Premium Anime wall art. 263 - anime 029.jpg"
+    },
+    {
+        id: "p264",
+        title: "264 - anime 030.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 030.jpg",
+        description: "Premium Anime wall art. 264 - anime 030.jpg"
+    },
+    {
+        id: "p265",
+        title: "265 - anime 031.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 031.jpg",
+        description: "Premium Anime wall art. 265 - anime 031.jpg"
+    },
+    {
+        id: "p266",
+        title: "266 - anime 032.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 032.jpg",
+        description: "Premium Anime wall art. 266 - anime 032.jpg"
+    },
+    {
+        id: "p267",
+        title: "267 - anime 033.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 033.jpg",
+        description: "Premium Anime wall art. 267 - anime 033.jpg"
+    },
+    {
+        id: "p268",
+        title: "268 - anime 034.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 034.jpg",
+        description: "Premium Anime wall art. 268 - anime 034.jpg"
+    },
+    {
+        id: "p269",
+        title: "269 - anime 035.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 035.jpg",
+        description: "Premium Anime wall art. 269 - anime 035.jpg"
+    },
+    {
+        id: "p270",
+        title: "270 - anime 036.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 036.jpg",
+        description: "Premium Anime wall art. 270 - anime 036.jpg"
+    },
+    {
+        id: "p271",
+        title: "271 - anime 037.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 037.jpg",
+        description: "Premium Anime wall art. 271 - anime 037.jpg"
+    },
+    {
+        id: "p272",
+        title: "272 - anime 038.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 038.jpg",
+        description: "Premium Anime wall art. 272 - anime 038.jpg"
+    },
+    {
+        id: "p273",
+        title: "273 - anime 039.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 039.jpg",
+        description: "Premium Anime wall art. 273 - anime 039.jpg"
+    },
+    {
+        id: "p274",
+        title: "274 - anime 040.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 040.jpg",
+        description: "Premium Anime wall art. 274 - anime 040.jpg"
+    },
+    {
+        id: "p275",
+        title: "275 - anime 041.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 041.jpg",
+        description: "Premium Anime wall art. 275 - anime 041.jpg"
+    },
+    {
+        id: "p276",
+        title: "276 - anime 042.jpg",
+        category: "Anime",
+        basePrice: 33.00,
+        image: "assets/anime/anime 042.jpg",
+        description: "Premium Anime wall art. 276 - anime 042.jpg"
+    },
+    {
+        id: "p277",
+        title: "277 - football 001.png",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 001.png",
+        description: "Premium Football wall art. 277 - football 001.png"
+    },
+    {
+        id: "p278",
+        title: "278 - football 002.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 002.jpg",
+        description: "Premium Football wall art. 278 - football 002.jpg"
+    },
+    {
+        id: "p279",
+        title: "279 - football 003.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 003.jpg",
+        description: "Premium Football wall art. 279 - football 003.jpg"
+    },
+    {
+        id: "p280",
+        title: "280 - football 004.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 004.jpg",
+        description: "Premium Football wall art. 280 - football 004.jpg"
+    },
+    {
+        id: "p281",
+        title: "281 - football 005.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 005.jpg",
+        description: "Premium Football wall art. 281 - football 005.jpg"
+    },
+    {
+        id: "p282",
+        title: "282 - football 006.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 006.jpg",
+        description: "Premium Football wall art. 282 - football 006.jpg"
+    },
+    {
+        id: "p283",
+        title: "283 - football 007.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 007.jpg",
+        description: "Premium Football wall art. 283 - football 007.jpg"
+    },
+    {
+        id: "p284",
+        title: "284 - football 008.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 008.jpg",
+        description: "Premium Football wall art. 284 - football 008.jpg"
+    },
+    {
+        id: "p285",
+        title: "285 - football 009.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 009.jpg",
+        description: "Premium Football wall art. 285 - football 009.jpg"
+    },
+    {
+        id: "p286",
+        title: "286 - football 010.png",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 010.png",
+        description: "Premium Football wall art. 286 - football 010.png"
+    },
+    {
+        id: "p287",
+        title: "287 - football 011.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 011.jpg",
+        description: "Premium Football wall art. 287 - football 011.jpg"
+    },
+    {
+        id: "p288",
+        title: "288 - football 012.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 012.jpg",
+        description: "Premium Football wall art. 288 - football 012.jpg"
+    },
+    {
+        id: "p289",
+        title: "289 - football 013.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 013.jpg",
+        description: "Premium Football wall art. 289 - football 013.jpg"
+    },
+    {
+        id: "p290",
+        title: "290 - football 014.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 014.jpg",
+        description: "Premium Football wall art. 290 - football 014.jpg"
+    },
+    {
+        id: "p291",
+        title: "291 - football 015.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 015.jpg",
+        description: "Premium Football wall art. 291 - football 015.jpg"
+    },
+    {
+        id: "p292",
+        title: "292 - football 016.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 016.jpg",
+        description: "Premium Football wall art. 292 - football 016.jpg"
+    },
+    {
+        id: "p293",
+        title: "293 - football 017.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 017.jpg",
+        description: "Premium Football wall art. 293 - football 017.jpg"
+    },
+    {
+        id: "p294",
+        title: "294 - football 018.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 018.jpg",
+        description: "Premium Football wall art. 294 - football 018.jpg"
+    },
+    {
+        id: "p295",
+        title: "295 - football 019.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 019.jpg",
+        description: "Premium Football wall art. 295 - football 019.jpg"
+    },
+    {
+        id: "p296",
+        title: "296 - football 020.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 020.jpg",
+        description: "Premium Football wall art. 296 - football 020.jpg"
+    },
+    {
+        id: "p297",
+        title: "297 - football 021.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 021.jpg",
+        description: "Premium Football wall art. 297 - football 021.jpg"
+    },
+    {
+        id: "p298",
+        title: "298 - football 022.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 022.jpg",
+        description: "Premium Football wall art. 298 - football 022.jpg"
+    },
+    {
+        id: "p299",
+        title: "299 - football 023.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 023.jpg",
+        description: "Premium Football wall art. 299 - football 023.jpg"
+    },
+    {
+        id: "p300",
+        title: "300 - football 024.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 024.jpg",
+        description: "Premium Football wall art. 300 - football 024.jpg"
+    },
+    {
+        id: "p301",
+        title: "301 - football 025.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 025.jpg",
+        description: "Premium Football wall art. 301 - football 025.jpg"
+    },
+    {
+        id: "p302",
+        title: "302 - football 026.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 026.jpg",
+        description: "Premium Football wall art. 302 - football 026.jpg"
+    },
+    {
+        id: "p303",
+        title: "303 - football 027.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 027.jpg",
+        description: "Premium Football wall art. 303 - football 027.jpg"
+    },
+    {
+        id: "p304",
+        title: "304 - football 028.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 028.jpg",
+        description: "Premium Football wall art. 304 - football 028.jpg"
+    },
+    {
+        id: "p305",
+        title: "305 - football 029.jpg",
+        category: "Football",
+        basePrice: 33.00,
+        image: "assets/football/football 029.jpg",
+        description: "Premium Football wall art. 305 - football 029.jpg"
+    },
+    {
+        id: "p306",
+        title: "306 - classic cars 001.jpg",
         category: "Classic Cars",
         basePrice: 33.00,
-        image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80&w=800",
-        description: "The iconic 300SL Gullwing. Mercedes-Benz's most celebrated classic on your wall."
+        image: "assets/classic-cars/classic cars 001.jpg",
+        description: "Premium Classic Cars wall art. 306 - classic cars 001.jpg"
+    },
+    {
+        id: "p307",
+        title: "307 - classic cars 002.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 002.jpg",
+        description: "Premium Classic Cars wall art. 307 - classic cars 002.jpg"
+    },
+    {
+        id: "p308",
+        title: "308 - classic cars 003.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 003.jpg",
+        description: "Premium Classic Cars wall art. 308 - classic cars 003.jpg"
+    },
+    {
+        id: "p309",
+        title: "309 - classic cars 004.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 004.jpg",
+        description: "Premium Classic Cars wall art. 309 - classic cars 004.jpg"
+    },
+    {
+        id: "p310",
+        title: "310 - classic cars 005.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 005.jpg",
+        description: "Premium Classic Cars wall art. 310 - classic cars 005.jpg"
+    },
+    {
+        id: "p311",
+        title: "311 - classic cars 006.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 006.jpg",
+        description: "Premium Classic Cars wall art. 311 - classic cars 006.jpg"
+    },
+    {
+        id: "p312",
+        title: "312 - classic cars 007.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 007.jpg",
+        description: "Premium Classic Cars wall art. 312 - classic cars 007.jpg"
+    },
+    {
+        id: "p313",
+        title: "313 - classic cars 008.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 008.jpg",
+        description: "Premium Classic Cars wall art. 313 - classic cars 008.jpg"
+    },
+    {
+        id: "p314",
+        title: "314 - classic cars 009.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 009.jpg",
+        description: "Premium Classic Cars wall art. 314 - classic cars 009.jpg"
+    },
+    {
+        id: "p315",
+        title: "315 - classic cars 010.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 010.jpg",
+        description: "Premium Classic Cars wall art. 315 - classic cars 010.jpg"
+    },
+    {
+        id: "p316",
+        title: "316 - classic cars 011.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 011.jpg",
+        description: "Premium Classic Cars wall art. 316 - classic cars 011.jpg"
+    },
+    {
+        id: "p317",
+        title: "317 - classic cars 012.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 012.jpg",
+        description: "Premium Classic Cars wall art. 317 - classic cars 012.jpg"
+    },
+    {
+        id: "p318",
+        title: "318 - classic cars 013.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 013.jpg",
+        description: "Premium Classic Cars wall art. 318 - classic cars 013.jpg"
+    },
+    {
+        id: "p319",
+        title: "319 - classic cars 014.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 014.jpg",
+        description: "Premium Classic Cars wall art. 319 - classic cars 014.jpg"
+    },
+    {
+        id: "p320",
+        title: "320 - classic cars 015.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 015.jpg",
+        description: "Premium Classic Cars wall art. 320 - classic cars 015.jpg"
+    },
+    {
+        id: "p321",
+        title: "321 - classic cars 016.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 016.jpg",
+        description: "Premium Classic Cars wall art. 321 - classic cars 016.jpg"
+    },
+    {
+        id: "p322",
+        title: "322 - classic cars 017.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 017.jpg",
+        description: "Premium Classic Cars wall art. 322 - classic cars 017.jpg"
+    },
+    {
+        id: "p323",
+        title: "323 - classic cars 018.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 018.jpg",
+        description: "Premium Classic Cars wall art. 323 - classic cars 018.jpg"
+    },
+    {
+        id: "p324",
+        title: "324 - classic cars 019.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 019.jpg",
+        description: "Premium Classic Cars wall art. 324 - classic cars 019.jpg"
+    },
+    {
+        id: "p325",
+        title: "325 - classic cars 020.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 020.jpg",
+        description: "Premium Classic Cars wall art. 325 - classic cars 020.jpg"
+    },
+    {
+        id: "p326",
+        title: "326 - classic cars 021.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 021.jpg",
+        description: "Premium Classic Cars wall art. 326 - classic cars 021.jpg"
+    },
+    {
+        id: "p327",
+        title: "327 - classic cars 022.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 022.jpg",
+        description: "Premium Classic Cars wall art. 327 - classic cars 022.jpg"
+    },
+    {
+        id: "p328",
+        title: "328 - classic cars 023.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 023.jpg",
+        description: "Premium Classic Cars wall art. 328 - classic cars 023.jpg"
+    },
+    {
+        id: "p329",
+        title: "329 - classic cars 024.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 024.jpg",
+        description: "Premium Classic Cars wall art. 329 - classic cars 024.jpg"
+    },
+    {
+        id: "p330",
+        title: "330 - classic cars 025.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 025.jpg",
+        description: "Premium Classic Cars wall art. 330 - classic cars 025.jpg"
+    },
+    {
+        id: "p331",
+        title: "331 - classic cars 026.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 026.jpg",
+        description: "Premium Classic Cars wall art. 331 - classic cars 026.jpg"
+    },
+    {
+        id: "p332",
+        title: "332 - classic cars 027.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 027.jpg",
+        description: "Premium Classic Cars wall art. 332 - classic cars 027.jpg"
+    },
+    {
+        id: "p333",
+        title: "333 - classic cars 028.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 028.jpg",
+        description: "Premium Classic Cars wall art. 333 - classic cars 028.jpg"
+    },
+    {
+        id: "p334",
+        title: "334 - classic cars 029.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 029.jpg",
+        description: "Premium Classic Cars wall art. 334 - classic cars 029.jpg"
+    },
+    {
+        id: "p335",
+        title: "335 - classic cars 030.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 030.jpg",
+        description: "Premium Classic Cars wall art. 335 - classic cars 030.jpg"
+    },
+    {
+        id: "p336",
+        title: "336 - classic cars 031.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 031.jpg",
+        description: "Premium Classic Cars wall art. 336 - classic cars 031.jpg"
+    },
+    {
+        id: "p337",
+        title: "337 - classic cars 032.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 032.jpg",
+        description: "Premium Classic Cars wall art. 337 - classic cars 032.jpg"
+    },
+    {
+        id: "p338",
+        title: "338 - classic cars 033.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 033.jpg",
+        description: "Premium Classic Cars wall art. 338 - classic cars 033.jpg"
+    },
+    {
+        id: "p339",
+        title: "339 - classic cars 034.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 034.jpg",
+        description: "Premium Classic Cars wall art. 339 - classic cars 034.jpg"
+    },
+    {
+        id: "p340",
+        title: "340 - classic cars 035.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 035.jpg",
+        description: "Premium Classic Cars wall art. 340 - classic cars 035.jpg"
+    },
+    {
+        id: "p341",
+        title: "341 - classic cars 036.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 036.jpg",
+        description: "Premium Classic Cars wall art. 341 - classic cars 036.jpg"
+    },
+    {
+        id: "p342",
+        title: "342 - classic cars 037.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 037.jpg",
+        description: "Premium Classic Cars wall art. 342 - classic cars 037.jpg"
+    },
+    {
+        id: "p343",
+        title: "343 - classic cars 038.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 038.jpg",
+        description: "Premium Classic Cars wall art. 343 - classic cars 038.jpg"
+    },
+    {
+        id: "p344",
+        title: "344 - classic cars 039.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 039.jpg",
+        description: "Premium Classic Cars wall art. 344 - classic cars 039.jpg"
+    },
+    {
+        id: "p345",
+        title: "345 - classic cars 040.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 040.jpg",
+        description: "Premium Classic Cars wall art. 345 - classic cars 040.jpg"
+    },
+    {
+        id: "p346",
+        title: "346 - classic cars 041.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 041.jpg",
+        description: "Premium Classic Cars wall art. 346 - classic cars 041.jpg"
+    },
+    {
+        id: "p347",
+        title: "347 - classic cars 042.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 042.jpg",
+        description: "Premium Classic Cars wall art. 347 - classic cars 042.jpg"
+    },
+    {
+        id: "p348",
+        title: "348 - classic cars 043.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 043.jpg",
+        description: "Premium Classic Cars wall art. 348 - classic cars 043.jpg"
+    },
+    {
+        id: "p349",
+        title: "349 - classic cars 044.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 044.jpg",
+        description: "Premium Classic Cars wall art. 349 - classic cars 044.jpg"
+    },
+    {
+        id: "p350",
+        title: "350 - classic cars 045.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 045.jpg",
+        description: "Premium Classic Cars wall art. 350 - classic cars 045.jpg"
+    },
+    {
+        id: "p351",
+        title: "351 - classic cars 046.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 046.jpg",
+        description: "Premium Classic Cars wall art. 351 - classic cars 046.jpg"
+    },
+    {
+        id: "p352",
+        title: "352 - classic cars 047.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 047.jpg",
+        description: "Premium Classic Cars wall art. 352 - classic cars 047.jpg"
+    },
+    {
+        id: "p353",
+        title: "353 - classic cars 048.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 048.jpg",
+        description: "Premium Classic Cars wall art. 353 - classic cars 048.jpg"
+    },
+    {
+        id: "p354",
+        title: "354 - classic cars 049.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 049.jpg",
+        description: "Premium Classic Cars wall art. 354 - classic cars 049.jpg"
+    },
+    {
+        id: "p355",
+        title: "355 - classic cars 050.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 050.jpg",
+        description: "Premium Classic Cars wall art. 355 - classic cars 050.jpg"
+    },
+    {
+        id: "p356",
+        title: "356 - classic cars 051.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 051.jpg",
+        description: "Premium Classic Cars wall art. 356 - classic cars 051.jpg"
+    },
+    {
+        id: "p357",
+        title: "357 - classic cars 052.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 052.jpg",
+        description: "Premium Classic Cars wall art. 357 - classic cars 052.jpg"
+    },
+    {
+        id: "p358",
+        title: "358 - classic cars 053.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 053.jpg",
+        description: "Premium Classic Cars wall art. 358 - classic cars 053.jpg"
+    },
+    {
+        id: "p359",
+        title: "359 - classic cars 054.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 054.jpg",
+        description: "Premium Classic Cars wall art. 359 - classic cars 054.jpg"
+    },
+    {
+        id: "p360",
+        title: "360 - classic cars 055.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 055.jpg",
+        description: "Premium Classic Cars wall art. 360 - classic cars 055.jpg"
+    },
+    {
+        id: "p361",
+        title: "361 - classic cars 056.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 056.jpg",
+        description: "Premium Classic Cars wall art. 361 - classic cars 056.jpg"
+    },
+    {
+        id: "p362",
+        title: "362 - classic cars 057.jpg",
+        category: "Classic Cars",
+        basePrice: 33.00,
+        image: "assets/classic-cars/classic cars 057.jpg",
+        description: "Premium Classic Cars wall art. 362 - classic cars 057.jpg"
     }
 ];

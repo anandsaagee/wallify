@@ -735,6 +735,92 @@ ul, ol { list-style: none; }
 /* ============================================================
    VERY SMALL SCREENS (≤400px)
    ============================================================ */
+@media (max-width: 767px) {
+    .footer-col h3 { font-size: 1.1rem; }
+    .footer-col a { font-size: 0.9rem; }
+}
+
+/* ================== PRODUCT MODAL ================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-overlay.show {
+    opacity: 1;
+}
+.modal-content {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+.modal-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: rgba(255,255,255,0.1);
+    color: white; border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.2s;
+}
+.modal-close:hover { background: #ff4d4d; }
+.modal-body {
+    display: flex;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+.modal-img-col {
+    flex: 1;
+    background: #000;
+}
+.modal-img-col img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    aspect-ratio: 3/4;
+}
+.modal-info-col {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal-category { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;}
+.modal-title { font-size: 2rem; color: #FFF; margin: 10px 0 20px; font-family: 'Outfit', sans-serif;}
+.modal-price { font-size: 1.8rem; color: #FFF; margin-bottom: 30px;}
+.modal-actions { display: flex; gap: 15px; flex-direction: column; }
+.modal-actions button { padding: 16px; font-size: 1.1rem; border-radius: 30px; font-weight: 600; cursor: pointer; transition: 0.3s;}
+.modal-actions .btn-outline { background: transparent; border: 2px solid var(--border-color); color: #FFF; }
+.modal-actions .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #FFF; }
+@media (max-width: 768px) {
+    .modal-body { flex-direction: column; }
+    .modal-info-col { padding: 20px; }
+    .modal-img-col img { max-height: 40vh; }
+}
 @media (max-width: 400px) {
   .logo { font-size: 1.15rem; letter-spacing: 1px; }
   .section-title { font-size: 1.6rem; }

@@ -352,25 +352,21 @@
                         <i class="fas fa-film" style="width:16px;opacity:0.7"></i> Mollywood
                         <span class="cat-count" id="count-Mollywood">—</span>
                     </div>
-                    <div class="filter-item" data-cat="Football">
-                        <i class="fas fa-futbol" style="width:16px;opacity:0.7"></i> Football
-                        <span class="cat-count" id="count-Football">—</span>
+                    <div class="filter-item" data-cat="Aesthetic">
+                        <i class="fas fa-palette" style="width:16px;opacity:0.7"></i> Aesthetic
+                        <span class="cat-count" id="count-Aesthetic">—</span>
                     </div>
                     <div class="filter-item" data-cat="Anime">
                         <i class="fas fa-star" style="width:16px;opacity:0.7"></i> Anime
                         <span class="cat-count" id="count-Anime">—</span>
                     </div>
-                    <div class="filter-item" data-cat="Aesthetic">
-                        <i class="fas fa-palette" style="width:16px;opacity:0.7"></i> Aesthetic
-                        <span class="cat-count" id="count-Aesthetic">—</span>
+                    <div class="filter-item" data-cat="Football">
+                        <i class="fas fa-futbol" style="width:16px;opacity:0.7"></i> Football
+                        <span class="cat-count" id="count-Football">—</span>
                     </div>
                     <div class="filter-item" data-cat="Classic Cars">
                         <i class="fas fa-car" style="width:16px;opacity:0.7"></i> Classic Cars
                         <span class="cat-count" id="count-Classic Cars">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="Automotive">
-                        <i class="fas fa-gauge-high" style="width:16px;opacity:0.7"></i> Automotive
-                        <span class="cat-count" id="count-Automotive">—</span>
                     </div>
                 </div>
             </div>
@@ -396,20 +392,17 @@
                     <button class="filter-tab" data-cat="Mollywood" id="tab-Mollywood">
                         <i class="fas fa-film"></i> Mollywood
                     </button>
-                    <button class="filter-tab" data-cat="Football" id="tab-Football">
-                        <i class="fas fa-futbol"></i> Football
+                    <button class="filter-tab" data-cat="Aesthetic" id="tab-Aesthetic">
+                        <i class="fas fa-palette"></i> Aesthetic
                     </button>
                     <button class="filter-tab" data-cat="Anime" id="tab-Anime">
                         <i class="fas fa-star"></i> Anime
                     </button>
-                    <button class="filter-tab" data-cat="Aesthetic" id="tab-Aesthetic">
-                        <i class="fas fa-palette"></i> Aesthetic
+                    <button class="filter-tab" data-cat="Football" id="tab-Football">
+                        <i class="fas fa-futbol"></i> Football
                     </button>
                     <button class="filter-tab" data-cat="Classic Cars" id="tab-Classic-Cars">
                         <i class="fas fa-car"></i> Classic Cars
-                    </button>
-                    <button class="filter-tab" data-cat="Automotive" id="tab-Automotive">
-                        <i class="fas fa-gauge-high"></i> Automotive
                     </button>
                 </div>
             </div>
@@ -462,6 +455,28 @@
         </div>
     </footer>
 
+    <!-- PRODUCT MODAL -->
+    <div id="productModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProductModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="modal-img-col">
+                    <img id="modalImage" src="" alt="Product Image" draggable="false" style="pointer-events:none;">
+                </div>
+                <div class="modal-info-col">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <h3 class="modal-price" id="modalPrice">₹33.00</h3>
+                    
+                    <div class="modal-actions">
+                        <button class="btn-primary" onclick="buyNowFromModal()">Order Now</button>
+                        <button class="btn-outline" onclick="addToCartFromModal()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- SCRIPTS -->
     <script src="data.js"></script>
     <script src="script.js"></script>
@@ -489,22 +504,6 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const shopGrid           = document.getElementById('shopGrid');
-            const sidebarFilters     = document.querySelectorAll('#categoryFilters .filter-item');
-            const tabFilters         = document.querySelectorAll('#filterTabs .filter-tab');
-            const searchInput        = document.getElementById('searchInput');
-            const sortSelect         = document.getElementById('sortSelect');
-            const resultsCount       = document.getElementById('resultsCount');
-            const paginationContainer= document.getElementById('paginationContainer');
-
-            let currentCategory = 'All';
-            let searchQuery     = '';
-            let currentSort     = 'default';
-            let currentPage     = 1;
-            const itemsPerPage  = 15;
-
-            const CATEGORIES    = ['All','Mollywood','Football','Anime','Aesthetic','Classic Cars','Automotive'];
-
             // ── Inject grid animation keyframe once ────────────────
             if (!document.getElementById('gridAnim')) {
                 const s = document.createElement('style');
@@ -513,132 +512,23 @@
                 document.head.appendChild(s);
             }
 
-            // ── Count products per category ─────────────────────────
-            function buildCounts() {
-                const counts = {};
-                CATEGORIES.forEach(c => counts[c] = 0);
-                products.forEach(p => {
-                    if (counts[p.category] !== undefined) counts[p.category]++;
+            // Initialize the dynamic category grid system
+            if (typeof products !== 'undefined' && typeof initializeCategorySystem === 'function') {
+                initializeCategorySystem({
+                    allProducts: products,
+                    gridContainerId: 'shopGrid',
+                    paginationContainerId: 'paginationContainer',
+                    resultsCountId: 'resultsCount',
+                    sidebarFilterSelector: '#categoryFilters .filter-item',
+                    tabFilterSelector: '#filterTabs .filter-tab',
+                    searchInputId: 'searchInput',
+                    sortSelectId: 'sortSelect',
+                    itemsPerPage: 15
                 });
-                counts['All'] = products.length;
-                CATEGORIES.forEach(cat => {
-                    const el = document.getElementById(`count-${cat}`);
-                    if (el) el.textContent = counts[cat] || 0;
-                });
-            }
-            buildCounts();
-
-            // ── Sync both filter surfaces to a category ─────────────
-            function setActiveCategory(cat) {
-                currentCategory = cat;
-                currentPage = 1;
-
-                sidebarFilters.forEach(f => f.classList.toggle('active', f.dataset.cat === cat));
-                tabFilters.forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
-
-                // Smooth scroll active tab into view
-                const activeTab = document.querySelector(`#filterTabs [data-cat="${cat}"]`);
-                if (activeTab) activeTab.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-
-                renderProducts();
-            }
-
-            // ── Check URL for initial category ─────────────────────
-            const urlParams   = new URLSearchParams(window.location.search);
-            const urlCategory = urlParams.get('category');
-            if (urlCategory && CATEGORIES.includes(urlCategory)) {
-                setActiveCategory(urlCategory);
             } else {
-                renderProducts();
+                console.error("[Wallify] Failed to load products data or UI components!");
+                document.getElementById('shopGrid').innerHTML = '<h3 style="color:red;">Error loading items. Please check if data.js exists properly.</h3>';
             }
-
-            // ── Render ──────────────────────────────────────────────
-            function renderProducts() {
-                let filtered = products.filter(p => {
-                    const matchCat    = currentCategory === 'All' || p.category === currentCategory;
-                    const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
-                    return matchCat && matchSearch;
-                });
-
-                if (currentSort === 'low')  filtered.sort((a,b) => a.basePrice - b.basePrice);
-                if (currentSort === 'high') filtered.sort((a,b) => b.basePrice - a.basePrice);
-
-                resultsCount.textContent = `Showing ${filtered.length} poster${filtered.length !== 1 ? 's' : ''}`;
-
-                if (filtered.length === 0) {
-                    shopGrid.innerHTML = `
-                        <div class="empty-state">
-                            <i class="fas fa-search" style="font-size:3rem;margin-bottom:16px;color:var(--border-color)"></i>
-                            <h3>No artworks found</h3>
-                            <p>Try a different category or search term.</p>
-                        </div>`;
-                    paginationContainer.innerHTML = '';
-                    return;
-                }
-
-                // Pagination
-                const totalPages    = Math.ceil(filtered.length / itemsPerPage);
-                if (currentPage > totalPages) currentPage = 1;
-                const start         = (currentPage - 1) * itemsPerPage;
-                const pageItems     = filtered.slice(start, start + itemsPerPage);
-
-                shopGrid.innerHTML = pageItems.map((p, i) => `
-                    <div class="product-card" style="animation:revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;opacity:0;animation-delay:${i * 0.04}s" oncontextmenu="return false;" ondragstart="return false;">
-                        <a href="product.html?id=${p.id}" class="card-img-wrapper" style="display:block;">
-                            <!-- Prevent interaction on the image to deter saving -->
-                            <img src="${p.image}" loading="lazy" alt="${p.title}" draggable="false" style="pointer-events:none;">
-                        </a>
-                        <div class="card-content">
-                            <span class="card-category">${p.category}</span>
-                            <h3 class="card-title">${p.title}</h3>
-                            <div class="card-footer">
-                                <span class="card-price">Starts at ₹33</span>
-                                <a href="product.html?id=${p.id}" class="btn-primary" style="padding:9px 18px;font-size:0.85rem;">View <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Pagination buttons
-                if (totalPages > 1) {
-                    let btns = '';
-                    if (currentPage > 1)       btns += `<button class="page-btn" onclick="goToPage(${currentPage-1})"><i class="fas fa-chevron-left"></i></button>`;
-                    for (let i=1; i<=totalPages; i++) {
-                        btns += `<button class="page-btn${i===currentPage?' active':''}" onclick="goToPage(${i})">${i}</button>`;
-                    }
-                    if (currentPage < totalPages) btns += `<button class="page-btn" onclick="goToPage(${currentPage+1})"><i class="fas fa-chevron-right"></i></button>`;
-                    paginationContainer.innerHTML = btns;
-                } else {
-                    paginationContainer.innerHTML = '';
-                }
-            }
-
-            window.goToPage = function(page) {
-                currentPage = page;
-                renderProducts();
-                window.scrollTo({ top: 250, behavior:'smooth' });
-            };
-
-            // ── Events ──────────────────────────────────────────────
-            sidebarFilters.forEach(f =>
-                f.addEventListener('click', () => setActiveCategory(f.dataset.cat))
-            );
-
-            tabFilters.forEach(t =>
-                t.addEventListener('click', () => setActiveCategory(t.dataset.cat))
-            );
-
-            searchInput.addEventListener('input', e => {
-                searchQuery = e.target.value;
-                currentPage = 1;
-                renderProducts();
-            });
-
-            sortSelect.addEventListener('change', e => {
-                currentSort = e.target.value;
-                currentPage = 1;
-                renderProducts();
-            });
         });
     </script>
 </body>

@@ -26,9 +26,9 @@ function updateCartCount() {
     });
 }
 
-function addToCart(product, size, frame, finalPrice, quantity = 1) {
+function addToCart(product, quantity = 1) {
     const cart = getCart();
-    const variantId = `${product.id}-${size}-${frame}`;
+    const variantId = product.id;
     const existing = cart.find(item => item.variantId === variantId);
     if(existing) {
         existing.quantity += quantity;
@@ -38,9 +38,7 @@ function addToCart(product, size, frame, finalPrice, quantity = 1) {
             productId: product.id,
             title: product.title,
             image: product.image,
-            size,
-            frame,
-            price: finalPrice,
+            price: product.basePrice || 33,
             quantity: quantity,
             category: product.category
         });
@@ -58,7 +56,7 @@ function updateCartItemQty(variantId, change) {
         }
         saveCart(cart);
     }
-    return cart; // Returns updated cart
+    return cart;
 }
 
 function removeFromCart(variantId) {
@@ -86,68 +84,50 @@ function formatPrice(value) {
 // WHATSAPP GENERATORS
 // =======================
 
-/**
- * ✅ FIXED: Redirects to WhatsApp with pre-filled message.
- * Includes try/catch for graceful error handling.
- */
 function redirectToWhatsApp(text) {
     try {
         const encoded = encodeURIComponent(text);
         const url = `https://wa.me/${WA_BUSINESS_PHONE}?text=${encoded}`;
+        console.log("Opening WhatsApp URL:", url);
         const newWin = window.open(url, '_blank');
-        // Fallback: if popup blocked, navigate in same tab
         if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-            console.warn('[Wallify] Popup blocked — navigating in same tab as fallback.');
             window.location.href = url;
         }
     } catch (err) {
         console.error('[Wallify] Failed to open WhatsApp:', err);
-        alert('Could not open WhatsApp. Please contact us at wa.me/917736497186');
     }
 }
 
-/**
- * Sends a single product order via WhatsApp.
- * Used by the product page modal form.
- */
-function generateWaLinkSingle(productTitle, size, frame, qty, totalAmt, name, address, phone) {
-    const text = `Hello, I want to order from Wallify Store:
+function generateWaLinkSingle(productTitle, category, name, address, phone, pincode) {
+    const text = `NEW ORDER
 
-Product: ${productTitle}
-Size: ${size}
-Frame: ${frame}
-Quantity: ${qty}
-Total Price: ₹${totalAmt}
+Product Details:
+- Name: ${productTitle}
+- Category: ${category}
 
 Customer Details:
-Name: ${name}
-Address: ${address}
-Phone: ${phone}
-
-Please confirm my order.`;
+- Name: ${name}
+- Phone: ${phone}
+- Address: ${address}
+- Pincode: ${pincode}`;
+    
     redirectToWhatsApp(text);
 }
 
-/**
- * Sends the full cart order via WhatsApp.
- * Used by the cart/checkout page.
- */
-function generateWaLinkCart(cart, totalAmt, name, address, phone) {
-    let itemsText = cart.map(i => `- ${i.title} (${i.size}, ${i.frame}) x${i.quantity} = ₹${i.price * i.quantity}`).join('\n');
+function generateWaLinkCart(cart, name, address, phone, pincode) {
+    let itemsText = cart.map((i, idx) => `${idx + 1}. ${i.title}${i.quantity > 1 ? ` (x${i.quantity})` : ''}`).join('\n');
     
-    const text = `Hello, I want to place an order from Wallify Store:
+    const text = `NEW ORDER
 
-Items:
+Products:
 ${itemsText}
 
-Grand Total: ₹${totalAmt}
-
 Customer Details:
-Name: ${name}
-Address: ${address}
-Phone: ${phone}
+- Name: ${name}
+- Phone: ${phone}
+- Address: ${address}
+- Pincode: ${pincode}`;
 
-Please confirm my order.`;
     redirectToWhatsApp(text);
 }
 
@@ -199,3 +179,176 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
+
+// =======================
+// UI COMPONENTS
+// =======================
+
+/**
+ * ImageCard Component
+ * Implements lazy loading and disables right-click/dragging for protection.
+ */
+function createImageCard(product, indexDelay = 0) {
+    return `
+        <div class="product-card" style="animation:revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;opacity:0;animation-delay:${indexDelay * 0.04}s" oncontextmenu="return false;" ondragstart="return false;">
+            <a href="product.html?id=${product.id}" class="card-img-wrapper" style="display:block;">
+                <img src="${product.image}" loading="lazy" alt="${product.title}" draggable="false" style="pointer-events:none;">
+            </a>
+            <div class="card-content">
+                <span class="card-category">${product.category}</span>
+                <h3 class="card-title">${product.title}</h3>
+                <div class="card-footer">
+                    <span class="card-price">Starts at ₹33</span>
+                    <a href="product.html?id=${product.id}" class="btn-primary" style="padding:9px 18px;font-size:0.85rem;">View <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * ImageGrid Component
+ * Handles layout and rendering of a collection of products into a container.
+ */
+function renderImageGrid(productsArray, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    if (!productsArray || productsArray.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 80px 20px;">
+                <i class="fas fa-search" style="font-size:3rem;margin-bottom:16px;color:var(--border-color)"></i>
+                <h3>No artworks found</h3>
+                <p>Try a different category or search term.</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = productsArray.map((p, i) => createImageCard(p, i)).join('');
+}
+
+/**
+ * CategorySelector Component Setup
+ * Connects UI filter elements and manages state/pagination.
+ */
+function initializeCategorySystem({
+    allProducts,
+    gridContainerId,
+    paginationContainerId,
+    resultsCountId,
+    sidebarFilterSelector,
+    tabFilterSelector,
+    searchInputId,
+    sortSelectId,
+    itemsPerPage = 15
+}) {
+    let currentCategory = 'All';
+    let searchQuery = '';
+    let currentSort = 'default';
+    let currentPage = 1;
+
+    const sidebarFilters = document.querySelectorAll(sidebarFilterSelector);
+    const tabFilters = document.querySelectorAll(tabFilterSelector);
+    const searchInput = document.getElementById(searchInputId);
+    const sortSelect = document.getElementById(sortSelectId);
+    const resultsCount = document.getElementById(resultsCountId);
+    const paginationContainer = document.getElementById(paginationContainerId);
+
+    // Compute Category Item Counts
+    const counts = { 'All': allProducts.length };
+    allProducts.forEach(p => {
+        counts[p.category] = (counts[p.category] || 0) + 1;
+    });
+
+    document.querySelectorAll('.cat-count').forEach(el => {
+        const catId = el.id.replace('count-', '');
+        if (counts[catId] !== undefined) {
+            el.textContent = counts[catId];
+        }
+    });
+
+    function renderState() {
+        let filtered = allProducts.filter(p => {
+            const matchCat = currentCategory === 'All' || p.category === currentCategory;
+            const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchCat && matchSearch;
+        });
+
+        if (currentSort === 'low') filtered.sort((a,b) => a.basePrice - b.basePrice);
+        if (currentSort === 'high') filtered.sort((a,b) => b.basePrice - a.basePrice);
+
+        if (resultsCount) {
+            resultsCount.textContent = `Showing ${filtered.length} poster${filtered.length !== 1 ? 's' : ''}`;
+        }
+
+        const totalPages = Math.ceil(filtered.length / itemsPerPage);
+        if (currentPage > totalPages) currentPage = 1;
+        const start = (currentPage - 1) * itemsPerPage;
+        const pageItems = filtered.slice(start, start + itemsPerPage);
+
+        renderImageGrid(pageItems, gridContainerId);
+
+        // Render Pagination
+        if (paginationContainer) {
+            if (totalPages > 1) {
+                let btns = '';
+                if (currentPage > 1) btns += `<button class="page-btn" onclick="window.goToPage(${currentPage-1})"><i class="fas fa-chevron-left"></i></button>`;
+                for (let i=1; i<=totalPages; i++) {
+                    btns += `<button class="page-btn${i===currentPage?' active':''}" onclick="window.goToPage(${i})">${i}</button>`;
+                }
+                if (currentPage < totalPages) btns += `<button class="page-btn" onclick="window.goToPage(${currentPage+1})"><i class="fas fa-chevron-right"></i></button>`;
+                paginationContainer.innerHTML = btns;
+            } else {
+                paginationContainer.innerHTML = '';
+            }
+        }
+    }
+
+    function setActiveCategory(cat) {
+        currentCategory = cat;
+        currentPage = 1;
+
+        sidebarFilters.forEach(f => f.classList.toggle('active', f.dataset.cat === cat));
+        tabFilters.forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+
+        const activeTab = document.querySelector(`${tabFilterSelector}[data-cat="${cat}"]`);
+        if (activeTab) activeTab.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+
+        renderState();
+    }
+
+    window.goToPage = function(page) {
+        currentPage = page;
+        renderState();
+        window.scrollTo({ top: 250, behavior:'smooth' });
+    };
+
+    sidebarFilters.forEach(f => f.addEventListener('click', () => setActiveCategory(f.dataset.cat)));
+    tabFilters.forEach(t => t.addEventListener('click', () => setActiveCategory(t.dataset.cat)));
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', e => {
+            searchQuery = e.target.value;
+            currentPage = 1;
+            renderState();
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', e => {
+            currentSort = e.target.value;
+            currentPage = 1;
+            renderState();
+        });
+    }
+
+    // Initialize formatting based on URL if provided
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlCategory = urlParams.get('category');
+    if (urlCategory) {
+        setActiveCategory(urlCategory);
+    } else {
+        renderState();
+    }
+}
