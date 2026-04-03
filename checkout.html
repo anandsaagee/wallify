@@ -203,6 +203,16 @@
             .checkout-page { padding: 120px 0 60px; }
             .order-summary { position: relative; top: 0; }
         }
+
+        @media (max-width: 767px) {
+            .checkout-page { padding: 100px 0 40px; }
+            .checkout-form { padding: 28px 20px; }
+            .form-section h3 { font-size: 1.3rem; }
+            .form-control { padding: 12px 14px; font-size: 0.95rem; }
+            .order-summary { padding: 24px 20px; }
+            .order-summary h3 { font-size: 1.3rem; }
+            .submit-btn { padding: 16px; font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -212,7 +222,22 @@
         <div class="nav-links">
             <a href="cart.html" style="color:var(--text-main); font-size:1rem;"><i class="fas fa-arrow-left"></i> Return to Cart</a>
         </div>
+        <div class="nav-icons">
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
     </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="cart.html" class="mobile-cart-link"><i class="fas fa-arrow-left"></i> Return to Cart</a>
+    </div>
 
     <main class="container checkout-page">
         <h1 class="section-title reveal" style="text-align:left; margin-bottom: 50px;">Complete Order</h1>
@@ -279,6 +304,28 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Mobile Nav Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const mobileNavPanel = document.getElementById('mobileNavPanel');
+        function openMobileNav() {
+            hamburger.classList.add('open');
+            mobileNavOverlay.style.display = 'block';
+            mobileNavPanel.style.display = 'flex';
+            requestAnimationFrame(() => { mobileNavOverlay.classList.add('open'); mobileNavPanel.classList.add('open'); });
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            hamburger.classList.remove('open');
+            mobileNavOverlay.classList.remove('open');
+            mobileNavPanel.classList.remove('open');
+            document.body.style.overflow = '';
+            setTimeout(() => { mobileNavOverlay.style.display = 'none'; mobileNavPanel.style.display = 'none'; }, 400);
+        }
+        hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav());
+        mobileNavOverlay.addEventListener('click', closeMobileNav);
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const cart = getCart();

@@ -4,180 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallify Store | Premium Posters</title>
+    <meta name="description" content="Experience gallery-quality digital art prints curated for modern aesthetics. Shop premium automotive, anime, minimalist, and cinematic posters at Wallify Store.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Homepage specific premium styles */
+        /* ── Hero ────────────────────────────────── */
         .hero {
-            height: 100vh;
+            min-height: 100svh;          /* svh = safe viewport on mobile */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            padding: 0 5%;
+            padding: 5rem 1rem 2rem;
             overflow: hidden;
-            background: var(--bg-color); /* Fallback */
         }
-        
         .hero::before {
             content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(5,5,5,1) 100%), 
-                        linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,1)), 
-                        url('https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(5,5,5,1) 100%),
+                linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,1)),
+                url('https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=1920')
+                no-repeat center center / cover;
             z-index: 0;
             animation: heroZoom 30s infinite alternate linear;
             opacity: 0.6;
             filter: grayscale(40%);
         }
-
         @keyframes heroZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.15); }
+            from { transform: scale(1);    }
+            to   { transform: scale(1.12); }
         }
-
         .hero-content {
             position: relative;
             z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
+            max-width: 860px;
+            width: 100%;
+            margin: 0 auto;
         }
-
         .hero-content h1 {
-            font-size: 5rem;
-            max-width: 900px;
-            margin: 0 auto 24px;
+            font-size: clamp(2.2rem, 8vw, 5.5rem);
+            margin: 0 auto 1rem;
             line-height: 1.05;
             background: linear-gradient(180deg, #FFD700 0%, #B89B00 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
+            letter-spacing: -0.02em;
         }
-
         .hero-content p {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 3vw, 1.4rem);
             color: #E2E2E5;
-            margin-bottom: 48px;
+            margin-bottom: 2rem;
             font-weight: 300;
-            max-width: 600px;
+            max-width: 560px;
+            line-height: 1.6;
         }
 
-        /* Categories Grid */
+        /* ── Category Cards Grid ─────────────────── */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 350px);
-            gap: 24px;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
-
         .category-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            min-height: 200px;
         }
-        
         .category-card img {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
-            transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: transform 1s cubic-bezier(0.2,0.8,0.2,1);
             z-index: 0;
             filter: brightness(0.5) contrast(1.1);
         }
-        
         .category-card:hover img {
-            transform: scale(1.12);
+            transform: scale(1.1);
             filter: brightness(0.7) contrast(1.1);
         }
-
         .category-card h3 {
-            font-size: 2.5rem;
-            color: #FFFFFF;
+            font-size: clamp(1.4rem, 4vw, 2.5rem);
+            color: #FFF;
             z-index: 1;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             pointer-events: none;
-            text-shadow: 0 10px 30px rgba(0,0,0,1);
+            text-shadow: 0 6px 24px rgba(0,0,0,0.9);
+            -webkit-text-fill-color: #FFF;            /* override global gradient fill */
+            background: none;
         }
 
-        .cat-automotive { grid-column: span 2; }
-        .cat-cinematic { grid-column: span 2; }
-
-        /* Featured Grid */
+        /* ── Featured Grid ───────────────────────── */
         .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
 
-        /* Benefits */
+        /* ── Benefits ────────────────────────────── */
         .benefits-section {
             background: var(--surface-color);
-            padding: 120px 0;
+            padding: clamp(3rem, 8vw, 7.5rem) 0;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
         }
-
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             text-align: center;
             position: relative;
             z-index: 1;
         }
-
         .benefit-card {
             background: rgba(255,255,255,0.02);
-            padding: 40px 30px;
-            border-radius: 20px;
+            padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.75rem);
+            border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
             transition: var(--transition);
         }
-
         .benefit-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             background: rgba(255,255,255,0.05);
             border-color: rgba(255,255,255,0.1);
         }
-
         .benefit-icon {
-            font-size: 3rem;
-            color: #FFFFFF;
-            margin-bottom: 24px;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+            font-size: clamp(1.75rem, 5vw, 3rem);
+            color: #FFF;
+            margin-bottom: clamp(0.75rem, 2vw, 1.5rem);
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(255,255,255,0.2));
         }
-        
         .benefit-card h4 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+            font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+            margin-bottom: 0.5rem;
             font-weight: 500;
+            -webkit-text-fill-color: var(--accent-color);
         }
-        
         .benefit-card p {
             color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: clamp(0.78rem, 1.8vw, 0.95rem);
+            line-height: 1.55;
         }
 
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 3rem; }
-            .hero-content p { font-size: 1.1rem; }
-            .categories-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .category-card { height: 300px; grid-column: span 1 !important; }
-            .section-title { font-size: 2.5rem; }
+        /* ── Responsive overrides ────────────────── */
+        /* Tablet (≥ 600px): 2-col categories */
+        @media (min-width: 600px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 240px);
+            }
+            .category-card { min-height: unset; }
+            .cat-automotive { grid-column: span 2; }
+            .cat-cinematic  { grid-column: span 2; }
+        }
+
+        /* Tablet (≥768px): 3-col categories */
+        @media (min-width: 768px) {
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 320px);
+                gap: 1.25rem;
+            }
+            .cat-automotive { grid-column: span 2; }
+            .cat-cinematic  { grid-column: span 2; }
+
+            .featured-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 2rem;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 2rem;
+            }
+        }
+
+        /* Desktop (≥1024px) */
+        @media (min-width: 1024px) {
+            .categories-grid {
+                grid-template-rows: repeat(2, 360px);
+                gap: 1.5rem;
+            }
+            .featured-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 2.5rem;
+            }
+            .benefits-grid { gap: 2.5rem; }
+        }
+
+        /* Very small (≤380px): 1-col benefits */
+        @media (max-width: 380px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+            .featured-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -192,11 +227,25 @@
             <a href="#about">About</a>
         </div>
         <div class="nav-icons">
-            <a href="cart.html" class="cart-icon">
+            <a href="cart.html" class="cart-icon" aria-label="View cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-count">0</span>
             </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="Mobile navigation">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="cart.html" class="mobile-cart-link"><i class="fas fa-shopping-bag"></i> View Cart</a>
     </nav>
 
     <!-- HERO -->
@@ -204,8 +253,8 @@
         <div class="hero-content">
             <h1 class="reveal reveal-delay-1">Redefine Your Space</h1>
             <p class="reveal reveal-delay-2">Experience gallery-quality digital art curated for modern aesthetics.</p>
-            <div class="reveal reveal-delay-3" style="margin-top:20px;">
-                <a href="shop.html" class="btn-primary">Explore Collection</a>
+            <div class="reveal reveal-delay-3">
+                <a href="shop.html" class="btn-primary">Explore Collection&nbsp;<i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </header>
@@ -216,22 +265,21 @@
             <h2 class="section-title">Collections</h2>
             <p class="section-subtitle">Discover pieces that speak to your passion</p>
         </div>
-        
         <div class="categories-grid">
             <a href="shop.html?category=Automotive" class="category-card cat-automotive reveal">
-                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=1200" alt="Automotive">
+                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=1200" alt="Automotive collection" loading="lazy">
                 <h3>Automotive</h3>
             </a>
             <a href="shop.html?category=Anime" class="category-card reveal reveal-delay-1">
-                <img src="https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=800" alt="Anime">
+                <img src="https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=800" alt="Anime collection" loading="lazy">
                 <h3>Anime</h3>
             </a>
             <a href="shop.html?category=Minimalist" class="category-card reveal reveal-delay-2">
-                <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800" alt="Minimalist">
+                <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800" alt="Minimalist collection" loading="lazy">
                 <h3>Minimalist</h3>
             </a>
             <a href="shop.html?category=Cinematic" class="category-card cat-cinematic reveal reveal-delay-1">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1200" alt="Cinematic">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1200" alt="Cinematic collection" loading="lazy">
                 <h3>Cinematic</h3>
             </a>
         </div>
@@ -246,7 +294,7 @@
         <div class="featured-grid reveal reveal-delay-1" id="featured-grid">
             <!-- Populated by JS -->
         </div>
-        <div style="text-align: center; margin-top: 60px;" class="reveal reveal-delay-2">
+        <div style="text-align:center; margin-top:2.5rem;" class="reveal reveal-delay-2">
             <a href="shop.html" class="btn-outline">View All Posters</a>
         </div>
     </section>
@@ -262,12 +310,12 @@
             <div class="benefit-card reveal reveal-delay-1">
                 <i class="fas fa-crop-alt benefit-icon"></i>
                 <h4>Perfect Sizing</h4>
-                <p>Available in A4, A5, and A3 formats to seamlessly fit your environment.</p>
+                <p>Available in A4, A5, and A3 formats to fit your environment.</p>
             </div>
             <div class="benefit-card reveal reveal-delay-2">
                 <i class="fas fa-border-all benefit-icon"></i>
                 <h4>Sleek Frames</h4>
-                <p>Choose from Black, White, or Wooden luxury gallery frames.</p>
+                <p>Choose Black, White, or Wooden luxury gallery frames.</p>
             </div>
             <div class="benefit-card reveal reveal-delay-3">
                 <i class="fas fa-truck-fast benefit-icon"></i>
@@ -282,7 +330,7 @@
         <div class="container">
             <div class="footer-grid reveal">
                 <div class="footer-col" id="about">
-                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: block;">Wallify<span style="color:#FFF">.</span></a>
+                    <a href="index.html" class="logo" style="margin-bottom:1rem; display:block;">Wallify<span style="color:#FFF">.</span></a>
                     <p>Transforming empty walls into inspiring spaces with premium, hand-picked digital art prints.</p>
                 </div>
                 <div class="footer-col">
@@ -298,8 +346,8 @@
                 </div>
                 <div class="footer-col">
                     <h3>Connect</h3>
-                    <a href="https://www.instagram.com/wallifystore.in/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://wa.me/919497242251" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://www.instagram.com/wallifystore.in/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+                    <a href="https://wa.me/919497242251" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -312,23 +360,57 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script>
-        // Specific logic for homepage featured products
+        /* ── Mobile Nav ──────────────────────────── */
+        (function () {
+            const btn     = document.getElementById('hamburger');
+            const overlay = document.getElementById('mobileNavOverlay');
+            const panel   = document.getElementById('mobileNavPanel');
+
+            function open() {
+                btn.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                overlay.style.display = 'block';
+                panel.style.display   = 'flex';
+                requestAnimationFrame(() => {
+                    overlay.classList.add('open');
+                    panel.classList.add('open');
+                });
+                document.body.style.overflow = 'hidden';
+            }
+            function close() {
+                btn.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                overlay.classList.remove('open');
+                panel.classList.remove('open');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    panel.style.display   = 'none';
+                }, 400);
+            }
+            btn.addEventListener('click', () => btn.classList.contains('open') ? close() : open());
+            overlay.addEventListener('click', close);
+            // Close when a nav link is tapped
+            panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+        })();
+    </script>
+    <script>
+        /* ── Featured Products ───────────────────── */
         document.addEventListener('DOMContentLoaded', () => {
-            const featuredContainer = document.getElementById('featured-grid');
-            if (featuredContainer && typeof products !== 'undefined') {
-                // Show first 4 products
+            const grid = document.getElementById('featured-grid');
+            if (grid && typeof products !== 'undefined') {
                 const featured = products.slice(0, 4);
-                featuredContainer.innerHTML = featured.map((product, index) => `
-                    <div class="product-card" style="animation-delay: ${index * 0.1}s;">
-                        <a href="product.html?id=${product.id}" class="card-img-wrapper">
-                            <img src="${product.image}" loading="lazy" alt="${product.title}">
+                grid.innerHTML = featured.map((p, i) => `
+                    <div class="product-card" style="animation-delay:${i*0.1}s">
+                        <a href="product.html?id=${p.id}" class="card-img-wrapper">
+                            <img src="${p.image}" loading="lazy" alt="${p.title}">
                         </a>
                         <div class="card-content">
-                            <span class="card-category">${product.category}</span>
-                            <h3 class="card-title">${product.title}</h3>
+                            <span class="card-category">${p.category}</span>
+                            <h3 class="card-title">${p.title}</h3>
                             <div class="card-footer">
                                 <span class="card-price">Starts at ₹33</span>
-                                <a href="product.html?id=${product.id}" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">View <i class="fas fa-arrow-right"></i></a>
+                                <a href="product.html?id=${p.id}" class="btn-primary" style="padding:9px 18px;font-size:0.85rem;">View <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

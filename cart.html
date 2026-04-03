@@ -229,6 +229,17 @@
             .cart-item { flex-direction: column; position: relative; }
             .cart-item-img { width: 100%; height: 350px; }
         }
+
+        @media (max-width: 767px) {
+            .cart-page { padding: 100px 0 60px; }
+            .cart-item { padding: 16px; gap: 16px; }
+            .cart-item-img { height: 220px; }
+            .cart-item-title { font-size: 1.1rem; }
+            .cart-summary { padding: 24px 20px; }
+            .cart-summary h3 { font-size: 1.3rem; }
+            .summary-row { font-size: 0.95rem; }
+            .summary-row.total { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
@@ -244,8 +255,21 @@
                 <i class="fas fa-shopping-bag" style="color: #FFF;"></i>
                 <span class="cart-count">0</span>
             </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="cart.html" class="mobile-cart-link active"><i class="fas fa-shopping-bag"></i> View Cart</a>
+    </div>
 
     <main class="container cart-page">
         <div class="cart-header reveal">
@@ -266,6 +290,28 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Mobile Nav Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const mobileNavPanel = document.getElementById('mobileNavPanel');
+        function openMobileNav() {
+            hamburger.classList.add('open');
+            mobileNavOverlay.style.display = 'block';
+            mobileNavPanel.style.display = 'flex';
+            requestAnimationFrame(() => { mobileNavOverlay.classList.add('open'); mobileNavPanel.classList.add('open'); });
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            hamburger.classList.remove('open');
+            mobileNavOverlay.classList.remove('open');
+            mobileNavPanel.classList.remove('open');
+            document.body.style.overflow = '';
+            setTimeout(() => { mobileNavOverlay.style.display = 'none'; mobileNavPanel.style.display = 'none'; }, 400);
+        }
+        hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav());
+        mobileNavOverlay.addEventListener('click', closeMobileNav);
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const cartLayout = document.getElementById('cartLayout');

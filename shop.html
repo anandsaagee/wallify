@@ -167,6 +167,14 @@
                 width: 100%;
             }
         }
+
+        @media (max-width: 767px) {
+            .shop-header { padding: 120px 0 50px; }
+            .shop-layout { margin-top: 30px; gap: 24px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .filter-section { padding: 16px; }
+            .search-box { padding: 12px 16px; }
+        }
     </style>
 </head>
 <body>
@@ -183,8 +191,21 @@
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-count">0</span>
             </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html" class="active"><i class="fas fa-store"></i> Shop</a>
+        <a href="cart.html" class="mobile-cart-link"><i class="fas fa-shopping-bag"></i> View Cart</a>
+    </div>
 
     <!-- HEADER -->
     <header class="shop-header">
@@ -271,6 +292,28 @@
     <!-- SCRIPTS -->
     <script src="data.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Mobile Nav Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const mobileNavPanel = document.getElementById('mobileNavPanel');
+        function openMobileNav() {
+            hamburger.classList.add('open');
+            mobileNavOverlay.style.display = 'block';
+            mobileNavPanel.style.display = 'flex';
+            requestAnimationFrame(() => { mobileNavOverlay.classList.add('open'); mobileNavPanel.classList.add('open'); });
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            hamburger.classList.remove('open');
+            mobileNavOverlay.classList.remove('open');
+            mobileNavPanel.classList.remove('open');
+            document.body.style.overflow = '';
+            setTimeout(() => { mobileNavOverlay.style.display = 'none'; mobileNavPanel.style.display = 'none'; }, 400);
+        }
+        hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav());
+        mobileNavOverlay.addEventListener('click', closeMobileNav);
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const shopGrid = document.getElementById('shopGrid');
