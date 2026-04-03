@@ -7,12 +7,12 @@ def generate_db():
     # Note: Folder names are case-sensitive on Linux. 
     # Checking for common variations to be safe.
     folder_map = {
+        "Automotive": ["assets/AM/", "assets/am/"],
         "Mollywood": ["assets/Mollywood/"],
         "Aesthetic": ["assets/aesthe/"],
         "Anime": ["assets/anime/"],
         "Football": ["assets/football/"],
-        "Classic Cars": ["assets/classic-cars/"],
-        "Automotive": ["assets/AM/", "assets/am/"]
+        "Classic Cars": ["assets/classic-cars/"]
     }
 
     allowed_exts = {'.jpg', '.jpeg', '.png', '.webp'}
@@ -36,7 +36,15 @@ def generate_db():
         
         # Scan files
         files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
-        valid_files = [f for f in files if os.path.splitext(f)[1].lower() in allowed_exts]
+        
+        # Filter files: exclude hidden files and anything containing 'trashed'
+        valid_files = []
+        for f in files:
+            ext = os.path.splitext(f)[1].lower()
+            if ext in allowed_exts:
+                if not f.startswith('.') and 'trashed' not in f.lower():
+                    valid_files.append(f)
+                    
         valid_files.sort() # Ensure consistent order
 
         print(f"-> Category: {cat_name} | Found {len(valid_files)} images in {folder_path}")
