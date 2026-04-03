@@ -53,12 +53,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-color);
-  background-image: var(--bg-gradient);
-  background-attachment: fixed;
+  background-color: var(--bg-color);
   color: var(--text-main);
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -231,6 +230,89 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul, ol { list-style: none; }
+
+/* =====================
+   4. LAYOUT UTILITIES
+   ===================== */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.py-120 {
+  padding-top:    var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+.mb-120 { margin-bottom: var(--section-gap); }
+.mt-4   { margin-top: 1rem; }
+
+/* =====================
+   5. SCROLLBAR
+   ===================== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.22); }
+
+/* =====================
+   6. TEXT SELECTION
+   ===================== */
+::selection {
+  background: rgba(255, 215, 0, 0.2);
+  color: #fff;
+}
+
+/* ============================================================
+   7. NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  height: var(--navbar-height);
+  background: rgba(5, 5, 5, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(5, 5, 5, 0.97);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  z-index: 1100;
+}
+
+/* Desktop Nav Links */
 .nav-links {
   display: none;      /* hidden on mobile, shown via media query */
   gap: 2.5rem;
@@ -238,10 +320,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links a {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.5px;
   position: relative;
   padding: 0.25rem 0;
   white-space: nowrap;
@@ -387,6 +469,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
@@ -475,7 +558,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Footer ─────────────────────────────────── */
 .footer {
-  background: var(--bg-color);
+  background: var(--surface-color);
   border-top: 1px solid var(--border-color);
   padding: var(--section-py-mobile) 0 2rem;
   margin-top: var(--section-py-mobile);
