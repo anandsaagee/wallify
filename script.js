@@ -184,22 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // UI COMPONENTS
 // =======================
 
-/**
- * ImageCard Component
- * Implements lazy loading and disables right-click/dragging for protection.
- */
 function createImageCard(product, indexDelay = 0) {
     return `
         <div class="product-card" style="animation:revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;opacity:0;animation-delay:${indexDelay * 0.04}s" oncontextmenu="return false;" ondragstart="return false;">
-            <a href="product.html?id=${product.id}" class="card-img-wrapper" style="display:block;">
-                <img src="${product.image}" loading="lazy" alt="${product.title}" draggable="false" style="pointer-events:none;">
+            <a href="javascript:void(0)" onclick="openProductModal('${product.id}')" class="card-img-wrapper" style="display:block;">
+                <img src="${product.image || ''}" loading="lazy" alt="${product.title || 'Product'}" draggable="false" style="pointer-events:none;">
             </a>
             <div class="card-content">
-                <span class="card-category">${product.category}</span>
-                <h3 class="card-title">${product.title}</h3>
+                <span class="card-category">${product.category || 'Uncategorized'}</span>
+                <h3 class="card-title">${product.title || 'Unknown Title'}</h3>
                 <div class="card-footer">
-                    <span class="card-price">Starts at ₹33</span>
-                    <a href="product.html?id=${product.id}" class="btn-primary" style="padding:9px 18px;font-size:0.85rem;">View <i class="fas fa-arrow-right"></i></a>
+                    <span class="card-price">Starts at ₹${product.basePrice || 33}</span>
+                    <button onclick="openProductModal('${product.id}')" class="btn-primary" style="padding:9px 18px;font-size:0.85rem; border:none; border-radius:30px; cursor:pointer;">View <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -352,3 +348,44 @@ function initializeCategorySystem({
         renderState();
     }
 }
+
+// =======================
+// MODAL CONTROLS
+// =======================
+let currentModalProduct = null;
+window.openProductModal = function(id) {
+    if (typeof products === 'undefined') return;
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+    currentModalProduct = product;
+    
+    document.getElementById('modalImage').src = product.image || '';
+    document.getElementById('modalCategory').textContent = product.category || '';
+    document.getElementById('modalTitle').textContent = product.title || '';
+    document.getElementById('modalPrice').textContent = `₹${parseFloat(product.basePrice || 33).toFixed(2)}`;
+    
+    const modal = document.getElementById('productModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => modal.classList.add('show'), 10);
+};
+
+window.closeProductModal = function() {
+    const modal = document.getElementById('productModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.classList.remove('active'), 300);
+};
+
+window.buyNowFromModal = function() {
+    if(!currentModalProduct) return;
+    window.location.href = `checkout.html?buyNow=${currentModalProduct.id}`;
+};
+
+window.addToCartFromModal = function() {
+    if(!currentModalProduct) return;
+    addToCart(currentModalProduct, 1);
+    closeProductModal();
+    updateCartCount();
+    alert('Added to cart!');
+};
