@@ -3,48 +3,53 @@ import json
 import urllib.parse
 
 def generate_db():
-    categories = {
-        "Mollywood": "assets/Mollywood/",
-        "Aesthetic": "assets/aesthe/",
-        "Anime": "assets/anime/",
-        "Football": "assets/football/",
-        "Classic Cars": "assets/classic-cars/",
-        "Automotive": "assets/AM/"
+    # Define category to folder mapping
+    # Note: Folder names are case-sensitive on Linux. 
+    # Checking for common variations to be safe.
+    folder_map = {
+        "Mollywood": ["assets/Mollywood/"],
+        "Aesthetic": ["assets/aesthe/"],
+        "Anime": ["assets/anime/"],
+        "Football": ["assets/football/"],
+        "Classic Cars": ["assets/classic-cars/"],
+        "Automotive": ["assets/AM/", "assets/am/"]
     }
 
     allowed_exts = {'.jpg', '.jpeg', '.png', '.webp'}
     products = []
     
-    # Track the global product id index
     global_id = 1
 
-    for cat_name, folder_path in categories.items():
-        if not os.path.isdir(folder_path):
-            print(f"Directory {folder_path} does not exist, skipping...")
+    print("--- Wallify Build: Generating Product Database ---")
+
+    for cat_name, folders in folder_map.items():
+        # Find the first existing folder for this category
+        folder_path = None
+        for f in folders:
+            if os.path.isdir(f):
+                folder_path = f
+                break
+        
+        if not folder_path:
+            print(f"! Warning: No directory found for {cat_name} (checked {folders})")
             continue
         
-        # Get all valid image files
-        files = []
-        for f in os.listdir(folder_path):
-            if os.path.isfile(os.path.join(folder_path, f)):
-                ext = os.path.splitext(f)[1].lower()
-                if ext in allowed_exts:
-                    files.append(f)
-                    
-        # Sort files to ensure reproducible indices
-        files.sort()
+        # Scan files
+        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+        valid_files = [f for f in files if os.path.splitext(f)[1].lower() in allowed_exts]
+        valid_files.sort() # Ensure consistent order
+
+        print(f"-> Category: {cat_name} | Found {len(valid_files)} images in {folder_path}")
         
-        for idx, filename in enumerate(files, start=1):
+        for idx, filename in enumerate(valid_files, start=1):
             title = f"{idx} - {filename}"
-            
-            # Create URL safe image path
             img_path = os.path.join(folder_path, filename).replace('\\', '/')
-            # encode URI components just in case of spaces
-            parts = img_path.split('/')
-            encoded_parts = [urllib.parse.quote(p) for p in parts]
-            safe_img_path = '/'.join(encoded_parts)
             
-            p = {
+            # Encode URI for safe browser usage
+            parts = img_path.split('/')
+            safe_img_path = '/'.join([urllib.parse.quote(p) for p in parts])
+            
+            products.append({
                 "id": f"p{global_id}",
                 "title": title,
                 "category": cat_name,
@@ -52,17 +57,15 @@ def generate_db():
                 "image": safe_img_path,
                 "description": f"Premium {cat_name} wall art. {title}",
                 "label": title
-            }
-            products.append(p)
+            })
             global_id += 1
 
-    # Output to data.js
     js_content = "const products = " + json.dumps(products, indent=4) + ";\n"
     
     with open('data.js', 'w', encoding='utf-8') as f:
         f.write(js_content)
         
-    print(f"Successfully generated data.js with {len(products)} products across {len(categories)} categories.")
+    print(f"\nSUCCESS: Generated data.js with {len(products)} total products.")
 
 if __name__ == "__main__":
     generate_db()

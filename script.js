@@ -202,25 +202,23 @@ function createImageCard(product, indexDelay = 0) {
     `;
 }
 
-/**
- * ImageGrid Component
- * Handles layout and rendering of a collection of products into a container.
- */
-function renderImageGrid(productsArray, containerId) {
+function renderImageGrid(productsArray, containerId, categoryName = 'All') {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     if (!productsArray || productsArray.length === 0) {
+        console.warn(`[Wallify Shop] No products found for the ${categoryName} category!`);
         container.innerHTML = `
             <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 80px 20px;">
                 <i class="fas fa-search" style="font-size:3rem;margin-bottom:16px;color:var(--border-color)"></i>
                 <h3>No artworks found</h3>
-                <p>Try a different category or search term.</p>
+                <p>No posters available in ${categoryName} category</p>
             </div>
         `;
         return;
     }
 
+    console.log(`[Wallify Shop] Rendering ${productsArray.length} items for ${categoryName}...`);
     container.innerHTML = productsArray.map((p, i) => createImageCard(p, i)).join('');
 }
 
@@ -283,7 +281,7 @@ function initializeCategorySystem({
         const start = (currentPage - 1) * itemsPerPage;
         const pageItems = filtered.slice(start, start + itemsPerPage);
 
-        renderImageGrid(pageItems, gridContainerId);
+        renderImageGrid(pageItems, gridContainerId, currentCategory);
 
         // Render Pagination
         if (paginationContainer) {
