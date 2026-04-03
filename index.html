@@ -26,33 +26,38 @@
             inset: 0;
             z-index: 0;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
             pointer-events: none;
             opacity: 0;
             transition: opacity 1.5s ease;
+            padding: 2rem 0;
         }
         .hero-bg.loaded { opacity: 0.6; }
 
         .carousel-track {
             display: flex;
             gap: 20px;
-            animation: scrollCarousel 60s linear infinite;
             will-change: transform;
         }
+        
+        .track-top    { animation: scrollLeft   80s linear infinite; }
+        .track-middle { animation: scrollRight  60s linear infinite; }
+        .track-bottom { animation: scrollLeft   75s linear infinite; }
+
         .hero:hover .carousel-track {
             animation-play-state: paused;
         }
 
         .carousel-item {
             flex: 0 0 auto;
-            width: 200px;
-            height: 280px;
+            width: 180px;
+            height: 250px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.08);
             transform: scale(1);
-            transition: transform 0.5s ease;
         }
         .carousel-item img {
             width: 100%;
@@ -61,12 +66,15 @@
             filter: brightness(0.8) contrast(1.1);
         }
 
-        @keyframes scrollCarousel {
+        @keyframes scrollLeft {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-220px * 15)); } /* Offset by (width + gap) * count */
+            100% { transform: translateX(calc(-200px * 12)); } 
+        }
+        @keyframes scrollRight {
+            0% { transform: translateX(calc(-200px * 12)); }
+            100% { transform: translateX(0); }
         }
 
-        /* ── Modern Dark Overlay ── */
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -137,7 +145,6 @@
             border-color: rgba(255,215,0,0.25);
         }
 
-        /* Featured (tall) card */
         .cat-featured { grid-column: span 2; min-height: 280px; }
 
         .category-card img {
@@ -155,7 +162,6 @@
             filter: brightness(0.6) saturate(1.3);
         }
 
-        /* Glass overlay gradient */
         .category-card::after {
             content: '';
             position: absolute;
@@ -212,7 +218,6 @@
             display: none;
         }
 
-        /* Arrow icon */
         .cat-arrow {
             position: absolute;
             top: 1.25rem;
@@ -235,13 +240,6 @@
             background: var(--accent-color);
             color: #000;
             border-color: var(--accent-color);
-        }
-
-        /* ── Featured Grid ───────────────────────── */
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
         }
 
         /* ── Benefits ────────────────────────────── */
@@ -293,67 +291,257 @@
             line-height: 1.55;
         }
 
+        /* ── Premium Product Card Enhanced ────────────────── */
+        .product-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.4s ease, border-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.5), 0 0 25px rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+            color: #000;
+            padding: 4px 10px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 6px;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+        .size-btn {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-weight: 500;
+        }
+        .size-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .size-btn.active {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+        }
+
+        /* ── Side Cart Panel ───────────────────────── */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+        }
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 400px;
+            max-width: 90%;
+            height: 100%;
+            background: #0D0D0E;
+            z-index: 2001;
+            box-shadow: -10px 0 50px rgba(0,0,0,0.8);
+            transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid rgba(255,255,255,0.05);
+        }
+        .cart-panel.open {
+            right: 0;
+        }
+
+        .cart-panel-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .close-cart {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .cart-items-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .cart-item img {
+            width: 70px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .item-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+        .item-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .qty-stepper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            width: fit-content;
+        }
+        .qty-stepper button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 24px;
+        }
+
+        .cart-summary {
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .bundle-alert {
+            background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(218,165,32,0.05) 100%);
+            border: 1px dashed var(--accent-color);
+            color: var(--accent-color);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            animation: glitterPulse 2s infinite;
+        }
+        @keyframes glitterPulse {
+            0% { box-shadow: 0 0 0px rgba(255,215,0,0.2); }
+            50% { box-shadow: 0 0 15px rgba(255,215,0,0.4); }
+            100% { box-shadow: 0 0 0px rgba(255,215,0,0.2); }
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .summary-line.total {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+        .discount { color: #50fa7b; }
+
+        .min-order-msg {
+            color: #ff5555;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 1rem;
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .checkout-btn:disabled {
+            background: #333;
+            color: #777;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
         /* ── Responsive overrides ────────────────── */
         @media (min-width: 480px) {
             .category-card p { display: block; }
         }
-
-        /* Tablet (≥600px): taller cards */
         @media (min-width: 600px) {
             .categories-grid { gap: 1.25rem; }
-            .category-card { min-height: 260px; }
-            .cat-featured { min-height: 340px; }
+            .category-card { min-height: 240px; }
         }
-
-        /* Tablet (≥768px): 3-col bento  */
         @media (min-width: 768px) {
-            .categories-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.25rem;
-            }
-            .cat-featured { grid-column: span 2; min-height: 380px; }
-
-            .featured-grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-                gap: 2rem;
-            }
-            .benefits-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-                gap: 2rem;
-            }
+            .categories-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+            .featured-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
         }
-
-        /* Desktop (≥1024px) */
         @media (min-width: 1024px) {
             .categories-grid {
                 grid-template-columns: repeat(6, 1fr);
                 grid-template-rows: 240px 240px;
                 gap: 1.5rem;
             }
-            /* Row 1: Automotive (4) + Mollywood (2) */
             .cat-automotive { grid-column: span 4; grid-row: 1; }
             .cat-mollywood  { grid-column: span 2; grid-row: 1; }
-            /* Row 2: Football(1) + Anime(1) + Aesthetic(2) + Classic(2) */
             .cat-football   { grid-column: span 1; grid-row: 2; }
             .cat-anime      { grid-column: span 1; grid-row: 2; }
             .cat-aesthetic  { grid-column: span 2; grid-row: 2; }
             .cat-classic    { grid-column: span 2; grid-row: 2; }
-
-            .cat-featured { grid-column: unset; min-height: unset; }
-
-            .featured-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 2.5rem;
-            }
-            .benefits-grid { gap: 2.5rem; }
         }
-
-        /* Very small (≤380px): 1-col */
-        @media (max-width: 380px) {
-            .categories-grid { grid-template-columns: 1fr; }
-            .cat-featured { grid-column: 1; }
-            .benefits-grid { grid-template-columns: 1fr; }
-            .featured-grid { grid-template-columns: 1fr; }
+        @media (max-width: 400px) {
+            .cart-panel { width: 100%; }
         }
     </style>
 </head>
@@ -368,10 +556,10 @@
             <a href="#about">About</a>
         </div>
         <div class="nav-icons">
-            <a href="cart.html" class="cart-icon" aria-label="View cart">
+            <button class="cart-icon" id="cartToggle" aria-label="View cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-count">0</span>
-            </a>
+            </button>
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -386,13 +574,15 @@
         <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-        <a href="cart.html" class="mobile-cart-link"><i class="fas fa-shopping-bag"></i> View Cart</a>
+        <a href="#" class="mobile-cart-link" onclick="window.wallify.toggleCart()"><i class="fas fa-shopping-bag"></i> View Cart</a>
     </nav>
 
     <!-- HERO -->
     <header class="hero" id="hero">
         <div class="hero-bg" id="hero-bg">
-            <div class="carousel-track" id="hero-track"></div>
+            <div class="carousel-track track-top" id="track-top"></div>
+            <div class="carousel-track track-middle" id="track-middle"></div>
+            <div class="carousel-track track-bottom" id="track-bottom"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -411,73 +601,54 @@
             <p class="section-subtitle">Discover pieces that speak to your passion</p>
         </div>
         <div class="categories-grid">
-
-            <!-- Automotive Posters -->
-            <a href="shop.html?category=Automotive Posters" class="category-card cat-automotive cat-featured reveal" id="cat-automotive">
-                <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive Posters collection" loading="lazy">
-                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+            <a href="shop.html?category=Automotive Posters" class="category-card cat-automotive reveal" id="cat-automotive">
+                <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive collection" loading="lazy">
                 <div class="category-card-body">
                     <span class="category-tag">Speed</span>
                     <h3>Automotive Posters</h3>
                     <p>High-octane art for your space</p>
                 </div>
             </a>
-
-            <!-- Mollywood -->
             <a href="shop.html?category=Mollywood" class="category-card cat-mollywood reveal reveal-delay-1" id="cat-mollywood">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood collection" loading="lazy">
-                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood" loading="lazy">
                 <div class="category-card-body">
                     <span class="category-tag">Cinema</span>
                     <h3>Mollywood</h3>
                     <p>Malayalam cinema's moments</p>
                 </div>
             </a>
-
-            <!-- Football -->
             <a href="shop.html?category=Football" class="category-card cat-football reveal reveal-delay-1" id="cat-football">
-                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=1000" alt="Football collection" loading="lazy">
-                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=1000" alt="Football" loading="lazy">
                 <div class="category-card-body">
                     <span class="category-tag">Sport</span>
                     <h3>Football</h3>
                     <p>Legends of the beautiful game</p>
                 </div>
             </a>
-
-            <!-- Anime -->
             <a href="shop.html?category=Anime" class="category-card cat-anime reveal reveal-delay-1" id="cat-anime">
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime collection" loading="lazy">
-                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime" loading="lazy">
                 <div class="category-card-body">
                     <span class="category-tag">Animation</span>
                     <h3>Anime</h3>
                     <p>Epic art from iconic anime worlds</p>
                 </div>
             </a>
-
-            <!-- Aesthetic -->
             <a href="shop.html?category=Aesthetic" class="category-card cat-aesthetic reveal reveal-delay-2" id="cat-aesthetic">
-                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic collection" loading="lazy">
-                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic" loading="lazy">
                 <div class="category-card-body">
                     <span class="category-tag">Vibe</span>
                     <h3>Aesthetic</h3>
                     <p>Curated moods for your space</p>
                 </div>
             </a>
-
-            <!-- Classic Cars -->
             <a href="shop.html?category=Classic Cars" class="category-card cat-classic reveal reveal-delay-3" id="cat-classic-cars">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars collection" loading="lazy">
-                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars" loading="lazy">
                 <div class="category-card-body">
                     <span class="category-tag">Vintage</span>
                     <h3>Classic Cars</h3>
                     <p>Timeless automotive art</p>
                 </div>
             </a>
-
         </div>
     </section>
 
@@ -489,9 +660,6 @@
         </div>
         <div class="featured-grid reveal reveal-delay-1" id="featured-grid">
             <!-- Populated by JS -->
-        </div>
-        <div style="text-align:center; margin-top:2.5rem;" class="reveal reveal-delay-2">
-            <a href="shop.html" class="btn-outline">View All Posters</a>
         </div>
     </section>
 
@@ -533,7 +701,6 @@
                     <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
                     <a href="shop.html">Shop All</a>
-                    <a href="cart.html">View Cart</a>
                 </div>
                 <div class="footer-col">
                     <h3>Legal</h3>
@@ -552,92 +719,112 @@
         </div>
     </footer>
 
+    <!-- SIDE CART PANEL -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-panel" id="cartPanel"></div>
+
     <!-- SCRIPTS -->
     <script src="data.js"></script>
-    <script src="script.js"></script>
-    <script>
-        /* ── Hero Background Carousel ── */
+    <script type="module">
+        import { shuffleArray, createProductCard, renderCartPanel, toggleCart } from './ui.js';
+        import { calculateCartTotals, updateQuantity } from './cart.js';
+
+        // Global bridge for inline onclicks
+        window.wallify = {
+            toggleCart,
+            updateQty: (id, change) => {
+                updateQuantity(id, change);
+                renderCartPanel('cartPanel');
+                updateGlobalBadges();
+            }
+        };
+
+        function updateGlobalBadges() {
+            const totals = calculateCartTotals();
+            document.querySelectorAll('.cart-count').forEach(el => el.textContent = totals.totalItems);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            const track = document.getElementById('hero-track');
+            // 1. Shuffle Products
+            const shuffled = shuffleArray(products);
+
+            // 2. Populate Featured (4 random)
+            const featuredGrid = document.getElementById('featured-grid');
+            if (featuredGrid) {
+                featuredGrid.innerHTML = '';
+                shuffled.slice(0, 4).forEach(p => featuredGrid.appendChild(createProductCard(p)));
+            }
+
+            // 3. Initialize Side Cart
+            document.getElementById('cartToggle').addEventListener('click', toggleCart);
+            document.getElementById('cartOverlay').addEventListener('click', toggleCart);
+            renderCartPanel('cartPanel');
+            updateGlobalBadges();
+
+            // 4. Hero Background Carousel
+            const tracks = {
+                top: document.getElementById('track-top'),
+                middle: document.getElementById('track-middle'),
+                bottom: document.getElementById('track-bottom')
+            };
             const heroBg = document.getElementById('hero-bg');
             
-            if (track && typeof products !== 'undefined') {
-                // Shuffle posters for a unique experience each time
-                const shuffled = [...products].sort(() => 0.5 - Math.random());
-                const selection = shuffled.slice(0, 15); // Pick 15 random posters
+            if (tracks.top && typeof products !== 'undefined') {
+                const hShuffled = shuffleArray(products);
+                const layers = [
+                    hShuffled.slice(0, 12),
+                    hShuffled.slice(12, 24),
+                    hShuffled.slice(24, 36)
+                ];
                 
-                // Double the selection to create a seamless loop
-                const items = [...selection, ...selection];
+                const injectTrack = (el, items) => {
+                    const loopItems = [...items, ...items];
+                    el.innerHTML = loopItems.map(p => `
+                        <div class="carousel-item">
+                            <img src="${p.image}" alt="${p.title}" loading="lazy">
+                        </div>
+                    `).join('');
+                };
+
+                injectTrack(tracks.top, layers[0]);
+                injectTrack(tracks.middle, layers[1]);
+                injectTrack(tracks.bottom, layers[2]);
                 
-                track.innerHTML = items.map(p => `
-                    <div class="carousel-item">
-                        <img src="${p.image}" alt="${p.title}" loading="lazy">
-                    </div>
-                `).join('');
-                
-                // Fade in the background layer once populated
                 setTimeout(() => heroBg.classList.add('loaded'), 100);
             }
-        });
 
-        /* ── Mobile Nav ──────────────────────────── */
-        (function () {
-            const btn     = document.getElementById('hamburger');
-            const overlay = document.getElementById('mobileNavOverlay');
-            const panel   = document.getElementById('mobileNavPanel');
-
-            function open() {
-                btn.classList.add('open');
-                btn.setAttribute('aria-expanded', 'true');
-                overlay.style.display = 'block';
-                panel.style.display   = 'flex';
-                requestAnimationFrame(() => {
-                    overlay.classList.add('open');
-                    panel.classList.add('open');
+            // 5. Reveal Animations
+            const reveal = () => {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = el.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < windowHeight - elementVisible) {
+                        el.classList.add("active");
+                    }
                 });
-                document.body.style.overflow = 'hidden';
-            }
-            function close() {
-                btn.classList.remove('open');
-                btn.setAttribute('aria-expanded', 'false');
-                overlay.classList.remove('open');
-                panel.classList.remove('open');
-                document.body.style.overflow = '';
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    panel.style.display   = 'none';
-                }, 400);
-            }
-            btn.addEventListener('click', () => btn.classList.contains('open') ? close() : open());
-            overlay.addEventListener('click', close);
-            // Close when a nav link is tapped
-            panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-        })();
-    </script>
-    <script>
-        /* ── Featured Products ───────────────────── */
-        document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('featured-grid');
-            if (grid && typeof products !== 'undefined') {
-                const featured = products.slice(0, 4);
-                grid.innerHTML = featured.map((p, i) => `
-                    <div class="product-card" style="animation-delay:${i*0.1}s">
-                        <a href="product.html?id=${p.id}" class="card-img-wrapper">
-                            <img src="${p.image}" loading="lazy" alt="${p.title}">
-                        </a>
-                        <div class="card-content">
-                            <span class="card-category">${p.category}</span>
-                            <h3 class="card-title">${p.title}</h3>
-                            <div class="card-footer">
-                                <span class="card-price">Starts at ₹33</span>
-                                <a href="product.html?id=${p.id}" class="btn-primary" style="padding:9px 18px;font-size:0.85rem;">View <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
+            };
+            window.addEventListener("scroll", reveal);
+            reveal();
+
+            // 6. Hamburger Menu
+            const ham = document.getElementById('hamburger');
+            const navPan = document.getElementById('mobileNavPanel');
+            const navOver = document.getElementById('mobileNavOverlay');
+            
+            if(ham) {
+                ham.addEventListener('click', () => {
+                    ham.classList.toggle('open');
+                    navPan.classList.toggle('open');
+                    navOver.classList.toggle('open');
+                });
             }
         });
+
+        window.addEventListener('cartUpdated', () => {
+            renderCartPanel('cartPanel');
+            updateGlobalBadges();
+        });
     </script>
-    <script src="responsive.js"></script>
 </body>
 </html>

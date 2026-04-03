@@ -61,17 +61,6 @@
             padding: 10px 14px;
             border-radius: 10px;
             border: 1px solid transparent;
-            position: relative;
-        }
-
-        .filter-item .cat-count {
-            margin-left: auto;
-            font-size: 0.72rem;
-            background: rgba(255,255,255,0.07);
-            border-radius: 20px;
-            padding: 2px 8px;
-            color: var(--text-muted);
-            transition: var(--transition);
         }
 
         .filter-item:hover {
@@ -86,73 +75,7 @@
             font-weight: 500;
             border-color: rgba(255,215,0,0.2);
         }
-        .filter-item.active .cat-count {
-            background: rgba(255,215,0,0.15);
-            color: var(--accent-color);
-        }
 
-        /* ── Horizontal filter tabs ───────────────── */
-        .filter-tabs-wrapper {
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            margin-bottom: 32px;
-            padding-bottom: 2px;
-        }
-        .filter-tabs-wrapper::-webkit-scrollbar { display: none; }
-
-        .filter-tabs {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            min-width: max-content;
-            padding: 4px 2px;
-        }
-
-        .filter-tab {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 9px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--border-color);
-            background: var(--surface-color);
-            color: var(--text-muted);
-            font-family: 'Outfit', sans-serif;
-            font-weight: 500;
-            font-size: 0.88rem;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-            backdrop-filter: blur(10px);
-            letter-spacing: 0.3px;
-            min-height: 42px;
-        }
-
-        .filter-tab i {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        .filter-tab:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.25);
-            color: var(--text-main);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .filter-tab.active {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-            color: #000;
-            box-shadow: 0 6px 24px rgba(255,215,0,0.3);
-            transform: translateY(-1px);
-        }
-
-        .filter-tab.active i { opacity: 1; }
-
-        /* ── Search ────────────────────────────────── */
         .search-box {
             width: 100%;
             padding: 14px 20px;
@@ -160,172 +83,81 @@
             border: 1px solid var(--border-color);
             color: var(--text-main);
             border-radius: 30px;
-            font-family: inherit;
             margin-bottom: 32px;
-            transition: var(--transition);
             font-size: 0.95rem;
-        }
-
-        .search-box::placeholder { color: var(--text-muted); }
-
-        .search-box:focus {
-            outline: none;
-            border-color: rgba(255,255,255,0.4);
-            box-shadow: 0 0 15px rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.05);
-        }
-
-        /* ── Grid + Layout ─────────────────────────── */
-        .shop-main { flex-grow: 1; }
-
-        .shop-toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-muted);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        /* ── Skeleton Loading ──────────────────────── */
-        .skeleton-card {
+        /* ── From Index (Premium UI) ── */
+        .product-card {
             background: var(--surface-color);
-            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid var(--border-color);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+            position: relative;
         }
-        .skeleton-img {
-            aspect-ratio: 3/4;
-            background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.04) 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.6s infinite;
-        }
-        .skeleton-body { padding: 1.25rem; }
-        .skeleton-line {
-            height: 12px;
-            border-radius: 6px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.04) 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.6s infinite;
-            margin-bottom: 10px;
-        }
-        .skeleton-line:nth-child(1) { width: 40%; }
-        .skeleton-line:nth-child(2) { width: 75%; }
-        .skeleton-line:nth-child(3) { width: 55%; margin-top: 14px; }
-        @keyframes shimmer {
-            0%   { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.5);
         }
 
-        /* ── Empty state ───────────────────────────── */
-        .empty-state {
-            text-align: center;
-            padding: 80px 20px;
-            color: var(--text-muted);
-            grid-column: 1 / -1;
-            background: var(--surface-color);
-            border-radius: 16px;
-            border: 1px dashed var(--border-color);
+        /* ── Side Cart Panel (Shared) ── */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
         }
-
-        /* ── Pagination ─────────────────────────────── */
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 60px;
-            flex-wrap: wrap;
+        .cart-overlay.open { opacity: 1; visibility: visible; }
+        .cart-panel {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 400px; max-width: 90%; height: 100%;
+            background: #0D0D0E;
+            z-index: 2001;
+            box-shadow: -10px 0 50px rgba(0,0,0,0.8);
+            transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            display: flex; flex-direction: column;
+            border-left: 1px solid rgba(255,255,255,0.05);
         }
+        .cart-panel.open { right: 0; }
 
-        .page-btn {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            min-width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-weight: 500;
-            transition: var(--transition);
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .page-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-
-        .page-btn.active {
-            background: var(--accent-color);
-            color: #000;
-            border-color: var(--accent-color);
-            box-shadow: 0 4px 15px rgba(255,215,0,0.25);
-        }
-
-        /* ── Responsive ─────────────────────────────── */
         @media (max-width: 900px) {
-            .shop-layout {
-                flex-direction: column;
-            }
-            .shop-sidebar {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .shop-header { padding: 120px 0 50px; }
-            .shop-layout { margin-top: 30px; gap: 24px; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-            .filter-section { padding: 16px; }
-            .search-box { padding: 12px 16px; }
-            .filter-tab { padding: 8px 16px; font-size: 0.82rem; }
-        }
-
-        @media (max-width: 380px) {
-            .product-grid { grid-template-columns: 1fr; }
+            .shop-layout { flex-direction: column; }
+            .shop-sidebar { width: 100%; }
+            .cart-panel { width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <!-- NAV -->
-    <nav class="navbar">
+    <nav class="navbar reveal">
         <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="shop.html" class="active">Shop</a>
         </div>
         <div class="nav-icons">
-            <a href="cart.html" class="cart-icon">
+            <button class="cart-icon" id="cartToggle" aria-label="View cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-count">0</span>
-            </a>
+            </button>
             <button class="hamburger" id="hamburger" aria-label="Open menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </button>
         </div>
     </nav>
-
-    <!-- MOBILE NAV -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <div class="mobile-nav-panel" id="mobileNavPanel">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="shop.html" class="active"><i class="fas fa-store"></i> Shop</a>
-        <a href="cart.html" class="mobile-cart-link"><i class="fas fa-shopping-bag"></i> View Cart</a>
-    </div>
 
     <!-- HEADER -->
     <header class="shop-header">
@@ -337,205 +169,94 @@
 
     <!-- MAIN SHOP AREA -->
     <section class="container shop-layout">
-        <!-- SIDEBAR -->
-        <aside class="shop-sidebar reveal reveal-delay-1">
+        <aside class="shop-sidebar reveal">
             <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search artworks...">
-
             <div class="filter-section">
                 <h3>Categories</h3>
                 <div class="filter-list" id="categoryFilters">
-                    <div class="filter-item active" data-cat="Automotive Posters">
-                        <i class="fas fa-gauge-high" style="width:16px;opacity:0.7"></i> Automotive Posters
-                        <span class="cat-count" id="count-Automotive Posters">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="All">
-                        All Collections
-                        <span class="cat-count" id="count-All">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="Mollywood">
-                        <i class="fas fa-film" style="width:16px;opacity:0.7"></i> Mollywood
-                        <span class="cat-count" id="count-Mollywood">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="Aesthetic">
-                        <i class="fas fa-palette" style="width:16px;opacity:0.7"></i> Aesthetic
-                        <span class="cat-count" id="count-Aesthetic">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="Anime">
-                        <i class="fas fa-star" style="width:16px;opacity:0.7"></i> Anime
-                        <span class="cat-count" id="count-Anime">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="Football">
-                        <i class="fas fa-futbol" style="width:16px;opacity:0.7"></i> Football
-                        <span class="cat-count" id="count-Football">—</span>
-                    </div>
-                    <div class="filter-item" data-cat="Classic Cars">
-                        <i class="fas fa-car" style="width:16px;opacity:0.7"></i> Classic Cars
-                        <span class="cat-count" id="count-Classic Cars">—</span>
-                    </div>
+                    <div class="filter-item active" data-cat="All">All Collections</div>
+                    <div class="filter-item" data-cat="Automotive Posters">Automotive</div>
+                    <div class="filter-item" data-cat="Mollywood">Mollywood</div>
+                    <div class="filter-item" data-cat="Aesthetic">Aesthetic</div>
+                    <div class="filter-item" data-cat="Anime">Anime</div>
+                    <div class="filter-item" data-cat="Football">Football</div>
+                    <div class="filter-item" data-cat="Classic Cars">Classic Cars</div>
                 </div>
-            </div>
-
-            <div class="filter-section">
-                <h3>Sort By</h3>
-                <select id="sortSelect" class="search-box" style="margin-bottom:0; border-radius:10px; cursor:pointer;">
-                    <option value="default" style="background:#111">Featured</option>
-                    <option value="low"     style="background:#111">Price: Low to High</option>
-                    <option value="high"    style="background:#111">Price: High to Low</option>
-                </select>
             </div>
         </aside>
 
-        <!-- GRID -->
         <main class="shop-main">
-            <!-- ── Horizontal Filter Tabs ── -->
-            <div class="filter-tabs-wrapper reveal reveal-delay-2" id="filterTabsWrapper">
-                <div class="filter-tabs" id="filterTabs">
-                    <button class="filter-tab active" data-cat="Automotive Posters" id="tab-Automotive-Posters">
-                        <i class="fas fa-gauge-high"></i> Automotive
-                    </button>
-                    <button class="filter-tab" data-cat="All" id="tab-All">
-                        <i class="fas fa-border-all"></i> All
-                    </button>
-                    <button class="filter-tab" data-cat="Mollywood" id="tab-Mollywood">
-                        <i class="fas fa-film"></i> Mollywood
-                    </button>
-                    <button class="filter-tab" data-cat="Aesthetic" id="tab-Aesthetic">
-                        <i class="fas fa-palette"></i> Aesthetic
-                    </button>
-                    <button class="filter-tab" data-cat="Anime" id="tab-Anime">
-                        <i class="fas fa-star"></i> Anime
-                    </button>
-                    <button class="filter-tab" data-cat="Football" id="tab-Football">
-                        <i class="fas fa-futbol"></i> Football
-                    </button>
-                    <button class="filter-tab" data-cat="Classic Cars" id="tab-Classic-Cars">
-                        <i class="fas fa-car"></i> Classic Cars
-                    </button>
-                </div>
-            </div>
-
-            <div class="shop-toolbar reveal reveal-delay-3">
-                <p id="resultsCount">Loading...</p>
-            </div>
-
-            <div class="product-grid" id="shopGrid">
-                <!-- Skeleton placeholders shown while JS loads -->
-                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
-                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
-                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
-                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div></div>
-            </div>
-
-            <!-- Pagination Container -->
-            <div id="paginationContainer" class="pagination-container reveal"></div>
+            <div class="product-grid" id="shopGrid"></div>
+            <div id="paginationContainer" class="pagination-container"></div>
         </main>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col" id="about">
-                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: block;">Wallify<span style="color:#FFF">.</span></a>
-                    <p>Transforming empty walls into inspiring spaces with premium, hand-picked digital art prints.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop All</a>
-                    <a href="cart.html">View Cart</a>
-                </div>
-                <div class="footer-col">
-                    <h3>Legal</h3>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <div class="footer-col">
-                    <h3>Connect</h3>
-                    <a href="https://www.instagram.com/wallifystore.in/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://wa.me/919497242251" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Wallify Store. Designed with precision.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- PRODUCT MODAL -->
-    <div id="productModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeProductModal()"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-                <div class="modal-img-col">
-                    <img id="modalImage" src="" alt="Product Image" draggable="false" style="pointer-events:none;">
-                </div>
-                <div class="modal-info-col">
-                    <span class="modal-category" id="modalCategory"></span>
-                    <h2 class="modal-title" id="modalTitle"></h2>
-                    <h3 class="modal-price" id="modalPrice">₹33.00</h3>
-                    
-                    <div class="modal-actions">
-                        <button class="btn-primary" onclick="buyNowFromModal()">Order Now</button>
-                        <button class="btn-outline" onclick="addToCartFromModal()">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- SIDE CART PANEL -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-panel" id="cartPanel"></div>
 
     <!-- SCRIPTS -->
     <script src="data.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Mobile Nav Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const mobileNavPanel = document.getElementById('mobileNavPanel');
-        function openMobileNav() {
-            hamburger.classList.add('open');
-            mobileNavOverlay.style.display = 'block';
-            mobileNavPanel.style.display = 'flex';
-            requestAnimationFrame(() => { mobileNavOverlay.classList.add('open'); mobileNavPanel.classList.add('open'); });
-            document.body.style.overflow = 'hidden';
+    <script type="module">
+        import { createProductCard, renderCartPanel, toggleCart, shuffleArray } from './ui.js';
+        import { calculateCartTotals, updateQuantity } from './cart.js';
+
+        window.wallify = {
+            toggleCart,
+            updateQty: (id, change) => {
+                updateQuantity(id, change);
+                renderCartPanel('cartPanel');
+                updateGlobalBadges();
+            }
+        };
+
+        function updateGlobalBadges() {
+            const totals = calculateCartTotals();
+            document.querySelectorAll('.cart-count').forEach(el => el.textContent = totals.totalItems);
         }
-        function closeMobileNav() {
-            hamburger.classList.remove('open');
-            mobileNavOverlay.classList.remove('open');
-            mobileNavPanel.classList.remove('open');
-            document.body.style.overflow = '';
-            setTimeout(() => { mobileNavOverlay.style.display = 'none'; mobileNavPanel.style.display = 'none'; }, 400);
-        }
-        hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav());
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // ── Inject grid animation keyframe once ────────────────
-            if (!document.getElementById('gridAnim')) {
-                const s = document.createElement('style');
-                s.id = 'gridAnim';
-                s.innerHTML = `@keyframes revealItem{from{opacity:0;transform:translateY(24px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}`;
-                document.head.appendChild(s);
+
+        let currentCategory = 'All';
+        let searchQuery = '';
+
+        function renderGrid() {
+            const grid = document.getElementById('shopGrid');
+            grid.innerHTML = '';
+            
+            let filtered = products;
+            if (currentCategory !== 'All') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+            if (searchQuery) {
+                filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
             }
 
-            // Initialize the dynamic category grid system
-            if (typeof products !== 'undefined' && typeof initializeCategorySystem === 'function') {
-                initializeCategorySystem({
-                    allProducts: products,
-                    gridContainerId: 'shopGrid',
-                    paginationContainerId: 'paginationContainer',
-                    resultsCountId: 'resultsCount',
-                    sidebarFilterSelector: '#categoryFilters .filter-item',
-                    tabFilterSelector: '#filterTabs .filter-tab',
-                    searchInputId: 'searchInput',
-                    sortSelectId: 'sortSelect',
-                    itemsPerPage: 15
+            // Shuffle for the "Random every refresh" requirement
+            const displayList = shuffleArray(filtered);
+            displayList.forEach(p => grid.appendChild(createProductCard(p)));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGrid();
+            
+            // Listeners
+            document.querySelectorAll('.filter-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-item').forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                    currentCategory = item.getAttribute('data-cat');
+                    renderGrid();
                 });
-            } else {
-                console.error("[Wallify] Failed to load products data or UI components!");
-                document.getElementById('shopGrid').innerHTML = '<h3 style="color:red;">Error loading items. Please check if data.js exists properly.</h3>';
-            }
+            });
+
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderGrid();
+            });
+
+            document.getElementById('cartToggle').addEventListener('click', toggleCart);
+            document.getElementById('cartOverlay').addEventListener('click', toggleCart);
+            renderCartPanel('cartPanel');
+            updateGlobalBadges();
         });
     </script>
 </body>
