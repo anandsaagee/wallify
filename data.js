@@ -1,5 +1,5 @@
 const products = [
-/* ── Automotive (AM directory – 151 posters) ──────────────────────────── */
+/* ── Automotive (AM directory) ──────────────────────────── */
     {
         id: "am001",
         title: "1 - AM  001.jpg",

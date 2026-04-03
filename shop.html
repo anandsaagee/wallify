@@ -583,9 +583,10 @@
                 const pageItems     = filtered.slice(start, start + itemsPerPage);
 
                 shopGrid.innerHTML = pageItems.map((p, i) => `
-                    <div class="product-card" style="animation:revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;opacity:0;animation-delay:${i * 0.04}s">
-                        <a href="product.html?id=${p.id}" class="card-img-wrapper">
-                            <img src="${p.image}" loading="lazy" alt="${p.title}">
+                    <div class="product-card" style="animation:revealItem 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;opacity:0;animation-delay:${i * 0.04}s" oncontextmenu="return false;" ondragstart="return false;">
+                        <a href="product.html?id=${p.id}" class="card-img-wrapper" style="display:block;">
+                            <!-- Prevent interaction on the image to deter saving -->
+                            <img src="${p.image}" loading="lazy" alt="${p.title}" draggable="false" style="pointer-events:none;">
                         </a>
                         <div class="card-content">
                             <span class="card-category">${p.category}</span>
