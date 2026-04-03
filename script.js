@@ -237,7 +237,7 @@ function initializeCategorySystem({
     sortSelectId,
     itemsPerPage = 15
 }) {
-    let currentCategory = 'All';
+    let currentCategory = 'Automotive Posters';
     let searchQuery = '';
     let currentSort = 'default';
     let currentPage = 1;

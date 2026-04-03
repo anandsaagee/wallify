@@ -7,7 +7,7 @@ def generate_db():
     # Note: Folder names are case-sensitive on Linux. 
     # Checking for common variations to be safe.
     folder_map = {
-        "Automotive": ["assets/AM/", "assets/am/"],
+        "Automotive Posters": ["assets/automotive/"],
         "Mollywood": ["assets/Mollywood/"],
         "Aesthetic": ["assets/aesthe/"],
         "Anime": ["assets/anime/"],

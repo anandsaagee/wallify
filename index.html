@@ -285,17 +285,18 @@
         /* Desktop (≥1024px) */
         @media (min-width: 1024px) {
             .categories-grid {
-                grid-template-columns: repeat(5, 1fr);
-                grid-template-rows: 200px 200px;
-                gap: 1.25rem;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: 240px 240px;
+                gap: 1.5rem;
             }
-            /* Row 1: Mollywood (wide) + Football */
-            .cat-mollywood  { grid-column: span 3; grid-row: 1; }
-            .cat-football   { grid-column: span 2; grid-row: 1; }
-            /* Row 2: Anime + Aesthetic (wide) + Classic Cars */
-            .cat-anime      { grid-column: span 2; grid-row: 2; }
+            /* Row 1: Automotive (4) + Mollywood (2) */
+            .cat-automotive { grid-column: span 4; grid-row: 1; }
+            .cat-mollywood  { grid-column: span 2; grid-row: 1; }
+            /* Row 2: Football(1) + Anime(1) + Aesthetic(2) + Classic(2) */
+            .cat-football   { grid-column: span 1; grid-row: 2; }
+            .cat-anime      { grid-column: span 1; grid-row: 2; }
             .cat-aesthetic  { grid-column: span 2; grid-row: 2; }
-            .cat-classic    { grid-column: span 1; grid-row: 2; }
+            .cat-classic    { grid-column: span 2; grid-row: 2; }
 
             .cat-featured { grid-column: unset; min-height: unset; }
 
@@ -366,14 +367,25 @@
         </div>
         <div class="categories-grid">
 
+            <!-- Automotive Posters -->
+            <a href="shop.html?category=Automotive Posters" class="category-card cat-automotive cat-featured reveal" id="cat-automotive">
+                <img src="assets/automotive/AM%20001.jpg" alt="Automotive Posters collection" loading="lazy">
+                <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
+                <div class="category-card-body">
+                    <span class="category-tag">Speed</span>
+                    <h3>Automotive Posters</h3>
+                    <p>High-octane art for your space</p>
+                </div>
+            </a>
+
             <!-- Mollywood -->
-            <a href="shop.html?category=Mollywood" class="category-card cat-mollywood cat-featured reveal" id="cat-mollywood">
+            <a href="shop.html?category=Mollywood" class="category-card cat-mollywood reveal reveal-delay-1" id="cat-mollywood">
                 <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood collection" loading="lazy">
                 <span class="cat-arrow"><i class="fas fa-arrow-right"></i></span>
                 <div class="category-card-body">
                     <span class="category-tag">Cinema</span>
                     <h3>Mollywood</h3>
-                    <p>Malayalam cinema's finest moments on your wall</p>
+                    <p>Malayalam cinema's moments</p>
                 </div>
             </a>
 
@@ -556,6 +568,7 @@
                 `).join('');
             }
         });
-<script src="responsive.js"></script>
+    </script>
+    <script src="responsive.js"></script>
 </body>
 </html>
