@@ -3185,15 +3185,7 @@ window.products = [
         "description": "Premium Aesthetic wall art. 100 - abstract 100.jpg",
         "label": "100 - abstract 100.jpg"
     },
-    {
-        "id": "p355",
-        "title": "101 - abstract 101.jpg",
-        "category": "Aesthetic",
-        "basePrice": 33.0,
-        "image": "assets/aesthe/abstract%20101.jpg",
-        "description": "Premium Aesthetic wall art. 101 - abstract 101.jpg",
-        "label": "101 - abstract 101.jpg"
-    },
+
     {
         "id": "p356",
         "title": "102 - abstract 102.jpg",
