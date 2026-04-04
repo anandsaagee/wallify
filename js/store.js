@@ -36,10 +36,17 @@ function initializeStore({
             return matchCat && matchSearch;
         });
 
-        // Sort
-        if (currentSort === 'low') filtered.sort((a, b) => a.basePrice - b.basePrice);
-        else if (currentSort === 'high') filtered.sort((a, b) => b.basePrice - a.basePrice);
-        else if (currentSort === 'az') filtered.sort((a, b) => a.title.localeCompare(b.title));
+        // Sort & Randomize
+        if (currentSort === 'low') {
+            filtered.sort((a, b) => a.basePrice - b.basePrice);
+        } else if (currentSort === 'high') {
+            filtered.sort((a, b) => b.basePrice - a.basePrice);
+        } else if (currentSort === 'az') {
+            filtered.sort((a, b) => a.title.localeCompare(b.title));
+        } else {
+            // Default: True Fisher-Yates Randomness on every load
+            filtered = shuffleArray(filtered);
+        }
 
         // Update Results Count
         if (resultsCount) {

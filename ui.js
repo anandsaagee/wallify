@@ -58,17 +58,19 @@ function createPosterCard(product, delay = 0) {
     const card = document.createElement('div');
     card.className = 'poster-card reveal';
     card.style.animationDelay = `${delay * 0.05}s`;
+    card.style.cursor = 'pointer';
+    card.onclick = () => window.openProductModal(product.id);
     
     card.innerHTML = `
-        <div class="card-img-wrap" onclick="window.openProductModal('${product.id}')">
+        <div class="card-img-wrap">
             <img src="${product.image}" alt="${product.title}" loading="lazy">
             <div class="card-overlay">
                 <div class="quick-actions">
-                    <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;" onclick="window.openProductModal('${product.id}')">View Details</button>
+                    <button class="btn btn-primary" style="padding: 10px 24px; font-weight: 700;">View Poster</button>
                 </div>
             </div>
         </div>
-        <div class="card-info" onclick="window.openProductModal('${product.id}')" style="cursor: pointer;">
+        <div class="card-info">
             <h3 class="card-title">${product.title}</h3>
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <span class="card-price">Starts at ₹${SIZES['A6'].price}</span>
@@ -314,9 +316,9 @@ document.addEventListener('mousemove', (e) => {
 });
 
 /**
- * shuffle — Utility to randomize arrays
+ * shuffleArray — Utility to randomize arrays (Fisher-Yates)
  */
-function shuffle(array) {
+function shuffleArray(array) {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

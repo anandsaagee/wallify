@@ -2,7 +2,7 @@ window.products = [
     {
         "id": "p1",
         "title": "1 - AM  001.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20001.jpg",
         "description": "Premium Automotive Posters wall art. 1 - AM  001.jpg",
@@ -11,7 +11,7 @@ window.products = [
     {
         "id": "p2",
         "title": "2 - AM  002.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20002.jpg",
         "description": "Premium Automotive Posters wall art. 2 - AM  002.jpg",
@@ -20,7 +20,7 @@ window.products = [
     {
         "id": "p3",
         "title": "3 - AM  003.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20003.jpg",
         "description": "Premium Automotive Posters wall art. 3 - AM  003.jpg",
@@ -29,7 +29,7 @@ window.products = [
     {
         "id": "p4",
         "title": "4 - AM  004.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20004.jpg",
         "description": "Premium Automotive Posters wall art. 4 - AM  004.jpg",
@@ -38,7 +38,7 @@ window.products = [
     {
         "id": "p5",
         "title": "5 - AM  005.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20005.jpg",
         "description": "Premium Automotive Posters wall art. 5 - AM  005.jpg",
@@ -47,7 +47,7 @@ window.products = [
     {
         "id": "p6",
         "title": "6 - AM  006.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20006.jpg",
         "description": "Premium Automotive Posters wall art. 6 - AM  006.jpg",
@@ -56,7 +56,7 @@ window.products = [
     {
         "id": "p7",
         "title": "7 - AM  007.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20007.jpg",
         "description": "Premium Automotive Posters wall art. 7 - AM  007.jpg",
@@ -65,7 +65,7 @@ window.products = [
     {
         "id": "p8",
         "title": "8 - AM  008.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20008.png",
         "description": "Premium Automotive Posters wall art. 8 - AM  008.png",
@@ -74,7 +74,7 @@ window.products = [
     {
         "id": "p9",
         "title": "9 - AM  009.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20009.jpg",
         "description": "Premium Automotive Posters wall art. 9 - AM  009.jpg",
@@ -83,7 +83,7 @@ window.products = [
     {
         "id": "p10",
         "title": "10 - AM  010.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20010.jpg",
         "description": "Premium Automotive Posters wall art. 10 - AM  010.jpg",
@@ -92,7 +92,7 @@ window.products = [
     {
         "id": "p11",
         "title": "11 - AM  011.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20011.jpg",
         "description": "Premium Automotive Posters wall art. 11 - AM  011.jpg",
@@ -101,7 +101,7 @@ window.products = [
     {
         "id": "p12",
         "title": "12 - AM  012.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20012.jpg",
         "description": "Premium Automotive Posters wall art. 12 - AM  012.jpg",
@@ -110,7 +110,7 @@ window.products = [
     {
         "id": "p13",
         "title": "13 - AM  013.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20013.jpg",
         "description": "Premium Automotive Posters wall art. 13 - AM  013.jpg",
@@ -119,7 +119,7 @@ window.products = [
     {
         "id": "p14",
         "title": "14 - AM  014.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20014.jpg",
         "description": "Premium Automotive Posters wall art. 14 - AM  014.jpg",
@@ -128,7 +128,7 @@ window.products = [
     {
         "id": "p15",
         "title": "15 - AM  015.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20015.jpg",
         "description": "Premium Automotive Posters wall art. 15 - AM  015.jpg",
@@ -137,7 +137,7 @@ window.products = [
     {
         "id": "p16",
         "title": "16 - AM  016.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20016.png",
         "description": "Premium Automotive Posters wall art. 16 - AM  016.png",
@@ -146,7 +146,7 @@ window.products = [
     {
         "id": "p17",
         "title": "17 - AM  017.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20017.png",
         "description": "Premium Automotive Posters wall art. 17 - AM  017.png",
@@ -155,7 +155,7 @@ window.products = [
     {
         "id": "p18",
         "title": "18 - AM  018.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20018.png",
         "description": "Premium Automotive Posters wall art. 18 - AM  018.png",
@@ -164,7 +164,7 @@ window.products = [
     {
         "id": "p19",
         "title": "19 - AM  019.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20019.png",
         "description": "Premium Automotive Posters wall art. 19 - AM  019.png",
@@ -173,7 +173,7 @@ window.products = [
     {
         "id": "p20",
         "title": "20 - AM  020.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20020.png",
         "description": "Premium Automotive Posters wall art. 20 - AM  020.png",
@@ -182,7 +182,7 @@ window.products = [
     {
         "id": "p21",
         "title": "21 - AM  021.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20021.png",
         "description": "Premium Automotive Posters wall art. 21 - AM  021.png",
@@ -191,7 +191,7 @@ window.products = [
     {
         "id": "p22",
         "title": "22 - AM  022.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20022.jpg",
         "description": "Premium Automotive Posters wall art. 22 - AM  022.jpg",
@@ -200,7 +200,7 @@ window.products = [
     {
         "id": "p23",
         "title": "23 - AM  023.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20023.png",
         "description": "Premium Automotive Posters wall art. 23 - AM  023.png",
@@ -209,7 +209,7 @@ window.products = [
     {
         "id": "p24",
         "title": "24 - AM  024.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20024.png",
         "description": "Premium Automotive Posters wall art. 24 - AM  024.png",
@@ -218,7 +218,7 @@ window.products = [
     {
         "id": "p25",
         "title": "25 - AM  025.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20025.jpg",
         "description": "Premium Automotive Posters wall art. 25 - AM  025.jpg",
@@ -227,7 +227,7 @@ window.products = [
     {
         "id": "p26",
         "title": "26 - AM  026.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20026.png",
         "description": "Premium Automotive Posters wall art. 26 - AM  026.png",
@@ -236,7 +236,7 @@ window.products = [
     {
         "id": "p27",
         "title": "27 - AM  027.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20027.jpg",
         "description": "Premium Automotive Posters wall art. 27 - AM  027.jpg",
@@ -245,7 +245,7 @@ window.products = [
     {
         "id": "p28",
         "title": "28 - AM  028.png",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20028.png",
         "description": "Premium Automotive Posters wall art. 28 - AM  028.png",
@@ -254,7 +254,7 @@ window.products = [
     {
         "id": "p29",
         "title": "29 - AM  029.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20029.jpg",
         "description": "Premium Automotive Posters wall art. 29 - AM  029.jpg",
@@ -263,7 +263,7 @@ window.products = [
     {
         "id": "p30",
         "title": "30 - AM  030.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20030.jpg",
         "description": "Premium Automotive Posters wall art. 30 - AM  030.jpg",
@@ -272,7 +272,7 @@ window.products = [
     {
         "id": "p31",
         "title": "31 - AM  031.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20031.jpg",
         "description": "Premium Automotive Posters wall art. 31 - AM  031.jpg",
@@ -281,7 +281,7 @@ window.products = [
     {
         "id": "p32",
         "title": "32 - AM  032.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20032.jpg",
         "description": "Premium Automotive Posters wall art. 32 - AM  032.jpg",
@@ -290,7 +290,7 @@ window.products = [
     {
         "id": "p33",
         "title": "33 - AM  033.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20033.jpg",
         "description": "Premium Automotive Posters wall art. 33 - AM  033.jpg",
@@ -299,7 +299,7 @@ window.products = [
     {
         "id": "p34",
         "title": "34 - AM  034.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20034.jpg",
         "description": "Premium Automotive Posters wall art. 34 - AM  034.jpg",
@@ -308,7 +308,7 @@ window.products = [
     {
         "id": "p35",
         "title": "35 - AM  035.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20035.jpg",
         "description": "Premium Automotive Posters wall art. 35 - AM  035.jpg",
@@ -317,7 +317,7 @@ window.products = [
     {
         "id": "p36",
         "title": "36 - AM  036.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20036.jpg",
         "description": "Premium Automotive Posters wall art. 36 - AM  036.jpg",
@@ -326,7 +326,7 @@ window.products = [
     {
         "id": "p37",
         "title": "37 - AM  037.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20037.jpg",
         "description": "Premium Automotive Posters wall art. 37 - AM  037.jpg",
@@ -335,7 +335,7 @@ window.products = [
     {
         "id": "p38",
         "title": "38 - AM  038.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20038.jpg",
         "description": "Premium Automotive Posters wall art. 38 - AM  038.jpg",
@@ -344,7 +344,7 @@ window.products = [
     {
         "id": "p39",
         "title": "39 - AM  039.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20039.jpg",
         "description": "Premium Automotive Posters wall art. 39 - AM  039.jpg",
@@ -353,7 +353,7 @@ window.products = [
     {
         "id": "p40",
         "title": "40 - AM  040.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20040.jpg",
         "description": "Premium Automotive Posters wall art. 40 - AM  040.jpg",
@@ -362,7 +362,7 @@ window.products = [
     {
         "id": "p41",
         "title": "41 - AM  041.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20041.jpg",
         "description": "Premium Automotive Posters wall art. 41 - AM  041.jpg",
@@ -371,7 +371,7 @@ window.products = [
     {
         "id": "p42",
         "title": "42 - AM  042.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20042.jpg",
         "description": "Premium Automotive Posters wall art. 42 - AM  042.jpg",
@@ -380,7 +380,7 @@ window.products = [
     {
         "id": "p43",
         "title": "43 - AM  043.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20043.jpg",
         "description": "Premium Automotive Posters wall art. 43 - AM  043.jpg",
@@ -389,7 +389,7 @@ window.products = [
     {
         "id": "p44",
         "title": "44 - AM  044.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20044.jpg",
         "description": "Premium Automotive Posters wall art. 44 - AM  044.jpg",
@@ -398,7 +398,7 @@ window.products = [
     {
         "id": "p45",
         "title": "45 - AM  045.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20045.jpg",
         "description": "Premium Automotive Posters wall art. 45 - AM  045.jpg",
@@ -407,7 +407,7 @@ window.products = [
     {
         "id": "p46",
         "title": "46 - AM  046.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20046.jpg",
         "description": "Premium Automotive Posters wall art. 46 - AM  046.jpg",
@@ -416,7 +416,7 @@ window.products = [
     {
         "id": "p47",
         "title": "47 - AM  047.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20047.jpg",
         "description": "Premium Automotive Posters wall art. 47 - AM  047.jpg",
@@ -425,7 +425,7 @@ window.products = [
     {
         "id": "p48",
         "title": "48 - AM  048.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20048.jpg",
         "description": "Premium Automotive Posters wall art. 48 - AM  048.jpg",
@@ -434,7 +434,7 @@ window.products = [
     {
         "id": "p49",
         "title": "49 - AM  049.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20049.jpg",
         "description": "Premium Automotive Posters wall art. 49 - AM  049.jpg",
@@ -443,7 +443,7 @@ window.products = [
     {
         "id": "p50",
         "title": "50 - AM  050.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20050.jpg",
         "description": "Premium Automotive Posters wall art. 50 - AM  050.jpg",
@@ -452,7 +452,7 @@ window.products = [
     {
         "id": "p51",
         "title": "51 - AM  051.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20051.jpg",
         "description": "Premium Automotive Posters wall art. 51 - AM  051.jpg",
@@ -461,7 +461,7 @@ window.products = [
     {
         "id": "p52",
         "title": "52 - AM  052.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20052.jpg",
         "description": "Premium Automotive Posters wall art. 52 - AM  052.jpg",
@@ -470,7 +470,7 @@ window.products = [
     {
         "id": "p53",
         "title": "53 - AM  053.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20053.jpg",
         "description": "Premium Automotive Posters wall art. 53 - AM  053.jpg",
@@ -479,7 +479,7 @@ window.products = [
     {
         "id": "p54",
         "title": "54 - AM  054.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20054.jpg",
         "description": "Premium Automotive Posters wall art. 54 - AM  054.jpg",
@@ -488,7 +488,7 @@ window.products = [
     {
         "id": "p55",
         "title": "55 - AM  055.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20055.jpg",
         "description": "Premium Automotive Posters wall art. 55 - AM  055.jpg",
@@ -497,7 +497,7 @@ window.products = [
     {
         "id": "p56",
         "title": "56 - AM  056.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20056.jpg",
         "description": "Premium Automotive Posters wall art. 56 - AM  056.jpg",
@@ -506,7 +506,7 @@ window.products = [
     {
         "id": "p57",
         "title": "57 - AM  057.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20057.jpg",
         "description": "Premium Automotive Posters wall art. 57 - AM  057.jpg",
@@ -515,7 +515,7 @@ window.products = [
     {
         "id": "p58",
         "title": "58 - AM  058.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20058.jpg",
         "description": "Premium Automotive Posters wall art. 58 - AM  058.jpg",
@@ -524,7 +524,7 @@ window.products = [
     {
         "id": "p59",
         "title": "59 - AM  059.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20059.jpg",
         "description": "Premium Automotive Posters wall art. 59 - AM  059.jpg",
@@ -533,7 +533,7 @@ window.products = [
     {
         "id": "p60",
         "title": "60 - AM  060.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20060.jpg",
         "description": "Premium Automotive Posters wall art. 60 - AM  060.jpg",
@@ -542,7 +542,7 @@ window.products = [
     {
         "id": "p61",
         "title": "61 - AM  061.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20061.jpg",
         "description": "Premium Automotive Posters wall art. 61 - AM  061.jpg",
@@ -551,7 +551,7 @@ window.products = [
     {
         "id": "p62",
         "title": "62 - AM  062.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20062.jpg",
         "description": "Premium Automotive Posters wall art. 62 - AM  062.jpg",
@@ -560,7 +560,7 @@ window.products = [
     {
         "id": "p63",
         "title": "63 - AM  063.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20063.jpg",
         "description": "Premium Automotive Posters wall art. 63 - AM  063.jpg",
@@ -569,7 +569,7 @@ window.products = [
     {
         "id": "p64",
         "title": "64 - AM  064.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20064.jpg",
         "description": "Premium Automotive Posters wall art. 64 - AM  064.jpg",
@@ -578,7 +578,7 @@ window.products = [
     {
         "id": "p65",
         "title": "65 - AM  065.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20065.jpg",
         "description": "Premium Automotive Posters wall art. 65 - AM  065.jpg",
@@ -587,7 +587,7 @@ window.products = [
     {
         "id": "p66",
         "title": "66 - AM  066.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20066.jpg",
         "description": "Premium Automotive Posters wall art. 66 - AM  066.jpg",
@@ -596,7 +596,7 @@ window.products = [
     {
         "id": "p67",
         "title": "67 - AM  067.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20067.jpg",
         "description": "Premium Automotive Posters wall art. 67 - AM  067.jpg",
@@ -605,7 +605,7 @@ window.products = [
     {
         "id": "p68",
         "title": "68 - AM  068.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20068.jpg",
         "description": "Premium Automotive Posters wall art. 68 - AM  068.jpg",
@@ -614,7 +614,7 @@ window.products = [
     {
         "id": "p69",
         "title": "69 - AM  069.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20069.jpg",
         "description": "Premium Automotive Posters wall art. 69 - AM  069.jpg",
@@ -623,7 +623,7 @@ window.products = [
     {
         "id": "p70",
         "title": "70 - AM  070.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20070.jpg",
         "description": "Premium Automotive Posters wall art. 70 - AM  070.jpg",
@@ -632,7 +632,7 @@ window.products = [
     {
         "id": "p71",
         "title": "71 - AM  071.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20071.jpg",
         "description": "Premium Automotive Posters wall art. 71 - AM  071.jpg",
@@ -641,7 +641,7 @@ window.products = [
     {
         "id": "p72",
         "title": "72 - AM  072.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20072.jpg",
         "description": "Premium Automotive Posters wall art. 72 - AM  072.jpg",
@@ -650,7 +650,7 @@ window.products = [
     {
         "id": "p73",
         "title": "73 - AM  073.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20073.jpg",
         "description": "Premium Automotive Posters wall art. 73 - AM  073.jpg",
@@ -659,7 +659,7 @@ window.products = [
     {
         "id": "p74",
         "title": "74 - AM  074.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20074.jpg",
         "description": "Premium Automotive Posters wall art. 74 - AM  074.jpg",
@@ -668,7 +668,7 @@ window.products = [
     {
         "id": "p75",
         "title": "75 - AM  075.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20075.jpg",
         "description": "Premium Automotive Posters wall art. 75 - AM  075.jpg",
@@ -677,7 +677,7 @@ window.products = [
     {
         "id": "p76",
         "title": "76 - AM  076.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20076.jpg",
         "description": "Premium Automotive Posters wall art. 76 - AM  076.jpg",
@@ -686,7 +686,7 @@ window.products = [
     {
         "id": "p77",
         "title": "77 - AM  077.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20077.jpg",
         "description": "Premium Automotive Posters wall art. 77 - AM  077.jpg",
@@ -695,7 +695,7 @@ window.products = [
     {
         "id": "p78",
         "title": "78 - AM  078.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20078.jpg",
         "description": "Premium Automotive Posters wall art. 78 - AM  078.jpg",
@@ -704,7 +704,7 @@ window.products = [
     {
         "id": "p79",
         "title": "79 - AM  079.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20079.jpg",
         "description": "Premium Automotive Posters wall art. 79 - AM  079.jpg",
@@ -713,7 +713,7 @@ window.products = [
     {
         "id": "p80",
         "title": "80 - AM  080.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20080.jpg",
         "description": "Premium Automotive Posters wall art. 80 - AM  080.jpg",
@@ -722,7 +722,7 @@ window.products = [
     {
         "id": "p81",
         "title": "81 - AM  081.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20081.jpg",
         "description": "Premium Automotive Posters wall art. 81 - AM  081.jpg",
@@ -731,7 +731,7 @@ window.products = [
     {
         "id": "p82",
         "title": "82 - AM  082.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20082.jpg",
         "description": "Premium Automotive Posters wall art. 82 - AM  082.jpg",
@@ -740,7 +740,7 @@ window.products = [
     {
         "id": "p83",
         "title": "83 - AM  083.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20083.jpg",
         "description": "Premium Automotive Posters wall art. 83 - AM  083.jpg",
@@ -749,7 +749,7 @@ window.products = [
     {
         "id": "p84",
         "title": "84 - AM  084.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20084.jpg",
         "description": "Premium Automotive Posters wall art. 84 - AM  084.jpg",
@@ -758,7 +758,7 @@ window.products = [
     {
         "id": "p85",
         "title": "85 - AM  085.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20085.jpg",
         "description": "Premium Automotive Posters wall art. 85 - AM  085.jpg",
@@ -767,7 +767,7 @@ window.products = [
     {
         "id": "p86",
         "title": "86 - AM  086.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20086.jpg",
         "description": "Premium Automotive Posters wall art. 86 - AM  086.jpg",
@@ -776,7 +776,7 @@ window.products = [
     {
         "id": "p87",
         "title": "87 - AM  087.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20087.jpg",
         "description": "Premium Automotive Posters wall art. 87 - AM  087.jpg",
@@ -785,7 +785,7 @@ window.products = [
     {
         "id": "p88",
         "title": "88 - AM  088.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20088.jpg",
         "description": "Premium Automotive Posters wall art. 88 - AM  088.jpg",
@@ -794,7 +794,7 @@ window.products = [
     {
         "id": "p89",
         "title": "89 - AM  089.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20089.jpg",
         "description": "Premium Automotive Posters wall art. 89 - AM  089.jpg",
@@ -803,7 +803,7 @@ window.products = [
     {
         "id": "p90",
         "title": "90 - AM  090.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20090.jpg",
         "description": "Premium Automotive Posters wall art. 90 - AM  090.jpg",
@@ -812,7 +812,7 @@ window.products = [
     {
         "id": "p91",
         "title": "91 - AM  091.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20091.jpg",
         "description": "Premium Automotive Posters wall art. 91 - AM  091.jpg",
@@ -821,7 +821,7 @@ window.products = [
     {
         "id": "p92",
         "title": "92 - AM  092.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20092.jpg",
         "description": "Premium Automotive Posters wall art. 92 - AM  092.jpg",
@@ -830,7 +830,7 @@ window.products = [
     {
         "id": "p93",
         "title": "93 - AM  093.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20093.jpg",
         "description": "Premium Automotive Posters wall art. 93 - AM  093.jpg",
@@ -839,7 +839,7 @@ window.products = [
     {
         "id": "p94",
         "title": "94 - AM  094.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20094.jpg",
         "description": "Premium Automotive Posters wall art. 94 - AM  094.jpg",
@@ -848,7 +848,7 @@ window.products = [
     {
         "id": "p95",
         "title": "95 - AM  095.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20095.jpg",
         "description": "Premium Automotive Posters wall art. 95 - AM  095.jpg",
@@ -857,7 +857,7 @@ window.products = [
     {
         "id": "p96",
         "title": "96 - AM  096.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20096.jpg",
         "description": "Premium Automotive Posters wall art. 96 - AM  096.jpg",
@@ -866,7 +866,7 @@ window.products = [
     {
         "id": "p97",
         "title": "97 - AM  097.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20097.jpg",
         "description": "Premium Automotive Posters wall art. 97 - AM  097.jpg",
@@ -875,7 +875,7 @@ window.products = [
     {
         "id": "p98",
         "title": "98 - AM  098.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20098.jpg",
         "description": "Premium Automotive Posters wall art. 98 - AM  098.jpg",
@@ -884,7 +884,7 @@ window.products = [
     {
         "id": "p99",
         "title": "99 - AM  099.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20099.jpg",
         "description": "Premium Automotive Posters wall art. 99 - AM  099.jpg",
@@ -893,7 +893,7 @@ window.products = [
     {
         "id": "p100",
         "title": "100 - AM  100.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20100.jpg",
         "description": "Premium Automotive Posters wall art. 100 - AM  100.jpg",
@@ -902,7 +902,7 @@ window.products = [
     {
         "id": "p101",
         "title": "101 - AM  101.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20101.jpg",
         "description": "Premium Automotive Posters wall art. 101 - AM  101.jpg",
@@ -911,7 +911,7 @@ window.products = [
     {
         "id": "p102",
         "title": "102 - AM  102.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20102.jpg",
         "description": "Premium Automotive Posters wall art. 102 - AM  102.jpg",
@@ -920,7 +920,7 @@ window.products = [
     {
         "id": "p103",
         "title": "103 - AM  103.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20103.jpg",
         "description": "Premium Automotive Posters wall art. 103 - AM  103.jpg",
@@ -929,7 +929,7 @@ window.products = [
     {
         "id": "p104",
         "title": "104 - AM  104.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20104.jpg",
         "description": "Premium Automotive Posters wall art. 104 - AM  104.jpg",
@@ -938,7 +938,7 @@ window.products = [
     {
         "id": "p105",
         "title": "105 - AM  105.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20105.jpg",
         "description": "Premium Automotive Posters wall art. 105 - AM  105.jpg",
@@ -947,7 +947,7 @@ window.products = [
     {
         "id": "p106",
         "title": "106 - AM  106.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20106.jpg",
         "description": "Premium Automotive Posters wall art. 106 - AM  106.jpg",
@@ -956,7 +956,7 @@ window.products = [
     {
         "id": "p107",
         "title": "107 - AM  107.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20107.jpg",
         "description": "Premium Automotive Posters wall art. 107 - AM  107.jpg",
@@ -965,7 +965,7 @@ window.products = [
     {
         "id": "p108",
         "title": "108 - AM  108.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20108.jpg",
         "description": "Premium Automotive Posters wall art. 108 - AM  108.jpg",
@@ -974,7 +974,7 @@ window.products = [
     {
         "id": "p109",
         "title": "109 - AM  109.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20109.jpg",
         "description": "Premium Automotive Posters wall art. 109 - AM  109.jpg",
@@ -983,7 +983,7 @@ window.products = [
     {
         "id": "p110",
         "title": "110 - AM  110.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20110.jpg",
         "description": "Premium Automotive Posters wall art. 110 - AM  110.jpg",
@@ -992,7 +992,7 @@ window.products = [
     {
         "id": "p111",
         "title": "111 - AM  111.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20111.jpg",
         "description": "Premium Automotive Posters wall art. 111 - AM  111.jpg",
@@ -1001,7 +1001,7 @@ window.products = [
     {
         "id": "p112",
         "title": "112 - AM  112.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20112.jpg",
         "description": "Premium Automotive Posters wall art. 112 - AM  112.jpg",
@@ -1010,7 +1010,7 @@ window.products = [
     {
         "id": "p113",
         "title": "113 - AM  113.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20113.jpg",
         "description": "Premium Automotive Posters wall art. 113 - AM  113.jpg",
@@ -1019,7 +1019,7 @@ window.products = [
     {
         "id": "p114",
         "title": "114 - AM  114.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20114.jpg",
         "description": "Premium Automotive Posters wall art. 114 - AM  114.jpg",
@@ -1028,7 +1028,7 @@ window.products = [
     {
         "id": "p115",
         "title": "115 - AM  115.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20115.jpg",
         "description": "Premium Automotive Posters wall art. 115 - AM  115.jpg",
@@ -1037,7 +1037,7 @@ window.products = [
     {
         "id": "p116",
         "title": "116 - AM  116.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20116.jpg",
         "description": "Premium Automotive Posters wall art. 116 - AM  116.jpg",
@@ -1046,7 +1046,7 @@ window.products = [
     {
         "id": "p117",
         "title": "117 - AM  117.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20117.jpg",
         "description": "Premium Automotive Posters wall art. 117 - AM  117.jpg",
@@ -1055,7 +1055,7 @@ window.products = [
     {
         "id": "p118",
         "title": "118 - AM  118.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20118.jpg",
         "description": "Premium Automotive Posters wall art. 118 - AM  118.jpg",
@@ -1064,7 +1064,7 @@ window.products = [
     {
         "id": "p119",
         "title": "119 - AM  119.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20119.jpg",
         "description": "Premium Automotive Posters wall art. 119 - AM  119.jpg",
@@ -1073,7 +1073,7 @@ window.products = [
     {
         "id": "p120",
         "title": "120 - AM  120.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20120.jpg",
         "description": "Premium Automotive Posters wall art. 120 - AM  120.jpg",
@@ -1082,7 +1082,7 @@ window.products = [
     {
         "id": "p121",
         "title": "121 - AM  121.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20121.jpg",
         "description": "Premium Automotive Posters wall art. 121 - AM  121.jpg",
@@ -1091,7 +1091,7 @@ window.products = [
     {
         "id": "p122",
         "title": "122 - AM  122.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20122.jpg",
         "description": "Premium Automotive Posters wall art. 122 - AM  122.jpg",
@@ -1100,7 +1100,7 @@ window.products = [
     {
         "id": "p123",
         "title": "123 - AM  123.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20123.jpg",
         "description": "Premium Automotive Posters wall art. 123 - AM  123.jpg",
@@ -1109,7 +1109,7 @@ window.products = [
     {
         "id": "p124",
         "title": "124 - AM  124.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20124.jpg",
         "description": "Premium Automotive Posters wall art. 124 - AM  124.jpg",
@@ -1118,7 +1118,7 @@ window.products = [
     {
         "id": "p125",
         "title": "125 - AM  125.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20125.jpg",
         "description": "Premium Automotive Posters wall art. 125 - AM  125.jpg",
@@ -1127,7 +1127,7 @@ window.products = [
     {
         "id": "p126",
         "title": "126 - AM  126.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20126.jpg",
         "description": "Premium Automotive Posters wall art. 126 - AM  126.jpg",
@@ -1136,7 +1136,7 @@ window.products = [
     {
         "id": "p127",
         "title": "127 - AM  127.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20127.jpg",
         "description": "Premium Automotive Posters wall art. 127 - AM  127.jpg",
@@ -1145,7 +1145,7 @@ window.products = [
     {
         "id": "p128",
         "title": "128 - AM  128.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20128.jpg",
         "description": "Premium Automotive Posters wall art. 128 - AM  128.jpg",
@@ -1154,7 +1154,7 @@ window.products = [
     {
         "id": "p129",
         "title": "129 - AM  129.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20129.jpg",
         "description": "Premium Automotive Posters wall art. 129 - AM  129.jpg",
@@ -1163,7 +1163,7 @@ window.products = [
     {
         "id": "p130",
         "title": "130 - AM  130.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20130.jpg",
         "description": "Premium Automotive Posters wall art. 130 - AM  130.jpg",
@@ -1172,7 +1172,7 @@ window.products = [
     {
         "id": "p131",
         "title": "131 - AM  131.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20131.jpg",
         "description": "Premium Automotive Posters wall art. 131 - AM  131.jpg",
@@ -1181,7 +1181,7 @@ window.products = [
     {
         "id": "p132",
         "title": "132 - AM  132.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20132.jpg",
         "description": "Premium Automotive Posters wall art. 132 - AM  132.jpg",
@@ -1190,7 +1190,7 @@ window.products = [
     {
         "id": "p133",
         "title": "133 - AM  133.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20133.jpg",
         "description": "Premium Automotive Posters wall art. 133 - AM  133.jpg",
@@ -1199,7 +1199,7 @@ window.products = [
     {
         "id": "p134",
         "title": "134 - AM  134.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20134.jpg",
         "description": "Premium Automotive Posters wall art. 134 - AM  134.jpg",
@@ -1208,7 +1208,7 @@ window.products = [
     {
         "id": "p135",
         "title": "135 - AM  135.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20135.jpg",
         "description": "Premium Automotive Posters wall art. 135 - AM  135.jpg",
@@ -1217,7 +1217,7 @@ window.products = [
     {
         "id": "p136",
         "title": "136 - AM  136.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20136.jpg",
         "description": "Premium Automotive Posters wall art. 136 - AM  136.jpg",
@@ -1226,7 +1226,7 @@ window.products = [
     {
         "id": "p137",
         "title": "137 - AM  137.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20137.jpg",
         "description": "Premium Automotive Posters wall art. 137 - AM  137.jpg",
@@ -1235,7 +1235,7 @@ window.products = [
     {
         "id": "p138",
         "title": "138 - AM  138.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20138.jpg",
         "description": "Premium Automotive Posters wall art. 138 - AM  138.jpg",
@@ -1244,7 +1244,7 @@ window.products = [
     {
         "id": "p139",
         "title": "139 - AM  139.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20139.jpg",
         "description": "Premium Automotive Posters wall art. 139 - AM  139.jpg",
@@ -1253,7 +1253,7 @@ window.products = [
     {
         "id": "p140",
         "title": "140 - AM  140.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20140.jpg",
         "description": "Premium Automotive Posters wall art. 140 - AM  140.jpg",
@@ -1262,7 +1262,7 @@ window.products = [
     {
         "id": "p141",
         "title": "141 - AM  141.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20141.jpg",
         "description": "Premium Automotive Posters wall art. 141 - AM  141.jpg",
@@ -1271,7 +1271,7 @@ window.products = [
     {
         "id": "p142",
         "title": "142 - AM  142.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20142.jpg",
         "description": "Premium Automotive Posters wall art. 142 - AM  142.jpg",
@@ -1280,7 +1280,7 @@ window.products = [
     {
         "id": "p143",
         "title": "143 - AM  143.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20143.jpg",
         "description": "Premium Automotive Posters wall art. 143 - AM  143.jpg",
@@ -1289,7 +1289,7 @@ window.products = [
     {
         "id": "p144",
         "title": "144 - AM  144.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20144.jpg",
         "description": "Premium Automotive Posters wall art. 144 - AM  144.jpg",
@@ -1298,7 +1298,7 @@ window.products = [
     {
         "id": "p145",
         "title": "145 - AM  145.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20145.jpg",
         "description": "Premium Automotive Posters wall art. 145 - AM  145.jpg",
@@ -1307,7 +1307,7 @@ window.products = [
     {
         "id": "p146",
         "title": "146 - AM  146.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20146.jpg",
         "description": "Premium Automotive Posters wall art. 146 - AM  146.jpg",
@@ -1316,7 +1316,7 @@ window.products = [
     {
         "id": "p147",
         "title": "147 - AM  147.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20147.jpg",
         "description": "Premium Automotive Posters wall art. 147 - AM  147.jpg",
@@ -1325,7 +1325,7 @@ window.products = [
     {
         "id": "p148",
         "title": "148 - AM  148.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20148.jpg",
         "description": "Premium Automotive Posters wall art. 148 - AM  148.jpg",
@@ -1334,7 +1334,7 @@ window.products = [
     {
         "id": "p149",
         "title": "149 - AM  149.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20149.jpg",
         "description": "Premium Automotive Posters wall art. 149 - AM  149.jpg",
@@ -1343,7 +1343,7 @@ window.products = [
     {
         "id": "p150",
         "title": "150 - AM  150.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20150.jpg",
         "description": "Premium Automotive Posters wall art. 150 - AM  150.jpg",
@@ -1352,7 +1352,7 @@ window.products = [
     {
         "id": "p151",
         "title": "151 - AM  151.jpg",
-        "category": "Automotive Posters",
+        "category": "Automotive",
         "basePrice": 33.0,
         "image": "assets/automotive/AM%20%20151.jpg",
         "description": "Premium Automotive Posters wall art. 151 - AM  151.jpg",

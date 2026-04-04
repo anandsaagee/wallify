@@ -263,13 +263,17 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Poster Cards ── */
 .poster-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
 }
-@media (max-width: 600px) {
+@media (min-width: 768px) {
     .poster-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .poster-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
