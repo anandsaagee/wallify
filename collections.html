@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | Wallify Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .collections-header {
+            padding: 160px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at top center, rgba(30,30,30,1) 0%, var(--bg-color) 100%);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            padding-bottom: 120px;
+        }
+
+        .collection-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.5s ease;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .collection-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.5) contrast(1.1);
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.1);
+            filter: brightness(0.7) contrast(1.2);
+        }
+
+        .collection-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+            z-index: 1;
+        }
+
+        .collection-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .collection-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .collection-title {
+            font-size: 2rem;
+            color: #FFF;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .collection-desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .collection-count {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 2;
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
+            color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .collections-header { padding: 120px 0 40px; }
+            .collection-content { padding: 24px; }
+            .collection-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar reveal">
+        <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="collections.html" class="active">Collections</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="nav-icons">
+            <button class="cart-icon" id="cartToggle">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="collections-header">
+        <div class="container reveal">
+            <h1 class="section-title">The Collections</h1>
+            <p class="section-subtitle">Premium curated art sorted by your passion.</p>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="container">
+        <div class="collections-grid">
+            
+            <a href="shop.html?category=Automotive Posters" class="collection-card reveal">
+                <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive">
+                <div class="collection-content">
+                    <span class="collection-tag">Pure Speed</span>
+                    <h2 class="collection-title">Automotive</h2>
+                    <p class="collection-desc">High-octane prints for gearheads and car enthusiasts.</p>
+                </div>
+            </a>
+
+            <a href="shop.html?category=Anime" class="collection-card reveal reveal-delay-1">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime">
+                <div class="collection-content">
+                    <span class="collection-tag">Epic Art</span>
+                    <h2 class="collection-title">Anime</h2>
+                    <p class="collection-desc">Legendary characters and breathtaking scenes from iconic series.</p>
+                </div>
+            </a>
+
+            <a href="shop.html?category=Aesthetic" class="collection-card reveal reveal-delay-2">
+                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic">
+                <div class="collection-content">
+                    <span class="collection-tag">Modern Vibe</span>
+                    <h2 class="collection-title">Aesthetic</h2>
+                    <p class="collection-desc">Minimalist, lo-fi, and vaporwave art for a curated atmosphere.</p>
+                </div>
+            </a>
+
+            <a href="shop.html?category=Mollywood" class="collection-card reveal">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood">
+                <div class="collection-content">
+                    <span class="collection-tag">Malayalam Cinema</span>
+                    <h2 class="collection-title">Mollywood</h2>
+                    <p class="collection-desc">Iconic moments and posters from Kerala's beloved film industry.</p>
+                </div>
+            </a>
+
+            <a href="shop.html?category=Football" class="collection-card reveal reveal-delay-1">
+                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=1000" alt="Football">
+                <div class="collection-content">
+                    <span class="collection-tag">The Beautiful Game</span>
+                    <h2 class="collection-title">Football</h2>
+                    <p class="collection-desc">Tributes to legends, legendary stadiums, and historic club moments.</p>
+                </div>
+            </a>
+
+            <a href="shop.html?category=Classic Cars" class="collection-card reveal reveal-delay-2">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars">
+                <div class="collection-content">
+                    <span class="collection-tag">Timeless Beauty</span>
+                    <h2 class="collection-title">Classic Cars</h2>
+                    <p class="collection-desc">Vintage curves and historic engineering captured in fine art.</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- FOOTER (Shared) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
+                    <p>Transforming empty walls into inspiring spaces with premium, hand-picked digital art prints.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <a href="shop.html">Shop All</a>
+                    <a href="collections.html">Collections</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wallify Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SIDE CART PANEL -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-panel" id="cartPanel"></div>
+
+    <!-- SCRIPTS -->
+    <script src="data.js"></script>
+    <script type="module">
+        import { renderCartPanel, toggleCart } from './ui.js';
+        import { calculateCartTotals } from './cart.js';
+
+        function updateGlobalBadges() {
+            const totals = calculateCartTotals();
+            document.querySelectorAll('.cart-count').forEach(el => el.textContent = totals.totalItems);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('cartToggle').addEventListener('click', toggleCart);
+            document.getElementById('cartOverlay').addEventListener('click', toggleCart);
+            renderCartPanel('cartPanel');
+            updateGlobalBadges();
+
+            // Reveal Animation
+            setTimeout(() => {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+            }, 100);
+        });
+    </script>
+</body>
+</html>

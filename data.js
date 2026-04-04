@@ -1,4 +1,4 @@
-const products = [
+window.products = [
     {
         "id": "p1",
         "title": "1 - AM  001.jpg",

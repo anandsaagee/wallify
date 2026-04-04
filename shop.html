@@ -132,6 +132,18 @@
         }
         .cart-panel.open { right: 0; }
 
+        .no-results, .error-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--surface-color);
+            border-radius: 20px;
+            border: 1px dashed var(--border-color);
+        }
+        .no-results i { font-size: 3rem; color: var(--accent-color); margin-bottom: 20px; display: block; opacity: 0.5; }
+        .no-results h3 { font-size: 1.5rem; margin-bottom: 12px; }
+        .no-results p { color: var(--text-muted); margin-bottom: 24px; }
+
         @media (max-width: 900px) {
             .shop-layout { flex-direction: column; }
             .shop-sidebar { width: 100%; }
@@ -207,6 +219,13 @@
                 updateQuantity(id, change);
                 renderCartPanel('cartPanel');
                 updateGlobalBadges();
+            },
+            clearFilters: () => {
+                currentCategory = 'All';
+                searchQuery = '';
+                document.getElementById('searchInput').value = '';
+                document.querySelectorAll('.filter-item').forEach(i => i.classList.toggle('active', i.dataset.cat === 'All'));
+                renderGrid();
             }
         };
 
@@ -220,22 +239,66 @@
 
         function renderGrid() {
             const grid = document.getElementById('shopGrid');
-            grid.innerHTML = '';
+            grid.innerHTML = '<div class="loading-spinner"></div>'; // Loading state
             
-            let filtered = products;
-            if (currentCategory !== 'All') {
-                filtered = filtered.filter(p => p.category === currentCategory);
-            }
-            if (searchQuery) {
-                filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
-            }
+            try {
+                if (typeof products === 'undefined') {
+                    throw new Error('Products data not loaded');
+                }
 
-            // Shuffle for the "Random every refresh" requirement
-            const displayList = shuffleArray(filtered);
-            displayList.forEach(p => grid.appendChild(createProductCard(p)));
+                let filtered = products;
+                if (currentCategory !== 'All') {
+                    filtered = filtered.filter(p => p.category === currentCategory);
+                }
+                if (searchQuery) {
+                    filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
+                }
+
+                grid.innerHTML = '';
+                if (filtered.length === 0) {
+                    grid.innerHTML = `
+                        <div class="no-results">
+                            <i class="fas fa-search"></i>
+                            <h3>No posters found</h3>
+                            <p>Try adjusting your filters or search query.</p>
+                            <button class="btn-primary" onclick="window.wallify.clearFilters()">Clear All Filters</button>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const displayList = shuffleArray(filtered);
+                displayList.forEach(p => grid.appendChild(createProductCard(p)));
+                
+                // Trigger reveal animations
+                setTimeout(() => {
+                    document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+                }, 100);
+
+            } catch (error) {
+                console.error('Error rendering shop grid:', error);
+                grid.innerHTML = `
+                    <div class="error-state">
+                        <h3>Oops! Something went wrong.</h3>
+                        <p>We couldn't load the products. Please refresh the page.</p>
+                    </div>
+                `;
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Handle URL Search Params
+            const urlParams = new URLSearchParams(window.location.search);
+            const catParam = urlParams.get('category');
+            
+            if (catParam) {
+                currentCategory = catParam;
+                // Update UI active state
+                document.querySelectorAll('.filter-item').forEach(item => {
+                    item.classList.toggle('active', item.getAttribute('data-cat') === catParam);
+                });
+            }
+
             renderGrid();
             
             // Listeners
@@ -245,6 +308,9 @@
                     item.classList.add('active');
                     currentCategory = item.getAttribute('data-cat');
                     renderGrid();
+                    // Update URL without refresh
+                    const newUrl = currentCategory === 'All' ? 'shop.html' : `shop.html?category=${encodeURIComponent(currentCategory)}`;
+                    window.history.pushState({ category: currentCategory }, '', newUrl);
                 });
             });
 
