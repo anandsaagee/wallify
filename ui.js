@@ -3,9 +3,8 @@
  * Premium UI components & DOM manipulation.
  */
 
-import { getCart, calculateTotals, updateQuantity, removeFromCart, addProduct, SIZES } from './cart.js';
 
-export function showToast(message, type = 'success') {
+function showToast(message, type = 'success') {
     let toast = document.getElementById('wallify-toast');
     if (!toast) {
         toast = document.createElement('div');
@@ -22,7 +21,7 @@ export function showToast(message, type = 'success') {
 /**
  * renderNavbar — Injects the premium navbar
  */
-export function renderNavbar(activePage = 'home') {
+function renderNavbar(activePage = 'home') {
     const nav = document.querySelector('.navbar');
     if (!nav) return;
 
@@ -55,7 +54,7 @@ export function renderNavbar(activePage = 'home') {
 /**
  * createPosterCard — Premium poster card component
  */
-export function createPosterCard(product, delay = 0) {
+function createPosterCard(product, delay = 0) {
     const card = document.createElement('div');
     card.className = 'poster-card reveal';
     card.style.animationDelay = `${delay * 0.05}s`;
@@ -84,7 +83,7 @@ export function createPosterCard(product, delay = 0) {
 /**
  * renderCartPanel — Premium side cart panel
  */
-export function renderCartPanel() {
+function renderCartPanel() {
     let panel = document.getElementById('cartPanel');
     if (!panel) {
         panel = document.createElement('div');
@@ -159,7 +158,7 @@ export function renderCartPanel() {
     });
 }
 
-export function updateNavbarBadge() {
+function updateNavbarBadge() {
     const totals = calculateTotals();
     const badge = document.querySelector('.cart-badge');
     if (badge) {
@@ -169,7 +168,7 @@ export function updateNavbarBadge() {
     }
 }
 
-export function toggleCart(show) {
+function toggleCart(show) {
     const panel = document.getElementById('cartPanel');
     const overlay = document.getElementById('cartOverlay');
     if (!panel) renderCartPanel();
@@ -188,7 +187,7 @@ export function toggleCart(show) {
 /**
  * renderProductModal — Core product display component
  */
-export function openProductModal(productId) {
+function openProductModal(productId) {
     if (typeof products === 'undefined') return;
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -281,7 +280,7 @@ window.closeProductModal = function() {
 };
 
 // Scroll Reveal Observer
-export function initScrollReveal() {
+function initScrollReveal() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -313,3 +312,15 @@ document.addEventListener('mousemove', (e) => {
         glow.style.setProperty('--y', `${y}px`);
     });
 });
+
+/**
+ * shuffle — Utility to randomize arrays
+ */
+function shuffle(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}

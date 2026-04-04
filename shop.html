@@ -65,9 +65,10 @@
 
     <!-- Scripts -->
     <script src="data.js"></script>
-    <script type="module">
-        import { renderNavbar, initScrollReveal, toggleCart } from './ui.js';
-        import { initializeStore } from './js/store.js';
+    <script src="cart.js"></script>
+    <script src="ui.js"></script>
+    <script src="js/store.js"></script>
+    <script>
 
         document.addEventListener('DOMContentLoaded', () => {
             renderNavbar('shop');

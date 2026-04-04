@@ -3,9 +3,8 @@
  * Logic for shop page: Filtering, Sorting, Pagination, and Dynamic Grid.
  */
 
-import { createPosterCard, initScrollReveal } from '../ui.js';
 
-export function initializeStore({
+function initializeStore({
     products,
     gridContainerId,
     paginationContainerId,

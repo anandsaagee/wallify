@@ -5,14 +5,14 @@
 
 const WA_BUSINESS_PHONE = "917736497186";
 
-export const SIZES = {
+const SIZES = {
     'A6': { label: 'A6', price: 17 },
     'A5': { label: 'A5', price: 33 },
     'A4': { label: 'A4', price: 49 },
     'A3': { label: 'A3', price: 99 }
 };
 
-export function getCart() {
+function getCart() {
     try {
         return JSON.parse(localStorage.getItem('wallify_cart')) || [];
     } catch (e) {
@@ -20,7 +20,7 @@ export function getCart() {
     }
 }
 
-export function saveCart(cart) {
+function saveCart(cart) {
     localStorage.setItem('wallify_cart', JSON.stringify(cart));
     // Dispatch event for UI sync
     window.dispatchEvent(new CustomEvent('cart_updated', { detail: cart }));
@@ -30,7 +30,7 @@ export function saveCart(cart) {
  * addProduct — Adds or updates an item in the cart
  * variantId is a combination of productId and size
  */
-export function addProduct(product, size = 'A5', quantity = 1) {
+function addProduct(product, size = 'A5', quantity = 1) {
     const cart = getCart();
     const variantId = `${product.id}-${size}`;
     const existing = cart.find(item => item.variantId === variantId);
@@ -52,7 +52,7 @@ export function addProduct(product, size = 'A5', quantity = 1) {
     saveCart(cart);
 }
 
-export function updateQuantity(variantId, delta) {
+function updateQuantity(variantId, delta) {
     let cart = getCart();
     const item = cart.find(i => i.variantId === variantId);
     if (item) {
@@ -64,7 +64,7 @@ export function updateQuantity(variantId, delta) {
     }
 }
 
-export function removeFromCart(variantId) {
+function removeFromCart(variantId) {
     const cart = getCart().filter(i => i.variantId !== variantId);
     saveCart(cart);
 }
@@ -74,7 +74,7 @@ export function removeFromCart(variantId) {
  * Bundle Rules:
  * Buy 5 Get 1 Free | Buy 7 Get 2 Free | Buy 10 Get 3 Free
  */
-export function calculateTotals() {
+function calculateTotals() {
     const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -107,7 +107,7 @@ export function calculateTotals() {
     };
 }
 
-export function formatWhatsAppMessage(customerDetails) {
+function formatWhatsAppMessage(customerDetails) {
     const totals = calculateTotals();
     const itemsList = totals.items.map((item, idx) => 
         `${idx + 1}. ${item.title} (${item.size}) x${item.quantity} — ₹${item.price * item.quantity}`
