@@ -1,21 +1,8 @@
 /**
- * =======================
- * CART & BUNDLE LOGIC
- * =======================
- * This module handles the persistent cart state, pricing variants (A6-A3),
- * and automatic bundle offers (5+1, 7+2, 10+3).
+ * CART & BUNDLE STATE MANAGEMENT
  */
-
-const CART_KEY = 'wallifyCart';
+const STORAGE_KEY = 'wallify_cart_v1';
 const MIN_POSTERS = 5;
-
-// Pricing per size
-const SIZE_PRICES = {
-    'A6': 17,
-    'A5': 33,
-    'A4': 49,
-    'A3': 99
-};
 
 // Bundle rules: [qty_threshold, num_free]
 const BUNDLE_RULES = [
@@ -25,24 +12,22 @@ const BUNDLE_RULES = [
 ];
 
 export function getCart() {
-    const data = localStorage.getItem(CART_KEY);
+    const data = localStorage.getItem(STORAGE_KEY);
     return data ? JSON.parse(data) : [];
 }
 
 export function saveCart(cart) {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    // Dispatch a custom event so UI can update reactively
-    window.dispatchEvent(new CustomEvent('cartUpdated', { detail: cart }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    // Trigger update on any listeners
+    window.dispatchEvent(new CustomEvent('cart_sync', { detail: cart }));
 }
 
 /**
- * Adds a poster to the cart with a specific size.
- * Unique combo is (productId + size).
+ * Add or increment item with specific ID and Size
  */
-export function addToCart(product, size = 'A5') {
+export function addToCart(product, size = 'A5', price = 33) {
     const cart = getCart();
     const variantId = `${product.id}-${size}`;
-    const price = SIZE_PRICES[size] || 33;
     
     const existing = cart.find(item => item.variantId === variantId);
     if (existing) {
@@ -54,8 +39,8 @@ export function addToCart(product, size = 'A5') {
             title: product.title,
             image: product.image,
             category: product.category,
-            size: size,
-            price: price,
+            size,
+            price,
             quantity: 1
         });
     }
@@ -74,21 +59,13 @@ export function updateQuantity(variantId, change) {
     }
 }
 
-export function removeFromCart(variantId) {
-    let cart = getCart();
-    cart = cart.filter(i => i.variantId !== variantId);
-    saveCart(cart);
-}
-
 /**
- * Calculates the total, free items, and final amount.
- * Logic: The cheapest items in the cart are marked as FREE based on quantity.
+ * Core calculation logic for price and free posters
  */
-export function calculateCartTotals() {
+export function calculateTotals() {
     const cart = getCart();
-    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     
-    // Determine how many items are free based on total count
     let numFree = 0;
     for (const rule of BUNDLE_RULES) {
         if (totalItems >= rule.qty) {
@@ -97,15 +74,14 @@ export function calculateCartTotals() {
         }
     }
 
-    // Flatten items to apply discounts to individual units
+    // Mark cheapest units as free
     const allUnits = [];
     cart.forEach(item => {
         for (let i = 0; i < item.quantity; i++) {
-            allUnits.push({ price: item.price, variantId: item.variantId });
+            allUnits.push({ price: item.price });
         }
     });
 
-    // Sort by price (cheapest first) to mark cheapest as free
     allUnits.sort((a, b) => a.price - b.price);
 
     let subtotal = 0;
@@ -125,6 +101,6 @@ export function calculateCartTotals() {
         discount,
         totalPayable: subtotal - discount,
         canCheckout: totalItems >= MIN_POSTERS,
-        minPostersNeeded: MIN_POSTERS
+        minNeeded: MIN_POSTERS
     };
 }

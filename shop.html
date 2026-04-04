@@ -3,319 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Wallify Store</title>
+    <title>Shop All Collection | Wallify Store</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .shop-header {
-            padding: 160px 0 80px;
-            text-align: center;
-            background: radial-gradient(circle at top center, rgba(30,30,30,1) 0%, var(--bg-color) 100%);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .shop-layout {
-            display: flex;
-            gap: 50px;
-            padding-bottom: 80px;
-            margin-top: 60px;
-        }
-
-        .shop-sidebar {
-            width: 280px;
-            flex-shrink: 0;
-        }
-
-        .filter-section {
-            margin-bottom: 32px;
-            background: var(--surface-color);
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-        }
-
-        .filter-section h3 {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
-            font-weight: 500;
-        }
-
-        .filter-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .filter-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: var(--transition);
-            font-size: 0.95rem;
-            padding: 10px 14px;
-            border-radius: 10px;
-            border: 1px solid transparent;
-        }
-
-        .filter-item:hover {
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            transform: translateX(4px);
-        }
-
-        .filter-item.active {
-            background: rgba(255,215,0,0.07);
-            color: var(--accent-color);
-            font-weight: 500;
-            border-color: rgba(255,215,0,0.2);
-        }
-
-        .search-box {
-            width: 100%;
-            padding: 14px 20px;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            border-radius: 30px;
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-        }
-
-        .poster-card {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
-            position: relative;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 45px rgba(0,0,0,0.5);
-        }
-
-        /* ── Side Cart Panel (Shared) ── */
-        .cart-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s ease;
-        }
-        .cart-overlay.open { opacity: 1; visibility: visible; }
-        .cart-panel {
-            position: fixed;
-            top: 0; right: -100%;
-            width: 400px; max-width: 90%; height: 100%;
-            background: #0D0D0E;
-            z-index: 2001;
-            box-shadow: -10px 0 50px rgba(0,0,0,0.8);
-            transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-            display: flex; flex-direction: column;
-            border-left: 1px solid rgba(255,255,255,0.05);
-        }
-        .cart-panel.open { right: 0; }
-
-        .no-results, .error-state {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 80px 20px;
-            background: var(--surface-color);
-            border-radius: 20px;
-            border: 1px dashed var(--border-color);
-        }
-        .no-results i { font-size: 3rem; color: var(--accent-color); margin-bottom: 20px; display: block; opacity: 0.5; }
-        .no-results h3 { font-size: 1.5rem; margin-bottom: 12px; }
-        .no-results p { color: var(--text-muted); margin-bottom: 24px; }
-
-        @media (max-width: 900px) {
-            .shop-layout { flex-direction: column; }
-            .shop-sidebar { width: 100%; }
-            .cart-panel { width: 100%; }
-        }
-    </style>
 </head>
 <body>
 
     <!-- NAV -->
     <nav class="navbar reveal">
-        <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="shop.html" class="active">Shop</a>
-        </div>
-        <div class="nav-icons">
-            <button class="cart-icon" id="cartToggle" aria-label="View cart">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Wallify<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="collections.html">Collections</a>
+                <a href="shop.html" class="active">Shop</a>
+            </div>
+            <button class="cart-trigger" id="cartToggleBtn">
                 <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count">0</span>
-            </button>
-            <button class="hamburger" id="hamburger" aria-label="Open menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                <span class="cart-badge" id="cartBadge">0</span>
             </button>
         </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="shop-header">
+    <!-- SHOP HEADER -->
+    <header class="py-120" style="margin-top: 70px; text-align: center; border-bottom: 1px solid var(--border-color); background: radial-gradient(circle at top center, rgba(30,30,30,1) 0%, var(--bg-color) 100%);">
         <div class="container reveal">
-            <h1 class="section-title">The Collection</h1>
-            <p class="section-subtitle">Discover our complete range of premium quality posters.</p>
+            <h1 class="section-title">The Poster Collection</h1>
+            <p class="section-subtitle">Premium quality prints for your passion.</p>
         </div>
     </header>
 
-    <!-- MAIN SHOP AREA -->
-    <section class="container shop-layout">
-        <aside class="shop-sidebar reveal">
-            <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search artworks...">
-            <div class="filter-section">
-                <h3>Categories</h3>
-                <div class="filter-list" id="categoryFilters">
-                    <div class="filter-item active" data-cat="All">All Collections</div>
-                    <div class="filter-item" data-cat="Automotive Posters">Automotive</div>
-                    <div class="filter-item" data-cat="Mollywood">Mollywood</div>
-                    <div class="filter-item" data-cat="Aesthetic">Aesthetic</div>
-                    <div class="filter-item" data-cat="Anime">Anime</div>
-                    <div class="filter-item" data-cat="Football">Football</div>
-                    <div class="filter-item" data-cat="Classic Cars">Classic Cars</div>
-                </div>
-            </div>
-        </aside>
+    <!-- SHOP AREA -->
+    <main class="container py-120" style="display: flex; flex-direction: column; gap: 40px;">
+        <!-- Filters & Search -->
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 2rem;">
+            <input type="text" id="searchInput" placeholder="Search posters..." style="flex-grow: 1; padding: 12px 20px; border-radius: 30px; background: rgba(255,255,255,0.05); color: #FFF; border: 1px solid var(--border-color);">
+            <select id="catSelect" style="padding: 12px 20px; border-radius: 30px; background: rgba(255,255,255,0.05); color: #FFF; border: 1px solid var(--border-color);">
+                <option value="All">All Categories</option>
+                <option value="Automotive Posters">Automotive</option>
+                <option value="Anime">Anime</option>
+                <option value="Aesthetic">Aesthetic</option>
+                <option value="Mollywood">Mollywood</option>
+                <option value="Football">Football</option>
+                <option value="Classic Cars">Classic Cars</option>
+            </select>
+        </div>
 
-        <main class="shop-main">
-            <div class="poster-grid" id="shopGrid"></div>
-            <div id="paginationContainer" class="pagination-container"></div>
-        </main>
-    </section>
+        <!-- Poster Grid (2 per row on mobile guaranteed via style.css) -->
+        <div class="poster-grid" id="posterGrid">
+            <!-- Dynamically populated -->
+        </div>
 
-    <!-- SIDE CART PANEL -->
+        <!-- No Results Fallback -->
+        <div id="emptyState" style="display: none; text-align: center; padding: 100px 20px; color: var(--text-muted);">
+            <h3>No posters found matching your criteria.</h3>
+            <button onclick="window.location.reload()" style="margin-top: 2rem; color: var(--accent-color); text-decoration: underline;">Reset Filters</button>
+        </div>
+    </main>
+
+    <!-- SIDE CART -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-panel" id="cartPanel"></div>
 
     <!-- SCRIPTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="data.js"></script>
     <script type="module">
-        import { createProductCard, renderCartPanel, toggleCart, shuffleArray } from './ui.js';
-        import { calculateCartTotals, updateQuantity } from './cart.js';
-
-        window.wallify = {
-            toggleCart,
-            updateQty: (id, change) => {
-                updateQuantity(id, change);
-                renderCartPanel('cartPanel');
-                updateGlobalBadges();
-            },
-            clearFilters: () => {
-                currentCategory = 'All';
-                searchQuery = '';
-                document.getElementById('searchInput').value = '';
-                document.querySelectorAll('.filter-item').forEach(i => i.classList.toggle('active', i.dataset.cat === 'All'));
-                renderGrid();
-            }
-        };
-
-        function updateGlobalBadges() {
-            const totals = calculateCartTotals();
-            document.querySelectorAll('.cart-count').forEach(el => el.textContent = totals.totalItems);
-        }
+        import { createPosterCard, renderCartPanel, toggleCart, shuffle } from './ui.js';
+        import { calculateTotals } from './cart.js';
 
         let currentCategory = 'All';
         let searchQuery = '';
 
+        function updateBadge() {
+            const totals = calculateTotals();
+            document.getElementById('cartBadge').textContent = totals.totalItems;
+        }
+
         function renderGrid() {
-            const grid = document.getElementById('shopGrid');
-            grid.innerHTML = '<div class="loading-spinner"></div>'; // Loading state
-            
-            try {
-                if (typeof products === 'undefined') {
-                    throw new Error('Products data not loaded');
-                }
+            const grid = document.getElementById('posterGrid');
+            const empty = document.getElementById('emptyState');
+            if (!grid) return;
 
-                let filtered = products;
-                if (currentCategory !== 'All') {
-                    filtered = filtered.filter(p => p.category === currentCategory);
-                }
-                if (searchQuery) {
-                    filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
-                }
-
-                grid.innerHTML = '';
-                if (filtered.length === 0) {
-                    grid.innerHTML = `
-                        <div class="no-results">
-                            <i class="fas fa-search"></i>
-                            <h3>No posters found</h3>
-                            <p>Try adjusting your filters or search query.</p>
-                            <button class="btn-primary" onclick="window.wallify.clearFilters()">Clear All Filters</button>
-                        </div>
-                    `;
-                    return;
-                }
-
-                const displayList = shuffleArray(filtered);
-                displayList.forEach(p => grid.appendChild(createProductCard(p)));
-                
-                // Trigger reveal animations
-                setTimeout(() => {
-                    document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-                }, 100);
-
-            } catch (error) {
-                console.error('Error rendering shop grid:', error);
-                grid.innerHTML = `
-                    <div class="error-state">
-                        <h3>Oops! Something went wrong.</h3>
-                        <p>We couldn't load the products. Please refresh the page.</p>
-                    </div>
-                `;
+            let filtered = window.products || [];
+            if (currentCategory !== 'All') {
+                filtered = filtered.filter(p => p.category === currentCategory);
             }
+            if (searchQuery) {
+                filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
+            }
+
+            grid.innerHTML = '';
+            if (filtered.length === 0) {
+                grid.style.display = 'none';
+                empty.style.display = 'block';
+            } else {
+                grid.style.display = 'grid';
+                empty.style.display = 'none';
+                
+                // Shuffle for variety
+                const displayList = shuffle(filtered);
+                displayList.forEach(p => grid.appendChild(createPosterCard(p)));
+            }
+
+            // Trigger reveal animations
+            setTimeout(() => {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+            }, 100);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Handle URL Search Params
+            // Read URL params
             const urlParams = new URLSearchParams(window.location.search);
             const catParam = urlParams.get('category');
-            
             if (catParam) {
                 currentCategory = catParam;
-                // Update UI active state
-                document.querySelectorAll('.filter-item').forEach(item => {
-                    item.classList.toggle('active', item.getAttribute('data-cat') === catParam);
-                });
+                document.getElementById('catSelect').value = catParam;
             }
 
             renderGrid();
-            
-            // Listeners
-            document.querySelectorAll('.filter-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    document.querySelectorAll('.filter-item').forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
-                    currentCategory = item.getAttribute('data-cat');
-                    renderGrid();
-                    // Update URL without refresh
-                    const newUrl = currentCategory === 'All' ? 'shop.html' : `shop.html?category=${encodeURIComponent(currentCategory)}`;
-                    window.history.pushState({ category: currentCategory }, '', newUrl);
-                });
+            updateBadge();
+
+            // Cart listeners
+            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
+            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
+            renderCartPanel('cartPanel');
+
+            // Category Change
+            document.getElementById('catSelect').addEventListener('change', (e) => {
+                currentCategory = e.target.value;
+                const newUrl = currentCategory === 'All' ? 'shop.html' : `shop.html?category=${encodeURIComponent(currentCategory)}`;
+                window.history.pushState({ cat: currentCategory }, '', newUrl);
+                renderGrid();
             });
 
+            // Search Change
             document.getElementById('searchInput').addEventListener('input', (e) => {
                 searchQuery = e.target.value;
                 renderGrid();
             });
 
-            document.getElementById('cartToggle').addEventListener('click', toggleCart);
-            document.getElementById('cartOverlay').addEventListener('click', toggleCart);
-            renderCartPanel('cartPanel');
-            updateGlobalBadges();
+            // Sync cart updates
+            window.addEventListener('cart_sync', () => {
+                updateBadge();
+                renderCartPanel('cartPanel');
+            });
         });
     </script>
 </body>

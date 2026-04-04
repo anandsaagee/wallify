@@ -3,541 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product | Wallify Store</title>
+    <title>Poster Details | Wallify Store</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .product-section { padding: 140px 0 100px; } 
+        .product-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media (min-width: 768px) { .product-layout { grid-template-columns: 1.2fr 1fr; gap: 80px; } }
+
+        .product-gallery { position: relative; border-radius: 20px; overflow: hidden; background: #000; border: 1px solid var(--border-color); }
+        .product-gallery img { width: 100%; transition: transform 0.4s ease; }
         
-        .product-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: start;
+        .option-label { display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .selector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+        .selector-btn { 
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #FFF; padding: 14px 10px; border-radius: 12px;
+            font-size: 0.9rem; font-weight: 500; text-align: center; cursor: pointer; transition: 0.2s;
         }
-
-        .product-gallery {
-            border-radius: 20px;
-            overflow: hidden;
-            background: #111;
-            position: relative;
-            cursor: crosshair;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .product-gallery img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
+        .selector-btn.active { background: var(--accent-color); color: #000; border-color: var(--accent-color); }
         
-        .product-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-            color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .product-category {
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            font-weight: 600;
-        }
-
-        .product-price {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-main);
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .offer-text {
-            color: #E2E2E2;
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-bottom: 32px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 10px 16px;
-            border-radius: 8px;
-            display: inline-block;
-            backdrop-filter: blur(10px);
-        }
-
-        .product-desc {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 32px;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .option-group { margin-bottom: 24px; }
-        .option-group label {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .selector-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 12px;
-        }
-
-        .selector-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 14px 12px;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-
-        .selector-btn:not(:disabled):hover { 
-            border-color: rgba(255, 255, 255, 0.3); 
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .selector-btn.active {
-            border-color: var(--accent-color);
-            color: #000;
-            background: var(--accent-color);
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(255,215,0,0.2);
-        }
-
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            overflow: hidden;
-            width: fit-content;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-        }
-
-        .qty-btn {
-            padding: 12px 20px;
-            background: transparent;
-            color: var(--text-main);
-            font-size: 1.2rem;
-        }
-        
-        .qty-btn:hover { background: rgba(255,255,255,0.1); }
-
-        .qty-input {
-            width: 50px;
-            text-align: center;
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        .qty-input:focus { outline: none; }
-
-        .action-buttons {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-top: 40px;
-        }
-
-        .btn-wa {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            border: none;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            position: relative;
-            overflow: hidden;
-            border-radius: 30px;
-        }
-        .btn-wa::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
-        }
-        .btn-wa:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
-            color: white;
-        }
-        .btn-wa:hover::after { left: 150%; }
-
-        .info-box {
-            margin-bottom: 24px; padding: 20px;
-            background: rgba(255, 255, 255, 0.03); 
-            border-radius: 16px; 
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group-modal { margin-bottom: 20px; text-align: left; }
-        .form-group-modal label { display:block; font-size:0.9rem; font-weight: 500; color:var(--text-muted); margin-bottom:8px; text-transform: uppercase; letter-spacing: 1px; }
-        .form-control-modal {
-            width: 100%; padding: 14px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px; font-family: inherit;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-        .form-control-modal:focus {
-            outline: none; border-color: rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.1);
-        }
-
-        @media (min-width: 768px) {
-            .product-layout { grid-template-columns: 1fr 1fr; gap: 60px; }
-            .product-info h1 { font-size: 3rem; }
-            .product-section { padding: 160px 0 100px; }
-        }
-
-        @media (max-width: 767px) {
-            .product-section { padding: 100px 0 120px; }
-            .product-gallery { border-radius: 12px; }
-            .product-info h1 { font-size: 1.8rem; }
-            .product-price { font-size: 1.8rem; }
-            .selector-grid { grid-template-columns: repeat(2, 1fr); }
-            .action-buttons { display: grid !important; gap: 12px; margin-top: 24px; }
-            .offer-text { font-size: 0.85rem; }
-        }
+        .whatsapp-btn { background: #25D366; color: #FFF; width: 100%; padding: 18px; border-radius: 30px; font-weight: 700; margin-top: 1rem; border: none; font-size: 1rem; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); transition: 0.3s; }
+        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
     </style>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="navbar reveal">
-        <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="shop.html" class="active">Shop</a>
-        </div>
-        <div class="nav-icons">
-            <a href="cart.html" class="cart-icon">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Wallify<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="collections.html">Collections</a>
+                <a href="shop.html">Shop</a>
+            </div>
+            <button class="cart-trigger" id="cartToggleBtn">
                 <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count">0</span>
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Open menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="cart-badge" id="cartBadge">0</span>
             </button>
         </div>
     </nav>
 
-    <!-- MOBILE NAV -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <div class="mobile-nav-panel" id="mobileNavPanel">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="shop.html" class="active"><i class="fas fa-store"></i> Shop</a>
-        <a href="cart.html" class="mobile-cart-link"><i class="fas fa-shopping-bag"></i> View Cart</a>
-    </div>
-
-    <main class="container product-section" id="productContainer">
-        <!-- Injected via JS -->
+    <!-- CONTENT -->
+    <main class="container py-120" style="margin-top: 70px;">
+        <div id="productContainer" class="product-layout">
+            <!-- Dynamically populated -->
+        </div>
     </main>
 
+    <!-- SIDE CART -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-panel" id="cartPanel"></div>
 
-    <!-- WhatsApp Buy Modal: REMOVED - now using direct redirect per requirements -->
-
-
-    <!-- Sticky Buy Button Mobile -->
-    <div class="mobile-sticky-buy" id="mobileStickyDiv" style="display: none;">
-        <button class="btn-primary btn-wa" id="mobileBuyBtn" style="width: 100%; font-size:1.1rem; padding: 16px; border-radius: 30px;">
-            Buy Now (WhatsApp) <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
-        </button>
-    </div>
-
+    <!-- SCRIPTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="data.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Mobile Nav Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const mobileNavPanel = document.getElementById('mobileNavPanel');
-        function openMobileNav() {
-            hamburger.classList.add('open');
-            mobileNavOverlay.style.display = 'block';
-            mobileNavPanel.style.display = 'flex';
-            requestAnimationFrame(() => { mobileNavOverlay.classList.add('open'); mobileNavPanel.classList.add('open'); });
-            document.body.style.overflow = 'hidden';
-        }
-        function closeMobileNav() {
-            hamburger.classList.remove('open');
-            mobileNavOverlay.classList.remove('open');
-            mobileNavPanel.classList.remove('open');
-            document.body.style.overflow = '';
-            setTimeout(() => { mobileNavOverlay.style.display = 'none'; mobileNavPanel.style.display = 'none'; }, 400);
-        }
-        hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav());
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
-    </script>
-    <script>
+    <script type="module">
+        import { getCart, calculateTotals, addToCart } from './cart.js';
+        import { renderCartPanel, toggleCart } from './ui.js';
+
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('productContainer');
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
-            const product = products.find(p => p.id === productId);
+            const product = window.products?.find(p => p.id === productId);
 
             if (!product) {
-                container.innerHTML = `<div style="text-align:center; padding:100px;" class="reveal"><h2>Product Not Found</h2></div>`;
+                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px;"><h2>Poster Not Found</h2><a href="shop.html">Return to Shop</a></div>`;
                 return;
             }
 
-            let currentSize = "A4"; 
-            let currentFrame = "None"; 
+            let currentSize = 'A5';
             let currentQty = 1;
+            const sizePrices = { 'A5': 33, 'A4': 49, 'A3': 99 };
 
-            container.innerHTML = `
-                <div class="product-layout">
-                    <div class="product-gallery reveal" id="gallery">
-                        <img src="${product.image}" id="mainImg">
+            function render() {
+                container.innerHTML = `
+                    <div class="product-gallery reveal">
+                        <img id="mainImg" src="${product.image}" alt="${product.title}">
                     </div>
-                    <div class="product-info reveal reveal-delay-1">
-                        <span class="product-category">${product.category}</span>
-                        <h1>${product.title}</h1>
-                        <div class="product-price" id="priceDisplay">...</div>
-                        <div class="offer-text" id="offerText">Buy 5 GET 1 FREE • Buy 7 GET 2 FREE • Buy 10 GET 3 FREE</div>
-                        <p class="product-desc">${product.description}</p>
+                    <div class="product-info reveal" style="transition-delay: 0.1s;">
+                        <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">${product.category}</span>
+                        <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin: 0.5rem 0 1.5rem;">${product.title}</h1>
+                        <div id="priceDisplay" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 2rem;">₹${sizePrices[currentSize] * currentQty}</div>
                         
-                        <div class="info-box">
-                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                                <i class="fas fa-scroll" style="color: #FFF; font-size: 1.2rem; width: 24px; text-align: center;"></i>
-                                <span style="font-weight: 500; color: var(--text-main);">Premium 300 GSM paper quality</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-truck" style="color: #FFF; font-size: 1.2rem; width: 24px; text-align: center;"></i>
-                                <span style="font-weight: 500; color: var(--text-main);">Fast delivery</span>
-                            </div>
+                        <p style="color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.8;">
+                           Gallery-quality poster printed on 300gsm acid-free paper. Ships in protective tube packaging. High-resolution digital art curation.
+                        </p>
+
+                        <div class="option-label">Select Size</div>
+                        <div class="selector-grid" id="sizeSelector">
+                            <div class="selector-btn ${currentSize === 'A5' ? 'active' : ''}" data-val="A5">A5</div>
+                            <div class="selector-btn ${currentSize === 'A4' ? 'active' : ''}" data-val="A4">A4</div>
+                            <div class="selector-btn ${currentSize === 'A3' ? 'active' : ''}" data-val="A3">A3</div>
                         </div>
 
-                        <div class="option-group">
-                            <label>Print Size</label>
-                            <div class="selector-grid" id="sizeSelectors">
-                                <button class="selector-btn" data-val="A5">A5</button>
-                                <button class="selector-btn" data-val="A4">A4 (12x14)</button>
-                                <button class="selector-btn" data-val="A3">A3</button>
-                            </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button id="addCartBtn" class="btn-primary" style="flex: 1; padding: 18px; font-size: 1rem; border-radius: 30px;">Add to Bag</button>
+                            <button id="waBtn" class="whatsapp-btn" style="flex: 1;">Buy Now <i class="fab fa-whatsapp"></i></button>
                         </div>
 
-                        <div class="option-group">
-                            <label>Frame Specification</label>
-                            <div class="selector-grid" id="frameSelectors">
-                                <button class="selector-btn" data-val="None">No Frame</button>
-                                <button class="selector-btn" data-val="Black">Black Frame</button>
-                                <button class="selector-btn" data-val="White">White Frame</button>
-                                <button class="selector-btn" data-val="Wooden">Wooden Frame</button>
-                            </div>
-                        </div>
-
-                        <div class="option-group">
-                            <label>Select Quantity</label>
-                            <div class="qty-controls">
-                                <button class="qty-btn" id="btnMinus"><i class="fas fa-minus"></i></button>
-                                <input type="number" class="qty-input" id="qtyInput" value="1" readonly>
-                                <button class="qty-btn" id="btnPlus"><i class="fas fa-plus"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="action-buttons" style="display: none;" id="desktopActions">
-                            <button class="btn-primary btn-wa" id="buyNowBtn">
-                                Buy Now (WhatsApp) <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
-                            </button>
-                            <button class="btn-outline" id="addCartBtn">
-                                Add to Cart
-                            </button>
+                        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-truck" style="margin-right: 8px;"></i> Delivered in 4-6 Days</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-certificate" style="margin-right: 8px;"></i> Museum-Grade Paper</div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
 
-            if (window.innerWidth >= 768) {
-                document.getElementById('desktopActions').style.display = 'grid';
-            } else {
-                document.getElementById('mobileStickyDiv').style.display = 'block';
-                document.getElementById('desktopActions').style.display = 'grid'; 
-            }
-
-            const priceDisplay = document.getElementById('priceDisplay');
-            const offerText = document.getElementById('offerText');
-            const sizeBtns = document.querySelectorAll('#sizeSelectors .selector-btn');
-            const frameBtns = document.querySelectorAll('#frameSelectors .selector-btn');
-            
-            // Hardcoded Strict Prices provided by Client
-            function getUnitPrice() {
-                if (currentFrame === "None") {
-                    if (currentSize === "A5") return 33;
-                    if (currentSize === "A4") return 49;
-                    if (currentSize === "A3") return 99;
-                } else {
-                    if (currentSize === "A5") return 249;
-                    if (currentSize === "A4") return 399;
-                    if (currentSize === "A3") return 399; // Fallback
-                }
-                return 49;
-            }
-
-            function updateUI() {
-                // A3 Frames restriction
-                if (currentSize === "A3") {
-                    currentFrame = "None"; // Force No Frame
-                    frameBtns.forEach(btn => {
-                        if (btn.dataset.val !== "None") {
-                            btn.disabled = true;
-                            btn.style.opacity = "0.3";
-                            btn.style.cursor = "not-allowed";
-                            btn.innerHTML = `<del>${btn.innerHTML.replace(/<.*?>/g, '')}</del>`;
-                        } else {
-                            btn.innerHTML = "No Frame";
-                        }
+                // Re-bind listeners
+                container.querySelectorAll('#sizeSelector .selector-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        currentSize = btn.dataset.val;
+                        render();
                     });
-                } else {
-                    frameBtns.forEach(btn => {
-                        btn.disabled = false;
-                        btn.style.opacity = "1";
-                        btn.style.cursor = "pointer";
-                        if(btn.dataset.val === "None") btn.textContent = "No Frame";
-                        if(btn.dataset.val === "Black") btn.textContent = "Black Frame";
-                        if(btn.dataset.val === "White") btn.textContent = "White Frame";
-                        if(btn.dataset.val === "Wooden") btn.textContent = "Wooden Frame";
-                    });
-                }
+                });
 
-                sizeBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.val === currentSize));
-                frameBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.val === currentFrame));
-                document.getElementById('qtyInput').value = currentQty;
-                
-                // Calculate unit total
-                const unitPrice = getUnitPrice();
-                let effectiveQty = currentQty;
-                
-                // Offers text logic 
-                if (currentQty >= 10) {
-                    offerText.innerHTML = "🎉 Incredible! You are getting <strong style='color:#FFF'>3 FREE</strong> items included!";
-                } else if (currentQty >= 7) {
-                    offerText.innerHTML = "🎉 Amazing! You are getting <strong style='color:#FFF'>2 FREE</strong> items included!";
-                } else if (currentQty >= 5) {
-                    offerText.innerHTML = "🎉 Nice! You are getting <strong style='color:#FFF'>1 FREE</strong> item included!";
-                } else {
-                    offerText.innerHTML = "Buy 5 GET 1 FREE • Buy 7 GET 2 FREE • Buy 10 GET 3 FREE";
-                }
+                container.querySelector('#addCartBtn').addEventListener('click', () => {
+                    addToCart(product, currentSize, sizePrices[currentSize]);
+                    toggleCart(true);
+                });
 
-                const totalGrossPrice = unitPrice * effectiveQty;
-                priceDisplay.textContent = formatPrice(totalGrossPrice);
-                return totalGrossPrice;
-            }
+                container.querySelector('#waBtn').addEventListener('click', () => {
+                    const msg = encodeURIComponent(`Hi Wallify, I'd like to order:
+Poster: ${product.title}
+Size: ${currentSize}
+Quantity: ${currentQty}
+Price: ₹${sizePrices[currentSize] * currentQty}
 
-            sizeBtns.forEach(b => b.addEventListener('click', () => { currentSize = b.dataset.val; updateUI(); }));
-            frameBtns.forEach(b => b.addEventListener('click', () => { if(!b.disabled){ currentFrame = b.dataset.val; updateUI(); }}));
-            
-            document.getElementById('btnMinus').addEventListener('click', () => { if(currentQty>1){currentQty--; updateUI();} });
-            document.getElementById('btnPlus').addEventListener('click', () => { currentQty++; updateUI(); });
+Please confirm my order.`);
+                    window.open(`https://wa.me/919497242251?text=${msg}`);
+                });
 
-            // Hover Zoom
-            const gallery = document.getElementById('gallery');
-            const mainImg = document.getElementById('mainImg');
-            if(window.innerWidth >= 768) {
+                // Zoom logic
+                const img = document.getElementById('mainImg');
+                const gallery = img.parentElement;
                 gallery.addEventListener('mousemove', (e) => {
-                    const { left, top, width, height } = gallery.getBoundingClientRect();
-                    mainImg.style.transformOrigin = `${((e.clientX - left) / width) * 100}% ${((e.clientY - top) / height) * 100}%`;
-                    mainImg.style.transform = 'scale(1.5)';
+                    const x = e.offsetX / gallery.offsetWidth * 100;
+                    const y = e.offsetY / gallery.offsetHeight * 100;
+                    img.style.transformOrigin = `${x}% ${y}%`;
+                    img.style.transform = 'scale(1.5)';
                 });
                 gallery.addEventListener('mouseleave', () => {
-                    mainImg.style.transformOrigin = 'center center';
-                    mainImg.style.transform = 'scale(1)';
+                    img.style.transform = 'scale(1)';
                 });
+
+                // Reveal animations
+                setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('active')), 50);
             }
 
-            // ---------------------------------------------------------
-            // BUY NOW — Direct WhatsApp redirect (no modal required)
-            // ✅ FIXED: Removed modal, now sends direct WA message with
-            //          poster file name + category as required.
-            // ---------------------------------------------------------
-
-            /**
-             * Debounce guard — prevents rapid double-clicks.
-             * Button is disabled for 3 s after each click.
-             */
-            function triggerBuyNow(btn) {
-                if (btn.disabled) return; // Guard against double-click
-
-                // Visual feedback: disable + loading text
-                const originalHTML = btn.innerHTML;
-                btn.disabled = true;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i> Opening WhatsApp…';
-
-                try {
-                    const totalAmt = updateUI(); // recalculate price
-
-                    // Extract image file name from the path (e.g. "img/nature/sunset.jpg" → "sunset.jpg")
-                    const imageFileName = product.image
-                        ? product.image.split('/').pop()
-                        : product.title;
-
-                    let freeDisclaimer = '';
-                    if (currentQty >= 10) freeDisclaimer = ' (Includes 3 FREE items!)';
-                    else if (currentQty >= 7) freeDisclaimer = ' (Includes 2 FREE items!)';
-                    else if (currentQty >= 5) freeDisclaimer = ' (Includes 1 FREE item!)';
-
-                    // ✅ Message format as specified in requirements
-                    const message =
-`Hello, I want to order this poster:
-Name: ${imageFileName}
-Category: ${product.category}
-
-Product Details:
-Title: ${product.title}
-Size: ${currentSize}
-Frame: ${currentFrame}
-Quantity: ${currentQty}${freeDisclaimer}
-Total: ₹${totalAmt}
-
-Please confirm my order!`;
-
-                    console.log('[Wallify] Opening WhatsApp with order:', { imageFileName, category: product.category, currentSize, currentFrame, currentQty, totalAmt });
-                    redirectToWhatsApp(message);
-
-                } catch (err) {
-                    console.error('[Wallify] Buy Now error:', err);
-                    alert('Something went wrong. Please try again or contact us directly on WhatsApp.');
-                } finally {
-                    // Re-enable button after 3 seconds
-                    setTimeout(() => {
-                        btn.disabled = false;
-                        btn.innerHTML = originalHTML;
-                    }, 3000);
-                }
+            // Sync Cart State
+            function updateBadge() {
+                const totals = calculateTotals();
+                document.getElementById('cartBadge').textContent = totals.totalItems;
+                renderCartPanel('cartPanel');
             }
 
-            // Attach Buy Now handler to both desktop and mobile buttons
-            document.getElementById('buyNowBtn').addEventListener('click', () => {
-                triggerBuyNow(document.getElementById('buyNowBtn'));
-            });
-            document.getElementById('mobileBuyBtn').addEventListener('click', () => {
-                triggerBuyNow(document.getElementById('mobileBuyBtn'));
-            });
+            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
+            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
+            renderCartPanel('cartPanel');
+            updateBadge();
+            window.addEventListener('cart_sync', updateBadge);
 
-            updateUI();
+            render();
         });
     </script>
 </body>
