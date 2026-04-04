@@ -143,9 +143,19 @@ function renderCartPanel() {
                     <span>Total</span>
                     <span>₹${totals.finalTotal}</span>
                 </div>
-                <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='checkout.html'">
-                    Review Order & Checkout
-                </button>
+
+                ${!totals.isMinOrderMet ? `
+                    <div style="padding: 12px; background: rgba(239, 68, 68, 0.1); border: 1px solid var(--error); border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                        <p style="color: var(--error); font-size: 0.85rem; font-weight: 600;">⚠️ Minimum order is 3 posters</p>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; opacity: 0.5; cursor: not-allowed;" disabled>
+                        Review Order & Checkout
+                    </button>
+                ` : `
+                    <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='checkout.html'">
+                        Review Order & Checkout
+                    </button>
+                `}
             </div>
         ` : ''}
     `;
@@ -202,9 +212,10 @@ function openProductModal(productId) {
         document.body.appendChild(modal);
     }
 
-    let selectedSize = 'A5';
+    let selectedSize = null;
 
     const renderInner = () => {
+        const canContinue = selectedSize !== null;
         modal.innerHTML = `
             <div class="modal-backdrop" onclick="window.closeProductModal()"></div>
             <div class="modal-content">
@@ -223,23 +234,33 @@ function openProductModal(productId) {
                             <label style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Select Size</label>
                             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
                                 ${Object.keys(SIZES).map(s => `
-                                    <button class="filter-pill size-selector ${selectedSize === s ? 'active' : ''}" data-size="${s}">
+                                    <button class="filter-pill size-selector ${selectedSize === s ? 'active' : ''}" data-size="${s}" style="border: 1px solid ${selectedSize === s ? 'var(--primary)' : 'var(--border-glass)'};">
                                         ${SIZES[s].label} — ₹${SIZES[s].price}
                                     </button>
                                 `).join('')}
                             </div>
+                            ${!canContinue ? `<p style="font-size: 0.8rem; color: var(--secondary); font-weight: 600;">Select size to continue</p>` : ''}
                         </div>
 
-                        <div style="padding: 16px; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2);">
-                            <p style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">
-                                <i class="fas fa-gift"></i> Bundle Offer: Buy 5, Get 1 Free!
+                        <div style="padding: 16px; background: rgba(250, 204, 21, 0.05); border-radius: 12px; border: 1px solid rgba(250, 204, 21, 0.2);">
+                            <p style="font-size: 0.9rem; color: var(--secondary); font-weight: 700;">
+                                <i class="fas fa-gift"></i> Bundle Tier Offers:
                             </p>
-                            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Discount applied automatically at checkout.</p>
+                            <ul style="font-size: 0.8rem; color: #FFFFFF; margin-top: 8px; display: flex; flex-direction: column; gap: 4px;">
+                                <li>✨ Buy 5 -> 1 Free</li>
+                                <li>✨ Buy 7 -> 2 Free</li>
+                                <li>✨ Buy 10 -> 3 Free</li>
+                                <li>✨ Buy 20 -> 6 Free</li>
+                            </ul>
                         </div>
 
-                        <div style="margin-top: auto; display: flex; gap: 16px;">
-                            <button id="modalAddToCart" class="btn btn-primary" style="flex: 1;">Add to Bag</button>
-                            <button id="modalBuyNow" class="btn" style="border: 1px solid var(--border-glass);">Buy Now</button>
+                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+                            <button id="modalAddToCart" class="btn btn-primary" style="width: 100%; height: 48px; border-radius: 50px;" ${!canContinue ? 'disabled' : ''}>
+                                ${canContinue ? 'Add to Bag' : 'Select Size to Continue'}
+                            </button>
+                            <button id="modalBuyNow" class="btn btn-buy-now" style="width: 100%;" ${!canContinue ? 'disabled' : ''}>
+                                Buy Now
+                            </button>
                         </div>
                     </div>
                 </div>

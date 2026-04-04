@@ -80,6 +80,12 @@
                 return;
             }
 
+            if (!totals.isMinOrderMet) {
+                alert('Minimum order is 3 posters. Please add more to your bag.');
+                window.location.href = 'cart.html';
+                return;
+            }
+
             // Populate Items
             const itemsContainer = document.getElementById('checkoutItems');
             itemsContainer.innerHTML = totals.items.map(item => `

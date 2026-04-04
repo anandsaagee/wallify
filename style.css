@@ -19,8 +19,8 @@
     --gold-grad:    linear-gradient(135deg, #FACC15 0%, #EAB308 100%);
     
     --text-primary: #FFFFFF;
-    --text-muted:   rgba(255, 255, 255, 0.6);
-    --text-dim:     rgba(255, 255, 255, 0.4);
+    --text-muted:   #E5E7EB; /* High contrast light grey */
+    --text-dim:     #FFFFFF; /* Pure white for secondary labels */
     
     --error:        #EF4444;
     --success:      #10B981;
@@ -252,6 +252,32 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(59, 130, 246, 0.5);
+}
+
+/* ── Buy Now Button (High Contrast) ── */
+.btn-buy-now {
+    background: linear-gradient(90deg, #3B82F6 0%, #FACC15 100%) !important;
+    color: #FFFFFF !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 32px !important;
+    border-radius: 50px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: var(--transition) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+}
+.btn-buy-now:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 12px 40px rgba(250, 204, 21, 0.4) !important;
+}
+.btn-buy-now:active {
+    transform: scale(0.98) !important;
 }
 .btn-glow {
     position: absolute;

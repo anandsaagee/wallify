@@ -89,10 +89,12 @@ function calculateTotals() {
     allPrices.sort((a, b) => a - b);
 
     let freeCount = 0;
-    if (totalItems >= 13) freeCount = 3; // Cap or keep scaling? User said 10+ gets 3.
+    if (totalItems >= 20) freeCount = 6;
     else if (totalItems >= 10) freeCount = 3;
     else if (totalItems >= 7) freeCount = 2;
     else if (totalItems >= 5) freeCount = 1;
+
+    const isMinOrderMet = totalItems >= 3;
 
     const discount = allPrices.slice(0, freeCount).reduce((sum, p) => sum + p, 0);
     const finalTotal = subtotal - discount;
@@ -103,6 +105,7 @@ function calculateTotals() {
         discount,
         finalTotal,
         freeCount,
+        isMinOrderMet,
         items: cart
     };
 }
