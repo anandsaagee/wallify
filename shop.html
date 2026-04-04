@@ -3,150 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop All Collection | Wallify Store</title>
+    <title>Shop — Wallify Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar reveal">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Wallify<span>.</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="collections.html">Collections</a>
-                <a href="shop.html" class="active">Shop</a>
+    <nav class="navbar scrolled"></nav>
+
+    <div class="container" style="padding-top: 120px; padding-bottom: 80px;">
+        <div style="margin-bottom: 40px; text-align: center;">
+            <h1 style="font-size: 3rem; margin-bottom: 12px;">The Collection</h1>
+            <p style="color: var(--text-muted);">Curated prints for your modern lifestyle.</p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="glass" style="padding: 24px; border-radius: var(--radius-lg); margin-bottom: 40px; position: sticky; top: 84px; z-index: 100;">
+            <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+                
+                <!-- Category Pills -->
+                <div class="filter-tabs" id="categoryFilters">
+                    <button class="filter-pill active" data-category="All">All</button>
+                    <button class="filter-pill" data-category="Mollywood">Mollywood</button>
+                    <button class="filter-pill" data-category="Football">Football</button>
+                    <button class="filter-pill" data-category="Anime">Anime</button>
+                    <button class="filter-pill" data-category="Aesthetic">Aesthetic</button>
+                    <button class="filter-pill" data-category="Classic Cars">Classic Cars</button>
+                </div>
+
+                <!-- Search & Sort -->
+                <div style="display: flex; gap: 16px; flex-grow: 1; max-width: 500px;">
+                    <div style="position: relative; flex-grow: 1;">
+                        <i class="fas fa-search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-dim);"></i>
+                        <input type="text" id="searchInput" placeholder="Search posters..." style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 50px; padding: 12px 12px 12px 48px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                    </div>
+                    <select id="sortSelect" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 50px; padding: 0 24px; color: white; outline: none; cursor: pointer; font-family: inherit; -webkit-appearance: none; appearance: none;">
+                        <option value="default">Latest</option>
+                        <option value="low">Price: Low-High</option>
+                        <option value="high">Price: High-Low</option>
+                        <option value="az">Name: A-Z</option>
+                    </select>
+                </div>
             </div>
-            <button class="cart-trigger" id="cartToggleBtn">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- SHOP HEADER -->
-    <header class="py-120" style="margin-top: 70px; text-align: center; border-bottom: 1px solid var(--border-color); background: radial-gradient(circle at top center, rgba(30,30,30,1) 0%, var(--bg-color) 100%);">
-        <div class="container reveal">
-            <h1 class="section-title">The Poster Collection</h1>
-            <p class="section-subtitle">Premium quality prints for your passion.</p>
-        </div>
-    </header>
-
-    <!-- SHOP AREA -->
-    <main class="container py-120" style="display: flex; flex-direction: column; gap: 40px;">
-        <!-- Filters & Search -->
-        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 2rem;">
-            <input type="text" id="searchInput" placeholder="Search posters..." style="flex-grow: 1; padding: 12px 20px; border-radius: 30px; background: rgba(255,255,255,0.05); color: #FFF; border: 1px solid var(--border-color);">
-            <select id="catSelect" style="padding: 12px 20px; border-radius: 30px; background: rgba(255,255,255,0.05); color: #FFF; border: 1px solid var(--border-color);">
-                <option value="All">All Categories</option>
-                <option value="Automotive Posters">Automotive</option>
-                <option value="Anime">Anime</option>
-                <option value="Aesthetic">Aesthetic</option>
-                <option value="Mollywood">Mollywood</option>
-                <option value="Football">Football</option>
-                <option value="Classic Cars">Classic Cars</option>
-            </select>
         </div>
 
-        <!-- Poster Grid (2 per row on mobile guaranteed via style.css) -->
-        <div class="poster-grid" id="posterGrid">
-            <!-- Dynamically populated -->
+        <div id="resultsCount" style="margin-bottom: 24px; font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;"></div>
+
+        <!-- Poster Grid -->
+        <div class="poster-grid" id="productGrid">
+            <!-- Shimmers / Skeleton while loading if needed, or JS will populate -->
         </div>
 
-        <!-- No Results Fallback -->
-        <div id="emptyState" style="display: none; text-align: center; padding: 100px 20px; color: var(--text-muted);">
-            <h3>No posters found matching your criteria.</h3>
-            <button onclick="window.location.reload()" style="margin-top: 2rem; color: var(--accent-color); text-decoration: underline;">Reset Filters</button>
-        </div>
-    </main>
+        <!-- Pagination -->
+        <div class="pagination" id="pagination" style="margin-top: 60px; display: flex; justify-content: center; gap: 12px;"></div>
+    </div>
 
-    <!-- SIDE CART -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-panel" id="cartPanel"></div>
+    <!-- Modals & Cart -->
+    <div id="productModal" class="modal"></div>
+    <div id="cartPanel" class="cart-panel"></div>
+    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
 
-    <!-- SCRIPTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script type="module">
-        import { createPosterCard, renderCartPanel, toggleCart, shuffle } from './ui.js';
-        import { calculateTotals } from './cart.js';
-
-        let currentCategory = 'All';
-        let searchQuery = '';
-
-        function updateBadge() {
-            const totals = calculateTotals();
-            document.getElementById('cartBadge').textContent = totals.totalItems;
-        }
-
-        function renderGrid() {
-            const grid = document.getElementById('posterGrid');
-            const empty = document.getElementById('emptyState');
-            if (!grid) return;
-
-            let filtered = window.products || [];
-            if (currentCategory !== 'All') {
-                filtered = filtered.filter(p => p.category === currentCategory);
-            }
-            if (searchQuery) {
-                filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
-            }
-
-            grid.innerHTML = '';
-            if (filtered.length === 0) {
-                grid.style.display = 'none';
-                empty.style.display = 'block';
-            } else {
-                grid.style.display = 'grid';
-                empty.style.display = 'none';
-                
-                // Shuffle for variety
-                const displayList = shuffle(filtered);
-                displayList.forEach(p => grid.appendChild(createPosterCard(p)));
-            }
-
-            // Trigger reveal animations
-            setTimeout(() => {
-                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-            }, 100);
-        }
+        import { renderNavbar, initScrollReveal, toggleCart } from './ui.js';
+        import { initializeStore } from './js/store.js';
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Read URL params
-            const urlParams = new URLSearchParams(window.location.search);
-            const catParam = urlParams.get('category');
-            if (catParam) {
-                currentCategory = catParam;
-                document.getElementById('catSelect').value = catParam;
-            }
+            renderNavbar('shop');
+            initScrollReveal();
 
-            renderGrid();
-            updateBadge();
+            initializeStore({
+                products: window.products,
+                gridContainerId: 'productGrid',
+                paginationContainerId: 'pagination',
+                resultsCountId: 'resultsCount',
+                filterSelector: '.filter-pill',
+                searchInputId: 'searchInput',
+                sortSelectId: 'sortSelect',
+                itemsPerPage: 16
+            });
 
-            // Cart listeners
-            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
             document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
-            renderCartPanel('cartPanel');
 
-            // Category Change
-            document.getElementById('catSelect').addEventListener('change', (e) => {
-                currentCategory = e.target.value;
-                const newUrl = currentCategory === 'All' ? 'shop.html' : `shop.html?category=${encodeURIComponent(currentCategory)}`;
-                window.history.pushState({ cat: currentCategory }, '', newUrl);
-                renderGrid();
-            });
-
-            // Search Change
-            document.getElementById('searchInput').addEventListener('input', (e) => {
-                searchQuery = e.target.value;
-                renderGrid();
-            });
-
-            // Sync cart updates
-            window.addEventListener('cart_sync', () => {
-                updateBadge();
-                renderCartPanel('cartPanel');
-            });
+            // Deep-link to category if present in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialCat = urlParams.get('category');
+            if (initialCat) {
+                const btn = document.querySelector(`.filter-pill[data-category="${initialCat}"]`);
+                if (btn) btn.click();
+            }
         });
     </script>
 </body>

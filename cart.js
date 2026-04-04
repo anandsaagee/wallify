@@ -1,37 +1,42 @@
 /**
- * CART & BUNDLE STATE MANAGEMENT
+ * cart.js — Wallify Store
+ * Core e-commerce logic: Cart state, Pricing, Bundle Discounts.
  */
-const STORAGE_KEY = 'wallify_cart_v1';
-const MIN_POSTERS = 5;
 
-// Bundle rules: [qty_threshold, num_free]
-const BUNDLE_RULES = [
-    { qty: 10, free: 3 },
-    { qty: 7,  free: 2 },
-    { qty: 5,  free: 1 }
-];
+const WA_BUSINESS_PHONE = "917736497186";
+
+export const SIZES = {
+    'A6': { label: 'A6', price: 17 },
+    'A5': { label: 'A5', price: 33 },
+    'A4': { label: 'A4', price: 49 },
+    'A3': { label: 'A3', price: 99 }
+};
 
 export function getCart() {
-    const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : [];
+    try {
+        return JSON.parse(localStorage.getItem('wallify_cart')) || [];
+    } catch (e) {
+        return [];
+    }
 }
 
 export function saveCart(cart) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-    // Trigger update on any listeners
-    window.dispatchEvent(new CustomEvent('cart_sync', { detail: cart }));
+    localStorage.setItem('wallify_cart', JSON.stringify(cart));
+    // Dispatch event for UI sync
+    window.dispatchEvent(new CustomEvent('cart_updated', { detail: cart }));
 }
 
 /**
- * Add or increment item with specific ID and Size
+ * addProduct — Adds or updates an item in the cart
+ * variantId is a combination of productId and size
  */
-export function addToCart(product, size = 'A5', price = 33) {
+export function addProduct(product, size = 'A5', quantity = 1) {
     const cart = getCart();
     const variantId = `${product.id}-${size}`;
-    
     const existing = cart.find(item => item.variantId === variantId);
+
     if (existing) {
-        existing.quantity += 1;
+        existing.quantity += quantity;
     } else {
         cart.push({
             variantId,
@@ -39,19 +44,19 @@ export function addToCart(product, size = 'A5', price = 33) {
             title: product.title,
             image: product.image,
             category: product.category,
-            size,
-            price,
-            quantity: 1
+            size: size,
+            price: SIZES[size].price,
+            quantity: quantity
         });
     }
     saveCart(cart);
 }
 
-export function updateQuantity(variantId, change) {
+export function updateQuantity(variantId, delta) {
     let cart = getCart();
     const item = cart.find(i => i.variantId === variantId);
     if (item) {
-        item.quantity += change;
+        item.quantity += delta;
         if (item.quantity <= 0) {
             cart = cart.filter(i => i.variantId !== variantId);
         }
@@ -59,48 +64,67 @@ export function updateQuantity(variantId, change) {
     }
 }
 
+export function removeFromCart(variantId) {
+    const cart = getCart().filter(i => i.variantId !== variantId);
+    saveCart(cart);
+}
+
 /**
- * Core calculation logic for price and free posters
+ * calculateTotals — Computes subtotal, bundle discounts, and final total.
+ * Bundle Rules:
+ * Buy 5 Get 1 Free | Buy 7 Get 2 Free | Buy 10 Get 3 Free
  */
 export function calculateTotals() {
     const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    let numFree = 0;
-    for (const rule of BUNDLE_RULES) {
-        if (totalItems >= rule.qty) {
-            numFree = rule.free;
-            break;
-        }
-    }
-
-    // Mark cheapest units as free
-    const allUnits = [];
+    // Create a flat list of all item prices to find the cheapest ones
+    let allPrices = [];
     cart.forEach(item => {
-        for (let i = 0; i < item.quantity; i++) {
-            allUnits.push({ price: item.price });
+        for(let i=0; i<item.quantity; i++) {
+            allPrices.push(item.price);
         }
     });
+    allPrices.sort((a, b) => a - b);
 
-    allUnits.sort((a, b) => a.price - b.price);
+    let freeCount = 0;
+    if (totalItems >= 13) freeCount = 3; // Cap or keep scaling? User said 10+ gets 3.
+    else if (totalItems >= 10) freeCount = 3;
+    else if (totalItems >= 7) freeCount = 2;
+    else if (totalItems >= 5) freeCount = 1;
 
-    let subtotal = 0;
-    let discount = 0;
-    
-    allUnits.forEach((unit, index) => {
-        subtotal += unit.price;
-        if (index < numFree) {
-            discount += unit.price;
-        }
-    });
+    const discount = allPrices.slice(0, freeCount).reduce((sum, p) => sum + p, 0);
+    const finalTotal = subtotal - discount;
 
     return {
         totalItems,
-        numFree,
         subtotal,
         discount,
-        totalPayable: subtotal - discount,
-        canCheckout: totalItems >= MIN_POSTERS,
-        minNeeded: MIN_POSTERS
+        finalTotal,
+        freeCount,
+        items: cart
     };
+}
+
+export function formatWhatsAppMessage(customerDetails) {
+    const totals = calculateTotals();
+    const itemsList = totals.items.map((item, idx) => 
+        `${idx + 1}. ${item.title} (${item.size}) x${item.quantity} — ₹${item.price * item.quantity}`
+    ).join('\n');
+
+    const message = `*NEW ORDER FROM WALLIFY STORE* 🛍️\n\n` +
+        `*Items:*\n${itemsList}\n\n` +
+        `*Pricing Summary:*\n` +
+        `Subtotal: ₹${totals.subtotal}\n` +
+        `Bundle Discount: -₹${totals.discount} (${totals.freeCount} free)\n` +
+        `*Total Payable: ₹${totals.finalTotal}*\n\n` +
+        `*Customer Details:*\n` +
+        `Name: ${customerDetails.name}\n` +
+        `Phone: ${customerDetails.phone}\n` +
+        `Address: ${customerDetails.address}\n` +
+        `Pincode: ${customerDetails.pincode}\n\n` +
+        `_Order generated via Wallify Store Web_`;
+
+    return `https://wa.me/${WA_BUSINESS_PHONE}?text=${encodeURIComponent(message)}`;
 }

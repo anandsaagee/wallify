@@ -3,421 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart | Wallify Store</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Your Bag — Wallify Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .cart-page {
-            padding: 160px 0 100px;
-            min-height: 80vh;
-        }
-
-        .cart-header {
-            margin-bottom: 50px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .cart-header::after {
-            content:''; position:absolute; bottom:-1px; left:0; width:100px; height:2px;
-            background: var(--accent-color);
-        }
-
-        .cart-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        /* Items List */
-        .cart-items {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 30px;
-            background: rgba(255,255,255,0.02);
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            position: relative;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .cart-item:hover {
-            border-color: rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.04);
-            transform: translateX(4px);
-        }
-
-        .cart-item-img {
-            width: 130px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        .cart-item-info {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cart-item-title {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-            font-family: 'Outfit', sans-serif;
-            color: var(--text-main);
-        }
-
-        .cart-item-meta {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .cart-item-meta span {
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .cart-item-meta strong {
-            color: #E2E2E2;
-            font-weight: 500;
-        }
-
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-        }
-
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            overflow: hidden;
-            background: rgba(0,0,0,0.3);
-        }
-
-        .qty-btn {
-            padding: 8px 16px;
-            color: var(--text-main);
-            background: transparent;
-            font-size: 1rem;
-        }
-
-        .qty-btn:hover { background: rgba(255,255,255,0.1); }
-
-        .qty-input {
-            width: 40px;
-            text-align: center;
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .cart-item-price {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #FFF;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .remove-btn {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.05);
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .remove-btn:hover {
-            color: #ff4d4d;
-            background: rgba(255,77,77,0.1);
-            transform: scale(1.1);
-        }
-
-        /* Order Summary (Glassmorphic) */
-        .cart-summary {
-            background: var(--glass-bg);
-            padding: 40px 32px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            position: sticky;
-            top: 120px;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-
-        .cart-summary h3 {
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: #FFF;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-
-        .summary-row span:last-child {
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        .summary-row.total {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-top: 30px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            align-items: center;
-        }
-
-        .summary-row.total span:last-child {
-            color: #FFF;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            margin-top: 40px;
-            padding: 16px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-radius: 30px;
-        }
-
-        .empty-cart {
-            text-align: center;
-            padding: 100px 0;
-            grid-column: 1 / -1;
-            background: rgba(255,255,255,0.02);
-            border-radius: 16px;
-            border: 1px dashed var(--border-color);
-        }
-
-        .empty-cart i {
-            font-size: 5rem;
-            color: rgba(255,255,255,0.1);
-            margin-bottom: 24px;
-        }
-
-        @media (max-width: 900px) {
-            .cart-layout { grid-template-columns: 1fr; }
-            .cart-item { flex-direction: column; position: relative; }
-            .cart-item-img { width: 100%; height: 350px; }
-        }
-
-        @media (max-width: 767px) {
-            .cart-page { padding: 100px 0 60px; }
-            .cart-item { padding: 16px; gap: 16px; }
-            .cart-item-img { height: 220px; }
-            .cart-item-title { font-size: 1.1rem; }
-            .cart-summary { padding: 24px 20px; }
-            .cart-summary h3 { font-size: 1.3rem; }
-            .summary-row { font-size: 0.95rem; }
-            .summary-row.total { font-size: 1.3rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar reveal">
-        <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-        </div>
-        <div class="nav-icons">
-            <a href="cart.html" class="cart-icon">
-                <i class="fas fa-shopping-bag" style="color: #FFF;"></i>
-                <span class="cart-count">0</span>
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Open menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </nav>
+    <nav class="navbar scrolled"></nav>
 
-    <!-- MOBILE NAV -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <div class="mobile-nav-panel" id="mobileNavPanel">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
-        <a href="cart.html" class="mobile-cart-link active"><i class="fas fa-shopping-bag"></i> View Cart</a>
+    <div class="container" style="padding-top: 120px; padding-bottom: 80px;">
+        <div style="margin-bottom: 40px;">
+            <h1 style="font-size: 2.5rem;">Shopping Bag</h1>
+        </div>
+
+        <div id="cartPageContent">
+            <!-- Rendered by JS -->
+        </div>
     </div>
 
-    <main class="container cart-page">
-        <div class="cart-header reveal">
-            <h1>Shopping Cart</h1>
-        </div>
+    <!-- Modals & Cart -->
+    <div id="cartPanel" class="cart-panel"></div>
+    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
 
-        <div class="cart-layout reveal reveal-delay-1" id="cartLayout">
-            <!-- Injected by JS -->
-        </div>
-    </main>
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script type="module">
+        import { renderNavbar, initScrollReveal, toggleCart, updateNavbarBadge } from './ui.js';
+        import { getCart, calculateTotals, updateQuantity, removeFromCart } from './cart.js';
 
-    <footer class="footer reveal">
-        <div class="container">
-            <div class="footer-bottom" style="margin-top: 0; padding-top: 24px;">
-                <p>&copy; 2026 Wallify Store. Designed with precision.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
-        // Mobile Nav Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const mobileNavPanel = document.getElementById('mobileNavPanel');
-        function openMobileNav() {
-            hamburger.classList.add('open');
-            mobileNavOverlay.style.display = 'block';
-            mobileNavPanel.style.display = 'flex';
-            requestAnimationFrame(() => { mobileNavOverlay.classList.add('open'); mobileNavPanel.classList.add('open'); });
-            document.body.style.overflow = 'hidden';
-        }
-        function closeMobileNav() {
-            hamburger.classList.remove('open');
-            mobileNavOverlay.classList.remove('open');
-            mobileNavPanel.classList.remove('open');
-            document.body.style.overflow = '';
-            setTimeout(() => { mobileNavOverlay.style.display = 'none'; mobileNavPanel.style.display = 'none'; }, 400);
-        }
-        hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav());
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
-    </script>
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const cartLayout = document.getElementById('cartLayout');
+            renderNavbar('shop');
+            initScrollReveal();
 
-            function renderCart() {
-                const cart = getCart();
-
-                if(cart.length === 0) {
-                    cartLayout.innerHTML = `
-                        <div class="empty-cart">
-                            <i class="fas fa-shopping-cart"></i>
-                            <h2 style="font-family:'Outfit'">Your cart is empty</h2>
-                            <p class="section-subtitle mt-4">Discover art that speaks to you.</p>
-                            <a href="shop.html" class="btn-primary" style="margin-top:32px;">Start Shopping</a>
+            const renderCartPage = () => {
+                const totals = calculateTotals();
+                const container = document.getElementById('cartPageContent');
+                
+                if (totals.items.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 100px 20px;">
+                            <i class="fas fa-shopping-bag" style="font-size: 4rem; opacity: 0.1; margin-bottom: 24px;"></i>
+                            <h2>Your bag is completely empty.</h2>
+                            <a href="shop.html" class="btn btn-primary" style="margin-top: 24px;">Explore Collection</a>
                         </div>
                     `;
                     return;
                 }
 
-                const itemsHtml = cart.map((item, idx) => `
-                    <div class="cart-item" style="animation: revealItem 0.5s ease forwards; opacity:0; animation-delay:${idx*0.1}s">
-                        <img src="${item.image}" alt="${item.title}" class="cart-item-img">
-                        <button class="remove-btn" onclick="handleRemove('${item.variantId}')"><i class="fas fa-times"></i></button>
-                        
-                        <div class="cart-item-info">
-                            <h3 class="cart-item-title">${item.title}</h3>
-                            <div class="cart-item-meta">
-                                <span><strong>Category:</strong> ${item.category}</span>
-                            </div>
-                            
-                            <div class="cart-item-actions">
-                                <div class="qty-controls">
-                                    <button class="qty-btn" onclick="handleQtyChange('${item.variantId}', -1)"><i class="fas fa-minus"></i></button>
-                                    <input type="text" class="qty-input" value="${item.quantity}" readonly>
-                                    <button class="qty-btn" onclick="handleQtyChange('${item.variantId}', 1)"><i class="fas fa-plus"></i></button>
+                container.innerHTML = `
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 60px; @media(max-width: 900px){ grid-template-columns: 1fr; }">
+                        <div style="display: flex; flex-direction: column; gap: 24px;">
+                            ${totals.items.map(item => `
+                                <div class="glass" style="display: flex; gap: 24px; padding: 20px; border-radius: var(--radius-lg); align-items: center;">
+                                    <img src="${item.image}" style="width: 100px; height: 130px; object-fit: cover; border-radius: 12px;">
+                                    <div style="flex-grow: 1;">
+                                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                            <div>
+                                                <h3 style="font-size: 1.1rem; margin-bottom: 4px;">${item.title}</h3>
+                                                <p style="font-size: 0.85rem; color: var(--text-muted);">${item.category} • Size: ${item.size}</p>
+                                            </div>
+                                            <button onclick="window.removeItem('${item.variantId}')" style="color: var(--error); font-size: 0.9rem;"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                            <div style="display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--border-glass);">
+                                                <button onclick="window.updateQty('${item.variantId}', -1)" style="color: white; font-weight: bold;">-</button>
+                                                <span style="font-weight: 700;">${item.quantity}</span>
+                                                <button onclick="window.updateQty('${item.variantId}', 1)" style="color: white; font-weight: bold;">+</button>
+                                            </div>
+                                            <span style="font-size: 1.25rem; font-weight: 800;">₹${item.price * item.quantity}</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="cart-item-price">
-                                    ${formatPrice(item.price * item.quantity)}
+                            `).join('')}
+                        </div>
+                        <div class="glass" style="padding: 40px; border-radius: var(--radius-lg); height: fit-content; align-self: flex-start; position: sticky; top: 120px;">
+                            <h2 style="font-size: 1.5rem; margin-bottom: 24px;">Order Summary</h2>
+                            <div style="display: flex; flex-direction: column; gap: 16px;">
+                                <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                                    <span>Subtotal (${totals.totalItems} items)</span>
+                                    <span>₹${totals.subtotal}</span>
                                 </div>
+                                ${totals.discount > 0 ? `
+                                    <div style="display: flex; justify-content: space-between; color: var(--success); font-weight: 600;">
+                                        <span>Bundle Discount</span>
+                                        <span>-₹${totals.discount}</span>
+                                    </div>
+                                ` : ''}
+                                <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                                    <span>Shipping</span>
+                                    <span>FREE</span>
+                                </div>
+                                <div style="height: 1px; background: var(--border-glass); margin: 8px 0;"></div>
+                                <div style="display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 800; color: var(--secondary);">
+                                    <span>Total</span>
+                                    <span>₹${totals.finalTotal}</span>
+                                </div>
+
+                                <div class="glass" style="margin-top: 24px; padding: 16px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">
+                                    <p style="font-size: 0.8rem; color: var(--success); text-align: center;">🎉 You've unlocked <strong>${totals.freeCount} FREE</strong> posters with our bundle offer!</p>
+                                </div>
+
+                                <button onclick="window.location.href='checkout.html'" class="btn btn-primary" style="width: 100%; margin-top: 24px;">Proceed to Checkout</button>
+                                <a href="shop.html" style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 16px; display: block;">Continue Shopping</a>
                             </div>
                         </div>
-                    </div>
-                `).join('');
-
-                // Render Summary
-                const subtotal = getCartTotal();
-                const shipping = subtotal > 50 ? 0.00 : 10.00;
-                const tax = subtotal * 0.05; // 5% tax
-                const finalTotal = subtotal + shipping + tax;
-
-                const summaryHtml = `
-                    <div class="cart-summary">
-                        <h3>Order Summary</h3>
-                        <div class="summary-row">
-                            <span>Subtotal</span>
-                            <span>${formatPrice(subtotal)}</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Shipping</span>
-                            <span>${shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Estimated Tax</span>
-                            <span>${formatPrice(tax)}</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span>${formatPrice(finalTotal)}</span>
-                        </div>
-                        <a href="checkout.html" class="btn-primary checkout-btn">Proceed to Checkout</a>
                     </div>
                 `;
-
-                cartLayout.innerHTML = `
-                    <div class="cart-items">
-                        ${itemsHtml}
-                    </div>
-                    ${summaryHtml}
-                `;
-            }
-
-            // Provide inline styles for animations
-            const style = document.createElement('style');
-            style.innerHTML = `@keyframes revealItem { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }`;
-            document.head.appendChild(style);
-
-            // Global Handlers
-            window.handleRemove = (variantId) => {
-                removeFromCart(variantId);
-                renderCart();
             };
 
-            window.handleQtyChange = (variantId, change) => {
-                const cart = getCart();
-                const item = cart.find(i => i.variantId === variantId);
-                if(item.quantity === 1 && change === -1) {
-                    if(confirm('Remove item from cart?')) {
-                        removeFromCart(variantId);
-                    }
-                } else {
-                    updateCartItemQty(variantId, change);
-                }
-                renderCart();
+            window.updateQty = (id, delta) => {
+                updateQuantity(id, delta);
+                renderCartPage();
+                updateNavbarBadge();
             };
 
-            renderCart();
+            window.removeItem = (id) => {
+                removeFromCart(id);
+                renderCartPage();
+                updateNavbarBadge();
+            };
+
+            renderCartPage();
+            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
         });
     </script>
 </body>

@@ -3,114 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | Wallify Store</title>
+    <title>Checkout — Wallify Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar reveal">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Wallify<span>.</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="collections.html">Collections</a>
-                <a href="shop.html">Shop</a>
+    <nav class="navbar scrolled"></nav>
+
+    <div class="container" style="padding-top: 120px; padding-bottom: 80px;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 12px;">Complete Your Order</h1>
+            <p style="color: var(--text-muted);">Please provide your shipping details to proceed to WhatsApp.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; @media(max-width: 900px){ grid-template-columns: 1fr; }">
+            
+            <!-- Shipping Form -->
+            <div class="glass reveal" style="padding: 40px; border-radius: var(--radius-lg);">
+                <h2 style="font-size: 1.5rem; margin-bottom: 24px;">Shipping Details</h2>
+                <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Full Name</label>
+                        <input type="text" id="name" required placeholder="Enter your full name" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="Enter your WhatsApp number" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Full Address</label>
+                        <textarea id="address" required placeholder="House No, Street, Landmark, City, State" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit; resize: none; height: 100px;"></textarea>
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Pincode</label>
+                        <input type="text" id="pincode" required placeholder="Enter 6-digit Pincode" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px; background: #25D366; border-color: #25D366;">
+                        Order on WhatsApp <i class="fab fa-whatsapp"></i>
+                    </button>
+                </form>
             </div>
-            <button class="cart-trigger" id="cartToggleBtn">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
+
+            <!-- Order Summary -->
+            <div class="reveal" style="display: flex; flex-direction: column; gap: 24px;">
+                <div class="glass" style="padding: 32px; border-radius: var(--radius-lg);">
+                    <h2 style="font-size: 1.25rem; margin-bottom: 24px;">Review Selection</h2>
+                    <div id="checkoutItems" style="display: flex; flex-direction: column; gap: 16px;">
+                        <!-- Populate with JS -->
+                    </div>
+                    <div style="height: 1px; background: var(--border-glass); margin: 24px 0;"></div>
+                    <div id="checkoutTotals">
+                        <!-- Populate with JS -->
+                    </div>
+                    <div class="glass" style="margin-top: 24px; padding: 16px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">
+                        <p style="font-size: 0.8rem; color: var(--success); text-align: center;">By clicking "Order on WhatsApp", you'll be redirected to send your order details directly to us.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- CONTENT -->
-    <main class="container py-120" style="margin-top: 70px; max-width: 600px;">
-        <h1 class="section-title">Complete Your Order</h1>
-        <p class="section-subtitle">Confirm your final selection and place order via WhatsApp.</p>
-
-        <div id="checkoutSummary" style="background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px; margin-bottom: 2.5rem;">
-            <!-- Summary renders here -->
-        </div>
-
-        <button id="placeOrderBtn" class="btn-primary" style="width: 100%; padding: 20px; font-size: 1.1rem; border-radius: 40px; background: #25D366; color: #FFF; border: none; box-shadow: 0 10px 30px rgba(37,211,102,0.3);">
-            Place Order on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 8px;"></i>
-        </button>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="shop.html" style="color: var(--text-muted); font-size: 0.9rem;">Wait, I want more posters</a>
-        </div>
-    </main>
-
-    <!-- SIDE CART -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-panel" id="cartPanel"></div>
-
-    <!-- SCRIPTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script type="module">
-        import { getCart, calculateTotals } from './cart.js';
-        import { renderCartPanel, toggleCart } from './ui.js';
+        import { renderNavbar, initScrollReveal } from './ui.js';
+        import { calculateTotals, formatWhatsAppMessage } from './cart.js';
 
         document.addEventListener('DOMContentLoaded', () => {
-            const summary = document.getElementById('checkoutSummary');
-            const cart = getCart();
-            const totals = calculateTotals();
+            renderNavbar('shop');
+            initScrollReveal();
 
-            if (cart.length === 0) {
+            const totals = calculateTotals();
+            if (totals.items.length === 0) {
                 window.location.href = 'shop.html';
                 return;
             }
 
-            summary.innerHTML = `
-                <div style="margin-bottom: 1.5rem;">
-                    <h3 style="margin-bottom: 1rem; color: #FFF;">Order Summary</h3>
-                    ${cart.map(item => `
-                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.75rem;">
-                            <span>${item.quantity}x ${item.title} (${item.size})</span>
-                            <span style="color: var(--text-muted);">₹${item.price * item.quantity}</span>
-                        </div>
-                    `).join('')}
+            // Populate Items
+            const itemsContainer = document.getElementById('checkoutItems');
+            itemsContainer.innerHTML = totals.items.map(item => `
+                <div style="display: flex; justify-content: space-between; font-size: 0.95rem;">
+                    <span style="color: var(--text-muted);">${item.quantity}x ${item.title} (${item.size})</span>
+                    <span style="font-weight: 700;">₹${item.price * item.quantity}</span>
                 </div>
-                <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--text-muted);">
-                        <span>Subtotal</span>
-                        <span>₹${totals.subtotal}</span>
+            `).join('');
+
+            // Populate Totals
+            const totalsContainer = document.getElementById('checkoutTotals');
+            totalsContainer.innerHTML = `
+                <div style="display: flex; justify-content: space-between; color: var(--text-muted); margin-bottom: 8px;">
+                    <span>Subtotal</span>
+                    <span>₹${totals.subtotal}</span>
+                </div>
+                ${totals.discount > 0 ? `
+                    <div style="display: flex; justify-content: space-between; color: var(--success); font-weight: 600; margin-bottom: 8px;">
+                        <span>Bundle Discount</span>
+                        <span>-₹${totals.discount}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: #50fa7b;">
-                        <span>Bundle Free Posters</span>
-                        <span>- ₹${totals.discount}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 1.4rem; font-weight: 800; color: var(--accent-color);">
-                        <span>Total Payable</span>
-                        <span>₹${totals.totalPayable}</span>
-                    </div>
+                ` : ''}
+                <div style="display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-top: 8px;">
+                    <span>Total Payable</span>
+                    <span>₹${totals.finalTotal}</span>
                 </div>
             `;
 
-            document.getElementById('placeOrderBtn').addEventListener('click', () => {
-                const itemsText = cart.map(i => `- ${i.quantity}x ${i.title} [${i.size}] (₹${i.price * i.quantity})`).join('\n');
-                const message = encodeURIComponent(`Hi, I'd like to place an order:
+            // Form Submit
+            document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const customer = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                    pincode: document.getElementById('pincode').value
+                };
 
-MY SELECTION:
-${itemsText}
-
-------------------------
-SUBTOTAL: ₹${totals.subtotal}
-BUNDLE DISCOUNT: - ₹${totals.discount}
-TOTAL PAYABLE: ₹${totals.totalPayable}
-
-Please let me know the payment details.`);
-                
-                window.open(`https://wa.me/919497242251?text=${message}`);
+                const waUrl = formatWhatsAppMessage(customer);
+                window.open(waUrl, '_blank');
             });
-
-            // Cart Setup for Nav
-            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
-            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
-            renderCartPanel('cartPanel');
-            document.getElementById('cartBadge').textContent = totals.totalItems;
         });
     </script>
 </body>

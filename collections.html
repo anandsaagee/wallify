@@ -3,112 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections | Wallify Store</title>
+    <title>Collections — Wallify Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar reveal">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Wallify<span>.</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="collections.html" class="active">Collections</a>
-                <a href="shop.html">Shop</a>
-            </div>
-            <button class="cart-trigger" id="cartToggleBtn">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
-        </div>
-    </nav>
+    <nav class="navbar scrolled"></nav>
 
-    <!-- HEADER -->
-    <header class="py-120" style="margin-top: 70px; text-align: center; border-bottom: 1px solid var(--border-color); background: radial-gradient(circle at top center, rgba(40,40,40,1) 0%, var(--bg-color) 100%);">
-        <div class="container reveal">
-            <h1 class="section-title">The Collections</h1>
-            <p class="section-subtitle">Premium curated art sorted by your passion.</p>
+    <div class="container" style="padding-top: 120px; padding-bottom: 80px;">
+        <div style="margin-bottom: 60px; text-align: center;">
+            <h1 style="font-size: 3rem; margin-bottom: 12px;">Our Collections</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Each piece is selected to tell a story or celebrate a passion. Explore curated themes for your space.</p>
         </div>
-    </header>
 
-    <!-- CONTENT -->
-    <main class="container py-120">
-        <!-- Guaranteed 2 posters per row on mobile via style.css -->
-        <div class="poster-grid">
-            <a href="shop.html?category=Automotive Posters" class="poster-card reveal">
-                <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive">
-                <div class="card-body">
-                    <span class="card-category">Pure Speed</span>
-                    <h3 class="card-title">Automotive</h3>
-                </div>
-            </a>
-            <a href="shop.html?category=Anime" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime">
-                <div class="card-body">
-                    <span class="card-category">Epic Art</span>
-                    <h3 class="card-title">Anime</h3>
-                </div>
-            </a>
-            <a href="shop.html?category=Aesthetic" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic">
-                <div class="card-body">
-                    <span class="card-category">Modern Vibe</span>
-                    <h3 class="card-title">Aesthetic</h3>
-                </div>
-            </a>
+        <div class="poster-grid" id="collectionGrid">
+            <!-- Dynamic Category Cards -->
             <a href="shop.html?category=Mollywood" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood">
-                <div class="card-body">
-                    <span class="card-category">Malayalam Cinema</span>
-                    <h3 class="card-title">Mollywood</h3>
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Mollywood</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Cinema Legends</p>
+                    </div>
                 </div>
             </a>
             <a href="shop.html?category=Football" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=1000" alt="Football">
-                <div class="card-body">
-                    <span class="card-category">The Beautiful Game</span>
-                    <h3 class="card-title">Football</h3>
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=1000" alt="Football">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Football</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">The Pitch Warriors</p>
+                    </div>
+                </div>
+            </a>
+            <a href="shop.html?category=Anime" class="poster-card reveal">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Anime</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Otaku Dreams</p>
+                    </div>
+                </div>
+            </a>
+            <a href="shop.html?category=Aesthetic" class="poster-card reveal">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Aesthetic</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Vibrant Vibes</p>
+                    </div>
                 </div>
             </a>
             <a href="shop.html?category=Classic Cars" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars">
-                <div class="card-body">
-                    <span class="card-category">Vintage</span>
-                    <h3 class="card-title">Classic Cars</h3>
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Classic Cars</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Vintage Speed</p>
+                    </div>
+                </div>
+            </a>
+            <a href="shop.html?category=Automotive Posters" class="poster-card reveal">
+                <div class="card-img-wrap">
+                    <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive">
+                    <div class="card-overlay" style="opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <h3 class="card-title">Automotive</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Modern Icons</p>
+                    </div>
                 </div>
             </a>
         </div>
-    </main>
+    </div>
 
-    <!-- SIDE CART -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-panel" id="cartPanel"></div>
+    <!-- Modals & Cart -->
+    <div id="cartPanel" class="cart-panel"></div>
+    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
 
-    <!-- SCRIPTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script type="module">
-        import { renderCartPanel, toggleCart } from './ui.js';
-        import { calculateTotals } from './cart.js';
-
-        function updateSync() {
-            const totals = calculateTotals();
-            document.getElementById('cartBadge').textContent = totals.totalItems;
-            renderCartPanel('cartPanel');
-        }
+        import { renderNavbar, initScrollReveal, toggleCart } from './ui.js';
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
+            renderNavbar('collections');
+            initScrollReveal();
             document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
-            
-            updateSync();
-            window.addEventListener('cart_sync', updateSync);
-
-            // Trigger reveal animations
-            setTimeout(() => {
-                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-            }, 100);
         });
     </script>
 </body>

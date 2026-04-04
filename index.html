@@ -3,159 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallify Store | Premium Posters</title>
+    <title>Wallify Store | Premium Posters & Fine Art Prints</title>
+    <meta name="description" content="Discover museum-grade posters across Mollywood, Football, Anime, Aesthetic and Classic Cars.">
+    
+    <!-- External Dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* ── Hero Custom ───────────────────────────── */
-        .hero {
-            height: clamp(500px, 100svh, 800px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: #050505;
-        }
-
-        .hero-bg {
-            position: absolute; inset: 0; z-index: 0; display: flex; flex-direction: column; 
-            justify-content: space-around; pointer-events: none; opacity: 0; transition: opacity 1.5s ease;
-        }
-        .hero-bg.loaded { opacity: 0.5; }
-
-        .hero-overlay {
-            position: absolute; inset: 0; z-index: 1;
-            background: radial-gradient(circle at 50% 50%, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.75) 100%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; 
-            max-width: 860px; width: 100%; margin: 0 auto; padding: 0 1.25rem;
-        }
-        .hero-content h1 { font-size: clamp(2.5rem, 10vw, 5.5rem); margin-bottom: 1.5rem; text-shadow: 0 10px 40px rgba(0,0,0,0.5); }
-        .hero-content p { font-size: clamp(1rem, 3.5vw, 1.4rem); color: var(--text-muted); margin-bottom: 2.5rem; max-width: 500px; }
-
-        .track-row { display: flex; gap: 20px; animation: scrollRow 80s linear infinite; }
-        @keyframes scrollRow { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        .track-item { width: 180px; height: 240px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-        .track-item img { width: 100%; height: 100%; object-fit: cover; }
-    </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar reveal">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Wallify<span>.</span></a>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="collections.html">Collections</a>
-                <a href="shop.html">Shop</a>
-            </div>
-            <button class="cart-trigger" id="cartToggleBtn">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
-        </div>
-    </nav>
+    <!-- Premium Navbar -->
+    <nav class="navbar"></nav>
 
-    <!-- HERO -->
+    <!-- Interactive Hero -->
     <header class="hero">
-        <div class="hero-bg" id="heroBg">
-            <div class="track-row" id="heroTrack"></div>
+        <div class="hero-bg">
+            <div class="blur-blob blob-1"></div>
+            <div class="blur-blob blob-2"></div>
         </div>
-        <div class="hero-overlay"></div>
+
+        <!-- Animated Floating Posters -->
+        <div class="hero-track" id="heroTrack">
+            <!-- Row 1 -->
+            <div class="hero-track-column" style="margin-top: -100px;">
+                <div class="hero-poster reveal"><img src="" id="hp1"></div>
+                <div class="hero-poster reveal"><img src="" id="hp2"></div>
+                <div class="hero-poster reveal"><img src="" id="hp3"></div>
+            </div>
+            <!-- Row 2 -->
+            <div class="hero-track-column" style="margin-top: 100px;">
+                <div class="hero-poster reveal"><img src="" id="hp4"></div>
+                <div class="hero-poster reveal"><img src="" id="hp5"></div>
+                <div class="hero-poster reveal"><img src="" id="hp6"></div>
+            </div>
+            <!-- Row 3 -->
+            <div class="hero-track-column" style="margin-top: -50px;">
+                <div class="hero-poster reveal"><img src="" id="hp7"></div>
+                <div class="hero-poster reveal"><img src="" id="hp8"></div>
+                <div class="hero-poster reveal"><img src="" id="hp9"></div>
+            </div>
+        </div>
+
         <div class="hero-content">
-            <h1 class="reveal">Gallery for Your Space</h1>
-            <p class="reveal-delay-1">Experience museum-grade fine art prints curated for modern passion.</p>
-            <div class="reveal-delay-2">
-                <a href="shop.html" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Explore All&nbsp;<i class="fas fa-arrow-right"></i></a>
+            <span class="heading-wide reveal" style="color: var(--primary); font-weight: 700;">Exclusive Gallery</span>
+            <h1 class="reveal">Art That Defines <br><span style="color: var(--secondary);">Your Space.</span></h1>
+            <p class="reveal">Experience museum-grade fine art prints curated for modern passion. Shipped across India.</p>
+            <div class="reveal">
+                <a href="shop.html" class="btn btn-primary">
+                    Explore Collection <i class="fas fa-arrow-right"></i>
+                    <div class="btn-glow"></div>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- COLLECTIONS GRID -->
-    <section class="container py-120">
-        <h2 class="section-title reveal">Categories</h2>
-        <p class="section-subtitle reveal">Hand-picked art sorted by your passion.</p>
+    <!-- Categories Grid -->
+    <section class="container section-padding">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="reveal" style="font-size: 2.5rem; margin-bottom: 16px;">Curated Collections</h2>
+            <p class="reveal" style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Explore artworks categorized by your passions.</p>
+        </div>
 
-        <!-- Guarantee 2 per row via poster-grid in style.css -->
         <div class="poster-grid">
-            <a href="shop.html?category=Automotive Posters" class="poster-card reveal">
-                <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive">
-                <div class="card-body">
-                    <span class="card-category">Speed</span>
-                    <h3 class="card-title">Automotive</h3>
-                </div>
-            </a>
-            <a href="shop.html?category=Anime" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime">
-                <div class="card-body">
-                    <span class="card-category">Epic</span>
-                    <h3 class="card-title">Anime</h3>
-                </div>
-            </a>
-            <a href="shop.html?category=Aesthetic" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic">
-                <div class="card-body">
-                    <span class="card-category">Vibe</span>
-                    <h3 class="card-title">Aesthetic</h3>
-                </div>
-            </a>
+            <!-- Mollywood -->
             <a href="shop.html?category=Mollywood" class="poster-card reveal">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood">
-                <div class="card-body">
-                    <span class="card-category">Cinema</span>
-                    <h3 class="card-title">Mollywood</h3>
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Mollywood</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Cinema Legends</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Football -->
+            <a href="shop.html?category=Football" class="poster-card reveal">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=1000" alt="Football">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Football</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">The Pitch Warriors</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Anime -->
+            <a href="shop.html?category=Anime" class="poster-card reveal">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Anime</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Otaku Dreams</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Aesthetic -->
+            <a href="shop.html?category=Aesthetic" class="poster-card reveal">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Aesthetic</h3>
+                        <p style="font-size: 0.8rem; color: var(--secondary);">Vibrant Vibes</p>
+                    </div>
                 </div>
             </a>
         </div>
     </section>
 
-    <!-- SIDE CART -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-panel" id="cartPanel"></div>
+    <!-- Side UI Elements -->
+    <div id="cartPanel" class="cart-panel"></div>
+    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
 
-    <!-- SCRIPTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script type="module">
-        import { renderCartPanel, toggleCart, shuffle } from './ui.js';
-        import { calculateTotals } from './cart.js';
+        import { renderNavbar, initScrollReveal, toggleCart } from './ui.js';
+        import { shuffle } from './ui.js';
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Cart Setup
-            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
+            renderNavbar('home');
+            initScrollReveal();
+
+            // Populate Hero Posters
+            const posters = shuffle(window.products).slice(0, 9);
+            posters.forEach((p, i) => {
+                const el = document.getElementById(`hp${i+1}`);
+                if (el) el.src = p.image;
+            });
+
+            // Parallax Hero Effect
+            window.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+                document.getElementById('heroTrack').style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) rotate(-15deg)`;
+            });
+
+            // Close Cart Overlay
             document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
             
-            function updateSync() {
-                const totals = calculateTotals();
-                document.getElementById('cartBadge').textContent = totals.totalItems;
-                renderCartPanel('cartPanel');
-            }
-            
-            updateSync();
-            window.addEventListener('cart_sync', updateSync);
+            // Sync UI across tabs or events
+            window.addEventListener('cart_updated', () => {
+                const badge = document.querySelector('.cart-badge');
+                // renderNavbar might be overkill, just update badge
+            });
+        });
 
-            // Hero Background
-            const track = document.getElementById('heroTrack');
-            const bg = document.getElementById('heroBg');
-            if (window.products && track) {
-                const items = shuffle(window.products).slice(0, 15);
-                const loopItems = [...items, ...items];
-                track.innerHTML = loopItems.map(p => `
-                    <div class="track-item"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
-                `).join('');
-                setTimeout(() => bg.classList.add('loaded'), 500);
-            }
-
-            // Reveal Animation
-            setTimeout(() => {
-                document.querySelectorAll('.reveal, .reveal-delay-1, .reveal-delay-2').forEach(el => el.classList.add('active'));
-            }, 100);
+        // Global scroll class for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
     </script>
 </body>

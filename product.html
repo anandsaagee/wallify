@@ -3,166 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poster Details | Wallify Store</title>
+    <title>Product Details — Wallify Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .product-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
-        @media (min-width: 768px) { .product-layout { grid-template-columns: 1.2fr 1fr; gap: 80px; } }
-
-        .product-gallery { position: relative; border-radius: 20px; overflow: hidden; background: #000; border: 1px solid var(--border-color); }
-        .product-gallery img { width: 100%; transition: transform 0.4s ease; }
-        
-        .option-label { display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        .selector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-        .selector-btn { 
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #FFF; padding: 14px 10px; border-radius: 12px;
-            font-size: 0.9rem; font-weight: 500; text-align: center; cursor: pointer; transition: 0.2s;
-        }
-        .selector-btn.active { background: var(--accent-color); color: #000; border-color: var(--accent-color); }
-        
-        .whatsapp-btn { background: #25D366; color: #FFF; width: 100%; padding: 18px; border-radius: 30px; font-weight: 700; margin-top: 1rem; border: none; font-size: 1rem; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); transition: 0.3s; }
-        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
-    </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar reveal">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Wallify<span>.</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="collections.html">Collections</a>
-                <a href="shop.html">Shop</a>
-            </div>
-            <button class="cart-trigger" id="cartToggleBtn">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
-        </div>
-    </nav>
+    <nav class="navbar scrolled"></nav>
 
-    <!-- CONTENT -->
-    <main class="container py-120" style="margin-top: 70px;">
-        <div id="productContainer" class="product-layout">
-            <!-- Dynamically populated -->
-        </div>
-    </main>
+    <div class="container" style="padding-top: 120px; padding-bottom: 80px;" id="productDetail">
+        <!-- Rendered by JS -->
+    </div>
 
-    <!-- SIDE CART -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-panel" id="cartPanel"></div>
+    <!-- Modals & Cart -->
+    <div id="cartPanel" class="cart-panel"></div>
+    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
 
-    <!-- SCRIPTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script type="module">
-        import { getCart, calculateTotals, addToCart } from './cart.js';
-        import { renderCartPanel, toggleCart } from './ui.js';
+        import { renderNavbar, initScrollReveal, toggleCart, showToast, updateNavbarBadge } from './ui.js';
+        import { addProduct, SIZES } from './cart.js';
 
         document.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('productContainer');
+            renderNavbar('shop');
+            initScrollReveal();
+
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
-            const product = window.products?.find(p => p.id === productId);
+            const productDetail = document.getElementById('productDetail');
 
-            if (!product) {
-                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px;"><h2>Poster Not Found</h2><a href="shop.html">Return to Shop</a></div>`;
+            if (!productId || typeof products === 'undefined') {
+                productDetail.innerHTML = '<h2>Product not found.</h2>';
                 return;
             }
 
-            let currentSize = 'A5';
-            let currentQty = 1;
-            const sizePrices = { 'A5': 33, 'A4': 49, 'A3': 99 };
+            const product = products.find(p => p.id === productId);
+            if (!product) {
+                productDetail.innerHTML = '<h2>Product not found.</h2>';
+                return;
+            }
 
-            function render() {
-                container.innerHTML = `
-                    <div class="product-gallery reveal">
-                        <img id="mainImg" src="${product.image}" alt="${product.title}">
-                    </div>
-                    <div class="product-info reveal" style="transition-delay: 0.1s;">
-                        <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">${product.category}</span>
-                        <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin: 0.5rem 0 1.5rem;">${product.title}</h1>
-                        <div id="priceDisplay" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 2rem;">₹${sizePrices[currentSize] * currentQty}</div>
-                        
-                        <p style="color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.8;">
-                           Gallery-quality poster printed on 300gsm acid-free paper. Ships in protective tube packaging. High-resolution digital art curation.
-                        </p>
+            let selectedSize = 'A5';
 
-                        <div class="option-label">Select Size</div>
-                        <div class="selector-grid" id="sizeSelector">
-                            <div class="selector-btn ${currentSize === 'A5' ? 'active' : ''}" data-val="A5">A5</div>
-                            <div class="selector-btn ${currentSize === 'A4' ? 'active' : ''}" data-val="A4">A4</div>
-                            <div class="selector-btn ${currentSize === 'A3' ? 'active' : ''}" data-val="A3">A3</div>
+            const render = () => {
+                productDetail.innerHTML = `
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; @media(max-width: 900px){ grid-template-columns: 1fr; }">
+                        <div class="reveal" style="aspect-ratio: 3/4; overflow: hidden; border-radius: var(--radius-lg);">
+                            <img src="${product.image}" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
+                        <div class="reveal" style="display: flex; flex-direction: column; gap: 32px;">
+                            <div>
+                                <span style="font-size: 0.9rem; color: var(--primary); font-weight: 700; text-transform: uppercase;">${product.category}</span>
+                                <h1 style="font-size: 3.5rem; margin-top: 12px;">${product.title}</h1>
+                            </div>
 
-                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                            <button id="addCartBtn" class="btn-primary" style="flex: 1; padding: 18px; font-size: 1rem; border-radius: 30px;">Add to Bag</button>
-                            <button id="waBtn" class="whatsapp-btn" style="flex: 1;">Buy Now <i class="fab fa-whatsapp"></i></button>
-                        </div>
+                            <p style="color: var(--text-muted); line-height: 1.8;">
+                                Museum-grade fine art print on heavy 250 GSM paper. Featuring deep blacks, vivid colors, and a matte finish for a truly premium feel. Shipped in a secure protective tube.
+                            </p>
 
-                        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-truck" style="margin-right: 8px;"></i> Delivered in 4-6 Days</div>
-                            <div style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-certificate" style="margin-right: 8px;"></i> Museum-Grade Paper</div>
+                            <div style="display: flex; flex-direction: column; gap: 16px;">
+                                <label style="font-weight: 700;">Choose Print Size</label>
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+                                    ${Object.keys(SIZES).map(s => `
+                                        <button class="filter-pill size-selector ${selectedSize === s ? 'active' : ''}" data-size="${s}">
+                                            ${SIZES[s].label} — ₹${SIZES[s].price}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="glass" style="padding: 24px; border-radius: var(--radius-md);">
+                                <h3 style="color: var(--secondary); margin-bottom: 8px;">🔥 Special Offer</h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted);">Buy 5 Posters, Get 1 Free! (Buy 7 Get 2, Buy 10 Get 3). Discount scales automatically.</p>
+                            </div>
+
+                            <div style="display: flex; gap: 20px; margin-top: 12px;">
+                                <button id="addToBag" class="btn btn-primary" style="flex: 1;">Add to Bag</button>
+                                <button id="buyNow" class="btn" style="border: 1px solid var(--border-glass);">Buy Now</button>
+                            </div>
                         </div>
                     </div>
                 `;
 
-                // Re-bind listeners
-                container.querySelectorAll('#sizeSelector .selector-btn').forEach(btn => {
+                productDetail.querySelectorAll('.size-selector').forEach(btn => {
                     btn.addEventListener('click', () => {
-                        currentSize = btn.dataset.val;
+                        selectedSize = btn.dataset.size;
                         render();
                     });
                 });
 
-                container.querySelector('#addCartBtn').addEventListener('click', () => {
-                    addToCart(product, currentSize, sizePrices[currentSize]);
+                document.getElementById('addToBag')?.addEventListener('click', () => {
+                    addProduct(product, selectedSize);
+                    showToast(`"${product.title}" added to bag!`);
+                    updateNavbarBadge();
                     toggleCart(true);
                 });
 
-                container.querySelector('#waBtn').addEventListener('click', () => {
-                    const msg = encodeURIComponent(`Hi Wallify, I'd like to order:
-Poster: ${product.title}
-Size: ${currentSize}
-Quantity: ${currentQty}
-Price: ₹${sizePrices[currentSize] * currentQty}
-
-Please confirm my order.`);
-                    window.open(`https://wa.me/919497242251?text=${msg}`);
+                document.getElementById('buyNow')?.addEventListener('click', () => {
+                    addProduct(product, selectedSize);
+                    window.location.href = 'checkout.html';
                 });
 
-                // Zoom logic
-                const img = document.getElementById('mainImg');
-                const gallery = img.parentElement;
-                gallery.addEventListener('mousemove', (e) => {
-                    const x = e.offsetX / gallery.offsetWidth * 100;
-                    const y = e.offsetY / gallery.offsetHeight * 100;
-                    img.style.transformOrigin = `${x}% ${y}%`;
-                    img.style.transform = 'scale(1.5)';
-                });
-                gallery.addEventListener('mouseleave', () => {
-                    img.style.transform = 'scale(1)';
-                });
-
-                // Reveal animations
-                setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('active')), 50);
-            }
-
-            // Sync Cart State
-            function updateBadge() {
-                const totals = calculateTotals();
-                document.getElementById('cartBadge').textContent = totals.totalItems;
-                renderCartPanel('cartPanel');
-            }
-
-            document.getElementById('cartToggleBtn').addEventListener('click', () => toggleCart(true));
-            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
-            renderCartPanel('cartPanel');
-            updateBadge();
-            window.addEventListener('cart_sync', updateBadge);
+                initScrollReveal();
+            };
 
             render();
+            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
         });
     </script>
 </body>
