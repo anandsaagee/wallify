@@ -25,7 +25,7 @@ export function shuffleArray(array) {
  */
 export function createProductCard(product) {
     const card = document.createElement('div');
-    card.className = 'product-card reveal';
+    card.className = 'poster-card reveal';
     card.setAttribute('data-id', product.id);
 
     // Initial default size A5

@@ -825,3 +825,21 @@ ul, ol { list-style: none; }
   .logo { font-size: 1.15rem; letter-spacing: 1px; }
   .section-title { font-size: 1.6rem; }
 }
+/* ── Poster Grid (User Requested) ──────────────── */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.poster-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .poster-grid {
+    gap: 8px; /* tighter spacing for mobile */
+  }
+}
