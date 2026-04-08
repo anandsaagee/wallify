@@ -4,7 +4,9 @@
  */
 
 
-function initializeStore({
+function initializeStore({  products, ...rest }) {
+    console.log("STORE INIT");
+    console.log(products);
     products,
     gridContainerId,
     paginationContainerId,
