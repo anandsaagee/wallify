@@ -15,7 +15,7 @@ function initializeStore({  products, ...rest }) {
     searchInputId,
     sortSelectId,
     itemsPerPage = 16
-}) {
+} {
     let currentCategory = 'All';
     let searchQuery = '';
     let currentSort = 'default';
