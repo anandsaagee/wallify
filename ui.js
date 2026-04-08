@@ -1,4 +1,16 @@
 /**
+ * shuffleArray — Fisher-Yates shuffle (shared utility used by all pages)
+ */
+function shuffleArray(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+}
+
+/**
  * loadImage — Centralized image handler with fallback
  */
 function loadImage(src, alt = 'Poster') {
@@ -276,7 +288,7 @@ function openProductModal(productId) {
                                 <li>✨ Buy 5 -> 1 Free</li>
                                 <li>✨ Buy 7 -> 2 Free</li>
                                 <li>✨ Buy 10 -> 3 Free</li>
-                                <li>✨ Buy 20 -> 6 Free</li>
+                                <li>✨ Buy 20 -> 5 Free</li>
                             </ul>
                         </div>
 

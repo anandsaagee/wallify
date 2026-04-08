@@ -1,0 +1,109 @@
+You are a senior frontend engineer. Perform a complete audit and rewrite of my website codebase to fix all functional and UI issues. Do not skip any file. Analyze dependencies, script order, and runtime behavior before modifying anything.
+
+## Project Context
+
+This is an e-commerce poster store ("Wallify"). The shop page should dynamically render products, support filtering, searching, sorting, pagination, and add-to-cart functionality.
+
+## Critical Issues to Fix
+
+1. Products are not showing in the shop page
+2. Random images are not rendering
+3. Add-to-cart modal is empty when no item is selected
+4. Selected posters are not appearing inside the cart properly
+5. Cart does not have a close (X) button
+6. Shop and collection pages sometimes render blank
+7. Filtering by category may not work (case mismatch issues)
+8. UI text contrast (grey text) is not readable, must be white
+9. Posters should appear randomly on each load
+10. Minimum purchase rule:
+
+* Minimum 3 posters required
+* Offers:
+  Buy 5 Get 1 Free
+  Buy 7 Get 2 Free
+  Buy 10 Get 3 Free
+  Buy 20 Get 5 Free
+
+## Functional Requirements
+
+### Store System
+
+* Ensure `products` array is properly loaded before `initializeStore()`
+* Fix script loading order (products.js → store.js → main.js)
+* Ensure `initializeStore()` is actually called after DOMContentLoaded
+* Add debug logs to verify data flow
+* Implement safe checks for undefined functions
+
+### Required Functions (must exist and work)
+
+* createPosterCard()
+* shuffleArray()
+* initScrollReveal()
+
+### Filtering
+
+* Must be case-insensitive:
+  Example: "automotive" == "Automotive"
+
+### Sorting
+
+* Price low to high
+* Price high to low
+* Alphabetical
+* Default = randomized (Fisher-Yates shuffle)
+
+### Pagination
+
+* Must work dynamically with filtered results
+* Smooth scroll on page change
+
+### UI/UX Fixes
+
+* Ensure posters always render (no blank grid)
+* Show fallback message if no products found
+* Improve readability (use white text instead of grey)
+* Add visible and functional cart close button (X)
+* Ensure add-to-cart works even for a single item
+* Display selected items inside cart properly
+
+### Data Validation
+
+* Ensure each product has:
+
+  * title
+  * category
+  * basePrice
+  * image
+
+## Debugging Requirements
+
+* Add console logs:
+  console.log("STORE LOADED", products);
+* Prevent silent failures (wrap critical logic with error handling)
+* Fix any undefined function errors
+
+## Output Requirements
+
+* Provide FULL corrected code for:
+
+  * store.js
+  * products.js (if needed)
+  * main.js (if needed)
+  * relevant HTML sections
+
+* Do NOT give partial snippets
+
+* Do NOT explain only — implement fixes
+
+## Goal
+
+After your fix:
+
+* Products must always render
+* Filters, search, sort, and pagination must work
+* Cart must function correctly
+* UI must be clean and readable
+* No console errors
+
+Ensure the project is production-ready and fully functional.
+  make push all the codes into git hub

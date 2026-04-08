@@ -89,7 +89,7 @@ function calculateTotals() {
     allPrices.sort((a, b) => a - b);
 
     let freeCount = 0;
-    if (totalItems >= 20) freeCount = 6;
+    if (totalItems >= 20) freeCount = 5;
     else if (totalItems >= 10) freeCount = 3;
     else if (totalItems >= 7) freeCount = 2;
     else if (totalItems >= 5) freeCount = 1;

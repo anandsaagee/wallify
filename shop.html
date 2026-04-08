@@ -4,187 +4,248 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop | Wallify Store</title>
-
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-/* (your styles unchanged, kept clean) */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 32px;
-}
-.empty-state {
+.shop-hero {
+    padding: 120px 0 60px;
     text-align: center;
-    padding: 80px 20px;
+    border-bottom: 1px solid var(--border-glass);
+    margin-bottom: 48px;
 }
-.pagination-container {
+.shop-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 12px;
+}
+.shop-hero p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+.shop-controls {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.shop-search {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.shop-search::placeholder { color: rgba(255,255,255,0.4); }
+.shop-search:focus { border-color: var(--primary); }
+.shop-sort {
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    min-width: 180px;
+}
+.shop-sort option { background: #111; color: #fff; }
+.results-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+.pagination-wrap {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 60px;
-}
-.page-btn {
-    min-width: 44px;
-    height: 44px;
-    cursor: pointer;
-}
-.page-btn.active {
-    background: #fff;
-    color: #000;
+    flex-wrap: wrap;
 }
 </style>
 </head>
-
 <body>
 
-<nav class="navbar">
-    <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
-    <div class="nav-links">
-        <a href="customize.html">Customize</a>
-        <a href="index.html">Home</a>
-        <a href="shop.html" class="active">Shop</a>
-    </div>
-</nav>
+<nav class="navbar scrolled"></nav>
 
-<header class="shop-header">
+<div class="shop-hero">
     <div class="container">
         <h1>The Collection</h1>
+        <p>Premium art posters, curated for every wall and every story.</p>
     </div>
-</header>
+</div>
 
-<section class="container">
+<div class="container" style="padding-bottom: 80px;">
 
-    <!-- SEARCH -->
-    <input id="searchInput" placeholder="Search posters..." style="margin-bottom:20px;">
-
-    <!-- FILTERS -->
-    <div>
-        <button class="filter-item active" data-cat="All">All</button>
-        <button class="filter-item" data-cat="Automotive">Automotive</button>
-        <button class="filter-item" data-cat="Anime">Anime</button>
-        <button class="filter-item" data-cat="Aesthetic">Aesthetic</button>
+    <div class="shop-controls">
+        <input id="searchInput" class="shop-search" type="text" placeholder="Search posters...">
+        <select id="sortSelect" class="shop-sort">
+            <option value="default">Featured (Random)</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="az">A–Z</option>
+        </select>
     </div>
 
-    <!-- SORT -->
-    <select id="sortSelect" style="margin:20px 0;">
-        <option value="default">Featured</option>
-        <option value="low">Low to High</option>
-        <option value="high">High to Low</option>
-        <option value="az">A–Z</option>
-    </select>
+    <div class="filter-tabs" style="margin-bottom: 32px;">
+        <button class="filter-pill active" data-category="All">All</button>
+        <button class="filter-pill" data-category="Automotive">Automotive</button>
+        <button class="filter-pill" data-category="Aesthetic">Aesthetic</button>
+        <button class="filter-pill" data-category="Mollywood">Mollywood</button>
+        <button class="filter-pill" data-category="Classic Cars">Classic Cars</button>
+        <button class="filter-pill" data-category="Anime">Anime</button>
+        <button class="filter-pill" data-category="Football">Football</button>
+    </div>
 
-    <!-- RESULTS -->
-    <p id="resultsCount"></p>
+    <p id="resultsCount" class="results-count"></p>
 
-    <!-- GRID -->
-    <div id="shopGrid" class="product-grid"></div>
+    <div id="shopGrid" class="poster-grid"></div>
 
-    <!-- PAGINATION -->
-    <div id="paginationContainer" class="pagination-container"></div>
+    <div id="paginationContainer" class="pagination-wrap"></div>
 
-</section>
+</div>
 
-<script src="./data.js"></script>
+<div id="cartPanel" class="cart-panel"></div>
+<div id="cartOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1400;opacity:0;pointer-events:none;transition:0.3s;backdrop-filter:blur(4px);"></div>
 
+<script src="data.js"></script>
+<script src="cart.js"></script>
+<script src="ui.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('STORE LOADED', window.products);
 
-    if (typeof products === "undefined") {
-        console.error("products not loaded");
+    const grid = document.getElementById('shopGrid');
+
+    if (!window.products || !window.products.length) {
+        console.error('products not loaded — check data.js');
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:80px 20px;color:#fff;"><p>Failed to load products. Please refresh.</p></div>';
         return;
     }
 
-    let currentCategory = "All";
-    let searchQuery = "";
-    let currentSort = "default";
+    renderNavbar('shop');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentCategory = urlParams.get('category') || 'All';
+    let searchQuery = '';
+    let currentSort = 'default';
     let currentPage = 1;
-    const itemsPerPage = 12;
+    const ITEMS_PER_PAGE = 12;
 
-    const grid = document.getElementById("shopGrid");
-    const resultsCount = document.getElementById("resultsCount");
-    const searchInput = document.getElementById("searchInput");
-    const sortSelect = document.getElementById("sortSelect");
-    const filters = document.querySelectorAll(".filter-item");
-    const pagination = document.getElementById("paginationContainer");
+    const resultsCount = document.getElementById('resultsCount');
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const filters = document.querySelectorAll('.filter-pill[data-category]');
+    const pagination = document.getElementById('paginationContainer');
 
-    function render() {
-
-        let filtered = products.filter(p => {
-            return (
-                (currentCategory === "All" || p.category === currentCategory) &&
-                p.title.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-        });
-
-        if (currentSort === "low") filtered.sort((a,b)=>a.basePrice-b.basePrice);
-        if (currentSort === "high") filtered.sort((a,b)=>b.basePrice-a.basePrice);
-        if (currentSort === "az") filtered.sort((a,b)=>a.title.localeCompare(b.title));
-
-        resultsCount.textContent = filtered.length + " products";
-
-        const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
-        if (currentPage > totalPages) currentPage = 1;
-
-        const start = (currentPage - 1) * itemsPerPage;
-        const pageItems = filtered.slice(start, start + itemsPerPage);
-
-        grid.innerHTML = "";
-
-        if (pageItems.length === 0) {
-            grid.innerHTML = "<p class='empty-state'>No products found</p>";
-            return;
+    filters.forEach(function (f) {
+        if (f.dataset.category.toLowerCase() === currentCategory.toLowerCase()) {
+            filters.forEach(function (x) { x.classList.remove('active'); });
+            f.classList.add('active');
+            currentCategory = f.dataset.category;
         }
-
-        pageItems.forEach(p => {
-            grid.innerHTML += `
-                <div class="product-card">
-                    <img src="${p.image}" alt="${p.title}">
-                    <h3>${p.title}</h3>
-                    <p>₹${p.basePrice}</p>
-                </div>
-            `;
-        });
-
-        pagination.innerHTML = "";
-        for (let i = 1; i <= totalPages; i++) {
-            pagination.innerHTML += `
-                <button class="page-btn ${i===currentPage?'active':''}" onclick="goToPage(${i})">${i}</button>
-            `;
-        }
-    }
-
-    window.goToPage = function (p) {
-        currentPage = p;
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    filters.forEach(f => {
-        f.onclick = () => {
-            filters.forEach(x=>x.classList.remove("active"));
-            f.classList.add("active");
-            currentCategory = f.dataset.cat;
-            currentPage = 1;
-            render();
-        };
     });
 
-    searchInput.oninput = e => {
+    function shuffleArray(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function render() {
+        var filtered = window.products.filter(function (p) {
+            var matchCat = currentCategory === 'All' ||
+                p.category.toLowerCase() === currentCategory.toLowerCase();
+            var matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchCat && matchSearch;
+        });
+
+        if (currentSort === 'low') {
+            filtered.sort(function (a, b) { return a.basePrice - b.basePrice; });
+        } else if (currentSort === 'high') {
+            filtered.sort(function (a, b) { return b.basePrice - a.basePrice; });
+        } else if (currentSort === 'az') {
+            filtered.sort(function (a, b) { return a.title.localeCompare(b.title); });
+        } else {
+            filtered = shuffleArray(filtered);
+        }
+
+        resultsCount.textContent = filtered.length + ' posters found';
+
+        var totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
+        if (currentPage > totalPages) currentPage = 1;
+
+        var start = (currentPage - 1) * ITEMS_PER_PAGE;
+        var pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+        grid.innerHTML = '';
+
+        if (pageItems.length === 0) {
+            grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:80px 20px;">' +
+                '<i class="fas fa-search" style="font-size:3rem;opacity:0.2;margin-bottom:16px;display:block;"></i>' +
+                '<p style="color:#fff;font-size:1.1rem;">No posters found. Try a different search or filter.</p></div>';
+        } else {
+            pageItems.forEach(function (p, i) {
+                grid.appendChild(createPosterCard(p, i));
+            });
+        }
+
+        pagination.innerHTML = '';
+        if (totalPages > 1) {
+            for (var i = 1; i <= totalPages; i++) {
+                (function (pageNum) {
+                    var btn = document.createElement('button');
+                    btn.className = 'filter-pill' + (pageNum === currentPage ? ' active' : '');
+                    btn.textContent = pageNum;
+                    btn.addEventListener('click', function () {
+                        currentPage = pageNum;
+                        render();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                    pagination.appendChild(btn);
+                })(i);
+            }
+        }
+
+        initScrollReveal();
+    }
+
+    filters.forEach(function (f) {
+        f.addEventListener('click', function () {
+            filters.forEach(function (x) { x.classList.remove('active'); });
+            f.classList.add('active');
+            currentCategory = f.dataset.category;
+            currentPage = 1;
+            render();
+        });
+    });
+
+    searchInput.addEventListener('input', function (e) {
         searchQuery = e.target.value;
         currentPage = 1;
         render();
-    };
+    });
 
-    sortSelect.onchange = e => {
+    sortSelect.addEventListener('change', function (e) {
         currentSort = e.target.value;
         render();
-    };
+    });
+
+    document.getElementById('cartOverlay').addEventListener('click', function () {
+        toggleCart(false);
+    });
 
     render();
 });
 </script>
-
 </body>
 </html>

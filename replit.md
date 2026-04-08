@@ -46,6 +46,15 @@ Wallify Store is a static HTML/CSS/JavaScript website for buying and customizing
 └── generate_catalog.py - Generates HTML catalog metadata
 ```
 
+## Bug Fixes Applied (April 2026)
+
+- **shop.html** — Full rewrite: now loads `cart.js` + `ui.js`, uses `createPosterCard()` from `ui.js`, proper cart panel/overlay HTML, all 6 category filter buttons with correct `data-category` attributes, URL param `?category=X` support, case-insensitive filtering, randomized default sort (Fisher-Yates), fully working pagination
+- **ui.js** — Added `shuffleArray()` as a shared utility (needed by collections.html)
+- **store.js** — Removed duplicate `shuffleArray` declaration and removed conflicting DOMContentLoaded auto-init
+- **cart.js** — Fixed Buy 20 bundle rule: was giving 6 free, corrected to 5 free
+- **main.js** / **script.js** — Replaced placeholder stubs with clean utility helpers
+- **style.css** — Added proper toast notification CSS (`.show` class was missing), added shop page header styles
+
 ## Running the App
 
 The app is served as a static site using Python's built-in HTTP server:
