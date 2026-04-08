@@ -28,10 +28,6 @@ function initializeStore({  products, ...rest }) {
     const searchInput = document.getElementById(searchInputId);
     const sortSelect = document.getElementById(sortSelectId);
 
- function getProducts() {
-    return products;
-} 
-
     function render() {
         // Filter
         let filtered = products.filter(p => {
