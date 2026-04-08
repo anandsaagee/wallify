@@ -1,127 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details — Wallify Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product | Wallify Store</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.product-section { padding: 140px 0 100px; }
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+}
+.product-gallery {
+    border-radius: 20px; overflow: hidden;
+    background: #111; position: relative; cursor: crosshair;
+    box-shadow: var(--shadow-md); border: 1px solid var(--border-color);
+}
+.product-gallery img { width: 100%; height: auto; display: block; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.product-info h1 { font-size: 2.5rem; margin-bottom: 12px; color: var(--text-main); font-family: 'Outfit', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+.product-category { color: var(--text-muted); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 20px; display: inline-block; font-weight: 600; }
+.product-price { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); display: flex; align-items: baseline; gap: 12px; font-family: 'Inter', sans-serif; }
+.offer-text { color: #E2E2E2; font-weight: 500; font-size: 0.95rem; margin-bottom: 32px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 10px 16px; border-radius: 8px; display: inline-block; backdrop-filter: blur(10px); }
+.product-desc { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 32px; line-height: 1.8; font-weight: 300; }
+.option-group { margin-bottom: 24px; }
+.option-group label { display: block; font-weight: 500; margin-bottom: 12px; font-size: 0.95rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.selector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; }
+.selector-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-muted); padding: 14px 12px; border-radius: 12px; font-weight: 500; transition: var(--transition); backdrop-filter: blur(5px); }
+.selector-btn:not(:disabled):hover { border-color: rgba(255,255,255,0.3); color: var(--text-main); background: rgba(255,255,255,0.1); }
+.selector-btn.active { border-color: var(--accent-color); color: #000; background: var(--accent-color); font-weight: 600; box-shadow: 0 4px 15px rgba(255,215,0,0.2); }
+.qty-controls { display: flex; align-items: center; border: 1px solid var(--border-color); border-radius: 30px; overflow: hidden; width: fit-content; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); }
+.qty-btn { padding: 12px 20px; background: transparent; color: var(--text-main); font-size: 1.2rem; }
+.qty-btn:hover { background: rgba(255,255,255,0.1); }
+.qty-input { width: 50px; text-align: center; background: transparent; border: none; color: var(--text-main); font-size: 1.2rem; font-weight: 600; }
+.qty-input:focus { outline: none; }
+.action-buttons { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 40px; }
+.btn-wa {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white; border: none;
+    box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+    position: relative; overflow: hidden; border-radius: 30px;
+}
+.btn-wa::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: 0.5s; }
+.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(37,211,102,0.5); color: white; }
+.btn-wa:hover::after { left: 150%; }
+
+/* ─── Customize This Poster button ─── */
+.btn-customize-product {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 15px 20px; border-radius: 30px;
+    border: 1px solid rgba(255,215,0,0.35);
+    background: rgba(255,215,0,0.06);
+    color: var(--accent-color);
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+    cursor: pointer; text-decoration: none;
+    transition: var(--transition);
+}
+.btn-customize-product:hover {
+    background: rgba(255,215,0,0.14);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 18px rgba(255,215,0,0.15);
+    transform: translateY(-1px);
+    color: var(--accent-color);
+}
+
+.info-box { margin-bottom: 24px; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid var(--border-color); backdrop-filter: blur(10px); }
+.form-group-modal { margin-bottom: 20px; text-align: left; }
+.form-group-modal label { display: block; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.form-control-modal { width: 100%; padding: 14px 16px; border: 1px solid var(--border-color); border-radius: 12px; font-family: inherit; background: rgba(255,255,255,0.05); color: var(--text-main); transition: var(--transition); }
+.form-control-modal:focus { outline: none; border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.1); }
+
+@media (min-width: 768px) {
+    .product-layout { grid-template-columns: 1fr 1fr; gap: 60px; }
+    .product-info h1 { font-size: 3rem; }
+    .product-section { padding: 160px 0 100px; }
+}
+</style>
 </head>
 <body>
 
-    <nav class="navbar scrolled"></nav>
-
-    <div class="container" style="padding-top: 120px; padding-bottom: 80px;" id="productDetail">
-        <!-- Rendered by JS -->
+<nav class="navbar reveal">
+    <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
+    <div class="nav-links">
+        <a href="customize.html" style="color:var(--accent-color);font-weight:600;">✦ Customize</a>
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
     </div>
+    <div class="nav-icons">
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+</nav>
 
-    <!-- Modals & Cart -->
-    <div id="cartPanel" class="cart-panel"></div>
-    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
+<main class="container product-section" id="productContainer">
+    <!-- Injected via JS -->
+</main>
 
-    <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="cart.js"></script>
-    <script src="ui.js"></script>
-    <script>
+<!-- WhatsApp Order Modal -->
+<div id="waModal" class="modal-overlay">
+    <div class="modal-content" style="text-align:center;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+            <h3 style="font-size:1.5rem;margin:0;color:var(--text-main);font-family:'Outfit',sans-serif;">Complete Order</h3>
+            <button id="closeModal" style="font-size:1.5rem;color:var(--text-muted);background:none;border:none;cursor:pointer;"><i class="fas fa-times"></i></button>
+        </div>
+        <form id="waDirectForm">
+            <div class="form-group-modal">
+                <label>Full Name</label>
+                <input type="text" id="modalName" class="form-control-modal" required placeholder="John Doe">
+            </div>
+            <div class="form-group-modal">
+                <label>WhatsApp Number</label>
+                <input type="tel" id="modalPhone" class="form-control-modal" required placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group-modal">
+                <label>Delivery Address</label>
+                <textarea id="modalAddress" class="form-control-modal" required placeholder="Full address with pincode…" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-wa" style="width:100%;margin-top:12px;padding:16px;">
+                Order on WhatsApp <i class="fab fa-whatsapp" style="margin-left:8px;"></i>
+            </button>
+        </form>
+    </div>
+</div>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            renderNavbar('shop');
-            initScrollReveal();
+<!-- Mobile sticky buy button -->
+<div class="mobile-sticky-buy" id="mobileStickyDiv" style="display:none;">
+    <button class="btn-primary btn-wa" id="mobileBuyBtn" style="width:100%;font-size:1.1rem;padding:16px;border-radius:30px;">
+        Buy Now (WhatsApp) <i class="fab fa-whatsapp" style="margin-left:8px;"></i>
+    </button>
+</div>
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = urlParams.get('id');
-            const productDetail = document.getElementById('productDetail');
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
 
-            if (!productId || typeof products === 'undefined') {
-                productDetail.innerHTML = '<h2>Product not found.</h2>';
-                return;
-            }
+    var container = document.getElementById('productContainer');
+    var productId = new URLSearchParams(window.location.search).get('id');
+    var product   = products.find(function (p) { return p.id === productId; });
 
-            const product = products.find(p => p.id === productId);
-            if (!product) {
-                productDetail.innerHTML = '<h2>Product not found.</h2>';
-                return;
-            }
+    if (!product) {
+        container.innerHTML = '<div style="text-align:center;padding:100px;" class="reveal"><h2>Product Not Found</h2><p style="margin:20px 0"><a href="shop.html" class="btn-primary">Back to Shop</a></p></div>';
+        return;
+    }
 
-            let selectedSize = null;
+    var currentSize  = 'A4';
+    var currentFrame = 'None';
+    var currentQty   = 1;
 
-            const render = () => {
-                const canContinue = selectedSize !== null;
-                productDetail.innerHTML = `
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; @media(max-width: 900px){ grid-template-columns: 1fr; }">
-                        <div class="reveal" style="aspect-ratio: 3/4; overflow: hidden; border-radius: var(--radius-lg); background: #000;">
-                            ${loadImage(product.image, product.title)}
-                        </div>
-                        <div class="reveal" style="display: flex; flex-direction: column; gap: 32px;">
-                            <div>
-                                <span style="font-size: 0.9rem; color: var(--primary); font-weight: 700; text-transform: uppercase;">${product.category}</span>
-                                <h1 style="font-size: 3.5rem; margin-top: 12px; color: #FFFFFF;">${product.title}</h1>
-                            </div>
+    /* Build the customize URL for this product */
+    var custUrl = 'customize.html?from=' + encodeURIComponent(product.id);
 
-                            <p style="color: #E5E7EB; line-height: 1.8; font-size: 1.1rem;">
-                                Museum-grade fine art print on heavy 250 GSM archival paper. Featuring deep blacks, vivid colors, and a premium matte finish. Shipped in a secure protective tube.
-                            </p>
+    container.innerHTML =
+        '<div class="product-layout">' +
 
-                            <div style="display: flex; flex-direction: column; gap: 16px;">
-                                <label style="font-weight: 700; color: #FFFFFF;">Choose Print Size <span style="color: var(--error);">*</span></label>
-                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
-                                    ${Object.keys(SIZES).map(s => `
-                                        <button class="filter-pill size-selector ${selectedSize === s ? 'active' : ''}" data-size="${s}" style="border: 1px solid ${selectedSize === s ? 'var(--primary)' : 'var(--border-glass)'}; height: 50px; display: flex; align-items: center; justify-content: center;">
-                                            ${SIZES[s].label} — ₹${SIZES[s].price}
-                                        </button>
-                                    `).join('')}
-                                </div>
-                                ${!canContinue ? `<p style="font-size: 0.85rem; color: var(--secondary); font-weight: 600;">Please select a size to continue</p>` : ''}
-                            </div>
+            /* Gallery */
+            '<div class="product-gallery reveal" id="gallery">' +
+                '<img src="' + product.image + '" id="mainImg">' +
+            '</div>' +
 
-                            <div class="glass" style="padding: 24px; border-radius: var(--radius-md); border: 1px solid rgba(250, 204, 21, 0.2); background: rgba(250, 204, 21, 0.05);">
-                                <h3 style="color: var(--secondary); margin-bottom: 8px; font-size: 1.1rem;"><i class="fas fa-gift"></i> Special Bundle Offers</h3>
-                                <ul style="font-size: 0.85rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 4px; list-style: none; padding: 0;">
-                                    <li>✨ Buy 5 -> 1 Free</li>
-                                    <li>✨ Buy 7 -> 2 Free</li>
-                                    <li>✨ Buy 10 -> 3 Free</li>
-                                    <li>✨ Buy 20 -> 6 Free</li>
-                                </ul>
-                            </div>
+            /* Info */
+            '<div class="product-info reveal reveal-delay-1">' +
+                '<span class="product-category">' + product.category + '</span>' +
+                '<h1>' + product.title + '</h1>' +
+                '<div class="product-price" id="priceDisplay">...</div>' +
+                '<div class="offer-text" id="offerText">Buy 5 GET 1 FREE &bull; Buy 7 GET 2 FREE &bull; Buy 10 GET 3 FREE</div>' +
+                '<p class="product-desc">' + product.description + '</p>' +
 
-                            <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 12px;">
-                                <button id="addToBag" class="btn btn-primary" style="width: 100%; height: 56px;" ${!canContinue ? 'disabled' : ''}>
-                                    ${canContinue ? 'Add to Bag' : 'Select Size First'}
-                                </button>
-                                <button id="buyNow" class="btn btn-buy-now" style="width: 100%;" ${!canContinue ? 'disabled' : ''}>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                '<div class="info-box">' +
+                    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">' +
+                        '<i class="fas fa-scroll" style="color:#FFF;font-size:1.2rem;width:24px;text-align:center;"></i>' +
+                        '<span style="font-weight:500;color:var(--text-main);">Premium 300 GSM paper quality</span>' +
+                    '</div>' +
+                    '<div style="display:flex;align-items:center;gap:12px;">' +
+                        '<i class="fas fa-truck" style="color:#FFF;font-size:1.2rem;width:24px;text-align:center;"></i>' +
+                        '<span style="font-weight:500;color:var(--text-main);">Fast delivery across India</span>' +
+                    '</div>' +
+                '</div>' +
 
-                productDetail.querySelectorAll('.size-selector').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        selectedSize = btn.dataset.size;
-                        render();
-                    });
-                });
+                '<div class="option-group">' +
+                    '<label>Print Size</label>' +
+                    '<div class="selector-grid" id="sizeSelectors">' +
+                        '<button class="selector-btn" data-val="A5">A5</button>' +
+                        '<button class="selector-btn" data-val="A4">A4 (12x14)</button>' +
+                        '<button class="selector-btn" data-val="A3">A3</button>' +
+                    '</div>' +
+                '</div>' +
 
-                document.getElementById('addToBag')?.addEventListener('click', () => {
-                    addProduct(product, selectedSize);
-                    showToast(`"${product.title}" added to bag!`);
-                    updateNavbarBadge();
-                    toggleCart(true);
-                });
+                '<div class="option-group">' +
+                    '<label>Frame Specification</label>' +
+                    '<div class="selector-grid" id="frameSelectors">' +
+                        '<button class="selector-btn" data-val="None">No Frame</button>' +
+                        '<button class="selector-btn" data-val="Black">Black Frame</button>' +
+                        '<button class="selector-btn" data-val="White">White Frame</button>' +
+                        '<button class="selector-btn" data-val="Wooden">Wooden Frame</button>' +
+                    '</div>' +
+                '</div>' +
 
-                document.getElementById('buyNow')?.addEventListener('click', () => {
-                    addProduct(product, selectedSize);
-                    window.location.href = 'checkout.html';
-                });
+                '<div class="option-group">' +
+                    '<label>Select Quantity</label>' +
+                    '<div class="qty-controls">' +
+                        '<button class="qty-btn" id="btnMinus"><i class="fas fa-minus"></i></button>' +
+                        '<input type="number" class="qty-input" id="qtyInput" value="1" readonly>' +
+                        '<button class="qty-btn" id="btnPlus"><i class="fas fa-plus"></i></button>' +
+                    '</div>' +
+                '</div>' +
 
-                initScrollReveal();
-            };
+                '<div class="action-buttons" id="desktopActions" style="display:none">' +
+                    '<button class="btn-primary btn-wa" id="buyNowBtn" style="padding:15px;border-radius:30px;font-size:1rem;">' +
+                        'Buy Now (WhatsApp) <i class="fab fa-whatsapp" style="margin-left:8px;"></i>' +
+                    '</button>' +
+                    '<button class="btn-outline" id="addCartBtn" style="padding:15px;border-radius:30px;font-size:1rem;">' +
+                        'Add to Cart' +
+                    '</button>' +
+                    '<a href="' + custUrl + '" class="btn-customize-product">' +
+                        '<i class="fas fa-pen-nib"></i> Customize This Poster' +
+                    '</a>' +
+                '</div>' +
 
-            render();
-            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
+            '</div>' + /* .product-info */
+        '</div>';    /* .product-layout */
+
+    /* Show buttons */
+    document.getElementById('desktopActions').style.display = 'grid';
+    if (window.innerWidth < 768) {
+        document.getElementById('mobileStickyDiv').style.display = 'block';
+    }
+
+    var priceDisplay = document.getElementById('priceDisplay');
+    var offerText    = document.getElementById('offerText');
+    var sizeBtns     = document.querySelectorAll('#sizeSelectors .selector-btn');
+    var frameBtns    = document.querySelectorAll('#frameSelectors .selector-btn');
+
+    function getUnitPrice() {
+        if (currentFrame === 'None') {
+            if (currentSize === 'A5') return 33;
+            if (currentSize === 'A4') return 49;
+            if (currentSize === 'A3') return 99;
+        } else {
+            if (currentSize === 'A5') return 249;
+            if (currentSize === 'A4') return 399;
+            if (currentSize === 'A3') return 399;
+        }
+        return 49;
+    }
+
+    function updateUI() {
+        /* A3 disables frames */
+        if (currentSize === 'A3') {
+            currentFrame = 'None';
+            frameBtns.forEach(function (btn) {
+                if (btn.dataset.val !== 'None') {
+                    btn.disabled = true; btn.style.opacity = '0.3'; btn.style.cursor = 'not-allowed';
+                } else {
+                    btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+                    btn.textContent = 'No Frame';
+                }
+            });
+        } else {
+            frameBtns.forEach(function (btn) {
+                btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+                var labels = { None: 'No Frame', Black: 'Black Frame', White: 'White Frame', Wooden: 'Wooden Frame' };
+                btn.textContent = labels[btn.dataset.val] || btn.dataset.val;
+            });
+        }
+
+        sizeBtns.forEach(function (btn)  { btn.classList.toggle('active',  btn.dataset.val === currentSize); });
+        frameBtns.forEach(function (btn) { btn.classList.toggle('active', !btn.disabled && btn.dataset.val === currentFrame); });
+        document.getElementById('qtyInput').value = currentQty;
+
+        /* Offer label */
+        if (currentQty >= 10)      offerText.innerHTML = '🎉 Incredible! You get <strong style="color:#FFF">3 FREE</strong> items!';
+        else if (currentQty >= 7)  offerText.innerHTML = '🎉 Amazing! You get <strong style="color:#FFF">2 FREE</strong> items!';
+        else if (currentQty >= 5)  offerText.innerHTML = '🎉 Nice! You get <strong style="color:#FFF">1 FREE</strong> item!';
+        else                       offerText.innerHTML  = 'Buy 5 GET 1 FREE &bull; Buy 7 GET 2 FREE &bull; Buy 10 GET 3 FREE';
+
+        var total = getUnitPrice() * currentQty;
+        priceDisplay.textContent = formatPrice(total);
+        return total;
+    }
+
+    /* Hover zoom on desktop */
+    var gallery = document.getElementById('gallery');
+    var mainImg = document.getElementById('mainImg');
+    if (window.innerWidth >= 768 && gallery && mainImg) {
+        gallery.addEventListener('mousemove', function (e) {
+            var r = gallery.getBoundingClientRect();
+            mainImg.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+            mainImg.style.transform = 'scale(1.5)';
         });
-    </script>
+        gallery.addEventListener('mouseleave', function () {
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+        });
+    }
+
+    sizeBtns.forEach(function (b)  { b.addEventListener('click', function () { currentSize  = b.dataset.val; updateUI(); }); });
+    frameBtns.forEach(function (b) { b.addEventListener('click', function () { if (!b.disabled) { currentFrame = b.dataset.val; updateUI(); } }); });
+    document.getElementById('btnMinus').addEventListener('click', function () { if (currentQty > 1) { currentQty--; updateUI(); } });
+    document.getElementById('btnPlus').addEventListener('click',  function () { currentQty++; updateUI(); });
+
+    /* Add to Cart */
+    document.getElementById('addCartBtn').addEventListener('click', function () {
+        var unitPrice = getUnitPrice();
+        addToCart(product, currentSize, currentFrame, unitPrice, currentQty);
+        var btn = document.getElementById('addCartBtn');
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+        btn.style.borderColor = '#25D366'; btn.style.color = '#25D366';
+        setTimeout(function () { btn.innerHTML = orig; btn.style.borderColor = ''; btn.style.color = ''; }, 1600);
+    });
+
+    /* WhatsApp modal */
+    var waModal = document.getElementById('waModal');
+    var openModal = function () { waModal.classList.add('active'); };
+    document.getElementById('buyNowBtn').addEventListener('click', openModal);
+    document.getElementById('mobileBuyBtn').addEventListener('click', openModal);
+    document.getElementById('closeModal').addEventListener('click', function () { waModal.classList.remove('active'); });
+    waModal.addEventListener('click', function (e) { if (e.target === waModal) waModal.classList.remove('active'); });
+
+    document.getElementById('waDirectForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var total   = updateUI();
+        var name    = document.getElementById('modalName').value;
+        var phone   = document.getElementById('modalPhone').value;
+        var address = document.getElementById('modalAddress').value;
+        var freeNote = currentQty >= 10 ? '(+3 FREE items)' : currentQty >= 7 ? '(+2 FREE items)' : currentQty >= 5 ? '(+1 FREE item)' : '';
+        var msg =
+            'Hello, I want to order from Wallify Store:\n\n' +
+            'Product: ' + product.title + '\n' +
+            'Size: '    + currentSize   + '\n' +
+            'Frame: '   + currentFrame  + '\n' +
+            'Quantity: ' + currentQty + ' ' + freeNote + '\n' +
+            'Total: ₹'  + total + '\n\n' +
+            'Name: '    + name    + '\n' +
+            'Address: ' + address + '\n' +
+            'Phone: '   + phone   + '\n\n' +
+            'Please confirm my order!';
+        redirectToWhatsApp(msg);
+        waModal.classList.remove('active');
+    });
+
+    /* Initial render */
+    updateUI();
+});
+</script>
 </body>
 </html>

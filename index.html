@@ -1,200 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallify Store | Premium Posters & Fine Art Prints</title>
-    <meta name="description" content="Discover museum-grade posters across Mollywood, Football, Anime, Aesthetic and Classic Cars.">
-    
-    <!-- External Dependencies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallify Store | Premium Posters</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.hero {
+    height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative; padding: 0 5%; overflow: hidden;
+    background: var(--bg-color);
+}
+.hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(5,5,5,1) 100%),
+        linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,1)),
+        url('https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+    z-index: 0; animation: heroZoom 30s infinite alternate linear; opacity: 0.6; filter: grayscale(40%);
+}
+@keyframes heroZoom { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
+
+.hero-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; }
+.hero-content h1 {
+    font-size: 5rem; max-width: 900px; margin: 0 auto 24px; line-height: 1.05;
+    background: linear-gradient(180deg, #FFD700 0%, #B89B00 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;
+}
+.hero-content p { font-size: 1.4rem; color: #E2E2E5; margin-bottom: 48px; font-weight: 300; max-width: 600px; }
+
+/* Hero CTAs */
+.hero-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-cust-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent-color); color: #000;
+    padding: 18px 38px; border-radius: 50px;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.05rem;
+    border: none; cursor: pointer; text-decoration: none;
+    transition: transform 0.25s, box-shadow 0.25s, opacity 0.2s;
+    box-shadow: 0 8px 32px rgba(255,215,0,0.3);
+}
+.btn-cust-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(255,215,0,0.5); opacity: 0.92; color: #000; }
+
+/* Customize promo strip */
+.cust-promo-strip {
+    background: linear-gradient(135deg, rgba(255,215,0,0.07) 0%, rgba(255,215,0,0.02) 100%);
+    border-top: 1px solid rgba(255,215,0,0.14); border-bottom: 1px solid rgba(255,215,0,0.1);
+    padding: 44px 0; text-align: center;
+}
+.cust-promo-strip h3 { font-size: 1.7rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 8px; }
+.cust-promo-strip p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
+.cust-features { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 26px; font-size: 0.87rem; color: var(--text-muted); }
+.cust-features span { display: inline-flex; align-items: center; gap: 7px; }
+.cust-features i { color: var(--accent-color); }
+
+/* Categories */
+.categories-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 350px); gap: 24px;
+}
+.category-card {
+    position: relative; border-radius: 20px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.category-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); z-index: 0; filter: brightness(0.5) contrast(1.1); }
+.category-card:hover img { transform: scale(1.12); filter: brightness(0.7) contrast(1.1); }
+.category-card h3 { font-size: 2.5rem; color: #FFFFFF; z-index: 1; text-transform: uppercase; letter-spacing: 4px; pointer-events: none; text-shadow: 0 10px 30px rgba(0,0,0,1); }
+.cat-automotive { grid-column: span 2; }
+.cat-cinematic  { grid-column: span 2; }
+
+.featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; }
+
+.benefits-section { background: var(--surface-color); padding: 120px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative; overflow: hidden; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: center; position: relative; z-index: 1; }
+.benefit-card { background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); transition: var(--transition); }
+.benefit-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+.benefit-icon { font-size: 3rem; color: #FFFFFF; margin-bottom: 24px; filter: drop-shadow(0 0 15px rgba(255,255,255,0.2)); }
+.benefit-card h4 { font-size: 1.4rem; margin-bottom: 12px; font-weight: 500; }
+.benefit-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 3rem; }
+    .hero-content p  { font-size: 1.1rem; }
+    .categories-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .category-card   { height: 300px; grid-column: span 1 !important; }
+    .section-title   { font-size: 2.5rem; }
+    .hero-cta-group  { flex-direction: column; align-items: center; }
+    .btn-cust-primary { width: 100%; max-width: 340px; justify-content: center; }
+    .cust-features   { gap: 16px; font-size: 0.82rem; }
+}
+</style>
 </head>
 <body>
 
-    <!-- Premium Navbar -->
-    <nav class="navbar"></nav>
+<!-- NAV — Customize is the first, golden link -->
+<nav class="navbar reveal">
+    <a href="index.html" class="logo">Wallify<span style="color:#FFF">.</span></a>
+    <div class="nav-links">
+        <a href="customize.html" style="color:var(--accent-color);font-weight:700;">✦ Customize</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="#about">About</a>
+    </div>
+    <div class="nav-icons">
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+</nav>
 
-    <!-- Interactive Hero -->
-    <header class="hero">
-        <div class="hero-bg">
-            <div class="blur-blob blob-1"></div>
-            <div class="blur-blob blob-2"></div>
+<!-- HERO — Design Your Poster is the PRIMARY action -->
+<header class="hero">
+    <div class="hero-content">
+        <h1 class="reveal reveal-delay-1">Redefine Your Space</h1>
+        <p class="reveal reveal-delay-2">Experience gallery-quality digital art curated for modern aesthetics.</p>
+        <div class="hero-cta-group reveal reveal-delay-3">
+            <a href="customize.html" class="btn-cust-primary">
+                <i class="fas fa-pen-nib"></i> Design Your Poster
+            </a>
+            <a href="shop.html" class="btn-outline" style="padding:18px 36px;font-size:1.05rem;border-radius:50px;">
+                Explore Collection
+            </a>
         </div>
+    </div>
+</header>
 
-        <!-- Animated Floating Posters -->
-        <div class="hero-track" id="heroTrack">
-            <!-- Row 1 -->
-            <div class="hero-track-column" style="margin-top: -100px;">
-                <div class="hero-poster reveal"><img src="" id="hp1"></div>
-                <div class="hero-poster reveal"><img src="" id="hp2"></div>
-                <div class="hero-poster reveal"><img src="" id="hp3"></div>
+<!-- CUSTOMIZE PROMO STRIP -->
+<section class="cust-promo-strip reveal">
+    <div class="container">
+        <h3>Make It Yours — Custom Posters</h3>
+        <p>Upload your photo. Add your words. Choose your style. We print it beautifully.</p>
+        <div class="cust-features">
+            <span><i class="fas fa-upload"></i> Upload any image</span>
+            <span><i class="fas fa-font"></i> Custom text &amp; fonts</span>
+            <span><i class="fas fa-palette"></i> Filters &amp; colours</span>
+            <span><i class="fas fa-ruler-combined"></i> A6 to A3 sizes</span>
+            <span><i class="fas fa-gift"></i> Buy 5 Get 1 Free</span>
+        </div>
+        <a href="customize.html" class="btn-cust-primary" style="font-size:1rem;padding:15px 32px;">
+            <i class="fas fa-pen-nib"></i> Start Designing — It's Free
+        </a>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="container py-120">
+    <div class="reveal">
+        <h2 class="section-title">Collections</h2>
+        <p class="section-subtitle">Discover pieces that speak to your passion</p>
+    </div>
+    <div class="categories-grid">
+        <a href="shop.html?category=Automotive" class="category-card cat-automotive reveal">
+            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=1200" alt="Automotive">
+            <h3>Automotive</h3>
+        </a>
+        <a href="shop.html?category=Anime" class="category-card reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1510127598858-a5b81ae360a7?auto=format&fit=crop&q=80&w=800" alt="Anime">
+            <h3>Anime</h3>
+        </a>
+        <a href="shop.html?category=Minimalist" class="category-card reveal reveal-delay-2">
+            <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800" alt="Minimalist">
+            <h3>Minimalist</h3>
+        </a>
+        <a href="shop.html?category=Cinematic" class="category-card cat-cinematic reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1200" alt="Cinematic">
+            <h3>Cinematic</h3>
+        </a>
+    </div>
+</section>
+
+<!-- FEATURED -->
+<section class="container mb-120">
+    <div class="reveal">
+        <h2 class="section-title">Featured Artworks</h2>
+        <p class="section-subtitle">Our most striking designs this season</p>
+    </div>
+    <div class="featured-grid reveal reveal-delay-1" id="featured-grid"></div>
+    <div style="text-align:center;margin-top:60px;" class="reveal reveal-delay-2">
+        <a href="shop.html" class="btn-outline">View All Posters</a>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+    <div class="container benefits-grid">
+        <div class="benefit-card reveal">
+            <i class="fas fa-medal benefit-icon"></i>
+            <h4>Premium Quality</h4>
+            <p>Printed on 300gsm museum-grade fine art paper with vivid, lasting inks.</p>
+        </div>
+        <div class="benefit-card reveal reveal-delay-1">
+            <i class="fas fa-pen-nib benefit-icon"></i>
+            <h4>Custom Designs</h4>
+            <p>Upload your own image and make it a poster — no design skills needed.</p>
+        </div>
+        <div class="benefit-card reveal reveal-delay-2">
+            <i class="fas fa-crop-alt benefit-icon"></i>
+            <h4>Perfect Sizing</h4>
+            <p>Available in A6, A5, A4, and A3 formats to fit any space or frame.</p>
+        </div>
+        <div class="benefit-card reveal reveal-delay-3">
+            <i class="fas fa-truck-fast benefit-icon"></i>
+            <h4>Fast Delivery</h4>
+            <p>Securely packaged and swiftly delivered right to your doorstep.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid reveal">
+            <div class="footer-col" id="about">
+                <a href="index.html" class="logo" style="margin-bottom:20px;display:block;">Wallify<span style="color:#FFF">.</span></a>
+                <p>Transforming empty walls into inspiring spaces with premium, hand-picked digital art prints.</p>
             </div>
-            <!-- Row 2 -->
-            <div class="hero-track-column" style="margin-top: 100px;">
-                <div class="hero-poster reveal"><img src="" id="hp4"></div>
-                <div class="hero-poster reveal"><img src="" id="hp5"></div>
-                <div class="hero-poster reveal"><img src="" id="hp6"></div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop All</a>
+                <a href="customize.html">Customize</a>
+                <a href="cart.html">View Cart</a>
             </div>
-            <!-- Row 3 -->
-            <div class="hero-track-column" style="margin-top: -50px;">
-                <div class="hero-poster reveal"><img src="" id="hp7"></div>
-                <div class="hero-poster reveal"><img src="" id="hp8"></div>
-                <div class="hero-poster reveal"><img src="" id="hp9"></div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
             </div>
-        </div>
-
-        <div class="hero-content">
-            <span class="heading-wide reveal" style="color: var(--primary); font-weight: 700;">Exclusive Gallery</span>
-            <h1 class="reveal">Art That Defines <br><span style="color: var(--secondary);">Your Space.</span></h1>
-            <p class="reveal">Experience museum-grade fine art prints curated for modern passion. Shipped across India.</p>
-            <div class="reveal">
-                <a href="shop.html" class="btn btn-primary">
-                    Explore Collection <i class="fas fa-arrow-right"></i>
-                    <div class="btn-glow"></div>
-                </a>
+            <div class="footer-col">
+                <h3>Connect</h3>
+                <a href="https://www.instagram.com/wallifystore.in/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://wa.me/919497242251" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
-    </header>
+        <div class="footer-bottom"><p>&copy; 2026 Wallify Store. Designed with precision.</p></div>
+    </div>
+</footer>
 
-    <!-- Categories Grid -->
-    <section class="container section-padding">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 class="reveal" style="font-size: 2.5rem; margin-bottom: 16px;">Curated Collections</h2>
-            <p class="reveal" style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Explore artworks categorized by your passions.</p>
-        </div>
-
-        <div class="poster-grid">
-            <!-- Automotive -->
-            <a href="shop.html?category=Automotive" class="poster-card reveal">
-                <div class="card-img-wrap">
-                    <img src="assets/automotive/AM%20%20001.jpg" alt="Automotive">
-                    <div class="card-overlay">
-                        <h3 class="card-title">Automotive</h3>
-                        <p style="font-size: 0.8rem; color: var(--secondary);">High Octane Art</p>
-                    </div>
-                </div>
-            </a>
-            <!-- Classic Cars -->
-            <a href="shop.html?category=Classic Cars" class="poster-card reveal">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Classic Cars">
-                    <div class="card-overlay">
-                        <h3 class="card-title">Classic Cars</h3>
-                        <p style="font-size: 0.8rem; color: var(--secondary);">Vintage Speed</p>
-                    </div>
-                </div>
-            </a>
-            <!-- Mollywood -->
-            <a href="shop.html?category=Mollywood" class="poster-card reveal">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600" alt="Mollywood">
-                    <div class="card-overlay">
-                        <h3 class="card-title">Mollywood</h3>
-                        <p style="font-size: 0.8rem; color: var(--secondary);">Cinema Legends</p>
-                    </div>
-                </div>
-            </a>
-            <!-- Football -->
-            <a href="shop.html?category=Football" class="poster-card reveal">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=1000" alt="Football">
-                    <div class="card-overlay">
-                        <h3 class="card-title">Football</h3>
-                        <p style="font-size: 0.8rem; color: var(--secondary);">The Pitch Warriors</p>
-                    </div>
-                </div>
-            </a>
-            <!-- Anime -->
-            <a href="shop.html?category=Anime" class="poster-card reveal">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000" alt="Anime">
-                    <div class="card-overlay">
-                        <h3 class="card-title">Anime</h3>
-                        <p style="font-size: 0.8rem; color: var(--secondary);">Otaku Dreams</p>
-                    </div>
-                </div>
-            </a>
-            <!-- Aesthetic -->
-            <a href="shop.html?category=Aesthetic" class="poster-card reveal">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000" alt="Aesthetic">
-                    <div class="card-overlay">
-                        <h3 class="card-title">Aesthetic</h3>
-                        <p style="font-size: 0.8rem; color: var(--secondary);">Vibrant Vibes</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- NEW: Featured Random Posters Section -->
-    <section class="container section-padding" id="featuredSection">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 class="reveal" style="font-size: 2.5rem; margin-bottom: 16px;">Random Picks For You</h2>
-            <p class="reveal" style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Truly randomized fine art gallery. Refresh to see more.</p>
-        </div>
-        <div class="poster-grid" id="featuredGrid">
-            <!-- Populated by JS -->
-        </div>
-        <div style="text-align: center; margin-top: 60px;" class="reveal">
-            <a href="shop.html" class="btn">View Full Shop</a>
-        </div>
-    </section>
-
-    <!-- Side UI Elements -->
-    <div id="cartPanel" class="cart-panel"></div>
-    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
-
-    <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="cart.js"></script>
-    <script src="ui.js"></script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderNavbar('home');
-            initScrollReveal();
-
-            // Populate Hero Posters
-            const posters = shuffleArray(window.products).slice(0, 9);
-            posters.forEach((p, i) => {
-                const el = document.getElementById(`hp${i+1}`);
-                if (el) el.src = p.image;
-            });
-
-            // Populate Featured Random Posters
-            const featuredGrid = document.getElementById('featuredGrid');
-            if (featuredGrid) {
-                const randomPicks = shuffleArray(window.products).slice(0, 12);
-                randomPicks.forEach((p, index) => {
-                    featuredGrid.appendChild(createPosterCard(p, index));
-                });
-            }
-
-            // Parallax Hero Effect
-            window.addEventListener('mousemove', (e) => {
-                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-                document.getElementById('heroTrack').style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) rotate(-15deg)`;
-            });
-
-            // Close Cart Overlay
-            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
-            
-            // Sync UI across tabs or events
-            window.addEventListener('cart_updated', () => {
-                const badge = document.querySelector('.cart-badge');
-                // renderNavbar might be overkill, just update badge
-            });
-        });
-
-        // Global scroll class for navbar
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-    </script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var container = document.getElementById('featured-grid');
+    if (container && typeof products !== 'undefined') {
+        container.innerHTML = products.slice(0, 4).map(function (p, i) {
+            return (
+                '<div class="product-card" style="animation-delay:' + (i * 0.1) + 's">' +
+                    '<a href="product.html?id=' + p.id + '" class="card-img-wrapper">' +
+                        '<img src="' + p.image + '" loading="lazy" alt="' + p.title + '">' +
+                    '</a>' +
+                    '<div class="card-content">' +
+                        '<span class="card-category">' + p.category + '</span>' +
+                        '<h3 class="card-title">' + p.title + '</h3>' +
+                        '<div class="card-footer">' +
+                            '<span class="card-price">Starts at ₹33</span>' +
+                            '<a href="product.html?id=' + p.id + '" class="btn-primary" style="padding:10px 20px;font-size:0.9rem;">View <i class="fas fa-arrow-right"></i></a>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+            );
+        }).join('');
+    }
+});
+</script>
 </body>
 </html>
