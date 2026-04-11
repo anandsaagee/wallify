@@ -144,7 +144,7 @@
 
     <!-- Side UI Elements -->
     <div id="cartPanel" class="cart-panel"></div>
-    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
+    <div id="cartOverlay"></div>
 
     <!-- Scripts -->
     <script src="data.js"></script>
@@ -154,7 +154,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             renderNavbar('home');
-            initScrollReveal();
 
             // Populate Hero Posters
             const posters = shuffleArray(window.products).slice(0, 9);
@@ -172,11 +171,20 @@
                 });
             }
 
-            // Parallax Hero Effect
+            // IMPORTANT: Init scroll reveal AFTER all dynamic content is created
+            initScrollReveal();
+
+            // Parallax Hero Effect (debounced with rAF)
+            let rafId = null;
             window.addEventListener('mousemove', (e) => {
-                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-                document.getElementById('heroTrack').style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) rotate(-15deg)`;
+                if (rafId) return;
+                rafId = requestAnimationFrame(() => {
+                    const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+                    const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+                    const track = document.getElementById('heroTrack');
+                    if (track) track.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) rotate(-15deg)`;
+                    rafId = null;
+                });
             });
 
             // Close Cart Overlay
@@ -189,12 +197,7 @@
             });
         });
 
-        // Global scroll class for navbar
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
+        // Scroll handler is now built into renderNavbar()
     </script>
 </body>
 </html>

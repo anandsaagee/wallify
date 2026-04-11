@@ -17,7 +17,7 @@
 
     <!-- Modals & Cart -->
     <div id="cartPanel" class="cart-panel"></div>
-    <div id="cartOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1400; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(4px);"></div>
+    <div id="cartOverlay"></div>
 
     <!-- Scripts -->
     <script src="data.js"></script>
@@ -49,7 +49,7 @@
             const render = () => {
                 const canContinue = selectedSize !== null;
                 productDetail.innerHTML = `
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; @media(max-width: 900px){ grid-template-columns: 1fr; }">
+                    <div class="responsive-grid-product">
                         <div class="reveal" style="aspect-ratio: 3/4; overflow: hidden; border-radius: var(--radius-lg); background: #000;">
                             ${loadImage(product.image, product.title)}
                         </div>
