@@ -6,10 +6,10 @@
 const WA_BUSINESS_PHONE = "917736497186";
 
 const SIZES = {
-    'A6': { label: 'A6', price: 17 },
-    'A5': { label: 'A5', price: 33 },
-    'A4': { label: 'A4', price: 49 },
-    'A3': { label: 'A3', price: 99 }
+    'A6': { label: 'A6', price: 17, strikePrice: 33 },
+    'A5': { label: 'A5', price: 33, strikePrice: 49 },
+    'A4': { label: 'A4', price: 49, strikePrice: 99 },
+    'A3': { label: 'A3', price: 99, strikePrice: 149 }
 };
 
 function getCart() {

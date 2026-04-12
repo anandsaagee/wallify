@@ -357,8 +357,10 @@ function openProductModal(productId) {
                             <label style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF;">Select Size <span style="color: var(--error); font-size: 0.8rem;">*</span></label>
                             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
                                 ${Object.keys(SIZES).map(s => `
-                                    <button class="filter-pill size-selector ${selectedSize === s ? 'active' : ''}" data-size="${s}" style="border: 1px solid ${selectedSize === s ? 'var(--primary)' : 'var(--border-glass)'}; height: 44px; display: flex; align-items: center; justify-content: center;">
-                                        ${SIZES[s].label} — ₹${SIZES[s].price}
+                                    <button class="filter-pill size-selector ${selectedSize === s ? 'active' : ''}" data-size="${s}" style="border: 1px solid ${selectedSize === s ? 'var(--primary)' : 'var(--border-glass)'}; height: auto; padding: 8px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                        <span style="font-weight: 700; font-size: 0.95rem;">${SIZES[s].label}</span>
+                                        <span style="font-size: 0.75rem; opacity: 0.85; text-decoration: line-through; color: var(--text-muted); margin-top: 2px;">₹${SIZES[s].strikePrice}</span>
+                                        <span style="font-weight: 800; color: var(--secondary); margin-top: 2px;">₹${SIZES[s].price}</span>
                                     </button>
                                 `).join('')}
                             </div>
