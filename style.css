@@ -419,25 +419,33 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Poster Cards ── */
 .poster-grid {
     display: grid;
+    /* Default for mobile */
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 16px;
 }
 @media (max-width: 480px) {
-    .poster-grid { gap: 16px; }
     .card-info { padding: 10px 4px; }
     .card-title { font-size: 0.85rem; }
     .card-price { font-size: 0.8rem; }
     .card-overlay { padding: 12px; }
     .quick-actions .btn { padding: 8px 16px; font-size: 0.8rem; }
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     .poster-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+@media (min-width: 768px) {
+    .poster-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
     }
 }
 @media (min-width: 1024px) {
     .poster-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        gap: 32px;
     }
 }
 
@@ -446,6 +454,14 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-md);
     overflow: hidden;
     transition: var(--transition);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+}
+.poster-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-glass);
 }
 .card-img-wrap {
     position: relative;
@@ -518,10 +534,20 @@ h1, h2, h3, h4, h5, h6 {
     .shop-filter-bar {
         flex-direction: column !important;
         gap: 16px !important;
+        align-items: stretch !important;
     }
     .shop-search-sort {
         max-width: 100% !important;
         flex-direction: column !important;
+        width: 100% !important;
+    }
+    .shop-search-sort input,
+    .shop-search-sort select {
+        width: 100% !important;
+    }
+    .filter-tabs {
+        margin: 0 -24px !important;
+        padding: 0 24px 16px !important;
     }
 }
 

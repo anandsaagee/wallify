@@ -117,12 +117,10 @@ function createPosterCard(product, delay = 0) {
                 </div>
             </div>
         </div>
-        <div class="card-info">
-            <h3 class="card-title">${product.title}</h3>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span class="card-price">Starts at ₹${SIZES['A6'].price}</span>
-                <span style="font-size: 0.75rem; color: var(--text-dim);">${product.category}</span>
-            </div>
+        <div class="card-info" style="display: flex; flex-direction: column; gap: 4px;">
+            <h3 class="card-title" style="margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; font-size: clamp(0.9rem, 2.5vw, 1.05rem); font-weight: 700;">${product.title}</h3>
+            <span class="card-price" style="font-size: 0.95rem; font-weight: 800; color: var(--secondary);">₹${SIZES['A6'].price} <span style="font-size:0.75rem; color:var(--text-muted); font-weight:500;">(base)</span></span>
+            <span style="font-size: 0.7rem; color: var(--text-muted); background: rgba(255,255,255,0.08); padding: 4px 8px; border-radius: 4px; align-self: flex-start; margin-top: 4px; letter-spacing: 0.05em; text-transform: uppercase;">${product.category}</span>
         </div>
     `;
 
