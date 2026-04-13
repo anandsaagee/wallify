@@ -342,10 +342,10 @@ function openProductModal(productId) {
                 <button onclick="window.closeProductModal()" class="modal-close" aria-label="Close product modal">&times;</button>
 
                 <div class="modal-row" style="display: flex; flex-wrap: wrap;">
-                    <div class="modal-image-col" style="flex: 1; min-width: 300px; aspect-ratio: 3/4; overflow: hidden; background: #000;">
+                    <div class="modal-image-col" style="flex: 1; min-width: 280px; background: #000;">
                         ${loadImage(product.image, product.title)}
                     </div>
-                    <div class="modal-info-col" style="flex: 1; min-width: 300px; padding: 40px; display: flex; flex-direction: column; gap: 24px; max-height: 85vh; overflow-y: auto;">
+                    <div class="modal-info-col" style="flex: 1; min-width: 280px; padding: 24px; display: flex; flex-direction: column; gap: 20px; max-height: 85vh; overflow-y: auto;">
                         <div>
                             <span style="font-size: 0.8rem; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;">${product.category}</span>
                             <h2 style="font-size: clamp(1.5rem, 6vw, 2.25rem); margin-top: 8px; color: #FFFFFF; line-height: 1.2; word-wrap: break-word;">${product.title}</h2>

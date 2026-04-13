@@ -70,7 +70,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 24px;
 }
 .section-padding { padding: 120px 0; }
-@media (max-width: 768px) { .section-padding { padding: 60px 0; } }
+.page-content { padding-top: 120px; padding-bottom: 80px; }
+@media (max-width: 768px) { 
+    .section-padding { padding: 60px 0; } 
+    .page-content { padding-top: 100px; padding-bottom: 60px; }
+}
 
 /* ── Glassmorphism Utils ── */
 .glass {
@@ -427,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Poster Cards ── */
 .poster-grid {
     display: grid;
-    /* 1 column for mobile */
+    /* 1 column for mobile & tablets */
     grid-template-columns: 1fr;
     gap: 16px;
 }
@@ -442,19 +446,19 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 }
-@media (min-width: 640px) {
+@media (min-width: 769px) {
     .poster-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .poster-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
     .poster-grid {
         grid-template-columns: repeat(5, 1fr);
         gap: 32px;
@@ -602,7 +606,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     .modal { padding: 8px; align-items: flex-end; }
     .modal-content { 
-        max-height: 92vh; 
+        max-height: 95vh; 
         overflow-y: auto;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
@@ -611,13 +615,33 @@ h1, h2, h3, h4, h5, h6 {
     }
     .modal-image-col {
         min-width: 100% !important;
-        max-height: 45vh !important;
-        aspect-ratio: 3/4 !important;
+        height: 35vh !important; /* Reduced for better selection fit */
+        max-height: 35vh !important;
+        aspect-ratio: auto !important;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-image-col img {
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
     }
     .modal-info-col {
         min-width: 100% !important;
-        padding: 16px !important;
+        padding: 12px !important; /* More compact */
         max-height: none !important;
+        gap: 16px !important; /* Reduced gap */
+    }
+    .modal-info-col h2 {
+        font-size: 1.4rem !important;
+    }
+    .size-selector {
+        padding: 6px !important;
+    }
+    .size-selector span:first-child {
+        font-size: 0.85rem !important;
     }
 }
 
