@@ -42,6 +42,18 @@
                 <div class="hero-poster reveal"><img src="" id="hp8"></div>
                 <div class="hero-poster reveal"><img src="" id="hp9"></div>
             </div>
+            <!-- Row 4 -->
+            <div class="hero-track-column" style="margin-top: 50px;">
+                <div class="hero-poster reveal"><img src="" id="hp10"></div>
+                <div class="hero-poster reveal"><img src="" id="hp11"></div>
+                <div class="hero-poster reveal"><img src="" id="hp12"></div>
+            </div>
+            <!-- Row 5 -->
+            <div class="hero-track-column" style="margin-top: -80px;">
+                <div class="hero-poster reveal"><img src="" id="hp13"></div>
+                <div class="hero-poster reveal"><img src="" id="hp14"></div>
+                <div class="hero-poster reveal"><img src="" id="hp15"></div>
+            </div>
         </div>
 
         <div class="hero-content">
@@ -87,7 +99,7 @@
             renderNavbar('home');
 
             // Populate Hero Posters
-            const posters = shuffleArray(window.products).slice(0, 9);
+            const posters = shuffleArray(window.products).slice(0, 15);
             posters.forEach((p, i) => {
                 const el = document.getElementById(`hp${i+1}`);
                 if (el) el.src = p.image;

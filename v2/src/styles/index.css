@@ -45,3 +45,28 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Hero Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.mask-hero-radial {
+  mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+}
+
+.hero-track-rotate {
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+@media (max-width: 768px) {
+  .hero-track-rotate {
+    transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
+  }
+}

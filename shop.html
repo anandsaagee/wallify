@@ -17,9 +17,14 @@
             <p style="color: var(--text-muted);">Curated prints for your modern lifestyle.</p>
         </div>
 
+        <!-- Featured Categories (3 Sections) -->
+        <div class="featured-categories" id="featuredCategories">
+            <!-- Populated by JS -->
+        </div>
+
         <!-- Filter & Search Bar -->
-        <div class="glass filter-container" style="border-radius: var(--radius-lg); margin-bottom: 40px; position: static; z-index: 100;">
-            <div class="shop-filter-bar" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+        <div class="glass filter-container">
+            <div class="shop-filter-bar">
                 
                 <!-- Category Pills -->
                 <div class="filter-tabs" id="categoryFilters">
@@ -33,12 +38,12 @@
                 </div>
 
                 <!-- Search & Sort -->
-                <div class="shop-search-sort" style="display: flex; gap: 16px; flex-grow: 1; max-width: 500px;">
-                    <div style="position: relative; flex-grow: 1;">
-                        <i class="fas fa-search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-dim);"></i>
-                        <input type="text" id="searchInput" placeholder="Search posters..." style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 50px; padding: 12px 12px 12px 48px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                <div class="shop-search-sort">
+                    <div class="search-wrap">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search posters...">
                     </div>
-                    <select id="sortSelect" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 50px; padding: 0 24px; color: white; outline: none; cursor: pointer; font-family: inherit; -webkit-appearance: none; appearance: none; min-height: 44px;">
+                    <select id="sortSelect">
                         <option value="default" style="color: black;">Latest</option>
                         <option value="low" style="color: black;">Price: Low-High</option>
                         <option value="high" style="color: black;">Price: High-Low</option>
@@ -85,6 +90,32 @@
                 sortSelectId: 'sortSelect',
                 itemsPerPage: 16
             });
+
+            // Populate 3 Featured Sections
+            const featuredCategories = [
+                { name: 'Automotive', sub: 'High-Octane Art' },
+                { name: 'Aesthetic', sub: 'Vibrant Modern Vibes' },
+                { name: 'Mollywood', sub: 'Cinematic Legends' }
+            ];
+
+            const featuredContainer = document.getElementById('featuredCategories');
+            if (featuredContainer) {
+                featuredContainer.innerHTML = featuredCategories.map(cat => {
+                    const catProducts = window.products.filter(p => p.category === cat.name);
+                    // Use a random poster from the category as thumbnail
+                    const randomPoster = catProducts[Math.floor(Math.random() * catProducts.length)];
+                    return `
+                        <div class="category-section-card reveal" onclick="document.querySelector('.filter-pill[data-category=\\'${cat.name}\\']').click(); window.scrollTo({top: document.getElementById('categoryFilters').offsetTop - 100, behavior: 'smooth'});">
+                            <span class="category-tag-pill">${catProducts.length} Posters</span>
+                            <img src="${randomPoster ? randomPoster.image : ''}" alt="${cat.name}" loading="lazy">
+                            <div class="category-section-overlay">
+                                <h3 class="category-section-title">${cat.name}</h3>
+                                <p class="category-section-subtitle">${cat.sub}</p>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
 
             document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
 

@@ -11,14 +11,8 @@
 
     <nav class="navbar scrolled"></nav>
 
-    <div class="container" style="padding-top: 120px; padding-bottom: 80px;">
-        <div style="margin-bottom: 40px;">
-            <h1 style="font-size: 2.5rem;">Shopping Bag</h1>
-        </div>
-
-        <div id="cartPageContent">
-            <!-- Rendered by JS -->
-        </div>
+    <div class="container page-content" id="cartPageContent">
+        <!-- Rendered by JS -->
     </div>
 
     <!-- Modals & Cart -->
@@ -51,10 +45,13 @@
                 }
 
                 container.innerHTML = `
+                    <div style="margin-bottom: 40px;">
+                        <h1 style="font-size: 2.5rem;">Shopping Bag</h1>
+                    </div>
                     <div class="responsive-grid-2col">
                         <div style="display: flex; flex-direction: column; gap: 24px;">
                             ${totals.items.map(item => `
-                                <div class="glass" style="display: flex; gap: 24px; padding: 20px; border-radius: var(--radius-lg); align-items: center;">
+                                <div class="glass" style="display: flex; gap: 24px; align-items: center;">
                                     <img src="${item.image}" style="width: 100px; height: 130px; object-fit: cover; border-radius: 12px;">
                                     <div style="flex-grow: 1;">
                                         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -76,7 +73,7 @@
                                 </div>
                             `).join('')}
                         </div>
-                        <div class="glass" style="padding: 40px; border-radius: var(--radius-lg); height: fit-content; align-self: flex-start; position: sticky; top: 120px;">
+                        <div class="glass" style="height: fit-content; align-self: flex-start; position: sticky; top: 120px;">
                             <h2 style="font-size: 1.5rem; margin-bottom: 24px;">Order Summary</h2>
                             <div style="display: flex; flex-direction: column; gap: 16px;">
                                 <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
@@ -99,7 +96,7 @@
                                     <span>₹${totals.finalTotal}</span>
                                 </div>
 
-                                <div class="glass" style="margin-top: 24px; padding: 16px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">
+                                <div class="admin-badge">
                                     <p style="font-size: 0.8rem; color: var(--success); text-align: center;">🎉 You've unlocked <strong>${totals.freeCount} FREE</strong> posters with our bundle offer!</p>
                                 </div>
 

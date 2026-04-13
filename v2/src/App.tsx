@@ -6,6 +6,8 @@ import { ProductGrid } from './components/ProductGrid';
 import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
 import { CartProvider } from './hooks/useCart';
+import { Hero } from './components/Hero';
+import { FeaturedCategories } from './components/FeaturedCategories';
 import { Search } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -23,11 +25,15 @@ const App: React.FC = () => {
 
   return (
     <CartProvider>
-      <div className="min-h-screen bg-background pb-20">
+      <div className="min-h-screen bg-background pb-20 overflow-x-hidden">
         <Header />
         
-        <main className="pt-20">
-          <div className="px-4 mb-2">
+        <Hero />
+
+        <main className="">
+          <FeaturedCategories onSelectCategory={setSelectedCategory} />
+
+          <div id="category-filter-section" className="px-4 mb-2 mt-12">
             <h2 className="text-3xl font-black text-white tracking-tight">The Collection</h2>
           </div>
 

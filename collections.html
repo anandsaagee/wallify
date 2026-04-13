@@ -32,31 +32,31 @@
     <script src="ui.js"></script>
     <script>
         const CATEGORIES = [
-            { name: 'Automotive', sub: 'High Octane Art', img: 'assets/automotive/AM%20%20001.jpg' },
-            { name: 'Classic Cars', sub: 'Vintage Speed', img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000' },
-            { name: 'Mollywood', sub: 'Cinema Legends', img: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600' },
-            { name: 'Football', sub: 'The Pitch Warriors', img: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=1000' },
-            { name: 'Anime', sub: 'Otaku Dreams', img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1000' },
-            { name: 'Aesthetic', sub: 'Vibrant Vibes', img: 'https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&q=80&w=1000' }
+            { name: 'Automotive', sub: 'High-Octane Art' },
+            { name: 'Aesthetic', sub: 'Vibrant Modern Vibes' },
+            { name: 'Mollywood', sub: 'Cinematic Legends' }
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
             renderNavbar('collections');
             
             const grid = document.getElementById('collectionGrid');
-            const shuffledCats = shuffleArray(CATEGORIES);
 
-            grid.innerHTML = shuffledCats.map(cat => `
-                <a href="shop.html?category=${cat.name}" class="poster-card reveal" style="cursor: pointer;">
-                    <div class="card-img-wrap">
-                        <img src="${cat.img}" alt="${cat.name}" loading="lazy">
-                        <div class="card-overlay" style="opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3 class="card-title">${cat.name}</h3>
-                            <p style="font-size: 0.8rem; color: var(--secondary);">${cat.sub}</p>
+            grid.innerHTML = CATEGORIES.map(cat => {
+                const catProducts = window.products.filter(p => p.category === cat.name);
+                const randomPoster = catProducts[Math.floor(Math.random() * catProducts.length)];
+                return `
+                    <a href="shop.html?category=${cat.name}" class="poster-card reveal" style="cursor: pointer;">
+                        <div class="card-img-wrap">
+                            <img src="${randomPoster ? randomPoster.image : ''}" alt="${cat.name}" loading="lazy">
+                            <div class="card-overlay" style="opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                <h3 class="card-title">${cat.name}</h3>
+                                <p style="font-size: 0.8rem; color: var(--secondary);">${cat.sub}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            `).join('');
+                    </a>
+                `;
+            }).join('');
 
             initScrollReveal();
             document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));

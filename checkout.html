@@ -11,7 +11,7 @@
 
     <nav class="navbar scrolled"></nav>
 
-    <div class="container" style="padding-top: 120px; padding-bottom: 80px;">
+    <div class="container page-content">
         <div style="text-align: center; margin-bottom: 60px;">
             <h1 style="font-size: clamp(1.8rem, 6vw, 2.5rem); margin-bottom: 12px;">Complete Your Order</h1>
             <p style="color: var(--text-muted);">Please provide your shipping details to proceed to WhatsApp.</p>
@@ -20,24 +20,24 @@
         <div class="responsive-grid-checkout">
             
             <!-- Shipping Form -->
-            <div class="glass reveal" style="padding: 40px; border-radius: var(--radius-lg);">
+            <div class="glass reveal">
                 <h2 style="font-size: 1.5rem; margin-bottom: 24px;">Shipping Details</h2>
-                <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 20px;">
-                    <div>
-                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Full Name</label>
-                        <input type="text" id="name" required placeholder="Enter your full name" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                <form id="checkoutForm" class="flex flex-col gap-5">
+                    <div class="input-group">
+                        <label class="label-sm">Full Name</label>
+                        <input type="text" id="name" required placeholder="Enter your full name" class="input-main">
                     </div>
-                    <div>
-                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Phone Number</label>
-                        <input type="tel" id="phone" required placeholder="Enter your WhatsApp number" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                    <div class="input-group">
+                        <label class="label-sm">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="Enter your WhatsApp number" class="input-main">
                     </div>
-                    <div>
-                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Full Address</label>
-                        <textarea id="address" required placeholder="House No, Street, Landmark, City, State" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit; resize: none; height: 100px;"></textarea>
+                    <div class="input-group">
+                        <label class="label-sm">Full Address</label>
+                        <textarea id="address" required placeholder="House No, Street, Landmark, City, State" class="input-main" style="resize: none; height: 100px;"></textarea>
                     </div>
-                    <div>
-                        <label style="display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Pincode</label>
-                        <input type="text" id="pincode" required placeholder="Enter 6-digit Pincode" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; padding: 14px; color: white; outline: none; transition: 0.3s; font-family: inherit;">
+                    <div class="input-group">
+                        <label class="label-sm">Pincode</label>
+                        <input type="text" id="pincode" required placeholder="Enter 6-digit Pincode" class="input-main">
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px; background: #25D366; border-color: #25D366;">
                         Order on WhatsApp <i class="fab fa-whatsapp"></i>
@@ -47,7 +47,7 @@
 
             <!-- Order Summary -->
             <div class="reveal" style="display: flex; flex-direction: column; gap: 24px;">
-                <div class="glass" style="padding: 32px; border-radius: var(--radius-lg);">
+                <div class="glass">
                     <h2 style="font-size: 1.25rem; margin-bottom: 24px;">Review Selection</h2>
                     <div id="checkoutItems" style="display: flex; flex-direction: column; gap: 16px;">
                         <!-- Populate with JS -->
@@ -56,7 +56,7 @@
                     <div id="checkoutTotals">
                         <!-- Populate with JS -->
                     </div>
-                    <div class="glass" style="margin-top: 24px; padding: 16px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">
+                    <div class="admin-badge">
                         <p style="font-size: 0.8rem; color: var(--success); text-align: center;">By clicking "Order on WhatsApp", you'll be redirected to send your order details directly to us.</p>
                     </div>
                 </div>
