@@ -338,14 +338,17 @@ function openProductModal(productId) {
         modal.innerHTML = `
             <div class="modal-backdrop" onclick="window.closeProductModal()"></div>
             <div class="modal-content">
+                <!-- Bottom Sheet Grab Handle -->
+                <div class="modal-grab-handle"></div>
+
                 <!-- Close (X) Button -->
                 <button onclick="window.closeProductModal()" class="modal-close" aria-label="Close product modal">&times;</button>
 
                 <div class="modal-row" style="display: flex; flex-wrap: wrap;">
-                    <div class="modal-image-col" style="flex: 1; min-width: 280px; background: #000;">
+                    <div class="modal-image-col">
                         ${loadImage(product.image, product.title)}
                     </div>
-                    <div class="modal-info-col" style="flex: 1; min-width: 280px; padding: 24px; display: flex; flex-direction: column; gap: 20px; max-height: 85vh; overflow-y: auto;">
+                    <div class="modal-info-col">
                         <div>
                             <span style="font-size: 0.8rem; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;">${product.category}</span>
                             <h2 style="font-size: clamp(1.5rem, 6vw, 2.25rem); margin-top: 8px; color: #FFFFFF; line-height: 1.2; word-wrap: break-word;">${product.title}</h2>
@@ -371,13 +374,12 @@ function openProductModal(productId) {
                             </p>
                             <ul style="font-size: 0.8rem; color: #FFFFFF; margin-top: 8px; display: flex; flex-direction: column; gap: 4px; list-style: none;">
                                 <li>✨ Buy 5 -> 1 Free</li>
-                                <li>✨ Buy 7 -> 2 Free</li>
                                 <li>✨ Buy 10 -> 3 Free</li>
-                                <li>✨ Buy 20 -> 6 Free</li>
                             </ul>
                         </div>
 
-                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+                        <!-- Sticky Actions Wrapper -->
+                        <div class="modal-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
                             <button id="modalAddToCart" class="btn btn-primary" style="width: 100%; height: 52px; border-radius: 50px;" ${!canContinue ? 'disabled' : ''}>
                                 ${canContinue ? 'Add to Bag' : 'Select Size First'}
                             </button>
