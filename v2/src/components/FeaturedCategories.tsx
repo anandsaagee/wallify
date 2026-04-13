@@ -9,7 +9,10 @@ interface FeaturedCategoriesProps {
 const FEATURED = [
   { name: 'Automotive', sub: 'High-Octane Art' },
   { name: 'Aesthetic', sub: 'Vibrant Modern Vibes' },
-  { name: 'Mollywood', sub: 'Cinematic Legends' }
+  { name: 'Mollywood', sub: 'Cinematic Legends' },
+  { name: 'Classic Cars', sub: 'Vintage Speed' },
+  { name: 'Football', sub: 'The Pitch Warriors' },
+  { name: 'Anime', sub: 'Otaku Dreams' }
 ];
 
 export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelectCategory }) => {
