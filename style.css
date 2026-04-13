@@ -796,8 +796,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 900px) {
     .responsive-grid-product {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
 }
 
@@ -808,8 +808,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 900px) {
     .responsive-grid-checkout {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    .responsive-grid-checkout .glass {
+        padding: 20px !important;
     }
 }
 
