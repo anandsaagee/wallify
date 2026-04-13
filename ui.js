@@ -380,8 +380,8 @@ function openProductModal(productId) {
 
                         <!-- Sticky Actions Wrapper -->
                         <div class="modal-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-                            <button id="modalAddToCart" class="btn btn-primary" style="width: 100%; height: 52px; border-radius: 50px;" ${!canContinue ? 'disabled' : ''}>
-                                ${canContinue ? 'Add to Bag' : 'Select Size First'}
+                            <button id="modalAddToCart" class="btn btn-primary" style="width: 100%; height: 52px; border-radius: 50px; display: flex; align-items: center; justify-content: center; gap: 10px;" ${!canContinue ? 'disabled' : ''}>
+                                <i class="fas fa-th-large"></i> ${canContinue ? 'Add to Bag' : 'Select Size First'}
                             </button>
                             <button id="modalBuyNow" class="btn btn-buy-now" style="width: 100%;" ${!canContinue ? 'disabled' : ''}>
                                 Buy Now
