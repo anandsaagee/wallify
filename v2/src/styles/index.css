@@ -1,5 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* ======================================================
+   MOBILE-FIRST HARD OVERRIDES
+   These live in plain CSS so Tailwind JIT cannot miss them
+   ====================================================== */
+
+/* 1. Prevent the page from ever being wider than the screen */
+html, body, #root {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+/* 2. Horizontal scroll containers must NOT push the layout wider */
+.scroll-strip {
+  contain: inline-size;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.scroll-strip::-webkit-scrollbar { display: none; }
+.scroll-strip > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* 3. Product grid — always 2 cols on mobile, responsive above */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 12px;
+  padding: 0 14px 112px;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 20px 112px;
+  }
+}
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0 28px 112px;
+  }
+}
+
+/* 4. Category filter strip — no page-width expansion */
+.category-strip {
+  contain: inline-size;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.category-strip::-webkit-scrollbar { display: none; }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,61 +71,120 @@
     --primary: #facb15;
   }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    /* Prevent horizontal overflow globally */
+    overflow-x: hidden;
+    max-width: 100vw;
+    /* Smooth scroll everywhere */
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-white antialiased overflow-x-hidden font-['Inter',_sans-serif];
+    @apply bg-background text-white antialiased;
+    font-family: 'Inter', sans-serif;
     -webkit-tap-highlight-color: transparent;
+    /* Kill horizontal scroll */
+    overflow-x: hidden;
+    max-width: 100vw;
+    /* Performance: isolate compositing layers */
+    isolation: isolate;
+  }
+
+  img {
+    /* Prevent layout shift during image load */
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply flex items-center justify-center bg-primary text-black font-bold rounded-full transition-transform active:scale-95;
+    @apply flex items-center justify-center bg-primary text-black font-bold rounded-full;
+    transition: transform 150ms ease, opacity 150ms ease;
+    -webkit-tap-highlight-color: transparent;
   }
-  
-  .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  .btn-primary:active {
+    transform: scale(0.95);
   }
 
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  /* Hide scrollbar cross-browser */
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 }
 
-/* 60fps animations */
+/* ─── Smooth card reveal (staggered by JS animationDelay) ─── */
 .reveal-fade {
-  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+  animation: fadeIn 0.35s ease-out forwards;
+  will-change: opacity, transform;
+  contain: layout style;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero Animations */
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-fade {
+    animation: none;
+    opacity: 1;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Hero Animations ─── */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50%       { transform: translateY(-16px); }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Hero radial mask — makes the background poster grid fade at edges */
 .mask-hero-radial {
-  mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
-  -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
 }
 
-.hero-track-rotate {
-  transform: translate(-50%, -50%) rotate(-15deg);
+/* ─── Touch improvements ─── */
+button, a, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .hero-track-rotate {
-    transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
-  }
+/* ─── Input focus ring ─── */
+input:focus-visible {
+  outline: 2px solid rgba(250, 203, 21, 0.6);
+  outline-offset: 2px;
+}
+
+/* ─── Bottom sheet scroll containment ─── */
+.sheet-scroll {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }

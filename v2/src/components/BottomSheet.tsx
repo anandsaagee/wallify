@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
@@ -9,6 +9,23 @@ interface BottomSheetProps {
 }
 
 export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, children }) => {
+  const sheetRef = useRef<HTMLDivElement>(null);
+
+  // Lock body scroll when sheet is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -18,38 +35,60 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
+            style={{ WebkitBackdropFilter: 'blur(4px)' }}
           />
-          
-          {/* Sheet */}
+
+          {/* Sheet — slides up to fill most of screen */}
           <motion.div
+            ref={sheetRef}
             initial={{ y: '100%' }}
-            animate={{ y: '10%' }}
+            animate={{ y: 0 }}
             exit={{ y: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            transition={{ type: 'spring', damping: 30, stiffness: 300, mass: 0.8 }}
             drag="y"
             dragConstraints={{ top: 0 }}
-            dragElastic={0.2}
+            dragElastic={0.05}
             onDragEnd={(_, info) => {
-              if (info.offset.y > 100) onClose();
+              if (info.offset.y > 80 || info.velocity.y > 500) onClose();
             }}
-            className="fixed bottom-0 left-0 right-0 h-[90vh] bg-surface rounded-t-[32px] border-t border-white/10 z-[110] shadow-2xl overflow-hidden flex flex-col"
+            className="fixed left-0 right-0 bottom-0 z-[110] flex flex-col"
+            style={{
+              height: '92dvh',
+              maxHeight: '92dvh',
+              background: '#111111',
+              borderTopLeftRadius: 28,
+              borderTopRightRadius: 28,
+              borderTop: '1px solid rgba(255,255,255,0.08)',
+              boxShadow: '0 -20px 60px rgba(0,0,0,0.6)',
+              willChange: 'transform',
+            }}
           >
             {/* Grab handle */}
-            <div className="w-full flex justify-center py-3">
-              <div className="w-12 h-1.5 bg-white/20 rounded-full" />
+            <div className="flex-shrink-0 flex justify-center pt-3 pb-1">
+              <div className="w-10 h-1 bg-white/20 rounded-full" />
             </div>
 
             {/* Close Button */}
-            <button 
+            <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 glass rounded-full z-20 active:scale-95"
+              className="absolute top-3 right-4 p-2 rounded-full z-20 active:scale-90 transition-transform"
+              style={{ background: 'rgba(255,255,255,0.08)' }}
             >
               <X className="w-5 h-5 text-white" />
             </button>
 
-            <div className="flex-1 overflow-y-auto hide-scrollbar pb-32">
+            {/* Scrollable Content */}
+            <div
+              className="flex-1 overflow-y-auto"
+              style={{
+                overscrollBehavior: 'contain',
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+              }}
+            >
               {children}
             </div>
           </motion.div>

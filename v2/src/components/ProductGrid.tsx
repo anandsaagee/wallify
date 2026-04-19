@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 interface Product {
   id: string;
@@ -11,47 +11,54 @@ interface Product {
 interface ProductCardProps {
   product: Product;
   onClick: () => void;
+  index: number;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
+const ProductCard: React.FC<ProductCardProps> = memo(({ product, onClick, index }) => {
   const [loaded, setLoaded] = React.useState(false);
 
   return (
-    <div 
+    <div
       onClick={onClick}
-      className="group cursor-pointer flex flex-col gap-2 reveal-fade"
+      className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150"
+      style={{ animationDelay: `${Math.min(index * 0.05, 0.4)}s` }}
     >
-      <div className="aspect-[3/4] rounded-premium overflow-hidden bg-surface border border-white/5 relative">
+      <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
         {!loaded && (
           <div className="absolute inset-0 bg-white/5 animate-pulse" />
         )}
-        <img 
-          src={product.image} 
+        <img
+          src={product.image}
           alt={product.title}
           loading="lazy"
+          decoding="async"
           onLoad={() => setLoaded(true)}
-          className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
             loaded ? 'opacity-100' : 'opacity-0'
           }`}
           onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1598128558393-70ff22444bb0?auto=format&fit=crop&q=80&w=800';
+            (e.target as HTMLImageElement).src =
+              'https://images.unsplash.com/photo-1598128558393-70ff22444bb0?auto=format&fit=crop&q=60&w=400';
           }}
         />
-        <div className="absolute top-2 right-2 glass p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-          <div className="w-4 h-4 rounded-full border border-white/40" />
-        </div>
+        {/* Quick-view badge on tap — mobile only */}
+        <div className="absolute inset-0 bg-black/0 active:bg-black/10 transition-colors" />
       </div>
-      
-      <div className="px-1">
-        <span className="text-[10px] text-muted font-bold uppercase tracking-wider">{product.category}</span>
-        <h3 className="text-sm font-medium text-white truncate group-hover:text-primary transition-colors">
+
+      <div className="px-0.5">
+        <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
+          {product.category}
+        </span>
+        <h3 className="text-xs font-semibold text-white truncate leading-tight">
           {product.title}
         </h3>
-        <p className="text-base font-black text-primary">₹33</p>
+        <p className="text-sm font-black text-primary mt-0.5">₹33</p>
       </div>
     </div>
   );
-};
+});
+
+ProductCard.displayName = 'ProductCard';
 
 interface ProductGridProps {
   products: Product[];
@@ -60,11 +67,13 @@ interface ProductGridProps {
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductClick }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-6 px-4 pb-24">
-      {products.map((product) => (
-        <ProductCard 
-          key={product.id} 
-          product={product} 
+    /* product-grid class is defined in index.css with hard media queries */
+    <div className="product-grid">
+      {products.map((product, i) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          index={i}
           onClick={() => onProductClick(product)}
         />
       ))}
