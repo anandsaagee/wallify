@@ -26,20 +26,40 @@ html, body, #root {
   flex-shrink: 0;
 }
 
-/* 3. Product grid — always 2 cols on mobile, responsive above */
+/* 3. Product grid — horizontal scroll on mobile, grid above */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 12px;
-  padding: 0 14px 112px;
+  display: flex;
+  contain: inline-size;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  gap: 16px;
+  padding: 0 16px 112px;
   width: 100%;
   box-sizing: border-box;
 }
+.product-grid::-webkit-scrollbar { display: none; }
+.product-grid > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 160px;
+}
+
 @media (min-width: 640px) {
   .product-grid {
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    contain: none;
+    overflow-x: visible;
+    scroll-snap-type: none;
     gap: 16px;
     padding: 0 20px 112px;
+  }
+  .product-grid > * {
+    width: auto;
+    flex-shrink: 1;
+    scroll-snap-align: none;
   }
 }
 @media (min-width: 1024px) {
