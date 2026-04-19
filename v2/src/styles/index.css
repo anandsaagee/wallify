@@ -209,8 +209,8 @@ input:focus-visible {
    ══════════════════════════════════════════════════════════ */
 
 .bottom-sheet {
-  max-height: 90vh;
-  max-height: 90dvh;
+  max-height: 85vh;
+  max-height: 85dvh;
   height: auto;
   background: #111111;
   border-top-left-radius: 24px;
@@ -247,12 +247,12 @@ input:focus-visible {
    [ Sticky CTA ]
    ══════════════════════════════════════════════════════════ */
 
-/* Outer wrapper: fills the sheet, flex col */
+/* Outer wrapper: flex col */
 .product-preview-layout {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  max-height: 86dvh;  /* leave room for grab handle */
+  height: auto;
+  max-height: 80dvh;  /* leave room for grab handle */
 }
 
 /* Scrollable middle */
@@ -265,14 +265,15 @@ input:focus-visible {
 }
 .product-preview-content::-webkit-scrollbar { display: none; }
 
-/* Image container — 30-40% of viewport max */
+/* Image container */
 .product-preview-image {
   width: 100%;
-  max-height: 35vh;
-  max-height: 35dvh;
+  max-height: 25vh;
+  max-height: 25dvh;
+  max-width: 220px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.05);
   background: #000;
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
@@ -361,7 +362,8 @@ input:focus-visible {
 /* Desktop: wider sheet */
 @media (min-width: 640px) {
   .bottom-sheet {
-    max-width: 480px;
+    max-width: 440px;
+    max-height: 80vh;
     margin: 0 auto;
     left: 50% !important;
     right: auto !important;
