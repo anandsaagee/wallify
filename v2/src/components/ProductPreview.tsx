@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Check } from 'lucide-react';
+import { ShoppingBag, Zap, Check, Truck, Package } from 'lucide-react';
 
 const SIZES = [
-  { id: 'A6', label: 'A6', price: 17, strikePrice: 33 },
-  { id: 'A5', label: 'A5', price: 33, strikePrice: 49 },
-  { id: 'A4', label: 'A4', price: 49, strikePrice: 99 },
-  { id: 'A3', label: 'A3', price: 99, strikePrice: 149 },
+  { id: 'A6', label: 'A6', dim: '10.5×14.8 cm', price: 17, strikePrice: 33 },
+  { id: 'A5', label: 'A5', dim: '14.8×21 cm', price: 33, strikePrice: 49 },
+  { id: 'A4', label: 'A4', dim: '21×29.7 cm', price: 49, strikePrice: 99 },
+  { id: 'A3', label: 'A3', dim: '29.7×42 cm', price: 99, strikePrice: 149 },
 ];
 
 interface Product {
@@ -21,137 +21,306 @@ interface ProductPreviewProps {
 
 export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState('A5');
-  const [added, setAdded] = useState(false);
+  const [addedState, setAddedState] = useState<'idle' | 'added'>('idle');
 
   const currentSize = SIZES.find((s) => s.id === selectedSize)!;
+  const discount = Math.round(
+    ((currentSize.strikePrice - currentSize.price) / currentSize.strikePrice) * 100
+  );
 
-  const handleAddToBag = () => {
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1800);
+  const handleAdd = () => {
+    setAddedState('added');
+    setTimeout(() => setAddedState('idle'), 2000);
   };
 
   return (
-    <div className="flex flex-col">
-      {/* ── Image — compact height so content is visible without scrolling ── */}
-      <div className="px-4 pt-2">
+    <div className="product-preview-layout">
+      {/* ━━━━━━━━━━ SCROLLABLE MIDDLE ━━━━━━━━━━ */}
+      <div className="product-preview-content">
+
+        {/* ── 1. Image — 30-40% of viewport, centered ── */}
+        <div style={{ padding: '4px 16px 0' }}>
+          <div className="product-preview-image">
+            <img
+              src={product.image}
+              alt={product.title}
+              loading="eager"
+              decoding="async"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+              }}
+            />
+          </div>
+        </div>
+
+        {/* ── 2. Title + Category + Price ── */}
+        <div style={{ padding: '16px 16px 0' }}>
+          {/* Category badge */}
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 900,
+              color: '#FACB15',
+              textTransform: 'uppercase',
+              letterSpacing: '0.12em',
+            }}
+          >
+            {product.category}
+          </span>
+
+          {/* Title */}
+          <h2
+            style={{
+              fontSize: 22,
+              fontWeight: 900,
+              color: '#fff',
+              lineHeight: 1.15,
+              marginTop: 4,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            {product.title}
+          </h2>
+
+          {/* Price row */}
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 8 }}>
+            <span style={{ fontSize: 28, fontWeight: 900, color: '#FACB15' }}>
+              ₹{currentSize.price}
+            </span>
+            <span
+              style={{
+                fontSize: 14,
+                color: '#a1a1aa',
+                textDecoration: 'line-through',
+                opacity: 0.6,
+              }}
+            >
+              ₹{currentSize.strikePrice}
+            </span>
+            <span
+              style={{
+                fontSize: 10,
+                fontWeight: 900,
+                color: '#4ade80',
+                background: 'rgba(74,222,128,0.1)',
+                padding: '2px 8px',
+                borderRadius: 100,
+              }}
+            >
+              {discount}% OFF
+            </span>
+          </div>
+        </div>
+
+        {/* ── 3. Size Selection — 2×2 Grid ── */}
+        <div style={{ padding: '16px 16px 0' }}>
+          <label
+            style={{
+              fontSize: 11,
+              fontWeight: 800,
+              color: 'rgba(255,255,255,0.5)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              display: 'block',
+              marginBottom: 10,
+            }}
+          >
+            Select Size <span style={{ color: '#FACB15' }}>*</span>
+          </label>
+          <div className="size-grid">
+            {SIZES.map((size) => {
+              const isSelected = selectedSize === size.id;
+              return (
+                <button
+                  key={size.id}
+                  onClick={() => setSelectedSize(size.id)}
+                  className="size-option"
+                  style={{
+                    borderColor: isSelected
+                      ? 'rgba(250,203,21,1)'
+                      : 'rgba(255,255,255,0.07)',
+                    background: isSelected
+                      ? 'rgba(250,203,21,0.1)'
+                      : 'rgba(255,255,255,0.03)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 900,
+                      color: isSelected ? '#FACB15' : '#fff',
+                    }}
+                  >
+                    {size.label}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 9,
+                      fontWeight: 600,
+                      color: 'rgba(255,255,255,0.4)',
+                      marginTop: 2,
+                    }}
+                  >
+                    {size.dim}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 800,
+                      color: isSelected ? '#FACB15' : 'rgba(255,255,255,0.6)',
+                      marginTop: 2,
+                    }}
+                  >
+                    ₹{size.price}{' '}
+                    <span
+                      style={{
+                        textDecoration: 'line-through',
+                        opacity: 0.4,
+                        fontSize: 9,
+                      }}
+                    >
+                      ₹{size.strikePrice}
+                    </span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ── 4. Bundle Offers — visually separated card ── */}
+        <div style={{ padding: '14px 16px 0' }}>
+          <div className="offers-card">
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                marginBottom: 8,
+              }}
+            >
+              <span style={{ fontSize: 14 }}>🎁</span>
+              <span
+                style={{
+                  fontSize: 11,
+                  fontWeight: 900,
+                  color: '#FACB15',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                }}
+              >
+                Bundle & Save
+              </span>
+            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr 1fr',
+                gap: 6,
+              }}
+            >
+              {[
+                { qty: 'Buy 5', bonus: '1 Free', tag: '🔥' },
+                { qty: 'Buy 10', bonus: '3 Free', tag: '⚡' },
+                { qty: 'Buy 20', bonus: '8 Free', tag: '🏆' },
+              ].map((o) => (
+                <div
+                  key={o.qty}
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    borderRadius: 10,
+                    padding: '8px 6px',
+                    textAlign: 'center',
+                  }}
+                >
+                  <span style={{ fontSize: 12 }}>{o.tag}</span>
+                  <p
+                    style={{
+                      fontSize: 10,
+                      fontWeight: 800,
+                      color: '#fff',
+                      marginTop: 2,
+                    }}
+                  >
+                    {o.qty}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 9,
+                      fontWeight: 700,
+                      color: '#4ade80',
+                      marginTop: 1,
+                    }}
+                  >
+                    {o.bonus}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── 5. Delivery Info ── */}
         <div
-          className="w-full overflow-hidden rounded-2xl border border-white/5 bg-black shadow-2xl"
-          style={{ maxHeight: '36vh', aspectRatio: '3/4' }}
+          style={{
+            padding: '12px 16px 16px',
+            display: 'flex',
+            gap: 16,
+            alignItems: 'center',
+          }}
         >
-          <img
-            src={product.image}
-            alt={product.title}
-            className="w-full h-full object-contain"
-            loading="eager"
-          />
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.35)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+            }}
+          >
+            <Truck style={{ width: 12, height: 12 }} /> Free delivery ≥ ₹299
+          </span>
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.35)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+            }}
+          >
+            <Package style={{ width: 12, height: 12 }} /> Ships in 3–5 days
+          </span>
         </div>
       </div>
 
-      {/* ── Info ── */}
-      <div className="px-4 pt-4 flex flex-col gap-4 pb-6">
-        {/* Title & price */}
-        <div>
-          <span className="text-[10px] text-primary font-black uppercase tracking-widest">
-            {product.category}
-          </span>
-          <h2 className="text-xl font-black text-white mt-0.5 leading-tight">
-            {product.title}
-          </h2>
-          <div className="flex items-baseline gap-2 mt-1.5">
-            <span className="text-2xl font-black text-primary">₹{currentSize.price}</span>
-            <span className="text-sm text-muted line-through opacity-60">
-              ₹{currentSize.strikePrice}
-            </span>
-            <span className="text-[10px] font-black text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">
-              {Math.round(
-                ((currentSize.strikePrice - currentSize.price) / currentSize.strikePrice) * 100
-              )}% OFF
-            </span>
-          </div>
-        </div>
-
-        {/* ── Size Selection — single horizontal row of 4 pills ── */}
-        <div className="flex flex-col gap-2">
-          <label className="text-xs font-bold text-white/50 uppercase tracking-wider">
-            Size <span className="text-primary">*</span>
-          </label>
-          <div className="grid grid-cols-4 gap-2">
-            {SIZES.map((size) => (
-              <button
-                key={size.id}
-                onClick={() => setSelectedSize(size.id)}
-                className="flex flex-col items-center justify-center py-2.5 rounded-xl border-2 transition-all duration-150 active:scale-95"
-                style={{
-                  borderColor:
-                    selectedSize === size.id
-                      ? 'rgba(250,203,21,1)'
-                      : 'rgba(255,255,255,0.07)',
-                  background:
-                    selectedSize === size.id
-                      ? 'rgba(250,203,21,0.12)'
-                      : 'rgba(255,255,255,0.04)',
-                }}
-              >
-                <span
-                  className="text-sm font-black"
-                  style={{
-                    color: selectedSize === size.id ? '#FACB15' : '#fff',
-                  }}
-                >
-                  {size.label}
-                </span>
-                <span className="text-[9px] font-bold opacity-60 mt-0.5">₹{size.price}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* ── Bundle Offers — compact single row ── */}
-        <div
-          className="flex items-center gap-3 p-3 rounded-2xl border border-white/5 overflow-x-auto"
-          style={{ background: 'rgba(255,255,255,0.03)', scrollbarWidth: 'none' }}
-        >
-          <span className="text-[10px] font-black text-primary whitespace-nowrap">🎁 BUNDLE:</span>
-          {[
-            { label: 'Buy 5 → 1 Free' },
-            { label: 'Buy 10 → 3 Free' },
-            { label: 'Buy 20 → 8 Free' },
-          ].map((o) => (
-            <span
-              key={o.label}
-              className="text-[10px] font-bold text-white/60 bg-white/5 px-3 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0"
-            >
-              {o.label}
-            </span>
-          ))}
-        </div>
-
-        {/* ── Delivery info ── */}
-        <div className="flex items-center gap-4 text-[10px] font-bold text-white/40">
-          <span>🚚 Free delivery ≥ ₹299</span>
-          <span>📦 Ships in 3–5 days</span>
-        </div>
-
-        {/* ── Add to Bag CTA — inline (not fixed), safe for bottom sheet ── */}
+      {/* ━━━━━━━━━━ STICKY BOTTOM CTA ━━━━━━━━━━ */}
+      <div className="product-preview-cta">
+        {/* Secondary: Add to Cart */}
         <button
-          onClick={handleAddToBag}
-          className="w-full py-4 rounded-full font-black text-base flex items-center justify-center gap-2 transition-all duration-200 active:scale-95"
+          onClick={handleAdd}
+          className="cta-secondary"
           style={{
-            background: added ? '#22c55e' : '#FACB15',
-            color: '#000',
+            background: addedState === 'added' ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.06)',
+            borderColor: addedState === 'added' ? '#22c55e' : 'rgba(255,255,255,0.08)',
+            color: addedState === 'added' ? '#4ade80' : '#fff',
           }}
         >
-          {added ? (
-            <>
-              <Check className="w-5 h-5" />
-              Added to Bag!
-            </>
+          {addedState === 'added' ? (
+            <Check style={{ width: 18, height: 18 }} />
           ) : (
-            <>
-              <ShoppingBag className="w-5 h-5" />
-              Add to Bag — ₹{currentSize.price}
-            </>
+            <ShoppingBag style={{ width: 18, height: 18 }} />
           )}
+        </button>
+
+        {/* Primary: Buy Now */}
+        <button onClick={handleAdd} className="cta-primary">
+          <Zap style={{ width: 18, height: 18 }} />
+          Buy Now — ₹{currentSize.price}
         </button>
       </div>
     </div>
