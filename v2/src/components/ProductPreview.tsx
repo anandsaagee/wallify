@@ -267,33 +267,32 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
           style={{
             padding: '12px 16px 16px',
             display: 'flex',
-            gap: 16,
-            alignItems: 'center',
+            flexDirection: 'column',
+            gap: 8,
           }}
         >
+          <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+            <span
+              style={{
+                fontSize: 10,
+                fontWeight: 700,
+                color: 'rgba(255,255,255,0.35)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4,
+              }}
+            >
+              <Package style={{ width: 12, height: 12 }} /> Ships in 3–5 days
+            </span>
+          </div>
           <span
             style={{
               fontSize: 10,
-              fontWeight: 700,
+              fontWeight: 600,
               color: 'rgba(255,255,255,0.35)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 4,
             }}
           >
-            <Truck style={{ width: 12, height: 12 }} /> Free delivery ≥ ₹299
-          </span>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 700,
-              color: 'rgba(255,255,255,0.35)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 4,
-            }}
-          >
-            <Package style={{ width: 12, height: 12 }} /> Ships in 3–5 days
+            *A minimal delivery charge will apply to every order based on your pincode.
           </span>
         </div>
       </div>
