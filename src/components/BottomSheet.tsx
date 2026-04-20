@@ -82,12 +82,12 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
             onDragEnd={(_, info) => {
               if (info.offset.y > 80 || info.velocity.y > 400) onClose();
             }}
-            className="bottom-sheet fixed left-0 right-0 bottom-0 z-[110] flex flex-col"
+            className="fixed left-0 right-0 mx-auto sm:max-w-[440px] bottom-0 z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] h-auto bg-[#111111] rounded-t-3xl border-t border-white/5 shadow-[0_-16px_80px_rgba(0,0,0,0.7)] overflow-hidden will-change-transform"
             role="dialog"
             aria-modal="true"
           >
             {/* ── Fixed Header: grab handle + close ── */}
-            <div className="bottom-sheet-header">
+            <div className="shrink-0 relative">
               {/* Grab handle */}
               <div className="flex justify-center pt-3 pb-2">
                 <div
@@ -122,7 +122,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
             </div>
 
             {/* ── Scrollable Content Area ── */}
-            <div className="bottom-sheet-scroll">
+            <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar">
               {children}
             </div>
           </motion.div>

@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({ product, onClick, index 
   return (
     <div
       onClick={onClick}
-      className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150"
+      className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 shrink-0 snap-start w-[160px] sm:shrink sm:snap-none sm:w-auto"
       style={{ animationDelay: `${Math.min(index * 0.05, 0.4)}s` }}
     >
       <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
@@ -67,8 +67,8 @@ interface ProductGridProps {
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductClick }) => {
   return (
-    /* product-grid class is defined in index.css with hard media queries */
-    <div className="product-grid">
+    /* product-grid custom class replaced with full tailwind responsive utilities */
+    <div className="flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 px-4 pb-28 sm:grid sm:grid-cols-3 sm:overflow-x-visible sm:snap-none sm:px-5 lg:grid-cols-4 lg:gap-5 lg:px-7">
       {products.map((product, i) => (
         <ProductCard
           key={product.id}

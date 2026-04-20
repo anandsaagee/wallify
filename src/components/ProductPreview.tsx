@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Zap, Check, Truck, Package } from 'lucide-react';
-
-const SIZES = [
-  { id: 'A6', label: 'A6', dim: '10.5×14.8 cm', price: 17, strikePrice: 33 },
-  { id: 'A5', label: 'A5', dim: '14.8×21 cm', price: 33, strikePrice: 49 },
-  { id: 'A4', label: 'A4', dim: '21×29.7 cm', price: 49, strikePrice: 99 },
-  { id: 'A3', label: 'A3', dim: '29.7×42 cm', price: 99, strikePrice: 149 },
-];
+import { SIZES } from '../data/config';
+import { useCart } from '../hooks/useCart';
 
 interface Product {
   id: string;
@@ -22,6 +17,7 @@ interface ProductPreviewProps {
 export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState('A5');
   const [addedState, setAddedState] = useState<'idle' | 'added'>('idle');
+  const { addToCart } = useCart();
 
   const currentSize = SIZES.find((s) => s.id === selectedSize)!;
   const discount = Math.round(
@@ -29,18 +25,19 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
   );
 
   const handleAdd = () => {
+    addToCart(product, selectedSize);
     setAddedState('added');
     setTimeout(() => setAddedState('idle'), 2000);
   };
 
   return (
-    <div className="product-preview-layout">
+    <div className="flex flex-col h-auto max-h-[80dvh]">
       {/* ━━━━━━━━━━ SCROLLABLE MIDDLE ━━━━━━━━━━ */}
-      <div className="product-preview-content">
+      <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar">
 
         {/* ── 1. Image — 30-40% of viewport, centered ── */}
-        <div style={{ padding: '4px 16px 0' }}>
-          <div className="product-preview-image">
+        <div className="px-4 pt-1">
+          <div className="w-full max-h-[25dvh] max-w-[220px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black shadow-[0_8px_32px_rgba(0,0,0,0.4)] mx-auto">
             <img
               src={product.image}
               alt={product.title}
@@ -56,7 +53,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         </div>
 
         {/* ── 2. Title + Category + Price ── */}
-        <div style={{ padding: '16px 16px 0' }}>
+        <div className="px-4 pt-4">
           {/* Category badge */}
           <span
             style={{
@@ -115,7 +112,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         </div>
 
         {/* ── 3. Size Selection — 2×2 Grid ── */}
-        <div style={{ padding: '16px 16px 0' }}>
+        <div className="px-4 pt-4">
           <label
             style={{
               fontSize: 11,
@@ -129,14 +126,14 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
           >
             Select Size <span style={{ color: '#FACB15' }}>*</span>
           </label>
-          <div className="size-grid">
+          <div className="grid grid-cols-2 gap-2.5">
             {SIZES.map((size) => {
               const isSelected = selectedSize === size.id;
               return (
                 <button
                   key={size.id}
                   onClick={() => setSelectedSize(size.id)}
-                  className="size-option"
+                  className="flex flex-col items-center justify-center min-h-[48px] px-2 py-2.5 rounded-2xl border-2 transition-all duration-150 cursor-pointer active:scale-95"
                   style={{
                     borderColor: isSelected
                       ? 'rgba(250,203,21,1)'
@@ -191,8 +188,8 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         </div>
 
         {/* ── 4. Bundle Offers — visually separated card ── */}
-        <div style={{ padding: '14px 16px 0' }}>
-          <div className="offers-card">
+        <div className="px-4 pt-3.5">
+          <div className="bg-white/5 border border-white/5 rounded-2xl p-3.5">
             <div
               style={{
                 display: 'flex',
@@ -263,14 +260,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         </div>
 
         {/* ── 5. Delivery Info ── */}
-        <div
-          style={{
-            padding: '12px 16px 16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 8,
-          }}
-        >
+        <div className="flex flex-col gap-2 px-4 pt-3 pb-4">
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
             <span
               style={{
@@ -298,11 +288,11 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
       </div>
 
       {/* ━━━━━━━━━━ STICKY BOTTOM CTA ━━━━━━━━━━ */}
-      <div className="product-preview-cta">
+      <div className="shrink-0 sticky bottom-0 flex gap-2.5 px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] bg-gradient-to-t from-[#111] from-80% to-[#111]/95 border-t border-white/5">
         {/* Secondary: Add to Cart */}
         <button
           onClick={handleAdd}
-          className="cta-secondary"
+          className="shrink-0 w-[52px] h-[52px] rounded-2xl border-[1.5px] border-white/10 flex items-center justify-center transition-all duration-150 cursor-pointer active:scale-90"
           style={{
             background: addedState === 'added' ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.06)',
             borderColor: addedState === 'added' ? '#22c55e' : 'rgba(255,255,255,0.08)',
@@ -317,7 +307,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         </button>
 
         {/* Primary: Buy Now */}
-        <button onClick={handleAdd} className="cta-primary">
+        <button onClick={handleAdd} className="flex-1 h-[52px] rounded-2xl border-none bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 cursor-pointer transition-all duration-150 active:scale-95">
           <Zap style={{ width: 18, height: 18 }} />
           Buy Now — ₹{currentSize.price}
         </button>

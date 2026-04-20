@@ -1,146 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallify Store | Premium Posters & Fine Art Prints</title>
-    <meta name="description" content="Discover museum-grade posters across Mollywood, Football, Anime, Aesthetic and Classic Cars.">
-    
-    <!-- External Dependencies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Premium Navbar -->
-    <nav class="navbar"></nav>
-
-    <!-- Interactive Hero -->
-    <header class="hero">
-        <div class="hero-bg">
-            <div class="blur-blob blob-1"></div>
-            <div class="blur-blob blob-2"></div>
-        </div>
-
-        <!-- Animated Floating Posters -->
-        <div class="hero-track" id="heroTrack">
-            <!-- Row 1 -->
-            <div class="hero-track-column" style="margin-top: -100px;">
-                <div class="hero-poster reveal"><img src="" id="hp1"></div>
-                <div class="hero-poster reveal"><img src="" id="hp2"></div>
-                <div class="hero-poster reveal"><img src="" id="hp3"></div>
-            </div>
-            <!-- Row 2 -->
-            <div class="hero-track-column" style="margin-top: 100px;">
-                <div class="hero-poster reveal"><img src="" id="hp4"></div>
-                <div class="hero-poster reveal"><img src="" id="hp5"></div>
-                <div class="hero-poster reveal"><img src="" id="hp6"></div>
-            </div>
-            <!-- Row 3 -->
-            <div class="hero-track-column" style="margin-top: -50px;">
-                <div class="hero-poster reveal"><img src="" id="hp7"></div>
-                <div class="hero-poster reveal"><img src="" id="hp8"></div>
-                <div class="hero-poster reveal"><img src="" id="hp9"></div>
-            </div>
-            <!-- Row 4 -->
-            <div class="hero-track-column" style="margin-top: 50px;">
-                <div class="hero-poster reveal"><img src="" id="hp10"></div>
-                <div class="hero-poster reveal"><img src="" id="hp11"></div>
-                <div class="hero-poster reveal"><img src="" id="hp12"></div>
-            </div>
-            <!-- Row 5 -->
-            <div class="hero-track-column" style="margin-top: -80px;">
-                <div class="hero-poster reveal"><img src="" id="hp13"></div>
-                <div class="hero-poster reveal"><img src="" id="hp14"></div>
-                <div class="hero-poster reveal"><img src="" id="hp15"></div>
-            </div>
-        </div>
-
-        <div class="hero-content">
-            <span class="heading-wide reveal" style="color: var(--primary); font-weight: 700;">Exclusive Gallery</span>
-            <h1 class="reveal">Art That Defines <br><span style="color: var(--secondary);">Your Space.</span></h1>
-            <p class="reveal">Experience museum-grade fine art prints curated for modern passion. Shipped across India.</p>
-            <div class="reveal">
-                <a href="shop.html" class="btn btn-primary">
-                    Explore Collection <i class="fas fa-arrow-right"></i>
-                    <div class="btn-glow"></div>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Random Picks Section moved to Top -->
-    <section class="container section-padding" id="featuredSection">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 class="reveal" style="font-size: clamp(1.8rem, 6vw, 2.5rem); margin-bottom: 16px; line-height: 1.2;">Random Picks For You</h2>
-            <p class="reveal" style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Truly randomized fine art gallery. Refresh to see more.</p>
-        </div>
-        <div class="poster-grid" id="featuredGrid">
-            <!-- Populated by JS -->
-        </div>
-        <div style="text-align: center; margin-top: 60px;" class="reveal">
-            <a href="shop.html" class="btn">View Full Shop</a>
-        </div>
-    </section>
-
-
-
-    <!-- Side UI Elements -->
-    <div id="cartPanel" class="cart-panel"></div>
-    <div id="cartOverlay"></div>
-
-    <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="cart.js"></script>
-    <script src="ui.js"></script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderNavbar('home');
-
-            // Populate Hero Posters
-            const posters = shuffleArray(window.products).slice(0, 15);
-            posters.forEach((p, i) => {
-                const el = document.getElementById(`hp${i+1}`);
-                if (el) el.src = p.image;
-            });
-
-            // Populate Featured Random Posters
-            const featuredGrid = document.getElementById('featuredGrid');
-            if (featuredGrid) {
-                const randomPicks = shuffleArray(window.products).slice(0, 12);
-                randomPicks.forEach((p, index) => {
-                    featuredGrid.appendChild(createPosterCard(p, index));
-                });
-            }
-
-            // IMPORTANT: Init scroll reveal AFTER all dynamic content is created
-            initScrollReveal();
-
-            // Parallax Hero Effect (debounced with rAF)
-            let rafId = null;
-            window.addEventListener('mousemove', (e) => {
-                if (rafId) return;
-                rafId = requestAnimationFrame(() => {
-                    const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-                    const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-                    const track = document.getElementById('heroTrack');
-                    if (track) track.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) rotate(-15deg)`;
-                    rafId = null;
-                });
-            });
-
-            // Close Cart Overlay
-            document.getElementById('cartOverlay').addEventListener('click', () => toggleCart(false));
-            
-            // Sync UI across tabs or events
-            window.addEventListener('cart_updated', () => {
-                const badge = document.querySelector('.cart-badge');
-                // renderNavbar might be overkill, just update badge
-            });
-        });
-
-        // Scroll handler is now built into renderNavbar()
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Wallify Store | Premium Mobile UX</title>
+    <meta name="description" content="Premium Wallify Store - App-like experience for poster shopping." />
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

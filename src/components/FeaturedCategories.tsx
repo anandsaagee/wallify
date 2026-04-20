@@ -45,7 +45,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       */}
 
       {/* ─── Mobile horizontal scroll (hidden on md+) ─── */}
-      <div className="scroll-strip md:hidden flex gap-3 px-4 pb-2">
+      <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 px-4 pb-2">
         {FEATURED.map((cat) => (
           <button
             key={cat.name}
@@ -53,8 +53,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
               onSelectCategory(cat.name);
               scrollToCollection();
             }}
-            className="flex-shrink-0 relative overflow-hidden rounded-2xl border border-white/10 active:scale-95 transition-transform duration-150"
-            style={{ width: 140, height: 190 }}
+            className="shrink-0 snap-start relative overflow-hidden rounded-2xl border border-white/10 active:scale-95 transition-transform duration-150 w-[140px] h-[190px]"
           >
             <img
               src={thumbnails[cat.name]}
