@@ -68,7 +68,7 @@ interface ProductGridProps {
 export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductClick }) => {
   return (
     /* product-grid custom class replaced with full tailwind responsive utilities */
-    <div className="flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 px-4 pb-28 sm:grid sm:grid-cols-3 sm:overflow-x-visible sm:snap-none sm:px-5 lg:grid-cols-4 lg:gap-5 lg:px-7">
+    <div className="flex w-full overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-28 sm:grid sm:grid-cols-3 sm:overflow-x-visible sm:snap-none sm:px-5 lg:grid-cols-4 lg:gap-5 lg:px-7">
       {products.map((product, i) => (
         <ProductCard
           key={product.id}

@@ -15,7 +15,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
 }) => {
   return (
     <div className="w-full py-4 overflow-hidden max-w-full">
-      <div className="flex items-center gap-2.5 px-4 overflow-x-auto hide-scrollbar">
+      <div className="flex items-center gap-2.5 px-4 overflow-x-auto">
         {CATEGORIES.map((category) => (
           <button
             key={category}

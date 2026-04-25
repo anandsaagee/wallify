@@ -45,7 +45,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       */}
 
       {/* ─── Mobile horizontal scroll (hidden on md+) ─── */}
-      <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 px-4 pb-2">
+      <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-3 px-4 pb-2">
         {FEATURED.map((cat) => (
           <button
             key={cat.name}

@@ -76,7 +76,28 @@ html, body, #root {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Hide scrollbar cross-browser */
+  /* Scrollbar Styling - Modern & Subtle */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(250, 203, 21, 0.4);
+  }
+
+  /* Hide scrollbar cross-browser utility */
   .hide-scrollbar::-webkit-scrollbar { display: none; }
   .hide-scrollbar {
     -ms-overflow-style: none;
