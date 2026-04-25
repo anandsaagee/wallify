@@ -7,7 +7,7 @@
 
 /* 1. Prevent the page from ever being wider than the screen */
 html, body, #root {
-  max-width: 100vw !important;
+  max-width: 100% !important;
   overflow-x: hidden !important;
   width: 100% !important;
 }
@@ -35,7 +35,7 @@ html, body, #root {
   html {
     /* Prevent horizontal overflow globally */
     overflow-x: hidden;
-    max-width: 100vw;
+    max-width: 100%;
     /* Smooth scroll everywhere */
     scroll-behavior: smooth;
   }
@@ -46,7 +46,7 @@ html, body, #root {
     -webkit-tap-highlight-color: transparent;
     /* Kill horizontal scroll */
     overflow-x: hidden;
-    max-width: 100vw;
+    max-width: 100%;
     /* Performance: isolate compositing layers */
     isolation: isolate;
   }

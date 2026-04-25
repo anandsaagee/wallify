@@ -129,7 +129,7 @@ const App: React.FC = () => {
     <CartProvider>
       <div
         className="min-h-screen bg-background text-white"
-        style={{ overflowX: 'hidden', maxWidth: '100vw' }}
+        style={{ overflowX: 'hidden', maxWidth: '100%' }}
       >
         <Header currentView={view} setView={setView} />
         

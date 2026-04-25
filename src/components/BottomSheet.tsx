@@ -121,10 +121,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
               </button>
             </div>
 
-            {/* ── Scrollable Content Area ── */}
-            <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar">
-              {children}
-            </div>
+            {children}
           </motion.div>
         </>
       )}

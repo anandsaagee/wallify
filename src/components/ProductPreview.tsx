@@ -31,7 +31,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
   };
 
   return (
-    <div className="flex flex-col h-auto max-h-[80dvh]">
+    <div className="flex flex-col h-full min-h-0">
       {/* ━━━━━━━━━━ SCROLLABLE MIDDLE ━━━━━━━━━━ */}
       <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar">
 
