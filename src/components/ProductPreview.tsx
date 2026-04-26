@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ShoppingBag, Zap, Check, Truck, Package } from 'lucide-react';
+import React, { useState, useCallback, useRef } from 'react';
+import { ShoppingBag, Zap, Check, Package, Gift } from 'lucide-react';
 import { SIZES } from '../data/config';
 import { useCart } from '../hooks/useCart';
 
@@ -14,301 +14,197 @@ interface ProductPreviewProps {
   product: Product;
 }
 
-export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
-  const [selectedSize, setSelectedSize] = useState('A5');
-  const [addedState, setAddedState] = useState<'idle' | 'added'>('idle');
-  const { addToCart } = useCart();
+// ─── Size Selector Button ────────────────────────────────────────────────────
+interface SizeButtonProps {
+  size: (typeof SIZES)[number];
+  isSelected: boolean;
+  onSelect: (id: string) => void;
+}
 
-  const currentSize = SIZES.find((s) => s.id === selectedSize)!;
+const SizeButton: React.FC<SizeButtonProps> = ({ size, isSelected, onSelect }) => (
+  <button
+    onClick={() => onSelect(size.id)}
+    aria-pressed={isSelected}
+    aria-label={`Size ${size.label} — ₹${size.price}`}
+    className={`
+      flex flex-col items-center justify-center min-h-[56px] px-2 py-3
+      rounded-2xl border-2 transition-all duration-200 active:scale-95
+      ${
+        isSelected
+          ? 'border-primary bg-primary/10 shadow-[0_0_16px_rgba(250,203,21,0.15)]'
+          : 'border-white/8 bg-white/[0.03] hover:border-white/20'
+      }
+    `}
+  >
+    <span
+      className={`text-base font-black leading-none ${
+        isSelected ? 'text-primary' : 'text-white'
+      }`}
+    >
+      {size.label}
+    </span>
+    <span className="text-[9px] font-semibold text-white/40 mt-1">{size.dim}</span>
+    <span
+      className={`text-[11px] font-black mt-1 ${
+        isSelected ? 'text-primary' : 'text-white/60'
+      }`}
+    >
+      ₹{size.price}{' '}
+      <span className="line-through opacity-40 text-[9px]">₹{size.strikePrice}</span>
+    </span>
+  </button>
+);
+
+// ─── Main Component ──────────────────────────────────────────────────────────
+export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
+  const [selectedSize, setSelectedSize] = useState(SIZES[1].id); // A5 default
+  const [cartState, setCartState] = useState<'idle' | 'added'>('idle');
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { addToCart, freeGiftMessage } = useCart();
+
+  const currentSize = SIZES.find((s) => s.id === selectedSize) ?? SIZES[1];
   const discount = Math.round(
     ((currentSize.strikePrice - currentSize.price) / currentSize.strikePrice) * 100
   );
 
-  const handleAdd = () => {
+  const handleAddToCart = useCallback(() => {
     addToCart(product, selectedSize);
-    setAddedState('added');
-    setTimeout(() => setAddedState('idle'), 2000);
-  };
+    setCartState('added');
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setCartState('idle'), 2000);
+  }, [addToCart, product, selectedSize]);
+
+  const handleBuyNow = useCallback(() => {
+    addToCart(product, selectedSize);
+  }, [addToCart, product, selectedSize]);
 
   return (
     <div className="flex flex-col h-full min-h-0">
-      {/* ━━━━━━━━━━ SCROLLABLE MIDDLE ━━━━━━━━━━ */}
+      {/* Scrollable Content */}
       <div className="flex-1 overflow-y-auto overscroll-contain">
-
-        {/* ── 1. Image — 30-40% of viewport, centered ── */}
-        <div className="px-4 pt-1">
-          <div className="w-full max-h-[25dvh] max-w-[220px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black shadow-[0_8px_32px_rgba(0,0,0,0.4)] mx-auto">
+        {/* 1 — Product Image (compact, well-contained) */}
+        <div className="px-4 pt-1 flex justify-center">
+          <div className="w-full max-h-[22dvh] max-w-[180px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
             <img
               src={product.image}
               alt={product.title}
               loading="eager"
               decoding="async"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-              }}
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
 
-        {/* ── 2. Title + Category + Price ── */}
-        <div className="px-4 pt-4">
-          {/* Category badge */}
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 900,
-              color: '#FACB15',
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-            }}
-          >
+        {/* 2 — Title, Category & Price */}
+        <div className="px-4 pt-3">
+          <span className="text-[10px] font-black text-primary uppercase tracking-widest">
             {product.category}
           </span>
 
-          {/* Title */}
-          <h2
-            style={{
-              fontSize: 22,
-              fontWeight: 900,
-              color: '#fff',
-              lineHeight: 1.15,
-              marginTop: 4,
-              letterSpacing: '-0.02em',
-            }}
-          >
+          <h2 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
             {product.title}
           </h2>
 
-          {/* Price row */}
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 8 }}>
-            <span style={{ fontSize: 28, fontWeight: 900, color: '#FACB15' }}>
+          <div className="flex items-baseline gap-2 mt-1.5">
+            <span className="text-2xl font-black text-primary">
               ₹{currentSize.price}
             </span>
-            <span
-              style={{
-                fontSize: 14,
-                color: '#a1a1aa',
-                textDecoration: 'line-through',
-                opacity: 0.6,
-              }}
-            >
+            <span className="text-sm text-muted line-through opacity-60">
               ₹{currentSize.strikePrice}
             </span>
-            <span
-              style={{
-                fontSize: 10,
-                fontWeight: 900,
-                color: '#4ade80',
-                background: 'rgba(74,222,128,0.1)',
-                padding: '2px 8px',
-                borderRadius: 100,
-              }}
-            >
+            <span className="text-[10px] font-black text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">
               {discount}% OFF
             </span>
           </div>
         </div>
 
-        {/* ── 3. Size Selection — 2×2 Grid ── */}
-        <div className="px-4 pt-4">
-          <label
-            style={{
-              fontSize: 11,
-              fontWeight: 800,
-              color: 'rgba(255,255,255,0.5)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              display: 'block',
-              marginBottom: 10,
-            }}
-          >
-            Select Size <span style={{ color: '#FACB15' }}>*</span>
-          </label>
-          <div className="grid grid-cols-2 gap-2.5">
-            {SIZES.map((size) => {
-              const isSelected = selectedSize === size.id;
-              return (
-                <button
-                  key={size.id}
-                  onClick={() => setSelectedSize(size.id)}
-                  className="flex flex-col items-center justify-center min-h-[48px] px-2 py-2.5 rounded-2xl border-2 transition-all duration-150 cursor-pointer active:scale-95"
-                  style={{
-                    borderColor: isSelected
-                      ? 'rgba(250,203,21,1)'
-                      : 'rgba(255,255,255,0.07)',
-                    background: isSelected
-                      ? 'rgba(250,203,21,0.1)'
-                      : 'rgba(255,255,255,0.03)',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 900,
-                      color: isSelected ? '#FACB15' : '#fff',
-                    }}
-                  >
-                    {size.label}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 9,
-                      fontWeight: 600,
-                      color: 'rgba(255,255,255,0.4)',
-                      marginTop: 2,
-                    }}
-                  >
-                    {size.dim}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 11,
-                      fontWeight: 800,
-                      color: isSelected ? '#FACB15' : 'rgba(255,255,255,0.6)',
-                      marginTop: 2,
-                    }}
-                  >
-                    ₹{size.price}{' '}
-                    <span
-                      style={{
-                        textDecoration: 'line-through',
-                        opacity: 0.4,
-                        fontSize: 9,
-                      }}
-                    >
-                      ₹{size.strikePrice}
-                    </span>
-                  </span>
-                </button>
-              );
-            })}
+        {/* 3 — Size Selection (visible without scrolling) */}
+        <div className="px-4 pt-3">
+          <p className="text-[11px] font-extrabold text-white/50 uppercase tracking-widest mb-2">
+            Select Size <span className="text-primary">*</span>
+          </p>
+          <div className="grid grid-cols-4 gap-2">
+            {SIZES.map((size) => (
+              <SizeButton
+                key={size.id}
+                size={size}
+                isSelected={selectedSize === size.id}
+                onSelect={setSelectedSize}
+              />
+            ))}
           </div>
         </div>
 
-        {/* ── 4. Bundle Offers — visually separated card ── */}
-        <div className="px-4 pt-3.5">
-          <div className="bg-white/5 border border-white/5 rounded-2xl p-3.5">
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-                marginBottom: 8,
-              }}
-            >
-              <span style={{ fontSize: 14 }}>🎁</span>
-              <span
-                style={{
-                  fontSize: 11,
-                  fontWeight: 900,
-                  color: '#FACB15',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                Bundle & Save
+        {/* 4 — Bundle Offer */}
+        <div className="px-4 pt-3">
+          <div className="bg-white/5 border border-white/5 rounded-2xl p-3">
+            <div className="flex items-center gap-1.5 mb-2">
+              <Gift className="w-3.5 h-3.5 text-primary" />
+              <span className="text-[11px] font-black text-primary uppercase tracking-widest">
+                Special Offer
               </span>
             </div>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr 1fr',
-                gap: 6,
-              }}
-            >
-              {[
-                { qty: 'Buy 5', bonus: '1 Free', tag: '🔥' },
-                { qty: 'Buy 10', bonus: '3 Free', tag: '⚡' },
-                { qty: 'Buy 20', bonus: '8 Free', tag: '🏆' },
-              ].map((o) => (
-                <div
-                  key={o.qty}
-                  style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    borderRadius: 10,
-                    padding: '8px 6px',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span style={{ fontSize: 12 }}>{o.tag}</span>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 800,
-                      color: '#fff',
-                      marginTop: 2,
-                    }}
-                  >
-                    {o.qty}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 9,
-                      fontWeight: 700,
-                      color: '#4ade80',
-                      marginTop: 1,
-                    }}
-                  >
-                    {o.bonus}
-                  </p>
-                </div>
-              ))}
+            <div className="bg-white/[0.04] rounded-xl p-3 flex items-center gap-3">
+              <span className="text-2xl" aria-hidden="true">🎁</span>
+              <div>
+                <p className="text-xs font-extrabold text-white">Buy 5 Posters → Get 1 Free</p>
+                <p className="text-[10px] text-muted font-medium mt-0.5">
+                  A mystery poster matching your selected size will be automatically added!
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ── 5. Delivery Info ── */}
-        <div className="flex flex-col gap-2 px-4 pt-3 pb-4">
-          <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-            <span
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                color: 'rgba(255,255,255,0.35)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 4,
-              }}
-            >
-              <Package style={{ width: 12, height: 12 }} /> Ships in 3–5 days
-            </span>
+        {/* Free gift notification */}
+        {freeGiftMessage && (
+          <div className="px-4 pt-2.5">
+            <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-2.5 flex items-center gap-2">
+              <span className="text-sm" aria-hidden="true">🎉</span>
+              <p className="text-[11px] font-bold text-green-400">{freeGiftMessage}</p>
+            </div>
           </div>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 600,
-              color: 'rgba(255,255,255,0.35)',
-            }}
-          >
-            *A minimal delivery charge will apply to every order based on your pincode.
-          </span>
+        )}
+
+        {/* 5 — Delivery Info */}
+        <div className="px-4 pt-2.5 pb-4 flex flex-col gap-1.5">
+          <p className="flex items-center gap-1.5 text-[10px] font-bold text-white/35">
+            <Package className="w-3 h-3 shrink-0" aria-hidden="true" />
+            Ships in 3–5 days
+          </p>
+          <p className="text-[10px] font-medium text-white/30 leading-relaxed">
+            * Delivery charges will be calculated based on your pincode.
+          </p>
         </div>
       </div>
 
-      {/* ━━━━━━━━━━ STICKY BOTTOM CTA ━━━━━━━━━━ */}
-      <div className="shrink-0 sticky bottom-0 flex gap-2.5 px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] bg-gradient-to-t from-[#111] from-80% to-[#111]/95 border-t border-white/5">
-        {/* Secondary: Add to Cart */}
+      {/* Sticky CTA Bar */}
+      <div className="shrink-0 flex gap-2.5 px-4 pt-3 pb-[max(14px,env(safe-area-inset-bottom))] bg-gradient-to-t from-surface from-80% to-surface/95 border-t border-white/5">
         <button
-          onClick={handleAdd}
-          className="shrink-0 w-[52px] h-[52px] rounded-2xl border-[1.5px] border-white/10 flex items-center justify-center transition-all duration-150 cursor-pointer active:scale-90"
-          style={{
-            background: addedState === 'added' ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.06)',
-            borderColor: addedState === 'added' ? '#22c55e' : 'rgba(255,255,255,0.08)',
-            color: addedState === 'added' ? '#4ade80' : '#fff',
-          }}
+          onClick={handleAddToCart}
+          aria-label={cartState === 'added' ? 'Added to cart' : 'Add to cart'}
+          className={`
+            shrink-0 w-[52px] h-[52px] rounded-2xl border-[1.5px] flex items-center
+            justify-center transition-all duration-200 active:scale-90
+            ${
+              cartState === 'added'
+                ? 'bg-green-500/15 border-green-500 text-green-400'
+                : 'bg-white/[0.06] border-white/10 text-white hover:bg-white/10'
+            }
+          `}
         >
-          {addedState === 'added' ? (
-            <Check style={{ width: 18, height: 18 }} />
+          {cartState === 'added' ? (
+            <Check className="w-[18px] h-[18px]" />
           ) : (
-            <ShoppingBag style={{ width: 18, height: 18 }} />
+            <ShoppingBag className="w-[18px] h-[18px]" />
           )}
         </button>
 
-        {/* Primary: Buy Now */}
-        <button onClick={handleAdd} className="flex-1 h-[52px] rounded-2xl border-none bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 cursor-pointer transition-all duration-150 active:scale-95">
-          <Zap style={{ width: 18, height: 18 }} />
+        <button
+          onClick={handleBuyNow}
+          className="flex-1 h-[52px] rounded-2xl bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 transition-transform duration-150 active:scale-95 hover:brightness-110"
+        >
+          <Zap className="w-[18px] h-[18px]" aria-hidden="true" />
           Buy Now — ₹{currentSize.price}
         </button>
       </div>

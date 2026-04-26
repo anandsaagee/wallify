@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingBag, ChevronLeft, CreditCard, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2 } from 'lucide-react';
+import { ShoppingBag, ChevronLeft, CreditCard, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 
 export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
@@ -23,13 +23,15 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
     e.preventDefault();
     if (step === 'details') setStep('payment');
     else if (step === 'payment') {
-      // Simulate order processing
       setTimeout(() => {
         setStep('success');
         clearCart();
       }, 1500);
     }
   };
+
+  const paidItems = cart.filter(item => !item.isFreeGift);
+  const freeItems = cart.filter(item => item.isFreeGift);
 
   if (step === 'success') {
     return (
@@ -41,7 +43,7 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <p className="text-muted text-sm max-w-[280px] mb-8">
           Thank you for your order. We'll send you a confirmation on WhatsApp shortly.
         </p>
-        <button 
+        <button
           onClick={onBack}
           className="w-full max-w-xs h-14 bg-white text-black font-black rounded-2xl active:scale-95 transition-all uppercase tracking-widest text-xs"
         >
@@ -62,7 +64,6 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       </div>
 
       <div className="grid grid-cols-1 gap-8">
-        {/* Form Sections */}
         <form onSubmit={handleSubmit} className="space-y-8">
           {step === 'details' && (
             <div className="space-y-6 animate-in slide-in-from-right-4 duration-300">
@@ -70,7 +71,7 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 <MapPin size={18} className="text-primary" />
                 <h2 className="text-sm font-black uppercase tracking-widest">Delivery Address</h2>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-black uppercase text-muted ml-1">Full Name</label>
@@ -112,7 +113,7 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 <CreditCard size={18} className="text-primary" />
                 <h2 className="text-sm font-black uppercase tracking-widest">Payment Method</h2>
               </div>
-              
+
               <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex gap-4 items-start">
                 <div className="p-2 bg-primary/20 rounded-lg text-primary">
                   <ShieldCheck size={20} />
@@ -128,18 +129,30 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 </div>
               </div>
 
-              {/* Order Summary in Payment Step */}
+              {/* Order Summary */}
               <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-4">
                 <h3 className="text-[10px] font-black uppercase text-muted tracking-widest">Order Summary</h3>
                 <div className="space-y-3">
-                  {cart.slice(0, 3).map(item => (
+                  {paidItems.slice(0, 4).map(item => (
                     <div key={item.variantId} className="flex justify-between text-xs font-bold">
-                      <span className="text-muted">{item.title} ({item.size}) <span className="text-white/30 ml-1">×{item.quantity}</span></span>
-                      <span>₹{item.price * item.quantity}</span>
+                      <span className="text-muted truncate mr-2">{item.title} ({item.size}) <span className="text-white/30 ml-1">×{item.quantity}</span></span>
+                      <span className="shrink-0">₹{item.price * item.quantity}</span>
                     </div>
                   ))}
-                  {cart.length > 3 && <p className="text-[10px] text-muted font-bold italic">+ {cart.length - 3} more items</p>}
+                  {paidItems.length > 4 && <p className="text-[10px] text-muted font-bold italic">+ {paidItems.length - 4} more items</p>}
+
+                  {/* Free gifts */}
+                  {freeItems.map(item => (
+                    <div key={item.variantId} className="flex justify-between text-xs font-bold">
+                      <span className="text-green-400 flex items-center gap-1.5">
+                        <Gift className="w-3 h-3" />
+                        {item.title} ({item.size}) <span className="text-green-400/40 ml-1">×{item.quantity}</span>
+                      </span>
+                      <span className="text-green-400">FREE</span>
+                    </div>
+                  ))}
                 </div>
+
                 <div className="pt-4 border-t border-white/10 space-y-2">
                   <div className="flex justify-between text-sm font-black uppercase tracking-tighter">
                     <span>Total Amount</span>
@@ -150,11 +163,25 @@ export const Checkout: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </div>
           )}
 
-          {/* Sticky CTA Button */}
+          {/* Delivery charge notice */}
+          <div className="flex items-start gap-3 bg-white/[0.03] border border-white/5 rounded-2xl p-4">
+            <div className="shrink-0 w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center">
+              <Info className="w-4 h-4 text-blue-400" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-white/80">Delivery Charges</p>
+              <p className="text-[11px] text-muted mt-0.5 leading-relaxed">
+                Delivery charges will be calculated based on your pincode.
+              </p>
+            </div>
+          </div>
+
+          {/* Sticky CTA */}
           <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-background/0 lg:static lg:p-0">
-            <button 
+            <button
               type="submit"
-              className="w-full max-w-2xl mx-auto h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_8px_32px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs"
+              disabled={cart.length === 0}
+              className="w-full max-w-2xl mx-auto h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_8px_32px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {step === 'details' ? 'Next: Payment' : `Place Order — ₹${totals.finalTotal}`}
             </button>

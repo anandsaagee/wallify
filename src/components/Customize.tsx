@@ -1,6 +1,6 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { Upload, X, ChevronRight, ShoppingBag, Zap, Type, AlignLeft, AlignCenter, AlignRight, Layout, Palette } from 'lucide-react';
-import { SIZES, BUNDLE_OFFERS } from '../data/config';
+import { SIZES } from '../data/config';
 import { useCart } from '../hooks/useCart';
 
 const FONTS = [
@@ -47,13 +47,9 @@ export const Customize: React.FC = () => {
   
   const totals = useMemo(() => {
     const subtotal = currentSize.price * quantity;
-    let freeCount = 0;
-    if (quantity >= 20) freeCount = 8;
-    else if (quantity >= 10) freeCount = 3;
-    else if (quantity >= 5) freeCount = 1;
-
-    const discount = freeCount * currentSize.price;
-    return { subtotal, discount, total: Math.max(0, subtotal - discount), freeCount };
+    // Buy 5 Get 1 Free mystery poster — no price discount, just free items
+    const freeCount = Math.floor(quantity / 5);
+    return { subtotal, total: subtotal, freeCount };
   }, [currentSize, quantity]);
 
   const handleAddToBag = () => {
@@ -290,16 +286,16 @@ export const Customize: React.FC = () => {
 
         {/* Pricing Summary & Checkout */}
         <div className="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-4">
-          <div className="space-y-2 text-sm text-muted font-medium">
-            <div className="flex justify-between"><span>Unit Price ({currentSize.label})</span><span className="text-white">₹{currentSize.price}</span></div>
-            <div className="flex justify-between"><span>Subtotal ({quantity} items)</span><span className="text-white">₹{totals.subtotal}</span></div>
-            {totals.discount > 0 && (
-              <div className="flex justify-between text-green-400">
-                <span>Bundle Discount ({totals.freeCount} posters free)</span>
-                <span>-₹{totals.discount}</span>
-              </div>
-            )}
-          </div>
+            <div className="space-y-2 text-sm text-muted font-medium">
+              <div className="flex justify-between"><span>Unit Price ({currentSize.label})</span><span className="text-white">₹{currentSize.price}</span></div>
+              <div className="flex justify-between"><span>Subtotal ({quantity} items)</span><span className="text-white">₹{totals.subtotal}</span></div>
+              {totals.freeCount > 0 && (
+                <div className="flex justify-between text-green-400">
+                  <span>🎁 Free Mystery Posters</span>
+                  <span>+{totals.freeCount} free</span>
+                </div>
+              )}
+            </div>
           <div className="pt-4 border-t border-white/10 flex justify-between items-end">
             <div>
               <p className="text-[10px] font-black uppercase text-muted mb-1 tracking-widest">Total cost</p>

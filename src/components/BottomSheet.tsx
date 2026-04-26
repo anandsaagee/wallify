@@ -8,31 +8,27 @@ interface BottomSheetProps {
   children: React.ReactNode;
 }
 
-export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, children }) => {
-  // Lock body scroll when sheet is open
+export const BottomSheet: React.FC<BottomSheetProps> = ({
+  isOpen,
+  onClose,
+  children,
+}) => {
+  // Lock body scroll when the sheet is open, restoring position on close
   useEffect(() => {
-    if (isOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.overflow = 'hidden';
-    } else {
-      const top = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.overflow = '';
-      if (top) window.scrollTo(0, parseInt(top) * -1);
-    }
+    if (!isOpen) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+
     return () => {
       document.body.style.position = '';
       document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
     };
   }, [isOpen]);
 
@@ -45,23 +41,23 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
   );
 
   useEffect(() => {
-    if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      return () => document.removeEventListener('keydown', handleKeyDown);
-    }
+    if (!isOpen) return;
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, handleKeyDown]);
 
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* ── Backdrop ── */}
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
+            aria-hidden="true"
             className="fixed inset-0 z-[100]"
             style={{
               background: 'rgba(0,0,0,0.75)',
@@ -70,8 +66,11 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
             }}
           />
 
-          {/* ── Bottom Sheet ── */}
+          {/* Sheet */}
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Product details"
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
@@ -82,42 +81,22 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
             onDragEnd={(_, info) => {
               if (info.offset.y > 80 || info.velocity.y > 400) onClose();
             }}
-            className="fixed left-0 right-0 mx-auto sm:max-w-[440px] bottom-0 z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] h-auto bg-[#111111] rounded-t-3xl border-t border-white/5 shadow-[0_-16px_80px_rgba(0,0,0,0.7)] overflow-hidden will-change-transform"
-            role="dialog"
-            aria-modal="true"
+            className="fixed bottom-0 left-0 right-0 mx-auto z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] sm:max-w-[440px] bg-surface rounded-t-3xl border-t border-white/5 shadow-[0_-16px_80px_rgba(0,0,0,0.7)] overflow-hidden will-change-transform"
           >
-            {/* ── Fixed Header: grab handle + close ── */}
+            {/* Header: grab handle + close */}
             <div className="shrink-0 relative">
               {/* Grab handle */}
               <div className="flex justify-center pt-3 pb-2">
-                <div
-                  style={{
-                    width: 40,
-                    height: 4,
-                    borderRadius: 100,
-                    background: 'rgba(255,255,255,0.2)',
-                  }}
-                />
+                <div className="w-10 h-1 rounded-full bg-white/20" />
               </div>
 
-              {/* Close button — large, thumb-friendly, spaced from edge */}
+              {/* Close button */}
               <button
                 onClick={onClose}
                 aria-label="Close"
-                className="absolute z-30 active:scale-90 transition-transform"
-                style={{
-                  top: 14,
-                  right: 16,
-                  width: 40,
-                  height: 40,
-                  borderRadius: 20,
-                  background: 'rgba(255,255,255,0.08)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
+                className="absolute top-3.5 right-4 z-30 w-10 h-10 rounded-full bg-white/[0.08] flex items-center justify-center transition-transform duration-150 active:scale-90 hover:bg-white/15"
               >
-                <X style={{ width: 20, height: 20, color: '#fff' }} />
+                <X className="w-5 h-5 text-white" />
               </button>
             </div>
 

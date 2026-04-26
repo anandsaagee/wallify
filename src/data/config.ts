@@ -5,8 +5,10 @@ export const SIZES = [
   { id: 'A3', label: 'A3', dim: '29.7×42 cm', price: 99, strikePrice: 149 },
 ];
 
-export const BUNDLE_OFFERS = [
-  { qty: 5, free: 1, label: 'Buy 5 Get 1 Free' },
-  { qty: 10, free: 3, label: 'Buy 10 Get 3 Free' },
-  { qty: 20, free: 8, label: 'Buy 20 Get 8 Free' },
-];
+// Buy 5 posters → Get 1 Mystery Poster Free
+export const BUNDLE_OFFER = {
+  requiredQty: 5,
+  freeQty: 1,
+  label: 'Buy 5 Get 1 Free',
+  description: 'A mystery poster matching your selected size will be automatically added!',
+};

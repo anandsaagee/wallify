@@ -1,23 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* ======================================================
-   MOBILE-FIRST HARD OVERRIDES
-   These live in plain CSS so Tailwind JIT cannot miss them
-   ====================================================== */
-
-/* 1. Prevent the page from ever being wider than the screen */
-html, body, #root {
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-  width: 100% !important;
-}
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ======================================================
+   BASE LAYER
+   ====================================================== */
 @layer base {
   :root {
     --bg-color: #0a0a0a;
@@ -33,10 +22,8 @@ html, body, #root {
   }
 
   html {
-    /* Prevent horizontal overflow globally */
     overflow-x: hidden;
     max-width: 100%;
-    /* Smooth scroll everywhere */
     scroll-behavior: smooth;
   }
 
@@ -44,22 +31,30 @@ html, body, #root {
     @apply bg-background text-white antialiased;
     font-family: 'Inter', sans-serif;
     -webkit-tap-highlight-color: transparent;
-    /* Kill horizontal scroll */
     overflow-x: hidden;
     max-width: 100%;
-    /* Performance: isolate compositing layers */
     isolation: isolate;
   }
 
+  /* Prevent layout shift during image load */
   img {
-    /* Prevent layout shift during image load */
     display: block;
     max-width: 100%;
     height: auto;
   }
+
+  /* Input focus ring — visible but non-intrusive */
+  input:focus-visible {
+    outline: 2px solid rgba(250, 203, 21, 0.6);
+    outline-offset: 2px;
+  }
 }
 
+/* ======================================================
+   COMPONENT LAYER
+   ====================================================== */
 @layer components {
+  /* Primary action button */
   .btn-primary {
     @apply flex items-center justify-center bg-primary text-black font-bold rounded-full;
     transition: transform 150ms ease, opacity 150ms ease;
@@ -69,6 +64,7 @@ html, body, #root {
     transform: scale(0.95);
   }
 
+  /* Glassmorphism surface */
   .glass {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
@@ -76,36 +72,49 @@ html, body, #root {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Scrollbar Styling - Modern & Subtle */
+  /* Scrollbar — subtle, brand-accented on hover */
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
   }
-
   ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
   }
-
   ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    transition: background 0.2s ease;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(250, 203, 21, 0.4);
   }
 
-  /* Hide scrollbar cross-browser utility */
-  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  /* Hide scrollbar utility */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 }
 
-/* ─── Smooth card reveal (staggered by JS animationDelay) ─── */
+/* ======================================================
+   GLOBAL TOUCH IMPROVEMENTS
+   ====================================================== */
+button,
+a,
+[role='button'] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+/* ======================================================
+   ANIMATIONS
+   ====================================================== */
+
+/* Staggered card reveal — delay set via JS animationDelay */
 .reveal-fade {
   opacity: 0;
   animation: fadeIn 0.35s ease-out forwards;
@@ -114,23 +123,17 @@ html, body, #root {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  .reveal-fade {
-    animation: none;
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
     opacity: 1;
-  }
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    transform: translateY(0);
   }
 }
 
-/* ─── Hero Animations ─── */
+/* Hero background poster float */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-16px); }
@@ -140,27 +143,24 @@ html, body, #root {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Hero radial mask — makes the background poster grid fade at edges */
+/* Hero radial edge fade */
 .mask-hero-radial {
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
 }
 
-/* ─── Touch improvements ─── */
-button, a, [role="button"] {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
+/* ======================================================
+   REDUCED MOTION
+   ====================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-fade {
+    animation: none;
+    opacity: 1;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
-/* ─── Input focus ring ─── */
-input:focus-visible {
-  outline: 2px solid rgba(250, 203, 21, 0.6);
-  outline-offset: 2px;
-}
-
-
-
-
-
-
