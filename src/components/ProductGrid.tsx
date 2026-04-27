@@ -1,5 +1,5 @@
 import React, { memo, useState, useMemo, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp } from 'lucide-react';
 
 export interface Product {
   id: string;
@@ -21,6 +21,12 @@ const FALLBACK_IMAGE =
 
 const ProductCard: React.FC<ProductCardProps> = memo(({ product, onClick }) => {
   const [loaded, setLoaded] = React.useState(false);
+
+  // Deterministically flag ~10% of products as Best Sellers for the UI
+  const isBestSeller = useMemo(() => {
+    const numId = parseInt(product.id.replace(/\D/g, ''), 10);
+    return !isNaN(numId) && numId > 0 && numId % 9 === 0;
+  }, [product.id]);
 
   return (
     <article
@@ -49,6 +55,15 @@ const ProductCard: React.FC<ProductCardProps> = memo(({ product, onClick }) => {
           }`}
         />
         <div className="absolute inset-0 bg-black/0 active:bg-black/10 transition-colors duration-150" />
+        
+        {/* Best Seller Badge */}
+        {isBestSeller && (
+          <div className="absolute top-2 left-2 flex items-center gap-1 z-10 bg-primary text-black text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md">
+            <TrendingUp className="w-3 h-3" />
+            <span className="hidden sm:inline">Best Seller</span>
+            <span className="sm:hidden">Hot</span>
+          </div>
+        )}
       </div>
 
       <div className="px-0.5">
