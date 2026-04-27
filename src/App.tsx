@@ -179,4 +179,4 @@ const App: React.FC = () => (
   </CartProvider>
 );
 
-export default App;
+export default App; // Trigger Vercel redeploy
