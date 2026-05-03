@@ -2893,7 +2893,7 @@ export const products = [
         "title": "classic cars 001",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20001.webp",
+        "image": "assets/classic cars/classic%20cars%20001.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 001.webp",
         "label": "classic cars 001.webp"
     },
@@ -2902,7 +2902,7 @@ export const products = [
         "title": "classic cars 002",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20002.webp",
+        "image": "assets/classic cars/classic%20cars%20002.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 002.webp",
         "label": "classic cars 002.webp"
     },
@@ -2911,7 +2911,7 @@ export const products = [
         "title": "classic cars 003",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20003.webp",
+        "image": "assets/classic cars/classic%20cars%20003.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 003.webp",
         "label": "classic cars 003.webp"
     },
@@ -2920,7 +2920,7 @@ export const products = [
         "title": "classic cars 004",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20004.webp",
+        "image": "assets/classic cars/classic%20cars%20004.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 004.webp",
         "label": "classic cars 004.webp"
     },
@@ -2929,7 +2929,7 @@ export const products = [
         "title": "classic cars 005",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20005.webp",
+        "image": "assets/classic cars/classic%20cars%20005.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 005.webp",
         "label": "classic cars 005.webp"
     },
@@ -2938,7 +2938,7 @@ export const products = [
         "title": "classic cars 006",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20006.webp",
+        "image": "assets/classic cars/classic%20cars%20006.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 006.webp",
         "label": "classic cars 006.webp"
     },
@@ -2947,7 +2947,7 @@ export const products = [
         "title": "classic cars 007",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20007.webp",
+        "image": "assets/classic cars/classic%20cars%20007.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 007.webp",
         "label": "classic cars 007.webp"
     },
@@ -2956,7 +2956,7 @@ export const products = [
         "title": "classic cars 008",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20008.webp",
+        "image": "assets/classic cars/classic%20cars%20008.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 008.webp",
         "label": "classic cars 008.webp"
     },
@@ -2965,7 +2965,7 @@ export const products = [
         "title": "classic cars 009",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20009.webp",
+        "image": "assets/classic cars/classic%20cars%20009.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 009.webp",
         "label": "classic cars 009.webp"
     },
@@ -2974,7 +2974,7 @@ export const products = [
         "title": "classic cars 010",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20010.webp",
+        "image": "assets/classic cars/classic%20cars%20010.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 010.webp",
         "label": "classic cars 010.webp"
     },
@@ -2983,7 +2983,7 @@ export const products = [
         "title": "classic cars 011",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20011.webp",
+        "image": "assets/classic cars/classic%20cars%20011.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 011.webp",
         "label": "classic cars 011.webp"
     },
@@ -2992,7 +2992,7 @@ export const products = [
         "title": "classic cars 012",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20012.webp",
+        "image": "assets/classic cars/classic%20cars%20012.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 012.webp",
         "label": "classic cars 012.webp"
     },
@@ -3001,7 +3001,7 @@ export const products = [
         "title": "classic cars 013",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20013.webp",
+        "image": "assets/classic cars/classic%20cars%20013.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 013.webp",
         "label": "classic cars 013.webp"
     },
@@ -3010,7 +3010,7 @@ export const products = [
         "title": "classic cars 014",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20014.webp",
+        "image": "assets/classic cars/classic%20cars%20014.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 014.webp",
         "label": "classic cars 014.webp"
     },
@@ -3019,7 +3019,7 @@ export const products = [
         "title": "classic cars 015",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20015.webp",
+        "image": "assets/classic cars/classic%20cars%20015.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 015.webp",
         "label": "classic cars 015.webp"
     },
@@ -3028,7 +3028,7 @@ export const products = [
         "title": "classic cars 016",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20016.webp",
+        "image": "assets/classic cars/classic%20cars%20016.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 016.webp",
         "label": "classic cars 016.webp"
     },
@@ -3037,7 +3037,7 @@ export const products = [
         "title": "classic cars 017",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20017.webp",
+        "image": "assets/classic cars/classic%20cars%20017.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 017.webp",
         "label": "classic cars 017.webp"
     },
@@ -3046,7 +3046,7 @@ export const products = [
         "title": "classic cars 018",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20018.webp",
+        "image": "assets/classic cars/classic%20cars%20018.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 018.webp",
         "label": "classic cars 018.webp"
     },
@@ -3055,7 +3055,7 @@ export const products = [
         "title": "classic cars 019",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20019.webp",
+        "image": "assets/classic cars/classic%20cars%20019.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 019.webp",
         "label": "classic cars 019.webp"
     },
@@ -3064,7 +3064,7 @@ export const products = [
         "title": "classic cars 020",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20020.webp",
+        "image": "assets/classic cars/classic%20cars%20020.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 020.webp",
         "label": "classic cars 020.webp"
     },
@@ -3073,7 +3073,7 @@ export const products = [
         "title": "classic cars 021",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20021.webp",
+        "image": "assets/classic cars/classic%20cars%20021.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 021.webp",
         "label": "classic cars 021.webp"
     },
@@ -3082,7 +3082,7 @@ export const products = [
         "title": "classic cars 022",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20022.webp",
+        "image": "assets/classic cars/classic%20cars%20022.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 022.webp",
         "label": "classic cars 022.webp"
     },
@@ -3091,7 +3091,7 @@ export const products = [
         "title": "classic cars 023",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20023.webp",
+        "image": "assets/classic cars/classic%20cars%20023.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 023.webp",
         "label": "classic cars 023.webp"
     },
@@ -3100,7 +3100,7 @@ export const products = [
         "title": "classic cars 024",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20024.webp",
+        "image": "assets/classic cars/classic%20cars%20024.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 024.webp",
         "label": "classic cars 024.webp"
     },
@@ -3109,7 +3109,7 @@ export const products = [
         "title": "classic cars 025",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20025.webp",
+        "image": "assets/classic cars/classic%20cars%20025.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 025.webp",
         "label": "classic cars 025.webp"
     },
@@ -3118,7 +3118,7 @@ export const products = [
         "title": "classic cars 026",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20026.webp",
+        "image": "assets/classic cars/classic%20cars%20026.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 026.webp",
         "label": "classic cars 026.webp"
     },
@@ -3127,7 +3127,7 @@ export const products = [
         "title": "classic cars 027",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20027.webp",
+        "image": "assets/classic cars/classic%20cars%20027.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 027.webp",
         "label": "classic cars 027.webp"
     },
@@ -3136,7 +3136,7 @@ export const products = [
         "title": "classic cars 028",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20028.webp",
+        "image": "assets/classic cars/classic%20cars%20028.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 028.webp",
         "label": "classic cars 028.webp"
     },
@@ -3145,7 +3145,7 @@ export const products = [
         "title": "classic cars 029",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20029.webp",
+        "image": "assets/classic cars/classic%20cars%20029.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 029.webp",
         "label": "classic cars 029.webp"
     },
@@ -3154,7 +3154,7 @@ export const products = [
         "title": "classic cars 030",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20030.webp",
+        "image": "assets/classic cars/classic%20cars%20030.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 030.webp",
         "label": "classic cars 030.webp"
     },
@@ -3163,7 +3163,7 @@ export const products = [
         "title": "classic cars 031",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20031.webp",
+        "image": "assets/classic cars/classic%20cars%20031.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 031.webp",
         "label": "classic cars 031.webp"
     },
@@ -3172,7 +3172,7 @@ export const products = [
         "title": "classic cars 032",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20032.webp",
+        "image": "assets/classic cars/classic%20cars%20032.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 032.webp",
         "label": "classic cars 032.webp"
     },
@@ -3181,7 +3181,7 @@ export const products = [
         "title": "classic cars 033",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20033.webp",
+        "image": "assets/classic cars/classic%20cars%20033.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 033.webp",
         "label": "classic cars 033.webp"
     },
@@ -3190,7 +3190,7 @@ export const products = [
         "title": "classic cars 034",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20034.webp",
+        "image": "assets/classic cars/classic%20cars%20034.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 034.webp",
         "label": "classic cars 034.webp"
     },
@@ -3199,7 +3199,7 @@ export const products = [
         "title": "classic cars 035",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20035.webp",
+        "image": "assets/classic cars/classic%20cars%20035.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 035.webp",
         "label": "classic cars 035.webp"
     },
@@ -3208,7 +3208,7 @@ export const products = [
         "title": "classic cars 036",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20036.webp",
+        "image": "assets/classic cars/classic%20cars%20036.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 036.webp",
         "label": "classic cars 036.webp"
     },
@@ -3217,7 +3217,7 @@ export const products = [
         "title": "classic cars 037",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20037.webp",
+        "image": "assets/classic cars/classic%20cars%20037.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 037.webp",
         "label": "classic cars 037.webp"
     },
@@ -3226,7 +3226,7 @@ export const products = [
         "title": "classic cars 038",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20038.webp",
+        "image": "assets/classic cars/classic%20cars%20038.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 038.webp",
         "label": "classic cars 038.webp"
     },
@@ -3235,7 +3235,7 @@ export const products = [
         "title": "classic cars 039",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20039.webp",
+        "image": "assets/classic cars/classic%20cars%20039.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 039.webp",
         "label": "classic cars 039.webp"
     },
@@ -3244,7 +3244,7 @@ export const products = [
         "title": "classic cars 040",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20040.webp",
+        "image": "assets/classic cars/classic%20cars%20040.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 040.webp",
         "label": "classic cars 040.webp"
     },
@@ -3253,7 +3253,7 @@ export const products = [
         "title": "classic cars 041",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20041.webp",
+        "image": "assets/classic cars/classic%20cars%20041.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 041.webp",
         "label": "classic cars 041.webp"
     },
@@ -3262,7 +3262,7 @@ export const products = [
         "title": "classic cars 042",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20042.webp",
+        "image": "assets/classic cars/classic%20cars%20042.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 042.webp",
         "label": "classic cars 042.webp"
     },
@@ -3271,7 +3271,7 @@ export const products = [
         "title": "classic cars 043",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20043.webp",
+        "image": "assets/classic cars/classic%20cars%20043.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 043.webp",
         "label": "classic cars 043.webp"
     },
@@ -3280,7 +3280,7 @@ export const products = [
         "title": "classic cars 044",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20044.webp",
+        "image": "assets/classic cars/classic%20cars%20044.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 044.webp",
         "label": "classic cars 044.webp"
     },
@@ -3289,7 +3289,7 @@ export const products = [
         "title": "classic cars 045",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20045.webp",
+        "image": "assets/classic cars/classic%20cars%20045.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 045.webp",
         "label": "classic cars 045.webp"
     },
@@ -3298,7 +3298,7 @@ export const products = [
         "title": "classic cars 046",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20046.webp",
+        "image": "assets/classic cars/classic%20cars%20046.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 046.webp",
         "label": "classic cars 046.webp"
     },
@@ -3307,7 +3307,7 @@ export const products = [
         "title": "classic cars 047",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20047.webp",
+        "image": "assets/classic cars/classic%20cars%20047.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 047.webp",
         "label": "classic cars 047.webp"
     },
@@ -3316,7 +3316,7 @@ export const products = [
         "title": "classic cars 048",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20048.webp",
+        "image": "assets/classic cars/classic%20cars%20048.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 048.webp",
         "label": "classic cars 048.webp"
     },
@@ -3325,7 +3325,7 @@ export const products = [
         "title": "classic cars 049",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20049.webp",
+        "image": "assets/classic cars/classic%20cars%20049.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 049.webp",
         "label": "classic cars 049.webp"
     },
@@ -3334,7 +3334,7 @@ export const products = [
         "title": "classic cars 050",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20050.webp",
+        "image": "assets/classic cars/classic%20cars%20050.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 050.webp",
         "label": "classic cars 050.webp"
     },
@@ -3343,7 +3343,7 @@ export const products = [
         "title": "classic cars 051",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20051.webp",
+        "image": "assets/classic cars/classic%20cars%20051.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 051.webp",
         "label": "classic cars 051.webp"
     },
@@ -3352,7 +3352,7 @@ export const products = [
         "title": "classic cars 052",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20052.webp",
+        "image": "assets/classic cars/classic%20cars%20052.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 052.webp",
         "label": "classic cars 052.webp"
     },
@@ -3361,7 +3361,7 @@ export const products = [
         "title": "classic cars 053",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20053.webp",
+        "image": "assets/classic cars/classic%20cars%20053.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 053.webp",
         "label": "classic cars 053.webp"
     },
@@ -3370,7 +3370,7 @@ export const products = [
         "title": "classic cars 054",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20054.webp",
+        "image": "assets/classic cars/classic%20cars%20054.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 054.webp",
         "label": "classic cars 054.webp"
     },
@@ -3379,7 +3379,7 @@ export const products = [
         "title": "classic cars 055",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20055.webp",
+        "image": "assets/classic cars/classic%20cars%20055.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 055.webp",
         "label": "classic cars 055.webp"
     },
@@ -3388,7 +3388,7 @@ export const products = [
         "title": "classic cars 056",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20056.webp",
+        "image": "assets/classic cars/classic%20cars%20056.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 056.webp",
         "label": "classic cars 056.webp"
     },
@@ -3397,7 +3397,7 @@ export const products = [
         "title": "classic cars 057",
         "category": "Classic Cars",
         "basePrice": 33.0,
-        "image": "assets/classic%20cars/classic%20cars%20057.webp",
+        "image": "assets/classic cars/classic%20cars%20057.webp",
         "description": "Premium Classic Cars Posters wall art. classic cars 057.webp",
         "label": "classic cars 057.webp"
     },
