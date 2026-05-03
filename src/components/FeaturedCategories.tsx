@@ -13,7 +13,7 @@ const FEATURED = [
   { name: 'Automotive', sub: 'Cars & Speed' },
   { name: 'Classic Cars', sub: 'Vintage Machines' },
   { name: 'Football', sub: 'Football Legends' },
-  { name: 'Hollywood', sub: 'Cinema Icons' },
+  { name: 'Mollywood', sub: 'Cinema Icons' },
 ] as const;
 
 const scrollToCollection = () => {
