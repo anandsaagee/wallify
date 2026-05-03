@@ -1,73 +1,99 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { products } from './data/products';
 import { Header } from './components/Header';
 import { CategoryFilter } from './components/CategoryFilter';
+import { SizeFilter } from './components/SizeFilter';
 import { ProductGrid } from './components/ProductGrid';
 import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
 import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
 import { FeaturedCategories } from './components/FeaturedCategories';
-import { Customize } from './components/Customize';
+import { Pricing } from './components/Pricing';
+import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Search, X, Gift } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-type View = 'store' | 'customize' | 'checkout';
+type View = 'store' | 'checkout';
 
-interface Product {
+interface ProductData {
   id: string;
   title: string;
   category: string;
-  basePrice: number;
   image: string;
 }
 
-// ─── Free Gift Toast ─────────────────────────────────────────────────────────
 const FreeGiftToast: React.FC = () => {
-  const { freeGiftMessage } = useCart();
+  const { totals } = useCart();
 
-  if (!freeGiftMessage) return null;
+  if (totals.eligibleFreeGifts <= 0 || totals.freeGiftCount >= totals.eligibleFreeGifts) return null;
 
   return (
-    <div className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-[90] animate-in slide-in-from-bottom-4 duration-300">
-      <div className="bg-surface border border-green-500/20 rounded-2xl p-3.5 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-        <div className="shrink-0 w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
-          <Gift className="w-5 h-5 text-green-400" />
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-[90]"
+    >
+      <div className="bg-surface border border-primary/20 rounded-2xl p-3.5 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+        <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+          <Gift className="w-5 h-5 text-primary" />
         </div>
-        <p className="text-xs font-bold text-white leading-snug">{freeGiftMessage}</p>
+        <div>
+          <p className="text-xs font-bold text-white leading-snug">
+            You unlocked {totals.eligibleFreeGifts} free poster{totals.eligibleFreeGifts > 1 ? 's' : ''}!
+          </p>
+          <p className="text-[10px] text-muted font-medium mt-0.5">
+            Go to your bag to choose them
+          </p>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-// ─── Main App ────────────────────────────────────────────────────────────────
 const AppContent: React.FC = () => {
   const [view, setView] = useState<View>('store');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedSize, setSelectedSize] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
+  const collectionRef = useRef<HTMLDivElement>(null);
 
   const handleSetView = useCallback((nextView: View) => {
     setView(nextView);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
-  const filteredProducts = useMemo(
-    () =>
-      products.filter((p) => {
-        const matchesCategory =
-          selectedCategory === 'All' || p.category === selectedCategory;
-        const matchesSearch = p.title
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase().trim());
-        return matchesCategory && matchesSearch;
-      }),
-    [selectedCategory, searchQuery]
-  );
+  const scrollToCollection = useCallback(() => {
+    document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((p) => {
+      const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
+      const matchesSearch =
+        !searchQuery.trim() ||
+        p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.category.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
 
   const handleClearFilters = useCallback(() => {
     setSearchQuery('');
     setSelectedCategory('All');
+    setSelectedSize('All');
+  }, []);
+
+  // Close bottom sheet on Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProduct(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
@@ -75,27 +101,33 @@ const AppContent: React.FC = () => {
       <Header currentView={view} setView={handleSetView} />
 
       <div className={view === 'store' ? '' : 'pt-24'}>
-        {view === 'customize' && <Customize />}
-
-        {view === 'checkout' && <Checkout onBack={() => handleSetView('store')} />}
+        {view === 'checkout' && (
+          <Checkout onBack={() => handleSetView('store')} onProductClick={() => {}} />
+        )}
 
         {view === 'store' && (
           <>
-            <Hero />
-            <main className="pb-24">
+            {/* Hero */}
+            <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
+
+            <main className="pb-24" ref={collectionRef}>
+              {/* Pricing Section */}
+              <Pricing />
+
+              {/* Bulk Offers Section */}
+              <BulkOffers />
+
+              {/* Featured Categories */}
               <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
-              <div
-                id="category-filter-section"
-                className="px-4 mb-1 mt-8 flex items-center justify-between"
-              >
+              {/* Collection Header */}
+              <div id="collection-header" className="px-4 mb-1 mt-8 flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-black text-white tracking-tight">
                     The Collection
                   </h2>
                   <p className="text-xs text-muted mt-0.5">
-                    {filteredProducts.length} poster
-                    {filteredProducts.length !== 1 ? 's' : ''}
+                    {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
                   </p>
                 </div>
               </div>
@@ -126,11 +158,14 @@ const AppContent: React.FC = () => {
                 </div>
               </div>
 
+              {/* Filters */}
               <CategoryFilter
                 selectedCategory={selectedCategory}
                 onSelectCategory={setSelectedCategory}
               />
+              <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
 
+              {/* Product Grid */}
               {filteredProducts.length > 0 ? (
                 <ProductGrid
                   products={filteredProducts}
@@ -138,15 +173,9 @@ const AppContent: React.FC = () => {
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
-                  <span className="text-5xl mb-4" aria-hidden="true">
-                    🎨
-                  </span>
-                  <p className="text-white font-bold text-base">
-                    No posters found
-                  </p>
-                  <p className="text-muted text-sm mt-1">
-                    Try a different search or category
-                  </p>
+                  <span className="text-5xl mb-4">🎨</span>
+                  <p className="text-white font-bold text-base">No posters found</p>
+                  <p className="text-muted text-sm mt-1">Try a different search or category</p>
                   <button
                     onClick={handleClearFilters}
                     className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm active:scale-95 transition-transform duration-150"
@@ -160,10 +189,8 @@ const AppContent: React.FC = () => {
         )}
       </div>
 
-      <BottomSheet
-        isOpen={!!selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-      >
+      {/* Product Bottom Sheet */}
+      <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
         {selectedProduct && <ProductPreview product={selectedProduct} />}
       </BottomSheet>
 
@@ -179,4 +206,4 @@ const App: React.FC = () => (
   </CartProvider>
 );
 
-export default App; // Trigger Vercel redeploy
+export default App;

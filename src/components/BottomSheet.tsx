@@ -8,21 +8,14 @@ interface BottomSheetProps {
   children: React.ReactNode;
 }
 
-export const BottomSheet: React.FC<BottomSheetProps> = ({
-  isOpen,
-  onClose,
-  children,
-}) => {
-  // Lock body scroll when the sheet is open, restoring position on close
+export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, children }) => {
   useEffect(() => {
     if (!isOpen) return;
-
     const scrollY = window.scrollY;
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollY}px`;
     document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
-
     return () => {
       document.body.style.position = '';
       document.body.style.top = '';
@@ -32,7 +25,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     };
   }, [isOpen]);
 
-  // Close on Escape key
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -50,14 +42,12 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            aria-hidden="true"
             className="fixed inset-0 z-[100]"
             style={{
               background: 'rgba(0,0,0,0.75)',
@@ -65,8 +55,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
               WebkitBackdropFilter: 'blur(6px)',
             }}
           />
-
-          {/* Sheet */}
           <motion.div
             role="dialog"
             aria-modal="true"
@@ -83,14 +71,10 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
             }}
             className="fixed bottom-0 left-0 right-0 mx-auto z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] sm:max-w-[440px] bg-surface rounded-t-3xl border-t border-white/5 shadow-[0_-16px_80px_rgba(0,0,0,0.7)] overflow-hidden will-change-transform"
           >
-            {/* Header: grab handle + close */}
             <div className="shrink-0 relative">
-              {/* Grab handle */}
               <div className="flex justify-center pt-3 pb-2">
                 <div className="w-10 h-1 rounded-full bg-white/20" />
               </div>
-
-              {/* Close button */}
               <button
                 onClick={onClose}
                 aria-label="Close"
@@ -99,7 +83,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
                 <X className="w-5 h-5 text-white" />
               </button>
             </div>
-
             {children}
           </motion.div>
         </>

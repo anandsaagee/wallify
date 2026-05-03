@@ -11,7 +11,7 @@ export default {
         surface: '#111111',
         card: '#1a1a1a',
         border: '#2a2a2a',
-        primary: '#FACB15', // Accent soft yellow
+        primary: '#FACB15',
         muted: '#A1A1AA',
       },
       spacing: {

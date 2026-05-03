@@ -1,102 +1,106 @@
-import React, { memo, useState, useMemo, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, TrendingUp } from 'lucide-react';
+import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ITEMS_PER_PAGE, FALLBACK_IMAGE } from '../data/config';
 
 export interface Product {
   id: string;
   title: string;
   category: string;
-  basePrice: number;
   image: string;
 }
 
-// ─── Product Card ────────────────────────────────────────────────────────────
+const ProductCard: React.FC<{ product: Product; onClick: () => void; index: number }> = memo(
+  ({ product, onClick, index }) => {
+    const [loaded, setLoaded] = useState(false);
+    const [error, setError] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-interface ProductCardProps {
-  product: Product;
-  onClick: () => void;
-}
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '200px' }
+      );
+      if (cardRef.current) observer.observe(cardRef.current);
+      return () => observer.disconnect();
+    }, []);
 
-const FALLBACK_IMAGE =
-  'https://images.unsplash.com/photo-1598128558393-70ff22444bb0?auto=format&fit=crop&q=60&w=400';
+    const isBestSeller = useMemo(() => {
+      const numId = parseInt(product.id.replace(/\D/g, ''), 10);
+      return !isNaN(numId) && numId > 0 && numId % 9 === 0;
+    }, [product.id]);
 
-const ProductCard: React.FC<ProductCardProps> = memo(({ product, onClick }) => {
-  const [loaded, setLoaded] = React.useState(false);
+    return (
+      <div
+        ref={cardRef}
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && onClick()}
+        aria-label={`View ${product.title}`}
+        className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150"
+        style={{ animationDelay: `${index * 30}ms` }}
+      >
+        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
+          {!loaded && !error && (
+            <div className="absolute inset-0 bg-white/5 animate-pulse" aria-hidden="true" />
+          )}
+          {error && (
+            <div className="absolute inset-0 flex items-center justify-center bg-surface">
+              <span className="text-xs text-muted">Image unavailable</span>
+            </div>
+          )}
+          {isVisible && (
+            <img
+              src={product.image}
+              alt={product.title}
+              loading="lazy"
+              decoding="async"
+              onLoad={() => setLoaded(true)}
+              onError={() => setError(true)}
+              className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${
+                loaded ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          )}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-150" />
 
-  // Deterministically flag ~10% of products as Best Sellers for the UI
-  const isBestSeller = useMemo(() => {
-    const numId = parseInt(product.id.replace(/\D/g, ''), 10);
-    return !isNaN(numId) && numId > 0 && numId % 9 === 0;
-  }, [product.id]);
+          {isBestSeller && (
+            <div className="absolute top-2 left-2 z-10 bg-primary text-black text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1">
+              <TrendingUp className="w-3 h-3" />
+              <span className="hidden sm:inline">Best Seller</span>
+              <span className="sm:hidden">Hot</span>
+            </div>
+          )}
+        </div>
 
-  return (
-    <article
-      onClick={onClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && onClick()}
-      aria-label={`View ${product.title}`}
-      className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150"
-    >
-      <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
-        {!loaded && (
-          <div className="absolute inset-0 bg-white/5 animate-pulse" aria-hidden="true" />
-        )}
-        <img
-          src={product.image}
-          alt={product.title}
-          loading="lazy"
-          decoding="async"
-          onLoad={() => setLoaded(true)}
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
-          }}
-          className={`w-full h-full object-cover transition-opacity duration-300 group-hover:scale-105 transition-transform ${
-            loaded ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
-        <div className="absolute inset-0 bg-black/0 active:bg-black/10 transition-colors duration-150" />
-        
-        {/* Best Seller Badge */}
-        {isBestSeller && (
-          <div className="absolute top-2 left-2 flex items-center gap-1 z-10 bg-primary text-black text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md">
-            <TrendingUp className="w-3 h-3" />
-            <span className="hidden sm:inline">Best Seller</span>
-            <span className="sm:hidden">Hot</span>
-          </div>
-        )}
+        <div className="px-0.5">
+          <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
+            {product.category}
+          </span>
+          <h3 className="text-xs font-semibold text-white truncate leading-tight">
+            {product.title}
+          </h3>
+        </div>
       </div>
-
-      <div className="px-0.5">
-        <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
-          {product.category}
-        </span>
-        <h3 className="text-xs font-semibold text-white truncate leading-tight">
-          {product.title}
-        </h3>
-        <p className="text-sm font-black text-primary mt-0.5">
-          ₹{product.basePrice}
-        </p>
-      </div>
-    </article>
-  );
-});
+    );
+  }
+);
 
 ProductCard.displayName = 'ProductCard';
 
-// ─── Pagination ──────────────────────────────────────────────────────────────
-
-const ITEMS_PER_PAGE = 16; // 4 rows × 4 cols on desktop
-
-interface PaginationProps {
+const Pagination: React.FC<{
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
-}
-
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+}> = ({ currentPage, totalPages, onPageChange }) => {
   if (totalPages <= 1) return null;
 
-  // Dynamic window: mobile 5, desktop 8
   const getPageWindow = (maxVisible: number) => {
     const half = Math.floor(maxVisible / 2);
     let start = Math.max(1, currentPage - half);
@@ -114,7 +118,6 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 
   return (
     <div className="flex items-center justify-center gap-1.5 mt-8 px-4">
-      {/* Previous */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
@@ -124,13 +127,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         <ChevronLeft className="w-4 h-4" />
       </button>
 
-      {/* Mobile pages (sm and below) */}
       <div className="flex items-center gap-1 sm:hidden">
         {mobilePages.map((page) => (
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            aria-label={`Page ${page}`}
             aria-current={currentPage === page ? 'page' : undefined}
             className={`min-w-[40px] h-10 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 ${
               currentPage === page
@@ -143,13 +144,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         ))}
       </div>
 
-      {/* Desktop pages (sm+) */}
       <div className="hidden sm:flex items-center gap-1">
         {desktopPages.map((page) => (
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            aria-label={`Page ${page}`}
             aria-current={currentPage === page ? 'page' : undefined}
             className={`min-w-[40px] h-10 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 ${
               currentPage === page
@@ -162,7 +161,6 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         ))}
       </div>
 
-      {/* Next */}
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
@@ -175,8 +173,6 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   );
 };
 
-// ─── Product Grid ────────────────────────────────────────────────────────────
-
 interface ProductGridProps {
   products: Product[];
   onProductClick: (product: Product) => void;
@@ -187,12 +183,10 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
 
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
 
-  // Reset to page 1 when products change (filter/search)
-  React.useEffect(() => {
+  useEffect(() => {
     setCurrentPage(1);
   }, [products.length]);
 
-  // Only render current page data
   const pageProducts = useMemo(() => {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
     return products.slice(start, start + ITEMS_PER_PAGE);
@@ -202,37 +196,34 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
     (page: number) => {
       if (page >= 1 && page <= totalPages) {
         setCurrentPage(page);
-        // Scroll to collection section
-        document.getElementById('category-filter-section')?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
       }
     },
     [totalPages]
   );
 
   return (
-    <div>
-      {/* Responsive grid: 2 cols mobile, 3 tablet, 4 desktop */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 px-4 sm:px-5 lg:px-7">
-        {pageProducts.map((product) => (
+    <div id="collection">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 px-4 sm:px-5 lg:px-7">
+        {pageProducts.map((product, index) => (
           <ProductCard
             key={product.id}
             product={product}
             onClick={() => onProductClick(product)}
+            index={index}
           />
         ))}
       </div>
 
-      {/* Pagination */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
 
-      {/* Page info */}
       {totalPages > 1 && (
         <p className="text-center text-[10px] text-muted font-medium mt-3">
-          Page {currentPage} of {totalPages}
+          Page {currentPage} of {totalPages} · {products.length} posters
         </p>
       )}
     </div>
