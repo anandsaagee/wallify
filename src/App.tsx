@@ -1,5 +1,6 @@
-import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { products } from './data/products';
+import { useProductFilters } from './hooks/useProductFilters';
 import { Header } from './components/Header';
 import { CategoryFilter } from './components/CategoryFilter';
 import { SizeFilter } from './components/SizeFilter';
@@ -26,40 +27,52 @@ interface ProductData {
 
 const FreeGiftToast: React.FC = () => {
   const { totals } = useCart();
-
-  if (totals.eligibleFreeGifts <= 0 || totals.freeGiftCount >= totals.eligibleFreeGifts) return null;
+  const show = totals.eligibleFreeGifts > 0 && totals.freeGiftCount < totals.eligibleFreeGifts;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-[90]"
-    >
-      <div className="bg-surface border border-primary/20 rounded-2xl p-3.5 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-        <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-          <Gift className="w-5 h-5 text-primary" />
-        </div>
-        <div>
-          <p className="text-xs font-bold text-white leading-snug">
-            You unlocked {totals.eligibleFreeGifts} free poster{totals.eligibleFreeGifts > 1 ? 's' : ''}!
-          </p>
-          <p className="text-[10px] text-muted font-medium mt-0.5">
-            Go to your bag to choose them
-          </p>
-        </div>
-      </div>
-    </motion.div>
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          key="free-gift-toast"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+          className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-[90]"
+        >
+          <div className="bg-surface border border-primary/20 rounded-2xl p-3.5 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Gift className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-white leading-snug">
+                You unlocked {totals.eligibleFreeGifts} free poster{totals.eligibleFreeGifts > 1 ? 's' : ''}!
+              </p>
+              <p className="text-[10px] text-muted font-medium mt-0.5">
+                Go to your bag to choose them
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
 const AppContent: React.FC = () => {
   const [view, setView] = useState<View>('store');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedSize, setSelectedSize] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
+  const {
+    selectedCategory,
+    setSelectedCategory,
+    selectedSize,
+    setSelectedSize,
+    searchQuery,
+    setSearchQuery,
+    filteredProducts,
+    handleClearFilters
+  } = useProductFilters();
+
   const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
-  const collectionRef = useRef<HTMLDivElement>(null);
 
   const handleSetView = useCallback((nextView: View) => {
     setView(nextView);
@@ -70,131 +83,123 @@ const AppContent: React.FC = () => {
     document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
-      const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
-      const matchesSearch =
-        !searchQuery.trim() ||
-        p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.category.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [selectedCategory, searchQuery]);
-
-  const handleClearFilters = useCallback(() => {
-    setSearchQuery('');
-    setSelectedCategory('All');
-    setSelectedSize('All');
-  }, []);
-
-  // Close bottom sheet on Escape
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedProduct(null);
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-white overflow-x-hidden">
       <Header currentView={view} setView={handleSetView} />
 
       <div className={view === 'store' ? '' : 'pt-24'}>
-        {view === 'checkout' && (
-          <Checkout onBack={() => handleSetView('store')} onProductClick={() => {}} />
-        )}
+        <AnimatePresence mode="wait">
+          {view === 'checkout' && (
+            <motion.div
+              key="checkout"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+            >
+              <Checkout onBack={() => handleSetView('store')} onProductClick={() => {}} />
+            </motion.div>
+          )}
 
-        {view === 'store' && (
-          <>
-            {/* Hero */}
-            <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
+          {view === 'store' && (
+            <motion.div
+              key="store"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+            >
+              {/* Hero */}
+              <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
 
-            <main className="pb-24" ref={collectionRef}>
-              {/* Pricing Section */}
-              <Pricing />
+              <main className="pb-24">
+                {/* Pricing Section */}
+                <Pricing />
 
-              {/* Bulk Offers Section */}
-              <BulkOffers />
+                {/* Bulk Offers Section */}
+                <BulkOffers />
 
-              {/* Featured Categories */}
-              <FeaturedCategories onSelectCategory={setSelectedCategory} />
+                {/* Featured Categories */}
+                <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
-              {/* Collection Header */}
-              <div id="collection-header" className="px-4 mb-1 mt-8 flex items-center justify-between">
-                <div>
-                  <h2 className="text-2xl font-black text-white tracking-tight">
-                    The Collection
-                  </h2>
-                  <p className="text-xs text-muted mt-0.5">
-                    {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
-                  </p>
+                {/* Collection Header */}
+                <div id="collection-header" className="px-4 mb-1 mt-8 flex items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-black text-white tracking-tight">
+                      The Collection
+                    </h2>
+                    <p className="text-xs text-muted mt-0.5">
+                      {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Search Bar */}
-              <div className="px-4 mt-3">
-                <div className="relative">
-                  <Search
-                    className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none"
-                    aria-hidden="true"
-                  />
-                  <input
-                    type="search"
-                    placeholder="Search posters..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted focus:outline-none focus:border-primary/50 transition-colors duration-200"
-                  />
-                  {searchQuery && (
-                    <button
-                      onClick={() => setSearchQuery('')}
-                      aria-label="Clear search"
-                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-white/10 transition-colors duration-150"
-                    >
-                      <X className="w-4 h-4 text-muted" />
-                    </button>
-                  )}
+                {/* Search Bar */}
+                <div className="px-4 mt-3">
+                  <div className="relative">
+                    <Search
+                      className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none"
+                      aria-hidden="true"
+                    />
+                    <input
+                      type="search"
+                      placeholder="Search posters..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted focus:outline-none focus:border-primary/50 transition-colors duration-200"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => setSearchQuery('')}
+                        aria-label="Clear search"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-white/10 transition-colors duration-150"
+                      >
+                        <X className="w-4 h-4 text-muted" />
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              {/* Filters */}
-              <CategoryFilter
-                selectedCategory={selectedCategory}
-                onSelectCategory={setSelectedCategory}
-              />
-              <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
-
-              {/* Product Grid */}
-              {filteredProducts.length > 0 ? (
-                <ProductGrid
-                  products={filteredProducts}
-                  onProductClick={setSelectedProduct}
+                {/* Filters */}
+                <CategoryFilter
+                  selectedCategory={selectedCategory}
+                  onSelectCategory={setSelectedCategory}
                 />
-              ) : (
-                <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
-                  <span className="text-5xl mb-4">🎨</span>
-                  <p className="text-white font-bold text-base">No posters found</p>
-                  <p className="text-muted text-sm mt-1">Try a different search or category</p>
-                  <button
-                    onClick={handleClearFilters}
-                    className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm active:scale-95 transition-transform duration-150"
-                  >
-                    Clear filters
-                  </button>
-                </div>
-              )}
-            </main>
-          </>
-        )}
+                <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
+
+                {/* Product Grid */}
+                {filteredProducts.length > 0 ? (
+                  <ProductGrid
+                    products={filteredProducts}
+                    onProductClick={setSelectedProduct}
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
+                    <span className="text-5xl mb-4">🎨</span>
+                    <p className="text-white font-bold text-base">No posters found</p>
+                    <p className="text-muted text-sm mt-1">Try a different search or category</p>
+                    <button
+                      onClick={handleClearFilters}
+                      className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm active:scale-95 transition-transform duration-150"
+                    >
+                      Clear filters
+                    </button>
+                  </div>
+                )}
+              </main>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Product Bottom Sheet */}
+      {/* Product Bottom Sheet — BottomSheet handles its own Escape key listener */}
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
-        {selectedProduct && <ProductPreview product={selectedProduct} />}
+        {selectedProduct && (
+          <ProductPreview product={selectedProduct} initialSizeId={selectedSize !== 'All' ? selectedSize : undefined} />
+        )}
       </BottomSheet>
 
-      {/* Free gift notification toast */}
+      {/* Free gift notification toast — wrapped in AnimatePresence for exit animation */}
       <FreeGiftToast />
     </div>
   );

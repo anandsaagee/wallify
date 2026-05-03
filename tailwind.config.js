@@ -22,8 +22,34 @@ export default {
       },
       borderRadius: {
         'premium': '12px',
-      }
+      },
+      transitionDuration: {
+        '200': '200ms',
+        '300': '300ms',
+      },
+      transitionTimingFunction: {
+        'ease-in-out': 'ease-in-out',
+      },
+      keyframes: {
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
+      },
     },
   },
   plugins: [],
+  // Add base layer for smooth scrolling
+  corePlugins: {
+    // ensure scroll-behavior utility is enabled
+    scrollSnapStop: true,
+  },
+};
+
+/*** Add custom base layer ***/
+/* In a separate CSS file (e.g., src/index.css) you would add:
+@layer base {
+  html { scroll-behavior: smooth; }
 }
+*/

@@ -33,7 +33,6 @@ interface CartContextType {
   selectFreePoster: (product: { id: string; title: string; image: string; category: string }, sizeId: string) => void;
   removeFreePoster: (variantId: string) => void;
   freeSlots: number;
-  allProducts: CartItem[];
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -185,8 +184,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return Math.max(0, totals.eligibleFreeGifts - totals.freeGiftCount);
   }, [totals.eligibleFreeGifts, totals.freeGiftCount]);
 
-  const allProducts = useMemo(() => cart, [cart]);
-
   return (
     <CartContext.Provider
       value={{
@@ -199,7 +196,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         selectFreePoster,
         removeFreePoster,
         freeSlots,
-        allProducts,
       }}
     >
       {children}

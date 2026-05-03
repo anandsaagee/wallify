@@ -10,9 +10,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion'],
+          'react-vendor': ['react', 'react-dom'],
+          'motion': ['framer-motion'],
+          'icons': ['lucide-react'],
         },
       },
     },
+    chunkSizeWarningLimit: 600,
   },
 })

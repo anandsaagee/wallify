@@ -1,4 +1,18 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = ({
   onShopNow,
@@ -28,18 +42,31 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         aria-hidden="true"
       />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8">
+      {/* Content — staggered entrance */}
+      <motion.div
+        variants={stagger}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8"
+      >
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
+        >
           <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-[10px] sm:text-xs font-bold text-muted uppercase tracking-[0.15em]">
             Premium Poster Store
           </span>
-        </div>
+        </motion.div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] tracking-tight">
+        <motion.h1
+          variants={fadeUp}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] tracking-tight"
+        >
           Transform Your Walls{' '}
           <br className="hidden sm:block" />
           with{' '}
@@ -47,15 +74,23 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
             <span className="text-primary">Wallify</span>
             <span className="text-primary">.</span>
           </span>
-        </h1>
+        </motion.h1>
 
         {/* Subheading */}
-        <p className="text-muted text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed">
+        <motion.p
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="text-muted text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed"
+        >
           Premium posters at unbeatable prices.
-        </p>
+        </motion.p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2">
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2"
+        >
           <button
             onClick={onShopNow}
             className="px-8 py-4 bg-primary text-black font-black text-sm sm:text-base rounded-full transition-all duration-200 active:scale-95 hover:brightness-110 shadow-[0_8px_32px_rgba(250,203,21,0.25)]"
@@ -68,10 +103,14 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
           >
             Explore Collection
           </button>
-        </div>
+        </motion.div>
 
         {/* Trust indicators */}
-        <div className="flex items-center gap-6 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider">
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="flex items-center gap-6 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider"
+        >
           <div className="flex items-center gap-2">
             <div className="w-8 h-[1px] bg-white/10" />
             <span>Free Posters</span>
@@ -80,12 +119,12 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
             <div className="w-8 h-[1px] bg-white/10" />
             <span>Premium Quality</span>
           </div>
-          <div className="flex items-center gap-2 hidden sm:flex">
+          <div className="hidden sm:flex items-center gap-2">
             <div className="w-8 h-[1px] bg-white/10" />
             <span>Fast Delivery</span>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

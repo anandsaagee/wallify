@@ -49,6 +49,7 @@
     @apply flex items-center justify-center bg-primary text-black font-bold rounded-full;
     transition: transform 150ms ease, opacity 150ms ease;
     -webkit-tap-highlight-color: transparent;
+    will-change: transform;
   }
   .btn-primary:active {
     transform: scale(0.95);

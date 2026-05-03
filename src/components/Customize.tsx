@@ -1,7 +1,7 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { Upload, X, ChevronRight, ShoppingBag, Zap, Type, AlignLeft, AlignCenter, AlignRight, Layout, Palette } from 'lucide-react';
-import { SIZES } from '../data/config';
 import { useCart } from '../hooks/useCart';
+import { OptimizedImage } from './OptimizedImage';
 
 const FONTS = [
   { id: 'Inter', label: 'Modern', family: '"Inter", sans-serif' },
@@ -97,7 +97,7 @@ export const Customize: React.FC = () => {
         <div className="relative aspect-[3/4.2] w-full max-w-[400px] mx-auto bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
           {image ? (
             <div className="w-full h-full relative">
-              <img src={image} alt="Custom Preview" className="w-full h-full object-cover" />
+              <OptimizedImage src={image} alt="Custom Preview" containerClassName="w-full h-full" className="w-full h-full object-cover" />
               <div 
                 style={{ 
                   ...getPositionStyles(position),
@@ -140,7 +140,7 @@ export const Customize: React.FC = () => {
             <input type="file" ref={fileInputRef} onChange={handleImageUpload} accept="image/*" className="hidden" />
             {image ? (
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-                <img src={image} className="w-full h-full object-cover" />
+                <OptimizedImage src={image} alt="Custom Artwork" containerClassName="w-full h-full" className="w-full h-full object-cover" />
                 <button 
                   onClick={(e) => { e.stopPropagation(); setImage(null); }}
                   className="absolute top-2 right-2 p-1.5 bg-black/60 rounded-full hover:bg-red-500 transition-colors"

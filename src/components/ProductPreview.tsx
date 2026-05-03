@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { ShoppingBag, Zap, Check, Gift } from 'lucide-react';
-import { SIZES, getEligibleFreeItems } from '../data/config';
+import { SIZES } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
 
 interface Product {
   id: string;
@@ -13,6 +14,8 @@ interface Product {
 
 interface ProductPreviewProps {
   product: Product;
+  /** If provided (e.g. from SizeFilter), pre-selects this size on open */
+  initialSizeId?: string;
 }
 
 const SizeButton: React.FC<{
@@ -39,8 +42,16 @@ const SizeButton: React.FC<{
   </button>
 );
 
-export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
-  const [selectedSize, setSelectedSize] = useState(SIZES[1].id);
+const BULK_OFFERS_INLINE = [
+  { buy: 5, free: 1 },
+  { buy: 7, free: 2 },
+  { buy: 10, free: 3 },
+  { buy: 20, free: 7 },
+] as const;
+
+export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId }) => {
+  const defaultSize = SIZES.find((s) => s.id === initialSizeId) ?? SIZES[1];
+  const [selectedSize, setSelectedSize] = useState(defaultSize.id);
   const [cartState, setCartState] = useState<'idle' | 'added'>('idle');
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const { addToCart, totals } = useCart();
@@ -49,8 +60,8 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
 
   const freeIndicator = React.useMemo(() => {
     const currentTotal = totals.totalPaidItems;
-    const nextThresholds = [5, 7, 10, 20];
-    for (const threshold of nextThresholds) {
+    const thresholds = [5, 7, 10, 20];
+    for (const threshold of thresholds) {
       if (currentTotal < threshold) {
         return { away: threshold - currentTotal, threshold };
       }
@@ -72,12 +83,11 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         {/* Product Image */}
         <div className="px-4 pt-1 flex justify-center">
           <div className="w-full max-h-[22dvh] max-w-[180px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-            <img
+            <OptimizedImage
               src={product.image}
               alt={product.title}
-              loading="eager"
-              decoding="async"
-              className="w-full h-full object-contain"
+              containerClassName="w-full h-full"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -117,10 +127,11 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
         <AnimatePresence>
           {freeIndicator && (
             <motion.div
+              key="free-indicator"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="px-4 pt-3"
+              className="px-4 pt-3 overflow-hidden"
             >
               <div className="bg-primary/5 border border-primary/10 rounded-2xl p-3 flex items-center gap-3">
                 <div className="shrink-0 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -150,12 +161,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product }) => {
               </span>
             </div>
             <div className="grid grid-cols-2 gap-2">
-              {[
-                { buy: 5, free: 1 },
-                { buy: 7, free: 2 },
-                { buy: 10, free: 3 },
-                { buy: 20, free: 7 },
-              ].map((o) => (
+              {BULK_OFFERS_INLINE.map((o) => (
                 <div
                   key={o.buy}
                   className="bg-white/[0.04] rounded-xl p-2 text-center"

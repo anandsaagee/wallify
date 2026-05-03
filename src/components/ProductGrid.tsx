@@ -1,6 +1,8 @@
 import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ITEMS_PER_PAGE, FALLBACK_IMAGE } from '../data/config';
+import { ITEMS_PER_PAGE } from '../data/config';
+import { motion, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
 
 export interface Product {
   id: string;
@@ -9,6 +11,31 @@ export interface Product {
   image: string;
 }
 
+// ─── Shared IntersectionObserver hook ────────────────────────────────────────
+// One observer for the entire page — far more efficient than one per card.
+type ObserverCallback = (visible: boolean) => void;
+
+function useIntersectionObserver(
+  ref: React.RefObject<Element>,
+  callback: ObserverCallback,
+  options?: IntersectionObserverInit
+) {
+  const callbackRef = useRef(callback);
+  callbackRef.current = callback;
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => callbackRef.current(entry.isIntersecting),
+      options
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref, options?.rootMargin, options?.threshold]);
+}
+
+// ─── ProductCard ──────────────────────────────────────────────────────────────
 const ProductCard: React.FC<{ product: Product; onClick: () => void; index: number }> = memo(
   ({ product, onClick, index }) => {
     const [loaded, setLoaded] = useState(false);
@@ -16,19 +43,10 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
     const cardRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
-          }
-        },
-        { rootMargin: '200px' }
-      );
-      if (cardRef.current) observer.observe(cardRef.current);
-      return () => observer.disconnect();
-    }, []);
+    const observerOptions = useMemo(() => ({ rootMargin: '200px' }), []);
+    useIntersectionObserver(cardRef as React.RefObject<Element>, (visible) => {
+      if (visible) setIsVisible(true);
+    }, observerOptions);
 
     const isBestSeller = useMemo(() => {
       const numId = parseInt(product.id.replace(/\D/g, ''), 10);
@@ -43,7 +61,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         tabIndex={0}
         onKeyDown={(e) => e.key === 'Enter' && onClick()}
         aria-label={`View ${product.title}`}
-        className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150"
+        className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform"
         style={{ animationDelay: `${index * 30}ms` }}
       >
         <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
@@ -56,14 +74,13 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
             </div>
           )}
           {isVisible && (
-            <img
+            <OptimizedImage
               src={product.image}
               alt={product.title}
-              loading="lazy"
-              decoding="async"
               onLoad={() => setLoaded(true)}
               onError={() => setError(true)}
-              className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${
+              containerClassName="absolute inset-0 w-full h-full"
+              className={`transition-transform duration-700 group-hover:scale-110 ${
                 loaded ? 'opacity-100' : 'opacity-0'
               }`}
             />
@@ -94,6 +111,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
 
 ProductCard.displayName = 'ProductCard';
 
+// ─── Pagination ───────────────────────────────────────────────────────────────
 const Pagination: React.FC<{
   currentPage: number;
   totalPages: number;
@@ -173,6 +191,7 @@ const Pagination: React.FC<{
   );
 };
 
+// ─── ProductGrid ──────────────────────────────────────────────────────────────
 interface ProductGridProps {
   products: Product[];
   onProductClick: (product: Product) => void;
@@ -202,18 +221,34 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
     [totalPages]
   );
 
+  // Memoize individual card click handlers to avoid creating new fns on every render
+  const cardClickHandlers = useMemo(
+    () => new Map(pageProducts.map((p) => [p.id, () => onProductClick(p)])),
+    [pageProducts, onProductClick]
+  );
+
   return (
     <div id="collection">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 px-4 sm:px-5 lg:px-7">
-        {pageProducts.map((product, index) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onClick={() => onProductClick(product)}
-            index={index}
-          />
-        ))}
-      </div>
+      {/* AnimatePresence fades the grid out/in on page change */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentPage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.18, ease: 'easeInOut' }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 px-4 sm:px-5 lg:px-7"
+        >
+          {pageProducts.map((product, index) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onClick={cardClickHandlers.get(product.id)!}
+              index={index}
+            />
+          ))}
+        </motion.div>
+      </AnimatePresence>
 
       <Pagination
         currentPage={currentPage}

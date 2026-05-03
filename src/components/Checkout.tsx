@@ -4,6 +4,7 @@ import { useCart } from '../hooks/useCart';
 import { SIZES, getEligibleFreeItems } from '../data/config';
 import { products } from '../data/products';
 import { motion, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
 
 interface CheckoutProps {
   onBack: () => void;
@@ -11,7 +12,7 @@ interface CheckoutProps {
 }
 
 export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) => {
-  const { cart, totals, clearCart, selectFreePoster, removeFreePoster, freeSlots } = useCart();
+  const { cart, totals, clearCart, selectFreePoster, removeFreePoster, freeSlots, updateQuantity, removeFromCart } = useCart();
   const [step, setStep] = useState<'details' | 'payment' | 'success'>('details');
   const [formData, setFormData] = useState({
     name: '',
@@ -25,10 +26,10 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
   const [showFreePosterPicker, setShowFreePosterPicker] = useState(false);
   const [freeSearch, setFreeSearch] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,7 +115,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                     className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.06] rounded-2xl p-3"
                   >
                     <div className="shrink-0 w-16 h-20 rounded-xl overflow-hidden bg-surface">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                      <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-bold text-white truncate">{item.title}</p>
@@ -122,17 +123,21 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                       <div className="flex items-center gap-3 mt-2">
                         <button
                           onClick={() => {
-                            /* quantity change handled by parent */
+                            if (item.quantity <= 1) {
+                              removeFromCart(item.variantId);
+                            } else {
+                              updateQuantity(item.variantId, -1);
+                            }
                           }}
-                          className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center text-white/60 hover:bg-white/10 active:scale-95 transition-all text-xs font-bold"
+                          aria-label="Decrease quantity"
+                          className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center text-white/60 hover:bg-red-500/20 hover:text-red-400 active:scale-95 transition-all text-xs font-bold"
                         >
                           -
                         </button>
                         <span className="text-sm font-black text-white w-4 text-center">{item.quantity}</span>
                         <button
-                          onClick={() => {
-                            /* quantity change handled by parent */
-                          }}
+                          onClick={() => updateQuantity(item.variantId, 1)}
+                          aria-label="Increase quantity"
                           className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center text-white/60 hover:bg-white/10 active:scale-95 transition-all text-xs font-bold"
                         >
                           +
@@ -184,7 +189,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                         className="flex items-center gap-3 bg-white/[0.05] rounded-xl p-2"
                       >
                         <div className="shrink-0 w-10 h-14 rounded-lg overflow-hidden bg-surface">
-                          <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                          <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-bold text-white truncate">{item.title}</p>
@@ -263,7 +268,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                             }}
                             className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 hover:border-primary/30 transition-all active:scale-95"
                           >
-                            <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover" />
+                            <OptimizedImage src={p.image} alt={p.title} containerClassName="w-full h-full" className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                               <span className="text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity">
                                 + Free
