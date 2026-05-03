@@ -111,86 +111,6 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
 
 ProductCard.displayName = 'ProductCard';
 
-// ─── Pagination ───────────────────────────────────────────────────────────────
-const Pagination: React.FC<{
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}> = ({ currentPage, totalPages, onPageChange }) => {
-  if (totalPages <= 1) return null;
-
-  const getPageWindow = (maxVisible: number) => {
-    const half = Math.floor(maxVisible / 2);
-    let start = Math.max(1, currentPage - half);
-    let end = Math.min(totalPages, start + maxVisible - 1);
-    if (end - start + 1 < maxVisible) {
-      start = Math.max(1, end - maxVisible + 1);
-    }
-    const pages: number[] = [];
-    for (let i = start; i <= end; i++) pages.push(i);
-    return pages;
-  };
-
-  const mobilePages = getPageWindow(5);
-  const desktopPages = getPageWindow(8);
-
-  return (
-    <div className="flex items-center justify-center gap-1.5 mt-8 px-4">
-      <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        aria-label="Previous page"
-        className="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 bg-white/5 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10 active:scale-95"
-      >
-        <ChevronLeft className="w-4 h-4" />
-      </button>
-
-      <div className="flex items-center gap-1 sm:hidden">
-        {mobilePages.map((page) => (
-          <button
-            key={page}
-            onClick={() => onPageChange(page)}
-            aria-current={currentPage === page ? 'page' : undefined}
-            className={`min-w-[40px] h-10 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 ${
-              currentPage === page
-                ? 'bg-primary text-black border border-primary shadow-lg shadow-primary/20'
-                : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'
-            }`}
-          >
-            {page}
-          </button>
-        ))}
-      </div>
-
-      <div className="hidden sm:flex items-center gap-1">
-        {desktopPages.map((page) => (
-          <button
-            key={page}
-            onClick={() => onPageChange(page)}
-            aria-current={currentPage === page ? 'page' : undefined}
-            className={`min-w-[40px] h-10 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 ${
-              currentPage === page
-                ? 'bg-primary text-black border border-primary shadow-lg shadow-primary/20'
-                : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'
-            }`}
-          >
-            {page}
-          </button>
-        ))}
-      </div>
-
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        aria-label="Next page"
-        className="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 bg-white/5 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10 active:scale-95"
-      >
-        <ChevronRight className="w-4 h-4" />
-      </button>
-    </div>
-  );
-};
-
 // ─── ProductGrid ──────────────────────────────────────────────────────────────
 interface ProductGridProps {
   products: Product[];
@@ -198,27 +118,33 @@ interface ProductGridProps {
 }
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductClick }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+  const [displayedCount, setDisplayedCount] = useState(ITEMS_PER_PAGE);
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [products.length]);
+    setDisplayedCount(ITEMS_PER_PAGE);
+  }, [products]);
 
   const pageProducts = useMemo(() => {
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    return products.slice(start, start + ITEMS_PER_PAGE);
-  }, [products, currentPage]);
+    return products.slice(0, displayedCount);
+  }, [products, displayedCount]);
 
-  const handlePageChange = useCallback(
-    (page: number) => {
-      if (page >= 1 && page <= totalPages) {
-        setCurrentPage(page);
-        document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  const observerCallback = useCallback(
+    (visible: boolean) => {
+      if (visible && displayedCount < products.length) {
+        setDisplayedCount((prev) => Math.min(prev + ITEMS_PER_PAGE, products.length));
       }
     },
-    [totalPages]
+    [displayedCount, products.length]
+  );
+
+  const observerOptions = useMemo(() => ({ rootMargin: '400px' }), []);
+  
+  useIntersectionObserver(
+    sentinelRef as React.RefObject<Element>,
+    observerCallback,
+    observerOptions
   );
 
   // Memoize individual card click handlers to avoid creating new fns on every render
@@ -229,10 +155,10 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
 
   return (
     <div id="collection">
-      {/* AnimatePresence fades the grid out/in on page change */}
+      {/* AnimatePresence fades the grid out/in on initial load or category change */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={currentPage}
+          key="grid"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -250,15 +176,11 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
         </motion.div>
       </AnimatePresence>
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-
-      {totalPages > 1 && (
-        <p className="text-center text-[10px] text-muted font-medium mt-3">
-          Page {currentPage} of {totalPages} · {products.length} posters
+      <div ref={sentinelRef} className="h-10 w-full mt-4" aria-hidden="true" />
+      
+      {displayedCount >= products.length && products.length > 0 && (
+        <p className="text-center text-[10px] text-muted font-medium mt-3 mb-8">
+          Showing all {products.length} posters
         </p>
       )}
     </div>
