@@ -37,19 +37,13 @@ export default {
           },
         },
       },
+      animation: {
+        shimmer: 'shimmer 2s infinite',
+      },
     },
   },
   plugins: [],
-  // Add base layer for smooth scrolling
   corePlugins: {
-    // ensure scroll-behavior utility is enabled
     scrollSnapStop: true,
   },
 };
-
-/*** Add custom base layer ***/
-/* In a separate CSS file (e.g., src/index.css) you would add:
-@layer base {
-  html { scroll-behavior: smooth; }
-}
-*/

@@ -11,30 +11,32 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   containerClassName?: string;
 }
 
-export const OptimizedImage: React.FC<OptimizedImageProps> = ({
+export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean }> = ({
   src,
   alt,
-  width,
-  height,
+  width = 600,
+  height = 800,
   className = '',
   containerClassName = '',
+  priority = false,
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
-  // Try to determine AVIF/WebP paths if the src is a local asset or standard path
-  // Since we might not have them generated yet, we'll just use the original src for now
-  // but wrap it in a way that provides skeleton loading and lazy loading.
+  // Premium shimmer effect for placeholders
+  const shimmerClass = "after:absolute after:inset-0 after:-translate-x-full after:animate-[shimmer_2s_infinite] after:bg-gradient-to-r after:from-transparent after:via-white/5 after:to-transparent";
 
   return (
     <div 
-      className={`relative overflow-hidden ${containerClassName}`} 
-      style={{ width, height }}
+      className={`relative overflow-hidden bg-[#121212] ${containerClassName} ${!isLoaded ? shimmerClass : ''}`} 
+      style={{ aspectRatio: `${width}/${height}` }}
     >
       {!isLoaded && !hasError && (
-        <LoadingSkeleton className="absolute inset-0 w-full h-full" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <LoadingSkeleton className="w-full h-full" />
+        </div>
       )}
       
       <img
@@ -42,22 +44,25 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         alt={alt}
         width={width}
         height={height}
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
+        // @ts-ignore
+        fetchpriority={priority ? "high" : "auto"}
         decoding="async"
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
         className={`
-          w-full h-full object-cover
-          ${isLoaded ? 'opacity-100' : 'opacity-0'}
-          ${!prefersReducedMotion ? 'transition-opacity duration-300 ease-in-out' : ''}
+          absolute inset-0 w-full h-full object-cover
+          ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}
+          ${!prefersReducedMotion ? 'transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1)' : ''}
           ${className}
         `}
         {...props}
       />
       
       {hasError && (
-        <div className="absolute inset-0 bg-white/5 flex items-center justify-center text-muted text-xs text-center p-2">
-          Failed to load image
+        <div className="absolute inset-0 bg-white/5 flex flex-col items-center justify-center text-muted text-[10px] text-center p-4">
+          <span className="text-xl mb-2">🖼️</span>
+          Image Unavailable
         </div>
       )}
     </div>

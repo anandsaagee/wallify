@@ -40,13 +40,6 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
   ({ product, onClick, index }) => {
     const [loaded, setLoaded] = useState(false);
     const [error, setError] = useState(false);
-    const cardRef = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    const observerOptions = useMemo(() => ({ rootMargin: '200px' }), []);
-    useIntersectionObserver(cardRef as React.RefObject<Element>, (visible) => {
-      if (visible) setIsVisible(true);
-    }, observerOptions);
 
     const isBestSeller = useMemo(() => {
       const numId = parseInt(product.id.replace(/\D/g, ''), 10);
@@ -55,7 +48,6 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
 
     return (
       <div
-        ref={cardRef}
         onClick={onClick}
         role="button"
         tabIndex={0}
@@ -73,18 +65,17 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
               <span className="text-xs text-muted">Image unavailable</span>
             </div>
           )}
-          {isVisible && (
-            <OptimizedImage
-              src={product.image}
-              alt={product.title}
-              onLoad={() => setLoaded(true)}
-              onError={() => setError(true)}
-              containerClassName="absolute inset-0 w-full h-full"
-              className={`transition-transform duration-700 group-hover:scale-110 ${
-                loaded ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          )}
+          <OptimizedImage
+            src={product.image}
+            alt={product.title}
+            priority={index < 6} // Eager load first 6 items
+            onLoad={() => setLoaded(true)}
+            onError={() => setError(true)}
+            containerClassName="absolute inset-0 w-full h-full"
+            className={`transition-transform duration-700 group-hover:scale-110 ${
+              loaded ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-150" />
 
           {isBestSeller && (

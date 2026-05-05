@@ -82,12 +82,13 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
       <div className="flex-1 overflow-y-auto overscroll-contain">
         {/* Product Image */}
         <div className="px-4 pt-1 flex justify-center">
-          <div className="w-full max-h-[22dvh] max-w-[180px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+          <div className="w-full max-h-[45dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
             <OptimizedImage
               src={product.image}
               alt={product.title}
+              priority={true}
               containerClassName="w-full h-full"
-              className="w-full h-full object-cover"
+              className="w-full h-full"
             />
           </div>
         </div>

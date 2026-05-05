@@ -115,7 +115,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                     className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.06] rounded-2xl p-3"
                   >
                     <div className="shrink-0 w-16 h-20 rounded-xl overflow-hidden bg-surface">
-                      <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full object-cover" />
+                      <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-bold text-white truncate">{item.title}</p>
@@ -189,7 +189,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                         className="flex items-center gap-3 bg-white/[0.05] rounded-xl p-2"
                       >
                         <div className="shrink-0 w-10 h-14 rounded-lg overflow-hidden bg-surface">
-                          <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full object-cover" />
+                          <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-bold text-white truncate">{item.title}</p>
@@ -268,7 +268,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                             }}
                             className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 hover:border-primary/30 transition-all active:scale-95"
                           >
-                            <OptimizedImage src={p.image} alt={p.title} containerClassName="w-full h-full" className="w-full h-full object-cover" />
+                            <OptimizedImage src={p.image} alt={p.title} containerClassName="w-full h-full" className="w-full h-full" />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                               <span className="text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity">
                                 + Free
