@@ -56,27 +56,6 @@ export const BulkOffers: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Rules */}
-        <div className="mt-10 bg-white/[0.02] border border-white/[0.04] rounded-2xl p-6">
-          <h3 className="text-xs font-black text-white uppercase tracking-wider mb-4">
-            Offer Rules
-          </h3>
-          <ul className="space-y-2 text-xs text-muted font-medium">
-            <li className="flex items-start gap-2">
-              <span className="text-primary mt-0.5">•</span>
-              Free posters are completely independent — you choose which ones.
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary mt-0.5">•</span>
-              No price discounts under any condition — pricing always remains fixed.
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary mt-0.5">•</span>
-              Offers only increase quantity, never reduce price.
-            </li>
-          </ul>
-        </div>
       </div>
     </section>
   );

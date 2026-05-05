@@ -54,7 +54,7 @@ export const Pricing: React.FC = () => {
 
         {/* Note */}
         <p className="text-center text-[11px] text-muted mt-8 font-medium">
-          Prices are fixed. No hidden charges. Bulk offers available below.
+          Prices are fixed. No hidden charges.
         </p>
       </div>
     </section>
