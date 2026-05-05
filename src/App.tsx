@@ -9,6 +9,7 @@ import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
 import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
+import { HeroBestSellers } from './components/HeroBestSellers'; // ✅ ADDED
 import { FeaturedCategories } from './components/FeaturedCategories';
 import { Pricing } from './components/Pricing';
 import { BulkOffers } from './components/BulkOffers';
@@ -61,6 +62,7 @@ const FreeGiftToast: React.FC = () => {
 
 const AppContent: React.FC = () => {
   const [view, setView] = useState<View>('store');
+
   const {
     selectedCategory,
     setSelectedCategory,
@@ -89,37 +91,41 @@ const AppContent: React.FC = () => {
 
       <div className={view === 'store' ? '' : 'pt-24'}>
         <AnimatePresence mode="wait">
+
+          {/* CHECKOUT VIEW */}
           {view === 'checkout' && (
             <motion.div
               key="checkout"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              transition={{ duration: 0.2 }}
             >
               <Checkout onBack={() => handleSetView('store')} onProductClick={() => {}} />
             </motion.div>
           )}
 
+          {/* STORE VIEW */}
           {view === 'store' && (
             <motion.div
               key="store"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              transition={{ duration: 0.2 }}
             >
               {/* Hero */}
               <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
 
+              {/* 🔥 BEST SELLERS (NEW SECTION) */}
+              <HeroBestSellers
+                products={products}   // full dataset (important)
+                onClick={setSelectedProduct}
+              />
+
               <main className="pb-24">
-                {/* Pricing Section */}
                 <Pricing />
-
-                {/* Bulk Offers Section */}
                 <BulkOffers />
-
-                {/* Featured Categories */}
                 <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
                 {/* Collection Header */}
@@ -134,37 +140,26 @@ const AppContent: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Search Bar */}
+                {/* Search */}
                 <div className="px-4 mt-3">
                   <div className="relative">
-                    <Search
-                      className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none"
-                      aria-hidden="true"
-                    />
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
                     <input
                       type="search"
                       placeholder="Search posters..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted focus:outline-none focus:border-primary/50 transition-colors duration-200"
+                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted"
                     />
                     {searchQuery && (
-                      <button
-                        onClick={() => setSearchQuery('')}
-                        aria-label="Clear search"
-                        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-white/10 transition-colors duration-150"
-                      >
+                      <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2">
                         <X className="w-4 h-4 text-muted" />
                       </button>
                     )}
                   </div>
                 </div>
 
-                {/* Filters */}
-                <CategoryFilter
-                  selectedCategory={selectedCategory}
-                  onSelectCategory={setSelectedCategory}
-                />
+                <CategoryFilter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
                 <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
 
                 {/* Product Grid */}
@@ -177,10 +172,9 @@ const AppContent: React.FC = () => {
                   <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
                     <span className="text-5xl mb-4">🎨</span>
                     <p className="text-white font-bold text-base">No posters found</p>
-                    <p className="text-muted text-sm mt-1">Try a different search or category</p>
                     <button
                       onClick={handleClearFilters}
-                      className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm active:scale-95 transition-transform duration-150"
+                      className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm"
                     >
                       Clear filters
                     </button>
@@ -192,14 +186,12 @@ const AppContent: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Product Bottom Sheet — BottomSheet handles its own Escape key listener */}
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
         {selectedProduct && (
-          <ProductPreview product={selectedProduct} initialSizeId={selectedSize !== 'All' ? selectedSize : undefined} />
+          <ProductPreview product={selectedProduct} />
         )}
       </BottomSheet>
 
-      {/* Free gift notification toast — wrapped in AnimatePresence for exit animation */}
       <FreeGiftToast />
     </div>
   );
