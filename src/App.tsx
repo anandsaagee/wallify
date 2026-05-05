@@ -9,13 +9,14 @@ import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
 import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
-import { HeroBestSellers } from './components/HeroBestSellers'; // ✅ ADDED
+import { HeroBestSellers } from './components/HeroBestSellers';
 import { FeaturedCategories } from './components/FeaturedCategories';
 import { Pricing } from './components/Pricing';
 import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Search, X, Gift } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackProductClick } from './utils/bestSellerTracker'; // ✅ NEW
 
 type View = 'store' | 'checkout';
 
@@ -76,6 +77,19 @@ const AppContent: React.FC = () => {
 
   const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
 
+  // ✅ NEW: SMART CLICK HANDLER
+  const handleProductClick = useCallback((product: ProductData) => {
+    if (!product?.id) return;
+
+    try {
+      trackProductClick(product.id);
+    } catch (err) {
+      console.warn('Click tracking failed:', err);
+    }
+
+    setSelectedProduct(product);
+  }, []);
+
   const handleSetView = useCallback((nextView: View) => {
     setView(nextView);
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -92,7 +106,7 @@ const AppContent: React.FC = () => {
       <div className={view === 'store' ? '' : 'pt-24'}>
         <AnimatePresence mode="wait">
 
-          {/* CHECKOUT VIEW */}
+          {/* CHECKOUT */}
           {view === 'checkout' && (
             <motion.div
               key="checkout"
@@ -105,7 +119,7 @@ const AppContent: React.FC = () => {
             </motion.div>
           )}
 
-          {/* STORE VIEW */}
+          {/* STORE */}
           {view === 'store' && (
             <motion.div
               key="store"
@@ -114,13 +128,12 @@ const AppContent: React.FC = () => {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              {/* Hero */}
               <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
 
-              {/* 🔥 BEST SELLERS (NEW SECTION) */}
+              {/* 🔥 BEST SELLERS (TRACKED) */}
               <HeroBestSellers
-                products={products}   // full dataset (important)
-                onClick={setSelectedProduct}
+                products={products}
+                onClick={handleProductClick} // ✅ UPDATED
               />
 
               <main className="pb-24">
@@ -128,7 +141,6 @@ const AppContent: React.FC = () => {
                 <BulkOffers />
                 <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
-                {/* Collection Header */}
                 <div id="collection-header" className="px-4 mb-1 mt-8 flex items-center justify-between">
                   <div>
                     <h2 className="text-2xl font-black text-white tracking-tight">
@@ -140,7 +152,6 @@ const AppContent: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Search */}
                 <div className="px-4 mt-3">
                   <div className="relative">
                     <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
@@ -162,11 +173,11 @@ const AppContent: React.FC = () => {
                 <CategoryFilter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
                 <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
 
-                {/* Product Grid */}
+                {/* ✅ GRID UPDATED */}
                 {filteredProducts.length > 0 ? (
                   <ProductGrid
                     products={filteredProducts}
-                    onProductClick={setSelectedProduct}
+                    onProductClick={handleProductClick} // ✅ UPDATED
                   />
                 ) : (
                   <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
@@ -187,9 +198,7 @@ const AppContent: React.FC = () => {
       </div>
 
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
-        {selectedProduct && (
-          <ProductPreview product={selectedProduct} />
-        )}
+        {selectedProduct && <ProductPreview product={selectedProduct} />}
       </BottomSheet>
 
       <FreeGiftToast />
