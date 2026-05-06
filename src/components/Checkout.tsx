@@ -33,12 +33,49 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (step === 'details') setStep('payment');
-    else if (step === 'payment') {
+    if (step === 'details') {
+      setStep('payment');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (step === 'payment') {
+      // Generate WhatsApp message
+      const orderId = Math.random().toString(36).substring(2, 9).toUpperCase();
+      
+      let message = `🛍️ *NEW ORDER: #${orderId}*\n`;
+      message += `--------------------------\n`;
+      message += `👤 *CUSTOMER DETAILS:*\n`;
+      message += `Name: ${formData.name}\n`;
+      message += `Phone: ${formData.phone}\n`;
+      message += `Address: ${formData.address}\n`;
+      message += `City: ${formData.city}\n`;
+      message += `Pincode: ${formData.pincode}\n\n`;
+      
+      message += `🖼️ *ORDER SUMMARY:*\n`;
+      paidItems.forEach(item => {
+        message += `• ${item.title} (${item.size}) x ${item.quantity} - ₹${item.price * item.quantity}\n`;
+      });
+      
+      if (freeItems.length > 0) {
+        message += `\n🎁 *FREE GIFTS:*\n`;
+        freeItems.forEach(item => {
+          message += `• ${item.title} (${item.size}) - FREE\n`;
+        });
+      }
+      
+      message += `\n💰 *TOTAL AMOUNT: ₹${totals.finalTotal}*\n`;
+      message += `--------------------------\n`;
+      message += `_Sent via Wallify Store_`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/917736497186?text=${encodedMessage}`;
+      
+      // Simulate processing state then redirect
+      setStep('success');
+      clearCart();
+      
+      // Open WhatsApp
       setTimeout(() => {
-        setStep('success');
-        clearCart();
-      }, 1500);
+        window.open(whatsappUrl, '_blank');
+      }, 1000);
     }
   };
 
@@ -74,7 +111,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 pb-24">
+    <div className="max-w-2xl mx-auto px-4 py-6 pb-32 min-h-screen flex flex-col">
       {/* Header */}
       <div className="flex items-center gap-4 mb-8">
         <button onClick={onBack} className="p-2 -ml-2 text-muted hover:text-white transition-colors">
@@ -101,7 +138,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8 flex-1">
           {/* Paid Items */}
           {paidItems.length > 0 && (
             <div>
@@ -332,7 +369,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
           </div>
 
           {/* Checkout form */}
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8 pb-12">
             {step === 'details' && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3 pb-2 border-b border-white/5">
@@ -431,12 +468,12 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
               </div>
             )}
 
-            {/* CTA */}
-            <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-background/0 lg:static lg:p-0 z-40">
+            {/* CTA - Keyboard aware sticky */}
+            <div className="sticky bottom-4 left-0 right-0 z-40 mt-12">
               <button
                 type="submit"
                 disabled={paidItems.length === 0}
-                className="w-full max-w-2xl mx-auto h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_8px_32px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_20px_40px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed border border-primary/20"
               >
                 {step === 'details' ? (
                   'Continue to Payment'

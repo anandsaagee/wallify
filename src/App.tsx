@@ -27,42 +27,9 @@ interface ProductData {
   image: string;
 }
 
-const FreeGiftToast: React.FC = () => {
-  const { totals } = useCart();
-  const show = totals.eligibleFreeGifts > 0 && totals.freeGiftCount < totals.eligibleFreeGifts;
-
-  return (
-    <AnimatePresence>
-      {show && (
-        <motion.div
-          key="free-gift-toast"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ type: 'spring', damping: 20, stiffness: 200 }}
-          className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-[90]"
-        >
-          <div className="bg-surface border border-primary/20 rounded-2xl p-3.5 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-            <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Gift className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-white leading-snug">
-                You unlocked {totals.eligibleFreeGifts} free poster{totals.eligibleFreeGifts > 1 ? 's' : ''}!
-              </p>
-              <p className="text-[10px] text-muted font-medium mt-0.5">
-                Go to your bag to choose them
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
-
 const AppContent: React.FC = () => {
   const [view, setView] = useState<View>('store');
+  const { totals } = useCart(); // Added useCart to access totals here
 
   const {
     selectedCategory,
@@ -99,11 +66,13 @@ const AppContent: React.FC = () => {
     document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
+  const showFreeGiftBanner = totals.eligibleFreeGifts > 0 && totals.freeGiftCount < totals.eligibleFreeGifts;
+
   return (
-    <div className="min-h-screen bg-background text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-white overflow-x-hidden flex flex-col">
       <Header currentView={view} setView={handleSetView} />
 
-      <div className={view === 'store' ? '' : 'pt-24'}>
+      <div className={view === 'store' ? 'flex-1' : 'pt-24 flex-1'}>
         <AnimatePresence mode="wait">
 
           {/* CHECKOUT */}
@@ -129,6 +98,38 @@ const AppContent: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
+
+              {/* Inline Reward Banner (Replaced fixed toast) */}
+              <AnimatePresence>
+                {showFreeGiftBanner && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="px-4 mb-6"
+                  >
+                    <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                        <Gift className="w-6 h-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-black text-white uppercase tracking-tight">
+                          Reward Unlocked!
+                        </p>
+                        <p className="text-xs text-muted font-medium mt-0.5">
+                          You have {totals.eligibleFreeGifts} free poster{totals.eligibleFreeGifts > 1 ? 's' : ''} waiting. 
+                          <button 
+                            onClick={() => handleSetView('checkout')}
+                            className="text-primary font-bold ml-1 hover:underline"
+                          >
+                            Choose now →
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* 🔥 BEST SELLERS (TRACKED) */}
               <HeroBestSellers
@@ -160,7 +161,7 @@ const AppContent: React.FC = () => {
                       placeholder="Search posters..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted"
+                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted focus:border-primary/30 outline-none transition-colors"
                     />
                     {searchQuery && (
                       <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -200,8 +201,6 @@ const AppContent: React.FC = () => {
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
         {selectedProduct && <ProductPreview product={selectedProduct} />}
       </BottomSheet>
-
-      <FreeGiftToast />
     </div>
   );
 };
