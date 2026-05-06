@@ -1,62 +1,36 @@
 import React from 'react';
 import { BULK_OFFERS } from '../data/config';
-import { motion } from 'framer-motion';
 import { Gift } from 'lucide-react';
 
 export const BulkOffers: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 px-4 bg-surface/50" id="offers">
+    <div className="px-4 py-4" id="offers">
       <div className="max-w-4xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <span className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
-            Save More with Bulk
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mt-3">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-[10px] font-black text-primary uppercase tracking-widest">
             Bulk Offers
-          </h2>
-          <p className="text-sm text-muted mt-3 font-medium">
-            No Hidden Discounts — Free posters are completely independent and selectable by you.
-          </p>
+          </span>
+          <div className="h-[1px] flex-1 bg-white/10" />
         </div>
 
-        {/* Offers grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-          {BULK_OFFERS.map((offer, index) => (
-            <motion.div
+        <div className="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">
+          {BULK_OFFERS.map((offer) => (
+            <div
               key={offer.buy}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="group relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 hover:border-primary/20 hover:bg-white/[0.05] transition-all duration-300"
+              className="shrink-0 bg-white/[0.03] border border-white/[0.06] rounded-xl p-3 flex items-center gap-3"
             >
-              <div className="flex items-center gap-4">
-                {/* Icon */}
-                <div className="shrink-0 w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <Gift className="w-6 h-6 text-primary" />
-                </div>
-
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl sm:text-3xl font-black text-white">
-                      Buy {offer.buy}
-                    </span>
-                    <span className="text-sm font-bold text-muted">→</span>
-                    <span className="text-2xl sm:text-3xl font-black text-primary">
-                      Get {offer.getFree} FREE
-                    </span>
-                  </div>
-                  <p className="text-xs text-muted mt-2 font-medium">
-                    Choose any {offer.getFree} poster{offer.getFree > 1 ? 's' : ''} absolutely free. No price changes.
-                  </p>
-                </div>
+              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Gift className="w-4 h-4 text-primary" />
               </div>
-            </motion.div>
+              <div className="whitespace-nowrap">
+                <p className="text-[10px] font-black text-white">
+                  Buy {offer.buy} <span className="text-primary">+ Get {offer.getFree} Free</span>
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };

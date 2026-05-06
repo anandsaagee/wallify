@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { products } from './data/products';
 import { useProductFilters } from './hooks/useProductFilters';
 import { Header } from './components/Header';
@@ -117,12 +117,12 @@ const AppContent: React.FC = () => {
                           Reward Unlocked!
                         </p>
                         <p className="text-xs text-muted font-medium mt-0.5">
-                          You have {totals.eligibleFreeGifts} free poster{totals.eligibleFreeGifts > 1 ? 's' : ''} waiting. 
+                          You have {totals.eligibleFreeGifts} free mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''} unlocked! 
                           <button 
                             onClick={() => handleSetView('checkout')}
                             className="text-primary font-bold ml-1 hover:underline"
                           >
-                            Choose now →
+                            View in bag →
                           </button>
                         </p>
                       </div>
@@ -138,8 +138,6 @@ const AppContent: React.FC = () => {
               />
 
               <main className="pb-24">
-                <Pricing />
-                <BulkOffers />
                 <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
                 <div id="collection-header" className="px-4 mb-1 mt-8 flex items-center justify-between">
@@ -174,6 +172,10 @@ const AppContent: React.FC = () => {
                 <CategoryFilter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
                 <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
 
+                {/* Minimized Price and Offer details under categories */}
+                <Pricing />
+                <BulkOffers />
+
                 {/* ✅ GRID UPDATED */}
                 {filteredProducts.length > 0 ? (
                   <ProductGrid
@@ -199,7 +201,12 @@ const AppContent: React.FC = () => {
       </div>
 
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
-        {selectedProduct && <ProductPreview product={selectedProduct} />}
+        {selectedProduct && (
+          <ProductPreview 
+            product={selectedProduct} 
+            onClose={() => setSelectedProduct(null)} 
+          />
+        )}
       </BottomSheet>
     </div>
   );

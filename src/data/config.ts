@@ -32,6 +32,11 @@ export const CATEGORIES = [
   'Classic Cars',
   'Football',
   'Mollywood',
+  'Music',
+  'Spiritual',
+  'Abstract',
+  'Hollywood',
+  'Tamil',
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];

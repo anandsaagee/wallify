@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import ProductDetail from './ProductDetail'
 
+interface Option {
+  id: string;
+  label: string;
+  value: string;
+}
+
 const DEMO_PRODUCTS = {
   poster: {
     title: 'Premium Poster Collection',
@@ -33,16 +39,14 @@ const DEMO_PRODUCTS = {
 export const ProductDetailDemo: React.FC<{ product?: 'poster' | 'shirt' }> = ({
   product = 'poster',
 }) => {
-  const [selectedOption, setSelectedOption] = useState<any>(null)
   const [isLoading, setIsLoading] = useState(false)
   const productData = DEMO_PRODUCTS[product]
 
-  const handleSelect = (option: any) => {
-    setSelectedOption(option)
+  const handleSelect = (option: Option) => {
     console.log('Option selected:', option)
   }
 
-  const handleContinue = async (option: any) => {
+  const handleContinue = async (option: Option) => {
     setIsLoading(true)
     console.log('Continue clicked with:', option)
 

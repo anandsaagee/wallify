@@ -1,62 +1,34 @@
 import React from 'react';
 import { SIZES } from '../data/config';
-import { motion } from 'framer-motion';
+
 
 export const Pricing: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 px-4" id="pricing">
+    <div className="px-4 py-4" id="pricing">
       <div className="max-w-4xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <span className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
-            Unbeatable Prices
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-[10px] font-black text-primary uppercase tracking-widest">
+            Pricing
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mt-3">
-            Premium Single Posters
-          </h2>
+          <div className="h-[1px] flex-1 bg-white/10" />
         </div>
-
-        {/* Price grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          {SIZES.map((size, index) => (
-            <motion.div
+        
+        <div className="grid grid-cols-4 gap-2">
+          {SIZES.map((size) => (
+            <div
               key={size.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="group relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 text-center hover:border-primary/20 hover:bg-white/[0.05] transition-all duration-300"
+              className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-2 text-center"
             >
-              {/* Size label */}
-              <span className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
+              <p className="text-[9px] font-black text-primary uppercase tracking-tighter mb-0.5">
                 {size.label}
-              </span>
-
-              {/* Price */}
-              <div className="mt-4 mb-2">
-                <span className="text-4xl sm:text-5xl font-black text-white tracking-tight">
-                  ₹{size.price}
-                </span>
-              </div>
-
-              {/* Dimensions */}
-              <p className="text-xs text-muted font-medium">{size.dim}</p>
-
-              {/* Hover accent */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{
-                  boxShadow: '0 0 40px rgba(250,203,21,0.05)',
-                }}
-              />
-            </motion.div>
+              </p>
+              <p className="text-sm font-black text-white">
+                ₹{size.price}
+              </p>
+            </div>
           ))}
         </div>
-
-        {/* Note */}
-        <p className="text-center text-[11px] text-muted mt-8 font-medium">
-          Prices are fixed. No hidden charges.
-        </p>
       </div>
-    </section>
+    </div>
   );
 };

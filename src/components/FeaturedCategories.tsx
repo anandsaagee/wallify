@@ -14,6 +14,11 @@ const FEATURED = [
   { name: 'Classic Cars', sub: 'Vintage Machines' },
   { name: 'Football', sub: 'Football Legends' },
   { name: 'Mollywood', sub: 'Cinema Icons' },
+  { name: 'Music', sub: 'Rock & Pop Vibes' },
+  { name: 'Spiritual', sub: 'Calm & Peace' },
+  { name: 'Abstract', sub: 'Modern Art' },
+  { name: 'Hollywood', sub: 'Movie Classics' },
+  { name: 'Tamil', sub: 'Kollywood Icons' },
 ] as const;
 
 const scrollToCollection = () => {

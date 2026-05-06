@@ -1,7 +1,8 @@
 import React, { useState, useRef, useMemo } from 'react';
-import { Upload, X, ChevronRight, ShoppingBag, Zap, Type, AlignLeft, AlignCenter, AlignRight, Layout, Palette } from 'lucide-react';
+import { Upload, X, ShoppingBag, Zap, Type, AlignLeft, AlignCenter, AlignRight, Layout, Palette } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
+import { SIZES } from '../data/config';
 
 const FONTS = [
   { id: 'Inter', label: 'Modern', family: '"Inter", sans-serif' },

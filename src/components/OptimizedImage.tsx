@@ -45,7 +45,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        // @ts-ignore
+        // @ts-expect-error: fetchpriority is not yet in React types
         fetchpriority={priority ? "high" : "auto"}
         decoding="async"
         onLoad={() => setIsLoaded(true)}

@@ -16,6 +16,7 @@ interface ProductPreviewProps {
   product: Product;
   /** If provided (e.g. from SizeFilter), pre-selects this size on open */
   initialSizeId?: string;
+  onClose?: () => void;
 }
 
 const SizeButton: React.FC<{
@@ -49,11 +50,10 @@ const BULK_OFFERS_INLINE = [
   { buy: 20, free: 7 },
 ] as const;
 
-export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId }) => {
+export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId, onClose }) => {
   const defaultSize = SIZES.find((s) => s.id === initialSizeId) ?? SIZES[1];
   const [selectedSize, setSelectedSize] = useState(defaultSize.id);
   const [cartState, setCartState] = useState<'idle' | 'added'>('idle');
-  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const { addToCart, totals } = useCart();
 
   const currentSize = SIZES.find((s) => s.id === selectedSize) ?? SIZES[1];
@@ -72,9 +72,13 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   const handleAddToCart = useCallback(() => {
     addToCart(product, selectedSize);
     setCartState('added');
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => setCartState('idle'), 2000);
-  }, [addToCart, product, selectedSize]);
+    
+    // Close window and return to main page after adding
+    setTimeout(() => {
+      onClose?.();
+      setCartState('idle');
+    }, 600);
+  }, [addToCart, product, selectedSize, onClose]);
 
   return (
     <div className="flex flex-col h-full min-h-0">
@@ -190,20 +194,20 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           aria-label={cartState === 'added' ? 'Added to cart' : 'Add to cart'}
           className={`shrink-0 w-[52px] h-[52px] rounded-2xl border-[1.5px] flex items-center justify-center transition-all duration-200 active:scale-90 ${
             cartState === 'added'
-              ? 'bg-green-500/15 border-green-500 text-green-400'
-              : 'bg-white/[0.06] border-white/10 text-white hover:bg-white/10'
+              ? 'bg-green-500 text-black border-green-500'
+              : 'bg-white text-black border-white hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]'
           }`}
         >
           {cartState === 'added' ? (
-            <Check className="w-[18px] h-[18px]" />
+            <Check className="w-[20px] h-[20px] stroke-[3px]" />
           ) : (
-            <ShoppingBag className="w-[18px] h-[18px]" />
+            <ShoppingBag className="w-[20px] h-[20px] stroke-[2.5px]" />
           )}
         </button>
 
         <button
           onClick={handleAddToCart}
-          className="flex-1 h-[52px] rounded-2xl bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 transition-transform duration-150 active:scale-95 hover:brightness-110"
+          className="flex-1 h-[52px] rounded-2xl bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 transition-transform duration-150 active:scale-95 hover:brightness-110 shadow-[0_8px_20px_rgba(250,203,21,0.2)]"
         >
           <Zap className="w-[18px] h-[18px]" aria-hidden="true" />
           Add to Cart — ₹{currentSize.price}

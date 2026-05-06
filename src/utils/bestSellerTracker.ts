@@ -16,7 +16,7 @@ export const trackProductClick = (productId: string) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 };
 
-export const getTopProducts = (products: any[], limit = 10) => {
+export const getTopProducts = <T extends { id: string }>(products: T[], limit = 10) => {
   const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 
   // First shuffle the entire products array to give every product a fair chance 

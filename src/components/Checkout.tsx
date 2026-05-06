@@ -1,18 +1,15 @@
-import React, { useState, useMemo } from 'react';
-import { ShoppingBag, ChevronLeft, CreditCard, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift, X, Plus } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShoppingBag, ChevronLeft, CreditCard, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
-import { SIZES, getEligibleFreeItems } from '../data/config';
-import { products } from '../data/products';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
 
 interface CheckoutProps {
   onBack: () => void;
-  onProductClick: (product: { id: string; title: string; image: string; category: string }) => void;
 }
 
-export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) => {
-  const { cart, totals, clearCart, selectFreePoster, removeFreePoster, freeSlots, updateQuantity, removeFromCart } = useCart();
+export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
+  const { cart, totals, clearCart, updateQuantity, removeFromCart } = useCart();
   const [step, setStep] = useState<'details' | 'payment' | 'success'>('details');
   const [formData, setFormData] = useState({
     name: '',
@@ -22,9 +19,6 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
     city: '',
     pincode: '',
   });
-  const [freePosterSize, setFreePosterSize] = useState('A5');
-  const [showFreePosterPicker, setShowFreePosterPicker] = useState(false);
-  const [freeSearch, setFreeSearch] = useState('');
 
   const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -54,11 +48,9 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
         message += `• ${item.title} (${item.size}) x ${item.quantity} - ₹${item.price * item.quantity}\n`;
       });
       
-      if (freeItems.length > 0) {
+      if (totals.eligibleFreeGifts > 0) {
         message += `\n🎁 *FREE GIFTS:*\n`;
-        freeItems.forEach(item => {
-          message += `• ${item.title} (${item.size}) - FREE\n`;
-        });
+        message += `• ${totals.eligibleFreeGifts}x Mystery Poster${totals.eligibleFreeGifts > 1 ? 's' : ''} - FREE\n`;
       }
       
       message += `\n💰 *TOTAL AMOUNT: ₹${totals.finalTotal}*\n`;
@@ -81,14 +73,6 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
 
   const paidItems = cart.filter((item) => !item.isFreeGift);
   const freeItems = cart.filter((item) => item.isFreeGift);
-
-  const filteredFreePosters = useMemo(() => {
-    const q = freeSearch.toLowerCase().trim();
-    return products.filter(
-      (p) =>
-        !q || p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)
-    );
-  }, [freeSearch]);
 
   if (step === 'success') {
     return (
@@ -190,7 +174,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
             </div>
           )}
 
-          {/* Free Poster Section */}
+          {/* Mystery Free Poster Notice */}
           <AnimatePresence>
             {totals.eligibleFreeGifts > 0 && (
               <motion.div
@@ -199,124 +183,17 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack, onProductClick }) =>
                 exit={{ opacity: 0, y: -20 }}
                 className="bg-primary/[0.04] border border-primary/10 rounded-2xl p-5"
               >
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-2">
                   <Gift className="w-5 h-5 text-primary" />
                   <h2 className="text-sm font-black text-primary uppercase tracking-widest">
-                    Choose Your Free Posters
+                    Mystery Rewards Unlocked!
                   </h2>
                 </div>
 
-                <p className="text-xs text-muted font-medium mb-3">
-                  You unlocked <span className="text-primary font-black">{totals.eligibleFreeGifts}</span> free poster
-                  {totals.eligibleFreeGifts > 1 ? 's' : ''}.
-                  {freeSlots > 0 && (
-                    <span className="text-white font-bold"> {freeSlots} remaining to pick.</span>
-                  )}
-                  {freeSlots === 0 && totals.freeGiftCount > 0 && (
-                    <span className="text-white/40"> All free posters selected.</span>
-                  )}
+                <p className="text-xs text-muted font-medium leading-relaxed">
+                  You've unlocked <span className="text-primary font-black">{totals.eligibleFreeGifts}</span> FREE mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''}! 
+                  These will be carefully selected and added to your package automatically.
                 </p>
-
-                {/* Already selected free items */}
-                {freeItems.length > 0 && (
-                  <div className="space-y-2 mb-3">
-                    {freeItems.map((item) => (
-                      <div
-                        key={item.variantId}
-                        className="flex items-center gap-3 bg-white/[0.05] rounded-xl p-2"
-                      >
-                        <div className="shrink-0 w-10 h-14 rounded-lg overflow-hidden bg-surface">
-                          <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-xs font-bold text-white truncate">{item.title}</p>
-                          <p className="text-[10px] text-muted">{item.size}</p>
-                        </div>
-                        <span className="text-xs font-black text-green-400">FREE</span>
-                        <button
-                          onClick={() => removeFreePoster(item.variantId)}
-                          className="shrink-0 w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-red-500/20 hover:text-red-400 active:scale-95 transition-all"
-                        >
-                          <X size={14} />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Free poster picker button */}
-                {freeSlots > 0 && (
-                  <button
-                    onClick={() => setShowFreePosterPicker(!showFreePosterPicker)}
-                    className="w-full py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-bold text-sm hover:bg-primary/15 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-                  >
-                    <Plus size={16} />
-                    Pick a Free Poster ({freeSlots} left)
-                  </button>
-                )}
-
-                {/* Free poster picker */}
-                <AnimatePresence>
-                  {showFreePosterPicker && freeSlots > 0 && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-4"
-                    >
-                      {/* Size selector for free poster */}
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[10px] font-bold text-muted uppercase">Size:</span>
-                        <div className="flex gap-1">
-                          {SIZES.map((s) => (
-                            <button
-                              key={s.id}
-                              onClick={() => setFreePosterSize(s.id)}
-                              className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-all ${
-                                freePosterSize === s.id
-                                  ? 'bg-primary/20 text-primary'
-                                  : 'bg-white/5 text-muted hover:bg-white/10'
-                              }`}
-                            >
-                              {s.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Search */}
-                      <input
-                        type="search"
-                        placeholder="Search posters..."
-                        value={freeSearch}
-                        onChange={(e) => setFreeSearch(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder:text-muted focus:outline-none focus:border-primary/30 transition-colors mb-3"
-                      />
-
-                      {/* Poster grid */}
-                      <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 max-h-64 overflow-y-auto pr-1">
-                        {filteredFreePosters.slice(0, 24).map((p) => (
-                          <button
-                            key={p.id}
-                            onClick={() => {
-                              selectFreePoster(p, freePosterSize);
-                              setShowFreePosterPicker(false);
-                              setFreeSearch('');
-                            }}
-                            className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 hover:border-primary/30 transition-all active:scale-95"
-                          >
-                            <OptimizedImage src={p.image} alt={p.title} containerClassName="w-full h-full" className="w-full h-full" />
-                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                              <span className="text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                                + Free
-                              </span>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </motion.div>
             )}
           </AnimatePresence>

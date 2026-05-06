@@ -1,5 +1,5 @@
 import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { TrendingUp, Flame, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TrendingUp, Flame } from 'lucide-react';
 import { ITEMS_PER_PAGE } from '../data/config';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
@@ -32,7 +32,7 @@ function useIntersectionObserver(
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [ref, options?.rootMargin, options?.threshold]);
+  }, [ref, options]);
 }
 
 // ─── ProductCard ──────────────────────────────────────────────────────────────
