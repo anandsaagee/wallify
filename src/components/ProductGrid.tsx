@@ -1,5 +1,5 @@
 import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TrendingUp, Flame, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ITEMS_PER_PAGE } from '../data/config';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
@@ -42,8 +42,15 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
     const [error, setError] = useState(false);
 
     const isBestSeller = useMemo(() => {
+      // Deterministic randomness based on ID for consistency within a session
       const numId = parseInt(product.id.replace(/\D/g, ''), 10);
-      return !isNaN(numId) && numId > 0 && numId % 9 === 0;
+      return !isNaN(numId) && numId > 0 && numId % 12 === 0;
+    }, [product.id]);
+
+    const isHotDeal = useMemo(() => {
+      const numId = parseInt(product.id.replace(/\D/g, ''), 10);
+      // Let's make hot deals different from best sellers
+      return !isNaN(numId) && numId > 0 && (numId + 3) % 15 === 0;
     }, [product.id]);
 
     return (
@@ -85,6 +92,13 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
               <span className="sm:hidden">Hot</span>
             </div>
           )}
+
+          {isHotDeal && !isBestSeller && (
+            <div className="absolute top-2 left-2 z-10 bg-rose-500 text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1 animate-pulse">
+              <Flame className="w-3 h-3 fill-current" />
+              <span>Hot Deal</span>
+            </div>
+          )}
         </div>
 
         <div className="px-0.5">
@@ -99,6 +113,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
     );
   }
 );
+
 
 ProductCard.displayName = 'ProductCard';
 
