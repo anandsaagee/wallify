@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, ChevronLeft, CreditCard, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,6 +20,46 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
     pincode: '',
   });
 
+  const [shippingError, setShippingError] = useState<string | null>(null);
+  const [shippingZone, setShippingZone] = useState<{name: string, charge: number, days: string} | null>(null);
+
+  useEffect(() => {
+    const pin = formData.pincode.replace(/\D/g, '');
+    if (pin.length < 6) {
+      setShippingZone(null);
+      setShippingError(null);
+      return;
+    }
+    
+    if (pin.length === 6) {
+      const prefix = parseInt(pin.substring(0, 3), 10);
+      
+      if (prefix < 100 || prefix > 855) {
+        setShippingError('Delivery unavailable to this PIN code.');
+        setShippingZone(null);
+        return;
+      }
+      
+      let zone;
+      if (prefix >= 670 && prefix <= 699) {
+        zone = { name: 'Kerala', charge: 50, days: '5–7 days' };
+      } else if (prefix >= 500 && prefix <= 699) {
+        zone = { name: 'South India', charge: 60, days: '5–7 days' };
+      } else if (prefix === 194 || prefix === 744 || (prefix >= 780 && prefix <= 799)) {
+        zone = { name: 'Remote Area', charge: 120, days: '8–10 days' };
+      } else {
+        zone = { name: 'All India', charge: 80, days: '6–9 days' };
+      }
+      
+      setShippingZone(zone);
+      setShippingError(null);
+    }
+  }, [formData.pincode]);
+
+  const isFreeShipping = totals.subtotal >= 999;
+  const shippingCharge = shippingZone ? (isFreeShipping ? 0 : shippingZone.charge) : 0;
+  const finalTotalWithShipping = totals.finalTotal + shippingCharge;
+
   const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -28,6 +68,10 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (step === 'details') {
+      if (formData.pincode.length !== 6 || !shippingZone) {
+        alert('Please enter a valid 6-digit pincode for delivery.');
+        return;
+      }
       setStep('payment');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (step === 'payment') {
@@ -53,7 +97,9 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
         message += `• ${totals.eligibleFreeGifts}x Mystery Poster${totals.eligibleFreeGifts > 1 ? 's' : ''} - FREE\n`;
       }
       
-      message += `\n💰 *TOTAL AMOUNT: ₹${totals.finalTotal}*\n`;
+      message += `\n💰 *SUBTOTAL: ₹${totals.finalTotal}*\n`;
+      message += `🚚 *SHIPPING (${shippingZone?.name}): ${isFreeShipping ? 'FREE' : '₹' + shippingCharge}*\n`;
+      message += `💰 *TOTAL AMOUNT: ₹${finalTotalWithShipping}*\n`;
       message += `--------------------------\n`;
       message += `_Sent via Wallify Store_`;
 
@@ -226,24 +272,57 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
               </div>
             )}
 
+            <div className="flex justify-between text-sm font-bold">
+              <span className="text-muted">Shipping</span>
+              <span className={isFreeShipping && shippingZone ? "text-green-400" : "text-white"}>
+                {!shippingZone ? 'Calculated next step' : (isFreeShipping ? 'FREE' : `₹${shippingZone.charge}`)}
+              </span>
+            </div>
+
             <div className="pt-3 border-t border-white/10 flex justify-between items-end">
               <span className="text-sm font-black text-muted uppercase tracking-wider">Total</span>
-              <span className="text-2xl font-black text-primary">₹{totals.finalTotal}</span>
+              <span className="text-2xl font-black text-primary">₹{finalTotalWithShipping}</span>
             </div>
           </div>
 
           {/* Delivery notice */}
-          <div className="flex items-start gap-3 bg-white/[0.03] border border-white/[0.04] rounded-2xl p-4">
-            <div className="shrink-0 w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center">
-              <Info className="w-4 h-4 text-blue-400" />
+          {shippingZone ? (
+            <div className="flex items-start gap-3 bg-green-500/10 border border-green-500/20 rounded-2xl p-4">
+              <div className="shrink-0 w-8 h-8 rounded-xl bg-green-500/20 flex items-center justify-center">
+                <CheckCircle2 className="w-4 h-4 text-green-400" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-green-400">Delivery to {formData.pincode} ({shippingZone.name})</p>
+                <p className="text-[11px] text-green-400/80 mt-0.5 leading-relaxed">
+                  Estimated delivery in {shippingZone.days}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs font-bold text-white/80">Delivery Charges</p>
-              <p className="text-[11px] text-muted mt-0.5 leading-relaxed">
-                Delivery charges will be calculated based on your pincode.
-              </p>
+          ) : shippingError ? (
+            <div className="flex items-start gap-3 bg-red-500/10 border border-red-500/20 rounded-2xl p-4">
+              <div className="shrink-0 w-8 h-8 rounded-xl bg-red-500/20 flex items-center justify-center">
+                <Info className="w-4 h-4 text-red-400" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-red-400">Delivery Unavailable</p>
+                <p className="text-[11px] text-red-400/80 mt-0.5 leading-relaxed">
+                  {shippingError}
+                </p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex items-start gap-3 bg-white/[0.03] border border-white/[0.04] rounded-2xl p-4">
+              <div className="shrink-0 w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                <Info className="w-4 h-4 text-blue-400" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-white/80">Delivery Charges</p>
+                <p className="text-[11px] text-muted mt-0.5 leading-relaxed">
+                  Delivery charges will be calculated based on your pincode. Free shipping on orders above ₹999.
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Checkout form */}
           <form onSubmit={handleSubmit} className="space-y-8 pb-12">
@@ -357,7 +436,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 ) : (
                   <>
                     <Truck size={16} />
-                    Place Order — ₹{totals.finalTotal}
+                    Place Order — ₹{finalTotalWithShipping}
                   </>
                 )}
               </button>
