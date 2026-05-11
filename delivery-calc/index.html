@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtPoster Store – India Delivery Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#6c47ff;
+  --primary-light:#ede9ff;
+  --success:#16a34a;
+  --success-bg:#dcfce7;
+  --error:#dc2626;
+  --error-bg:#fee2e2;
+  --warn:#d97706;
+  --warn-bg:#fef3c7;
+  --info:#0284c7;
+  --info-bg:#f0f9ff;
+  --gray-50:#f9fafb;
+  --gray-100:#f3f4f6;
+  --gray-200:#e5e7eb;
+  --gray-400:#9ca3af;
+  --gray-600:#4b5563;
+  --gray-800:#1f2937;
+  --gray-900:#111827;
+  --radius:14px;
+  --shadow:0 4px 24px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 40px rgba(0,0,0,.13);
+}
+body{font-family:'Inter',sans-serif;background:#f5f4f8;color:var(--gray-900);min-height:100vh;padding:20px 16px 60px}
+h1,h2,h3{font-weight:700}
+
+/* ---------- Banner ---------- */
+.banner{background:linear-gradient(135deg,#6c47ff,#a855f7);color:#fff;text-align:center;padding:10px 16px;border-radius:10px;font-size:.82rem;font-weight:600;letter-spacing:.4px;margin-bottom:24px}
+.banner span{opacity:.85;font-weight:400}
+
+/* ---------- Layout ---------- */
+.page{max-width:1100px;margin:0 auto}
+.grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+
+/* ---------- Card ---------- */
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;transition:box-shadow .2s}
+.card:hover{box-shadow:var(--shadow-lg)}
+
+/* ---------- Product Image ---------- */
+.img-wrap{border-radius:10px;overflow:hidden;background:var(--gray-100);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative}
+.img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.img-wrap:hover img{transform:scale(1.04)}
+.badge-new{position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px}
+
+/* ---------- Product Info ---------- */
+.product-title{font-size:1.25rem;font-weight:700;margin-bottom:6px;color:var(--gray-900)}
+.product-sub{font-size:.82rem;color:var(--gray-400);margin-bottom:14px}
+.rating{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--gray-600);margin-bottom:18px}
+.stars{color:#f59e0b;letter-spacing:-1px}
+.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}
+.price{font-size:1.7rem;font-weight:700;color:var(--primary)}
+.price-original{font-size:.95rem;color:var(--gray-400);text-decoration:line-through}
+.price-off{font-size:.8rem;background:var(--success-bg);color:var(--success);padding:3px 8px;border-radius:6px;font-weight:600}
+
+/* ---------- Quantity ---------- */
+.label{font-size:.78rem;font-weight:600;color:var(--gray-600);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+.qty-row{display:flex;align-items:center;gap:0;border:2px solid var(--gray-200);border-radius:10px;width:fit-content;margin-bottom:22px;overflow:hidden}
+.qty-btn{width:40px;height:40px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--primary);font-weight:700;transition:background .15s}
+.qty-btn:hover{background:var(--primary-light)}
+.qty-val{min-width:44px;text-align:center;font-weight:600;font-size:1rem;border:none;outline:none;background:transparent}
+
+/* ---------- Pincode ---------- */
+.pin-row{display:flex;gap:10px;margin-bottom:8px}
+.pin-input{flex:1;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:.97rem;font-family:inherit;outline:none;transition:border .2s}
+.pin-input:focus{border-color:var(--primary)}
+.pin-input.error{border-color:var(--error)}
+.pin-input.success{border-color:var(--success)}
+.check-btn{padding:12px 20px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s,transform .1s;white-space:nowrap}
+.check-btn:hover:not(:disabled){background:#5535e0;transform:translateY(-1px)}
+.check-btn:disabled{background:var(--gray-400);cursor:not-allowed;transform:none}
+
+/* ---------- Spinner ---------- */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .65s linear infinite;vertical-align:middle;margin-right:6px}
+
+/* ---------- Result ---------- */
+.result-box{border-radius:10px;padding:14px 16px;font-size:.88rem;display:none;animation:fadeUp .3s ease}
+.result-box.show{display:block}
+.result-box.success-box{background:var(--success-bg);border:1px solid #bbf7d0;color:var(--success)}
+.result-box.error-box{background:var(--error-bg);border:1px solid #fecaca;color:var(--error)}
+.result-box.warn-box{background:var(--warn-bg);border:1px solid #fde68a;color:var(--warn)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.result-item{background:rgba(255,255,255,.6);border-radius:8px;padding:8px 12px}
+.result-item-label{font-size:.7rem;font-weight:600;letter-spacing:.4px;text-transform:uppercase;opacity:.75}
+.result-item-val{font-size:.95rem;font-weight:700;margin-top:2px}
+
+/* ---------- Divider ---------- */
+.divider{height:1px;background:var(--gray-100);margin:22px 0}
+
+/* ---------- COD (Disabled) ---------- */
+.cod-badge{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--error);background:var(--error-bg);border-radius:8px;padding:8px 12px;font-weight:500}
+
+/* ---------- Checkout Summary ---------- */
+.summary-card{position:sticky;top:20px}
+.summary-title{font-size:1rem;font-weight:700;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--gray-100)}
+.sum-row{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:12px;color:var(--gray-600)}
+.sum-row span:last-child{font-weight:500;color:var(--gray-900)}
+.sum-total{display:flex;justify-content:space-between;font-size:1.1rem;font-weight:700;padding-top:14px;border-top:2px solid var(--gray-200);color:var(--gray-900)}
+.sum-total .amount{color:var(--primary)}
+.shipping-row{color:var(--gray-600)}
+.shipping-row .ship-val{color:var(--gray-900);font-weight:500}
+.shipping-row .ship-val.pending{color:var(--gray-400);font-style:italic}
+
+.btn-order{width:100%;padding:15px;background:linear-gradient(135deg,#6c47ff,#a855f7);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:20px;transition:opacity .2s,transform .1s;letter-spacing:.3px}
+.btn-order:hover{opacity:.92;transform:translateY(-1px)}
+
+.zone-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.zbadge{font-size:.75rem;padding:4px 10px;border-radius:20px;font-weight:600;border:1px solid}
+.zbadge-zone{background:#ede9ff;color:#6c47ff;border-color:#c4b5fd}
+.zbadge-days{background:#e0f2fe;color:#0369a1;border-color:#bae6fd}
+.zbadge-nocod{background:var(--error-bg);color:var(--error);border-color:#fecaca}
+.zbadge-free{background:#fef3c7;color:#b45309;border-color:#fde68a}
+
+/* ---------- Info strips ---------- */
+.strips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.strip{text-align:center;padding:10px 6px;background:var(--gray-50);border-radius:8px}
+.strip-icon{font-size:1.3rem;margin-bottom:4px}
+.strip-text{font-size:.7rem;color:var(--gray-600);font-weight:500}
+
+/* ---------- Responsive adjustments ---------- */
+@media(max-width:540px){
+  .result-grid{grid-template-columns:1fr}
+  .strips{grid-template-columns:repeat(3,1fr)}
+  .price{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Free shipping banner -->
+  <div class="banner" id="freeBanner">
+    🎉 Free Shipping on orders above ₹999! &nbsp;<span>Use code ARTFREE at checkout.</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- ===== LEFT: Product Card ===== -->
+    <div class="card">
+
+      <!-- Product Image -->
+      <div class="img-wrap">
+        <span class="badge-new">NEW</span>
+        <img id="posterImg"
+             src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80"
+             alt="Abstract Mountain Landscape Poster"
+             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect fill=\'%23ede9ff\' width=\'400\' height=\'500\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'18\' fill=\'%236c47ff\' font-family=\'Inter,sans-serif\'%3E🖼 Poster Preview%3C/text%3E%3C/svg%3E'">
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-title">Abstract Mountain Landscape Poster</div>
+      <div class="product-sub">Premium Matte Finish · A3 Size (29.7 × 42 cm) · Under 200g</div>
+
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 &nbsp;·&nbsp; 2,341 reviews</span>
+      </div>
+
+      <div class="price-row">
+        <span class="price">₹399</span>
+        <span class="price-original">₹799</span>
+        <span class="price-off">50% OFF</span>
+      </div>
+
+      <!-- Quantity -->
+      <div class="label">Quantity</div>
+      <div class="qty-row">
+        <button class="qty-btn" id="qtyMinus" onclick="changeQty(-1)">−</button>
+        <span class="qty-val" id="qtyVal">1</span>
+        <button class="qty-btn" id="qtyPlus" onclick="changeQty(1)">+</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- PIN Code -->
+      <div class="label">Check Delivery</div>
+      <div class="pin-row">
+        <input class="pin-input" id="pinInput" type="tel" maxlength="6" placeholder="Enter 6-digit PIN code" inputmode="numeric" oninput="this.value=this.value.replace(/\D/g,'')">
+        <button class="check-btn" id="checkBtn" onclick="checkDelivery()">Check</button>
+      </div>
+
+      <!-- Result Box -->
+      <div class="result-box" id="resultBox">
+        <div id="resultMsg"></div>
+        <div class="result-grid" id="resultGrid" style="display:none"></div>
+        <div class="zone-badges" id="zoneBadges" style="display:none"></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- COD Badge -->
+      <div class="cod-badge">
+        🚫 &nbsp;Cash on Delivery is currently not available
+      </div>
+
+      <!-- Info Strips -->
+      <div class="strips">
+        <div class="strip"><div class="strip-icon">📦</div><div class="strip-text">Secure Packaging</div></div>
+        <div class="strip"><div class="strip-icon">↩️</div><div class="strip-text">Easy Returns</div></div>
+        <div class="strip"><div class="strip-icon">✅</div><div class="strip-text">100% Authentic</div></div>
+      </div>
+
+    </div>
+
+    <!-- ===== RIGHT: Checkout Summary ===== -->
+    <div class="card summary-card">
+      <div class="summary-title">🛒 Order Summary</div>
+
+      <div class="sum-row">
+        <span>Poster (A3) × <span id="sumQty">1</span></span>
+        <span id="sumSubtotal">₹399</span>
+      </div>
+
+      <div class="sum-row shipping-row">
+        <span>Shipping</span>
+        <span class="ship-val pending" id="sumShipping">Enter PIN code</span>
+      </div>
+
+      <div class="sum-row">
+        <span>Discount</span>
+        <span style="color:var(--success)" id="sumDiscount">− ₹0</span>
+      </div>
+
+      <div class="sum-total">
+        <span>Total</span>
+        <span class="amount" id="sumTotal">₹399</span>
+      </div>
+
+      <div class="result-box" id="summaryZoneBox" style="margin-top:14px"></div>
+
+      <button class="btn-order" onclick="placeOrder()">Proceed to Checkout →</button>
+
+      <div style="text-align:center;font-size:.75rem;color:var(--gray-400);margin-top:12px">
+        🔒 Secure checkout &nbsp;·&nbsp; SSL Encrypted
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   SHIPPING ZONES — edit prefixes here to customise zones
+   ============================================================ */
+const POSTER_PRICE = 399;
+const FREE_SHIPPING_THRESHOLD = 999;
+
+const shippingZones = {
+  kerala: {
+    name: 'Kerala',
+    charge: 50,
+    days: '5–7 days',
+    color: '#16a34a',
+    // PIN prefixes 670–699
+    prefixes: [
+      670,671,672,673,674,675,676,677,678,679,
+      680,681,682,683,684,685,686,687,688,689,
+      690,691,692,693,694,695,696,697,698,699
+    ]
+  },
+  south: {
+    name: 'South India',
+    charge: 60,
+    days: '5–7 days',
+    color: '#0369a1',
+    // Tamil Nadu: 600–643
+    // Karnataka: 560–591
+    // Andhra Pradesh: 500–535
+    // Telangana: 500–509, 536–544
+    // Puducherry: 605–607
+    prefixes: [
+      // Andhra Pradesh & Telangana
+      500,501,502,503,504,505,506,507,508,509,
+      510,511,512,513,514,515,516,517,518,519,
+      520,521,522,523,524,525,526,527,528,529,
+      530,531,532,533,534,535,536,537,538,539,
+      540,541,542,543,544,545,546,547,548,549,
+      // Karnataka
+      560,561,562,563,564,565,566,567,568,569,
+      570,571,572,573,574,575,576,577,578,579,
+      580,581,582,583,584,585,586,587,588,589,
+      590,591,
+      // Tamil Nadu & Puducherry
+      600,601,602,603,604,605,606,607,608,609,
+      610,611,612,613,614,615,616,617,618,619,
+      620,621,622,623,624,625,626,627,628,629,
+      630,631,632,633,634,635,636,637,638,639,
+      640,641,642,643
+    ]
+  },
+  remote: {
+    name: 'Remote Area',
+    charge: 120,
+    days: '8–10 days',
+    color: '#b45309',
+    // Northeast: 780–799
+    // J&K / Ladakh: 194
+    // Andaman & Nicobar: 744
+    prefixes: [
+      194,744,
+      780,781,782,783,784,785,786,787,788,789,
+      790,791,792,793,794,795,796,797,798,799
+    ]
+  },
+  allIndia: {
+    name: 'All India',
+    charge: 80,
+    days: '6–9 days',
+    color: '#6c47ff'
+    // Default — no prefixes list (catch-all)
+  }
+};
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let qty = 1;
+let currentShipping = null;
+let currentZone = null;
+
+/* ============================================================
+   validatePincode(pin) — returns {valid, prefix, reason}
+   ============================================================ */
+function validatePincode(pin) {
+  if (!/^\d{6}$/.test(pin)) {
+    return { valid: false, reason: pin.length < 6 ? 'PIN code must be 6 digits.' : 'Invalid PIN code format.' };
+  }
+  const num = parseInt(pin, 10);
+  // Basic India range check
+  if (num < 110001 || num > 855118) {
+    // Allow Kerala/South/Remote prefixes too; just check prefix range
+  }
+  const prefix = parseInt(pin.substring(0, 3), 10);
+  if (prefix < 100 || prefix > 855) {
+    return { valid: false, reason: 'PIN code is out of valid Indian range.' };
+  }
+  return { valid: true, prefix };
+}
+
+/* ============================================================
+   calculateShipping(prefix) — returns zone key or null
+   ============================================================ */
+function calculateShipping(prefix) {
+  if (shippingZones.kerala.prefixes.includes(prefix)) return 'kerala';
+  if (shippingZones.remote.prefixes.includes(prefix)) return 'remote';
+  if (shippingZones.south.prefixes.includes(prefix)) return 'south';
+  // All valid Indian prefixes → allIndia
+  return 'allIndia';
+}
+
+/* ============================================================
+   updateTotal()
+   ============================================================ */
+function updateTotal() {
+  const subtotal = POSTER_PRICE * qty;
+  const ship = currentShipping !== null ? currentShipping : 0;
+  const isFree = subtotal >= FREE_SHIPPING_THRESHOLD;
+  const finalShip = isFree ? 0 : ship;
+  const total = subtotal + finalShip;
+
+  document.getElementById('sumQty').textContent = qty;
+  document.getElementById('sumSubtotal').textContent = '₹' + subtotal;
+  document.getElementById('sumTotal').textContent = '₹' + total;
+
+  if (currentShipping === null) {
+    document.getElementById('sumShipping').textContent = 'Enter PIN code';
+    document.getElementById('sumShipping').className = 'ship-val pending';
+    document.getElementById('sumDiscount').textContent = '− ₹0';
+  } else if (isFree) {
+    document.getElementById('sumShipping').textContent = 'FREE (was ₹' + ship + ')';
+    document.getElementById('sumShipping').className = 'ship-val';
+    document.getElementById('sumShipping').style.color = 'var(--success)';
+    document.getElementById('sumDiscount').textContent = '− ₹' + ship;
+  } else {
+    document.getElementById('sumShipping').textContent = '₹' + ship;
+    document.getElementById('sumShipping').className = 'ship-val';
+    document.getElementById('sumShipping').style.color = '';
+    document.getElementById('sumDiscount').textContent = '− ₹0';
+  }
+
+  // Update free shipping banner
+  const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
+  const banner = document.getElementById('freeBanner');
+  if (subtotal >= FREE_SHIPPING_THRESHOLD) {
+    banner.innerHTML = '🎉 You qualify for <strong>Free Shipping!</strong> Applied automatically.';
+    banner.style.background = 'linear-gradient(135deg,#16a34a,#22c55e)';
+  } else {
+    banner.innerHTML = `🛍 Add items worth <strong>₹${remaining} more</strong> to get <strong>FREE Shipping!</strong>`;
+    banner.style.background = 'linear-gradient(135deg,#6c47ff,#a855f7)';
+  }
+}
+
+/* ============================================================
+   changeQty(delta)
+   ============================================================ */
+function changeQty(delta) {
+  qty = Math.max(1, Math.min(10, qty + delta));
+  document.getElementById('qtyVal').textContent = qty;
+  updateTotal();
+}
+
+/* ============================================================
+   checkDelivery() — main trigger
+   ============================================================ */
+function checkDelivery() {
+  const pin = document.getElementById('pinInput').value.trim();
+  const btn = document.getElementById('checkBtn');
+  const box = document.getElementById('resultBox');
+  const msg = document.getElementById('resultMsg');
+  const grid = document.getElementById('resultGrid');
+  const badges = document.getElementById('zoneBadges');
+  const summaryBox = document.getElementById('summaryZoneBox');
+  const input = document.getElementById('pinInput');
+
+  // Reset
+  box.className = 'result-box';
+  box.classList.remove('show');
+  grid.style.display = 'none';
+  badges.style.display = 'none';
+  summaryBox.className = 'result-box';
+  summaryBox.style.display = 'none';
+  input.classList.remove('error','success');
+
+  // Show spinner
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Checking…';
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = 'Check';
+
+    const v = validatePincode(pin);
+    if (!v.valid) {
+      input.classList.add('error');
+      box.className = 'result-box error-box show';
+      msg.textContent = '❌ ' + v.reason;
+      currentShipping = null;
+      currentZone = null;
+      updateTotal();
+      return;
+    }
+
+    const zoneKey = calculateShipping(v.prefix);
+    if (!zoneKey) {
+      input.classList.add('error');
+      box.className = 'result-box error-box show';
+      msg.textContent = '⚠️ Delivery unavailable to this PIN code.';
+      currentShipping = null;
+      currentZone = null;
+      updateTotal();
+      return;
+    }
+
+    const zone = shippingZones[zoneKey];
+    const subtotal = POSTER_PRICE * qty;
+    const isFree = subtotal >= FREE_SHIPPING_THRESHOLD;
+    const shipCharge = isFree ? 0 : zone.charge;
+
+    currentShipping = zone.charge;
+    currentZone = zone;
+    updateTotal();
+
+    input.classList.add('success');
+    box.className = 'result-box success-box show';
+    msg.innerHTML = `✅ <strong>Delivery available</strong> to PIN ${pin}`;
+
+    // Result grid
+    grid.style.display = 'grid';
+    grid.innerHTML = `
+      <div class="result-item">
+        <div class="result-item-label">Zone</div>
+        <div class="result-item-val">${zone.name}</div>
+      </div>
+      <div class="result-item">
+        <div class="result-item-label">Shipping</div>
+        <div class="result-item-val">${isFree ? '<span style="color:var(--success)">FREE</span>' : '₹' + zone.charge}</div>
+      </div>
+      <div class="result-item">
+        <div class="result-item-label">Estimated Delivery</div>
+        <div class="result-item-val">${zone.days}</div>
+      </div>
+      <div class="result-item">
+        <div class="result-item-label">Payment</div>
+        <div class="result-item-val" style="color:var(--error)">Prepaid Only (No COD)</div>
+      </div>
+    `;
+
+    // Zone badges
+    badges.style.display = 'flex';
+    badges.innerHTML = `
+      <span class="zbadge zbadge-zone">📍 ${zone.name}</span>
+      <span class="zbadge zbadge-days">🕐 ${zone.days}</span>
+      <span class="zbadge zbadge-nocod">🚫 No COD</span>
+      ${isFree ? '<span class="zbadge zbadge-free">🎁 Free Shipping!</span>' : ''}
+    `;
+
+    // Summary zone box
+    summaryBox.className = 'result-box success-box show';
+    summaryBox.style.display = 'block';
+    summaryBox.innerHTML = `📍 Delivering to PIN <strong>${pin}</strong> — <strong>${zone.name}</strong><br><small style="opacity:.8">Estimated: ${zone.days}</small>`;
+
+  }, 900); // simulate loading
+}
+
+/* ============================================================
+   placeOrder()
+   ============================================================ */
+function placeOrder() {
+  if (!currentZone) {
+    alert('Please enter and verify your PIN code before proceeding.');
+    document.getElementById('pinInput').focus();
+    return;
+  }
+  const subtotal = POSTER_PRICE * qty;
+  const isFree = subtotal >= FREE_SHIPPING_THRESHOLD;
+  const ship = isFree ? 0 : currentShipping;
+  alert(`✅ Order Summary\n\nPoster × ${qty} = ₹${subtotal}\nShipping (${currentZone.name}) = ₹${ship}\nTotal = ₹${subtotal + ship}\n\nThank you for your order! 🎉`);
+}
+
+/* ============================================================
+   Allow Enter key on PIN input
+   ============================================================ */
+document.getElementById('pinInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkDelivery();
+});
+
+/* Init */
+updateTotal();
+</script>
+</body>
+</html>
