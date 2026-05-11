@@ -186,7 +186,7 @@ h1,h2,h3{font-weight:700}
       <!-- PIN Code -->
       <div class="label">Check Delivery</div>
       <div class="pin-row">
-        <input class="pin-input" id="pinInput" type="tel" maxlength="6" placeholder="Enter 6-digit PIN code" inputmode="numeric" oninput="this.value=this.value.replace(/\D/g,'')">
+        <input class="pin-input" id="pinInput" type="tel" maxlength="6" placeholder="Enter 6-digit PIN code" inputmode="numeric">
         <button class="check-btn" id="checkBtn" onclick="checkDelivery()">Check</button>
       </div>
 
@@ -261,64 +261,25 @@ const shippingZones = {
     name: 'Kerala',
     charge: 50,
     days: '5–7 days',
-    color: '#16a34a',
-    // PIN prefixes 670–699
-    prefixes: [
-      670,671,672,673,674,675,676,677,678,679,
-      680,681,682,683,684,685,686,687,688,689,
-      690,691,692,693,694,695,696,697,698,699
-    ]
+    color: '#16a34a'
   },
   south: {
     name: 'South India',
     charge: 60,
     days: '5–7 days',
-    color: '#0369a1',
-    // Tamil Nadu: 600–643
-    // Karnataka: 560–591
-    // Andhra Pradesh: 500–535
-    // Telangana: 500–509, 536–544
-    // Puducherry: 605–607
-    prefixes: [
-      // Andhra Pradesh & Telangana
-      500,501,502,503,504,505,506,507,508,509,
-      510,511,512,513,514,515,516,517,518,519,
-      520,521,522,523,524,525,526,527,528,529,
-      530,531,532,533,534,535,536,537,538,539,
-      540,541,542,543,544,545,546,547,548,549,
-      // Karnataka
-      560,561,562,563,564,565,566,567,568,569,
-      570,571,572,573,574,575,576,577,578,579,
-      580,581,582,583,584,585,586,587,588,589,
-      590,591,
-      // Tamil Nadu & Puducherry
-      600,601,602,603,604,605,606,607,608,609,
-      610,611,612,613,614,615,616,617,618,619,
-      620,621,622,623,624,625,626,627,628,629,
-      630,631,632,633,634,635,636,637,638,639,
-      640,641,642,643
-    ]
+    color: '#0369a1'
   },
   remote: {
     name: 'Remote Area',
     charge: 120,
     days: '8–10 days',
-    color: '#b45309',
-    // Northeast: 780–799
-    // J&K / Ladakh: 194
-    // Andaman & Nicobar: 744
-    prefixes: [
-      194,744,
-      780,781,782,783,784,785,786,787,788,789,
-      790,791,792,793,794,795,796,797,798,799
-    ]
+    color: '#b45309'
   },
   allIndia: {
     name: 'All India',
     charge: 80,
     days: '6–9 days',
     color: '#6c47ff'
-    // Default — no prefixes list (catch-all)
   }
 };
 
@@ -352,9 +313,12 @@ function validatePincode(pin) {
    calculateShipping(prefix) — returns zone key or null
    ============================================================ */
 function calculateShipping(prefix) {
-  if (shippingZones.kerala.prefixes.includes(prefix)) return 'kerala';
-  if (shippingZones.remote.prefixes.includes(prefix)) return 'remote';
-  if (shippingZones.south.prefixes.includes(prefix)) return 'south';
+  // Kerala: 670-699
+  if (prefix >= 670 && prefix <= 699) return 'kerala';
+  // South India: 500-699 (excluding Kerala, which is already matched above)
+  if (prefix >= 500 && prefix <= 699) return 'south';
+  // Remote Areas: 194, 744, 780-799
+  if (prefix === 194 || prefix === 744 || (prefix >= 780 && prefix <= 799)) return 'remote';
   // All valid Indian prefixes → allIndia
   return 'allIndia';
 }
@@ -423,14 +387,19 @@ function checkDelivery() {
   const summaryBox = document.getElementById('summaryZoneBox');
   const input = document.getElementById('pinInput');
 
-  // Reset
-  box.className = 'result-box';
+  // Reset UI smoothly
   box.classList.remove('show');
-  grid.style.display = 'none';
-  badges.style.display = 'none';
-  summaryBox.className = 'result-box';
-  summaryBox.style.display = 'none';
-  input.classList.remove('error','success');
+  summaryBox.classList.remove('show');
+  
+  // Wait slightly for fade out before replacing content
+  setTimeout(() => {
+    grid.style.display = 'none';
+    badges.style.display = 'none';
+    summaryBox.style.display = 'none';
+    box.className = 'result-box';
+    summaryBox.className = 'result-box';
+    input.classList.remove('error','success');
+  }, 150);
 
   // Show spinner
   btn.disabled = true;
@@ -529,10 +498,35 @@ function placeOrder() {
 }
 
 /* ============================================================
-   Allow Enter key on PIN input
+   Real-time Input Handling
    ============================================================ */
-document.getElementById('pinInput').addEventListener('keydown', function(e) {
+const pinInput = document.getElementById('pinInput');
+
+pinInput.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') checkDelivery();
+});
+
+pinInput.addEventListener('input', function(e) {
+  // Only allow numbers
+  this.value = this.value.replace(/\D/g, '');
+  
+  // Remove error/success styling while typing
+  this.classList.remove('error', 'success');
+  
+  if (this.value.length === 6) {
+    // Auto-check when 6 digits are reached smoothly
+    checkDelivery();
+  } else if (this.value.length < 6 && currentZone !== null) {
+    // Soft reset state if they start editing a valid PIN
+    currentShipping = null;
+    currentZone = null;
+    updateTotal();
+    document.getElementById('resultBox').classList.remove('show');
+    document.getElementById('summaryZoneBox').classList.remove('show');
+    setTimeout(() => {
+      document.getElementById('summaryZoneBox').style.display = 'none';
+    }, 150);
+  }
 });
 
 /* Init */
