@@ -10,7 +10,7 @@ interface CheckoutProps {
 
 export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
   const { cart, totals, clearCart, updateQuantity, removeFromCart } = useCart();
-  const [step, setStep] = useState<'details' | 'payment' | 'success'>('details');
+  const [step, setStep] = useState<'details' | 'processing' | 'success'>('details');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -72,9 +72,10 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
         alert('Please enter a valid 6-digit pincode for delivery.');
         return;
       }
-      setStep('payment');
+      
+      setStep('processing');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (step === 'payment') {
+
       // Generate WhatsApp message
       const orderId = Math.random().toString(36).substring(2, 9).toUpperCase();
       
@@ -106,19 +107,34 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
       const encodedMessage = encodeURIComponent(message);
       const whatsappUrl = `https://wa.me/917736497186?text=${encodedMessage}`;
       
-      // Simulate processing state then redirect
-      setStep('success');
       clearCart();
       
-      // Open WhatsApp
+      // Redirect to WhatsApp
       setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, 1000);
+        setStep('success');
+        window.location.href = whatsappUrl;
+      }, 1500);
     }
   };
 
   const paidItems = cart.filter((item) => !item.isFreeGift);
   const freeItems = cart.filter((item) => item.isFreeGift);
+
+  if (step === 'processing') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+          className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full mb-6"
+        />
+        <h2 className="text-2xl font-black tracking-tighter mb-2 uppercase">Processing Order</h2>
+        <p className="text-muted text-sm max-w-[280px]">
+          Please wait while we redirect you to WhatsApp to complete your order...
+        </p>
+      </div>
+    );
+  }
 
   if (step === 'success') {
     return (
@@ -405,24 +421,15 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
               </div>
             )}
 
-            {step === 'payment' && (
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 pb-2 border-b border-white/5">
-                  <CreditCard size={18} className="text-primary" />
-                  <h2 className="text-sm font-black uppercase tracking-widest">Payment</h2>
-                </div>
-
-                <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex gap-4 items-start">
-                  <div className="p-2 bg-primary/20 rounded-lg text-primary">
-                    <ShieldCheck size={20} />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-black uppercase tracking-tight">Cash on Delivery</h3>
-                    <p className="text-xs text-muted mt-1 font-medium">Verify your order via WhatsApp after placing.</p>
-                  </div>
-                </div>
+            <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex gap-4 items-start mt-6">
+              <div className="p-2 bg-primary/20 rounded-lg text-primary">
+                <ShieldCheck size={20} />
               </div>
-            )}
+              <div>
+                <h3 className="text-sm font-black uppercase tracking-tight">Direct WhatsApp Order</h3>
+                <p className="text-xs text-muted mt-1 font-medium">We'll verify and process your order securely via WhatsApp.</p>
+              </div>
+            </div>
 
             {/* CTA - Keyboard aware sticky */}
             <div className="sticky bottom-4 left-0 right-0 z-40 mt-12">
@@ -431,14 +438,8 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 disabled={paidItems.length === 0}
                 className="w-full h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_20px_40px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed border border-primary/20"
               >
-                {step === 'details' ? (
-                  'Continue to Payment'
-                ) : (
-                  <>
-                    <Truck size={16} />
-                    Place Order — ₹{finalTotalWithShipping}
-                  </>
-                )}
+                <Truck size={16} />
+                Order via WhatsApp — ₹{finalTotalWithShipping}
               </button>
             </div>
           </form>
