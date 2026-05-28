@@ -89,13 +89,14 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
       message += `Pincode: ${formData.pincode}\n\n`;
       
       message += `🖼️ *ORDER SUMMARY:*\n`;
+      let itemNum = 1;
       paidItems.forEach(item => {
-        message += `• ${item.title} (${item.size}) x ${item.quantity} - ₹${item.price * item.quantity}\n`;
+        message += `${itemNum++}. ${item.title} (${item.size}) x ${item.quantity} — ₹${item.price * item.quantity}\n`;
       });
       
       if (totals.eligibleFreeGifts > 0) {
         message += `\n🎁 *FREE GIFTS:*\n`;
-        message += `• ${totals.eligibleFreeGifts}x Mystery Poster${totals.eligibleFreeGifts > 1 ? 's' : ''} - FREE\n`;
+        message += `${itemNum}. ${totals.eligibleFreeGifts}x Mystery Poster${totals.eligibleFreeGifts > 1 ? 's' : ''} — FREE\n`;
       }
       
       message += `\n💰 *SUBTOTAL: ₹${totals.finalTotal}*\n`;
