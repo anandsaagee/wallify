@@ -56,8 +56,8 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
     }
   }, [formData.pincode]);
 
-  const isFreeShipping = totals.subtotal >= 999;
-  const shippingCharge = shippingZone ? (isFreeShipping ? 0 : shippingZone.charge) : 0;
+  const bulkSurcharge = totals.totalPaidItems > 25 ? 10 : 0;
+  const shippingCharge = shippingZone ? shippingZone.charge + bulkSurcharge : 0;
   const finalTotalWithShipping = totals.finalTotal + shippingCharge;
 
   const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -99,7 +99,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
       }
       
       message += `\n💰 *SUBTOTAL: ₹${totals.finalTotal}*\n`;
-      message += `🚚 *SHIPPING (${shippingZone?.name}): ${isFreeShipping ? 'FREE' : '₹' + shippingCharge}*\n`;
+      message += `🚚 *DELIVERY (${shippingZone?.name}): ₹${shippingZone?.charge}${bulkSurcharge > 0 ? ` + ₹${bulkSurcharge} bulk surcharge` : ''}*\n`;
       message += `💰 *TOTAL AMOUNT: ₹${finalTotalWithShipping}*\n`;
       message += `--------------------------\n`;
       message += `_Sent via Wallify Store_`;
@@ -289,11 +289,21 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
             )}
 
             <div className="flex justify-between text-sm font-bold">
-              <span className="text-muted">Shipping</span>
-              <span className={isFreeShipping && shippingZone ? "text-green-400" : "text-white"}>
-                {!shippingZone ? 'Calculated next step' : (isFreeShipping ? 'FREE' : `₹${shippingZone.charge}`)}
+              <span className="text-muted">Delivery</span>
+              <span className="text-white">
+                {!shippingZone
+                  ? 'Enter pincode below'
+                  : bulkSurcharge > 0
+                  ? `₹${shippingZone.charge} + ₹${bulkSurcharge}`
+                  : `₹${shippingZone.charge}`}
               </span>
             </div>
+            {bulkSurcharge > 0 && (
+              <div className="flex justify-between text-xs font-bold">
+                <span className="text-amber-400/80">Bulk surcharge (&gt;25 posters)</span>
+                <span className="text-amber-400">+₹10</span>
+              </div>
+            )}
 
             <div className="pt-3 border-t border-white/10 flex justify-between items-end">
               <span className="text-sm font-black text-muted uppercase tracking-wider">Total</span>
@@ -332,9 +342,9 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 <Info className="w-4 h-4 text-blue-400" />
               </div>
               <div>
-                <p className="text-xs font-bold text-white/80">Delivery Charges</p>
+                <p className="text-xs font-bold text-white/80">Delivery Charges Apply</p>
                 <p className="text-[11px] text-muted mt-0.5 leading-relaxed">
-                  Delivery charges will be calculated based on your pincode. Free shipping on orders above ₹999.
+                  Enter your pincode to calculate delivery charges. Orders above 25 posters incur an extra ₹10 surcharge.
                 </p>
               </div>
             </div>
