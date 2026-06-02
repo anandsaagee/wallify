@@ -14,7 +14,7 @@ import { FeaturedCategories } from './components/FeaturedCategories';
 import { Pricing } from './components/Pricing';
 import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
-import { Search, X, Gift } from 'lucide-react';
+import { Search, X, Gift, ShoppingBag } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { trackProductClick } from './utils/bestSellerTracker'; // ✅ NEW
 
@@ -199,6 +199,29 @@ const AppContent: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Floating Cart Button */}
+      <AnimatePresence>
+        {view === 'store' && totals.totalPaidItems > 0 && (
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleSetView('checkout')}
+            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-primary text-black rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_4px_30px_rgba(255,255,255,0.4)] transition-shadow"
+            aria-label="View Cart"
+          >
+            <div className="relative">
+              <ShoppingBag className="w-6 h-6 sm:w-7 sm:h-7" />
+              <span className="absolute -top-2 -right-2 bg-black text-primary text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border border-primary/20">
+                {totals.totalPaidItems}
+              </span>
+            </div>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
         {selectedProduct && (
