@@ -19,13 +19,13 @@ const PRODUCTS_FILE = path.join(__dirname, 'src/data/products.ts');
 // Category directory name → display name mapping
 const CATEGORY_MAP = {
   'abstract': 'Abstract',
-  'aesthetic': 'Aesthetic',
   'anime': 'Anime',
   'automotive': 'Automotive',
-  'classic cars': 'Classic Cars',
   'football': 'Football',
   'hollywood': 'Hollywood',
   'mollywood': 'Mollywood',
+  'MUSIC': 'Music',
+  'SPIRITUAL': 'Spiritual',
   'tamil': 'Tamil',
 };
 

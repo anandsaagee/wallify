@@ -9,13 +9,13 @@ interface FeaturedCategoriesProps {
 
 const FEATURED = [
   { name: 'Abstract', sub: 'Modern Art' },
-  { name: 'Aesthetic', sub: 'Modern Minimalist' },
   { name: 'Anime', sub: 'Anime & Manga' },
   { name: 'Automotive', sub: 'Speed & Power' },
-  { name: 'Classic Cars', sub: 'Vintage Machines' },
   { name: 'Football', sub: 'Football Legends' },
   { name: 'Hollywood', sub: 'Tinseltown Icons' },
   { name: 'Mollywood', sub: 'Cinema Icons' },
+  { name: 'Music', sub: 'Rock & Pop Vibes' },
+  { name: 'Spiritual', sub: 'Calm & Peace' },
   { name: 'Tamil', sub: 'Kollywood Icons' },
 ] as const;
 

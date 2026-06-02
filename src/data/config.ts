@@ -27,13 +27,13 @@ export const ITEMS_PER_PAGE = 24;
 export const CATEGORIES = [
   'All',
   'Abstract',
-  'Aesthetic',
   'Anime',
   'Automotive',
-  'Classic Cars',
   'Football',
   'Hollywood',
   'Mollywood',
+  'Music',
+  'Spiritual',
   'Tamil',
 ] as const;
 
