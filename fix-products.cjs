@@ -26,8 +26,6 @@ const CATEGORY_MAP = {
   'football': 'Football',
   'hollywood': 'Hollywood',
   'mollywood': 'Mollywood',
-  'MUSIC': 'Music',
-  'SPIRITUAL': 'Spiritual',
   'tamil': 'Tamil',
 };
 

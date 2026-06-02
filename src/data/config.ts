@@ -34,8 +34,6 @@ export const CATEGORIES = [
   'Football',
   'Hollywood',
   'Mollywood',
-  'MUSIC',
-  'SPIRITUAL',
   'Tamil',
 ] as const;
 
