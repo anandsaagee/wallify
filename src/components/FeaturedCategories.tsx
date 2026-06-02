@@ -16,8 +16,6 @@ const FEATURED = [
   { name: 'Football', sub: 'Football Legends' },
   { name: 'Hollywood', sub: 'Tinseltown Icons' },
   { name: 'Mollywood', sub: 'Cinema Icons' },
-  { name: 'MUSIC', sub: 'Rock & Pop Vibes' },
-  { name: 'SPIRITUAL', sub: 'Calm & Peace' },
   { name: 'Tamil', sub: 'Kollywood Icons' },
 ] as const;
 
