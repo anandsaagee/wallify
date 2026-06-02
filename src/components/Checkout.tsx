@@ -91,7 +91,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
       message += `🖼️ *ORDER SUMMARY:*\n`;
       let itemNum = 1;
       paidItems.forEach(item => {
-        message += `${itemNum++}. ${item.title} (${item.size}) x ${item.quantity} — ₹${item.price * item.quantity}\n`;
+        message += `${itemNum++}. [${item.category}] ${item.title} (ID: ${item.productId}) (${item.size}) x ${item.quantity} — ₹${item.price * item.quantity}\n`;
       });
       
       if (totals.eligibleFreeGifts > 0) {
