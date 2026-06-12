@@ -36,32 +36,7 @@ const CATEGORY_MAP = {
  * For blank numbered files ("1. ") → "Category Poster 001"
  */
 function cleanTitle(filename, categoryDisplayName) {
-  let name = filename.replace(/\.webp$/i, '');
-
-  // Check if name is just a number prefix like "1. " or "10. " (blank name)
-  if (/^\d+\.\s*$/.test(name)) {
-    const num = name.match(/^(\d+)/)[1];
-    return `${categoryDisplayName} Poster ${num.padStart(3, '0')}`;
-  }
-
-  // Check if it's an old-style named file like "10. FERRARI F40" → keep "Ferrari F40"
-  const numberedNameMatch = name.match(/^\d+\.\s+(.+)$/);
-  if (numberedNameMatch) {
-    return titleCase(numberedNameMatch[1].trim());
-  }
-
-  // Generic numbered format: category_NNN, category-NNN, or category NNN
-  // These all become "Category Poster NNN"  
-  const genericMatch = name.match(/^([a-zA-Z\s]+)[_\s-](\d{1,3})$/);
-  if (genericMatch) {
-    const numPart = genericMatch[2];
-    // Always use the display category name (handles aesthetic/ containing "abstract 001")
-    return `${categoryDisplayName} Poster ${numPart.padStart(3, '0')}`;
-  }
-
-  // For anything else, just title-case
-  name = name.replace(/_/g, ' ').replace(/-/g, ' ');
-  return titleCase(name.trim());
+  return filename.replace(/\.webp$/i, '');
 }
 
 function titleCase(str) {
@@ -123,7 +98,7 @@ function main() {
       allProducts.push({
         title,
         category: categoryName,
-        basePrice: 33,
+        basePrice: 49,
         image: relativePath,
         description: `Premium ${categoryName} wall art poster`,
         label: file,

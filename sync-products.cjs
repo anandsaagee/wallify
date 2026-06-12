@@ -55,7 +55,7 @@ async function sync() {
           id: `p${maxId}`,
           title: title,
           category: categoryName,
-          basePrice: 33,
+          basePrice: 49,
           image: relativePath,
           description: `Premium ${categoryName} Posters wall art. ${file}`,
           label: file

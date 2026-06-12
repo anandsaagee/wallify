@@ -1,8 +1,8 @@
 export const SIZES = [
-  { id: 'A6', label: 'A6', dim: '10.5 x 14.8 cm', price: 17 },
-  { id: 'A5', label: 'A5', dim: '14.8 x 21 cm', price: 33 },
-  { id: 'A4', label: 'A4', dim: '21 x 29.7 cm', price: 49 },
-  { id: 'A3', label: 'A3', dim: '29.7 x 42 cm', price: 99 },
+  { id: 'A6', label: 'A6', dim: '10.5 x 14.8 cm', price: 29 },
+  { id: 'A5', label: 'A5', dim: '14.8 x 21 cm', price: 49 },
+  { id: 'A4', label: 'A4', dim: '21 x 29.7 cm', price: 79 },
+  { id: 'A3', label: 'A3', dim: '29.7 x 42 cm', price: 149 },
 ];
 
 export const BULK_OFFERS = [
