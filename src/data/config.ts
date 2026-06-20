@@ -8,7 +8,7 @@ export const SIZES = [
 /** Frame add-on: only A5 and A4 sizes are available with frames */
 export const FRAME_SIZES: Record<string, number> = {
   A5: 299,
-  A4: 449,
+  A4: 399,
 };
 
 export function getFramePrice(sizeId: string): number | null {
