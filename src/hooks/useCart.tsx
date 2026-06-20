@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
-import { SIZES, getEligibleFreeItems } from '../data/config';
+import { SIZES, getEligibleFreeItems, getFramePrice } from '../data/config';
 
 export interface CartItem {
   variantId: string;
@@ -12,6 +12,8 @@ export interface CartItem {
   price: number;
   quantity: number;
   isFreeGift: boolean;
+  withFrame: boolean;
+  framePrice: number;
 }
 
 export interface CartTotals {
@@ -25,7 +27,7 @@ export interface CartTotals {
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: { id: string; title: string; image: string; category: string }, sizeId: string) => void;
+  addToCart: (product: { id: string; title: string; image: string; category: string }, sizeId: string, withFrame?: boolean) => void;
   removeFromCart: (variantId: string) => void;
   updateQuantity: (variantId: string, delta: number) => void;
   totals: CartTotals;
@@ -36,7 +38,7 @@ interface CartContextType {
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
-const STORAGE_KEY = 'wallify_cart_v3';
+const STORAGE_KEY = 'wallify_cart_v4';
 
 function loadCart(): CartItem[] {
   try {
@@ -52,7 +54,10 @@ function computeTotals(cart: CartItem[]): CartTotals {
   const freeItems = cart.filter((item) => item.isFreeGift);
 
   const totalPaidItems = paidItems.reduce((sum, item) => sum + item.quantity, 0);
-  const subtotal = paidItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = paidItems.reduce(
+    (sum, item) => sum + (item.price + (item.withFrame ? item.framePrice : 0)) * item.quantity,
+    0
+  );
   const freeGiftCount = freeItems.reduce((sum, item) => sum + item.quantity, 0);
   const eligibleFreeGifts = getEligibleFreeItems(totalPaidItems);
 
@@ -78,9 +83,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [cart]);
 
   const addToCart = useCallback(
-    (product: { id: string; title: string; image: string; category: string }, sizeId: string) => {
+    (product: { id: string; title: string; image: string; category: string }, sizeId: string, withFrame = false) => {
       const sizeConfig = SIZES.find((s) => s.id === sizeId) ?? SIZES[1];
-      const variantId = `${product.id}-${sizeId}`;
+      const framePrice = getFramePrice(sizeId) ?? 0;
+      const variantId = `${product.id}-${sizeId}-${withFrame ? 'framed' : 'poster'}`;
 
       setCart((prev) => {
         const existing = prev.find((item) => item.variantId === variantId);
@@ -102,6 +108,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             price: sizeConfig.price,
             quantity: 1,
             isFreeGift: false,
+            withFrame,
+            framePrice: withFrame ? framePrice : 0,
           },
         ];
       });

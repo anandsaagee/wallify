@@ -5,6 +5,16 @@ export const SIZES = [
   { id: 'A3', label: 'A3', dim: '29.7 x 42 cm', price: 149 },
 ];
 
+/** Frame add-on: only A5 and A4 sizes are available with frames */
+export const FRAME_SIZES: Record<string, number> = {
+  A5: 299,
+  A4: 449,
+};
+
+export function getFramePrice(sizeId: string): number | null {
+  return FRAME_SIZES[sizeId] ?? null;
+}
+
 export const BULK_OFFERS = [
   { buy: 5, getFree: 1, label: 'Buy 5, Get 1 FREE' },
   { buy: 7, getFree: 2, label: 'Buy 7, Get 2 FREE' },

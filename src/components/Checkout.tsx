@@ -91,7 +91,9 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
       message += `🖼️ *ORDER SUMMARY:*\n`;
       let itemNum = 1;
       paidItems.forEach(item => {
-        message += `${itemNum++}. [${item.category}] ${item.title} (ID: ${item.productId}) (${item.size}) x ${item.quantity} — ₹${item.price * item.quantity}\n`;
+        const itemTotal = (item.price + (item.withFrame ? item.framePrice : 0)) * item.quantity;
+        const frameLabel = item.withFrame ? ` [FRAMED +₹${item.framePrice}]` : '';
+        message += `${itemNum++}. [${item.category}] ${item.title} (ID: ${item.productId}) (${item.size})${frameLabel} x ${item.quantity} — ₹${itemTotal}\n`;
       });
       
       if (totals.eligibleFreeGifts > 0) {
@@ -203,7 +205,14 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-bold text-white truncate">{item.title}</p>
-                      <p className="text-[10px] text-muted font-medium mt-0.5">{item.category} · {item.size}</p>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        <p className="text-[10px] text-muted font-medium">{item.category} · {item.size}</p>
+                        {item.withFrame && (
+                          <span className="text-[9px] font-black text-primary bg-primary/10 px-1.5 py-0.5 rounded-full uppercase tracking-wide">
+                            Framed
+                          </span>
+                        )}
+                      </div>
                       <div className="flex items-center gap-3 mt-2">
                         <button
                           onClick={() => {
@@ -229,7 +238,14 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                       </div>
                     </div>
                     <div className="shrink-0 text-right">
-                      <p className="text-sm font-black text-white">₹{item.price * item.quantity}</p>
+                      <p className="text-sm font-black text-white">
+                        ₹{(item.price + (item.withFrame ? item.framePrice : 0)) * item.quantity}
+                      </p>
+                      {item.withFrame && (
+                        <p className="text-[9px] text-primary/70 font-medium mt-0.5">
+                          incl. frame
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}

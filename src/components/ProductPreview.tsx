@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import { ShoppingBag, Zap, Check, Gift } from 'lucide-react';
-import { SIZES } from '../data/config';
+import { ShoppingBag, Zap, Check, Gift, Frame } from 'lucide-react';
+import { SIZES, getFramePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
@@ -53,10 +53,23 @@ const BULK_OFFERS_INLINE = [
 export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId, onClose }) => {
   const defaultSize = SIZES.find((s) => s.id === initialSizeId) ?? SIZES[1];
   const [selectedSize, setSelectedSize] = useState(defaultSize.id);
+  const [withFrame, setWithFrame] = useState(false);
   const [cartState, setCartState] = useState<'idle' | 'added'>('idle');
   const { addToCart, totals } = useCart();
 
   const currentSize = SIZES.find((s) => s.id === selectedSize) ?? SIZES[1];
+  const framePrice = getFramePrice(selectedSize);
+  const frameAvailable = framePrice !== null;
+
+  // Reset frame toggle when switching to a size that doesn't support frames
+  const handleSizeSelect = useCallback((id: string) => {
+    setSelectedSize(id);
+    if (!getFramePrice(id)) {
+      setWithFrame(false);
+    }
+  }, []);
+
+  const totalPrice = currentSize.price + (withFrame && framePrice ? framePrice : 0);
 
   const freeIndicator = React.useMemo(() => {
     const currentTotal = totals.totalPaidItems;
@@ -70,15 +83,15 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   }, [totals.totalPaidItems]);
 
   const handleAddToCart = useCallback(() => {
-    addToCart(product, selectedSize);
+    addToCart(product, selectedSize, withFrame);
     setCartState('added');
-    
+
     // Close window and return to main page after adding
     setTimeout(() => {
       onClose?.();
       setCartState('idle');
     }, 600);
-  }, [addToCart, product, selectedSize, onClose]);
+  }, [addToCart, product, selectedSize, withFrame, onClose]);
 
   return (
     <div className="flex flex-col h-full min-h-0">
@@ -106,8 +119,10 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
             {product.title}
           </h2>
           <div className="flex items-baseline gap-2 mt-1.5">
-            <span className="text-2xl font-black text-primary">₹{currentSize.price}</span>
-            <span className="text-sm text-white/40 font-medium">Single poster</span>
+            <span className="text-2xl font-black text-primary">₹{totalPrice}</span>
+            <span className="text-sm text-white/40 font-medium">
+              {withFrame ? 'Framed poster' : 'Single poster'}
+            </span>
           </div>
         </div>
 
@@ -122,10 +137,78 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
                 key={size.id}
                 size={size}
                 isSelected={selectedSize === size.id}
-                onSelect={setSelectedSize}
+                onSelect={handleSizeSelect}
               />
             ))}
           </div>
+        </div>
+
+        {/* Frame Add-on Toggle */}
+        <div className="px-4 pt-3">
+          <AnimatePresence mode="wait">
+            {frameAvailable ? (
+              <motion.div
+                key="frame-available"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2 }}
+              >
+                <button
+                  onClick={() => setWithFrame((v) => !v)}
+                  aria-pressed={withFrame}
+                  className={`w-full flex items-center justify-between gap-3 p-3.5 rounded-2xl border-2 transition-all duration-200 active:scale-[0.98] ${
+                    withFrame
+                      ? 'border-primary bg-primary/10 shadow-[0_0_20px_rgba(250,203,21,0.12)]'
+                      : 'border-white/10 bg-white/[0.03] hover:border-white/20'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                      withFrame ? 'bg-primary/20 text-primary' : 'bg-white/5 text-white/40'
+                    }`}>
+                      <Frame className="w-4 h-4" />
+                    </div>
+                    <div className="text-left">
+                      <p className={`text-xs font-black uppercase tracking-wide ${withFrame ? 'text-primary' : 'text-white'}`}>
+                        Add Frame
+                      </p>
+                      <p className="text-[10px] text-white/40 font-medium mt-0.5">
+                        Premium black wooden frame
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className={`text-sm font-black ${withFrame ? 'text-primary' : 'text-white/60'}`}>
+                      +₹{framePrice}
+                    </span>
+                    {/* Toggle pill */}
+                    <div className={`relative w-10 h-5 rounded-full transition-colors duration-200 ${
+                      withFrame ? 'bg-primary' : 'bg-white/20'
+                    }`}>
+                      <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200 ${
+                        withFrame ? 'translate-x-5' : 'translate-x-0.5'
+                      }`} />
+                    </div>
+                  </div>
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="frame-unavailable"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                className="flex items-center gap-2 px-1"
+              >
+                <Frame className="w-3.5 h-3.5 text-white/20" />
+                <p className="text-[10px] text-white/25 font-medium">
+                  Frames available for A5 &amp; A4 only
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Free Poster Indicator */}
@@ -210,7 +293,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           className="flex-1 h-[52px] rounded-2xl bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 transition-transform duration-150 active:scale-95 hover:brightness-110 shadow-[0_8px_20px_rgba(250,203,21,0.2)]"
         >
           <Zap className="w-[18px] h-[18px]" aria-hidden="true" />
-          Add to Cart — ₹{currentSize.price}
+          {withFrame ? `Add Framed — ₹${totalPrice}` : `Add to Cart — ₹${totalPrice}`}
         </button>
       </div>
     </div>
