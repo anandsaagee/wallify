@@ -115,7 +115,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
             Customization available for posters at NO EXTRA CHARGE!
           </p>
           <a
-            href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
+            href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20poster%20or%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#25D366]/30 bg-[#25D366]/10 hover:bg-[#25D366]/20 active:scale-95 transition-all duration-200 group text-left"
@@ -135,10 +135,10 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
             </svg>
             <div className="flex flex-col">
               <span className="text-[#25D366] font-bold text-sm sm:text-base group-hover:text-white transition-colors duration-200">
-                Customize your own car frame
+                Customize your poster or car frame
               </span>
               <span className="text-[11px] text-[#25D366]/80 font-medium group-hover:text-white/80 transition-colors duration-200">
-                Premium A4 (₹499) &amp; A5 (₹349) · Black or White
+                Posters (Free) | Frames: A4 (₹499) &amp; A5 (₹349)
               </span>
             </div>
           </a>

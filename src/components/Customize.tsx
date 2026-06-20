@@ -332,13 +332,13 @@ export const Customize: React.FC = () => {
         {/* Car Frame Customization CTA */}
         <div className="mt-8 bg-[#25D366]/5 border border-[#25D366]/20 rounded-3xl p-6 text-center">
           <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2">
-            Want a Custom Car Frame?
+            Want a Custom Poster or Car Frame?
           </h3>
           <p className="text-sm text-muted font-medium mb-6">
-            Get your own car frame in premium black or white! A4 size for ₹499, A5 size for ₹349.
+            Get a custom poster at no extra charge, or add a premium frame! A4 framed for ₹499, A5 framed for ₹349.
           </p>
           <a
-            href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
+            href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20poster%20or%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-4 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/10 hover:bg-[#25D366]/20 active:scale-95 transition-all duration-200"
@@ -357,7 +357,7 @@ export const Customize: React.FC = () => {
             </svg>
             <div className="flex flex-col text-center sm:text-left">
               <span className="text-[#25D366] font-bold text-sm sm:text-base transition-colors duration-200">
-                Order Custom Car Frame via WhatsApp
+                Order Custom Poster or Frame via WhatsApp
               </span>
             </div>
           </a>
