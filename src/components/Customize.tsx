@@ -90,7 +90,16 @@ export const Customize: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <div id="customize" className="max-w-6xl mx-auto px-4 py-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight uppercase">
+          Customize Your Poster
+        </h2>
+        <p className="text-primary font-bold mt-3 uppercase tracking-widest text-sm sm:text-base">
+          Poster Customization is available at NO EXTRA CHARGE!
+        </p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       
       {/* ══ PREVIEW PANEL (Sticky on Desktop) ══ */}
       <div className="lg:sticky lg:top-24 order-1 lg:order-2">
@@ -320,7 +329,42 @@ export const Customize: React.FC = () => {
           </div>
         </div>
 
+        {/* Car Frame Customization CTA */}
+        <div className="mt-8 bg-[#25D366]/5 border border-[#25D366]/20 rounded-3xl p-6 text-center">
+          <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2">
+            Want a Custom Car Frame?
+          </h3>
+          <p className="text-sm text-muted font-medium mb-6">
+            Get your own car frame in premium black or white! A4 size for ₹499, A5 size for ₹349.
+          </p>
+          <a
+            href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-4 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/10 hover:bg-[#25D366]/20 active:scale-95 transition-all duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              className="w-8 h-8 shrink-0"
+              aria-hidden="true"
+            >
+              <circle cx="24" cy="24" r="24" fill="#25D366" />
+              <path
+                fill="#fff"
+                d="M34.6 13.4A14.9 14.9 0 0 0 24 9C16.3 9 10 15.3 10 23c0 2.5.7 4.9 1.9 7L10 39l9.3-1.9a15 15 0 0 0 4.7.8C31.7 38 38 31.7 38 24c0-4-1.6-7.8-3.4-10.6zM24 35.7c-2.1 0-4.2-.6-6-1.6l-.4-.3-4.4.9.9-4.3-.3-.5A12.1 12.1 0 0 1 12 23c0-6.6 5.4-12 12-12 3.2 0 6.2 1.2 8.5 3.5A11.9 11.9 0 0 1 36 23c0 6.6-5.4 12-12 12zm6.6-9c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.3.4-1 1.1-1.2 1.3-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6z"
+              />
+            </svg>
+            <div className="flex flex-col text-center sm:text-left">
+              <span className="text-[#25D366] font-bold text-sm sm:text-base transition-colors duration-200">
+                Order Custom Car Frame via WhatsApp
+              </span>
+            </div>
+          </a>
+        </div>
+
       </div>
+    </div>
     </div>
   );
 };
