@@ -174,7 +174,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
                         Add Frame
                       </p>
                       <p className="text-[10px] text-white/40 font-medium mt-0.5">
-                        Premium black wooden frame
+                        Premium frame
                       </p>
                     </div>
                   </div>
