@@ -175,6 +175,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             price: 0,
             quantity: 1,
             isFreeGift: true,
+            withFrame: false,
+            framePrice: 0,
           },
         ];
       });

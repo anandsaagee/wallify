@@ -84,7 +84,7 @@ const AppContent: React.FC = () => {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <Checkout onBack={() => handleSetView('store')} onProductClick={() => {}} />
+              <Checkout onBack={() => handleSetView('store')} />
             </motion.div>
           )}
 
