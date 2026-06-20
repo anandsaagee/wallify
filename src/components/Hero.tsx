@@ -1,5 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
+
+const CUSTOM_SAMPLES = [
+  '/custom-posters/webp/1781949210263.webp',
+  '/custom-posters/webp/1781949210284.webp',
+  '/custom-posters/webp/1781949210293.webp',
+  '/custom-posters/webp/1781949210305.webp',
+  '/custom-posters/webp/1781949210316.webp',
+  '/custom-posters/webp/1781949210391.webp',
+  '/custom-posters/webp/1781949210408.webp',
+  '/custom-posters/webp/1781949210434.webp',
+  '/custom-posters/webp/1781949210453.webp',
+  '/custom-posters/webp/1781949210481.webp',
+  '/custom-posters/webp/1781949210509.webp',
+  '/custom-posters/webp/1781949210545.webp',
+  '/custom-posters/webp/1781949210563.webp',
+  '/custom-posters/webp/1781949210579.webp',
+  '/custom-posters/webp/1781949210595.webp',
+  '/custom-posters/webp/1781949210611.webp',
+  '/custom-posters/webp/1781949210628.webp',
+  '/custom-posters/webp/1781949210645.webp',
+  '/custom-posters/webp/1781949210662.webp',
+  '/custom-posters/webp/1781949210683.webp',
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -142,6 +166,30 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
               </span>
             </div>
           </a>
+        </motion.div>
+
+        {/* Samples Row */}
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+          className="w-full mt-6"
+        >
+          <h3 className="text-xs sm:text-sm font-black uppercase text-muted tracking-widest mb-4">
+            Recent Custom Orders
+          </h3>
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x hide-scrollbar" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+            {CUSTOM_SAMPLES.map((src, i) => (
+              <div key={i} className="shrink-0 snap-center w-36 sm:w-48 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative group">
+                <OptimizedImage 
+                  src={src} 
+                  alt={`Custom Poster Sample ${i + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  containerClassName="w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Trust indicators */}
