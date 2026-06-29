@@ -135,14 +135,14 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="flex flex-col items-center gap-3 mt-4"
         >
-          <p className="text-sm sm:text-base text-primary font-black uppercase tracking-wide bg-primary/10 px-4 py-2 rounded-lg border border-primary/20">
+          <p className="text-sm sm:text-base text-primary font-black uppercase tracking-wide bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 text-center">
             Customization available for posters at NO EXTRA CHARGE!
           </p>
           <a
             href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20poster%20or%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#25D366]/30 bg-[#25D366]/10 hover:bg-[#25D366]/20 active:scale-95 transition-all duration-200 group text-left"
+            className="flex sm:inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-3 rounded-2xl sm:rounded-full border border-[#25D366]/30 bg-[#25D366]/10 hover:bg-[#25D366]/20 active:scale-95 transition-all duration-200 group text-center sm:text-left w-full sm:w-auto max-w-sm"
           >
             {/* Official WhatsApp SVG icon in green */}
             <svg
@@ -196,7 +196,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="flex items-center gap-6 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider"
+          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider w-full"
         >
           <div className="flex items-center gap-2">
             <div className="w-8 h-[1px] bg-white/10" />

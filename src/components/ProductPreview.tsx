@@ -118,7 +118,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           <h2 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
             {product.title}
           </h2>
-          <div className="flex items-baseline gap-2 mt-1.5">
+          <div className="flex items-baseline gap-2 mt-1.5 flex-wrap">
             <span className="text-2xl font-black text-primary">₹{totalPrice}</span>
             <span className="text-sm text-white/40 font-medium">
               {withFrame ? 'Framed poster' : 'Single poster'}
