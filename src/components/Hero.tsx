@@ -89,11 +89,10 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         <motion.h1
           variants={fadeUp}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] tracking-tight text-center w-full"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[1.1] sm:leading-[0.95] tracking-tight text-center max-w-full"
         >
-          Transform Your Walls{' '}
-          <br className="hidden sm:block" />
-          with{' '}
+          Transform Your Walls
+          <br className="hidden sm:block" /> with{' '}
           <span className="relative">
             <span className="text-primary">Wallify</span>
             <span className="text-primary">.</span>
@@ -133,11 +132,13 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="flex flex-col items-center gap-3 mt-4 w-full px-2"
+          className="flex flex-col items-center gap-3 mt-4 w-full"
         >
-          <p className="text-xs sm:text-base text-primary font-black uppercase tracking-wide bg-primary/10 px-3 py-2 rounded-lg border border-primary/20 text-center w-full max-w-lg leading-snug mx-auto">
-            Customization available for posters at NO EXTRA CHARGE!
-          </p>
+          <div className="w-full max-w-[340px] sm:max-w-lg bg-primary/10 px-4 py-3 rounded-xl border border-primary/20 flex flex-col items-center justify-center mx-auto shadow-sm">
+            <p className="text-[11px] sm:text-base text-primary font-black uppercase tracking-wide text-center leading-[1.4] m-0 w-full">
+              Customization available for posters at NO EXTRA CHARGE!
+            </p>
+          </div>
           <a
             href="https://wa.me/917736497186?text=Hi!%20I%27d%20like%20to%20customize%20my%20own%20poster%20or%20car%20frame%20%F0%9F%9A%97%F0%9F%96%BC%EF%B8%8F"
             target="_blank"
