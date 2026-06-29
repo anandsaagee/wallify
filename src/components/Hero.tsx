@@ -89,10 +89,11 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         <motion.h1
           variants={fadeUp}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[1.1] sm:leading-[0.95] tracking-tight text-center max-w-full"
+          className="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[1.2] sm:leading-[0.95] tracking-tight text-center max-w-full"
         >
           Transform Your Walls
-          <br className="hidden sm:block" /> with{' '}
+          <br /> 
+          with{' '}
           <span className="relative">
             <span className="text-primary">Wallify</span>
             <span className="text-primary">.</span>
