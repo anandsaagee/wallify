@@ -43,6 +43,7 @@ export const CATEGORIES = [
   'Hollywood',
   'Mollywood',
   'Music',
+  'Quotes',
   'Spiritual',
   'Tamil',
 ] as const;
