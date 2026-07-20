@@ -22,6 +22,10 @@
     overflow-x: hidden;
     max-width: 100%;
     scroll-behavior: smooth;
+    /* Safe-area support for notched / home-indicator devices */
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   body {
@@ -30,12 +34,18 @@
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
     max-width: 100%;
+    /* Prevent rubber-band bounce on iOS from causing layout jank */
+    overscroll-behavior-y: none;
+    /* Ensures layout uses GPU layer for the whole page */
+    -webkit-overflow-scrolling: touch;
   }
 
   img {
     display: block;
     max-width: 100%;
     height: auto;
+    /* Prevent layout shift while image decodes */
+    content-visibility: auto;
   }
 
   input:focus-visible {
@@ -84,6 +94,22 @@
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* iOS momentum scrolling for any horizontally-scrolling container */
+  .scroll-momentum {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+  }
+
+  /* Minimum accessible tap target (44×44 px) */
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

@@ -50,13 +50,14 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
         <p className="text-xs text-muted mt-1 font-medium">Tap a vibe to explore</p>
       </div>
 
-      {/* Unified Responsive Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 px-4">
+      {/* Responsive grid: 1 col at 320px, 2 col default, 3 on sm, 4 on md */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 px-4">
         {FEATURED.map((cat) => (
           <button
             key={cat.name}
             onClick={() => handleSelect(cat.name)}
-            className="group relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 text-left transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95"
+            style={{ contain: 'layout paint' }}
+            className="group relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 text-left transition-transform duration-200 ease-out hover:scale-105 active:scale-95 will-change-transform"
           >
             <div className="absolute top-2 left-2 z-20 bg-primary text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter sm:top-3 sm:left-3 sm:text-[10px] sm:px-3 sm:py-1">
               Shop

@@ -29,8 +29,11 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
         </div>
       </div>
 
-      {/* Mobile & Tablet: horizontal scroll */}
-      <div className="flex gap-4 overflow-x-auto pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar snap-x">
+      {/* Mobile & Tablet: horizontal scroll with iOS momentum */}
+      <div
+        className="flex gap-4 overflow-x-auto pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar snap-x snap-mandatory scroll-momentum"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
         {bestSellers.map((product, index) => (
           <motion.div
             key={product.id}

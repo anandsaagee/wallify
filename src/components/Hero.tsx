@@ -43,7 +43,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
   onExplore,
 }) => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden min-h-[85vh] sm:min-h-[90vh]">
+    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'clamp(600px, 85svh, 960px)' }}>
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-surface" />
 
@@ -85,11 +85,12 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline — fluid sizing to avoid mid-breakpoint clipping */}
         <motion.h1
           variants={fadeUp}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[1.2] sm:leading-[0.95] tracking-tight text-center max-w-full"
+          style={{ fontSize: 'clamp(28px, 7vw, 96px)' }}
+          className="font-black text-white leading-[1.15] tracking-tight text-center max-w-full"
         >
           Transform Your Walls
           <br /> 
@@ -117,13 +118,13 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         >
           <button
             onClick={onShopNow}
-            className="px-8 py-4 bg-primary text-black font-black text-sm sm:text-base rounded-full transition-all duration-200 active:scale-95 hover:brightness-110 shadow-[0_8px_32px_rgba(250,203,21,0.25)]"
+            className="px-8 py-3.5 min-h-[48px] bg-primary text-black font-black text-sm sm:text-base rounded-full transition-all duration-200 active:scale-95 hover:brightness-110 shadow-[0_8px_32px_rgba(250,203,21,0.25)]"
           >
             Shop Now
           </button>
           <button
             onClick={onExplore}
-            className="px-8 py-4 font-bold text-white rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:bg-white/10 active:scale-95 transition-all duration-200 text-sm sm:text-base"
+            className="px-8 py-3.5 min-h-[48px] font-bold text-white rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:bg-white/10 active:scale-95 transition-all duration-200 text-sm sm:text-base"
           >
             Explore Collection
           </button>
@@ -179,12 +180,20 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
           <h3 className="text-xs sm:text-sm font-black uppercase text-muted tracking-widest mb-4">
             Recent Custom Orders
           </h3>
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x hide-scrollbar" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+          {/* Samples row — snap-scroll with iOS momentum */}
+          <div
+            className="flex gap-4 pb-4 snap-x snap-mandatory hide-scrollbar scroll-momentum overflow-x-auto"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {CUSTOM_SAMPLES.map((src, i) => (
-              <div key={i} className="shrink-0 snap-center w-36 sm:w-48 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative group">
+              <div
+                key={i}
+                className="shrink-0 snap-center w-36 sm:w-48 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative group"
+              >
                 <OptimizedImage 
                   src={src} 
                   alt={`Custom Poster Sample ${i + 1}`} 
+                  priority={i < 4}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   containerClassName="w-full h-full"
                 />

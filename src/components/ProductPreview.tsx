@@ -96,7 +96,10 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   return (
     <div className="flex flex-col h-full min-h-0">
       {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto overscroll-contain">
+      <div
+        className="flex-1 overflow-y-auto overscroll-contain"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
         {/* Product Image */}
         <div className="px-4 pt-1 flex justify-center">
           <div className="w-full max-h-[45dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">

@@ -70,6 +70,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
               if (info.offset.y > 80 || info.velocity.y > 400) onClose();
             }}
             className="fixed bottom-0 left-0 right-0 mx-auto z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] sm:max-w-[440px] bg-surface rounded-t-3xl border-t border-white/5 shadow-[0_-16px_80px_rgba(0,0,0,0.7)] overflow-hidden will-change-transform"
+            style={{ WebkitOverflowScrolling: 'touch', paddingBottom: 'env(safe-area-inset-bottom)' }}
           >
             <div className="shrink-0 relative">
               <div className="flex justify-center pt-3 pb-2">

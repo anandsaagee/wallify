@@ -53,6 +53,9 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
       return !isNaN(numId) && numId > 0 && (numId + 3) % 15 === 0;
     }, [product.id]);
 
+    // Memoize the delay string so it never triggers a style recalc on re-render
+    const animDelay = useMemo(() => `${Math.min(index, 12) * 30}ms`, [index]);
+
     return (
       <div
         onClick={onClick}
@@ -61,7 +64,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         onKeyDown={(e) => e.key === 'Enter' && onClick()}
         aria-label={`View ${product.title}`}
         className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform"
-        style={{ animationDelay: `${index * 30}ms` }}
+        style={{ animationDelay: animDelay, contain: 'content' }}
       >
         <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
           {!loaded && !error && (
@@ -75,11 +78,11 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           <OptimizedImage
             src={product.image}
             alt={product.title}
-            priority={index < 6} // Eager load first 6 items
+            priority={index < 6}
             onLoad={() => setLoaded(true)}
             onError={() => setError(true)}
             containerClassName="absolute inset-0 w-full h-full"
-            className={`transition-transform duration-700 group-hover:scale-110 ${
+            className={`transition-transform duration-500 will-change-transform group-hover:scale-110 ${
               loaded ? 'opacity-100' : 'opacity-0'
             }`}
           />
@@ -145,7 +148,8 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
     [displayedCount, products.length]
   );
 
-  const observerOptions = useMemo(() => ({ rootMargin: '400px' }), []);
+  // Pre-load images 600px before they enter the viewport — reduces perceived load time
+  const observerOptions = useMemo(() => ({ rootMargin: '600px' }), []);
   
   useIntersectionObserver(
     sentinelRef as React.RefObject<Element>,
@@ -160,7 +164,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
   );
 
   return (
-    <div id="collection">
+    <div id="collection" style={{ overscrollBehavior: 'contain' }}>
       {/* AnimatePresence fades the grid out/in on initial load or category change */}
       <AnimatePresence mode="wait">
         <motion.div
