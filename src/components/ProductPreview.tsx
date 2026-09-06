@@ -98,7 +98,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
       {/* Scrollable Content */}
       <div
         className="flex-1 overflow-y-auto overscroll-contain"
-        style={{ WebkitOverflowScrolling: 'touch' }}
+        style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'contain' }}
       >
         {/* Product Image */}
         <div className="px-4 pt-1 flex justify-center">
@@ -273,8 +273,11 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
         </div>
       </div>
 
-      {/* Sticky CTA Bar */}
-      <div className="shrink-0 flex gap-2.5 px-4 pt-3 pb-[max(14px,env(safe-area-inset-bottom))] bg-gradient-to-t from-surface from-80% to-surface/95 border-t border-white/5">
+      {/* Sticky CTA Bar — safe-area-inset-bottom ensures it clears home indicator */}
+      <div
+        className="shrink-0 flex gap-2.5 px-4 pt-3 bg-gradient-to-t from-surface from-80% to-surface/95 border-t border-white/5"
+        style={{ paddingBottom: 'max(14px, env(safe-area-inset-bottom))' }}
+      >
         <button
           onClick={handleAddToCart}
           aria-label={cartState === 'added' ? 'Added to cart' : 'Add to cart'}

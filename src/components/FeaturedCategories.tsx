@@ -57,7 +57,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
             key={cat.name}
             onClick={() => handleSelect(cat.name)}
             style={{ contain: 'layout paint' }}
-            className="group relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 text-left transition-transform duration-200 ease-out hover:scale-105 active:scale-95 will-change-transform"
+            className="group relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 text-left transition-transform duration-200 ease-out sm:hover:scale-105 active:scale-95 will-change-transform touch-manipulation"
           >
             <div className="absolute top-2 left-2 z-20 bg-primary text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter sm:top-3 sm:left-3 sm:text-[10px] sm:px-3 sm:py-1">
               Shop

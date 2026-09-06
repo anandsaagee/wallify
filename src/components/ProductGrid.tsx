@@ -64,7 +64,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         onKeyDown={(e) => e.key === 'Enter' && onClick()}
         aria-label={`View ${product.title}`}
         className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform"
-        style={{ animationDelay: animDelay, contain: 'content' }}
+        style={{ animationDelay: animDelay, contain: 'layout style paint' }}
       >
         <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
           {!loaded && !error && (
@@ -164,7 +164,11 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
   );
 
   return (
-    <div id="collection" style={{ overscrollBehavior: 'contain' }}>
+    <div
+      id="collection"
+      style={{ overscrollBehavior: 'contain' }}
+      className="overscroll-contain"
+    >
       {/* AnimatePresence fades the grid out/in on initial load or category change */}
       <AnimatePresence mode="wait">
         <motion.div

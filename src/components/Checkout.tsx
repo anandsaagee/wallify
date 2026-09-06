@@ -160,7 +160,12 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 pb-32 min-h-screen flex flex-col">
+    <div className="max-w-2xl mx-auto px-4 py-6 pb-36 min-h-screen flex flex-col"
+      style={{
+        paddingLeft: 'max(16px, env(safe-area-inset-left))',
+        paddingRight: 'max(16px, env(safe-area-inset-right))',
+      }}
+    >
       {/* Header */}
       <div className="flex items-center gap-4 mb-8">
         <button onClick={onBack} className="p-2 -ml-2 text-muted hover:text-white transition-colors">
@@ -458,8 +463,11 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
               </div>
             </div>
 
-            {/* CTA - Keyboard aware sticky */}
-            <div className="sticky bottom-4 left-0 right-0 z-40 mt-12">
+            {/* CTA — Keyboard-aware sticky with safe-area */}
+            <div
+              className="sticky bottom-0 left-0 right-0 z-40 mt-12 bg-gradient-to-t from-background to-transparent pt-4"
+              style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom))' }}
+            >
               <button
                 type="submit"
                 disabled={paidItems.length === 0}

@@ -48,9 +48,16 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         elevated
-          ? 'bg-background/95 backdrop-blur-md py-3 border-b border-white/5'
-          : 'bg-transparent py-4'
+          ? 'bg-background/95 backdrop-blur-md border-b border-white/5'
+          : 'bg-transparent'
       }`}
+      style={{
+        // Respect notch / status bar on iOS with viewport-fit=cover
+        paddingTop: `max(${elevated ? '12px' : '16px'}, env(safe-area-inset-top))`,
+        paddingBottom: elevated ? '12px' : '16px',
+        paddingLeft: 'env(safe-area-inset-left)',
+        paddingRight: 'env(safe-area-inset-right)',
+      }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -74,11 +81,11 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
           </button>
         </nav>
 
-        {/* Cart button */}
+        {/* Cart button — 44px min tap target */}
         <button
           onClick={() => navigateTo('checkout')}
           aria-label={`View cart — ${totals.totalPaidItems} items, ₹${totals.finalTotal}`}
-          className="group relative flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2 hover:bg-white/10 transition-all duration-200 active:scale-95"
+          className="group relative flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 min-h-[44px] hover:bg-white/10 transition-all duration-200 active:scale-95"
         >
           <div className="relative">
             <ShoppingBag

@@ -216,7 +216,8 @@ const AppContent: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleSetView('checkout')}
-            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-primary text-black rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_4px_30px_rgba(255,255,255,0.4)] transition-shadow"
+            className="fixed right-5 md:right-10 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-primary text-black rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_4px_30px_rgba(255,255,255,0.4)] transition-shadow"
+            style={{ bottom: 'max(24px, calc(env(safe-area-inset-bottom) + 16px))' }}
             aria-label="View Cart"
           >
             <div className="relative">

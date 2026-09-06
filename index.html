@@ -3,12 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- Mobile-first viewport: no zoom, respects safe areas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Wallify — Premium Poster Store</title>
     <meta name="description" content="Transform your walls with premium posters at unbeatable prices. Bulk offers, free posters, and stunning designs." />
+
+    <!-- PWA / browser chrome -->
     <meta name="theme-color" content="#0a0a0a" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Wallify" />
+
+    <!-- Open Graph (for WhatsApp / social link previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wallify — Premium Poster Store" />
+    <meta property="og:description" content="Transform your walls with premium posters at unbeatable prices." />
+
+    <!-- DNS / connection prefetch for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload the font CSS so text renders on first paint -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

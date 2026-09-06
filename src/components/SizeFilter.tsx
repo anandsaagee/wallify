@@ -12,7 +12,7 @@ export const SizeFilter: React.FC<SizeFilterProps> = ({ selectedSize, onSelectSi
       <button
         onClick={() => onSelectSize('All')}
         aria-pressed={selectedSize === 'All'}
-        className={`whitespace-nowrap px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border ${
+        className={`whitespace-nowrap px-4 py-2 min-h-[44px] rounded-full text-[11px] font-bold transition-all duration-200 border ${
           selectedSize === 'All'
             ? 'bg-white/10 text-white border-white/20'
             : 'bg-white/[0.03] text-muted border-white/[0.06] hover:bg-white/5'
@@ -27,7 +27,7 @@ export const SizeFilter: React.FC<SizeFilterProps> = ({ selectedSize, onSelectSi
             key={size.id}
             onClick={() => onSelectSize(size.id)}
             aria-pressed={isSelected}
-            className={`whitespace-nowrap px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border flex items-center gap-1.5 ${
+            className={`whitespace-nowrap px-4 py-2 min-h-[44px] rounded-full text-[11px] font-bold transition-all duration-200 border flex items-center gap-1.5 ${
               isSelected
                 ? 'bg-primary/10 text-primary border-primary/30'
                 : 'bg-white/[0.03] text-muted border-white/[0.06] hover:bg-white/5'

@@ -43,7 +43,15 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
   onExplore,
 }) => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'clamp(600px, 85svh, 960px)' }}>
+    <section
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{
+        minHeight: 'clamp(560px, 85svh, 960px)',
+        paddingLeft: 'max(0px, env(safe-area-inset-left))',
+        paddingRight: 'max(0px, env(safe-area-inset-right))',
+        paddingTop: 'max(80px, env(safe-area-inset-top))',
+      }}
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-surface" />
 
