@@ -407,7 +407,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm focus:border-primary/50 outline-none transition-colors"
-                        placeholder="+91 98765 43210"
+                        placeholder="0000000000"
                       />
                     </div>
                   </div>

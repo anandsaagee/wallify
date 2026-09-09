@@ -81,17 +81,6 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         animate="visible"
         className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8"
       >
-        {/* Badge */}
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
-        >
-          <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="text-[10px] sm:text-xs font-bold text-muted uppercase tracking-[0.15em]">
-            Premium Poster Store
-          </span>
-        </motion.div>
 
         {/* Headline — fluid sizing to avoid mid-breakpoint clipping */}
         <motion.h1

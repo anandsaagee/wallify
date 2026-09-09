@@ -7,7 +7,7 @@ import { SizeFilter } from './components/SizeFilter';
 import { ProductGrid } from './components/ProductGrid';
 import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
-import { Customize } from './components/Customize';
+
 import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
 import { HeroBestSellers } from './components/HeroBestSellers';
@@ -196,10 +196,7 @@ const AppContent: React.FC = () => {
                   </div>
                 )}
 
-                {/* Customization Section */}
-                <div className="mt-12 border-t border-white/10 pt-12">
-                  <Customize />
-                </div>
+
               </main>
             </motion.div>
           )}
