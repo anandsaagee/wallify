@@ -76,7 +76,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
           <OptimizedImage
             src={product.image}
-            alt={product.title}
+            alt={`${product.title} premium wall poster`}
             priority={index < 6}
             onLoad={() => setLoaded(true)}
             onError={() => setError(true)}

@@ -37,9 +37,18 @@ export function useProductFilters() {
     setSelectedSize('All');
   }, []);
 
+  const handleSetSelectedCategory = useCallback((category: string) => {
+    setSelectedCategory(category);
+    if (category === 'All') {
+      window.history.pushState(null, '', '/premium-wall-posters');
+    } else {
+      window.history.pushState(null, '', `/${category.toLowerCase()}-wall-posters`);
+    }
+  }, []);
+
   return {
     selectedCategory,
-    setSelectedCategory,
+    setSelectedCategory: handleSetSelectedCategory,
     selectedSize,
     setSelectedSize,
     searchQuery,
