@@ -17,7 +17,6 @@ import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { trackProductClick } from './utils/bestSellerTracker'; // ✅ NEW
 
 type View = 'store' | 'checkout';
@@ -75,41 +74,21 @@ const AppContent: React.FC = () => {
       <Header currentView={view} setView={handleSetView} />
 
       <div className={view === 'store' ? 'flex-1' : 'pt-24 flex-1'}>
-        <AnimatePresence mode="wait">
+        {/* CHECKOUT */}
+        {view === 'checkout' && (
+          <div>
+            <Checkout onBack={() => handleSetView('store')} />
+          </div>
+        )}
 
-          {/* CHECKOUT */}
-          {view === 'checkout' && (
-            <motion.div
-              key="checkout"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Checkout onBack={() => handleSetView('store')} />
-            </motion.div>
-          )}
+        {/* STORE */}
+        {view === 'store' && (
+          <div>
+            <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
 
-          {/* STORE */}
-          {view === 'store' && (
-            <motion.div
-              key="store"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
-
-              {/* Inline Reward Banner (Replaced fixed toast) */}
-              <AnimatePresence>
-                {showFreeGiftBanner && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-4 mb-6"
-                  >
+            {/* Inline Reward Banner (Replaced fixed toast) */}
+            {showFreeGiftBanner && (
+              <div className="px-4 mb-6 transition-all duration-300">
                     <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
                       <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                         <Gift className="w-6 h-6 text-primary" />
@@ -129,9 +108,8 @@ const AppContent: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </div>
+            )}
 
               {/* 🔥 BEST SELLERS (TRACKED) */}
               <HeroBestSellers
@@ -199,21 +177,14 @@ const AppContent: React.FC = () => {
 
 
               </main>
-            </motion.div>
-          )}
-        </AnimatePresence>
+          </div>
+        )}
       </div>
 
       {/* Floating Cart Button */}
-      <AnimatePresence>
-        {view === 'store' && totals.totalPaidItems > 0 && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => handleSetView('checkout')}
+      {view === 'store' && totals.totalPaidItems > 0 && (
+        <button
+          onClick={() => handleSetView('checkout')}
             className="fixed right-5 md:right-10 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-primary text-black rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_4px_30px_rgba(255,255,255,0.4)] transition-shadow"
             style={{ bottom: 'max(24px, calc(env(safe-area-inset-bottom) + 16px))' }}
             aria-label="View Cart"
@@ -224,9 +195,8 @@ const AppContent: React.FC = () => {
                 {totals.totalPaidItems}
               </span>
             </div>
-          </motion.button>
-        )}
-      </AnimatePresence>
+        </button>
+      )}
 
       <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
         {selectedProduct && (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
 
 const CUSTOM_SAMPLES = [
@@ -25,18 +24,7 @@ const CUSTOM_SAMPLES = [
   '/custom-posters/webp/1781949210683.webp',
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
 
 export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = ({
   onShopNow,
@@ -75,19 +63,14 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
       />
 
       {/* Content — staggered entrance */}
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        animate="visible"
+      <div
         className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8"
       >
 
         {/* Headline — fluid sizing to avoid mid-breakpoint clipping */}
-        <motion.h1
-          variants={fadeUp}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+        <h1
           style={{ fontSize: 'clamp(28px, 7vw, 96px)' }}
-          className="font-black text-white leading-[1.15] tracking-tight text-center max-w-full"
+          className="font-black text-white leading-[1.15] tracking-tight text-center max-w-full reveal-fade"
         >
           Transform Your Walls
           <br /> 
@@ -96,22 +79,20 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
             <span className="text-primary">Wallify</span>
             <span className="text-primary">.</span>
           </span>
-        </motion.h1>
+        </h1>
 
         {/* Subheading */}
-        <motion.p
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-muted text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed"
+        <p
+          className="text-muted text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed reveal-fade"
+          style={{ animationDelay: '100ms' }}
         >
           Premium posters at unbeatable prices.
-        </motion.p>
+        </p>
 
         {/* CTA Buttons */}
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2"
+        <div
+          className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2 reveal-fade"
+          style={{ animationDelay: '200ms' }}
         >
           <button
             onClick={onShopNow}
@@ -125,13 +106,12 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
           >
             Explore Collection
           </button>
-        </motion.div>
+        </div>
 
         {/* Customization Section */}
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="flex flex-col items-center gap-3 mt-4 w-full"
+        <div
+          className="flex flex-col items-center gap-3 mt-4 w-full reveal-fade"
+          style={{ animationDelay: '300ms' }}
         >
           <div className="w-full max-w-[340px] sm:max-w-lg bg-primary/10 px-4 py-3 rounded-xl border border-primary/20 flex flex-col items-center justify-center mx-auto shadow-sm">
             <p className="text-[11px] sm:text-base text-primary font-black uppercase tracking-wide text-center leading-[1.4] m-0 w-full">
@@ -166,13 +146,12 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
               </span>
             </div>
           </a>
-        </motion.div>
+        </div>
 
         {/* Samples Row */}
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-          className="w-full mt-6"
+        <div
+          className="w-full mt-6 reveal-fade"
+          style={{ animationDelay: '400ms' }}
         >
           <h3 className="text-xs sm:text-sm font-black uppercase text-muted tracking-widest mb-4">
             Recent Custom Orders
@@ -198,13 +177,12 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Trust indicators */}
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider w-full"
+        <div
+          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider w-full reveal-fade"
+          style={{ animationDelay: '500ms' }}
         >
           <div className="flex items-center gap-2">
             <div className="w-8 h-[1px] bg-white/10" />
@@ -218,8 +196,8 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
             <div className="w-8 h-[1px] bg-white/10" />
             <span>Fast Delivery</span>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

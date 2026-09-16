@@ -1,7 +1,6 @@
 import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { TrendingUp, Flame } from 'lucide-react';
 import { ITEMS_PER_PAGE } from '../data/config';
-import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
 
 export interface Product {
@@ -169,26 +168,19 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
       style={{ overscrollBehavior: 'contain' }}
       className="overscroll-contain"
     >
-      {/* AnimatePresence fades the grid out/in on initial load or category change */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key="grid"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.18, ease: 'easeInOut' }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 px-4 sm:px-5 lg:px-7"
-        >
-          {pageProducts.map((product, index) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onClick={cardClickHandlers.get(product.id)!}
-              index={index}
-            />
-          ))}
-        </motion.div>
-      </AnimatePresence>
+      {/* Grid container */}
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 px-4 sm:px-5 lg:px-7"
+      >
+        {pageProducts.map((product, index) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onClick={cardClickHandlers.get(product.id)!}
+            index={index}
+          />
+        ))}
+      </div>
 
       <div ref={sentinelRef} className="h-10 w-full mt-4" aria-hidden="true" />
       

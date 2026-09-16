@@ -20,7 +20,6 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash][extname]',
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'motion': ['framer-motion'],
           'icons': ['lucide-react'],
         },
       },

@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { ShoppingBag, Zap, Check, Gift, Frame } from 'lucide-react';
 import { SIZES, getFramePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
-import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
 
 interface Product {
@@ -148,99 +147,82 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Frame Add-on Toggle */}
         <div className="px-4 pt-3">
-          <AnimatePresence mode="wait">
-            {frameAvailable ? (
-              <motion.div
-                key="frame-available"
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.2 }}
+          {frameAvailable ? (
+            <div
+              className="transition-all duration-200"
+            >
+              <button
+                onClick={() => setWithFrame((v) => !v)}
+                aria-pressed={withFrame}
+                className={`w-full flex items-center justify-between gap-3 p-3.5 rounded-2xl border-2 transition-all duration-200 active:scale-[0.98] ${
+                  withFrame
+                    ? 'border-primary bg-primary/10 shadow-[0_0_20px_rgba(250,203,21,0.12)]'
+                    : 'border-white/10 bg-white/[0.03] hover:border-white/20'
+                }`}
               >
-                <button
-                  onClick={() => setWithFrame((v) => !v)}
-                  aria-pressed={withFrame}
-                  className={`w-full flex items-center justify-between gap-3 p-3.5 rounded-2xl border-2 transition-all duration-200 active:scale-[0.98] ${
-                    withFrame
-                      ? 'border-primary bg-primary/10 shadow-[0_0_20px_rgba(250,203,21,0.12)]'
-                      : 'border-white/10 bg-white/[0.03] hover:border-white/20'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                      withFrame ? 'bg-primary/20 text-primary' : 'bg-white/5 text-white/40'
-                    }`}>
-                      <Frame className="w-4 h-4" />
-                    </div>
-                    <div className="text-left">
-                      <p className={`text-xs font-black uppercase tracking-wide ${withFrame ? 'text-primary' : 'text-white'}`}>
-                        Add Frame
-                      </p>
-                      <p className="text-[10px] text-white/40 font-medium mt-0.5">
-                        Premium frame
-                      </p>
-                    </div>
+                <div className="flex items-center gap-2.5">
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                    withFrame ? 'bg-primary/20 text-primary' : 'bg-white/5 text-white/40'
+                  }`}>
+                    <Frame className="w-4 h-4" />
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <span className={`text-sm font-black ${withFrame ? 'text-primary' : 'text-white/60'}`}>
-                      +₹{framePrice}
-                    </span>
-                    {/* Toggle pill */}
-                    <div className={`relative w-10 h-5 rounded-full transition-colors duration-200 ${
-                      withFrame ? 'bg-primary' : 'bg-white/20'
-                    }`}>
-                      <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200 ${
-                        withFrame ? 'translate-x-5' : 'translate-x-0.5'
-                      }`} />
-                    </div>
+                  <div className="text-left">
+                    <p className={`text-xs font-black uppercase tracking-wide ${withFrame ? 'text-primary' : 'text-white'}`}>
+                      Add Frame
+                    </p>
+                    <p className="text-[10px] text-white/40 font-medium mt-0.5">
+                      Premium frame
+                    </p>
                   </div>
-                </button>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="frame-unavailable"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15 }}
-                className="flex items-center gap-2 px-1"
-              >
-                <Frame className="w-3.5 h-3.5 text-white/20" />
-                <p className="text-[10px] text-white/25 font-medium">
-                  Frames available for A5 &amp; A4 only
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className={`text-sm font-black ${withFrame ? 'text-primary' : 'text-white/60'}`}>
+                    +₹{framePrice}
+                  </span>
+                  {/* Toggle pill */}
+                  <div className={`relative w-10 h-5 rounded-full transition-colors duration-200 ${
+                    withFrame ? 'bg-primary' : 'bg-white/20'
+                  }`}>
+                    <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200 ${
+                      withFrame ? 'translate-x-5' : 'translate-x-0.5'
+                    }`} />
+                  </div>
+                </div>
+              </button>
+            </div>
+          ) : (
+            <div
+              className="flex items-center gap-2 px-1 transition-opacity duration-150"
+            >
+              <Frame className="w-3.5 h-3.5 text-white/20" />
+              <p className="text-[10px] text-white/25 font-medium">
+                Frames available for A5 &amp; A4 only
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Free Poster Indicator */}
-        <AnimatePresence>
-          {freeIndicator && (
-            <motion.div
-              key="free-indicator"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="px-4 pt-3 overflow-hidden"
-            >
-              <div className="bg-primary/5 border border-primary/10 rounded-2xl p-3 flex items-center gap-3">
-                <div className="shrink-0 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Gift className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-white">
-                    You are <span className="text-primary">{freeIndicator.away}</span>{' '}
-                    item{freeIndicator.away > 1 ? 's' : ''} away from a free poster
-                  </p>
-                  <p className="text-[10px] text-muted font-medium mt-0.5">
-                    Buy {freeIndicator.threshold} posters total to unlock free picks
-                  </p>
-                </div>
+        {freeIndicator && (
+          <div
+            className="px-4 pt-3 overflow-hidden transition-all duration-300"
+          >
+            <div className="bg-primary/5 border border-primary/10 rounded-2xl p-3 flex items-center gap-3">
+              <div className="shrink-0 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Gift className="w-4 h-4 text-primary" />
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <div>
+                <p className="text-xs font-bold text-white">
+                  You are <span className="text-primary">{freeIndicator.away}</span>{' '}
+                  item{freeIndicator.away > 1 ? 's' : ''} away from a free poster
+                </p>
+                <p className="text-[10px] text-muted font-medium mt-0.5">
+                  Buy {freeIndicator.threshold} posters total to unlock free picks
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Bulk Offer Banner */}
         <div className="px-4 pt-3">

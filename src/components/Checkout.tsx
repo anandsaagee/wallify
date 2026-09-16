@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, ChevronLeft, CreditCard, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
-import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
 
 interface CheckoutProps {
@@ -126,10 +125,8 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
   if (step === 'processing') {
     return (
       <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-          className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full mb-6"
+        <div
+          className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full mb-6 animate-spin"
         />
         <h2 className="text-2xl font-black tracking-tighter mb-2 uppercase">Processing Order</h2>
         <p className="text-muted text-sm max-w-[280px]">
@@ -259,28 +256,23 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           )}
 
           {/* Mystery Free Poster Notice */}
-          <AnimatePresence>
-            {totals.eligibleFreeGifts > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className="bg-primary/[0.04] border border-primary/10 rounded-2xl p-5"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <Gift className="w-5 h-5 text-primary" />
-                  <h2 className="text-sm font-black text-primary uppercase tracking-widest">
-                    Mystery Rewards Unlocked!
-                  </h2>
-                </div>
+          {totals.eligibleFreeGifts > 0 && (
+            <div
+              className="bg-primary/[0.04] border border-primary/10 rounded-2xl p-5"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <Gift className="w-5 h-5 text-primary" />
+                <h2 className="text-sm font-black text-primary uppercase tracking-widest">
+                  Mystery Rewards Unlocked!
+                </h2>
+              </div>
 
-                <p className="text-xs text-muted font-medium leading-relaxed">
-                  You've unlocked <span className="text-primary font-black">{totals.eligibleFreeGifts}</span> FREE mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''}! 
-                  These will be carefully selected and added to your package automatically.
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              <p className="text-xs text-muted font-medium leading-relaxed">
+                You've unlocked <span className="text-primary font-black">{totals.eligibleFreeGifts}</span> FREE mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''}! 
+                These will be carefully selected and added to your package automatically.
+              </p>
+            </div>
+          )}
 
           {/* Free items (legacy view if no picker shown) */}
           {freeItems.length === 0 && totals.eligibleFreeGifts === 0 && paidItems.length > 0 && (

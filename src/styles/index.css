@@ -150,34 +150,7 @@ a,
   cursor: pointer;
 }
 
-/* ── Entrance animations ──────────────────────────────────────────────────── */
-.reveal-fade {
-  opacity: 0;
-  animation: fadeIn 0.35s ease-out forwards;
-  will-change: opacity, transform;
-  contain: layout style;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% { transform: translateY(0); }
-  50%  { transform: translateY(-16px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
+/* ── Entrance animations (Disabled for performance) ──────────────────────────────────────────────────── */
 
 .mask-hero-radial {
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
@@ -186,13 +159,6 @@ a,
 
 /* ── Reduced motion ───────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .reveal-fade {
-    animation: none;
-    opacity: 1;
-  }
-  .animate-float {
-    animation: none;
-  }
   *,
   *::before,
   *::after {

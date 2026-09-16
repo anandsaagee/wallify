@@ -1,5 +1,4 @@
 import React, { useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
 interface BottomSheetProps {
@@ -39,36 +38,22 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
   }, [isOpen, handleKeyDown]);
 
   return (
-    <AnimatePresence>
+    <>
       {isOpen && (
         <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+          <div
             onClick={onClose}
-            className="fixed inset-0 z-[100]"
+            className="fixed inset-0 z-[100] transition-opacity duration-200"
             style={{
               background: 'rgba(0,0,0,0.75)',
               backdropFilter: 'blur(6px)',
               WebkitBackdropFilter: 'blur(6px)',
             }}
           />
-          <motion.div
+          <div
             role="dialog"
             aria-modal="true"
             aria-label="Product details"
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
-            transition={{ type: 'spring', damping: 30, stiffness: 260, mass: 0.8 }}
-            drag="y"
-            dragConstraints={{ top: 0, bottom: 0 }}
-            dragElastic={{ top: 0, bottom: 0.3 }}
-            onDragEnd={(_, info) => {
-              if (info.offset.y > 80 || info.velocity.y > 400) onClose();
-            }}
             className="fixed bottom-0 left-0 right-0 mx-auto z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] sm:max-w-[440px] bg-surface rounded-t-3xl border-t border-white/5 shadow-[0_-16px_80px_rgba(0,0,0,0.7)] overflow-hidden will-change-transform"
             style={{
               WebkitOverflowScrolling: 'touch',
@@ -91,9 +76,9 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
               </button>
             </div>
             {children}
-          </motion.div>
+          </div>
         </>
       )}
-    </AnimatePresence>
+    </>
   );
 };

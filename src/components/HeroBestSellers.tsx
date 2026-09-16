@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import { motion } from 'framer-motion';
 import { Product } from './ProductGrid';
 import { OptimizedImage } from './OptimizedImage';
 import { getTopProducts } from '../utils/bestSellerTracker';
@@ -35,12 +34,8 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {bestSellers.map((product, index) => (
-          <motion.div
+          <div
             key={product.id}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.05 }}
             className="min-w-[160px] sm:min-w-[180px] snap-start group cursor-pointer"
             onClick={() => onClick(product)}
           >
@@ -64,7 +59,7 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
                 {product.category}
               </p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 

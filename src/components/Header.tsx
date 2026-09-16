@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ShoppingBag, Instagram } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
-import { motion, AnimatePresence } from 'framer-motion';
 
 type View = 'store' | 'checkout';
 
@@ -102,20 +101,13 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
               size={20}
               className="text-white group-hover:text-primary transition-colors duration-200"
             />
-            <AnimatePresence>
-              {totals.totalPaidItems > 0 && (
-                <motion.span
-                  key="cart-badge"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0 }}
-                  transition={{ type: 'spring', damping: 15, stiffness: 300 }}
-                  className="absolute -top-1.5 -right-1.5 bg-primary text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center"
-                >
-                  {totals.totalPaidItems > 99 ? '99+' : totals.totalPaidItems}
-                </motion.span>
-              )}
-            </AnimatePresence>
+            {totals.totalPaidItems > 0 && (
+              <span
+                className="absolute -top-1.5 -right-1.5 bg-primary text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center"
+              >
+                {totals.totalPaidItems > 99 ? '99+' : totals.totalPaidItems}
+              </span>
+            )}
           </div>
           <div className="hidden sm:block text-left">
             <p className="text-[8px] font-black uppercase tracking-widest text-muted leading-none">
@@ -128,57 +120,45 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
         </button>
       </div>
 
-      {/* Mobile menu — animated slide */}
-      <AnimatePresence>
-        {menuOpen && (
-          <>
-            <motion.div
-              key="menu-overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden fixed inset-0 top-[53px] bg-black/30 z-30"
-              onClick={() => setMenuOpen(false)}
-            />
-            <motion.nav
-              key="menu-panel"
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-              className="md:hidden fixed inset-x-0 top-[53px] bg-background/98 backdrop-blur-xl z-40 border-t border-white/5"
-            >
-              <div className="flex flex-col p-6 gap-6">
-                <button
-                  onClick={() => navigateTo('store')}
-                  className="flex items-center gap-4 text-xl font-black tracking-tighter text-white"
-                >
-                  <ShoppingBag size={24} className="text-primary" />
-                  Store
-                </button>
-                <button
-                  onClick={() => navigateTo('checkout')}
-                  className="flex items-center gap-4 text-xl font-black tracking-tighter text-white"
-                >
-                  <ShoppingBag size={24} className="text-muted" />
-                  Your Bag ({totals.totalPaidItems})
-                </button>
-                
-                <a
-                  href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-xl font-black tracking-tighter text-white mt-4 pt-4 border-t border-white/10"
-                >
-                  <Instagram size={24} className="text-primary" />
-                  Follow us on Instagram
-                </a>
-              </div>
-            </motion.nav>
-          </>
-        )}
-      </AnimatePresence>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <>
+          <div
+            className="md:hidden fixed inset-0 top-[53px] bg-black/30 z-30 transition-opacity duration-200"
+            onClick={() => setMenuOpen(false)}
+          />
+          <nav
+            className="md:hidden fixed inset-x-0 top-[53px] bg-background/98 backdrop-blur-xl z-40 border-t border-white/5 transition-transform duration-200"
+          >
+            <div className="flex flex-col p-6 gap-6">
+              <button
+                onClick={() => navigateTo('store')}
+                className="flex items-center gap-4 text-xl font-black tracking-tighter text-white"
+              >
+                <ShoppingBag size={24} className="text-primary" />
+                Store
+              </button>
+              <button
+                onClick={() => navigateTo('checkout')}
+                className="flex items-center gap-4 text-xl font-black tracking-tighter text-white"
+              >
+                <ShoppingBag size={24} className="text-muted" />
+                Your Bag ({totals.totalPaidItems})
+              </button>
+              
+              <a
+                href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-xl font-black tracking-tighter text-white mt-4 pt-4 border-t border-white/10"
+              >
+                <Instagram size={24} className="text-primary" />
+                Follow us on Instagram
+              </a>
+            </div>
+          </nav>
+        </>
+      )}
     </header>
   );
 };
