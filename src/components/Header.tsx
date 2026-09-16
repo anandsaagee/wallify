@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Instagram } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -79,6 +79,16 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
           >
             Store
           </button>
+          
+          <a
+            href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-muted hover:text-primary transition-colors duration-200"
+            aria-label="Instagram"
+          >
+            <Instagram size={18} />
+          </a>
         </nav>
 
         {/* Cart button — 44px min tap target */}
@@ -154,6 +164,16 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
                   <ShoppingBag size={24} className="text-muted" />
                   Your Bag ({totals.totalPaidItems})
                 </button>
+                
+                <a
+                  href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-xl font-black tracking-tighter text-white mt-4 pt-4 border-t border-white/10"
+                >
+                  <Instagram size={24} className="text-primary" />
+                  Follow us on Instagram
+                </a>
               </div>
             </motion.nav>
           </>

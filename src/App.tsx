@@ -15,6 +15,7 @@ import { FeaturedCategories } from './components/FeaturedCategories';
 import { Pricing } from './components/Pricing';
 import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
+import { Footer } from './components/Footer';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { trackProductClick } from './utils/bestSellerTracker'; // ✅ NEW
@@ -64,13 +65,13 @@ const AppContent: React.FC = () => {
   }, []);
 
   const scrollToCollection = useCallback(() => {
-    document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('collection-header')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   const showFreeGiftBanner = totals.eligibleFreeGifts > 0 && totals.freeGiftCount < totals.eligibleFreeGifts;
 
   return (
-    <div className="min-h-screen bg-background text-white overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-background text-white flex flex-col">
       <Header currentView={view} setView={handleSetView} />
 
       <div className={view === 'store' ? 'flex-1' : 'pt-24 flex-1'}>
@@ -235,6 +236,7 @@ const AppContent: React.FC = () => {
           />
         )}
       </BottomSheet>
+      <Footer />
     </div>
   );
 };
