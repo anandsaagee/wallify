@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Instagram } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 
@@ -11,7 +11,6 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const { totals } = useCart();
 
   useEffect(() => {
@@ -29,19 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [currentView]);
-
-  const navigateTo = useCallback(
-    (view: View) => {
-      setView(view);
-      setMenuOpen(false);
-    },
-    [setView]
-  );
-
-  const elevated = scrolled || menuOpen;
+  const elevated = scrolled;
 
   return (
     <header
@@ -61,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <button
-          onClick={() => navigateTo('store')}
+          onClick={() => setView('store')}
           aria-label="Go to store"
           className="text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform duration-150"
         >
@@ -71,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
           <button
-            onClick={() => navigateTo('store')}
+            onClick={() => setView('store')}
             className={`text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-200 hover:text-primary ${
               currentView === 'store' ? 'text-primary' : 'text-muted'
             }`}
@@ -92,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
 
         {/* Cart button — 44px min tap target */}
         <button
-          onClick={() => navigateTo('checkout')}
+          onClick={() => setView('checkout')}
           aria-label={`View cart — ${totals.totalPaidItems} items, ₹${totals.finalTotal}`}
           className="group relative flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 min-h-[44px] hover:bg-white/10 transition-all duration-200 active:scale-95"
         >
@@ -120,45 +107,6 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <>
-          <div
-            className="md:hidden fixed inset-0 top-[53px] bg-black/30 z-30 transition-opacity duration-200"
-            onClick={() => setMenuOpen(false)}
-          />
-          <nav
-            className="md:hidden fixed inset-x-0 top-[53px] bg-background/98 backdrop-blur-xl z-40 border-t border-white/5 transition-transform duration-200"
-          >
-            <div className="flex flex-col p-6 gap-6">
-              <button
-                onClick={() => navigateTo('store')}
-                className="flex items-center gap-4 text-xl font-black tracking-tighter text-white"
-              >
-                <ShoppingBag size={24} className="text-primary" />
-                Store
-              </button>
-              <button
-                onClick={() => navigateTo('checkout')}
-                className="flex items-center gap-4 text-xl font-black tracking-tighter text-white"
-              >
-                <ShoppingBag size={24} className="text-muted" />
-                Your Bag ({totals.totalPaidItems})
-              </button>
-              
-              <a
-                href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-xl font-black tracking-tighter text-white mt-4 pt-4 border-t border-white/10"
-              >
-                <Instagram size={24} className="text-primary" />
-                Follow us on Instagram
-              </a>
-            </div>
-          </nav>
-        </>
-      )}
     </header>
   );
 };

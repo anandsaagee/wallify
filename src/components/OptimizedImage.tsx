@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useReducedMotion } from '../utils/optimizations';
 import { LoadingSkeleton } from './LoadingSkeleton';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -23,14 +22,10 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
-
-  // Premium shimmer effect for placeholders
-  const shimmerClass = "after:absolute after:inset-0 after:-translate-x-full after:animate-[shimmer_2s_infinite] after:bg-gradient-to-r after:from-transparent after:via-white/5 after:to-transparent";
 
   return (
-    <div 
-      className={`relative overflow-hidden bg-[#121212] ${containerClassName} ${!isLoaded ? shimmerClass : ''}`} 
+    <div
+      className={`relative overflow-hidden bg-[#121212] ${containerClassName}`}
       style={{ aspectRatio: `${width}/${height}` }}
     >
       {!isLoaded && !hasError && (
@@ -38,27 +33,24 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
           <LoadingSkeleton className="w-full h-full" />
         </div>
       )}
-      
+
       <img
         src={src}
         alt={alt}
         width={width}
         height={height}
-        loading={priority ? "eager" : "lazy"}
+        loading={priority ? 'eager' : 'lazy'}
         // @ts-expect-error: fetchpriority is not yet in React types
-        fetchpriority={priority ? "high" : "auto"}
+        fetchpriority={priority ? 'high' : 'auto'}
         decoding="async"
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
-        className={`
-          absolute inset-0 w-full h-full object-cover
-          ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}
-          ${!prefersReducedMotion ? 'transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1)' : ''}
-          ${className}
-        `}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        } ${className}`}
         {...props}
       />
-      
+
       {hasError && (
         <div className="absolute inset-0 bg-white/5 flex flex-col items-center justify-center text-muted text-[10px] text-center p-4">
           <span className="text-xl mb-2">🖼️</span>

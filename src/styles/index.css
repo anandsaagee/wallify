@@ -134,11 +134,6 @@
     padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
 
-  /* ── Content visibility: skip off-screen layout/paint ────────────────── */
-  .offscreen-lazy {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
-  }
 }
 
 /* ── Global touch behaviour ───────────────────────────────────────────────── */
@@ -150,12 +145,7 @@ a,
   cursor: pointer;
 }
 
-/* ── Entrance animations (Disabled for performance) ──────────────────────────────────────────────────── */
 
-.mask-hero-radial {
-  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 90%);
-}
 
 /* ── Reduced motion ───────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
@@ -178,10 +168,5 @@ a,
     scroll-snap-type: x mandatory;
     -webkit-scroll-snap-type: x mandatory;
   }
-}
-
-/* ── Ensure sticky CTA in checkout respects home indicator bar ───────────── */
-.sticky-cta {
-  padding-bottom: max(16px, env(safe-area-inset-bottom));
 }
 

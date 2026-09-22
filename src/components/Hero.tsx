@@ -70,7 +70,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
         {/* Headline — fluid sizing to avoid mid-breakpoint clipping */}
         <h1
           style={{ fontSize: 'clamp(28px, 7vw, 96px)' }}
-          className="font-black text-white leading-[1.15] tracking-tight text-center max-w-full reveal-fade"
+          className="font-black text-white leading-[1.15] tracking-tight text-center max-w-full"
         >
           Transform Your Walls
           <br /> 
@@ -83,16 +83,14 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
 
         {/* Subheading */}
         <p
-          className="text-muted text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed reveal-fade"
-          style={{ animationDelay: '100ms' }}
+          className="text-muted text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed"
         >
           Premium posters at unbeatable prices.
         </p>
 
         {/* CTA Buttons */}
         <div
-          className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2 reveal-fade"
-          style={{ animationDelay: '200ms' }}
+          className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2"
         >
           <button
             onClick={onShopNow}
@@ -110,8 +108,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
 
         {/* Customization Section */}
         <div
-          className="flex flex-col items-center gap-3 mt-4 w-full reveal-fade"
-          style={{ animationDelay: '300ms' }}
+          className="flex flex-col items-center gap-3 mt-4 w-full"
         >
           <div className="w-full max-w-[340px] sm:max-w-lg bg-primary/10 px-4 py-3 rounded-xl border border-primary/20 flex flex-col items-center justify-center mx-auto shadow-sm">
             <p className="text-[11px] sm:text-base text-primary font-black uppercase tracking-wide text-center leading-[1.4] m-0 w-full">
@@ -150,8 +147,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
 
         {/* Samples Row */}
         <div
-          className="w-full mt-6 reveal-fade"
-          style={{ animationDelay: '400ms' }}
+          className="w-full mt-6"
         >
           <h3 className="text-xs sm:text-sm font-black uppercase text-muted tracking-widest mb-4">
             Recent Custom Orders
@@ -181,8 +177,7 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
 
         {/* Trust indicators */}
         <div
-          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider w-full reveal-fade"
-          style={{ animationDelay: '500ms' }}
+          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-4 text-[10px] sm:text-xs font-bold text-muted uppercase tracking-wider w-full"
         >
           <div className="flex items-center gap-2">
             <div className="w-8 h-[1px] bg-white/10" />
