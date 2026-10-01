@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { LoadingSkeleton } from './LoadingSkeleton';
+import { getImageUrl } from '../utils/imageUrl';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -23,6 +24,12 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
+  // Transform local paths to Cloudinary CDN URLs
+  const cloudinarySrc = useMemo(
+    () => getImageUrl(src, { width: typeof width === 'number' ? width : undefined }),
+    [src, width]
+  );
+
   return (
     <div
       className={`relative overflow-hidden bg-[#121212] ${containerClassName}`}
@@ -35,7 +42,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
       )}
 
       <img
-        src={src}
+        src={cloudinarySrc}
         alt={alt}
         width={width}
         height={height}

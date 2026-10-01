@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Images hosted on Cloudinary CDN (do NOT commit these — 700MB+)
+public/assets/
+public/custom-posters/
+
+# Cloudinary credentials and generated files
+.env
+cloudinary-urls.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  // Use minimal public dir for builds (no images — they're on Cloudinary)
+  // Only contains Google verification file and other non-image assets
+  publicDir: 'public-deploy',
   server: {
     host: true,
   },
