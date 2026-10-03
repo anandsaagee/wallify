@@ -1,8 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { ShoppingBag, Zap, Check, Gift, Frame } from 'lucide-react';
 import { SIZES, getFramePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
+import { SEO } from './SEO';
 
 interface Product {
   id: string;
@@ -92,8 +93,60 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
     }, 600);
   }, [addToCart, product, selectedSize, withFrame, onClose]);
 
+  // Handle History & URL changes
+  useEffect(() => {
+    const slug = product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    const url = `/posters/${product.category.toLowerCase()}/${slug}`;
+    
+    // Push new state
+    window.history.pushState({ posterId: product.id }, '', url);
+
+    // On unmount (close), go back if we pushed it
+    return () => {
+      if (window.history.state?.posterId === product.id) {
+        window.history.back();
+      }
+    };
+  }, [product]);
+
+  // SEO values
+  const seoTitle = `${product.title} Poster – ${currentSize.label} Wall Art | WallifyStore`;
+  const seoDesc = `Buy the premium ${product.title} ${product.category} poster online. High-quality, fade-resistant print perfect for your bedroom or hostel. Order now!`;
+  const seoUrl = `https://wallifystore.com/posters/${product.category.toLowerCase()}/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`;
+  const seoImage = `https://wallifystore.com${product.image}`;
+  const altText = `Premium ${product.title} wall poster in ${product.category} style printed on high quality matte paper`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${product.title} Poster`,
+    "image": [seoImage],
+    "description": seoDesc,
+    "sku": product.id,
+    "brand": {
+      "@type": "Brand",
+      "name": "WallifyStore"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": seoUrl,
+      "priceCurrency": "INR",
+      "price": currentSize.price,
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  };
+
   return (
-    <div className="flex flex-col h-full min-h-0">
+    <article className="flex flex-col h-full min-h-0">
+      <SEO 
+        title={seoTitle}
+        description={seoDesc}
+        canonicalUrl={seoUrl}
+        image={seoImage}
+        type="product"
+        jsonLd={jsonLd}
+      />
       {/* Scrollable Content */}
       <div
         className="flex-1 overflow-y-auto overscroll-contain"
@@ -101,15 +154,18 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
       >
         {/* Product Image */}
         <div className="px-4 pt-1 flex justify-center">
-          <div className="w-full max-h-[45dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+          <figure className="w-full max-h-[45dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
             <OptimizedImage
               src={product.image}
-              alt={product.title}
+              alt={altText}
               priority={true}
               containerClassName="w-full h-full"
               className="w-full h-full"
             />
-          </div>
+            <figcaption className="sr-only">
+              {product.title} - {product.category} Wall Art ({currentSize.label})
+            </figcaption>
+          </figure>
         </div>
 
         {/* Title, Category & Price */}
@@ -284,6 +340,6 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           {withFrame ? `Add Framed — ₹${totalPrice}` : `Add to Cart — ₹${totalPrice}`}
         </button>
       </div>
-    </div>
+    </article>
   );
 };

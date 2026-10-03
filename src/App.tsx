@@ -7,6 +7,7 @@ import { SizeFilter } from './components/SizeFilter';
 import { ProductGrid } from './components/ProductGrid';
 import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
+import { SEO } from './components/SEO';
 
 import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
@@ -71,6 +72,22 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-white flex flex-col">
+      <SEO 
+        title="WallifyStore – Premium Anime, Film & Car Wall Posters"
+        description="Shop premium HD wall posters — film, anime & car art. High quality, fade-resistant prints. Fast Kerala delivery. Custom poster printing available!"
+        type="website"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "WallifyStore",
+          "url": "https://wallifystore.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://wallifystore.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
+      />
       <Header currentView={view} setView={handleSetView} />
 
       <div className={view === 'store' ? 'flex-1' : 'pt-24 flex-1'}>
