@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { products } from './data/products';
 import { useProductFilters } from './hooks/useProductFilters';
 import { Header } from './components/Header';
@@ -8,6 +8,8 @@ import { ProductGrid } from './components/ProductGrid';
 import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
 import { SEO } from './components/SEO';
+import { FAQ } from './components/FAQ';
+import { CATEGORY_SEO } from './data/categorySeo';
 
 import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
@@ -18,7 +20,7 @@ import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
-import { trackProductClick } from './utils/bestSellerTracker'; // ✅ NEW
+import { trackProductClick } from './utils/bestSellerTracker';
 
 type View = 'store' | 'checkout';
 
@@ -29,9 +31,25 @@ interface ProductData {
   image: string;
 }
 
+// Deep linking: resolve poster if landing directly on /posters/:category/:slug
+function getInitialProduct(): ProductData | null {
+  if (typeof window === 'undefined') return null;
+  const path = window.location.pathname.toLowerCase();
+  const match = path.match(/^\/posters\/[a-z0-9_-]+\/([a-z0-9_-]+)/);
+  if (match) {
+    const slug = match[1];
+    const found = products.find((p) => {
+      const pSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+      return pSlug === slug;
+    });
+    if (found) return found;
+  }
+  return null;
+}
+
 const AppContent: React.FC = () => {
   const [view, setView] = useState<View>('store');
-  const { totals } = useCart(); // Added useCart to access totals here
+  const { totals } = useCart();
 
   const {
     selectedCategory,
@@ -44,9 +62,24 @@ const AppContent: React.FC = () => {
     handleClearFilters
   } = useProductFilters();
 
-  const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(getInitialProduct);
 
-  // ✅ NEW: SMART CLICK HANDLER
+  // Sync modal state with browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.toLowerCase();
+      if (!path.startsWith('/posters/')) {
+        setSelectedProduct(null);
+      } else {
+        const prod = getInitialProduct();
+        if (prod) setSelectedProduct(prod);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // SMART CLICK HANDLER
   const handleProductClick = useCallback((product: ProductData) => {
     if (!product?.id) return;
 
@@ -70,23 +103,58 @@ const AppContent: React.FC = () => {
 
   const showFreeGiftBanner = totals.eligibleFreeGifts > 0 && totals.freeGiftCount < totals.eligibleFreeGifts;
 
+  // Dynamic SEO configuration based on active category
+  const activeCategorySeo = CATEGORY_SEO[selectedCategory] || CATEGORY_SEO['All'];
+  const categoryCanonicalUrl =
+    selectedCategory === 'All'
+      ? 'https://wallifystore.com'
+      : `https://wallifystore.com/category/${selectedCategory.toLowerCase()}`;
+
+  const seoJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: 'WallifyStore',
+        url: 'https://wallifystore.com',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://wallifystore.com/?search={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      ...(selectedCategory !== 'All'
+        ? [
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://wallifystore.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: `${selectedCategory} Posters`,
+                  item: categoryCanonicalUrl,
+                },
+              ],
+            },
+          ]
+        : []),
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background text-white flex flex-col">
       <SEO 
-        title="WallifyStore – Premium Anime, Film & Car Wall Posters"
-        description="Shop premium HD wall posters — film, anime & car art. High quality, fade-resistant prints. Fast Kerala delivery. Custom poster printing available!"
+        title={activeCategorySeo.metaTitle}
+        description={activeCategorySeo.metaDescription}
+        canonicalUrl={categoryCanonicalUrl}
         type="website"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "WallifyStore",
-          "url": "https://wallifystore.com",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://wallifystore.com/?search={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        }}
+        jsonLd={seoJsonLd}
       />
       <Header currentView={view} setView={handleSetView} />
 
@@ -137,15 +205,18 @@ const AppContent: React.FC = () => {
               <main className="pb-24">
                 <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
-                <div id="collection-header" className="px-4 mb-1 mt-8 flex items-center justify-between">
-                  <div>
-                    <h1 className="text-2xl font-black text-white tracking-tight">
-                      {selectedCategory === 'All' ? 'Premium Wall Posters' : `Premium ${selectedCategory} Wall Posters`}
+                <div id="collection-header" className="px-4 mb-3 mt-8">
+                  <div className="flex items-center justify-between">
+                    <h1 className="text-2xl sm:text-3xl font-display text-white tracking-tight">
+                      {activeCategorySeo.h1}
                     </h1>
-                    <p className="text-xs text-muted mt-0.5">
+                    <span className="text-xs text-muted font-body font-medium bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
                       {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
-                    </p>
+                    </span>
                   </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-body mt-2 leading-relaxed max-w-2xl">
+                    {activeCategorySeo.snippet}
+                  </p>
                 </div>
 
 
@@ -193,8 +264,10 @@ const AppContent: React.FC = () => {
                   </div>
                 )}
 
-
               </main>
+
+              {/* SEO FAQ Section with FAQPage Schema */}
+              <FAQ />
           </div>
         )}
       </div>

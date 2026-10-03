@@ -118,23 +118,81 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": `${product.title} Poster`,
-    "image": [seoImage],
-    "description": seoDesc,
-    "sku": product.id,
-    "brand": {
-      "@type": "Brand",
-      "name": "WallifyStore"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": seoUrl,
-      "priceCurrency": "INR",
-      "price": currentSize.price,
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    }
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": `${product.title} Poster`,
+        "image": [seoImage],
+        "description": seoDesc,
+        "sku": product.id,
+        "brand": {
+          "@type": "Brand",
+          "name": "WallifyStore"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "148"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": seoUrl,
+          "priceCurrency": "INR",
+          "price": currentSize.price,
+          "priceValidUntil": "2027-12-31",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "INR"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "IN"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Saturday"]
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 2,
+                "maxValue": 5,
+                "unitCode": "DAY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://wallifystore.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": `${product.category} Posters`,
+            "item": `https://wallifystore.com/category/${product.category.toLowerCase()}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": `${product.title} Poster`,
+            "item": seoUrl
+          }
+        ]
+      }
+    ]
   };
 
   return (

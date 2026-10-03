@@ -52,17 +52,22 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
       return !isNaN(numId) && numId > 0 && (numId + 3) % 15 === 0;
     }, [product.id]);
 
-    // Memoize the delay string so it never triggers a style recalc on re-render
     const animDelay = useMemo(() => `${Math.min(index, 12) * 30}ms`, [index]);
+    const slug = useMemo(
+      () => product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''),
+      [product.title]
+    );
+    const productHref = `/posters/${product.category.toLowerCase()}/${slug}`;
 
     return (
-      <div
-        onClick={onClick}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && onClick()}
-        aria-label={`View ${product.title}`}
-        className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform"
+      <a
+        href={productHref}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick();
+        }}
+        aria-label={`View ${product.title} ${product.category} Poster`}
+        className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform no-underline"
         style={{ animationDelay: animDelay, contain: 'layout style paint' }}
       >
         <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
@@ -76,7 +81,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
           <OptimizedImage
             src={product.image}
-            alt={`${product.title} premium wall poster`}
+            alt={`${product.title} ${product.category} HD wall poster print`}
             priority={index < 6}
             onLoad={() => setLoaded(true)}
             onError={() => setError(true)}
@@ -111,7 +116,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
             {product.title}
           </h3>
         </div>
-      </div>
+      </a>
     );
   }
 );

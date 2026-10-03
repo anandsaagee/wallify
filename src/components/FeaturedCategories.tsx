@@ -52,11 +52,15 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       {/* Responsive grid: 2 cols on mobile, 3 on sm, 4 on md */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-3 px-4">
         {FEATURED.map((cat) => (
-          <button
+          <a
             key={cat.name}
-            onClick={() => handleSelect(cat.name)}
+            href={`/category/${cat.name.toLowerCase()}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSelect(cat.name);
+            }}
             style={{ contain: 'layout paint' }}
-            className="group relative h-40 sm:h-48 w-full rounded-2xl overflow-hidden border border-white/10 text-left transition-transform duration-200 ease-out sm:hover:scale-[1.03] active:scale-95 will-change-transform touch-manipulation"
+            className="group relative h-40 sm:h-48 w-full rounded-2xl overflow-hidden border border-white/10 text-left transition-transform duration-200 ease-out sm:hover:scale-[1.03] active:scale-95 will-change-transform touch-manipulation block"
           >
             {/* Shop badge */}
             <div className="absolute top-2 left-2 z-20 bg-primary text-black text-[9px] font-body font-black px-2 py-0.5 rounded-full uppercase tracking-tighter">
@@ -66,7 +70,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
             {thumbnails[cat.name] && (
               <OptimizedImage
                 src={thumbnails[cat.name]}
-                alt={cat.name}
+                alt={`${cat.name} posters wall art`}
                 containerClassName="absolute inset-0 w-full h-full"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -82,7 +86,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
                 <ArrowRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-1 shrink-0" />
               </div>
             </div>
-          </button>
+          </a>
         ))}
       </div>
     </section>

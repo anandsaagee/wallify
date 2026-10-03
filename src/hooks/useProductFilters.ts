@@ -1,5 +1,28 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { products } from '../data/products';
+import { CATEGORIES } from '../data/config';
+
+// Detect category from URL on initial load or popstate
+function getInitialCategory(): string {
+  if (typeof window === 'undefined') return 'All';
+  const path = window.location.pathname.toLowerCase();
+
+  const matchCategory = path.match(/^\/category\/([a-z0-9_-]+)/);
+  if (matchCategory) {
+    const slug = matchCategory[1];
+    const found = CATEGORIES.find((c) => c.toLowerCase() === slug);
+    if (found) return found;
+  }
+
+  const matchWallPosters = path.match(/^\/([a-z0-9_-]+)-wall-posters/);
+  if (matchWallPosters) {
+    const slug = matchWallPosters[1];
+    const found = CATEGORIES.find((c) => c.toLowerCase() === slug);
+    if (found) return found;
+  }
+
+  return 'All';
+}
 
 // Fisher-Yates Shuffle Algorithm for optimal randomness
 function shuffleArray<T>(array: T[]): T[] {
@@ -12,9 +35,18 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function useProductFilters() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>(getInitialCategory);
   const [selectedSize, setSelectedSize] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Sync category on browser back / forward navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      setSelectedCategory(getInitialCategory());
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((p) => {
@@ -35,14 +67,17 @@ export function useProductFilters() {
     setSearchQuery('');
     setSelectedCategory('All');
     setSelectedSize('All');
+    if (window.location.pathname !== '/') {
+      window.history.pushState({ category: 'All' }, '', '/');
+    }
   }, []);
 
   const handleSetSelectedCategory = useCallback((category: string) => {
     setSelectedCategory(category);
     if (category === 'All') {
-      window.history.pushState(null, '', '/premium-wall-posters');
+      window.history.pushState({ category: 'All' }, '', '/');
     } else {
-      window.history.pushState(null, '', `/${category.toLowerCase()}-wall-posters`);
+      window.history.pushState({ category }, '', `/category/${category.toLowerCase()}`);
     }
   }, []);
 
