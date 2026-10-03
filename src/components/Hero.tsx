@@ -8,34 +8,39 @@ function seedRandom(seed: number): number {
   return x - Math.floor(x);
 }
 
-function getLiveOrdering(): number {
-  // Random 2-digit number between 12 and 97 — changes each hour
-  const hourSeed = new Date().getHours();
-  return Math.floor(seedRandom(hourSeed) * 86) + 12;
-}
-
 function getWeeklyOrders(): number {
   // 2-digit number between 42 and 99 — changes each day
   const daySeed = new Date().getDate();
   return Math.floor(seedRandom(daySeed + 100) * 58) + 42;
 }
 
+function getLiveOrdering(): number {
+  // Always strictly lower than weeklyOrders by at least 5
+  const weekly = getWeeklyOrders();
+  const max = weekly - 5;          // leave a visible gap
+  const min = Math.max(10, Math.floor(weekly * 0.3)); // at least 30% lower
+  const hourSeed = new Date().getHours();
+  return Math.floor(seedRandom(hourSeed) * (max - min + 1)) + min;
+}
+
 // ── Live Stats Widget ────────────────────────────────────────────────────────
 const LiveStats: React.FC = () => {
-  const [liveCount, setLiveCount]    = useState(getLiveOrdering());
-  const [weeklyCount, setWeeklyCount] = useState(getWeeklyOrders());
+  const [weeklyCount] = useState(getWeeklyOrders());
+  const [liveCount, setLiveCount] = useState(getLiveOrdering());
 
-  // Bump live count slightly every ~30s to simulate real activity
+  // Bump live count slightly every ~30s — always stays below weeklyCount
   useEffect(() => {
     const tick = () => {
       setLiveCount((prev) => {
         const delta = Math.random() > 0.5 ? 1 : -1;
-        return Math.max(12, Math.min(99, prev + delta));
+        const next = prev + delta;
+        // Never exceed weekly - 5, never go below 10
+        return Math.max(10, Math.min(weeklyCount - 5, next));
       });
     };
     const id = setInterval(tick, 28000);
     return () => clearInterval(id);
-  }, []);
+  }, [weeklyCount]);
 
   return (
     <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
