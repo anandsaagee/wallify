@@ -32,7 +32,7 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
         {bestSellers.map((product, index) => (
           <div
             key={product.id}
-            className="min-w-[140px] sm:min-w-[160px] snap-start group cursor-pointer shrink-0"
+            className="w-[120px] sm:w-[150px] snap-start group cursor-pointer shrink-0"
             onClick={() => onClick(product)}
             role="button"
             tabIndex={0}
