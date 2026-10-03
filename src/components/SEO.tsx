@@ -12,8 +12,8 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({
   title,
   description,
-  canonicalUrl = 'https://wallifystore.com',
-  image = 'https://wallifystore.com/og-image.jpg',
+  canonicalUrl = 'https://wallifystore.in',
+  image = 'https://wallifystore.in/og-image.jpg',
   type = 'website',
   jsonLd,
 }) => {

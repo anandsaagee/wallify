@@ -74,7 +74,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
   const handleShare = useCallback(async () => {
     const slug = product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-    const fullUrl = `https://wallifystore.com/posters/${product.category.toLowerCase()}/${slug}`;
+    const fullUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${slug}`;
     const shareData = {
       title: `${product.title} Poster | WallifyStore`,
       text: `Check out this ${product.title} ${product.category} poster on Wallify!`,
@@ -140,8 +140,8 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   // SEO values
   const seoTitle = `${product.title} Poster – ${currentSize.label} Wall Art | WallifyStore`;
   const seoDesc = `Buy the premium ${product.title} ${product.category} poster online. High-quality, fade-resistant print perfect for your bedroom or hostel. Order now!`;
-  const seoUrl = `https://wallifystore.com/posters/${product.category.toLowerCase()}/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`;
-  const seoImage = `https://wallifystore.com${product.image}`;
+  const seoUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`;
+  const seoImage = `https://wallifystore.in${product.image}`;
   const altText = `Premium ${product.title} wall poster in ${product.category} style printed on high quality matte paper`;
 
   const jsonLd = {
@@ -204,13 +204,13 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://wallifystore.com"
+            "item": "https://wallifystore.in"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": `${product.category} Posters`,
-            "item": `https://wallifystore.com/category/${product.category.toLowerCase()}`
+            "item": `https://wallifystore.in/category/${product.category.toLowerCase()}`
           },
           {
             "@type": "ListItem",

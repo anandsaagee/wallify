@@ -67,9 +67,9 @@ When adding new items to `src/data/products.ts`:
 ## 4. Post-Deployment Action Plan
 1. **Google Search Console**:
    - Go to [search.google.com/search-console](https://search.google.com/search-console).
-   - Verify `wallifystore.com` (using the verification tag already in `index.html`).
-   - Submit `https://wallifystore.com/sitemap.xml`.
+   - Verify `wallifystore.in` (using the verification tag already in `index.html`).
+   - Submit `https://wallifystore.in/sitemap.xml`.
 2. **Rich Results Testing**:
-   - Test `https://wallifystore.com` in [Google Rich Results Test](https://search.google.com/test/rich-results) to confirm valid `WebSite`, `FAQPage`, and `Product` schemas.
+   - Test `https://wallifystore.in` in [Google Rich Results Test](https://search.google.com/test/rich-results) to confirm valid `WebSite`, `FAQPage`, and `Product` schemas.
 3. **Google Merchant Center**:
    - Connect free listings for Google Shopping using the Product structured data.

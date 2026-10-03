@@ -107,8 +107,8 @@ const AppContent: React.FC = () => {
   const activeCategorySeo = CATEGORY_SEO[selectedCategory] || CATEGORY_SEO['All'];
   const categoryCanonicalUrl =
     selectedCategory === 'All'
-      ? 'https://wallifystore.com'
-      : `https://wallifystore.com/category/${selectedCategory.toLowerCase()}`;
+      ? 'https://wallifystore.in'
+      : `https://wallifystore.in/category/${selectedCategory.toLowerCase()}`;
 
   const seoJsonLd = {
     '@context': 'https://schema.org',
@@ -116,10 +116,10 @@ const AppContent: React.FC = () => {
       {
         '@type': 'WebSite',
         name: 'WallifyStore',
-        url: 'https://wallifystore.com',
+        url: 'https://wallifystore.in',
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://wallifystore.com/?search={search_term_string}',
+          target: 'https://wallifystore.in/?search={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
       },
@@ -132,7 +132,7 @@ const AppContent: React.FC = () => {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://wallifystore.com',
+                  item: 'https://wallifystore.in',
                 },
                 {
                   '@type': 'ListItem',

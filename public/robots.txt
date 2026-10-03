@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wallifystore.com/sitemap.xml
+Sitemap: https://wallifystore.in/sitemap.xml

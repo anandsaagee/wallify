@@ -1,7 +1,7 @@
 import os
 import re
 
-base_url = 'https://wallifystore.com'
+base_url = 'https://wallifystore.in'
 products_file = 'src/data/products.ts'
 sitemap_file = 'public/sitemap.xml'
 robots_file = 'public/robots.txt'
