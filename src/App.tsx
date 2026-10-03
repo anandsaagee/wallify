@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { products } from './data/products';
 import { useProductFilters } from './hooks/useProductFilters';
 import { Header } from './components/Header';
@@ -63,6 +63,20 @@ const AppContent: React.FC = () => {
   } = useProductFilters();
 
   const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(getInitialProduct);
+  const [cartToast, setCartToast] = useState<{ title: string; image: string; size: string } | null>(null);
+  const [cartBouncing, setCartBouncing] = useState(false);
+  const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleAddedToCart = useCallback((product: ProductData, sizeLabel: string) => {
+    setCartToast({ title: product.title, image: product.image, size: sizeLabel });
+    setCartBouncing(true);
+    setTimeout(() => setCartBouncing(false), 800);
+
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    toastTimeoutRef.current = setTimeout(() => {
+      setCartToast(null);
+    }, 3200);
+  }, []);
 
   // Sync modal state with browser back/forward buttons
   useEffect(() => {
@@ -282,20 +296,56 @@ const AppContent: React.FC = () => {
         )}
       </div>
 
+      {/* Toast Notification when adding to cart */}
+      {cartToast && (
+        <div 
+          role="status"
+          aria-live="polite"
+          className="fixed top-20 left-1/2 z-[90] flex items-center gap-3 px-4 py-3 bg-[#18181b]/95 border border-primary/30 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl animate-toastIn max-w-[92vw]"
+        >
+          <div className="w-8 h-10 rounded-lg overflow-hidden bg-black/40 border border-white/10 shrink-0">
+            <img src={cartToast.image} alt={cartToast.title} className="w-full h-full object-cover" />
+          </div>
+          <div className="text-left min-w-0 pr-1">
+            <p className="text-xs font-black text-white flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping" />
+              Added to bag
+            </p>
+            <p className="text-[11px] text-white/80 font-medium truncate max-w-[170px] sm:max-w-[240px]">
+              {cartToast.title} <span className="text-primary font-bold">({cartToast.size})</span>
+            </p>
+          </div>
+          <button
+            onClick={() => {
+              setCartToast(null);
+              handleSetView('checkout');
+            }}
+            className="shrink-0 px-3 py-1.5 rounded-xl bg-primary text-black font-black text-xs hover:brightness-110 active:scale-95 transition-all ml-1"
+          >
+            View Bag →
+          </button>
+        </div>
+      )}
+
       {/* Floating Cart Button */}
       {view === 'store' && totals.totalPaidItems > 0 && (
         <button
           onClick={() => handleSetView('checkout')}
-            className="fixed right-5 md:right-10 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-primary text-black rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_4px_30px_rgba(255,255,255,0.4)] transition-shadow"
-            style={{ bottom: 'max(24px, calc(env(safe-area-inset-bottom) + 16px))' }}
-            aria-label="View Cart"
-          >
-            <div className="relative">
-              <ShoppingBag className="w-6 h-6 sm:w-7 sm:h-7" />
-              <span className="absolute -top-2 -right-2 bg-black text-primary text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border border-primary/20">
-                {totals.totalPaidItems}
-              </span>
-            </div>
+          className={`fixed right-5 md:right-10 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-primary text-black rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_4px_30px_rgba(255,255,255,0.4)] transition-all duration-300 ${
+            cartBouncing ? 'scale-125 shadow-[0_0_35px_rgba(250,203,21,0.8)] ring-4 ring-primary/40' : 'scale-100'
+          }`}
+          style={{ bottom: 'max(24px, calc(env(safe-area-inset-bottom) + 16px))' }}
+          aria-label="View Cart"
+        >
+          <div className="relative">
+            <ShoppingBag className="w-6 h-6 sm:w-7 sm:h-7" />
+            <span 
+              key={totals.totalPaidItems}
+              className="absolute -top-2 -right-2 bg-black text-primary text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border border-primary/20 animate-[pulse_0.4s_ease-out]"
+            >
+              {totals.totalPaidItems}
+            </span>
+          </div>
         </button>
       )}
 
@@ -304,6 +354,7 @@ const AppContent: React.FC = () => {
           <ProductPreview 
             product={selectedProduct} 
             onClose={() => setSelectedProduct(null)} 
+            onAddedToCart={handleAddedToCart}
           />
         )}
       </BottomSheet>

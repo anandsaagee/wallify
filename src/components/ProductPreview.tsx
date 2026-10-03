@@ -17,6 +17,7 @@ interface ProductPreviewProps {
   /** If provided (e.g. from SizeFilter), pre-selects this size on open */
   initialSizeId?: string;
   onClose?: () => void;
+  onAddedToCart?: (product: Product, sizeLabel: string) => void;
 }
 
 const SizeButton: React.FC<{
@@ -50,7 +51,7 @@ const BULK_OFFERS_INLINE = [
   { buy: 20, free: 7 },
 ] as const;
 
-export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId, onClose }) => {
+export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId, onClose, onAddedToCart }) => {
   const defaultSize = SIZES.find((s) => s.id === initialSizeId) ?? SIZES[1];
   const [selectedSize, setSelectedSize] = useState(defaultSize.id);
   const [withFrame, setWithFrame] = useState(false);
@@ -114,12 +115,23 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
     addToCart(product, selectedSize, withFrame);
     setCartState('added');
 
-    // Close window and return to main page after adding
+    // Optional haptic vibration on mobile
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try {
+        navigator.vibrate(40);
+      } catch {
+        // ignore
+      }
+    }
+
+    onAddedToCart?.(product, currentSize.label);
+
+    // Smooth exit: close after user sees the success state (450ms)
     setTimeout(() => {
       onClose?.();
       setCartState('idle');
-    }, 600);
-  }, [addToCart, product, selectedSize, withFrame, onClose]);
+    }, 450);
+  }, [addToCart, product, selectedSize, withFrame, onClose, onAddedToCart, currentSize.label]);
 
   // Handle History & URL changes
   useEffect(() => {
@@ -417,15 +429,15 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
       >
         <button
           onClick={handleAddToCart}
-          aria-label={cartState === 'added' ? 'Added to cart' : 'Add to cart'}
+          aria-label={cartState === 'added' ? 'Added to bag' : 'Add to cart'}
           className={`shrink-0 w-[52px] h-[52px] rounded-2xl border-[1.5px] flex items-center justify-center transition-all duration-200 active:scale-90 ${
             cartState === 'added'
-              ? 'bg-green-500 text-black border-green-500'
+              ? 'bg-emerald-500 text-black border-emerald-500 scale-105 shadow-[0_0_20px_rgba(16,185,129,0.4)]'
               : 'bg-white text-black border-white hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]'
           }`}
         >
           {cartState === 'added' ? (
-            <Check className="w-[20px] h-[20px] stroke-[3px]" />
+            <Check className="w-[22px] h-[22px] stroke-[3.5px] animate-[pulse_0.4s_ease-in-out]" />
           ) : (
             <ShoppingBag className="w-[20px] h-[20px] stroke-[2.5px]" />
           )}
@@ -433,10 +445,23 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         <button
           onClick={handleAddToCart}
-          className="flex-1 h-[52px] rounded-2xl bg-primary text-black font-black text-[15px] flex items-center justify-center gap-2 transition-transform duration-150 active:scale-95 hover:brightness-110 shadow-[0_8px_20px_rgba(250,203,21,0.2)]"
+          className={`flex-1 h-[52px] rounded-2xl font-black text-[15px] flex items-center justify-center gap-2 transition-all duration-200 active:scale-95 ${
+            cartState === 'added'
+              ? 'bg-emerald-400 text-black shadow-[0_8px_25px_rgba(52,211,153,0.4)]'
+              : 'bg-primary text-black hover:brightness-110 shadow-[0_8px_20px_rgba(250,203,21,0.2)]'
+          }`}
         >
-          <Zap className="w-[18px] h-[18px]" aria-hidden="true" />
-          {withFrame ? `Add Framed — ₹${totalPrice}` : `Add to Cart — ₹${totalPrice}`}
+          {cartState === 'added' ? (
+            <>
+              <Check className="w-[20px] h-[20px] stroke-[3px]" />
+              <span>Added to Bag!</span>
+            </>
+          ) : (
+            <>
+              <Zap className="w-[18px] h-[18px]" aria-hidden="true" />
+              <span>{withFrame ? `Add Framed — ₹${totalPrice}` : `Add to Cart — ₹${totalPrice}`}</span>
+            </>
+          )}
         </button>
       </div>
     </article>
