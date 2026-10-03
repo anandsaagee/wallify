@@ -74,9 +74,14 @@ const LiveStats: React.FC = () => {
 };
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
-export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = ({
+export const Hero: React.FC<{
+  onShopNow: () => void;
+  onExplore: () => void;
+  isMainH1?: boolean;
+}> = ({
   onShopNow,
   onExplore,
+  isMainH1 = true,
 }) => {
   return (
     <section
@@ -115,14 +120,25 @@ export const Hero: React.FC<{ onShopNow: () => void; onExplore: () => void }> = 
       <div className="relative z-10 text-center w-full max-w-xl mx-auto px-4 flex flex-col items-center gap-5 sm:gap-6">
 
         {/* Headline — DM Serif Display */}
-        <h1
-          className="font-display text-white leading-[1.1] tracking-tight text-center w-full"
-          style={{ fontSize: 'clamp(30px, 6vw, 64px)' }}
-        >
-          Transform Your Walls
-          <br />
-          <span className="text-primary">with Wallify.</span>
-        </h1>
+        {isMainH1 ? (
+          <h1
+            className="font-display text-white leading-[1.1] tracking-tight text-center w-full"
+            style={{ fontSize: 'clamp(30px, 6vw, 64px)' }}
+          >
+            Transform Your Walls
+            <br />
+            <span className="text-primary">with Wallify.</span>
+          </h1>
+        ) : (
+          <h2
+            className="font-display text-white leading-[1.1] tracking-tight text-center w-full"
+            style={{ fontSize: 'clamp(30px, 6vw, 64px)' }}
+          >
+            Transform Your Walls
+            <br />
+            <span className="text-primary">with Wallify.</span>
+          </h2>
+        )}
 
         {/* Subheading — DM Sans */}
         <p className="font-body text-muted text-sm sm:text-base max-w-xs font-medium leading-relaxed">

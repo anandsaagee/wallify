@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { ShoppingBag, Zap, Check, Gift, Frame } from 'lucide-react';
+import { ShoppingBag, Zap, Check, Gift, Frame, Share2 } from 'lucide-react';
 import { SIZES, getFramePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
@@ -55,6 +55,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   const [selectedSize, setSelectedSize] = useState(defaultSize.id);
   const [withFrame, setWithFrame] = useState(false);
   const [cartState, setCartState] = useState<'idle' | 'added'>('idle');
+  const [copied, setCopied] = useState(false);
   const { addToCart, totals } = useCart();
 
   const currentSize = SIZES.find((s) => s.id === selectedSize) ?? SIZES[1];
@@ -70,6 +71,33 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   }, []);
 
   const totalPrice = currentSize.price + (withFrame && framePrice ? framePrice : 0);
+
+  const handleShare = useCallback(async () => {
+    const slug = product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    const fullUrl = `https://wallifystore.com/posters/${product.category.toLowerCase()}/${slug}`;
+    const shareData = {
+      title: `${product.title} Poster | WallifyStore`,
+      text: `Check out this ${product.title} ${product.category} poster on Wallify!`,
+      url: fullUrl,
+    };
+
+    if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        // Fallback to clipboard
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(fullUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.warn('Clipboard write failed:', err);
+    }
+  }, [product]);
 
   const freeIndicator = React.useMemo(() => {
     const currentTotal = totals.totalPaidItems;
@@ -146,7 +174,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
             "@type": "OfferShippingDetails",
             "shippingRate": {
               "@type": "MonetaryAmount",
-              "value": "0",
+              "value": "50",
               "currency": "INR"
             },
             "shippingDestination": {
@@ -228,13 +256,26 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Title, Category & Price */}
         <div className="px-4 pt-3">
-          <span className="text-[10px] font-black text-primary uppercase tracking-widest">
-            {product.category}
-          </span>
-          <h2 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
-            {product.title}
-          </h2>
-          <div className="flex items-baseline gap-2 mt-1.5 flex-wrap">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <span className="text-[10px] font-black text-primary uppercase tracking-widest">
+                {product.category}
+              </span>
+              <h2 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
+                {product.title}
+              </h2>
+            </div>
+            <button
+              type="button"
+              onClick={handleShare}
+              aria-label="Share poster link"
+              className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all text-xs font-semibold text-white/80"
+            >
+              <Share2 className="w-3.5 h-3.5 text-primary" />
+              <span>{copied ? 'Copied!' : 'Share'}</span>
+            </button>
+          </div>
+          <div className="flex items-baseline gap-2 mt-2 flex-wrap">
             <span className="text-2xl font-black text-primary">₹{totalPrice}</span>
             <span className="text-sm text-white/40 font-medium">
               {withFrame ? 'Framed poster' : 'Single poster'}

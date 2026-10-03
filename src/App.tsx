@@ -169,7 +169,11 @@ const AppContent: React.FC = () => {
         {/* STORE */}
         {view === 'store' && (
           <div>
-            <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
+            <Hero 
+              onShopNow={scrollToCollection} 
+              onExplore={scrollToCollection} 
+              isMainH1={selectedCategory === 'All'}
+            />
 
             {/* 🔥 BEST SELLERS — directly after hero */}
             <HeroBestSellers
@@ -207,9 +211,15 @@ const AppContent: React.FC = () => {
 
                 <div id="collection-header" className="px-4 mb-3 mt-8">
                   <div className="flex items-center justify-between">
-                    <h1 className="text-2xl sm:text-3xl font-display text-white tracking-tight">
-                      {activeCategorySeo.h1}
-                    </h1>
+                    {selectedCategory === 'All' ? (
+                      <h2 className="text-2xl sm:text-3xl font-display text-white tracking-tight">
+                        {activeCategorySeo.h1}
+                      </h2>
+                    ) : (
+                      <h1 className="text-2xl sm:text-3xl font-display text-white tracking-tight">
+                        {activeCategorySeo.h1}
+                      </h1>
+                    )}
                     <span className="text-xs text-muted font-body font-medium bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
                       {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
                     </span>

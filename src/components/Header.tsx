@@ -56,14 +56,18 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
         </a>
 
         {/* Center: Brand — DM Serif Display */}
-        <button
-          onClick={() => setView('store')}
-          aria-label="Go to store"
-          className="absolute left-1/2 -translate-x-1/2 font-display text-white hover:text-primary transition-colors duration-150 whitespace-nowrap leading-none"
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            setView('store');
+          }}
+          aria-label="Go to store homepage"
+          className="absolute left-1/2 -translate-x-1/2 font-display text-white hover:text-primary transition-colors duration-150 whitespace-nowrap leading-none no-underline"
           style={{ fontSize: 'clamp(18px, 4vw, 26px)' }}
         >
           WallifyStore<span className="text-primary">.</span>
-        </button>
+        </a>
 
         {/* Right: Cart */}
         <button

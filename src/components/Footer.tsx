@@ -25,13 +25,17 @@ export const Footer: React.FC = () => {
         {/* SEO Internal Links */}
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-2xl px-4 font-body text-[11px] font-semibold text-muted/60">
           <span className="text-muted/40">Explore:</span>
-          <a href="/anime-wall-posters"  className="hover:text-primary transition-colors hover:underline">Anime Posters</a>
+          <a href="/category/anime" className="hover:text-primary transition-colors hover:underline">Anime Posters</a>
           <span className="text-white/10">•</span>
-          <a href="/film-wall-posters"   className="hover:text-primary transition-colors hover:underline">Movie Posters</a>
+          <a href="/category/hollywood" className="hover:text-primary transition-colors hover:underline">Cinema & Hollywood</a>
           <span className="text-white/10">•</span>
-          <a href="/car-wall-posters"    className="hover:text-primary transition-colors hover:underline">JDM & Supercar</a>
+          <a href="/category/automotive" className="hover:text-primary transition-colors hover:underline">JDM & Supercars</a>
           <span className="text-white/10">•</span>
-          <a href="/custom-wall-posters" className="hover:text-primary transition-colors hover:underline">Custom Printing Kerala</a>
+          <a href="/category/mollywood" className="hover:text-primary transition-colors hover:underline">Malayalam Posters</a>
+          <span className="text-white/10">•</span>
+          <a href="/category/football" className="hover:text-primary transition-colors hover:underline">Football Art</a>
+          <span className="text-white/10">•</span>
+          <a href="/category/quotes" className="hover:text-primary transition-colors hover:underline">Motivational Quotes</a>
         </div>
 
         {/* Instagram */}
