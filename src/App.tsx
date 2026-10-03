@@ -86,36 +86,36 @@ const AppContent: React.FC = () => {
           <div>
             <Hero onShopNow={scrollToCollection} onExplore={scrollToCollection} />
 
-            {/* Inline Reward Banner (Replaced fixed toast) */}
+            {/* 🔥 BEST SELLERS — directly after hero */}
+            <HeroBestSellers
+              products={products}
+              onClick={handleProductClick}
+            />
+
+            {/* Inline Reward Banner */}
             {showFreeGiftBanner && (
               <div className="px-4 mb-6 transition-all duration-300">
-                    <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
-                      <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                        <Gift className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-black text-white uppercase tracking-tight">
-                          Reward Unlocked!
-                        </p>
-                        <p className="text-xs text-muted font-medium mt-0.5">
-                          You have {totals.eligibleFreeGifts} free mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''} unlocked! 
-                          <button 
-                            onClick={() => handleSetView('checkout')}
-                            className="text-primary font-bold ml-1 hover:underline"
-                          >
-                            View in bag →
-                          </button>
-                        </p>
-                      </div>
-                    </div>
+                <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                    <Gift className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-black text-white uppercase tracking-tight">
+                      Reward Unlocked!
+                    </p>
+                    <p className="text-xs text-muted font-medium mt-0.5">
+                      You have {totals.eligibleFreeGifts} free mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''} unlocked!{' '}
+                      <button
+                        onClick={() => handleSetView('checkout')}
+                        className="text-primary font-bold ml-1 hover:underline"
+                      >
+                        View in bag →
+                      </button>
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
-
-              {/* 🔥 BEST SELLERS (TRACKED) */}
-              <HeroBestSellers
-                products={products}
-                onClick={handleProductClick} // ✅ UPDATED
-              />
 
               <main className="pb-24">
                 <FeaturedCategories onSelectCategory={setSelectedCategory} />
