@@ -14,6 +14,10 @@ export default {
         primary: '#FACB15',
         muted: '#A1A1AA',
       },
+      fontFamily: {
+        display: ['DM Serif Display', 'Georgia', 'serif'],
+        body:    ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       spacing: {
         'grid': '8px',
       },
@@ -32,13 +36,16 @@ export default {
       },
       keyframes: {
         shimmer: {
-          '100%': {
-            transform: 'translateX(100%)',
-          },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        pulseDot: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%':       { opacity: '0.5', transform: 'scale(0.75)' },
         },
       },
       animation: {
-        shimmer: 'shimmer 2s infinite',
+        shimmer:  'shimmer 2s infinite',
+        pulseDot: 'pulseDot 1.4s ease-in-out infinite',
       },
     },
   },
