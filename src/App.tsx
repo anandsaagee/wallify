@@ -131,15 +131,6 @@ const AppContent: React.FC = () => {
                   </div>
                 </div>
 
-                {/* SEO Product Description */}
-                <div className="px-4 mt-4 mb-2">
-                  <h2 className="text-[13px] font-bold text-white/90 mb-2 px-1">
-                    {selectedCategory === 'All' ? 'Best Wall Posters for Room Decor' : `Best ${selectedCategory} Posters for Room & Hostel Decor`}
-                  </h2>
-                  <p className="text-xs text-muted/80 leading-relaxed font-medium bg-white/5 p-4 rounded-2xl border border-white/5">
-                    Level up your space with our premium aesthetic poster combo set. Printed in stunning high resolution on frame-ready, fade-resistant thick paper, this collection is designed to instantly transform any blank wall. Whether you're upgrading your hostel room decor or curating the ultimate bedroom aesthetic, these museum quality posters deliver vibrant colors and a sleek matte finish. Forget flimsy, cheap prints—invest in premium wall posters that actually last. Grab yours before it's gone and give your room the upgrade it deserves!
-                  </p>
-                </div>
 
                 <div className="px-4 mt-3">
                   <div className="relative">
