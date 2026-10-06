@@ -3826,93 +3826,123 @@ export const products = [
     },
     {
         "id": "p380",
-        "title": "Automotive 139 – Aesthetic Garage Car Poster",
+        "title": "Automotive 139",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-139.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-139.webp"
+        "description": "Showcase pure Italian performance with this Lamborghini Aventador poster. Featuring the iconic yellow supercar with its scissor doors up against a bold black and yellow background.",
+        "label": "automotive-139.webp",
+        "seoTitle": "Lamborghini Aventador Yellow Poster – Italian Supercar Art",
+        "metaDescription": "Showcase pure Italian performance with this Lamborghini Aventador poster. Featuring the iconic yellow supercar with its scissor doors up against a bold black and yellow background.",
+        "seoAltText": "Bright yellow Lamborghini Aventador supercar with scissor doors open parked against massive black AVENTADOR typography"
     },
     {
         "id": "p381",
-        "title": "Automotive 140 – Modern Supercar Minimalist Print",
+        "title": "Automotive 140",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-140.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-140.webp"
+        "description": "Celebrate JDM tuning culture with this Toyota Supra MK4 poster. Featuring a heavily modified, widebody yellow Supra at a car show, set against massive MK4 typography.",
+        "label": "automotive-140.webp",
+        "seoTitle": "Toyota Supra MK4 Yellow Widebody Poster – JDM Tuning Decor",
+        "metaDescription": "Celebrate JDM tuning culture with this Toyota Supra MK4 poster. Featuring a heavily modified, widebody yellow Supra at a car show, set against massive MK4 typography.",
+        "seoAltText": "Yellow widebody Toyota Supra MK4 sports car at a car show with massive white MK4 typography in the background"
     },
     {
         "id": "p382",
-        "title": "Automotive 141 – Retro JDM Car Wall Poster",
+        "title": "Automotive 141",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-141.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-141.webp"
+        "description": "Appreciate modern Ferrari design with this 458 Italia poster. Showcasing the beautiful yellow supercar layered against a detailed wheel and bold FERRARI text.",
+        "label": "automotive-141.webp",
+        "seoTitle": "Ferrari 458 Italia Yellow Poster – Italian Sports Car Art",
+        "metaDescription": "Appreciate modern Ferrari design with this 458 Italia poster. Showcasing the beautiful yellow supercar layered against a detailed wheel and bold FERRARI text.",
+        "seoAltText": "Yellow Ferrari 458 Italia supercar parked in front of a massive wheel graphic and large yellow FERRARI typography"
     },
     {
         "id": "p383",
-        "title": "Automotive 142 – Luxury Sports Car Poster Art",
+        "title": "Automotive 142",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-142.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-142.webp"
+        "description": "Experience hybrid hypercar technology with this Ferrari LaFerrari poster. Featuring the stunning red car with its butterfly doors open and detailed performance specs.",
+        "label": "automotive-142.webp",
+        "seoTitle": "Ferrari LaFerrari Red Hypercar Poster – Modern Italian Art",
+        "metaDescription": "Experience hybrid hypercar technology with this Ferrari LaFerrari poster. Featuring the stunning red car with its butterfly doors open and detailed performance specs.",
+        "seoAltText": "Red Ferrari LaFerrari hypercar with butterfly doors open set against large red and white LA FERRARI typography"
     },
     {
         "id": "p384",
-        "title": "Automotive 143 – Street Racing Aesthetic Decor",
+        "title": "Automotive 143",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-143.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-143.webp"
+        "description": "Embrace luxury and performance with this classic BMW 7 Series poster. Featuring the elegant grey sedan against a dark green background with sophisticated typography.",
+        "label": "automotive-143.webp",
+        "seoTitle": "BMW 7 Series Sedan Poster – Classic German Luxury Decor",
+        "metaDescription": "Embrace luxury and performance with this classic BMW 7 Series poster. Featuring the elegant grey sedan against a dark green background with sophisticated typography.",
+        "seoAltText": "Classic grey BMW 7 Series sedan parked against a dark green background with large 7 series BMW typography"
     },
     {
         "id": "p385",
-        "title": "Automotive 144 – JDM & Supercar Wall Poster",
+        "title": "Automotive 144",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-144.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-144.webp"
+        "description": "Appreciate classic grand touring with this BMW 8 Series poster. Showcasing the sleek dark blue coupe against a striking red backdrop with informative text.",
+        "label": "automotive-144.webp",
+        "seoTitle": "BMW 8 Series Coupe Poster – Classic German Touring Art",
+        "metaDescription": "Appreciate classic grand touring with this BMW 8 Series poster. Showcasing the sleek dark blue coupe against a striking red backdrop with informative text.",
+        "seoAltText": "Sleek dark blue BMW 8 Series coupe parked against a solid red background with large 8 series BMW typography"
     },
     {
         "id": "p386",
-        "title": "Automotive 145 – Vintage Classic Car Room Decor",
+        "title": "Automotive 145",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-145.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-145.webp"
+        "description": "Conquer the night with this 'All-Black' Mahindra Thar poster. Featuring the rugged SUV in a moody, atmospheric multi-panel design.",
+        "label": "automotive-145.webp",
+        "seoTitle": "Mahindra Thar Black SUV Poster – Rugged Off-Road Wall Art",
+        "metaDescription": "Conquer the night with this 'All-Black' Mahindra Thar poster. Featuring the rugged SUV in a moody, atmospheric multi-panel design.",
+        "seoAltText": "Multi-panel poster showcasing a black Mahindra Thar SUV in a moody, dark atmosphere with THAR BLACK typography"
     },
     {
         "id": "p387",
-        "title": "Automotive 146 – Premium Drift Racing Wall Art",
+        "title": "Automotive 146",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-146.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-146.webp"
+        "description": "Celebrate German homologation legends with this Mercedes-Benz 190E Evo II poster. Featuring the iconic black DTM-inspired sedan with its massive rear wing.",
+        "label": "automotive-146.webp",
+        "seoTitle": "Mercedes-Benz 190E Evo II Poster – Classic German Motorsport",
+        "metaDescription": "Celebrate German homologation legends with this Mercedes-Benz 190E Evo II poster. Featuring the iconic black DTM-inspired sedan with its massive rear wing.",
+        "seoAltText": "Multi-panel poster of a black Mercedes-Benz 190E Evo II featuring front and rear angles highlighting its large rear wing"
     },
     {
         "id": "p388",
-        "title": "Automotive 147 – Aesthetic Garage Car Poster",
+        "title": "Automotive 147",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-147.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-147.webp"
+        "description": "Showcase classic American muscle with this custom Ford Mustang poster. Featuring the sleek black restomod against a creative striped MUSTANG typography background.",
+        "label": "automotive-147.webp",
+        "seoTitle": "Ford Mustang Black Restomod Poster – Custom Muscle Car Art",
+        "metaDescription": "Showcase classic American muscle with this custom Ford Mustang poster. Featuring the sleek black restomod against a creative striped MUSTANG typography background.",
+        "seoAltText": "Sleek black Ford Mustang restomod parked in front of large MUSTANG typography cut out with vertical stripes"
     },
     {
         "id": "p389",
-        "title": "Automotive 148 – Modern Supercar Minimalist Print",
+        "title": "Automotive 148",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-148.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-148.webp"
+        "description": "Unleash Godzilla with this Nissan GT-R R35 poster. Featuring the modern white JDM supercar with a faded silhouette of the legendary monster in the background.",
+        "label": "automotive-148.webp",
+        "seoTitle": "Nissan GT-R R35 Godzilla Poster – Modern JDM Supercar Decor",
+        "metaDescription": "Unleash Godzilla with this Nissan GT-R R35 poster. Featuring the modern white JDM supercar with a faded silhouette of the legendary monster in the background.",
+        "seoAltText": "White Nissan GT-R R35 sports car parked in front of a faded silhouette of Godzilla and large red GTR typography"
     },
     {
         "id": "p390",
