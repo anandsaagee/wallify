@@ -4306,93 +4306,123 @@ export const products = [
     },
     {
         "id": "p420",
-        "title": "Automotive 179 – Aesthetic Garage Car Poster",
+        "title": "Automotive 179",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-179.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-179.webp"
+        "description": "Celebrate a JDM icon with this Nissan Skyline GT-R R34 poster. The legendary silver sports car is striking against a vibrant red background and bold typography.",
+        "label": "automotive-179.webp",
+        "seoTitle": "Nissan Skyline GT-R R34 Poster – Legendary JDM Wall Art",
+        "metaDescription": "Celebrate a JDM icon with this Nissan Skyline GT-R R34 poster. The legendary silver sports car is striking against a vibrant red background and bold typography.",
+        "seoAltText": "Silver Nissan Skyline GT-R R34 parked against a bright red background with massive faded GTR typography"
     },
     {
         "id": "p421",
-        "title": "Automotive 180 – Modern Supercar Minimalist Print",
+        "title": "Automotive 180",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-180.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-180.webp"
+        "description": "Make a bold statement with this Mercedes-AMG G-Wagon poster. Showcasing the iconic red luxury SUV in a dynamic multi-panel layout with striking typography.",
+        "label": "automotive-180.webp",
+        "seoTitle": "Mercedes-AMG G-Wagon Red Poster – Luxury SUV Decor",
+        "metaDescription": "Make a bold statement with this Mercedes-AMG G-Wagon poster. Showcasing the iconic red luxury SUV in a dynamic multi-panel layout with striking typography.",
+        "seoAltText": "Multi-panel poster highlighting a bright red Mercedes-AMG G-Wagon luxury SUV with bold white G-WAGON typography"
     },
     {
         "id": "p422",
-        "title": "Automotive 181 – Retro JDM Car Wall Poster",
+        "title": "Automotive 181",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-181.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-181.webp"
+        "description": "Experience pure muscle power with this Dodge Challenger SRT8 poster. Featuring the aggressive black car emerging from a smoky, atmospheric background.",
+        "label": "automotive-181.webp",
+        "seoTitle": "Dodge Challenger SRT8 Black Poster – American Muscle Art",
+        "metaDescription": "Experience pure muscle power with this Dodge Challenger SRT8 poster. Featuring the aggressive black car emerging from a smoky, atmospheric background.",
+        "seoAltText": "Black Dodge Challenger SRT8 muscle car parked in a dark, smoky environment with massive CHALLENGER typography"
     },
     {
         "id": "p423",
-        "title": "Automotive 182 – Luxury Sports Car Poster Art",
+        "title": "Automotive 182",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-182.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-182.webp"
+        "description": "Transform your room with this Chevrolet Camaro Bumblebee poster. Featuring the iconic 2011 yellow muscle car in a vibrant orange halftone theme with the classic Autobot logo.",
+        "label": "automotive-182.webp",
+        "seoTitle": "Chevrolet Camaro Bumblebee Poster – Vibrant Muscle Car Decor",
+        "metaDescription": "Transform your room with this Chevrolet Camaro Bumblebee poster. Featuring the iconic 2011 yellow muscle car in a vibrant orange halftone theme with the classic Autobot logo.",
+        "seoAltText": "Yellow Chevrolet Camaro 2011 in a stylized orange halftone poster featuring the Autobot logo and Bumblebee typography"
     },
     {
         "id": "p424",
-        "title": "Automotive 183 – Street Racing Aesthetic Decor",
+        "title": "Automotive 183",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-183.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-183.webp"
+        "description": "Celebrate classic American design with this 1958 Corvette poster. Featuring the iconic silver sports car in a retro-inspired advertisement layout.",
+        "label": "automotive-183.webp",
+        "seoTitle": "1958 Corvette Classic Poster – Retro Chevrolet Wall Art",
+        "metaDescription": "Celebrate classic American design with this 1958 Corvette poster. Featuring the iconic silver sports car in a retro-inspired advertisement layout.",
+        "seoAltText": "Retro-style advertisement poster featuring a silver 1958 Chevrolet Corvette classic sports car"
     },
     {
         "id": "p425",
-        "title": "Automotive 184 – JDM & Supercar Wall Poster",
+        "title": "Automotive 184",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-184.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-184.webp"
+        "description": "Bring American muscle history to your walls with this 1969 Corvette Stingray poster. Showcasing the striking red classic car against a clean white background with bold typography.",
+        "label": "automotive-184.webp",
+        "seoTitle": "1969 Corvette Stingray Red Poster – Classic American Muscle",
+        "metaDescription": "Bring American muscle history to your walls with this 1969 Corvette Stingray poster. Showcasing the striking red classic car against a clean white background with bold typography.",
+        "seoAltText": "Bright red 1969 Corvette Stingray classic sports car parked against a white background with bold typography"
     },
     {
         "id": "p426",
-        "title": "Automotive 185 – Vintage Classic Car Room Decor",
+        "title": "Automotive 185",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-185.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-185.webp"
+        "description": "Experience modern classic performance with this Chevrolet Corvette C5 poster. Featuring the sleek black sports car in an atmospheric, foggy mountain setting.",
+        "label": "automotive-185.webp",
+        "seoTitle": "Chevrolet Corvette C5 Black Poster – Modern Classic Decor",
+        "metaDescription": "Experience modern classic performance with this Chevrolet Corvette C5 poster. Featuring the sleek black sports car in an atmospheric, foggy mountain setting.",
+        "seoAltText": "Black Chevrolet Corvette C5 parked in an atmospheric foggy landscape with large faded CORVETTE typography"
     },
     {
         "id": "p427",
-        "title": "Automotive 186 – Premium Drift Racing Wall Art",
+        "title": "Automotive 186",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-186.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-186.webp"
+        "description": "Add a touch of vintage flair with this 1969 Corvette Stingray poster. The beautiful green classic car is highlighted in a colorful, retro-themed design.",
+        "label": "automotive-186.webp",
+        "seoTitle": "1969 Corvette Stingray Vintage Poster – Retro Car Art",
+        "metaDescription": "Add a touch of vintage flair with this 1969 Corvette Stingray poster. The beautiful green classic car is highlighted in a colorful, retro-themed design.",
+        "seoAltText": "Vintage-style poster featuring a dark green 1969 Corvette Stingray classic car against a colorful striped background"
     },
     {
         "id": "p428",
-        "title": "Automotive 187 – Aesthetic Garage Car Poster",
+        "title": "Automotive 187",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-187.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-187.webp"
+        "description": "Showcase Italian hypercar excellence with this vibrant Ferrari poster. The striking red supercar is beautifully contrasted against an atmospheric night city skyline.",
+        "label": "automotive-187.webp",
+        "seoTitle": "Ferrari Red Supercar Poster – Night City Wall Art",
+        "metaDescription": "Showcase Italian hypercar excellence with this vibrant Ferrari poster. The striking red supercar is beautifully contrasted against an atmospheric night city skyline.",
+        "seoAltText": "Red Ferrari sports car parked against an atmospheric night city skyline with massive red FERRARI typography"
     },
     {
         "id": "p429",
-        "title": "Automotive 188 – Modern Supercar Minimalist Print",
+        "title": "Automotive 188",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-188.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-188.webp"
+        "description": "Feel the power of American muscle with this dynamic Dodge Challenger poster. Featuring the grey muscle car drifting amidst clouds of smoke in a striking layered design.",
+        "label": "automotive-188.webp",
+        "seoTitle": "Dodge Challenger Grey Drift Poster – Muscle Car Decor",
+        "metaDescription": "Feel the power of American muscle with this dynamic Dodge Challenger poster. Featuring the grey muscle car drifting amidst clouds of smoke in a striking layered design.",
+        "seoAltText": "Layered poster of a grey Dodge Challenger drifting in thick smoke with a close up front shot layered behind it"
     },
     {
         "id": "p430",
