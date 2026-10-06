@@ -4666,93 +4666,123 @@ export const products = [
     },
     {
         "id": "p450",
-        "title": "Automotive 209 – Vintage Classic Car Room Decor",
+        "title": "Automotive 209",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-209.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-209.webp"
+        "description": "Experience pure Detroit aggression with this 1969 Ford Mustang Boss 302 poster. The iconic blue muscle car is showcased alongside classic marketing copy and the running pony logo.",
+        "label": "automotive-209.webp",
+        "seoTitle": "1969 Ford Mustang Boss 302 Blue Poster – Classic Muscle Art",
+        "metaDescription": "Experience pure Detroit aggression with this 1969 Ford Mustang Boss 302 poster. The iconic blue muscle car is showcased alongside classic marketing copy and the running pony logo.",
+        "seoAltText": "Vintage-style poster featuring a blue 1969 Ford Mustang Boss 302 muscle car with the running pony logo and classic typography"
     },
     {
         "id": "p451",
-        "title": "Automotive 210 – Premium Drift Racing Wall Art",
+        "title": "Automotive 210",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-210.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-210.webp"
+        "description": "Celebrate Italian finesse and ferocious power with this Ferrari Enzo poster. The legendary red hypercar is highlighted in a fiery multi-panel layout showcasing its aggressive aerodynamics.",
+        "label": "automotive-210.webp",
+        "seoTitle": "Ferrari Enzo Red Poster – Modern Hypercar Wall Decor",
+        "metaDescription": "Celebrate Italian finesse and ferocious power with this Ferrari Enzo poster. The legendary red hypercar is highlighted in a fiery multi-panel layout showcasing its aggressive aerodynamics.",
+        "seoAltText": "Fiery multi-panel poster featuring a bright red Ferrari Enzo hypercar with large faded FERRARI typography"
     },
     {
         "id": "p452",
-        "title": "Automotive 211 – Aesthetic Garage Car Poster",
+        "title": "Automotive 211",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-211.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-211.webp"
+        "description": "Add a punch of modern performance to your space with this Ford Mustang GT poster. The vibrant red muscle car with white racing stripes is presented against a massive MUSTANG typography background.",
+        "label": "automotive-211.webp",
+        "seoTitle": "Ford Mustang GT Red Poster – Modern Muscle Wall Art",
+        "metaDescription": "Add a punch of modern performance to your space with this Ford Mustang GT poster. The vibrant red muscle car with white racing stripes is presented against a massive MUSTANG typography background.",
+        "seoAltText": "Bright red Ford Mustang GT muscle car with white racing stripes parked against massive white MUSTANG typography"
     },
     {
         "id": "p453",
-        "title": "Automotive 212 – Modern Supercar Minimalist Print",
+        "title": "Automotive 212",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-212.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-212.webp"
+        "description": "Showcase the pinnacle of Mustang performance with this Ford Mustang Shelby poster. Featuring the sleek black muscle car with striking blue racing stripes in a multi-panel layout.",
+        "label": "automotive-212.webp",
+        "seoTitle": "Ford Mustang Shelby Black Poster – American Muscle Decor",
+        "metaDescription": "Showcase the pinnacle of Mustang performance with this Ford Mustang Shelby poster. Featuring the sleek black muscle car with striking blue racing stripes in a multi-panel layout.",
+        "seoAltText": "Multi-panel poster highlighting a black Ford Mustang Shelby muscle car with blue racing stripes and large SHELBY typography"
     },
     {
         "id": "p454",
-        "title": "Automotive 213 – Retro JDM Car Wall Poster",
+        "title": "Automotive 213",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-213.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-213.webp"
+        "description": "Embrace the legacy of the Supra with this stunning Toyota GR Supra poster. Featuring the black sports car highlighted with glowing red accents and a graffiti-style logo.",
+        "label": "automotive-213.webp",
+        "seoTitle": "Toyota GR Supra Black Poster – Modern JDM Wall Art",
+        "metaDescription": "Embrace the legacy of the Supra with this stunning Toyota GR Supra poster. Featuring the black sports car highlighted with glowing red accents and a graffiti-style logo.",
+        "seoAltText": "Black Toyota GR Supra sports car with glowing red accents and a graffiti-style SUPRA tag in the foreground"
     },
     {
         "id": "p455",
-        "title": "Automotive 214 – Luxury Sports Car Poster Art",
+        "title": "Automotive 214",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-214.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-214.webp"
+        "description": "Celebrate Indian automotive history with this Hindustan Ambassador poster. The iconic 'King of Indian Roads' is showcased in a dark green finish against a clean white typography background.",
+        "label": "automotive-214.webp",
+        "seoTitle": "Hindustan Ambassador Poster – Classic Indian Car Decor",
+        "metaDescription": "Celebrate Indian automotive history with this Hindustan Ambassador poster. The iconic 'King of Indian Roads' is showcased in a dark green finish against a clean white typography background.",
+        "seoAltText": "Dark green Hindustan Ambassador classic car parked against massive white AMBASSADOR typography with the slogan King of Indian Road"
     },
     {
         "id": "p456",
-        "title": "Automotive 215 – Street Racing Aesthetic Decor",
+        "title": "Automotive 215",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-215.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-215.webp"
+        "description": "Add a touch of rotary power to your walls with this Mazda RX-7 poster. Featuring the beautiful green JDM icon parked in a driveway setting with large MAZDA typography.",
+        "label": "automotive-215.webp",
+        "seoTitle": "Mazda RX-7 Green Poster – Classic JDM Wall Art",
+        "metaDescription": "Add a touch of rotary power to your walls with this Mazda RX-7 poster. Featuring the beautiful green JDM icon parked in a driveway setting with large MAZDA typography.",
+        "seoAltText": "Green Mazda RX-7 sports car parked in a driveway against massive faded green MAZDA typography"
     },
     {
         "id": "p457",
-        "title": "Automotive 216 – JDM & Supercar Wall Poster",
+        "title": "Automotive 216",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-216.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-216.webp"
+        "description": "Step back in time with this vintage-style BMW 2000 advertisement poster. The classic green sedan is featured alongside humorous retro marketing copy.",
+        "label": "automotive-216.webp",
+        "seoTitle": "BMW 2000 Vintage Ad Poster – Classic German Car Decor",
+        "metaDescription": "Step back in time with this vintage-style BMW 2000 advertisement poster. The classic green sedan is featured alongside humorous retro marketing copy.",
+        "seoAltText": "Vintage advertisement poster featuring a green BMW 2000 classic car and the phrase Take Me To Your Husband"
     },
     {
         "id": "p458",
-        "title": "Automotive 217 – Vintage Classic Car Room Decor",
+        "title": "Automotive 217",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-217.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-217.webp"
+        "description": "Experience extreme drift performance with this Hoonicorn Ford Mustang poster. The heavily modified 1965 GT Coupe is presented in a striking black and white design with detailed specs.",
+        "label": "automotive-217.webp",
+        "seoTitle": "Hoonicorn Ford Mustang Poster – Extreme Drift Wall Art",
+        "metaDescription": "Experience extreme drift performance with this Hoonicorn Ford Mustang poster. The heavily modified 1965 GT Coupe is presented in a striking black and white design with detailed specs.",
+        "seoAltText": "Black and white poster featuring the Hoonicorn 1965 Ford Mustang GT Coupe heavily modified drift car with detailed specifications"
     },
     {
         "id": "p459",
-        "title": "Automotive 218 – Premium Drift Racing Wall Art",
+        "title": "Automotive 218",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-218.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-218.webp"
+        "description": "Capture the soul of racing with this Honda S2000 poster. The sleek grey roadster is presented against a clean white background with massive HONDA typography and detailed specifications.",
+        "label": "automotive-218.webp",
+        "seoTitle": "Honda S2000 Grey Poster – Minimalist JDM Decor",
+        "metaDescription": "Capture the soul of racing with this Honda S2000 poster. The sleek grey roadster is presented against a clean white background with massive HONDA typography and detailed specifications.",
+        "seoAltText": "Sleek grey Honda S2000 sports car parked against a clean white background with massive black HONDA typography"
     },
     {
         "id": "p460",
