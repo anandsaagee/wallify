@@ -122,7 +122,20 @@ const AppContent: React.FC = () => {
       console.warn('Click tracking failed:', err);
     }
 
+    const slug = getProductSlug(product);
+    const url = `/posters/${product.category.toLowerCase()}/${slug}`;
+    window.history.pushState({ posterId: product.id }, '', url);
+
     setSelectedProduct(product);
+  }, []);
+
+  const handleCloseProduct = useCallback(() => {
+    setSelectedProduct(null);
+    if (window.history.state?.posterId) {
+      window.history.back();
+    } else {
+      window.history.pushState({}, '', '/');
+    }
   }, []);
 
   const handleSetView = useCallback((nextView: View) => {
@@ -396,11 +409,11 @@ const AppContent: React.FC = () => {
         </button>
       )}
 
-      <BottomSheet isOpen={!!selectedProduct} onClose={() => setSelectedProduct(null)}>
+      <BottomSheet isOpen={!!selectedProduct} onClose={handleCloseProduct}>
         {selectedProduct && (
           <ProductPreview 
             product={selectedProduct} 
-            onClose={() => setSelectedProduct(null)} 
+            onClose={handleCloseProduct} 
             onAddedToCart={handleAddedToCart}
           />
         )}

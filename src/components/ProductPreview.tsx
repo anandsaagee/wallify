@@ -151,23 +151,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
     }, 450);
   }, [addToCart, product, selectedSize, withFrame, onClose, onAddedToCart, currentSize.label]);
 
-  // Handle History & URL changes — use accurate slug with subject name
-  useEffect(() => {
-    const slug = getProductSlug(product);
-    const url = `/posters/${product.category.toLowerCase()}/${slug}`;
-
-    // Push new state
-    window.history.pushState({ posterId: product.id }, '', url);
-
-    // On unmount (close), go back if we pushed it
-    return () => {
-      if (window.history.state?.posterId === product.id) {
-        window.history.back();
-      }
-    };
-  }, [product]);
-
-  // SEO values
+  // History & URL changes are now managed centrally in App.tsx  // SEO values
   const cleanTitle = getCleanPosterName(product.title);
   const seoTitle = product.seoTitle || buildPosterMetaTitle(product.title, product.category, currentSize.label);
   const seoDesc = product.metaDescription || buildPosterMetaDescription(product.title, product.category);
