@@ -21,7 +21,7 @@ import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
 import { trackProductClick } from './utils/bestSellerTracker';
-import { getCleanPosterName } from './utils/seoHelpers';
+import { getCleanPosterName, getProductSlug } from './utils/seoHelpers';
 
 type View = 'store' | 'checkout';
 
@@ -30,10 +30,13 @@ interface ProductData {
   title: string;
   category: string;
   image: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  seoAltText?: string;
 }
 
 // Deep linking: resolve poster if landing directly on /posters/:category/:slug
-// Slug is built from cleaned title (strips repetitive legacy suffix) — must match routing
+// Supports rich SEO slugs (e.g., automotive-001-jeep-wrangler...), bare slugs, and IDs
 function getInitialProduct(): ProductData | null {
   if (typeof window === 'undefined') return null;
   const path = window.location.pathname.toLowerCase();
@@ -41,9 +44,22 @@ function getInitialProduct(): ProductData | null {
   if (match) {
     const slug = match[1];
     const found = products.find((p) => {
+      // 1. Exact match with generated slug
+      const pSlug = getProductSlug(p);
+      if (pSlug === slug) return true;
+
+      // 2. Match with bare clean title (e.g. "automotive-001")
       const cleanName = getCleanPosterName(p.title);
-      const pSlug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-      return pSlug === slug;
+      const bareSlug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+      if (bareSlug === slug) return true;
+
+      // 3. Match if slug starts with bareSlug prefix (e.g. "automotive-001-...")
+      if (bareSlug && slug.startsWith(bareSlug + '-')) return true;
+
+      // 4. Match product ID
+      if (p.id.toLowerCase() === slug) return true;
+
+      return false;
     });
     if (found) return found;
   }
@@ -179,12 +195,12 @@ const AppContent: React.FC = () => {
               name: `${selectedCategory} Wall Posters`,
               itemListElement: filteredProducts.slice(0, 12).map((item, idx) => {
                 const cleanName = getCleanPosterName(item.title);
-                const s = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                const s = getProductSlug(item);
                 return {
                   '@type': 'ListItem',
                   position: idx + 1,
                   url: `https://wallifystore.in/posters/${item.category.toLowerCase()}/${s}`,
-                  name: `${cleanName} Poster`,
+                  name: item.seoTitle || `${cleanName} Poster`,
                 };
               }),
             },

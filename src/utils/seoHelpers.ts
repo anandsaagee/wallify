@@ -18,6 +18,37 @@ export function getCleanPosterName(rawTitle: string): string {
 }
 
 /**
+ * Generates an SEO-optimized URL slug that incorporates the descriptive subject/car name
+ * while preserving the folder/collection identifier.
+ */
+export function getProductSlug(product: { id?: string; title: string; seoTitle?: string }): string {
+  const cleanName = getCleanPosterName(product.title);
+
+  if (product.seoTitle && product.seoTitle.trim().length > 0) {
+    const cleanSeo = product.seoTitle
+      .replace(/\s+–\s+.*$/g, '')
+      .replace(/Wall\s+Poster/gi, '')
+      .replace(/Poster/gi, '')
+      .trim();
+
+    const prefix = cleanName.toLowerCase();
+    const seoLower = cleanSeo.toLowerCase();
+    const combined = seoLower.includes(prefix) ? cleanSeo : `${cleanName} ${cleanSeo}`;
+
+    return combined
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  }
+
+  return cleanName
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+}
+
+
+/**
  * Builds standard On-Page <title> (50-60 characters, primary keyword first, brand last).
  * Pattern: "[Poster Name] Poster – [Size/Type] Wall Art | WallifyStore"
  */

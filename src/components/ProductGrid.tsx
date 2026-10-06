@@ -2,7 +2,7 @@ import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from '
 import { TrendingUp, Flame } from 'lucide-react';
 import { ITEMS_PER_PAGE } from '../data/config';
 import { OptimizedImage } from './OptimizedImage';
-import { getCleanPosterName } from '../utils/seoHelpers';
+import { getCleanPosterName, getProductSlug } from '../utils/seoHelpers';
 
 export interface Product {
   id: string;
@@ -57,12 +57,9 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
     }, [product.id]);
 
     const animDelay = useMemo(() => `${Math.min(index, 12) * 30}ms`, [index]);
-    // Use clean name for slug — must match the routing/SEO canonical URL pattern
+    // Use SEO slug with subject name — matches routing + canonical URL pattern
     const cleanName = useMemo(() => getCleanPosterName(product.title), [product.title]);
-    const slug = useMemo(
-      () => cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''),
-      [cleanName]
-    );
+    const slug = useMemo(() => getProductSlug(product), [product]);
     const productHref = `/posters/${product.category.toLowerCase()}/${slug}`;
 
     return (

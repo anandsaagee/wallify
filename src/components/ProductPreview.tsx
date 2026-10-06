@@ -6,6 +6,7 @@ import { OptimizedImage } from './OptimizedImage';
 import { SEO } from './SEO';
 import {
   getCleanPosterName,
+  getProductSlug,
   buildPosterMetaTitle,
   buildPosterMetaDescription,
   generatePosterAltText,
@@ -85,13 +86,17 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   const totalPrice = currentSize.price + (withFrame && framePrice ? framePrice : 0);
 
   const handleShare = useCallback(async () => {
-    // Use clean title for consistent URL slug (matches routing + SEO)
+    // Use SEO slug with accurate subject name for shareable link
     const cleanName = getCleanPosterName(product.title);
-    const slug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    const slug = getProductSlug(product);
     const fullUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${slug}`;
+    const shareTitle = product.seoTitle ? `${product.seoTitle} | WallifyStore` : `${cleanName} Poster | WallifyStore`;
+    const shareText = product.seoTitle
+      ? `Check out ${product.seoTitle} on Wallify!`
+      : `Check out this ${cleanName} ${product.category} poster on Wallify!`;
     const shareData = {
-      title: `${cleanName} Poster | WallifyStore`,
-      text: `Check out this ${cleanName} ${product.category} poster on Wallify!`,
+      title: shareTitle,
+      text: shareText,
       url: fullUrl,
     };
 
@@ -146,10 +151,9 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
     }, 450);
   }, [addToCart, product, selectedSize, withFrame, onClose, onAddedToCart, currentSize.label]);
 
-  // Handle History & URL changes — use clean title for consistent slug
+  // Handle History & URL changes — use accurate slug with subject name
   useEffect(() => {
-    const cleanName = getCleanPosterName(product.title);
-    const slug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    const slug = getProductSlug(product);
     const url = `/posters/${product.category.toLowerCase()}/${slug}`;
 
     // Push new state
@@ -167,7 +171,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   const cleanTitle = getCleanPosterName(product.title);
   const seoTitle = product.seoTitle || buildPosterMetaTitle(product.title, product.category, currentSize.label);
   const seoDesc = product.metaDescription || buildPosterMetaDescription(product.title, product.category);
-  const rawSlug = cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const rawSlug = getProductSlug(product);
   const seoUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${rawSlug}`;
   const seoImage = `https://wallifystore.in${product.image}`;
   const altText = product.seoAltText || generatePosterAltText(product.title, product.category);
