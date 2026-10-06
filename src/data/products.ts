@@ -4786,30 +4786,39 @@ export const products = [
     },
     {
         "id": "p460",
-        "title": "Automotive 219 – Aesthetic Garage Car Poster",
+        "title": "Automotive 219",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-219.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-219.webp"
+        "description": "Step back in time with this vintage Jaguar S-Type advertisement poster. Featuring the sleek black luxury car alongside authentic retro marketing copy.",
+        "label": "automotive-219.webp",
+        "seoTitle": "Jaguar S-Type Vintage Ad Poster – Classic British Car Art",
+        "metaDescription": "Step back in time with this vintage Jaguar S-Type advertisement poster. Featuring the sleek black luxury car alongside authentic retro marketing copy.",
+        "seoAltText": "Vintage advertisement poster for the Jaguar S-Type featuring a black car and the phrase JAGUAR UNLEASHES A NEW BREED OF CAT. THE S-TYPE."
     },
     {
         "id": "p461",
-        "title": "Automotive 220 – Modern Supercar Minimalist Print",
+        "title": "Automotive 220",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-220.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-220.webp"
+        "description": "Add a touch of classic elegance with this vintage Jaguar E-Type advertisement poster. The beautiful blue roadster is featured amidst tall green grass with authentic marketing copy.",
+        "label": "automotive-220.webp",
+        "seoTitle": "Jaguar E-Type Vintage Ad Poster – Classic Car Decor",
+        "metaDescription": "Add a touch of classic elegance with this vintage Jaguar E-Type advertisement poster. The beautiful blue roadster is featured amidst tall green grass with authentic marketing copy.",
+        "seoAltText": "Vintage advertisement poster featuring a blue Jaguar E-Type in tall green grass with the phrase Capture a Jaguar."
     },
     {
         "id": "p462",
-        "title": "Automotive 221 – Retro JDM Car Wall Poster",
+        "title": "Automotive 221",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-221.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-221.webp"
+        "description": "Celebrate JDM heritage with this stylish Toyota Supra MK4 poster. The iconic sports car is presented in a black and white graphic design against a vibrant red sun and bonsai tree.",
+        "label": "automotive-221.webp",
+        "seoTitle": "Toyota Supra MK4 Graphic Poster – JDM Art Decor",
+        "metaDescription": "Celebrate JDM heritage with this stylish Toyota Supra MK4 poster. The iconic sports car is presented in a black and white graphic design against a vibrant red sun and bonsai tree.",
+        "seoAltText": "Graphic poster of a white Toyota Supra MK4 sports car against a red sun and bonsai tree background with Japanese calligraphy"
     },
     {
         "id": "p463",
