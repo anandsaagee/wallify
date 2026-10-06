@@ -2266,93 +2266,123 @@ export const products = [
     },
     {
         "id": "p250",
-        "title": "Automotive 009 – Vintage Classic Car Room Decor",
+        "title": "Automotive 009",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-009.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-009.webp"
+        "description": "Decorate your space with this technical blueprint poster of the iconic Ford Mustang Shelby GT350, featuring detailed dimensions and a stunning blue finish.",
+        "label": "automotive-009.webp",
+        "seoTitle": "Ford Mustang Shelby GT350 Blueprint Poster – Classic Muscle Car Art",
+        "metaDescription": "Decorate your space with this technical blueprint poster of the iconic Ford Mustang Shelby GT350, featuring detailed dimensions and a stunning blue finish.",
+        "seoAltText": "Technical blueprint poster of a blue Ford Mustang Shelby GT350 showing front, rear, side profiles, and vehicle dimensions"
     },
     {
         "id": "p251",
-        "title": "Automotive 010 – Premium Drift Racing Wall Art",
+        "title": "Automotive 010",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-010.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-010.webp"
+        "description": "Embrace adventure with this dramatic Land Rover Defender 90 poster, highlighting its rugged off-road capability, luxury design, and technical specs.",
+        "label": "automotive-010.webp",
+        "seoTitle": "Land Rover Defender 90 Black SUV Poster – Rugged Off-Road Art",
+        "metaDescription": "Embrace adventure with this dramatic Land Rover Defender 90 poster, highlighting its rugged off-road capability, luxury design, and technical specs.",
+        "seoAltText": "Dark grey Land Rover Defender 90 parked on wet asphalt under moody lighting with vehicle specifications"
     },
     {
         "id": "p252",
-        "title": "Automotive 011 – Aesthetic Garage Car Poster",
+        "title": "Automotive 011",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-011.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-011.webp"
+        "description": "Celebrate JDM motorsport history with this Mitsubishi Lancer Evolution III poster, featuring the iconic 1996 Australia Rally Group A livery.",
+        "label": "automotive-011.webp",
+        "seoTitle": "Mitsubishi Lancer Evolution III 1996 Rally Poster – JDM Motorsport Art",
+        "metaDescription": "Celebrate JDM motorsport history with this Mitsubishi Lancer Evolution III poster, featuring the iconic 1996 Australia Rally Group A livery.",
+        "seoAltText": "Side profile illustration of a blue, white, and red Mitsubishi Lancer Evolution III Group A rally car with Petronas and Michelin decals"
     },
     {
         "id": "p253",
-        "title": "Automotive 012 – Modern Supercar Minimalist Print",
+        "title": "Automotive 012",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-012.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-012.webp"
+        "description": "Capture the vintage JDM aesthetic with this retro Toyota Celica GT-S magazine cover poster, featuring a white Celica and classic '80s Japanese styling.",
+        "label": "automotive-012.webp",
+        "seoTitle": "Toyota Celica GT-S Retro Magazine Cover Poster – JDM Classic Art",
+        "metaDescription": "Capture the vintage JDM aesthetic with this retro Toyota Celica GT-S magazine cover poster, featuring a white Celica and classic '80s Japanese styling.",
+        "seoAltText": "Retro Japanese car magazine cover titled AKATSKI featuring a white Toyota Celica GT-S by the ocean and a red Celica GT-S below"
     },
     {
         "id": "p254",
-        "title": "Automotive 013 – Retro JDM Car Wall Poster",
+        "title": "Automotive 013",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-013.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-013.webp"
+        "description": "Show your support with this stunning Charles Leclerc Ferrari F1 poster, featuring the driver in red gear, his helmet, and the iconic Scuderia Ferrari car.",
+        "label": "automotive-013.webp",
+        "seoTitle": "Charles Leclerc Ferrari F1 Poster – Formula 1 Racing Art",
+        "metaDescription": "Show your support with this stunning Charles Leclerc Ferrari F1 poster, featuring the driver in red gear, his helmet, and the iconic Scuderia Ferrari car.",
+        "seoAltText": "Red Formula 1 poster featuring Charles Leclerc in a racing suit alongside his helmet and Scuderia Ferrari F1 car"
     },
     {
         "id": "p255",
-        "title": "Automotive 014 – Luxury Sports Car Poster Art",
+        "title": "Automotive 014",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-014.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-014.webp"
+        "description": "Add a touch of elegance to your room with this unique pink Maserati MC20 poster. Featuring a bold modern aesthetic and sleek Italian supercar design.",
+        "label": "automotive-014.webp",
+        "seoTitle": "Maserati MC20 Pink Supercar Poster – Luxury Automotive Art",
+        "metaDescription": "Add a touch of elegance to your room with this unique pink Maserati MC20 poster. Featuring a bold modern aesthetic and sleek Italian supercar design.",
+        "seoAltText": "Pink Maserati MC20 supercar parked under moody pink lighting with elegant typography"
     },
     {
         "id": "p256",
-        "title": "Automotive 015 – Street Racing Aesthetic Decor",
+        "title": "Automotive 015",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-015.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-015.webp"
+        "description": "Elevate your space with this McLaren Senna hypercar poster. Featuring the light blue supercar with open butterfly doors and impressive performance specs.",
+        "label": "automotive-015.webp",
+        "seoTitle": "McLaren Senna Light Blue Hypercar Poster – Ride of Dreams",
+        "metaDescription": "Elevate your space with this McLaren Senna hypercar poster. Featuring the light blue supercar with open butterfly doors and impressive performance specs.",
+        "seoAltText": "Light blue McLaren Senna hypercar with open butterfly doors against a gradient background and technical specifications"
     },
     {
         "id": "p257",
-        "title": "Automotive 016 – JDM & Supercar Wall Poster",
+        "title": "Automotive 016",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-016.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-016.webp"
+        "description": "Decorate your garage or bedroom with this sleek Mercedes AMG GT Black Series poster, showcasing the aggressive track car and its 720 hp performance specs.",
+        "label": "automotive-016.webp",
+        "seoTitle": "Mercedes AMG GT Black Series Poster – Supercar Specs Art",
+        "metaDescription": "Decorate your garage or bedroom with this sleek Mercedes AMG GT Black Series poster, showcasing the aggressive track car and its 720 hp performance specs.",
+        "seoAltText": "Black Mercedes AMG GT Black Series parked on a white background with performance specifications and bold typography"
     },
     {
         "id": "p258",
-        "title": "Automotive 017 – Vintage Classic Car Room Decor",
+        "title": "Automotive 017",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-017.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-017.webp"
+        "description": "Travel back in time with this classic 1981 Mercedes Benz 240D W123 poster. Featuring a beautiful beige rear profile and historical vehicle details.",
+        "label": "automotive-017.webp",
+        "seoTitle": "1981 Mercedes Benz 240D Poster – Vintage Classic Car Art",
+        "metaDescription": "Travel back in time with this classic 1981 Mercedes Benz 240D W123 poster. Featuring a beautiful beige rear profile and historical vehicle details.",
+        "seoAltText": "Rear profile of a beige classic 1981 Mercedes Benz 240D with a TS09 EG 2272 license plate and retro styling"
     },
     {
         "id": "p259",
-        "title": "Automotive 018 – Premium Drift Racing Wall Art",
+        "title": "Automotive 018",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-018.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-018.webp"
+        "description": "Upgrade your space with this sleek Mercedes AMG CLS 63 poster. Showcasing the high-performance black luxury sedan from a side profile with detailed specs.",
+        "label": "automotive-018.webp",
+        "seoTitle": "Mercedes AMG CLS 63 Black Sedan Poster – Luxury Performance Art",
+        "metaDescription": "Upgrade your space with this sleek Mercedes AMG CLS 63 poster. Showcasing the high-performance black luxury sedan from a side profile with detailed specs.",
+        "seoAltText": "Black Mercedes AMG CLS 63 luxury sedan side profile on a white background with interior blueprints below"
     },
     {
         "id": "p260",
