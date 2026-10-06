@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Product } from './ProductGrid';
 import { OptimizedImage } from './OptimizedImage';
 import { getTopProducts } from '../utils/bestSellerTracker';
+import { getCleanPosterName } from '../utils/seoHelpers';
 
 interface Props {
   products: Product[];
@@ -29,7 +30,9 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
         className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 -mx-4 px-4 hide-scrollbar snap-x snap-mandatory scroll-momentum"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
-        {bestSellers.map((product, index) => (
+        {bestSellers.map((product, index) => {
+          const cleanName = getCleanPosterName(product.title);
+          return (
           <div
             key={product.id}
             className="w-[120px] sm:w-[150px] snap-start group cursor-pointer shrink-0"
@@ -37,12 +40,12 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
             role="button"
             tabIndex={0}
             onKeyDown={(e) => e.key === 'Enter' && onClick(product)}
-            aria-label={`View ${product.title}`}
+            aria-label={`View ${cleanName}`}
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-surface border border-white/5 relative">
               <OptimizedImage
                 src={product.image}
-                alt={product.title}
+                alt={cleanName}
                 priority={index < 4}
                 containerClassName="absolute inset-0 w-full h-full"
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
@@ -54,14 +57,15 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
             </div>
             <div className="mt-2 px-0.5">
               <h3 className="font-body text-xs font-semibold text-white truncate group-hover:text-primary transition-colors">
-                {product.title}
+                {cleanName}
               </h3>
               <p className="font-body text-[10px] text-muted font-medium uppercase tracking-wider mt-0.5">
                 {product.category}
               </p>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

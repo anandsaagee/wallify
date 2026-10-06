@@ -21,6 +21,7 @@ import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
 import { trackProductClick } from './utils/bestSellerTracker';
+import { getCleanPosterName } from './utils/seoHelpers';
 
 type View = 'store' | 'checkout';
 
@@ -32,6 +33,7 @@ interface ProductData {
 }
 
 // Deep linking: resolve poster if landing directly on /posters/:category/:slug
+// Slug is built from cleaned title (strips repetitive legacy suffix) — must match routing
 function getInitialProduct(): ProductData | null {
   if (typeof window === 'undefined') return null;
   const path = window.location.pathname.toLowerCase();
@@ -39,7 +41,8 @@ function getInitialProduct(): ProductData | null {
   if (match) {
     const slug = match[1];
     const found = products.find((p) => {
-      const pSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+      const cleanName = getCleanPosterName(p.title);
+      const pSlug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
       return pSlug === slug;
     });
     if (found) return found;
@@ -137,8 +140,23 @@ const AppContent: React.FC = () => {
           'query-input': 'required name=search_term_string',
         },
       },
-      ...(selectedCategory !== 'All'
+      ...(selectedCategory === 'All'
         ? [
+            {
+              '@type': 'Organization',
+              name: 'WallifyStore',
+              url: 'https://wallifystore.in',
+              logo: 'https://wallifystore.in/logo.png',
+              description: 'Online store selling premium HD wall posters and framed room art in India.',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'customer support',
+                areaServed: 'IN',
+                availableLanguage: ['en', 'ml'],
+              },
+            },
+          ]
+        : [
             {
               '@type': 'BreadcrumbList',
               itemListElement: [
@@ -156,8 +174,21 @@ const AppContent: React.FC = () => {
                 },
               ],
             },
-          ]
-        : []),
+            {
+              '@type': 'ItemList',
+              name: `${selectedCategory} Wall Posters`,
+              itemListElement: filteredProducts.slice(0, 12).map((item, idx) => {
+                const cleanName = getCleanPosterName(item.title);
+                const s = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                return {
+                  '@type': 'ListItem',
+                  position: idx + 1,
+                  url: `https://wallifystore.in/posters/${item.category.toLowerCase()}/${s}`,
+                  name: `${cleanName} Poster`,
+                };
+              }),
+            },
+          ]),
     ],
   };
 

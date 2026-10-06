@@ -24,11 +24,21 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  // Transform local paths to Cloudinary CDN URLs
+  // Transform local paths to Cloudinary CDN URLs (base src)
   const cloudinarySrc = useMemo(
     () => getImageUrl(src, { width: typeof width === 'number' ? width : undefined }),
     [src, width]
   );
+
+  // Generate responsive srcset for Cloudinary images
+  const srcSet = useMemo(() => {
+    if (!src || src.startsWith('data:')) return undefined;
+    const w = typeof width === 'number' ? width : 600;
+    const s1 = getImageUrl(src, { width: Math.round(w * 0.5) });
+    const s2 = getImageUrl(src, { width: w });
+    const s3 = getImageUrl(src, { width: Math.round(w * 1.5) });
+    return `${s1} ${Math.round(w * 0.5)}w, ${s2} ${w}w, ${s3} ${Math.round(w * 1.5)}w`;
+  }, [src, width]);
 
   return (
     <div
@@ -43,6 +53,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
 
       <img
         src={cloudinarySrc}
+        srcSet={srcSet}
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
         alt={alt}
         width={width}
         height={height}

@@ -4,6 +4,14 @@ import { SIZES, getFramePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
 import { SEO } from './SEO';
+import {
+  getCleanPosterName,
+  buildPosterMetaTitle,
+  buildPosterMetaDescription,
+  generatePosterAltText,
+  generatePosterCaption,
+  generatePosterProductDescription,
+} from '../utils/seoHelpers';
 
 interface Product {
   id: string;
@@ -74,11 +82,13 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   const totalPrice = currentSize.price + (withFrame && framePrice ? framePrice : 0);
 
   const handleShare = useCallback(async () => {
-    const slug = product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    // Use clean title for consistent URL slug (matches routing + SEO)
+    const cleanName = getCleanPosterName(product.title);
+    const slug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
     const fullUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${slug}`;
     const shareData = {
-      title: `${product.title} Poster | WallifyStore`,
-      text: `Check out this ${product.title} ${product.category} poster on Wallify!`,
+      title: `${cleanName} Poster | WallifyStore`,
+      text: `Check out this ${cleanName} ${product.category} poster on Wallify!`,
       url: fullUrl,
     };
 
@@ -133,11 +143,12 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
     }, 450);
   }, [addToCart, product, selectedSize, withFrame, onClose, onAddedToCart, currentSize.label]);
 
-  // Handle History & URL changes
+  // Handle History & URL changes — use clean title for consistent slug
   useEffect(() => {
-    const slug = product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    const cleanName = getCleanPosterName(product.title);
+    const slug = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
     const url = `/posters/${product.category.toLowerCase()}/${slug}`;
-    
+
     // Push new state
     window.history.pushState({ posterId: product.id }, '', url);
 
@@ -150,29 +161,28 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   }, [product]);
 
   // SEO values
-  const seoTitle = `${product.title} Poster – ${currentSize.label} Wall Art | WallifyStore`;
-  const seoDesc = `Buy the premium ${product.title} ${product.category} poster online. High-quality, fade-resistant print perfect for your bedroom or hostel. Order now!`;
-  const seoUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`;
+  const cleanTitle = getCleanPosterName(product.title);
+  const seoTitle = buildPosterMetaTitle(product.title, product.category, currentSize.label);
+  const seoDesc = buildPosterMetaDescription(product.title, product.category);
+  const rawSlug = cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const seoUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${rawSlug}`;
   const seoImage = `https://wallifystore.in${product.image}`;
-  const altText = `Premium ${product.title} wall poster in ${product.category} style printed on high quality matte paper`;
+  const altText = generatePosterAltText(product.title, product.category);
+  const captionText = generatePosterCaption(product.title, product.category, currentSize.label);
+  const productDescription = generatePosterProductDescription(product.title, product.category);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Product",
-        "name": `${product.title} Poster`,
+        "name": `${cleanTitle} Poster`,
         "image": [seoImage],
         "description": seoDesc,
         "sku": product.id,
         "brand": {
           "@type": "Brand",
           "name": "WallifyStore"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "148"
         },
         "offers": {
           "@type": "Offer",
@@ -227,7 +237,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           {
             "@type": "ListItem",
             "position": 3,
-            "name": `${product.title} Poster`,
+            "name": `${cleanTitle} Poster`,
             "item": seoUrl
           }
         ]
@@ -250,18 +260,20 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
         className="flex-1 overflow-y-auto overscroll-contain"
         style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'contain' }}
       >
-        {/* Product Image */}
+        {/* Product Image with visible figcaption */}
         <div className="px-4 pt-1 flex justify-center">
-          <figure className="w-full max-h-[45dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-            <OptimizedImage
-              src={product.image}
-              alt={altText}
-              priority={true}
-              containerClassName="w-full h-full"
-              className="w-full h-full"
-            />
-            <figcaption className="sr-only">
-              {product.title} - {product.category} Wall Art ({currentSize.label})
+          <figure className="w-full max-h-[48dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col">
+            <div className="flex-1 min-h-0 relative">
+              <OptimizedImage
+                src={product.image}
+                alt={altText}
+                priority={true}
+                containerClassName="w-full h-full"
+                className="w-full h-full"
+              />
+            </div>
+            <figcaption className="text-[10px] text-white/60 text-center py-1.5 px-3 bg-black/70 border-t border-white/5 font-medium tracking-wide">
+              {captionText}
             </figcaption>
           </figure>
         </div>
@@ -273,9 +285,9 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
               <span className="text-[10px] font-black text-primary uppercase tracking-widest">
                 {product.category}
               </span>
-              <h2 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
-                {product.title}
-              </h2>
+              <h1 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
+                {cleanTitle}
+              </h1>
             </div>
             <button
               type="button"
@@ -412,6 +424,35 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Unique SEO Product Description & Paper Details */}
+        <div className="px-4 pt-3">
+          <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-3.5">
+            <h2 className="text-[11px] font-black text-white/70 uppercase tracking-wider mb-1.5">
+              About This Wall Print
+            </h2>
+            <p className="text-xs text-white/60 leading-relaxed font-body">
+              {productDescription}
+            </p>
+            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] text-white/50">
+              <div>• 300 GSM Archival Matte Paper</div>
+              <div>• Fade-Resistant HD Pigment Inks</div>
+              <div>• Glare-Free Smooth Texture</div>
+              <div>• Safe Flat-Pack Shipping</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Internal Link to Category — crawlable anchor for link equity */}
+        <div className="px-4 pt-3">
+          <a
+            href={`/category/${product.category.toLowerCase()}`}
+            onClick={(e) => { e.preventDefault(); onClose?.(); }}
+            className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
+          >
+            Explore more {product.category} Wall Art →
+          </a>
         </div>
 
         {/* Delivery Info */}
