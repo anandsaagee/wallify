@@ -2386,93 +2386,123 @@ export const products = [
     },
     {
         "id": "p260",
-        "title": "Automotive 019 – Aesthetic Garage Car Poster",
+        "title": "Automotive 019",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-019.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-019.webp"
+        "description": "Celebrate the legacy of the legendary JDM icon with this Toyota Supra MK4 poster. Featuring a black Supra set against a striking red backdrop with bold typography.",
+        "label": "automotive-019.webp",
+        "seoTitle": "Toyota Supra MK4 Black Poster – Legendary JDM Sports Car Art",
+        "metaDescription": "Celebrate the legacy of the legendary JDM icon with this Toyota Supra MK4 poster. Featuring a black Supra set against a striking red backdrop with bold typography.",
+        "seoAltText": "Black Toyota Supra MK4 sports car on a vivid red background with bold white SUPRA text above it"
     },
     {
         "id": "p261",
-        "title": "Automotive 020 – Modern Supercar Minimalist Print",
+        "title": "Automotive 020",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-020.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-020.webp"
+        "description": "Showcase your love for German engineering with this Mercedes-Benz C63 S poster. Featuring the sleek silver coupe with aggressive styling and performance specs.",
+        "label": "automotive-020.webp",
+        "seoTitle": "Mercedes-Benz C63 S Silver Coupe Poster – German Performance Art",
+        "metaDescription": "Showcase your love for German engineering with this Mercedes-Benz C63 S poster. Featuring the sleek silver coupe with aggressive styling and performance specs.",
+        "seoAltText": "Silver Mercedes-Benz C63 S coupe on a white background with bold black MERCEDES text and technical specifications"
     },
     {
         "id": "p262",
-        "title": "Automotive 021 – Retro JDM Car Wall Poster",
+        "title": "Automotive 021",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-021.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-021.webp"
+        "description": "Make a bold statement with this Brabus Mercedes-AMG G 63 poster. Featuring the heavily modified grey G-Wagon on a unique crumpled paper texture background.",
+        "label": "automotive-021.webp",
+        "seoTitle": "Brabus Mercedes-AMG G 63 SUV Poster – Luxury Off-Road Art",
+        "metaDescription": "Make a bold statement with this Brabus Mercedes-AMG G 63 poster. Featuring the heavily modified grey G-Wagon on a unique crumpled paper texture background.",
+        "seoAltText": "Grey Brabus Mercedes-AMG G 63 SUV parked against a white crumpled paper background with performance specifications"
     },
     {
         "id": "p263",
-        "title": "Automotive 022 – Luxury Sports Car Poster Art",
+        "title": "Automotive 022",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-022.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-022.webp"
+        "description": "Add a touch of retro luxury to your room with this classic Mercedes W140 poster. Featuring the iconic front end of the ultimate 1990s S-Class on a green texture.",
+        "label": "automotive-022.webp",
+        "seoTitle": "Mercedes-Benz W140 Classic S-Class Poster – Retro Luxury Art",
+        "metaDescription": "Add a touch of retro luxury to your room with this classic Mercedes W140 poster. Featuring the iconic front end of the ultimate 1990s S-Class on a green texture.",
+        "seoAltText": "Front profile of a black classic Mercedes-Benz W140 against a textured green background with historical text"
     },
     {
         "id": "p264",
-        "title": "Automotive 023 – Street Racing Aesthetic Decor",
+        "title": "Automotive 023",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-023.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-023.webp"
+        "description": "Fuel your JDM passion with this Mitsubishi Lancer Evo X poster. Showcasing the aggressive white sports sedan set against an aesthetic crumpled white background.",
+        "label": "automotive-023.webp",
+        "seoTitle": "Mitsubishi Lancer Evo X White Poster – JDM Rally Icon Art",
+        "metaDescription": "Fuel your JDM passion with this Mitsubishi Lancer Evo X poster. Showcasing the aggressive white sports sedan set against an aesthetic crumpled white background.",
+        "seoAltText": "White Mitsubishi Lancer Evo X sports sedan parked against a white crumpled paper background with bold black typography"
     },
     {
         "id": "p265",
-        "title": "Automotive 024 – JDM & Supercar Wall Poster",
+        "title": "Automotive 024",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-024.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-024.webp"
+        "description": "Bring modern muscle into your space with this 2024 Mustang Dark Horse poster. Featuring the stealthy black muscle car under dramatic lighting with bold red text.",
+        "label": "automotive-024.webp",
+        "seoTitle": "2024 Mustang Dark Horse Poster – Modern Black Muscle Car Art",
+        "metaDescription": "Bring modern muscle into your space with this 2024 Mustang Dark Horse poster. Featuring the stealthy black muscle car under dramatic lighting with bold red text.",
+        "seoAltText": "Black 2024 Ford Mustang Dark Horse muscle car parked in a dark environment with red typography above it"
     },
     {
         "id": "p266",
-        "title": "Automotive 025 – Vintage Classic Car Room Decor",
+        "title": "Automotive 025",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-025.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-025.webp"
+        "description": "Celebrate classic American muscle with this 1967 Mustang Shelby GT500 poster. Showcasing the iconic red pony car with dual white racing stripes.",
+        "label": "automotive-025.webp",
+        "seoTitle": "1967 Mustang Shelby GT500 Red Poster – Classic Muscle Car Art",
+        "metaDescription": "Celebrate classic American muscle with this 1967 Mustang Shelby GT500 poster. Showcasing the iconic red pony car with dual white racing stripes.",
+        "seoAltText": "Classic red 1967 Ford Mustang Shelby GT500 with white racing stripes on a red and white graphic background"
     },
     {
         "id": "p267",
-        "title": "Automotive 026 – Premium Drift Racing Wall Art",
+        "title": "Automotive 026",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-026.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-026.webp"
+        "description": "Add aesthetic flair to your room with this retro Ford Mustang GT-350 poster. Featuring a front-end view of the blue and white classic driving down a stylized road.",
+        "label": "automotive-026.webp",
+        "seoTitle": "Ford Mustang GT-350 Classic Poster – Retro Automotive Decor",
+        "metaDescription": "Add aesthetic flair to your room with this retro Ford Mustang GT-350 poster. Featuring a front-end view of the blue and white classic driving down a stylized road.",
+        "seoAltText": "Front view of a blue classic Ford Mustang GT-350 with white racing stripes driving on a blue graphic road"
     },
     {
         "id": "p268",
-        "title": "Automotive 027 – Aesthetic Garage Car Poster",
+        "title": "Automotive 027",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-027.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-027.webp"
+        "description": "Elevate your space with this sleek Porsche 911 GT3 RS poster. Showcasing the high-performance track weapon in silver with technical blueprint schematics.",
+        "label": "automotive-027.webp",
+        "seoTitle": "Porsche 911 GT3 RS Silver Poster – Track Supercar Wall Art",
+        "metaDescription": "Elevate your space with this sleek Porsche 911 GT3 RS poster. Showcasing the high-performance track weapon in silver with technical blueprint schematics.",
+        "seoAltText": "Silver Porsche 911 GT3 RS supercar side profile with technical blueprint diagrams located beneath it"
     },
     {
         "id": "p269",
-        "title": "Automotive 028 – Modern Supercar Minimalist Print",
+        "title": "Automotive 028",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-028.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-028.webp"
+        "description": "Embrace the legacy of 'Godzilla' with this Nissan GT-R R35 poster. Featuring the white supercar enveloped in smoke and dramatic bold typography.",
+        "label": "automotive-028.webp",
+        "seoTitle": "Nissan GT-R R35 White Supercar Poster – JDM Godzilla Art",
+        "metaDescription": "Embrace the legacy of 'Godzilla' with this Nissan GT-R R35 poster. Featuring the white supercar enveloped in smoke and dramatic bold typography.",
+        "seoAltText": "White Nissan GT-R R35 supercar surrounded by smoke with large white NISSAN typography in the background"
     },
     {
         "id": "p270",
