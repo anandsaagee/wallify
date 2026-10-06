@@ -2986,93 +2986,123 @@ export const products = [
     },
     {
         "id": "p310",
-        "title": "Automotive 069 – Retro JDM Car Wall Poster",
+        "title": "Automotive 069",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-069.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-069.webp"
+        "description": "Unleash classic American muscle with this 1969 Ford Mustang 'Hitman' Fastback poster. Featuring a highly stylized black and white illustration of the legendary custom restomod.",
+        "label": "automotive-069.webp",
+        "seoTitle": "1969 Ford Mustang Hitman Fastback Poster – Black & White Art",
+        "metaDescription": "Unleash classic American muscle with this 1969 Ford Mustang 'Hitman' Fastback poster. Featuring a highly stylized black and white illustration of the legendary custom restomod.",
+        "seoAltText": "High contrast black and white illustrated poster featuring the 1969 Ford Mustang Hitman Fastback from multiple angles"
     },
     {
         "id": "p311",
-        "title": "Automotive 070 – Luxury Sports Car Poster Art",
+        "title": "Automotive 070",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-070.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-070.webp"
+        "description": "Combine modern muscle with retro styling in this unique Dodge Challenger poster. Featuring a bright orange performance car placed in a vintage 1980s illustrated neighborhood setting.",
+        "label": "automotive-070.webp",
+        "seoTitle": "Dodge Challenger Orange Poster – Retro 1980s Illustrated Decor",
+        "metaDescription": "Combine modern muscle with retro styling in this unique Dodge Challenger poster. Featuring a bright orange performance car placed in a vintage 1980s illustrated neighborhood setting.",
+        "seoAltText": "Retro styled poster featuring an orange modern Dodge Challenger muscle car driving through an illustrated suburban neighborhood"
     },
     {
         "id": "p312",
-        "title": "Automotive 071 – Street Racing Aesthetic Decor",
+        "title": "Automotive 071",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-071.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-071.webp"
+        "description": "Celebrate JDM perfection with this clean Nissan Skyline GTR poster. Showcasing the stunning teal sports car against a striking gradient background with bold white typography.",
+        "label": "automotive-071.webp",
+        "seoTitle": "Nissan Skyline GTR Teal Poster – Clean Modern JDM Wall Art",
+        "metaDescription": "Celebrate JDM perfection with this clean Nissan Skyline GTR poster. Showcasing the stunning teal sports car against a striking gradient background with bold white typography.",
+        "seoAltText": "Teal green Nissan Skyline GTR sports car on a gradient teal background with massive white NISSAN typography"
     },
     {
         "id": "p313",
-        "title": "Automotive 072 – JDM & Supercar Wall Poster",
+        "title": "Automotive 072",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-072.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-072.webp"
+        "description": "Feel the speed with this Nissan Skyline R34 poster. Featuring the iconic silver and blue striped tuning legend captured in motion against a bold blue backdrop.",
+        "label": "automotive-072.webp",
+        "seoTitle": "Nissan Skyline R34 Silver & Blue Motion Poster – JDM Drift Art",
+        "metaDescription": "Feel the speed with this Nissan Skyline R34 poster. Featuring the iconic silver and blue striped tuning legend captured in motion against a bold blue backdrop.",
+        "seoAltText": "Silver Nissan Skyline R34 with blue racing stripes shown in motion against a light blue background with stylized graffiti text"
     },
     {
         "id": "p314",
-        "title": "Automotive 073 – Vintage Classic Car Room Decor",
+        "title": "Automotive 073",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-073.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-073.webp"
+        "description": "Embrace supercharged power with this Dodge Challenger SRT Hellcat Redeye poster. Showcasing the aggressive white muscle car emerging from dark blue smoke.",
+        "label": "automotive-073.webp",
+        "seoTitle": "Dodge Challenger Hellcat Redeye White Poster – Muscle Car Decor",
+        "metaDescription": "Embrace supercharged power with this Dodge Challenger SRT Hellcat Redeye poster. Showcasing the aggressive white muscle car emerging from dark blue smoke.",
+        "seoAltText": "Front view of a white Dodge Challenger SRT Hellcat Redeye surrounded by blue smoke with tall white HELLCAT typography behind it"
     },
     {
         "id": "p315",
-        "title": "Automotive 074 – Premium Drift Racing Wall Art",
+        "title": "Automotive 074",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-074.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-074.webp"
+        "description": "Pay tribute to street racing royalty with this 1970 Dodge Charger poster. Featuring the iconic black muscle car with its massive Roots supercharger on a stylized orange halftone background.",
+        "label": "automotive-074.webp",
+        "seoTitle": "1970 Dodge Charger Black Poster – Supercharged Muscle Car Art",
+        "metaDescription": "Pay tribute to street racing royalty with this 1970 Dodge Charger poster. Featuring the iconic black muscle car with its massive Roots supercharger on a stylized orange halftone background.",
+        "seoAltText": "Black 1970 Dodge Charger with a prominent Roots supercharger presented on a retro orange halftone dot background"
     },
     {
         "id": "p316",
-        "title": "Automotive 075 – Aesthetic Garage Car Poster",
+        "title": "Automotive 075",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-075.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-075.webp"
+        "description": "Add dark, aesthetic vibes to your space with this 1967 Shelby Mustang GT500 poster. Showcasing an atmospheric illustration of the classic car on a shadowy forest road.",
+        "label": "automotive-075.webp",
+        "seoTitle": "1967 Shelby Mustang GT500 Dark Poster – Atmospheric Car Decor",
+        "metaDescription": "Add dark, aesthetic vibes to your space with this 1967 Shelby Mustang GT500 poster. Showcasing an atmospheric illustration of the classic car on a shadowy forest road.",
+        "seoAltText": "Dark aesthetic poster featuring a 1967 Shelby Mustang GT500 driving on a shadowy road through a dense forest"
     },
     {
         "id": "p317",
-        "title": "Automotive 076 – Modern Supercar Minimalist Print",
+        "title": "Automotive 076",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-076.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-076.webp"
+        "description": "Catch Dodge Fever with this authentic 1970 Dodge Charger 500 vintage ad poster. A perfect black and white retro decor piece for any classic Mopar enthusiast.",
+        "label": "automotive-076.webp",
+        "seoTitle": "1970 Dodge Charger 500 Vintage Ad Poster – Retro Mopar Wall Art",
+        "metaDescription": "Catch Dodge Fever with this authentic 1970 Dodge Charger 500 vintage ad poster. A perfect black and white retro decor piece for any classic Mopar enthusiast.",
+        "seoAltText": "Vintage black and white advertisement for the 1970 Dodge Charger 500 featuring the headline 'Dodge Fever'"
     },
     {
         "id": "p318",
-        "title": "Automotive 077 – Retro JDM Car Wall Poster",
+        "title": "Automotive 077",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-077.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-077.webp"
+        "description": "Showcase pure automotive beauty with this Ford Mustang Shelby GT500 'Eleanor' poster. Featuring the iconic pepper grey muscle car with black racing stripes in a dark, stylized setting.",
+        "label": "automotive-077.webp",
+        "seoTitle": "Ford Mustang Shelby GT500 Eleanor Poster – Iconic Movie Car Art",
+        "metaDescription": "Showcase pure automotive beauty with this Ford Mustang Shelby GT500 'Eleanor' poster. Featuring the iconic pepper grey muscle car with black racing stripes in a dark, stylized setting.",
+        "seoAltText": "Pepper grey Ford Mustang Shelby GT500 Eleanor with black racing stripes parked on a dark background with a large silver Cobra snake emblem"
     },
     {
         "id": "p319",
-        "title": "Automotive 078 – Luxury Sports Car Poster Art",
+        "title": "Automotive 078",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-078.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-078.webp"
+        "description": "Celebrate Italian supercar royalty with this classic Ferrari F40 poster. Featuring the legendary bright red track machine against a crisp white background with bold typography.",
+        "label": "automotive-078.webp",
+        "seoTitle": "Ferrari F40 Red Supercar Poster – Classic Italian Exotics Decor",
+        "metaDescription": "Celebrate Italian supercar royalty with this classic Ferrari F40 poster. Featuring the legendary bright red track machine against a crisp white background with bold typography.",
+        "seoAltText": "Classic red Ferrari F40 supercar parked on a textured white background beneath massive black FERRARI typography"
     },
     {
         "id": "p320",
