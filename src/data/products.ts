@@ -3706,93 +3706,123 @@ export const products = [
     },
     {
         "id": "p370",
-        "title": "Automotive 129 – Vintage Classic Car Room Decor",
+        "title": "Automotive 129",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-129.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-129.webp"
+        "description": "Make a bold statement with this modern Toyota Supra MK5 poster. Showcasing a grey widebody build with striking pink and purple SUPRA typography.",
+        "label": "automotive-129.webp",
+        "seoTitle": "Toyota Supra MK5 Grey Widebody Poster – Neon Typography Art",
+        "metaDescription": "Make a bold statement with this modern Toyota Supra MK5 poster. Showcasing a grey widebody build with striking pink and purple SUPRA typography.",
+        "seoAltText": "Grey widebody Toyota Supra MK5 parked in front of massive vibrant pink and purple SUPRA typography"
     },
     {
         "id": "p371",
-        "title": "Automotive 130 – Premium Drift Racing Wall Art",
+        "title": "Automotive 130",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-130.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-130.webp"
+        "description": "Step back in time with this 1950 Oldsmobile Rocket 88 vintage advertisement poster. A classic piece of Americana featuring the green convertible and its famous 'Rocket' engine.",
+        "label": "automotive-130.webp",
+        "seoTitle": "1950 Oldsmobile Rocket 88 Poster – Vintage Americana Ad",
+        "metaDescription": "Step back in time with this 1950 Oldsmobile Rocket 88 vintage advertisement poster. A classic piece of Americana featuring the green convertible and its famous 'Rocket' engine.",
+        "seoAltText": "Vintage 1950 Oldsmobile advertisement poster featuring a green convertible driving fast with massive yellow 88 typography and a couple riding a rocket"
     },
     {
         "id": "p372",
-        "title": "Automotive 131 – Aesthetic Garage Car Poster",
+        "title": "Automotive 131",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-131.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-131.webp"
+        "description": "Celebrate Carroll Shelby's legendary road cars with this 1967 GT350 and GT500 poster. A stunning vintage advertisement showcasing the beautiful muscle cars at speed.",
+        "label": "automotive-131.webp",
+        "seoTitle": "1967 Shelby GT350 & GT500 Poster – Vintage Ford Muscle Art",
+        "metaDescription": "Celebrate Carroll Shelby's legendary road cars with this 1967 GT350 and GT500 poster. A stunning vintage advertisement showcasing the beautiful muscle cars at speed.",
+        "seoAltText": "Vintage advertisement poster for 1967 Shelby GT350 and GT500 featuring blue and gold muscle cars driving at high speed"
     },
     {
         "id": "p373",
-        "title": "Automotive 132 – Modern Supercar Minimalist Print",
+        "title": "Automotive 132",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-132.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-132.webp"
+        "description": "Embrace the legacy of the rotary engine with this Mazda RX-7 FD poster. Featuring the iconic white JDM sports car set against a striking rising sun backdrop.",
+        "label": "automotive-132.webp",
+        "seoTitle": "Mazda RX-7 FD White Poster – JDM Rising Sun Wall Art",
+        "metaDescription": "Embrace the legacy of the rotary engine with this Mazda RX-7 FD poster. Featuring the iconic white JDM sports car set against a striking rising sun backdrop.",
+        "seoAltText": "White Mazda RX-7 FD sports car parked in front of a red Japanese rising sun graphic and massive white MAZDA typography"
     },
     {
         "id": "p374",
-        "title": "Automotive 133 – Retro JDM Car Wall Poster",
+        "title": "Automotive 133",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-133.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-133.webp"
+        "description": "Pay homage to rallying history with this Audi Quattro poster. The classic white coupe is beautifully presented with retro orange, yellow, and red racing stripes.",
+        "label": "automotive-133.webp",
+        "seoTitle": "Audi Quattro Retro Stripes Poster – Classic Rally Car Decor",
+        "metaDescription": "Pay homage to rallying history with this Audi Quattro poster. The classic white coupe is beautifully presented with retro orange, yellow, and red racing stripes.",
+        "seoAltText": "White Audi Quattro classic car parked on retro orange, yellow, and red stripes with vintage AUDI QUATTRO typography"
     },
     {
         "id": "p375",
-        "title": "Automotive 134 – Luxury Sports Car Poster Art",
+        "title": "Automotive 134",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-134.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-134.webp"
+        "description": "Appreciate the 'Godzilla' of JDM culture with this Nissan Skyline GT-R R32 poster. Featuring a clean white R32 set against a solid green background with elegant typography.",
+        "label": "automotive-134.webp",
+        "seoTitle": "Nissan Skyline GT-R R32 White Poster – Minimalist JDM Art",
+        "metaDescription": "Appreciate the 'Godzilla' of JDM culture with this Nissan Skyline GT-R R32 poster. Featuring a clean white R32 set against a solid green background with elegant typography.",
+        "seoAltText": "Close-up front angle of a clean white Nissan Skyline GT-R R32 parked against a solid green background with elegant typography"
     },
     {
         "id": "p376",
-        "title": "Automotive 135 – Street Racing Aesthetic Decor",
+        "title": "Automotive 135",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-135.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-135.webp"
+        "description": "Experience luxury utility with this Range Rover Vogue poster. Showcasing the sleek white SUV set against a breathtaking snowy mountain landscape.",
+        "label": "automotive-135.webp",
+        "seoTitle": "Range Rover Vogue White Poster – Luxury SUV Mountain Decor",
+        "metaDescription": "Experience luxury utility with this Range Rover Vogue poster. Showcasing the sleek white SUV set against a breathtaking snowy mountain landscape.",
+        "seoAltText": "Sleek white Range Rover Vogue SUV parked in front of a blue sky and snowy mountain landscape with large flowing Rover typography"
     },
     {
         "id": "p377",
-        "title": "Automotive 136 – JDM & Supercar Wall Poster",
+        "title": "Automotive 136",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-136.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-136.webp"
+        "description": "Add a striking graphic tee aesthetic to your walls with this Toyota Supra MKIV poster. Featuring the iconic black JDM legend layered with bold typography and engine blueprints.",
+        "label": "automotive-136.webp",
+        "seoTitle": "Toyota Supra MKIV Graphic Poster – Memphis JDM Blueprint Art",
+        "metaDescription": "Add a striking graphic tee aesthetic to your walls with this Toyota Supra MKIV poster. Featuring the iconic black JDM legend layered with bold typography and engine blueprints.",
+        "seoAltText": "Graphic tee style poster featuring a black Toyota Supra MKIV, engine blueprints, and bold stylized typography on a dark background"
     },
     {
         "id": "p378",
-        "title": "Automotive 137 – Vintage Classic Car Room Decor",
+        "title": "Automotive 137",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-137.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-137.webp"
+        "description": "Make a bold statement with this Lamborghini Aventador SVJ poster. Featuring the striking white supercar with its scissor doors up against massive typography.",
+        "label": "automotive-137.webp",
+        "seoTitle": "Lamborghini Aventador SVJ White Poster – Italian Supercar Art",
+        "metaDescription": "Make a bold statement with this Lamborghini Aventador SVJ poster. Featuring the striking white supercar with its scissor doors up against massive typography.",
+        "seoAltText": "White Lamborghini Aventador SVJ supercar with scissor doors open parked in front of massive black LAMBORGHINI SVJ typography"
     },
     {
         "id": "p379",
-        "title": "Automotive 138 – Premium Drift Racing Wall Art",
+        "title": "Automotive 138",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-138.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-138.webp"
+        "description": "Combine the thrills of JDM cars and anime with this unique Toyota Supra poster. Featuring a yellow MK5 Supra alongside Minato Namikaze from Naruto.",
+        "label": "automotive-138.webp",
+        "seoTitle": "Toyota Supra Yellow Minato Anime Poster – Cars x Anime Art",
+        "metaDescription": "Combine the thrills of JDM cars and anime with this unique Toyota Supra poster. Featuring a yellow MK5 Supra alongside Minato Namikaze from Naruto.",
+        "seoAltText": "Yellow Toyota Supra MK5 sports car with the anime character Minato Namikaze crouching on its hood against massive yellow SUPRA typography"
     },
     {
         "id": "p380",
