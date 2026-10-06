@@ -3466,93 +3466,123 @@ export const products = [
     },
     {
         "id": "p350",
-        "title": "Automotive 109 – Retro JDM Car Wall Poster",
+        "title": "Automotive 109",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-109.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-109.webp"
+        "description": "Appreciate German automotive history with this classic BMW E30 poster. Showcasing the iconic red sports sedan parked in a moody, atmospheric garage setting.",
+        "label": "automotive-109.webp",
+        "seoTitle": "BMW E30 Red Sedan Poster – Classic German Garage Wall Art",
+        "metaDescription": "Appreciate German automotive history with this classic BMW E30 poster. Showcasing the iconic red sports sedan parked in a moody, atmospheric garage setting.",
+        "seoAltText": "Red BMW E30 sedan parked inside an atmospheric garage with large white BMW typography floating above it"
     },
     {
         "id": "p351",
-        "title": "Automotive 110 – Luxury Sports Car Poster Art",
+        "title": "Automotive 110",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-110.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-110.webp"
+        "description": "Celebrate touring car dominance with this BMW E30 M3 poster. Featuring the legendary red coupe set against a striking graphic background.",
+        "label": "automotive-110.webp",
+        "seoTitle": "BMW E30 M3 Red Poster – Classic Motorsport Graphic Decor",
+        "metaDescription": "Celebrate touring car dominance with this BMW E30 M3 poster. Featuring the legendary red coupe set against a striking graphic background.",
+        "seoAltText": "Bright red BMW E30 M3 parked in front of a white wall with massive red and white abstract E30 graphic"
     },
     {
         "id": "p352",
-        "title": "Automotive 111 – Street Racing Aesthetic Decor",
+        "title": "Automotive 111",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-111.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-111.webp"
+        "description": "Embrace the spirit of the 1980s with this Ferrari Testarossa poster. A beautiful vintage-style advertisement highlighting the iconic side strakes and wide rear stance.",
+        "label": "automotive-111.webp",
+        "seoTitle": "Ferrari Testarossa Vintage Ad Poster – Retro Italian Supercar Art",
+        "metaDescription": "Embrace the spirit of the 1980s with this Ferrari Testarossa poster. A beautiful vintage-style advertisement highlighting the iconic side strakes and wide rear stance.",
+        "seoAltText": "Vintage-style advertisement poster showing the rear and side profile of a red Ferrari Testarossa supercar"
     },
     {
         "id": "p353",
-        "title": "Automotive 112 – JDM & Supercar Wall Poster",
+        "title": "Automotive 112",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-112.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-112.webp"
+        "description": "Elevate your space with this dynamic BMW E30 poster. Showcasing the classic red car in a multi-panel layout against a black and white forest backdrop.",
+        "label": "automotive-112.webp",
+        "seoTitle": "BMW E30 Multi-Panel Red Poster – Aesthetic German Car Art",
+        "metaDescription": "Elevate your space with this dynamic BMW E30 poster. Showcasing the classic red car in a multi-panel layout against a black and white forest backdrop.",
+        "seoAltText": "Multi-panel poster featuring a bright red BMW E30 against a high-contrast black and white forest background with large red typography"
     },
     {
         "id": "p354",
-        "title": "Automotive 113 – Vintage Classic Car Room Decor",
+        "title": "Automotive 113",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-113.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-113.webp"
+        "description": "Take a scenic drive with this beautiful Ferrari F40 poster. Featuring the iconic red supercar navigating a picturesque tree-lined European road.",
+        "label": "automotive-113.webp",
+        "seoTitle": "Ferrari F40 Scenic Drive Poster – Italian Supercar Landscape Art",
+        "metaDescription": "Take a scenic drive with this beautiful Ferrari F40 poster. Featuring the iconic red supercar navigating a picturesque tree-lined European road.",
+        "seoAltText": "Illustration of a red Ferrari F40 driving on a lush, tree-lined road with a vintage typography header"
     },
     {
         "id": "p355",
-        "title": "Automotive 114 – Premium Drift Racing Wall Art",
+        "title": "Automotive 114",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-114.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-114.webp"
+        "description": "Relive the legendary Group B era with this Audi Sport Quattro S1 E2 poster. Featuring the iconic yellow, white, and black rally car in detailed illustration.",
+        "label": "automotive-114.webp",
+        "seoTitle": "Audi Quattro S1 E2 Group B Rally Poster – Motorsport Decor",
+        "metaDescription": "Relive the legendary Group B era with this Audi Sport Quattro S1 E2 poster. Featuring the iconic yellow, white, and black rally car in detailed illustration.",
+        "seoAltText": "Illustration of the yellow and white Audi Sport Quattro S1 E2 Group B rally car on a white background with descriptive text"
     },
     {
         "id": "p356",
-        "title": "Automotive 115 – Aesthetic Garage Car Poster",
+        "title": "Automotive 115",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-115.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-115.webp"
+        "description": "Dive into the details with this schematic-style Ferrari F40 poster. Featuring the iconic rear end of the supercar set against technical readouts and graphics.",
+        "label": "automotive-115.webp",
+        "seoTitle": "Ferrari F40 Schematic Poster – Technical Supercar Wall Art",
+        "metaDescription": "Dive into the details with this schematic-style Ferrari F40 poster. Featuring the iconic rear end of the supercar set against technical readouts and graphics.",
+        "seoAltText": "Blueprint-style graphic poster focusing on the rear tail lights of a red Ferrari F40 with various technical data screens and a prancing horse logo"
     },
     {
         "id": "p357",
-        "title": "Automotive 116 – Modern Supercar Minimalist Print",
+        "title": "Automotive 116",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-116.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-116.webp"
+        "description": "Merge modern muscle with retro styling in this striking Dodge poster. Featuring a bright red Challenger SRT Demon rendered in an atmospheric 1987 vintage aesthetic.",
+        "label": "automotive-116.webp",
+        "seoTitle": "Dodge Challenger SRT Demon Red Poster – Retro 1987 Style Art",
+        "metaDescription": "Merge modern muscle with retro styling in this striking Dodge poster. Featuring a bright red Challenger SRT Demon rendered in an atmospheric 1987 vintage aesthetic.",
+        "seoAltText": "Retro 1987 style poster featuring a modern red Dodge Challenger SRT Demon parked on a suburban street under telephone wires"
     },
     {
         "id": "p358",
-        "title": "Automotive 117 – Retro JDM Car Wall Poster",
+        "title": "Automotive 117",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-117.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-117.webp"
+        "description": "Appreciate the timeless boxy design of the BMW E30 with this creative multi-panel poster. The bright red car is showcased with intricate detail shots and elegant typography.",
+        "label": "automotive-117.webp",
+        "seoTitle": "BMW E30 Red Multi-Panel Poster – Classic 1990 Edition Art",
+        "metaDescription": "Appreciate the timeless boxy design of the BMW E30 with this creative multi-panel poster. The bright red car is showcased with intricate detail shots and elegant typography.",
+        "seoAltText": "Multi-panel presentation of a red BMW E30 with detail shots of its front end, wheels, and headlights on a white background"
     },
     {
         "id": "p359",
-        "title": "Automotive 118 – Luxury Sports Car Poster Art",
+        "title": "Automotive 118",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-118.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-118.webp"
+        "description": "Celebrate a British performance icon with this 1987 Ford Sierra RS Cosworth poster. Featuring the legendary 'Radiant Red' car and its unmistakable 'whale tail' spoiler.",
+        "label": "automotive-118.webp",
+        "seoTitle": "1987 Ford Sierra RS Cosworth Poster – Classic Fast Ford Decor",
+        "metaDescription": "Celebrate a British performance icon with this 1987 Ford Sierra RS Cosworth poster. Featuring the legendary 'Radiant Red' car and its unmistakable 'whale tail' spoiler.",
+        "seoAltText": "Illustration of a bright red 1987 Ford Sierra RS Cosworth from front and rear angles highlighting its large rear wing"
     },
     {
         "id": "p360",
