@@ -4426,93 +4426,123 @@ export const products = [
     },
     {
         "id": "p430",
-        "title": "Automotive 189 – Retro JDM Car Wall Poster",
+        "title": "Automotive 189",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-189.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-189.webp"
+        "description": "Showcase American muscle aggression with this Dodge Challenger poster. Featuring the grey car drifting amidst white smoke in a striking, layered composition.",
+        "label": "automotive-189.webp",
+        "seoTitle": "Dodge Challenger Grey Drift Poster – Muscle Car Decor",
+        "metaDescription": "Showcase American muscle aggression with this Dodge Challenger poster. Featuring the grey car drifting amidst white smoke in a striking, layered composition.",
+        "seoAltText": "Layered poster featuring a grey Dodge Challenger drifting in thick white smoke with a close up front shot behind it"
     },
     {
         "id": "p431",
-        "title": "Automotive 190 – Luxury Sports Car Poster Art",
+        "title": "Automotive 190",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-190.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-190.webp"
+        "description": "Experience track-ready performance with this Dodge Viper ACR poster. The legendary red American supercar is showcased against massive white typography.",
+        "label": "automotive-190.webp",
+        "seoTitle": "Dodge Viper ACR Red Poster – American Supercar Wall Art",
+        "metaDescription": "Experience track-ready performance with this Dodge Viper ACR poster. The legendary red American supercar is showcased against massive white typography.",
+        "seoAltText": "Red Dodge Viper ACR sports car parked against massive white DODGE typography"
     },
     {
         "id": "p432",
-        "title": "Automotive 191 – Street Racing Aesthetic Decor",
+        "title": "Automotive 191",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-191.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-191.webp"
+        "description": "Celebrate JDM culture with this vintage-style magazine poster of the Nissan Skyline GT-R R34. Featuring a monochrome car graphic with red accents and 'THE STREET BEAST' typography.",
+        "label": "automotive-191.webp",
+        "seoTitle": "Nissan Skyline GTR R34 Magazine Poster – JDM Wall Art",
+        "metaDescription": "Celebrate JDM culture with this vintage-style magazine poster of the Nissan Skyline GT-R R34. Featuring a monochrome car graphic with red accents and 'THE STREET BEAST' typography.",
+        "seoAltText": "Vintage-style newspaper or magazine poster titled TOKYO AUTOS featuring a black and white Nissan Skyline GTR R34 graphic"
     },
     {
         "id": "p433",
-        "title": "Automotive 192 – JDM & Supercar Wall Poster",
+        "title": "Automotive 192",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-192.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-192.webp"
+        "description": "Feel the power of the Dodge Challenger SRT Hellcat with this dramatic poster. Featuring the black muscle car emerging from smoke with 'A DEMON DRESSED IN STEEL' typography.",
+        "label": "automotive-192.webp",
+        "seoTitle": "Dodge Challenger SRT Hellcat Poster – Modern Muscle Art",
+        "metaDescription": "Feel the power of the Dodge Challenger SRT Hellcat with this dramatic poster. Featuring the black muscle car emerging from smoke with 'A DEMON DRESSED IN STEEL' typography.",
+        "seoAltText": "Black Dodge Challenger SRT Hellcat driving through smoke with bold DODGE typography and a slogan reading A DEMON DRESSED IN STEEL"
     },
     {
         "id": "p434",
-        "title": "Automotive 193 – Vintage Classic Car Room Decor",
+        "title": "Automotive 193",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-193.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-193.webp"
+        "description": "Add a vibrant touch to your space with this purple Dodge Viper ACR poster. The track-focused American supercar is highlighted in a dark garage setting with bold typography.",
+        "label": "automotive-193.webp",
+        "seoTitle": "Dodge Viper ACR Purple Poster – Vibrant Supercar Decor",
+        "metaDescription": "Add a vibrant touch to your space with this purple Dodge Viper ACR poster. The track-focused American supercar is highlighted in a dark garage setting with bold typography.",
+        "seoAltText": "Vibrant purple Dodge Viper ACR sports car parked in a dark industrial garage with massive white DODGE typography"
     },
     {
         "id": "p435",
-        "title": "Automotive 194 – Premium Drift Racing Wall Art",
+        "title": "Automotive 194",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-194.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-194.webp"
+        "description": "Embrace rugged luxury with this Land Rover Defender poster. Featuring the sleek black SUV parked against a clean background with massive DEFENDER typography.",
+        "label": "automotive-194.webp",
+        "seoTitle": "Land Rover Defender Black Poster – Premium SUV Wall Art",
+        "metaDescription": "Embrace rugged luxury with this Land Rover Defender poster. Featuring the sleek black SUV parked against a clean background with massive DEFENDER typography.",
+        "seoAltText": "Black Land Rover Defender SUV parked against a clean studio background with massive grey DEFENDER typography"
     },
     {
         "id": "p436",
-        "title": "Automotive 195 – Aesthetic Garage Car Poster",
+        "title": "Automotive 195",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-195.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-195.webp"
+        "description": "Celebrate JDM heritage with this stylish Toyota Supra MK4 poster. The silver sports car is set against a dynamic background featuring a green spray paint graffiti effect.",
+        "label": "automotive-195.webp",
+        "seoTitle": "Toyota Supra MK4 Silver Poster – Urban JDM Wall Decor",
+        "metaDescription": "Celebrate JDM heritage with this stylish Toyota Supra MK4 poster. The silver sports car is set against a dynamic background featuring a green spray paint graffiti effect.",
+        "seoAltText": "Silver Toyota Supra MK4 parked against a background with massive white TOYOTA typography and a green spray paint graffiti tag"
     },
     {
         "id": "p437",
-        "title": "Automotive 196 – Modern Supercar Minimalist Print",
+        "title": "Automotive 196",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-196.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-196.webp"
+        "description": "Showcase modern Japanese engineering with this Nissan GT-R R35 poster. Featuring the iconic sports car parked in front of a stunning mountain and cherry blossom landscape.",
+        "label": "automotive-196.webp",
+        "seoTitle": "Nissan GT-R R35 Poster – Mount Fuji Supercar Decor",
+        "metaDescription": "Showcase modern Japanese engineering with this Nissan GT-R R35 poster. Featuring the iconic sports car parked in front of a stunning mountain and cherry blossom landscape.",
+        "seoAltText": "White Nissan GT-R R35 parked in front of a scenic mountain with cherry blossom branches and massive yellow NISSAN typography"
     },
     {
         "id": "p438",
-        "title": "Automotive 197 – Retro JDM Car Wall Poster",
+        "title": "Automotive 197",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-197.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-197.webp"
+        "description": "Appreciate classic German design with this vintage BMW M1 1978 poster. Presented as a classic magazine article spread with the striking green supercar and retro typography.",
+        "label": "automotive-197.webp",
+        "seoTitle": "BMW M1 1978 Green Poster – Vintage Magazine Wall Art",
+        "metaDescription": "Appreciate classic German design with this vintage BMW M1 1978 poster. Presented as a classic magazine article spread with the striking green supercar and retro typography.",
+        "seoAltText": "Vintage-style magazine article poster featuring a green BMW M1 1978 classic car and the phrase NEED I SAY M ORE?"
     },
     {
         "id": "p439",
-        "title": "Automotive 198 – Luxury Sports Car Poster Art",
+        "title": "Automotive 198",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-198.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-198.webp"
+        "description": "Add a vibrant touch to your space with this orange BMW M3 E30 poster. Featuring the legendary homologation special in a dynamic multi-panel layout against an orange background.",
+        "label": "automotive-198.webp",
+        "seoTitle": "BMW M3 E30 Orange Poster – Classic German Motorsport",
+        "metaDescription": "Add a vibrant touch to your space with this orange BMW M3 E30 poster. Featuring the legendary homologation special in a dynamic multi-panel layout against an orange background.",
+        "seoAltText": "Multi-panel poster highlighting a bright orange BMW M3 E30 classic car against a matching orange background with M3 typography"
     },
     {
         "id": "p440",
