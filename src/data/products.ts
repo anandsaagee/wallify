@@ -2866,93 +2866,123 @@ export const products = [
     },
     {
         "id": "p300",
-        "title": "Automotive 059 – Aesthetic Garage Car Poster",
+        "title": "Automotive 059",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-059.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-059.webp"
+        "description": "Celebrate American muscle heritage with this 1967 Shelby Mustang vintage ad poster. Showcasing the iconic blue and gold G.T. 350 and G.T. 500 road cars.",
+        "label": "automotive-059.webp",
+        "seoTitle": "1967 Shelby Mustang G.T. 350 & 500 Vintage Ad Poster – Classic Art",
+        "metaDescription": "Celebrate American muscle heritage with this 1967 Shelby Mustang vintage ad poster. Showcasing the iconic blue and gold G.T. 350 and G.T. 500 road cars.",
+        "seoAltText": "Vintage 1967 Carroll Shelby advertisement featuring the blue and gold Shelby Mustang G.T. 350 and G.T. 500 road cars"
     },
     {
         "id": "p301",
-        "title": "Automotive 060 – Modern Supercar Minimalist Print",
+        "title": "Automotive 060",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-060.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-060.webp"
+        "description": "Feel the power of modern muscle with this Dodge Challenger poster. Featuring a stealthy black Challenger doing a burnout amidst thick smoke.",
+        "label": "automotive-060.webp",
+        "seoTitle": "Dodge Challenger Black Muscle Car Poster – Smoky Burnout Art",
+        "metaDescription": "Feel the power of modern muscle with this Dodge Challenger poster. Featuring a stealthy black Challenger doing a burnout amidst thick smoke.",
+        "seoAltText": "Aggressive black Dodge Challenger muscle car performing a smoky burnout with tall white DODGE typography behind it"
     },
     {
         "id": "p302",
-        "title": "Automotive 061 – Retro JDM Car Wall Poster",
+        "title": "Automotive 061",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-061.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-061.webp"
+        "description": "Unleash raw power and unmatched style with this Mansory Ferrari F8 Spider poster. Showcasing the stunning red supercar against a geometric background.",
+        "label": "automotive-061.webp",
+        "seoTitle": "Mansory Ferrari F8 Spider Red Poster – Luxury Supercar Art",
+        "metaDescription": "Unleash raw power and unmatched style with this Mansory Ferrari F8 Spider poster. Showcasing the stunning red supercar against a geometric background.",
+        "seoAltText": "Side profile of a red Mansory Ferrari F8 Spider supercar displayed on a stylized geometric red and white background"
     },
     {
         "id": "p303",
-        "title": "Automotive 062 – Luxury Sports Car Poster Art",
+        "title": "Automotive 062",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-062.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-062.webp"
+        "description": "Step back in time with this 1969 Dodge Charger R/T vintage ad poster. Featuring the iconic gold muscle car and the famous Scat Pack bumblebee.",
+        "label": "automotive-062.webp",
+        "seoTitle": "1969 Dodge Charger R/T Formula '69 Vintage Ad Poster – Retro Art",
+        "metaDescription": "Step back in time with this 1969 Dodge Charger R/T vintage ad poster. Featuring the iconic gold muscle car and the famous Scat Pack bumblebee.",
+        "seoAltText": "Vintage advertisement for the 1969 Dodge Charger R/T featuring a gold muscle car and the Dodge Scat Pack bumblebee graphic"
     },
     {
         "id": "p304",
-        "title": "Automotive 063 – Street Racing Aesthetic Decor",
+        "title": "Automotive 063",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-063.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-063.webp"
+        "description": "Embrace the 'Vanishing Breed' with this 1983 DeLorean vintage ad poster. Showcasing the famous stainless steel car with its gullwing doors open.",
+        "label": "automotive-063.webp",
+        "seoTitle": "1983 DeLorean Vintage Ad Poster – Gullwing Stainless Steel Car Art",
+        "metaDescription": "Embrace the 'Vanishing Breed' with this 1983 DeLorean vintage ad poster. Showcasing the famous stainless steel car with its gullwing doors open.",
+        "seoAltText": "Vintage 1983 advertisement for the DeLorean showcasing the stainless steel car with both gullwing doors open"
     },
     {
         "id": "p305",
-        "title": "Automotive 064 – JDM & Supercar Wall Poster",
+        "title": "Automotive 064",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-064.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-064.webp"
+        "description": "Bring bold JDM presence to your space with this Mitsubishi Lancer Evo V poster. Featuring the white rally weapon against a vibrant red background with Japanese typography.",
+        "label": "automotive-064.webp",
+        "seoTitle": "Mitsubishi Lancer Evo V White Poster – JDM Rally Car Art",
+        "metaDescription": "Bring bold JDM presence to your space with this Mitsubishi Lancer Evo V poster. Featuring the white rally weapon against a vibrant red background with Japanese typography.",
+        "seoAltText": "White Mitsubishi Lancer Evo V sports car featured in a multi-panel layout against a red background with Japanese typography"
     },
     {
         "id": "p306",
-        "title": "Automotive 065 – Vintage Classic Car Room Decor",
+        "title": "Automotive 065",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-065.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-065.webp"
+        "description": "Appreciate classic Swedish engineering with this 'Yes, It Will Fly' Volvo 740 Turbo vintage ad poster. A perfect piece for fans of retro car advertising.",
+        "label": "automotive-065.webp",
+        "seoTitle": "Volvo 740 Turbo Vintage Ad Poster – Yes It Will Fly Retro Decor",
+        "metaDescription": "Appreciate classic Swedish engineering with this 'Yes, It Will Fly' Volvo 740 Turbo vintage ad poster. A perfect piece for fans of retro car advertising.",
+        "seoAltText": "Vintage advertisement for the Volvo 740 Turbo showing the front of the car appearing to fly against a blue sky with clouds"
     },
     {
         "id": "p307",
-        "title": "Automotive 066 – Premium Drift Racing Wall Art",
+        "title": "Automotive 066",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-066.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-066.webp"
+        "description": "Make a high-contrast statement with this Dodge Challenger Hellcat poster. Showcasing the legendary American muscle car in a striking black and white stylized design.",
+        "label": "automotive-066.webp",
+        "seoTitle": "Dodge Challenger Hellcat Black & White Poster – Muscle Car Art",
+        "metaDescription": "Make a high-contrast statement with this Dodge Challenger Hellcat poster. Showcasing the legendary American muscle car in a striking black and white stylized design.",
+        "seoAltText": "Stylized black and white multi-panel poster featuring the Dodge Challenger Hellcat muscle car with bold typography"
     },
     {
         "id": "p308",
-        "title": "Automotive 067 – Aesthetic Garage Car Poster",
+        "title": "Automotive 067",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-067.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-067.webp"
+        "description": "Man up with the all-new Ford Torino Cobra! This vintage-style advertisement poster features a sleek silver muscle car and humorous retro copywriting.",
+        "label": "automotive-067.webp",
+        "seoTitle": "Ford Torino Cobra Vintage Ad Poster – Retro Muscle Car Art",
+        "metaDescription": "Man up with the all-new Ford Torino Cobra! This vintage-style advertisement poster features a sleek silver muscle car and humorous retro copywriting.",
+        "seoAltText": "Spoof vintage advertisement for the Ford Torino Cobra featuring a silver muscle car with the headline MAN UP."
     },
     {
         "id": "p309",
-        "title": "Automotive 068 – Modern Supercar Minimalist Print",
+        "title": "Automotive 068",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-068.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-068.webp"
+        "description": "Celebrate movie icon status with this Toyota Supra Mk4 poster. Showcasing the legendary orange 'Ride of Dreams' tuning car with its famous side graphics.",
+        "label": "automotive-068.webp",
+        "seoTitle": "Toyota Supra Mk4 Orange Poster – Ride of Dreams Fast JDM Art",
+        "metaDescription": "Celebrate movie icon status with this Toyota Supra Mk4 poster. Showcasing the legendary orange 'Ride of Dreams' tuning car with its famous side graphics.",
+        "seoAltText": "Iconic orange Toyota Supra Mk4 featuring green side graphics parked on a grey background with SUPRA typography behind it"
     },
     {
         "id": "p310",
