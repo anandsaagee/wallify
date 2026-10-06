@@ -42,12 +42,11 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
         paddingRight:  'env(safe-area-inset-right)',
       }}
     >
-<<<<<<< HEAD
       <div className="w-full max-w-screen-xl mx-auto px-4 flex items-center justify-between relative">
 
         {/* Left: Instagram */}
         <a
-          href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
+          href="https://www.instagram.com/wallifystore.in/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors duration-200 text-muted hover:text-primary"
@@ -56,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
           <Instagram size={18} />
         </a>
 
-        {/* Center: Brand — DM Serif Display */}
+        {/* Center: Brand — logo + DM Serif Display name */}
         <a
           href="/"
           onClick={(e) => {
@@ -64,51 +63,20 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
             setView('store');
           }}
           aria-label="Go to store homepage"
-          className="absolute left-1/2 -translate-x-1/2 font-display text-white hover:text-primary transition-colors duration-150 whitespace-nowrap leading-none no-underline"
-          style={{ fontSize: 'clamp(18px, 4vw, 26px)' }}
-        >
-          WallifyStore<span className="text-primary">.</span>
-        </a>
-=======
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <button
-          onClick={() => setView('store')}
-          aria-label="Go to store"
-          className="flex items-center gap-2 hover:scale-105 transition-transform duration-150 cursor-pointer"
+          className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 hover:opacity-80 transition-opacity duration-150 no-underline"
         >
           <img
             src="/wallify-logo.jpg"
             alt="Wallify logo"
-            className="w-8 h-8 rounded-lg object-cover"
+            className="w-7 h-7 rounded-lg object-cover"
           />
-          <span className="text-2xl font-black tracking-tighter text-white">
-            Wallify<span className="text-primary">.</span>
+          <span
+            className="font-display text-white whitespace-nowrap leading-none"
+            style={{ fontSize: 'clamp(18px, 4vw, 26px)' }}
+          >
+            WallifyStore<span className="text-primary">.</span>
           </span>
-        </button>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-          <button
-            onClick={() => setView('store')}
-            className={`text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-200 hover:text-primary ${
-              currentView === 'store' ? 'text-primary' : 'text-muted'
-            }`}
-          >
-            Store
-          </button>
-          
-          <a
-            href="https://www.instagram.com/wallifystore.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted hover:text-primary transition-colors duration-200"
-            aria-label="Instagram"
-          >
-            <Instagram size={18} />
-          </a>
-        </nav>
->>>>>>> 039688a (Update project)
+        </a>
 
         {/* Right: Cart */}
         <button
