@@ -4546,93 +4546,123 @@ export const products = [
     },
     {
         "id": "p440",
-        "title": "Automotive 199 – Street Racing Aesthetic Decor",
+        "title": "Automotive 199",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-199.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-199.webp"
+        "description": "Showcase premium American luxury with this Cadillac Escalade ESV poster. Featuring the black high-performance SUV against a clean background with sleek typography and specifications.",
+        "label": "automotive-199.webp",
+        "seoTitle": "Cadillac Escalade ESV Black Poster – Luxury SUV Wall Art",
+        "metaDescription": "Showcase premium American luxury with this Cadillac Escalade ESV poster. Featuring the black high-performance SUV against a clean background with sleek typography and specifications.",
+        "seoAltText": "Black Cadillac Escalade ESV luxury SUV parked against a clean background with sleek CADILLAC ESCALADE typography and specifications"
     },
     {
         "id": "p441",
-        "title": "Automotive 200 – JDM & Supercar Wall Poster",
+        "title": "Automotive 200",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-200.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-200.webp"
+        "description": "Embrace the legend of Godzilla with this Nissan Skyline GT-R R34 poster. The iconic silver and blue sports car is featured below a massive Godzilla silhouette and a rising red sun.",
+        "label": "automotive-200.webp",
+        "seoTitle": "Nissan Skyline GTR Godzilla Poster – JDM Legend Art",
+        "metaDescription": "Embrace the legend of Godzilla with this Nissan Skyline GT-R R34 poster. The iconic silver and blue sports car is featured below a massive Godzilla silhouette and a rising red sun.",
+        "seoAltText": "Silver and blue Nissan Skyline GT-R R34 parked below a large black Godzilla silhouette against a red rising sun graphic"
     },
     {
         "id": "p442",
-        "title": "Automotive 201 – Vintage Classic Car Room Decor",
+        "title": "Automotive 201",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-201.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-201.webp"
+        "description": "Experience Italian hybrid performance with this Ferrari 296 GTB poster. The stunning red supercar is highlighted in a fiery multi-panel layout showcasing its exquisite details.",
+        "label": "automotive-201.webp",
+        "seoTitle": "Ferrari 296 GTB Red Poster – Italian Supercar Decor",
+        "metaDescription": "Experience Italian hybrid performance with this Ferrari 296 GTB poster. The stunning red supercar is highlighted in a fiery multi-panel layout showcasing its exquisite details.",
+        "seoAltText": "Fiery multi-panel poster featuring a red Ferrari 296 GTB supercar with detailed close up shots of its engine and rear end"
     },
     {
         "id": "p443",
-        "title": "Automotive 202 – Premium Drift Racing Wall Art",
+        "title": "Automotive 202",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-202.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-202.webp"
+        "description": "Celebrate the pinnacle of 80s supercars with this Ferrari F40 poster. Featuring the iconic red sports car parked against a striking red dragon graphic and massive typography.",
+        "label": "automotive-202.webp",
+        "seoTitle": "Ferrari F40 Red Dragon Poster – 80s Supercar Wall Art",
+        "metaDescription": "Celebrate the pinnacle of 80s supercars with this Ferrari F40 poster. Featuring the iconic red sports car parked against a striking red dragon graphic and massive typography.",
+        "seoAltText": "Red Ferrari F40 sports car with a number 19 racing decal parked against a large painted red dragon graphic and massive FERRARI typography"
     },
     {
         "id": "p444",
-        "title": "Automotive 203 – Aesthetic Garage Car Poster",
+        "title": "Automotive 203",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-203.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-203.webp"
+        "description": "Bring automotive history to your walls with this Ferrari F40 poster. The legendary red supercar is presented in a clean, elegant layout with faded red typography.",
+        "label": "automotive-203.webp",
+        "seoTitle": "Ferrari F40 Red Poster – Classic Italian Supercar Art",
+        "metaDescription": "Bring automotive history to your walls with this Ferrari F40 poster. The legendary red supercar is presented in a clean, elegant layout with faded red typography.",
+        "seoAltText": "Bright red Ferrari F40 supercar parked against a white background with massive faded red FERRARI typography"
     },
     {
         "id": "p445",
-        "title": "Automotive 204 – Modern Supercar Minimalist Print",
+        "title": "Automotive 204",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-204.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-204.webp"
+        "description": "Appreciate the engineering masterpiece that is the Ferrari F40 with this striking poster. Featuring a detailed rear angle shot of the red supercar set against a clean white background.",
+        "label": "automotive-204.webp",
+        "seoTitle": "Ferrari F40 Rear View Poster – Supercar Engineering Decor",
+        "metaDescription": "Appreciate the engineering masterpiece that is the Ferrari F40 with this striking poster. Featuring a detailed rear angle shot of the red supercar set against a clean white background.",
+        "seoAltText": "Detailed rear angle shot of a red Ferrari F40 supercar against a clean white background with massive red FERRARI typography"
     },
     {
         "id": "p446",
-        "title": "Automotive 205 – Retro JDM Car Wall Poster",
+        "title": "Automotive 205",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-205.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-205.webp"
+        "description": "Step back in time with this vintage 1960 Ford Falcon advertisement poster. The classic green car is featured alongside authentic vintage marketing copy detailing its safety features.",
+        "label": "automotive-205.webp",
+        "seoTitle": "1960 Ford Falcon Vintage Ad Poster – Classic American Car Art",
+        "metaDescription": "Step back in time with this vintage 1960 Ford Falcon advertisement poster. The classic green car is featured alongside authentic vintage marketing copy detailing its safety features.",
+        "seoAltText": "Vintage advertisement poster for the 1960 Ford Falcon featuring a green classic car with detailed marketing copy"
     },
     {
         "id": "p447",
-        "title": "Automotive 206 – Luxury Sports Car Poster Art",
+        "title": "Automotive 206",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-206.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-206.webp"
+        "description": "Embrace classic American muscle with this 1967 Ford Mustang poster. The beautiful dark green fastback is presented in a vintage-style design with bold typography.",
+        "label": "automotive-206.webp",
+        "seoTitle": "1967 Ford Mustang Dark Green Poster – Vintage Muscle Art",
+        "metaDescription": "Embrace classic American muscle with this 1967 Ford Mustang poster. The beautiful dark green fastback is presented in a vintage-style design with bold typography.",
+        "seoAltText": "Vintage-style poster featuring a dark green 1967 Ford Mustang muscle car with large vintage typography"
     },
     {
         "id": "p448",
-        "title": "Automotive 207 – Street Racing Aesthetic Decor",
+        "title": "Automotive 207",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-207.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-207.webp"
+        "description": "Add a touch of retro elegance with this vintage Ford Mustang advertisement poster. The classic convertible is featured in a sepia-toned design with authentic 60s marketing copy.",
+        "label": "automotive-207.webp",
+        "seoTitle": "Ford Mustang Vintage Convertible Ad Poster – Retro Car Decor",
+        "metaDescription": "Add a touch of retro elegance with this vintage Ford Mustang advertisement poster. The classic convertible is featured in a sepia-toned design with authentic 60s marketing copy.",
+        "seoAltText": "Sepia-toned vintage advertisement poster featuring a classic Ford Mustang convertible and 60s marketing copy"
     },
     {
         "id": "p449",
-        "title": "Automotive 208 – JDM & Supercar Wall Poster",
+        "title": "Automotive 208",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-208.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-208.webp"
+        "description": "Showcase modern muscle aggression with this bright red Ford Mustang poster. Featuring the iconic sports car in a striking multi-panel layout against a dark background.",
+        "label": "automotive-208.webp",
+        "seoTitle": "Ford Mustang Red Poster – Modern American Muscle Wall Art",
+        "metaDescription": "Showcase modern muscle aggression with this bright red Ford Mustang poster. Featuring the iconic sports car in a striking multi-panel layout against a dark background.",
+        "seoAltText": "Multi-panel poster highlighting a bright red modern Ford Mustang muscle car parked against a dark atmospheric background"
     },
     {
         "id": "p450",
