@@ -9,6 +9,9 @@ export interface Product {
   title: string;
   category: string;
   image: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  seoAltText?: string;
 }
 
 // ─── Shared IntersectionObserver hook ────────────────────────────────────────

@@ -2170,30 +2170,39 @@ export const products = [
     },
     {
         "id": "p242",
-        "title": "Automotive 001 – Vintage Classic Car Room Decor",
+        "title": "Automotive 001",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-001.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-001.webp"
+        "description": "Bring adventure home with this rugged Jeep Wrangler Rubicon off-road wall poster. Featuring a mud-splattered Jeep against a snowy mountain and yellow backdrop.",
+        "label": "automotive-001.webp",
+        "seoTitle": "Jeep Wrangler Rubicon Off-Road Adventure Wall Poster",
+        "metaDescription": "Bring adventure home with this rugged Jeep Wrangler Rubicon off-road wall poster. Featuring a mud-splattered Jeep against a snowy mountain and yellow backdrop.",
+        "seoAltText": "Black Jeep Wrangler Rubicon off-road SUV parked in front of a snowy mountain on a yellow background"
     },
     {
         "id": "p243",
-        "title": "Automotive 002 – Premium Drift Racing Wall Art",
+        "title": "Automotive 002",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-002.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-002.webp"
+        "description": "Elevate your space with this Koenigsegg Jesko Absolut poster. Showcasing the 500 km/h hypercar's stunning design and technical specs on a sleek minimal background.",
+        "label": "automotive-002.webp",
+        "seoTitle": "Koenigsegg Jesko Absolut Hypercar Specifications Wall Poster",
+        "metaDescription": "Elevate your space with this Koenigsegg Jesko Absolut poster. Showcasing the 500 km/h hypercar's stunning design and technical specs on a sleek minimal background.",
+        "seoAltText": "Light blue Koenigsegg Jesko Absolut hypercar rear angle with performance specifications and teal typography"
     },
     {
         "id": "p244",
-        "title": "Automotive 003 – Aesthetic Garage Car Poster",
+        "title": "Automotive 003",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-003.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-003.webp"
+        "description": "Decorate your walls with this aggressive Koenigsegg Regera poster. Features the white hybrid supercar's front profile, performance stats, and a dark aesthetic.",
+        "label": "automotive-003.webp",
+        "seoTitle": "Koenigsegg Regera Hybrid Supercar Front View Poster",
+        "metaDescription": "Decorate your walls with this aggressive Koenigsegg Regera poster. Features the white hybrid supercar's front profile, performance stats, and a dark aesthetic.",
+        "seoAltText": "White Koenigsegg Regera hybrid supercar front view on a black background with performance statistics"
     },
     {
         "id": "p245",

@@ -18,6 +18,9 @@ interface Product {
   title: string;
   category: string;
   image: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  seoAltText?: string;
 }
 
 interface ProductPreviewProps {
@@ -162,14 +165,16 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
   // SEO values
   const cleanTitle = getCleanPosterName(product.title);
-  const seoTitle = buildPosterMetaTitle(product.title, product.category, currentSize.label);
-  const seoDesc = buildPosterMetaDescription(product.title, product.category);
+  const seoTitle = product.seoTitle || buildPosterMetaTitle(product.title, product.category, currentSize.label);
+  const seoDesc = product.metaDescription || buildPosterMetaDescription(product.title, product.category);
   const rawSlug = cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
   const seoUrl = `https://wallifystore.in/posters/${product.category.toLowerCase()}/${rawSlug}`;
   const seoImage = `https://wallifystore.in${product.image}`;
-  const altText = generatePosterAltText(product.title, product.category);
+  const altText = product.seoAltText || generatePosterAltText(product.title, product.category);
   const captionText = generatePosterCaption(product.title, product.category, currentSize.label);
-  const productDescription = generatePosterProductDescription(product.title, product.category);
+  const productDescription = product.metaDescription 
+    ? `${product.metaDescription} Available in ${currentSize.label} size.` 
+    : generatePosterProductDescription(product.title, product.category);
 
   const jsonLd = {
     "@context": "https://schema.org",
