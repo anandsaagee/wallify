@@ -3106,93 +3106,123 @@ export const products = [
     },
     {
         "id": "p320",
-        "title": "Automotive 079 – Street Racing Aesthetic Decor",
+        "title": "Automotive 079",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-079.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-079.webp"
+        "description": "Step into the world of Japanese tuning with this Nissan GT Liberty Walk poster. Showcasing the aggressive widebody kit against a striking turquoise and green typographic background.",
+        "label": "automotive-079.webp",
+        "seoTitle": "Nissan GT Liberty Walk Poster – JDM Tuning Supercar Art",
+        "metaDescription": "Step into the world of Japanese tuning with this Nissan GT Liberty Walk poster. Showcasing the aggressive widebody kit against a striking turquoise and green typographic background.",
+        "seoAltText": "White widebody Nissan GT by Liberty Walk featured against a turquoise wheel background with bright green NISSAN typography"
     },
     {
         "id": "p321",
-        "title": "Automotive 080 – JDM & Supercar Wall Poster",
+        "title": "Automotive 080",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-080.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-080.webp"
+        "description": "Celebrate modern American muscle with this Ford Mustang Shelby GT500 poster. Featuring the sleek dark grey car with black racing stripes on a clean white background.",
+        "label": "automotive-080.webp",
+        "seoTitle": "Ford Mustang Shelby GT500 Dark Grey Poster – Muscle Car Decor",
+        "metaDescription": "Celebrate modern American muscle with this Ford Mustang Shelby GT500 poster. Featuring the sleek dark grey car with black racing stripes on a clean white background.",
+        "seoAltText": "Dark grey Ford Mustang Shelby GT500 with black racing stripes parked beneath large black MUSTANG typography"
     },
     {
         "id": "p322",
-        "title": "Automotive 081 – Vintage Classic Car Room Decor",
+        "title": "Automotive 081",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-081.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-081.webp"
+        "description": "Showcase your love for the iconic pony car with this striking red Ford Mustang poster. Featuring multiple angles of the vehicle set against a dramatic red and black background.",
+        "label": "automotive-081.webp",
+        "seoTitle": "Ford Mustang Red Poster – Modern American Muscle Wall Art",
+        "metaDescription": "Showcase your love for the iconic pony car with this striking red Ford Mustang poster. Featuring multiple angles of the vehicle set against a dramatic red and black background.",
+        "seoAltText": "Bright red Ford Mustang muscle car presented in multiple angles on a bold red and black background with large white typography"
     },
     {
         "id": "p323",
-        "title": "Automotive 082 – Premium Drift Racing Wall Art",
+        "title": "Automotive 082",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-082.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-082.webp"
+        "description": "Bring vintage muscle car vibes to your walls with this 1969 Ford Mustang Fastback poster. Featuring bold retro typography and a striking orange Boss 429.",
+        "label": "automotive-082.webp",
+        "seoTitle": "1969 Ford Mustang Fastback Vintage Poster – Retro Muscle Car Art",
+        "metaDescription": "Bring vintage muscle car vibes to your walls with this 1969 Ford Mustang Fastback poster. Featuring bold retro typography and a striking orange Boss 429.",
+        "seoAltText": "Vintage typographic poster for the 1969 Ford Mustang Two-Door Fastback featuring a bright orange classic muscle car"
     },
     {
         "id": "p324",
-        "title": "Automotive 083 – Aesthetic Garage Car Poster",
+        "title": "Automotive 083",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-083.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-083.webp"
+        "description": "Pay tribute to Brian O'Conner with this legendary Nissan Skyline GT-R R34 poster. Featuring the iconic silver and blue movie car beneath massive typography.",
+        "label": "automotive-083.webp",
+        "seoTitle": "Nissan Skyline GT-R R34 Fast and Furious Poster – JDM Art",
+        "metaDescription": "Pay tribute to Brian O'Conner with this legendary Nissan Skyline GT-R R34 poster. Featuring the iconic silver and blue movie car beneath massive typography.",
+        "seoAltText": "Iconic silver Nissan Skyline GT-R R34 with blue racing stripes from Fast and Furious parked beneath large white NISSAN text"
     },
     {
         "id": "p325",
-        "title": "Automotive 084 – Modern Supercar Minimalist Print",
+        "title": "Automotive 084",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-084.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-084.webp"
+        "description": "Embrace aesthetic tuner culture with this 1994 Toyota Supra MK IV poster. Featuring a stylized purple pixelated design highlighting the car's impressive specs.",
+        "label": "automotive-084.webp",
+        "seoTitle": "Toyota Supra MK IV 1994 Purple Poster – Aesthetic JDM Decor",
+        "metaDescription": "Embrace aesthetic tuner culture with this 1994 Toyota Supra MK IV poster. Featuring a stylized purple pixelated design highlighting the car's impressive specs.",
+        "seoAltText": "Aesthetic purple and black pixelated poster featuring the 1994 Toyota Supra MK IV and its performance specifications"
     },
     {
         "id": "p326",
-        "title": "Automotive 085 – Retro JDM Car Wall Poster",
+        "title": "Automotive 085",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-085.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-085.webp"
+        "description": "Celebrate JDM heritage with this stunning Toyota Supra poster. Showcasing the sleek white sports car parked before the majestic Mount Fuji and bold red SUPRA text.",
+        "label": "automotive-085.webp",
+        "seoTitle": "Toyota Supra White Mt Fuji Poster – JDM Scenery Wall Art",
+        "metaDescription": "Celebrate JDM heritage with this stunning Toyota Supra poster. Showcasing the sleek white sports car parked before the majestic Mount Fuji and bold red SUPRA text.",
+        "seoAltText": "White Toyota Supra MK5 sports car parked in front of snow-capped Mount Fuji beneath massive red SUPRA typography"
     },
     {
         "id": "p327",
-        "title": "Automotive 086 – Luxury Sports Car Poster Art",
+        "title": "Automotive 086",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-086.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-086.webp"
+        "description": "Capture the midnight atmosphere of Japanese street racing with this Datsun 280Z poster. Featuring a red classic Z-car parked at a retro gas station.",
+        "label": "automotive-086.webp",
+        "seoTitle": "Datsun 280Z Red Poster – Midnight Gas Station JDM Art",
+        "metaDescription": "Capture the midnight atmosphere of Japanese street racing with this Datsun 280Z poster. Featuring a red classic Z-car parked at a retro gas station.",
+        "seoAltText": "Atmospheric illustration of a red classic Datsun 280Z parked at a vintage gas station at night"
     },
     {
         "id": "p328",
-        "title": "Automotive 087 – Street Racing Aesthetic Decor",
+        "title": "Automotive 087",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-087.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-087.webp"
+        "description": "Experience '80s excess with this Lamborghini Countach poster. Showcasing the iconic white Italian wedge with its famous scissor doors pointed towards the sky.",
+        "label": "automotive-087.webp",
+        "seoTitle": "Lamborghini Countach White Poster – Retro Italian Supercar Art",
+        "metaDescription": "Experience '80s excess with this Lamborghini Countach poster. Showcasing the iconic white Italian wedge with its famous scissor doors pointed towards the sky.",
+        "seoAltText": "White Lamborghini Countach supercar with both scissor doors open beneath retro 1980s typography"
     },
     {
         "id": "p329",
-        "title": "Automotive 088 – JDM & Supercar Wall Poster",
+        "title": "Automotive 088",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-088.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-088.webp"
+        "description": "Admire hypercar perfection with this Pagani Utopia poster. Featuring the white masterpiece with all its carbon fiber clamshells and doors fully opened.",
+        "label": "automotive-088.webp",
+        "seoTitle": "Pagani Utopia White Poster – Modern Italian Hypercar Decor",
+        "metaDescription": "Admire hypercar perfection with this Pagani Utopia poster. Featuring the white masterpiece with all its carbon fiber clamshells and doors fully opened.",
+        "seoAltText": "White Pagani Utopia hypercar with its front and rear clamshells and doors fully open against a white background"
     },
     {
         "id": "p330",
