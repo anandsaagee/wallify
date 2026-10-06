@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { ShoppingBag, Zap, Check, Gift, Frame, Share2 } from 'lucide-react';
-import { SIZES, getFramePrice } from '../data/config';
+import { SIZES, getFramePrice, getFrameStrikePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
 import { SEO } from './SEO';
@@ -50,8 +50,11 @@ const SizeButton: React.FC<{
       {size.label}
     </span>
     <span className="text-[9px] font-semibold text-white/40 mt-1">{size.dim}</span>
-    <span className={`text-[11px] font-black mt-1 ${isSelected ? 'text-primary' : 'text-white/60'}`}>
-      ₹{size.price}
+    <span className={`text-[11px] font-black mt-1 flex gap-1 items-baseline ${isSelected ? 'text-primary' : 'text-white/60'}`}>
+      <span>₹{size.price}</span>
+      {size.strikePrice && (
+        <span className="line-through text-white/30 text-[9px] font-medium">₹{size.strikePrice}</span>
+      )}
     </span>
   </button>
 );
@@ -73,6 +76,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
   const currentSize = SIZES.find((s) => s.id === selectedSize) ?? SIZES[1];
   const framePrice = getFramePrice(selectedSize);
+  const frameStrikePrice = getFrameStrikePrice(selectedSize);
   const frameAvailable = framePrice !== null;
 
   // Reset frame toggle when switching to a size that doesn't support frames
@@ -84,6 +88,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
   }, []);
 
   const totalPrice = currentSize.price + (withFrame && framePrice ? framePrice : 0);
+  const totalStrikePrice = (currentSize.strikePrice || 0) + (withFrame && frameStrikePrice ? frameStrikePrice : 0);
 
   const handleShare = useCallback(async () => {
     // Use SEO slug with accurate subject name for shareable link
@@ -293,8 +298,13 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
             </button>
           </div>
           <div className="flex items-baseline gap-2 mt-2 flex-wrap">
-            <span className="text-2xl font-black text-primary">₹{totalPrice}</span>
-            <span className="text-sm text-white/40 font-medium">
+            <div className="flex items-baseline gap-2">
+              <span className="text-2xl font-black text-primary">₹{totalPrice}</span>
+              {totalStrikePrice > 0 && (
+                <span className="text-sm font-semibold text-white/30 line-through">₹{totalStrikePrice}</span>
+              )}
+            </div>
+            <span className="text-sm text-white/40 font-medium ml-1">
               {withFrame ? 'Framed poster' : 'Single poster'}
             </span>
           </div>
@@ -348,9 +358,16 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  <span className={`text-sm font-black ${withFrame ? 'text-primary' : 'text-white/60'}`}>
-                    +₹{framePrice}
-                  </span>
+                  <div className="flex flex-col items-end mr-1">
+                    <span className={`text-sm font-black leading-none ${withFrame ? 'text-primary' : 'text-white/60'}`}>
+                      +₹{framePrice}
+                    </span>
+                    {frameStrikePrice && (
+                      <span className="text-[10px] font-semibold text-white/30 line-through mt-0.5">
+                        ₹{frameStrikePrice}
+                      </span>
+                    )}
+                  </div>
                   {/* Toggle pill */}
                   <div className={`relative w-10 h-5 rounded-full transition-colors duration-200 ${
                     withFrame ? 'bg-primary' : 'bg-white/20'

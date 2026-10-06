@@ -1,18 +1,22 @@
 export const SIZES = [
-  { id: 'A6', label: 'A6', dim: '10.5 x 14.8 cm', price: 29 },
-  { id: 'A5', label: 'A5', dim: '14.8 x 21 cm', price: 49 },
-  { id: 'A4', label: 'A4', dim: '21 x 29.7 cm', price: 79 },
-  { id: 'A3', label: 'A3', dim: '29.7 x 42 cm', price: 149 },
+  { id: 'A6', label: 'A6', dim: '10.5 x 14.8 cm', price: 29, strikePrice: 49 },
+  { id: 'A5', label: 'A5', dim: '14.8 x 21 cm', price: 49, strikePrice: 79 },
+  { id: 'A4', label: 'A4', dim: '21 x 29.7 cm', price: 79, strikePrice: 129 },
+  { id: 'A3', label: 'A3', dim: '29.7 x 42 cm', price: 149, strikePrice: 199 },
 ];
 
 /** Frame add-on: only A5 and A4 sizes are available with frames */
-export const FRAME_SIZES: Record<string, number> = {
-  A5: 299,
-  A4: 399,
+export const FRAME_SIZES: Record<string, { price: number; strikePrice: number }> = {
+  A5: { price: 299, strikePrice: 549 },
+  A4: { price: 399, strikePrice: 799 },
 };
 
 export function getFramePrice(sizeId: string): number | null {
-  return FRAME_SIZES[sizeId] ?? null;
+  return FRAME_SIZES[sizeId]?.price ?? null;
+}
+
+export function getFrameStrikePrice(sizeId: string): number | null {
+  return FRAME_SIZES[sizeId]?.strikePrice ?? null;
 }
 
 export const BULK_OFFERS = [

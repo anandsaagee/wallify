@@ -22,9 +22,16 @@ export const Pricing: React.FC = () => {
               <p className="text-[9px] font-black text-primary uppercase tracking-tighter mb-0.5">
                 {size.label}
               </p>
-              <p className="text-sm font-black text-white">
-                ₹{size.price}
-              </p>
+              <div className="flex items-center justify-center gap-1">
+                <p className="text-sm font-black text-white">
+                  ₹{size.price}
+                </p>
+                {size.strikePrice && (
+                  <p className="text-[10px] font-semibold text-white/30 line-through">
+                    ₹{size.strikePrice}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>
