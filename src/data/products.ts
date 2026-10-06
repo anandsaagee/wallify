@@ -3346,93 +3346,123 @@ export const products = [
     },
     {
         "id": "p340",
-        "title": "Automotive 099 – Aesthetic Garage Car Poster",
+        "title": "Automotive 099",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-099.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-099.webp"
+        "description": "Channel your inner action hero with this 1969 Ford Mustang Boss 429 poster. Featuring the iconic dark grey muscle car from John Wick alongside a vintage cowboy sketch.",
+        "label": "automotive-099.webp",
+        "seoTitle": "1969 Ford Mustang Boss 429 John Wick Poster – Muscle Car Art",
+        "metaDescription": "Channel your inner action hero with this 1969 Ford Mustang Boss 429 poster. Featuring the iconic dark grey muscle car from John Wick alongside a vintage cowboy sketch.",
+        "seoAltText": "Dark grey 1969 Ford Mustang Boss 429 parked beneath massive MUSTANG typography and a sketch of a cowboy roping a horse"
     },
     {
         "id": "p341",
-        "title": "Automotive 100 – Modern Supercar Minimalist Print",
+        "title": "Automotive 100",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-100.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-100.webp"
+        "description": "Celebrate WRC dominance with this Subaru Impreza 22B WRX STI poster. Showcasing Colin McRae's legendary blue and yellow 555 rally car in striking detail.",
+        "label": "automotive-100.webp",
+        "seoTitle": "Subaru Impreza 22B WRX STI Poster – Colin McRae 555 Rally Art",
+        "metaDescription": "Celebrate WRC dominance with this Subaru Impreza 22B WRX STI poster. Showcasing Colin McRae's legendary blue and yellow 555 rally car in striking detail.",
+        "seoAltText": "Illustration of the iconic blue and yellow Subaru Impreza 22B WRX STI 555 rally car famously driven by Colin McRae"
     },
     {
         "id": "p342",
-        "title": "Automotive 101 – Retro JDM Car Wall Poster",
+        "title": "Automotive 101",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-101.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-101.webp"
+        "description": "Celebrate Italian supercar royalty with this classic Ferrari F40 poster. Featuring the legendary bright red track machine against a crisp white background with bold typography.",
+        "label": "automotive-101.webp",
+        "seoTitle": "Ferrari F40 Red Supercar Poster – Classic Italian Exotics Decor",
+        "metaDescription": "Celebrate Italian supercar royalty with this classic Ferrari F40 poster. Featuring the legendary bright red track machine against a crisp white background with bold typography.",
+        "seoAltText": "Classic red Ferrari F40 supercar parked on a textured white background beneath massive black FERRARI typography"
     },
     {
         "id": "p343",
-        "title": "Automotive 102 – Luxury Sports Car Poster Art",
+        "title": "Automotive 102",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-102.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-102.webp"
+        "description": "Revive the 1960s with this 1966 Ford Mustang Shelby G.T. 350 poster. Showcasing the beautiful red muscle car with white racing stripes in a bold multi-panel design.",
+        "label": "automotive-102.webp",
+        "seoTitle": "1966 Ford Mustang Shelby GT350 Red Poster – Classic Muscle Art",
+        "metaDescription": "Revive the 1960s with this 1966 Ford Mustang Shelby G.T. 350 poster. Showcasing the beautiful red muscle car with white racing stripes in a bold multi-panel design.",
+        "seoAltText": "Multi-panel poster featuring a bright red 1966 Ford Mustang Shelby G.T. 350 with white racing stripes and checkered flag graphics"
     },
     {
         "id": "p344",
-        "title": "Automotive 103 – Street Racing Aesthetic Decor",
+        "title": "Automotive 103",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-103.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-103.webp"
+        "description": "Experience the pinnacle of luxury with this Rolls-Royce Ghost poster. Featuring the stately dark maroon sedan billed as 'An On Road Airplane' against a bold red backdrop.",
+        "label": "automotive-103.webp",
+        "seoTitle": "Rolls-Royce Ghost Poster – Luxury On Road Airplane Decor",
+        "metaDescription": "Experience the pinnacle of luxury with this Rolls-Royce Ghost poster. Featuring the stately dark maroon sedan billed as 'An On Road Airplane' against a bold red backdrop.",
+        "seoAltText": "Luxurious dark maroon Rolls-Royce Ghost sedan parked against a deep red background with bold typography"
     },
     {
         "id": "p345",
-        "title": "Automotive 104 – JDM & Supercar Wall Poster",
+        "title": "Automotive 104",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-104.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-104.webp"
+        "description": "Admire the legend of performance with this Ferrari F40 multi-panel poster. Showcasing the iconic red supercar along with detailed shots of its engine and interior.",
+        "label": "automotive-104.webp",
+        "seoTitle": "Ferrari F40 Red Multi-Panel Poster – Italian Supercar Art",
+        "metaDescription": "Admire the legend of performance with this Ferrari F40 multi-panel poster. Showcasing the iconic red supercar along with detailed shots of its engine and interior.",
+        "seoAltText": "Multi-panel poster showcasing a red Ferrari F40 with detailed inset photos of its rear, interior, and twin-turbo V8 engine"
     },
     {
         "id": "p346",
-        "title": "Automotive 105 – Vintage Classic Car Room Decor",
+        "title": "Automotive 105",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-105.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-105.webp"
+        "description": "Celebrate classic Mercedes-Benz heritage with this 'In Aller Welt' vintage poster. Featuring three elegant blue and grey sedans and wagons displayed on stark white steps.",
+        "label": "automotive-105.webp",
+        "seoTitle": "Mercedes-Benz In Aller Welt Vintage Poster – Classic German Art",
+        "metaDescription": "Celebrate classic Mercedes-Benz heritage with this 'In Aller Welt' vintage poster. Featuring three elegant blue and grey sedans and wagons displayed on stark white steps.",
+        "seoAltText": "Vintage Mercedes-Benz 'In aller Welt' advertisement featuring three classic blue and grey sedans parked on white stepped platforms"
     },
     {
         "id": "p347",
-        "title": "Automotive 106 – Premium Drift Racing Wall Art",
+        "title": "Automotive 106",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-106.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-106.webp"
+        "description": "Push the limits of speed with this Koenigsegg Jesko poster. Showcasing the incredible white hypercar against a bright yellow typographic background.",
+        "label": "automotive-106.webp",
+        "seoTitle": "Koenigsegg Jesko White Hypercar Poster – Swedish Performance Art",
+        "metaDescription": "Push the limits of speed with this Koenigsegg Jesko poster. Showcasing the incredible white hypercar against a bright yellow typographic background.",
+        "seoAltText": "White Koenigsegg Jesko hypercar parked against a sky background with massive bright yellow JESKO typography"
     },
     {
         "id": "p348",
-        "title": "Automotive 107 – Aesthetic Garage Car Poster",
+        "title": "Automotive 107",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-107.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-107.webp"
+        "description": "Combine JDM culture and anime aesthetics with this unique Porsche 911 poster. Featuring a bright purple Porsche alongside Sasuke Uchiha from Naruto.",
+        "label": "automotive-107.webp",
+        "seoTitle": "Porsche 911 Purple Sasuke Anime Poster – Unique Car Wall Art",
+        "metaDescription": "Combine JDM culture and anime aesthetics with this unique Porsche 911 poster. Featuring a bright purple Porsche alongside Sasuke Uchiha from Naruto.",
+        "seoAltText": "Bright purple Porsche 911 sports car parked next to the anime character Sasuke Uchiha beneath massive purple PORSCHE typography"
     },
     {
         "id": "p349",
-        "title": "Automotive 108 – Modern Supercar Minimalist Print",
+        "title": "Automotive 108",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-108.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-108.webp"
+        "description": "Immerse yourself in purple perfection with this Porsche 911 GT3 RS poster. Showcasing the classic high-performance sports car in a striking monochrome aesthetic.",
+        "label": "automotive-108.webp",
+        "seoTitle": "Porsche 911 GT3 RS Purple Poster – Classic Sports Car Decor",
+        "metaDescription": "Immerse yourself in purple perfection with this Porsche 911 GT3 RS poster. Showcasing the classic high-performance sports car in a striking monochrome aesthetic.",
+        "seoAltText": "Multi-panel poster featuring a classic Porsche 911 GT3 RS in a deep purple aesthetic with bold typography"
     },
     {
         "id": "p350",
