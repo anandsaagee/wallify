@@ -2206,48 +2206,63 @@ export const products = [
     },
     {
         "id": "p245",
-        "title": "Automotive 004 – Modern Supercar Minimalist Print",
+        "title": "Automotive 004",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-004.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-004.webp"
+        "description": "Rev up your space with this bright yellow Lamborghini Aventador supercar poster, featuring its sleek side profile and powerful 759 HP performance specs.",
+        "label": "automotive-004.webp",
+        "seoTitle": "Lamborghini Aventador Yellow Profile Poster – 759 HP Supercar",
+        "metaDescription": "Rev up your space with this bright yellow Lamborghini Aventador supercar poster, featuring its sleek side profile and powerful 759 HP performance specs.",
+        "seoAltText": "Yellow Lamborghini Aventador supercar side profile with performance specs on a yellow background"
     },
     {
         "id": "p246",
-        "title": "Automotive 005 – Retro JDM Car Wall Poster",
+        "title": "Automotive 005",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-005.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-005.webp"
+        "description": "Add edge to your walls with this monochromatic Lamborghini Aventador poster, showcasing detailed front and top views alongside full engine specifications.",
+        "label": "automotive-005.webp",
+        "seoTitle": "Lamborghini Aventador White Supercar Poster – Monochromatic Art",
+        "metaDescription": "Add edge to your walls with this monochromatic Lamborghini Aventador poster, showcasing detailed front and top views alongside full engine specifications.",
+        "seoAltText": "White Lamborghini Aventador side profile below stylized black and white engine and front angles"
     },
     {
         "id": "p247",
-        "title": "Automotive 006 – Luxury Sports Car Poster Art",
+        "title": "Automotive 006",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-006.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-006.webp"
+        "description": "Showcase the ultimate Italian supercar with this yellow Lamborghini Aventador SVJ poster, featuring its aggressive rear wing and 6.5L V12 specs.",
+        "label": "automotive-006.webp",
+        "seoTitle": "Lamborghini Aventador SVJ Yellow Rear View Poster – 770 HP",
+        "metaDescription": "Showcase the ultimate Italian supercar with this yellow Lamborghini Aventador SVJ poster, featuring its aggressive rear wing and 6.5L V12 specs.",
+        "seoAltText": "Bright yellow Lamborghini Aventador SVJ rear angle with black accents and large typography"
     },
     {
         "id": "p248",
-        "title": "Automotive 007 – Street Racing Aesthetic Decor",
+        "title": "Automotive 007",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-007.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-007.webp"
+        "description": "Transform your room with this sleek Lamborghini Aventador SVJ poster, featuring the yellow supercar on a dark background with striking neon green lines.",
+        "label": "automotive-007.webp",
+        "seoTitle": "Lamborghini Aventador SVJ Neon Garage Poster – Dark Aesthetic",
+        "metaDescription": "Transform your room with this sleek Lamborghini Aventador SVJ poster, featuring the yellow supercar on a dark background with striking neon green lines.",
+        "seoAltText": "Yellow Lamborghini Aventador SVJ side profile on a black background with neon green geometric lines"
     },
     {
         "id": "p249",
-        "title": "Automotive 008 – JDM & Supercar Wall Poster",
+        "title": "Automotive 008",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-008.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-008.webp"
+        "description": "Celebrate automotive history with this classic white Lamborghini Countach poster, featuring iconic scissor doors and retro styling from the 1970s.",
+        "label": "automotive-008.webp",
+        "seoTitle": "Vintage Lamborghini Countach White Poster – Classic Supercar Art",
+        "metaDescription": "Celebrate automotive history with this classic white Lamborghini Countach poster, featuring iconic scissor doors and retro styling from the 1970s.",
+        "seoAltText": "White vintage Lamborghini Countach with open scissor doors on an asphalt background with retro typography"
     },
     {
         "id": "p250",
