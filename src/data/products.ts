@@ -2506,93 +2506,123 @@ export const products = [
     },
     {
         "id": "p270",
-        "title": "Automotive 029 – Retro JDM Car Wall Poster",
+        "title": "Automotive 029",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-029.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-029.webp"
+        "description": "Showcase your JDM love with this Nissan Skyline GTR R34 poster. Featuring the grey sports car with yellow accents and striking typography.",
+        "label": "automotive-029.webp",
+        "seoTitle": "Nissan Skyline GTR R34 Grey Poster – JDM Sports Car Art",
+        "metaDescription": "Showcase your JDM love with this Nissan Skyline GTR R34 poster. Featuring the grey sports car with yellow accents and striking typography.",
+        "seoAltText": "Grey Nissan Skyline GTR R34 with yellow aerodynamic accents against a dark background with large NISSAN typography"
     },
     {
         "id": "p271",
-        "title": "Automotive 030 – Luxury Sports Car Poster Art",
+        "title": "Automotive 030",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-030.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-030.webp"
+        "description": "Celebrate Italian automotive perfection with this Ferrari F40 poster. Featuring the legendary red supercar against a vibrant red backdrop.",
+        "label": "automotive-030.webp",
+        "seoTitle": "Ferrari F40 Red Supercar Poster – Italian Classic Car Art",
+        "metaDescription": "Celebrate Italian automotive perfection with this Ferrari F40 poster. Featuring the legendary red supercar against a vibrant red backdrop.",
+        "seoAltText": "Rear angle of a classic red Ferrari F40 supercar parked on a red background with large black FERRARI text above it"
     },
     {
         "id": "p272",
-        "title": "Automotive 031 – Street Racing Aesthetic Decor",
+        "title": "Automotive 031",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-031.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-031.webp"
+        "description": "Bring the thrill of Nismo performance home with this Nissan GT-R Nismo poster. Featuring the crisp white track-ready supercar and bold design.",
+        "label": "automotive-031.webp",
+        "seoTitle": "Nissan GT-R Nismo White Poster – High-Performance Supercar Decor",
+        "metaDescription": "Bring the thrill of Nismo performance home with this Nissan GT-R Nismo poster. Featuring the crisp white track-ready supercar and bold design.",
+        "seoAltText": "White Nissan GT-R Nismo supercar on a white background with tall NISSAN typography and performance statistics"
     },
     {
         "id": "p273",
-        "title": "Automotive 032 – JDM & Supercar Wall Poster",
+        "title": "Automotive 032",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-032.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-032.webp"
+        "description": "Pay tribute to street racing culture with this legendary Nissan Skyline GTR 34 poster. Showcasing the iconic silver and blue striped movie car design.",
+        "label": "automotive-032.webp",
+        "seoTitle": "Nissan Skyline GTR 34 Silver & Blue Poster – Street Racing Art",
+        "metaDescription": "Pay tribute to street racing culture with this legendary Nissan Skyline GTR 34 poster. Showcasing the iconic silver and blue striped movie car design.",
+        "seoAltText": "Silver Nissan Skyline GTR 34 with blue racing stripes parked in a dark environment with blue Skyline text"
     },
     {
         "id": "p274",
-        "title": "Automotive 033 – Vintage Classic Car Room Decor",
+        "title": "Automotive 033",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-033.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-033.webp"
+        "description": "Immerse yourself in JDM street culture with this Nissan Skyline R34 GTR poster. Showcasing the stunning blue sports car in an urban alleyway setting.",
+        "label": "automotive-033.webp",
+        "seoTitle": "Nissan Skyline R34 GTR Blue Poster – Urban Alleyway JDM Art",
+        "metaDescription": "Immerse yourself in JDM street culture with this Nissan Skyline R34 GTR poster. Showcasing the stunning blue sports car in an urban alleyway setting.",
+        "seoAltText": "Blue Nissan Skyline R34 GTR parked in a wet alleyway reflecting on the ground with massive light blue R34 typography"
     },
     {
         "id": "p275",
-        "title": "Automotive 034 – Premium Drift Racing Wall Art",
+        "title": "Automotive 034",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-034.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-034.webp"
+        "description": "Transform your room with this clean Nissan Skyline GT-R R34 poster. Showcasing the beloved white JDM icon in a striking high-contrast minimalist design.",
+        "label": "automotive-034.webp",
+        "seoTitle": "Nissan Skyline GT-R R34 White Poster – Clean Minimalist Car Art",
+        "metaDescription": "Transform your room with this clean Nissan Skyline GT-R R34 poster. Showcasing the beloved white JDM icon in a striking high-contrast minimalist design.",
+        "seoAltText": "White Nissan Skyline GT-R R34 sports car on a white background with tall black NISSAN typography and technical specifications"
     },
     {
         "id": "p276",
-        "title": "Automotive 035 – Aesthetic Garage Car Poster",
+        "title": "Automotive 035",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-035.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-035.webp"
+        "description": "Embrace the drift life with this Nissan Silvia S15 poster. Featuring the iconic purple JDM car with aesthetic multi-angle shots and bold styling.",
+        "label": "automotive-035.webp",
+        "seoTitle": "Nissan Silvia S15 Purple Poster – Drift Culture JDM Decor",
+        "metaDescription": "Embrace the drift life with this Nissan Silvia S15 poster. Featuring the iconic purple JDM car with aesthetic multi-angle shots and bold styling.",
+        "seoAltText": "Purple Nissan Silvia S15 drift car shown from multiple angles in a collage style with purple retro typography"
     },
     {
         "id": "p277",
-        "title": "Automotive 036 – Modern Supercar Minimalist Print",
+        "title": "Automotive 036",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-036.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-036.webp"
+        "description": "Add a retro vibe to your space with this classic Porsche 911 poster. Featuring a bright pink vintage Porsche parked at an aesthetic desert gas station.",
+        "label": "automotive-036.webp",
+        "seoTitle": "Retro Pink Porsche 911 Poster – Vintage Desert Gas Station Art",
+        "metaDescription": "Add a retro vibe to your space with this classic Porsche 911 poster. Featuring a bright pink vintage Porsche parked at an aesthetic desert gas station.",
+        "seoAltText": "Pink classic Porsche 911 parked at a vintage desert gas station under a retro style magazine cover design"
     },
     {
         "id": "p278",
-        "title": "Automotive 037 – Retro JDM Car Wall Poster",
+        "title": "Automotive 037",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-037.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-037.webp"
+        "description": "Show off German track dominance with this Porsche 911 GT poster. Featuring the aggressive white supercar set against a dark contrasting background.",
+        "label": "automotive-037.webp",
+        "seoTitle": "Porsche 911 GT White Supercar Poster – Aggressive Track Car Art",
+        "metaDescription": "Show off German track dominance with this Porsche 911 GT poster. Featuring the aggressive white supercar set against a dark contrasting background.",
+        "seoAltText": "White Porsche 911 GT supercar shown on a black background with large white 911 GT typography behind it"
     },
     {
         "id": "p279",
-        "title": "Automotive 038 – Luxury Sports Car Poster Art",
+        "title": "Automotive 038",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-038.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-038.webp"
+        "description": "Bring vibrant color to your walls with this Porsche 911 GT3 RS poster. Showcasing the track weapon in bright pink with a stylish multi-panel collage.",
+        "label": "automotive-038.webp",
+        "seoTitle": "Porsche 911 GT3 RS Pink Poster – Vibrant Supercar Collage Decor",
+        "metaDescription": "Bring vibrant color to your walls with this Porsche 911 GT3 RS poster. Showcasing the track weapon in bright pink with a stylish multi-panel collage.",
+        "seoAltText": "Pink Porsche 911 GT3 RS shown in a three-panel collage showcasing different angles against a solid pink background"
     },
     {
         "id": "p280",
