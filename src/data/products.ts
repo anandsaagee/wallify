@@ -4186,93 +4186,123 @@ export const products = [
     },
     {
         "id": "p410",
-        "title": "Automotive 169 – Vintage Classic Car Room Decor",
+        "title": "Automotive 169",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-169.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-169.webp"
+        "description": "Celebrate JDM excellence with this Toyota Supra MK4 poster. The iconic grey sports car is beautifully presented against a massive red sun and bold SUPRA typography.",
+        "label": "automotive-169.webp",
+        "seoTitle": "Toyota Supra MK4 Grey Poster – JDM Rising Sun Decor",
+        "metaDescription": "Celebrate JDM excellence with this Toyota Supra MK4 poster. The iconic grey sports car is beautifully presented against a massive red sun and bold SUPRA typography.",
+        "seoAltText": "Grey Toyota Supra MK4 parked in front of a large red Japanese rising sun graphic and massive black SUPRA typography"
     },
     {
         "id": "p411",
-        "title": "Automotive 170 – Premium Drift Racing Wall Art",
+        "title": "Automotive 170",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-170.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-170.webp"
+        "description": "Add a dynamic touch to your garage with this BMW M2 animated vector poster. Featuring the light blue coupe performing a high-speed burnout against a stylized red sun.",
+        "label": "automotive-170.webp",
+        "seoTitle": "BMW M2 Blue Vector Poster – Animated Drift Wall Art",
+        "metaDescription": "Add a dynamic touch to your garage with this BMW M2 animated vector poster. Featuring the light blue coupe performing a high-speed burnout against a stylized red sun.",
+        "seoAltText": "Animated vector poster featuring a light blue BMW M2 drifting with white smoke against a red sun graphic"
     },
     {
         "id": "p412",
-        "title": "Automotive 171 – Aesthetic Garage Car Poster",
+        "title": "Automotive 171",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-171.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-171.webp"
+        "description": "Embrace premium performance with this BMW M5 F90 poster. Showcasing the aggressive black sports sedan with bold typography and M tricolor details.",
+        "label": "automotive-171.webp",
+        "seoTitle": "BMW M5 F90 Black Poster – M Performance Sedan Decor",
+        "metaDescription": "Embrace premium performance with this BMW M5 F90 poster. Showcasing the aggressive black sports sedan with bold typography and M tricolor details.",
+        "seoAltText": "Black BMW M5 F90 sports sedan parked against a white background with massive black BMW typography and the M tricolor stripes"
     },
     {
         "id": "p413",
-        "title": "Automotive 172 – Modern Supercar Minimalist Print",
+        "title": "Automotive 172",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-172.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-172.webp"
+        "description": "Experience unparalleled hypercar luxury with this Bugatti Chiron poster. Featuring the striking pink supercar powering through a water splash with bold neon typography.",
+        "label": "automotive-172.webp",
+        "seoTitle": "Bugatti Chiron Pink Poster – Luxury Hypercar Wall Art",
+        "metaDescription": "Experience unparalleled hypercar luxury with this Bugatti Chiron poster. Featuring the striking pink supercar powering through a water splash with bold neon typography.",
+        "seoAltText": "Bright pink Bugatti Chiron hypercar driving through a water splash with massive pink neon BUGATTI CHIRON typography"
     },
     {
         "id": "p414",
-        "title": "Automotive 173 – Retro JDM Car Wall Poster",
+        "title": "Automotive 173",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-173.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-173.webp"
+        "description": "Make a bold statement with this Cadillac Escalade poster. Showcasing the imposing black luxury SUV in a layered layout with elegant vintage typography.",
+        "label": "automotive-173.webp",
+        "seoTitle": "Cadillac Escalade Black Poster – Luxury SUV Wall Art",
+        "metaDescription": "Make a bold statement with this Cadillac Escalade poster. Showcasing the imposing black luxury SUV in a layered layout with elegant vintage typography.",
+        "seoAltText": "Layered poster featuring a black Cadillac Escalade SUV parked in front of a close up of its grille with elegant CADILLAC ESCALADE typography"
     },
     {
         "id": "p415",
-        "title": "Automotive 174 – Luxury Sports Car Poster Art",
+        "title": "Automotive 174",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-174.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-174.webp"
+        "description": "Celebrate classic American muscle with this 1969 Ford Mustang GT poster. A striking multi-panel collage highlighting the black muscle car's iconic design details.",
+        "label": "automotive-174.webp",
+        "seoTitle": "1969 Ford Mustang GT Black Collage Poster – Muscle Car Decor",
+        "metaDescription": "Celebrate classic American muscle with this 1969 Ford Mustang GT poster. A striking multi-panel collage highlighting the black muscle car's iconic design details.",
+        "seoAltText": "Multi-panel collage poster featuring a black 1969 Ford Mustang GT with close-up shots of its grille, wheels, and taillights"
     },
     {
         "id": "p416",
-        "title": "Automotive 175 – Street Racing Aesthetic Decor",
+        "title": "Automotive 175",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-175.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-175.webp"
+        "description": "Step back into the golden era with this vintage Buick Wildcat advertisement poster. Featuring a beautiful white classic car driving through a vivid painted sunset.",
+        "label": "automotive-175.webp",
+        "seoTitle": "Buick Wildcat Vintage Ad Poster – Classic American Car Art",
+        "metaDescription": "Step back into the golden era with this vintage Buick Wildcat advertisement poster. Featuring a beautiful white classic car driving through a vivid painted sunset.",
+        "seoAltText": "Vintage advertisement poster showcasing a white Buick Wildcat driving fast through a painted orange and pink sunset landscape"
     },
     {
         "id": "p417",
-        "title": "Automotive 176 – JDM & Supercar Wall Poster",
+        "title": "Automotive 176",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-176.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-176.webp"
+        "description": "Showcase modern muscle aggression with this Dodge Challenger SRT poster. Featuring multiple stacked views of the dark green muscle car with neon glow effects.",
+        "label": "automotive-176.webp",
+        "seoTitle": "Dodge Challenger SRT Green Poster – Modern Muscle Decor",
+        "metaDescription": "Showcase modern muscle aggression with this Dodge Challenger SRT poster. Featuring multiple stacked views of the dark green muscle car with neon glow effects.",
+        "seoAltText": "Layered poster of a dark green Dodge Challenger SRT featuring front, angle, and rear shots with glowing neon Challenger typography"
     },
     {
         "id": "p418",
-        "title": "Automotive 177 – Vintage Classic Car Room Decor",
+        "title": "Automotive 177",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-177.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-177.webp"
+        "description": "Appreciate the legendary design of the 1969 Ford Mustang GT with this multi-panel poster. Featuring a sleek black muscle car and detailed close-ups of its iconic features.",
+        "label": "automotive-177.webp",
+        "seoTitle": "1969 Ford Mustang GT Collage Poster – Classic American Art",
+        "metaDescription": "Appreciate the legendary design of the 1969 Ford Mustang GT with this multi-panel poster. Featuring a sleek black muscle car and detailed close-ups of its iconic features.",
+        "seoAltText": "Multi-panel poster highlighting a black 1969 Ford Mustang GT muscle car with close up shots of its iconic design elements"
     },
     {
         "id": "p419",
-        "title": "Automotive 178 – Premium Drift Racing Wall Art",
+        "title": "Automotive 178",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-178.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-178.webp"
+        "description": "Add 60s charm to your walls with this vintage 1966 Ford Fairlane convertible poster. Featuring classic advertisement typography and an optical illusion striped background.",
+        "label": "automotive-178.webp",
+        "seoTitle": "1966 Ford Fairlane Convertible Poster – Vintage Car Ad Decor",
+        "metaDescription": "Add 60s charm to your walls with this vintage 1966 Ford Fairlane convertible poster. Featuring classic advertisement typography and an optical illusion striped background.",
+        "seoAltText": "Vintage advertisement poster for the 1966 Ford Fairlane convertible featuring a black car against a black and white optical illusion background"
     },
     {
         "id": "p420",
