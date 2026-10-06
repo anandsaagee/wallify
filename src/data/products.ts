@@ -2746,93 +2746,123 @@ export const products = [
     },
     {
         "id": "p290",
-        "title": "Automotive 049 – Vintage Classic Car Room Decor",
+        "title": "Automotive 049",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-049.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-049.webp"
+        "description": "Admire track perfection with this Porsche GT3 RS poster. Showcasing the stunning silver and white supercar from a rear angle with aggressive red rims and decals.",
+        "label": "automotive-049.webp",
+        "seoTitle": "Porsche GT3 RS Silver & Red Poster – Modern Supercar Wall Art",
+        "metaDescription": "Admire track perfection with this Porsche GT3 RS poster. Showcasing the stunning silver and white supercar from a rear angle with aggressive red rims and decals.",
+        "seoAltText": "Rear angle view of a silver Porsche GT3 RS with bright red rims and red GT3 RS decals parked under a massive PORSCHE typographic element"
     },
     {
         "id": "p291",
-        "title": "Automotive 050 – Premium Drift Racing Wall Art",
+        "title": "Automotive 050",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-050.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-050.webp"
+        "description": "Show off the ultimate aerodynamic weapon with this Porsche GT3 RS poster. Featuring the stealthy black supercar and its massive rear wing.",
+        "label": "automotive-050.webp",
+        "seoTitle": "Porsche GT3 RS Black Supercar Poster – Track Performance Art",
+        "metaDescription": "Show off the ultimate aerodynamic weapon with this Porsche GT3 RS poster. Featuring the stealthy black supercar and its massive rear wing.",
+        "seoAltText": "Rear angle view of a sleek black Porsche GT3 RS showing off its large aerodynamic rear wing against a white background"
     },
     {
         "id": "p292",
-        "title": "Automotive 051 – Aesthetic Garage Car Poster",
+        "title": "Automotive 051",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-051.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-051.webp"
+        "description": "Look into the future of performance with this Porsche 911 GT3 AI Concept poster. Featuring a stylized white supercar enveloped in dramatic red smoke.",
+        "label": "automotive-051.webp",
+        "seoTitle": "Porsche 911 GT3 AI Concept Poster – Futuristic Supercar Art",
+        "metaDescription": "Look into the future of performance with this Porsche 911 GT3 AI Concept poster. Featuring a stylized white supercar enveloped in dramatic red smoke.",
+        "seoAltText": "White Porsche 911 GT3 AI concept car with orange rims surrounded by intense orange smoke with massive orange 911 typography"
     },
     {
         "id": "p293",
-        "title": "Automotive 052 – Modern Supercar Minimalist Print",
+        "title": "Automotive 052",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-052.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-052.webp"
+        "description": "Combine your love for JDM and pop culture with this unique Toyota Supra poster. Featuring a white MK4 Supra parked on a mountain road with a cute Eevee sitting on the hood.",
+        "label": "automotive-052.webp",
+        "seoTitle": "Toyota Supra Eevee Sunset Poster – JDM Anime Mountain Art",
+        "metaDescription": "Combine your love for JDM and pop culture with this unique Toyota Supra poster. Featuring a white MK4 Supra parked on a mountain road with a cute Eevee sitting on the hood.",
+        "seoAltText": "White Toyota Supra MK4 parked on a mountain highway at sunset with an Eevee character sitting on the hood and tall SUPRA text behind"
     },
     {
         "id": "p294",
-        "title": "Automotive 053 – Retro JDM Car Wall Poster",
+        "title": "Automotive 053",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-053.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-053.webp"
+        "description": "Experience motorsport heritage with this Porsche 911 GT3 poster. Featuring the sleek white track car adorned with bold red racing graphics.",
+        "label": "automotive-053.webp",
+        "seoTitle": "Porsche 911 GT3 White & Red Poster – Motorsport Racing Art",
+        "metaDescription": "Experience motorsport heritage with this Porsche 911 GT3 poster. Featuring the sleek white track car adorned with bold red racing graphics.",
+        "seoAltText": "White Porsche 911 GT3 race car with red side graphics parked on a dark background with massive red PORSCHE typography behind it"
     },
     {
         "id": "p295",
-        "title": "Automotive 054 – Luxury Sports Car Poster Art",
+        "title": "Automotive 054",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-054.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-054.webp"
+        "description": "Appreciate every angle of the legendary Porsche 911 Turbo with this multi-panel poster. Featuring the sleek black sports car in a modern split-view design.",
+        "label": "automotive-054.webp",
+        "seoTitle": "Porsche 911 Turbo Black Poster – Multi-Panel Supercar Decor",
+        "metaDescription": "Appreciate every angle of the legendary Porsche 911 Turbo with this multi-panel poster. Featuring the sleek black sports car in a modern split-view design.",
+        "seoAltText": "Multi-panel split view poster featuring different angles of a sleek black Porsche 911 Turbo"
     },
     {
         "id": "p296",
-        "title": "Automotive 055 – Street Racing Aesthetic Decor",
+        "title": "Automotive 055",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-055.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-055.webp"
+        "description": "Make a bold statement with this Porsche GT3 RS poster. Showcasing the side profile of the white supercar with red accents against a striking red backdrop.",
+        "label": "automotive-055.webp",
+        "seoTitle": "Porsche GT3 RS Side Profile Poster – Bold Red Background Art",
+        "metaDescription": "Make a bold statement with this Porsche GT3 RS poster. Showcasing the side profile of the white supercar with red accents against a striking red backdrop.",
+        "seoAltText": "Side profile view of a white Porsche GT3 RS with red rims and red GT3 RS decals set against a vibrant red background"
     },
     {
         "id": "p297",
-        "title": "Automotive 056 – JDM & Supercar Wall Poster",
+        "title": "Automotive 056",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-056.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-056.webp"
+        "description": "Pay tribute to 'Baby' with this 1967 Chevy Impala poster. Featuring a black and white collage of the iconic muscle car favored by monster hunters.",
+        "label": "automotive-056.webp",
+        "seoTitle": "1967 Chevy Impala Supernatural Poster – Baby Muscle Car Art",
+        "metaDescription": "Pay tribute to 'Baby' with this 1967 Chevy Impala poster. Featuring a black and white collage of the iconic muscle car favored by monster hunters.",
+        "seoAltText": "Black and white collage poster featuring multiple angles of a classic 1967 Chevy Impala with red lipstick kiss marks and typography calling it Baby"
     },
     {
         "id": "p298",
-        "title": "Automotive 057 – Vintage Classic Car Room Decor",
+        "title": "Automotive 057",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-057.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-057.webp"
+        "description": "Celebrate the wedge-shaped era of rallying with this Lancia Stratos poster. Featuring an illustration of the 1970s rally legend in its Alitalia livery.",
+        "label": "automotive-057.webp",
+        "seoTitle": "Lancia Stratos 1970s Alitalia Rally Poster – Vintage WRC Decor",
+        "metaDescription": "Celebrate the wedge-shaped era of rallying with this Lancia Stratos poster. Featuring an illustration of the 1970s rally legend in its Alitalia livery.",
+        "seoAltText": "Illustration of the classic 1970s Lancia Stratos WRC rally car featuring its iconic white, green, and red Alitalia racing livery"
     },
     {
         "id": "p299",
-        "title": "Automotive 058 – Premium Drift Racing Wall Art",
+        "title": "Automotive 058",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-058.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-058.webp"
+        "description": "Honor rotary power with this Mazda 787B Group C poster. Showcasing an illustration of the legendary Le Mans-winning race car in its famous Renown livery.",
+        "label": "automotive-058.webp",
+        "seoTitle": "Mazda 787B Group C Renown Poster – Rotary Le Mans Race Art",
+        "metaDescription": "Honor rotary power with this Mazda 787B Group C poster. Showcasing an illustration of the legendary Le Mans-winning race car in its famous Renown livery.",
+        "seoAltText": "Illustration of the legendary Mazda 787B Group C race car in its vibrant orange and green Renown livery"
     },
     {
         "id": "p300",
