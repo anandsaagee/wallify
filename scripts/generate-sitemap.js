@@ -7,8 +7,14 @@ const __dirname = path.dirname(__filename);
 
 const BASE_URL = 'https://wallifystore.in';
 const PRODUCTS_FILE = path.join(__dirname, '../src/data/products.ts');
-const SITEMAP_FILE = path.join(__dirname, '../public/sitemap.xml');
-const ROBOTS_FILE = path.join(__dirname, '../public/robots.txt');
+const SITEMAP_FILES = [
+  path.join(__dirname, '../public/sitemap.xml'),
+  path.join(__dirname, '../public-deploy/sitemap.xml'),
+];
+const ROBOTS_FILES = [
+  path.join(__dirname, '../public/robots.txt'),
+  path.join(__dirname, '../public-deploy/robots.txt'),
+];
 
 function generateSitemap() {
   console.log('Generating sitemap...');
@@ -87,7 +93,7 @@ function generateSitemap() {
 
   xml += '\n</urlset>';
 
-  fs.writeFileSync(SITEMAP_FILE, xml);
+  SITEMAP_FILES.forEach((f) => fs.writeFileSync(f, xml));
   console.log(`Generated sitemap with ${products.length} products (with image entries) and ${categories.length} categories.`);
 
   // Generate robots.txt
@@ -96,7 +102,7 @@ Allow: /
 
 Sitemap: ${BASE_URL}/sitemap.xml
 `;
-  fs.writeFileSync(ROBOTS_FILE, robots);
+  ROBOTS_FILES.forEach((f) => fs.writeFileSync(f, robots));
   console.log('Generated robots.txt.');
 }
 
