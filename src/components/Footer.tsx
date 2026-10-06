@@ -4,6 +4,7 @@ import { Instagram } from 'lucide-react';
 export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-background/95 border-t border-white/5 mt-auto">
+<<<<<<< HEAD
       <div className="container mx-auto px-4 py-10 flex flex-col items-center justify-center gap-5">
 
         {/* Brand */}
@@ -12,6 +13,21 @@ export const Footer: React.FC = () => {
         </h3>
 
         <p className="font-body text-sm text-muted max-w-sm text-center leading-relaxed">
+=======
+      <div className="container mx-auto px-4 py-12 flex flex-col items-center justify-center gap-6">
+        <div className="flex items-center gap-3">
+          <img
+            src="/wallify-logo.jpg"
+            alt="Wallify logo"
+            className="w-10 h-10 rounded-xl object-cover"
+          />
+          <h3 className="text-2xl font-black tracking-tighter text-white">
+            Wallify<span className="text-primary">.</span>
+          </h3>
+        </div>
+        
+        <p className="text-sm text-muted max-w-sm text-center">
+>>>>>>> 039688a (Update project)
           Premium posters at unbeatable prices. Transform your walls today.
         </p>
 
@@ -38,6 +54,7 @@ export const Footer: React.FC = () => {
           <a href="/category/quotes" className="hover:text-primary transition-colors hover:underline">Motivational Quotes</a>
         </div>
 
+<<<<<<< HEAD
         {/* Instagram */}
         <a
           href="https://www.instagram.com/wallifystore.india?stkn=djZzaWU1bnk1MW45"
@@ -53,6 +70,24 @@ export const Footer: React.FC = () => {
 
         <p className="font-body text-xs text-muted/40 text-center">
           © {new Date().getFullYear()} WallifyStore. All rights reserved.
+=======
+        <div className="flex items-center gap-4 mt-2">
+          <a
+            href="https://www.instagram.com/wallifystore.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group shadow-sm hover:shadow-md"
+          >
+            <Instagram size={20} className="text-muted group-hover:text-primary transition-colors" />
+            <span className="text-sm font-bold text-muted group-hover:text-white transition-colors">
+              @wallifystore.in
+            </span>
+          </a>
+        </div>
+        
+        <p className="text-xs text-muted/50 mt-6 text-center">
+          © {new Date().getFullYear()} Wallify Store. All rights reserved.
+>>>>>>> 039688a (Update project)
         </p>
       </div>
     </footer>

@@ -145,8 +145,34 @@ export const Hero: React.FC<{
           Premium posters at unbeatable prices.
         </p>
 
+<<<<<<< HEAD
         {/* ── Live Stats ── */}
         <LiveStats />
+=======
+        {/* Stats Boxes — side by side, compact */}
+        <div className="flex items-center gap-3 w-full max-w-xs mx-auto">
+          {/* Ordering Now */}
+          <div className="flex-1 flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-3 py-2.5">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+            </span>
+            <div>
+              <p className="text-[11px] font-black text-white leading-none">47 ordering</p>
+              <p className="text-[9px] font-semibold text-muted mt-0.5 leading-none">right now</p>
+            </div>
+          </div>
+
+          {/* Last Week Orders */}
+          <div className="flex-1 flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-3 py-2.5">
+            <span className="text-base leading-none">📦</span>
+            <div>
+              <p className="text-[11px] font-black text-white leading-none">1.2k orders</p>
+              <p className="text-[9px] font-semibold text-muted mt-0.5 leading-none">last week</p>
+            </div>
+          </div>
+        </div>
+>>>>>>> 039688a (Update project)
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
