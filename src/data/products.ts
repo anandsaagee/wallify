@@ -3946,93 +3946,123 @@ export const products = [
     },
     {
         "id": "p390",
-        "title": "Automotive 149 – Retro JDM Car Wall Poster",
+        "title": "Automotive 149",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-149.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-149.webp"
+        "description": "Appreciate the legendary Nissan Skyline R34 with this moody poster. Showcasing the sleek black JDM sports car against a backdrop of bold red SKYLINE typography.",
+        "label": "automotive-149.webp",
+        "seoTitle": "Nissan Skyline R34 Black Poster – Moody JDM Art",
+        "metaDescription": "Appreciate the legendary Nissan Skyline R34 with this moody poster. Showcasing the sleek black JDM sports car against a backdrop of bold red SKYLINE typography.",
+        "seoAltText": "Sleek black Nissan Skyline R34 parked in the rain with bold red SKYLINE typography in the background"
     },
     {
         "id": "p391",
-        "title": "Automotive 150 – Luxury Sports Car Poster Art",
+        "title": "Automotive 150",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-150.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-150.webp"
+        "description": "Embrace the timeless design of the Porsche 911 with this vintage-style advertisement poster. Featuring a sleek black side profile and the classic slogan 'You may get lost, but not in the crowd.'",
+        "label": "automotive-150.webp",
+        "seoTitle": "Porsche 911 Vintage Ad Poster – Classic Sports Car Decor",
+        "metaDescription": "Embrace the timeless design of the Porsche 911 with this vintage-style advertisement poster. Featuring a sleek black side profile and the classic slogan 'You may get lost, but not in the crowd.'",
+        "seoAltText": "Vintage-style advertisement poster featuring the side profile of a black Porsche 911 with classic ad copy"
     },
     {
         "id": "p392",
-        "title": "Automotive 151 – Street Racing Aesthetic Decor",
+        "title": "Automotive 151",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-151.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-151.webp"
+        "description": "Celebrate classic American muscle with this black and white 1969 Ford Mustang Mach 1 poster. The iconic rear fastback design is set against tall, striped MUSTANG typography.",
+        "label": "automotive-151.webp",
+        "seoTitle": "1969 Ford Mustang Mach 1 Poster – Black & White Muscle Art",
+        "metaDescription": "Celebrate classic American muscle with this black and white 1969 Ford Mustang Mach 1 poster. The iconic rear fastback design is set against tall, striped MUSTANG typography.",
+        "seoAltText": "Black and white poster featuring a 1969 Ford Mustang Mach 1 from the rear against tall striped MUSTANG typography"
     },
     {
         "id": "p393",
-        "title": "Automotive 152 – JDM & Supercar Wall Poster",
+        "title": "Automotive 152",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-152.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-152.webp"
+        "description": "Showcase modern muscle power with this Ford Mustang Shelby GT500 poster. Featuring the striking blue car with white racing stripes in a bold, layered design.",
+        "label": "automotive-152.webp",
+        "seoTitle": "Ford Mustang Shelby GT500 Blue Poster – Modern Muscle Decor",
+        "metaDescription": "Showcase modern muscle power with this Ford Mustang Shelby GT500 poster. Featuring the striking blue car with white racing stripes in a bold, layered design.",
+        "seoAltText": "Blue Ford Mustang Shelby GT500 with white racing stripes layered in front of a massive front end shot and large white MUSTANG typography"
     },
     {
         "id": "p394",
-        "title": "Automotive 153 – Vintage Classic Car Room Decor",
+        "title": "Automotive 153",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-153.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-153.webp"
+        "description": "Experience luxury performance with this BMW M5 F90 poster. Showcasing the aggressive black sports sedan against bold black BMW typography and the iconic M tricolor.",
+        "label": "automotive-153.webp",
+        "seoTitle": "BMW M5 F90 Black Sedan Poster – German Performance Art",
+        "metaDescription": "Experience luxury performance with this BMW M5 F90 poster. Showcasing the aggressive black sports sedan against bold black BMW typography and the iconic M tricolor.",
+        "seoAltText": "Black BMW M5 F90 sports sedan parked in front of large black BMW typography and the M tricolor stripes"
     },
     {
         "id": "p395",
-        "title": "Automotive 154 – Premium Drift Racing Wall Art",
+        "title": "Automotive 154",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-154.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-154.webp"
+        "description": "Add a vibrant touch to your space with this striking red BMW sedan poster. The sleek car is beautifully contrasted against a lush, tropical jungle background.",
+        "label": "automotive-154.webp",
+        "seoTitle": "BMW Red Sedan Jungle Poster – Vibrant Automotive Wall Art",
+        "metaDescription": "Add a vibrant touch to your space with this striking red BMW sedan poster. The sleek car is beautifully contrasted against a lush, tropical jungle background.",
+        "seoAltText": "Bright red BMW sedan parked in a lush green jungle setting with tall white BMW typography"
     },
     {
         "id": "p396",
-        "title": "Automotive 155 – Aesthetic Garage Car Poster",
+        "title": "Automotive 155",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-155.webp",
-        "description": "Transform your bedroom or garage with this modern luxury supercar poster. Designed with sharp HD details and a fade-resistant premium matte finish, this aesthetic wall art captures the pure essence of speed and design.",
-        "label": "automotive-155.webp"
+        "description": "Celebrate dynamic performance with this striking red BMW poster. The sleek sedan is set against a tropical jungle backdrop, complete with performance specs and the iconic M logo.",
+        "label": "automotive-155.webp",
+        "seoTitle": "BMW Red Sedan M Logo Poster – Tropical Performance Decor",
+        "metaDescription": "Celebrate dynamic performance with this striking red BMW poster. The sleek sedan is set against a tropical jungle backdrop, complete with performance specs and the iconic M logo.",
+        "seoAltText": "Bright red BMW sedan in a tropical jungle setting featuring the M logo and performance specifications"
     },
     {
         "id": "p397",
-        "title": "Automotive 156 – Modern Supercar Minimalist Print",
+        "title": "Automotive 156",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-156.webp",
-        "description": "Elevate your room or garage with this premium JDM and supercar wall poster. Printed on heavy, fade-resistant paper with a stunning matte finish, this aesthetic car art is perfect for gearheads and automotive enthusiasts.",
-        "label": "automotive-156.webp"
+        "description": "Embrace the spirit of drift culture with this dynamic BMW M2 animated vector poster. Featuring the light blue sports car performing a burnout against a bold red sun.",
+        "label": "automotive-156.webp",
+        "seoTitle": "BMW M2 Animated Drift Poster – Vector Car Art",
+        "metaDescription": "Embrace the spirit of drift culture with this dynamic BMW M2 animated vector poster. Featuring the light blue sports car performing a burnout against a bold red sun.",
+        "seoAltText": "Animated vector poster of a light blue BMW M2 drifting and doing a burnout in front of a large red sun graphic"
     },
     {
         "id": "p398",
-        "title": "Automotive 157 – Retro JDM Car Wall Poster",
+        "title": "Automotive 157",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-157.webp",
-        "description": "Bring the thrill of the track to your walls with this high-definition racing and drift car poster. Featuring rich, vibrant colors and a premium matte finish, it is the ultimate decor for any car lover.",
-        "label": "automotive-157.webp"
+        "description": "Feel the power of M performance with this animated BMW M2 vector poster. Showcasing the white coupe with classic M tricolor stripes drifting amidst clouds of smoke.",
+        "label": "automotive-157.webp",
+        "seoTitle": "BMW M2 White Drift Vector Poster – M Power Art",
+        "metaDescription": "Feel the power of M performance with this animated BMW M2 vector poster. Showcasing the white coupe with classic M tricolor stripes drifting amidst clouds of smoke.",
+        "seoAltText": "Animated vector poster featuring a white BMW M2 with M tricolor stripes doing a burnout amidst thick clouds of smoke"
     },
     {
         "id": "p399",
-        "title": "Automotive 158 – Luxury Sports Car Poster Art",
+        "title": "Automotive 158",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/automotive-158.webp",
-        "description": "Add a touch of automotive excellence to your space with this classic and vintage car wall poster. Crafted on gallery-quality paper, this minimalist automotive print is an ideal gift for any passionate car collector.",
-        "label": "automotive-158.webp"
+        "description": "Showcase pure M power with this vibrant blue BMW poster. Featuring the aggressive sports coupe set against a matching blue background with massive white typography.",
+        "label": "automotive-158.webp",
+        "seoTitle": "BMW Blue Coupe Poster – Bold German Performance Decor",
+        "metaDescription": "Showcase pure M power with this vibrant blue BMW poster. Featuring the aggressive sports coupe set against a matching blue background with massive white typography.",
+        "seoAltText": "Bright blue BMW sports coupe parked against a matching blue background with massive white BMW typography"
     },
     {
         "id": "p400",
