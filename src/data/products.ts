@@ -1082,93 +1082,123 @@ export const products = [
     },
     {
         "id": "p91",
-        "title": "Abstract 091 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 091 – Cigarette After Tax Sitharaman Parody Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-091.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-091.webp"
+        "description": "Add witty satire and unapologetic pop culture humor to your walls with this Cigarette After Tax parody art print. Blending vibrant neon magenta halftone graphics with playful political commentary, this quirky conversation-starter brings bold personality and relatable humor to chill rooms, creative studios, and college dorms.",
+        "label": "abstract-091.webp",
+        "seoTitle": "Cigarette After Tax Sitharaman Parody Poster | Wallify",
+        "metaDescription": "Funny Indian political pop art meme poster parodying Cigarettes After Sex with Nirmala Sitharaman. Vibrant neon pink satire art for young adults.",
+        "seoAltText": "Bright pink and yellow satirical pop art poster featuring Indian Finance Minister Nirmala Sitharaman smoking captioned Cigarette After Tax."
     },
     {
         "id": "p92",
-        "title": "Abstract 092 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 092 – Spider-Man Until You Win Snowy Street Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-092.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-092.webp"
+        "description": "Immerse your space in the cinematic grit and quiet perseverance of Spider-Man with this atmospheric urban art print. Showing the web-slinger lying on a snow-dusted city crosswalk alongside the glowing reminder 'They won't care until you win', this piece provides moody inspiration for gaming setups and contemporary bedrooms.",
+        "label": "abstract-092.webp",
+        "seoTitle": "Spider-Man Until You Win City Street Art Poster | Wallify",
+        "metaDescription": "Cinematic aerial poster of Spider-Man on a snowy street with quote: They won't care until you win. Moody urban superhero art for modern rooms.",
+        "seoAltText": "Cinematic overhead view poster of Spider-Man lying in a snowy city street beside a taxi with glowing text They Won't Care Until You Win."
     },
     {
         "id": "p93",
-        "title": "Abstract 093 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 093 – Han Lue Mazda RX-7 Tokyo Drift JDM Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-093.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-093.webp"
+        "description": "Celebrate the ultimate icon of effortless cool and drift culture with this Han Lue Tokyo Drift art print. Depicting the beloved Fast & Furious driver alongside his legendary orange Veilside Mazda RX-7 and signature philosophy, this high-octane graphic poster is a must-have for car enthusiasts, garages, and bedrooms.",
+        "label": "abstract-093.webp",
+        "seoTitle": "Han Lue Mazda RX-7 Tokyo Drift JDM Art Poster | Wallify",
+        "metaDescription": "Stylized Fast and Furious Tokyo Drift poster featuring Han Lue with his Veilside Mazda RX-7. Essential JDM drift car wall art for petrolheads.",
+        "seoAltText": "Graphic design poster of Han Lue from Tokyo Drift leaning against an orange Veilside Mazda RX-7 sports car with Tokyo Kanji typography."
     },
     {
         "id": "p94",
-        "title": "Abstract 094 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 094 – I Will Evolve Sukuna Monochrome Anime Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-094.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-094.webp"
+        "description": "Unleash boundless hunger for growth and supreme strength with this stark black-and-white anime motivation poster. Featuring an imposing four-armed warrior silhouette radiating cursed flames beside the resolute mantra 'I have no prime, I will evolve until I die', this print commands dedication on gym, study, or studio walls.",
+        "label": "abstract-094.webp",
+        "seoTitle": "I Will Evolve Sukuna Monochrome Anime Poster | Wallify",
+        "metaDescription": "Minimalist high-contrast black and white anime poster of Sukuna with four arms and caption I Will Evolve. Powerful manga wall art for gym & bedroom.",
+        "seoAltText": "Black ink silhouette anime poster of a four-armed warrior figure with cursed flames, titled I Have No Prime I Will Evolve Until I Die."
     },
     {
         "id": "p95",
-        "title": "Abstract 095 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 095 – What If It All Works Out Typographic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-095.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-095.webp"
+        "description": "Infuse your daily environment with optimism and reassurance through this vintage-inspired letterpress typography poster. Blending bold distressed woodblock fonts with newsprint collage textures and a vibrant red accent, this print is a comforting, stylish focal point for home offices, creative studios, and living spaces.",
+        "label": "abstract-095.webp",
+        "seoTitle": "What If It All Works Out Typographic Art Poster | Wallify",
+        "metaDescription": "Uplifting vintage letterpress typography poster reading What If It All Works Out? over newsprint texture. Encouraging wall art for home & office.",
+        "seoAltText": "Distressed woodblock typography poster with bold black and red lettering on newsprint background reading What If It All Works Out?."
     },
     {
         "id": "p96",
-        "title": "Abstract 096 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 096 – Parizhamalli Romantic Tamil Pop Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-096.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-096.webp"
+        "description": "Celebrate the joyful magic of contemporary South Indian romance and indie music with this vivid Parizhamalli pop art print. Featuring radiant neon blues, a bold crimson starburst, and an affectionate couple sharing a gentle gaze, this expressive artwork adds warmth and modern cinematic romance to any living room or bedroom.",
+        "label": "abstract-096.webp",
+        "seoTitle": "Parizhamalli Romantic Tamil Pop Art Poster | Wallify",
+        "metaDescription": "Vivid blue and red pop art poster featuring a South Indian couple smiling affectionately under a red starburst. Vibrant romantic art for music fans.",
+        "seoAltText": "Cinematic pop art poster of a South Indian man and woman smiling at each other against an electric blue backdrop with a bold red starburst."
     },
     {
         "id": "p97",
-        "title": "Abstract 097 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 097 – Eren Attack Titan Manga Ink Anime Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-097.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-097.webp"
+        "description": "Embrace the raw intensity and mythic fury of Attack on Titan with this Eren Yeager Attack Titan manga art print. Styled with high-contrast black ink hatching, folded paper textures, and a bold purple sidebar layout, this poster delivers an edgy, aesthetic statement piece for anime bedrooms, gaming rooms, and personal galleries.",
+        "label": "abstract-097.webp",
+        "seoTitle": "Eren Attack Titan Manga Ink Anime Art Poster | Wallify",
+        "metaDescription": "Dark anime poster featuring Eren Yeager's Attack Titan with piercing eyes, bared teeth, and purple design strip. Gritty manga wall art for fans.",
+        "seoAltText": "Black and white manga illustration poster of Eren Yeager in Attack Titan form with glowing purple eyes and a vertical purple layout strip."
     },
     {
         "id": "p98",
-        "title": "Abstract 098 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 098 – Coffee Sleep When You're Dead Retro Sign Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-098.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-098.webp"
+        "description": "Add playful vintage humor and high-caffeine energy to your kitchen, cafe, or breakfast nook with this retro coffee tin-sign art print. Showcasing a bright-eyed 1950s woman enjoying a steaming hot cup with the classic quip 'You can sleep when you're dead!', it brings nostalgic diner charm to any coffee lover's sanctuary.",
+        "label": "abstract-098.webp",
+        "seoTitle": "Coffee Sleep When You're Dead Retro Art Poster | Wallify",
+        "metaDescription": "Vintage 1950s red diner tin sign style poster featuring a smiling woman with coffee: You Can Sleep When You're Dead! Fun wall art for kitchen & cafe.",
+        "seoAltText": "Retro 1950s red advertising poster of a wide-eyed smiling brunette woman holding a steaming coffee mug captioned You can sleep when you're dead!."
     },
     {
         "id": "p99",
-        "title": "Abstract 099 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 099 – Desi Kitchen Anglo-Indian Folk Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-099.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-099.webp"
+        "description": "Celebrate the rich culinary heritage of the South Asian diaspora with this intricate Desi Kitchen folk art poster. Combining architectural landmarks of London and India with aromatic spices, mehndi motifs, and lively stylized wildlife in vibrant turquoise and warm crimson, this print is a stunning centerpiece for dining areas.",
+        "label": "abstract-099.webp",
+        "seoTitle": "Desi Kitchen Anglo-Indian Folk Art Poster | Wallify",
+        "metaDescription": "Intricate turquoise folk art poster depicting Anglo-Indian culinary heritage with Big Ben, Taj Mahal, and spices. Rich wall art for dining spaces.",
+        "seoAltText": "Symmetrical folk art poster featuring Big Ben, Taj Mahal, kadai cooking pot, lotus, and spices celebrating Anglo-Indian diaspora cuisine."
     },
     {
         "id": "p100",
-        "title": "Abstract 100 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 100 – Follow Your Plan Not Your Mood Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-100.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-100.webp"
+        "description": "Build unshakeable consistency and daily focus with this bold 'Follow Your Plan Not Your Mood' motivational typography poster. Rendered in rugged distressed black woodblock lettering against an intense terracotta-red background, this no-nonsense print provides the ultimate mindset boost for gyms, study spaces, and home offices.",
+        "label": "abstract-100.webp",
+        "seoTitle": "Follow Your Plan Not Your Mood Discipline Poster | Wallify",
+        "metaDescription": "Bold red and black grunge typography poster: Follow Your Plan Not Your Mood. High-impact discipline and productivity wall art for office & gym.",
+        "seoAltText": "Weathered red and black block letterpress typography poster with bold distressed font reading Follow Your Plan Not Your Mood."
     },
     {
         "id": "p101",
