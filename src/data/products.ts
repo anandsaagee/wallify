@@ -842,93 +842,123 @@ export const products = [
     },
     {
         "id": "p71",
-        "title": "Abstract 071 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 071 – Fresh Jalebi Sweet & Crispy Desi Mithai Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-071.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-071.webp"
+        "description": "Celebrate the warmth and indulgence of authentic Indian confectionery with this mouthwatering Jalebi art print. Depicting freshly coiled, syrup-soaked golden spirals with delicate silver vark, this poster brings lively cultural nostalgia and rich color to any dining area or modern kitchen.",
+        "label": "abstract-071.webp",
+        "seoTitle": "Fresh Jalebi Indian Sweets Desi Art Poster | Wallify",
+        "metaDescription": "Vibrant Indian sweets poster featuring glistening fresh jalebis with silver foil and retro desi halwai typography. Perfect for dining & kitchen decor.",
+        "seoAltText": "Art poster featuring a towering stack of golden fried jalebis garnished with silver leaf foil, framed by red vintage desi sweet shop typography."
     },
     {
         "id": "p72",
-        "title": "Abstract 072 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 072 – Scarface Tony Montana Nobody Cares Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-072.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-072.webp"
+        "description": "Capture the relentless grit and ambition of cinema's most iconic kingpin with this Tony Montana Scarface poster. Featuring Al Pacino in a classic tuxedo lighting his cigar amidst deep shadow, this print makes a bold, unapologetic statement for office spaces, study nooks, or home theaters.",
+        "label": "abstract-072.webp",
+        "seoTitle": "Scarface Tony Montana Nobody Cares Art Poster | Wallify",
+        "metaDescription": "Iconic Scarface Tony Montana poster lighting a cigar in black tuxedo with bold motivational quote. Sleek cinematic wall art for office and modern rooms.",
+        "seoAltText": "Cinematic monochrome poster of Al Pacino as Tony Montana in Scarface lighting a cigar with a gold lighter, captioned 'nobody cares until you win'."
     },
     {
         "id": "p73",
-        "title": "Abstract 073 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 073 – Rockstar Ranbir Kapoor Jordan Bollywood Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-073.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-073.webp"
+        "description": "Channel the raw soul and musical rebellion of Imtiaz Ali's cult masterpiece with this Jordan Rockstar movie poster. Showcasing Ranbir Kapoor in his iconic military jacket and cap pouring his heart into the mic, this layered collage art print is an essential tribute for Bollywood and music enthusiasts.",
+        "label": "abstract-073.webp",
+        "seoTitle": "Rockstar Jordan Ranbir Kapoor Bollywood Poster | Wallify",
+        "metaDescription": "Passionate Ranbir Kapoor Rockstar Jordan graphic poster with distressed typography and concert stills. Ideal Bollywood cinematic art for music lovers.",
+        "seoAltText": "Graphic design poster of Ranbir Kapoor as Jordan in the Bollywood movie Rockstar, singing into a microphone surrounded by layered collage elements."
     },
     {
         "id": "p74",
-        "title": "Abstract 074 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 074 – Honda CB350 Neo Tokyo Motorcycle Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-074.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-074.webp"
+        "description": "Infuse your space with retro-futuristic cafe racer energy with this Honda CB350 Neo-Tokyo motorcycle art print. Blending clean mechanical photography with bold Japanese Katakana typography and vibrant geometric iconography, it brings high-octane personality to garages, lofts, or creative studios.",
+        "label": "abstract-074.webp",
+        "seoTitle": "Honda CB350 Neo Tokyo Motorcycle Art Poster | Wallify",
+        "metaDescription": "Neo-Tokyo Japanese aesthetic poster featuring a sleek Honda CB350 motorcycle, bold red rising sun, and Katakana lettering. Great for bike enthusiasts.",
+        "seoAltText": "Graphic poster displaying a black Honda CB350 motorcycle against a graphic red rising sun circle, Japanese Katakana script, and retro moto badges."
     },
     {
         "id": "p75",
-        "title": "Abstract 075 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 075 – Trial of Socrates Greek Philosophy Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-075.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-075.webp"
+        "description": "Immerse your study or reading room in classical wisdom with this evocative Trial of Socrates art print. Depicting the ancient philosopher fearlessly defending virtue and truth before the Athenian assembly, this fine art reproduction brings timeless gravitas and intellectual inspiration to your walls.",
+        "label": "abstract-075.webp",
+        "seoTitle": "Trial of Socrates Greek Philosophy Art Poster | Wallify",
+        "metaDescription": "Classical art print of Socrates delivering his defense to the Athenian court. Rich historical wall decor for library, study, or philosophy admirers.",
+        "seoAltText": "Neoclassical painting poster showing the philosopher Socrates in a white toga standing on stone steps addressing an ancient Athenian court."
     },
     {
         "id": "p76",
-        "title": "Abstract 076 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 076 – Dopamine Neuroscience Brutalist Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-076.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-076.webp"
+        "description": "Celebrate the neurobiology of motivation and passion with this striking Dopamine brutalist infographic poster. Featuring high-contrast macro eye imagery paired with sharp Swiss typography and scientific diagrams, this print delivers an edgy intellectual aesthetic to tech offices, study desks, and modern bedrooms.",
+        "label": "abstract-076.webp",
+        "seoTitle": "Dopamine Neuroscience Brutalist Wall Art Poster | Wallify",
+        "metaDescription": "Brutalist science poster featuring a macro dilated pupil, dopamine chemical diagrams, and minimal typography. Contemporary decor for modern spaces.",
+        "seoAltText": "Brutalist graphic poster showcasing a macro black dilated human pupil, neuroscience diagrams, pill bottle silhouette, and bold Dopamine typography."
     },
     {
         "id": "p77",
-        "title": "Abstract 077 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 077 – Naan Sense Tikka Masala Indian Pop Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-077.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-077.webp"
+        "description": "Add playful flavor and vibrant desi kitsch to your kitchen or dining nook with this Naan Sense Tikka Masala art print. Bursting with retro bubble gum pinks, bold crimson tones, and quirky graphic illustrations, it makes an irresistibly charming conversation starter for food lovers and culinary spaces.",
+        "label": "abstract-077.webp",
+        "seoTitle": "Naan Sense Tikka Masala Indian Pop Art Poster | Wallify",
+        "metaDescription": "Funky Indian pop art poster celebrating tikka masala and naan with quirky retro typography and vibrant pink colors. Playful kitchen and diner art.",
+        "seoAltText": "Vibrant pink and red Indian pop art poster featuring a stylized mustache face in a turban, labeled Tikka Masala and naan sense."
     },
     {
         "id": "p78",
-        "title": "Abstract 078 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 078 – Impossible Is Nothing Boxing Typographic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-078.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-078.webp"
+        "description": "Fuel your daily drive and mental resilience with this iconic Impossible Is Nothing typography poster. Sculpted from motivational aphorisms that form the powerful silhouette of a focused fighter, this monochrome art print delivers timeless inspiration to home gyms, workspaces, and workout zones.",
+        "label": "abstract-078.webp",
+        "seoTitle": "Impossible Is Nothing Boxing Typographic Poster | Wallify",
+        "metaDescription": "Inspiring black and white boxing silhouette poster crafted with bold motivational quotes reading Impossible Is Nothing. Ideal gym & home office decor.",
+        "seoAltText": "Black and white typographic silhouette poster of a boxer with arms crossed, formed from motivational phrases with bold Impossible Is Nothing text."
     },
     {
         "id": "p79",
-        "title": "Abstract 079 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 079 – You Will Never Win Anti-Procrastination Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-079.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-079.webp"
+        "description": "Conquer delay with sharp dark humor in this You Will Never Win If You Never Begin art print. Pairing vintage anatomical skeleton engravings with witty, relatable quips about procrastination and a tombstone reading 'I'll do it later', this poster brings levity and an ironic push to any studio or home office.",
+        "label": "abstract-079.webp",
+        "seoTitle": "You Will Never Win Anti Procrastination Poster | Wallify",
+        "metaDescription": "Witty retro poster featuring vintage skeleton engravings and satirical quotes tackling procrastination: You Will Never Win If You Never Begin.",
+        "seoAltText": "Vintage sepia typographic poster with engraved skeleton illustrations and satirical captions, reading You Will Never Win If You Never Begin."
     },
     {
         "id": "p80",
-        "title": "Abstract 080 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 080 – No Change Without Motion Editorial Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-080.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-080.webp"
+        "description": "Ignite momentum and purposeful action with this editorial No Change Without Motion typography poster. Featuring elegant serif lettering layered over moody duotone halftone photo vignettes and motivational directives, this piece provides an understated, sophisticated reminder to keep moving forward.",
+        "label": "abstract-080.webp",
+        "seoTitle": "No Change Without Motion Editorial Graphic Poster | Wallify",
+        "metaDescription": "Striking black and gold graphic poster reading No Change Without Motion, with halftone motion photography panels. Inspiring wall art for thinkers.",
+        "seoAltText": "Graphic design poster with bold serif typography reading No Change Without Motion, featuring cyan halftone photo panels of movement and cycling."
     },
     {
         "id": "p81",
