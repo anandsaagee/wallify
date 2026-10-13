@@ -602,93 +602,123 @@ export const products = [
     },
     {
         "id": "p51",
-        "title": "Abstract 051 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 051 – Just Chillin Red Hot Chili Peppers Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-051.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-051.webp"
+        "description": "A playful pop art food illustration poster. Two glossy red hot chili peppers casting deep blue shadows in a candy pink frame: 'just chillin'.' Vibrant retro kitchen decor.",
+        "label": "abstract-051.webp",
+        "seoTitle": "Just Chillin Red Chili Peppers Pop Art Food Poster",
+        "metaDescription": "Playful retro food pop art poster with red chili peppers casting blue shadows in a pink frame: 'just chillin'.' Kitchen art.",
+        "seoAltText": "Retro pop art kitchen poster framed in pastel pink featuring two glossy red chili peppers casting royal blue shadows over a split white and light blue background with red typography reading just chillin"
     },
     {
         "id": "p52",
-        "title": "Abstract 052 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 052 – Gothic Skull With Headphones Dictionary Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-052.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-052.webp"
+        "description": "A dark academia gothic book print poster. Vintage dictionary page illustrated with an anatomical human skull wearing modern over-ear audio headphones in black ink.",
+        "label": "abstract-052.webp",
+        "seoTitle": "Gothic Skull Headphones Vintage Dictionary Art Poster",
+        "metaDescription": "Dark academia gothic art poster featuring an anatomical skull wearing headphones over antique dictionary book text.",
+        "seoAltText": "Dark academia print on antique aged dictionary book paper featuring a detailed black ink engraving of a human skull wearing sleek over-ear DJ headphones"
     },
     {
         "id": "p53",
-        "title": "Abstract 053 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 053 – Doberman With Gun Luxury Dior Streetwear Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-053.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-053.webp"
+        "description": "A fierce luxury streetwear photography poster. High-contrast monochrome studio portrait of a Doberman Pinscher holding a handgun in its jaws, with white DIOR typography.",
+        "label": "abstract-053.webp",
+        "seoTitle": "Doberman Gun Luxury Dior Streetwear Hypebeast Poster",
+        "metaDescription": "Bold monochrome hypebeast poster of an alert Doberman in a spiked collar holding a gun with luxury DIOR typography.",
+        "seoAltText": "Black and white studio photograph of a muscular Doberman dog wearing a spiked collar holding a black semi-automatic pistol in its mouth with the word DIOR in elegant serif font at the bottom"
     },
     {
         "id": "p54",
-        "title": "Abstract 054 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 054 – Red Lips Vogue Style Newspaper Collage Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-054.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-054.webp"
+        "description": "A glamorous fashion editorial collage poster. Three luscious glossy red lipstick lips stacked over vintage newspaper text, with bold VOGUE style typography.",
+        "label": "abstract-054.webp",
+        "seoTitle": "Red Lips Vogue Style Vintage Newspaper Collage Poster",
+        "metaDescription": "Glamorous fashion collage poster featuring glossy red lipstick lips stacked over vintage newsprint with Vogue typography.",
+        "seoAltText": "Fashion editorial wall art featuring three glossy ruby-red parted lips with white teeth aligned vertically over aged newspaper print columns, topped with bold black typography reading VOGUE style"
     },
     {
         "id": "p55",
-        "title": "Abstract 055 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 055 – But First Coffee Vintage Grinder Cafe Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-055.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-055.webp"
+        "description": "A charming retro cafe art poster. Vintage wooden hand-crank coffee grinder filled with roasted beans on crimson, with Art Deco typography: 'BUT FIRST, COFFEE.'",
+        "label": "abstract-055.webp",
+        "seoTitle": "But First Coffee Vintage Grinder Retro Cafe Wall Poster",
+        "metaDescription": "Retro kitchen cafe poster featuring an antique coffee grinder on crimson with Art Deco lettering: 'BUT FIRST, COFFEE.'",
+        "seoAltText": "Vintage cafe poster on cream paper featuring an antique hand-crank coffee grinder overflowing with dark roasted coffee beans on a bold red background, bordered by red Art Deco typography reading BUT FIRST, COFFEE"
     },
     {
         "id": "p56",
-        "title": "Abstract 056 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 056 – Vogue Cat With Rotary Phone Diamond Necklace Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-056.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-056.webp"
+        "description": "A sassy fashion magazine parody poster. Black cat wearing a sparkling diamond choker collar glaring at a vintage telephone receiver held to its ear: 'VOGUE Holy Chic.'",
+        "label": "abstract-056.webp",
+        "seoTitle": "Vogue Cat Telephone Diamond Necklace Fashion Art Poster",
+        "metaDescription": "Sassy black and white fashion parody poster of a black cat in diamond choker with a rotary telephone: 'VOGUE Holy Chic.'",
+        "seoAltText": "Black and white fashion magazine parody poster titled VOGUE featuring a black cat wearing a sparkling diamond choker necklace looking annoyed as a manicured hand holds a black rotary telephone receiver to its ear"
     },
     {
         "id": "p57",
-        "title": "Abstract 057 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 057 – Harry Potter Daily Prophet Boy Who Lived Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-057.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-057.webp"
+        "description": "An authentic wizarding broadsheet replica of The Daily Prophet. Harry Potter Triwizard front page with headlines: 'Boy Who Lived', 'There is Nothing to Fear', and wizard lore.",
+        "label": "abstract-057.webp",
+        "seoTitle": "Harry Potter Daily Prophet Boy Who Lived Broadsheet Poster",
+        "metaDescription": "Authentic Harry Potter Daily Prophet newspaper poster featuring Daniel Radcliffe, wizard headlines & vintage broadsheet layout.",
+        "seoAltText": "Vintage wizarding newspaper replica poster of The Daily Prophet featuring the headline EXCLUSIVE BOY WHO LIVED above a photo of Harry Potter at Hogwarts, surrounded by magical headlines and intricate broadsheet columns"
     },
     {
         "id": "p58",
-        "title": "Abstract 058 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 058 – 500 Days of Summer Marc Webb Indie Film Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-058.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-058.webp"
+        "description": "A poetic indie film poster for Marc Webb's (500) Days of Summer. Tom and Summer in nostalgic memory cutouts on vintage folded paper: 'This is not a love story.'",
+        "label": "abstract-058.webp",
+        "seoTitle": "500 Days of Summer Marc Webb Indie Romance Movie Poster",
+        "metaDescription": "Poetic indie film poster for (500) Days of Summer with Joseph Gordon-Levitt & Zooey Deschanel memory collage on cream paper.",
+        "seoAltText": "Indie movie fan poster on creased cream paper for (500) Days of Summer showing Joseph Gordon-Levitt with headphones and a memory cutout of Summer in his mind, and Zooey Deschanel with a blue cloud cutout, with the quote This is not a love story"
     },
     {
         "id": "p59",
-        "title": "Abstract 059 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 059 – What If It All Works Out Newspaper Quote Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-059.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-059.webp"
+        "description": "An uplifting positive affirmation poster. Bold black handwritten typography over an authentic 1865 Chicago Times antique newspaper: 'WHAT IF IT ALL WORKS OUT?'",
+        "label": "abstract-059.webp",
+        "seoTitle": "What If It All Works Out Vintage Newspaper Quote Poster",
+        "metaDescription": "Uplifting mental wellness poster with bold handwriting over 1865 antique newspaper: 'WHAT IF IT ALL WORKS OUT?'",
+        "seoAltText": "Inspirational typography poster featuring bold black marker hand-lettering reading WHAT IF IT ALL WORKS OUT layered directly over an authentic 1865 vintage front page of The Chicago Times"
     },
     {
         "id": "p60",
-        "title": "Abstract 060 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 060 – I Like Expensive Sh*t Newspaper Sarcastic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-060.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-060.webp"
+        "description": "A witty sarcastic hustle typography poster. Bold black lettering across an authentic 1865 Chicago Times newspaper: 'I HAVE TO SUCCEED BECAUSE I LIKE EXPENSIVE SHIT.'",
+        "label": "abstract-060.webp",
+        "seoTitle": "I Like Expensive Shit Sarcastic Newspaper Hustle Poster",
+        "metaDescription": "Witty sarcastic motivation poster on 1865 antique newspaper: 'I HAVE TO SUCCEED BECAUSE I LIKE EXPENSIVE SHIT.' Office decor.",
+        "seoAltText": "Sarcastic motivational quote poster on vintage 1865 Chicago Times newspaper broadsheet featuring thick black hand-drawn letters reading I HAVE TO SUCCEED BECAUSE I LIKE EXPENSIVE SHIT"
     },
     {
         "id": "p61",
