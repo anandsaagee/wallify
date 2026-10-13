@@ -1,7 +1,7 @@
 export const products = [
     {
         "id": "p1",
-        "title": "How I Met Your Mother – Vintage Duotone TV Poster",
+        "title": "Abstract 001 – How I Met Your Mother Vintage Duotone TV Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-001.webp",
@@ -13,7 +13,7 @@ export const products = [
     },
     {
         "id": "p2",
-        "title": "CHAOS – Wavy Minimalist Typography Poster",
+        "title": "Abstract 002 – CHAOS Wavy Minimalist Typography Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-002.webp",
@@ -25,7 +25,7 @@ export const products = [
     },
     {
         "id": "p3",
-        "title": "The End of Evangelion – Dark Anime Movie Poster",
+        "title": "Abstract 003 – The End of Evangelion Dark Anime Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-003.webp",
@@ -37,7 +37,7 @@ export const products = [
     },
     {
         "id": "p4",
-        "title": "Inception – Geometric Infinite Tunnel Movie Poster",
+        "title": "Abstract 004 – Inception Geometric Infinite Tunnel Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-004.webp",
@@ -49,7 +49,7 @@ export const products = [
     },
     {
         "id": "p5",
-        "title": "Ramen – Retro Japanese Food Illustration Poster",
+        "title": "Abstract 005 – Ramen Retro Japanese Food Illustration Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-005.webp",
@@ -61,7 +61,7 @@ export const products = [
     },
     {
         "id": "p6",
-        "title": "Highest in the Room – Travis Scott Sky Poster",
+        "title": "Abstract 006 – Highest in the Room Travis Scott Sky Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-006.webp",
@@ -73,7 +73,7 @@ export const products = [
     },
     {
         "id": "p7",
-        "title": "Interstellar – Sci-Fi Blueprint Fan Art Poster",
+        "title": "Abstract 007 – Interstellar Sci-Fi Blueprint Fan Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-007.webp",
@@ -85,7 +85,7 @@ export const products = [
     },
     {
         "id": "p8",
-        "title": "Art Speaks Without Words – Vintage Gold Editorial Poster",
+        "title": "Abstract 008 – Art Speaks Without Words Vintage Gold Editorial Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-008.webp",
@@ -97,7 +97,7 @@ export const products = [
     },
     {
         "id": "p9",
-        "title": "Manifest Your Dreams – Abstract Topographic Wave Poster",
+        "title": "Abstract 009 – Manifest Your Dreams Abstract Topographic Wave Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-009.webp",
@@ -109,7 +109,7 @@ export const products = [
     },
     {
         "id": "p10",
-        "title": "Stressed Out? Not Giving A Sh*t? – Retro Humor Poster",
+        "title": "Abstract 010 – Stressed Out? Not Giving A Sh*t? Retro Humor Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-010.webp",
@@ -861,7 +861,7 @@ export const products = [
         "description": "Capture the relentless grit and ambition of cinema's most iconic kingpin with this Tony Montana Scarface poster. Featuring Al Pacino in a classic tuxedo lighting his cigar amidst deep shadow, this print makes a bold, unapologetic statement for office spaces, study nooks, or home theaters.",
         "label": "abstract-072.webp",
         "seoTitle": "Scarface Tony Montana Nobody Cares Art Poster | Wallify",
-        "metaDescription": "Iconic Scarface Tony Montana poster lighting a cigar in black tuxedo with bold motivational quote. Sleek cinematic wall art for office and modern rooms.",
+        "metaDescription": "Iconic Scarface Tony Montana poster lighting a cigar in black tuxedo with bold quote. Sleek cinematic wall art for office and modern rooms.",
         "seoAltText": "Cinematic monochrome poster of Al Pacino as Tony Montana in Scarface lighting a cigar with a gold lighter, captioned 'nobody cares until you win'."
     },
     {
@@ -1065,7 +1065,7 @@ export const products = [
         "description": "Spark critical debate and intellectual curiosity with this thought-provoking retro editorial art print. Depicting a faceless suited figure behind a barrage of microphones under the headline 'Can We Really Trust The Media', this vintage-textured screenprint makes a compelling centerpiece for offices, study rooms, or reading lounges.",
         "label": "abstract-089.webp",
         "seoTitle": "Can We Trust The Media Editorial Vintage Poster | Wallify",
-        "metaDescription": "Thought-provoking retro political poster asking Can We Really Trust The Media with microphones and a question mark. Bold wall art for office & library.",
+        "metaDescription": "Retro political poster asking Can We Really Trust The Media with microphones and a question mark. Bold wall art for modern office & library.",
         "seoAltText": "Retro editorial silkscreen poster of a suited figure with a question mark head surrounded by microphones, thumbs up, and thumbs down hands."
     },
     {
@@ -1317,7 +1317,7 @@ export const products = [
         "description": "Embrace raw emotional release and contemporary urban pop aesthetics with this Let It Flow Coca-Cola art print. Featuring a glistening, chilled red soda can bursting with fizzy foam set against bold distressed typography and editorial graphics, this poster injects dynamic color and youthful attitude into modern rooms.",
         "label": "abstract-110.webp",
         "seoTitle": "Coca-Cola Let It Flow Overflowing Can Art Poster | Wallify",
-        "metaDescription": "Modern pop art poster of an overflowing chilled Coca-Cola can with condensation and bold Let It Flow typography. Edgy urban wall art for trendy spaces.",
+        "metaDescription": "Pop art poster of an overflowing chilled Coca-Cola can with condensation and bold Let It Flow typography. Edgy urban wall art for trendy spaces.",
         "seoAltText": "Graphic pop art poster of an opened Coca-Cola can overflowing with fizzing soda foam and water droplets with red script text reading Let It Flow."
     },
     {
@@ -1364,7 +1364,7 @@ export const products = [
         "image": "/assets/abstract/abstract-114.webp",
         "description": "Celebrate cutting-edge auteur cinema and modernist graphic elegance with this Bugonia film art print. Designed with deconstructed Bauhaus-inspired geometric typography and undulating cyan contours against a rich rust-red field, this avant-garde poster brings sophisticated European design flair to modern living rooms and studios.",
         "label": "abstract-114.webp",
-        "seoTitle": "Bugonia Yorgos Lanthimos Minimalist Art Film Poster | Wallify",
+        "seoTitle": "Bugonia Yorgos Lanthimos Minimalist Movie Poster | Wallify",
         "metaDescription": "Avant-garde geometric cinema poster for Bugonia by Yorgos Lanthimos in rust and cyan. Sophisticated modernist wall art for cinephiles & designers.",
         "seoAltText": "Abstract geometric film poster for Bugonia by Yorgos Lanthimos featuring deconstructed typography and flowing cyan shapes on a terracotta background."
     },
@@ -1521,7 +1521,7 @@ export const products = [
         "description": "Capture the electric spirit of Sicilian summer nights with this vibrant Festivalle Agrigento music poster. Splashed in dazzling cadmium orange, neon lime green, and Mediterranean azure with organic botanical shapes and eclectic festival lineups, this art print radiates warmth and musical euphoria in any room.",
         "label": "abstract-127.webp",
         "seoTitle": "Festivalle Sicily Mediterranean Music Poster | Wallify",
-        "metaDescription": "Vibrant orange, lime green, and cyan Mediterranean festival poster for Festivalle in Sicily with Ezra Collective and Apparat. Eclectic summer wall art.",
+        "metaDescription": "Vibrant orange, green, and cyan Mediterranean festival poster for Festivalle in Sicily with Ezra Collective and Apparat. Eclectic summer wall art.",
         "seoAltText": "Saturated psychedelic festival poster with electric cyan organic shapes and lime green typography on bright orange for Festivalle Sicily."
     },
     {
@@ -1545,7 +1545,7 @@ export const products = [
         "description": "Celebrate the ultimate battle of wits in anime history with this Death Note graphic dossier poster. Featuring Light Yagami (Kira) and master detective L framed in crimson and black confidential file layouts with Ryuk and iconic manga moments, this edgy art print is a masterclass in psychological anime aesthetics for any fan.",
         "label": "abstract-129.webp",
         "seoTitle": "Death Note Light Yagami and L Anime Art Poster | Wallify",
-        "metaDescription": "Edgy brutalist manga poster for Death Note featuring Light Yagami, L, and Ryuk with red and black dossier layouts. Iconic dark psychological anime art.",
+        "metaDescription": "Brutalist manga poster for Death Note featuring Light Yagami, L, and Ryuk with red and black dossier layouts. Iconic dark psychological anime art.",
         "seoAltText": "Graphic design anime poster for Death Note with high-contrast red and black dossiers, portrait panels of Light Yagami and L Lawliet, and Shinigami Ryuk."
     },
     {
@@ -1557,7 +1557,7 @@ export const products = [
         "description": "Immerse your space in the hypnotic sonic universe of Kevin Parker with this Tame Impala Currents album tracklist poster. Showcasing the legendary reflective chrome sphere creating turbulent liquid waves across deep purple linear currents alongside the full song list, this iconic print is a centerpiece for any vinyl corner or bedroom.",
         "label": "abstract-130.webp",
         "seoTitle": "Tame Impala Currents Album Tracklist Art Poster | Wallify",
-        "metaDescription": "Iconic psychedelic purple poster featuring Tame Impala's Currents metallic sphere, optical flow lines, and full album tracklist. Essential music decor.",
+        "metaDescription": "Psychedelic purple poster featuring Tame Impala's Currents metallic sphere, optical flow lines, and full album tracklist. Essential music decor.",
         "seoAltText": "Psychedelic purple and black optical flow line poster with a reflective chrome sphere, gold title, and complete tracklist for Tame Impala's Currents."
     },
     {
