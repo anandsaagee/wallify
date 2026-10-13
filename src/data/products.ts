@@ -241,93 +241,123 @@ export const products = [
     },
     {
         "id": "p21",
-        "title": "Abstract 021 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 021 – Billie Eilish GTA Pop Art Collage Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-021.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-021.webp"
+        "description": "An iconic pop art fan poster for Billie Eilish styled after GTA loading screens. Comic illustrations, halftone lips, aesthetic character panels, and Rockstar-inspired branding.",
+        "label": "abstract-021.webp",
+        "seoTitle": "Billie Eilish GTA Aesthetic Comic Wall Art Poster",
+        "metaDescription": "Edgy Billie Eilish GTA-inspired collage poster with comic illustrations, pop art lips, and Rockstar aesthetics.",
+        "seoAltText": "Grand Theft Auto comic style collage poster of Billie Eilish featuring a center portrait of Billie in a pinstripe jacket, surrounding comic panels of eyes and halftone pop art lips, with bold title BILLIE EILISH and the yellow R star logo"
     },
     {
         "id": "p22",
-        "title": "Abstract 022 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 022 – Falooda Retro Indian Pop Art Stamp Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-022.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-022.webp"
+        "description": "A vibrant retro postage-stamp style pop art poster celebrating Falooda. Features a towering glass of royal rose falooda, cosmic dessert moons, and bustling Indian bazaar illustrations.",
+        "label": "abstract-022.webp",
+        "seoTitle": "Falooda Retro Indian Pop Art Postage Stamp Poster",
+        "metaDescription": "Vibrant Indian pop art postage stamp poster featuring royal rose falooda, cosmic moons, and street bazaar art.",
+        "seoAltText": "Indian pop-art poster styled like a purple postage stamp featuring a tall glass mug of pink rose falooda with ice cream, vermicelli, and basil seeds, celestial syrup-drizzled moons above, and Hindi and English labels reading Falooda"
     },
     {
         "id": "p23",
-        "title": "Abstract 023 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 023 – Fight Club David Fincher Minimalist Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-023.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-023.webp"
+        "description": "A sleek minimalist collage fan poster for David Fincher's Fight Club. Features Edward Norton and Brad Pitt's Tyler Durden split by torn paper, red circle overlay, and iconic skyline climax.",
+        "label": "abstract-023.webp",
+        "seoTitle": "Fight Club David Fincher Minimalist Movie Wall Poster",
+        "metaDescription": "Sleek Fight Club fan poster with Edward Norton, Tyler Durden torn collage, red splash, and iconic skyscraper scene.",
+        "seoAltText": "Minimalist Fight Club movie poster featuring a portrait of Edward Norton in sunglasses split by a torn paper edge revealing an inverted Brad Pitt, a crimson organic circle overlay, and film stills of the gun scene and exploding skyline finale"
     },
     {
         "id": "p24",
-        "title": "Abstract 024 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 024 – Fight Club Tyler Durden Cigarette Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-024.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-024.webp"
+        "description": "A gritty cinematic quote poster featuring Brad Pitt as Tyler Durden in Fight Club. Fur coat, cigarette, and the provocative question: 'Is this the life you really want?'",
+        "label": "abstract-024.webp",
+        "seoTitle": "Tyler Durden Fight Club Cigarette Movie Quote Poster",
+        "metaDescription": "Moody Fight Club portrait poster of Brad Pitt as Tyler Durden in a fur coat with cigarette. 'Is this the life you really want?'",
+        "seoAltText": "Cinematic portrait poster of Brad Pitt as Tyler Durden from Fight Club wearing a fur coat and mesh shirt with a cigarette in his mouth, holding a lighter, beneath bold cream text asking Is This The Life You Really Want"
     },
     {
         "id": "p25",
-        "title": "Abstract 025 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 025 – Tyler Durden Stop Trying To Control Everything Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-025.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-025.webp"
+        "description": "A bold brutalist Fight Club quote poster with Brad Pitt as Tyler Durden. Gritty halftone portrait with the philosophy: 'Stop trying to control everything and just let go.'",
+        "label": "abstract-025.webp",
+        "seoTitle": "Tyler Durden Stop Trying To Control Everything Poster",
+        "metaDescription": "Bold brutalist Fight Club poster — Brad Pitt halftone portrait with 'Stop trying to control everything and just let go.'",
+        "seoAltText": "Brutalist typographic Fight Club poster on black background featuring a gritty red-and-white halftone portrait of bruised Brad Pitt as Tyler Durden surrounded by large white text: Stop Trying To Control Everything And Just Let Go"
     },
     {
         "id": "p26",
-        "title": "Abstract 026 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 026 – Mohanlal Sagar Alias Jacky Malayalam Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-026.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-026.webp"
+        "description": "A classic Malayalam cult movie poster celebrating Mohanlal as Sagar Alias Jacky. Bold yellow typography and swagger-filled illustrated portrait with pilot cap and sunglasses.",
+        "label": "abstract-026.webp",
+        "seoTitle": "Mohanlal Sagar Alias Jacky Cult Malayalam Movie Poster",
+        "metaDescription": "Classic Malayalam cinema poster of Mohanlal as Sagar Alias Jacky with pilot cap, sunglasses, gun, and bold yellow typography.",
+        "seoAltText": "Minimalist Malayalam movie poster on navy background featuring large bold yellow typography reading SAGAR ALIAS JACKY with an illustrated portrait of superstar Mohanlal in pilot cap and sunglasses pointing a handgun with swagger"
     },
     {
         "id": "p27",
-        "title": "Abstract 027 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 027 – Aishwarya Rai Stardust Halftone Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-027.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-027.webp"
+        "description": "A vintage magazine-style pop art poster featuring Bollywood icon Aishwarya Rai Bachchan. Warm duotone halftone dot portrait with flowing topographic contour lines and 'Stardust' typography.",
+        "label": "abstract-027.webp",
+        "seoTitle": "Aishwarya Rai Stardust Vintage Halftone Bollywood Poster",
+        "metaDescription": "Vintage Bollywood glamour poster featuring Aishwarya Rai Bachchan in cream & black halftone with flowing wave contours.",
+        "seoAltText": "Vintage editorial poster on cream paper with bold serif title Stardust featuring a glamorous black-and-white halftone dot portrait of Indian actress Aishwarya Rai Bachchan with fine abstract topographic line waves weaving through her hair"
     },
     {
         "id": "p28",
-        "title": "Abstract 028 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 028 – Lana Del Rey Stargirl Neon Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-028.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-028.webp"
+        "description": "A dreamy neon pop music poster for Lana Del Rey's 'Stargirl'. Dramatic blue neon profile in a leather biker jacket against a vibrant textured magenta-pink background.",
+        "label": "abstract-028.webp",
+        "seoTitle": "Lana Del Rey Stargirl Neon Magenta Music Wall Poster",
+        "metaDescription": "Dreamy Lana Del Rey 'Stargirl' music poster in leather jacket with electric blue neon lighting on vivid magenta pink.",
+        "seoAltText": "Indie pop music poster featuring a profile portrait of singer Lana Del Rey in a black leather biker jacket with glowing electric blue neon lighting across her face against a hot magenta pink textured background, titled STARGIRL LANA DEL REY in yellow"
     },
     {
         "id": "p29",
-        "title": "Abstract 029 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 029 – Kill Bill Uma Thurman Katana Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-029.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-029.webp"
+        "description": "A fierce fan art poster for Quentin Tarantino's Kill Bill. Uma Thurman as The Bride in her iconic yellow tracksuit with blood-splattered samurai sword against vivid yellow.",
+        "label": "abstract-029.webp",
+        "seoTitle": "Kill Bill Uma Thurman Katana Quentin Tarantino Poster",
+        "metaDescription": "Iconic Kill Bill poster featuring Uma Thurman with katana sword, yellow tracksuit, sunglasses & blood splatter.",
+        "seoAltText": "Stylized Kill Bill movie poster in vivid yellow with large background letters KILL BILL, featuring Uma Thurman as Beatrix Kiddo wearing round sunglasses and the yellow track jacket, resting a blood-streaked samurai katana sword across her shoulder with red blood splatters"
     },
     {
         "id": "p30",
-        "title": "Abstract 030 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 030 – Tax Me Daddy Nirmala Sitharaman Satire Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-030.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-030.webp"
+        "description": "A hilarious Indian political satire meme poster featuring Finance Minister Nirmala Sitharaman. Streetwear brutalist typography with 'Tax Me Daddy' and budget humor.",
+        "label": "abstract-030.webp",
+        "seoTitle": "Tax Me Daddy Indian Political Satire Meme Poster",
+        "metaDescription": "Hilarious Indian political satire poster featuring Nirmala Sitharaman with modern brutalist typography & tax humor.",
+        "seoAltText": "Satirical Indian political meme poster on cream paper featuring a smiling portrait of Finance Minister Nirmala Sitharaman in a saree on an orange gradient background, surrounded by bold streetwear typography reading Clap Them Cheeks And Say TAX ME DADDY"
     },
     {
         "id": "p31",
