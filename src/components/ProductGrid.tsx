@@ -1,8 +1,11 @@
 import React, { memo, useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { TrendingUp, Flame } from 'lucide-react';
-import { ITEMS_PER_PAGE } from '../data/config';
+import { ITEMS_PER_PAGE, SIZES } from '../data/config';
 import { OptimizedImage } from './OptimizedImage';
 import { getCleanPosterName, getProductSlug } from '../utils/seoHelpers';
+
+// Lowest poster price for the inline "from ₹X" badge
+const FROM_PRICE = SIZES[0].price;
 
 export interface Product {
   id: string;
@@ -111,13 +114,22 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
         </div>
 
-        <div className="px-0.5">
+        <div className="px-0.5 flex flex-col gap-0.5">
           <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
             {product.category}
           </span>
           <h3 className="text-xs font-semibold text-white truncate leading-tight">
             {cleanName}
           </h3>
+          {/* Price shown inline — no modal needed to know the cost */}
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className="text-[10px] font-black text-primary leading-none">
+              from ₹{FROM_PRICE}
+            </span>
+            <span className="text-[9px] text-white/30 font-medium leading-none line-through">
+              ₹{SIZES[0].strikePrice}
+            </span>
+          </div>
         </div>
       </a>
     );
