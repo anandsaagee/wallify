@@ -1442,93 +1442,123 @@ export const products = [
     },
     {
         "id": "p121",
-        "title": "Abstract 121 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 121 – Architecture Studio Paris De Stijl Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-121.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-121.webp"
+        "description": "Bring European architectural excellence and constructivist rigor to your walls with this Architecture-Studio Paris exhibition poster. Showcasing interlocking primary blue frames, red curves, and crisp Swiss typography highlighting global projects from Venice to Shanghai, this print adds intellectual prestige to design studios and lofts.",
+        "label": "abstract-121.webp",
+        "seoTitle": "Architecture Studio Paris De Stijl Poster | Wallify",
+        "metaDescription": "Constructivist architectural poster for Architecture-Studio Paris with bold red, blue, and black geometric typography. Modern wall art for studios.",
+        "seoAltText": "Modernist graphic design poster for Architecture-Studio Paris with blue frames, red semi-circles, and architectural project text on white."
     },
     {
         "id": "p122",
-        "title": "Abstract 122 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 122 – STFU Headphones On Favorite Song Playing Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-122.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-122.webp"
+        "description": "Stake your musical sanctuary with witty attitude in this STFU Headphones On graphic poster. Highlighting stippled blue over-ear headphones set against a bold compass star and oversized red typography warning 'Pls don't talk to me when I have my headphones on', this print is an instant hit for bedrooms, dorms, and study zones.",
+        "label": "abstract-122.webp",
+        "seoTitle": "STFU Headphones On Favorite Song Playing Poster | Wallify",
+        "metaDescription": "Sarcastic retro streetwear poster: STFU pls don't talk to me when I have my headphones on. Fun Gen-Z music wall art for bedrooms and gaming rooms.",
+        "seoAltText": "Graphic music poster featuring blue halftone headphones over a dark blue star with stacked red STFU typography reading My favorite song is playing!."
     },
     {
         "id": "p123",
-        "title": "Abstract 123 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 123 – University of Tsukuba Art Degree Show 2023 Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-123.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-123.webp"
+        "description": "Immerse your space in the brilliance of contemporary Japanese graphic design with this University of Tsukuba Art Degree Show 2023 poster. Displaying an optical folding geometric pillar sculpture in monochromatic tones set against radiant vermilion orange and elegant bilingual Kanji typography, it brings museum-tier artistry to any modern interior.",
+        "label": "abstract-123.webp",
+        "seoTitle": "Tsukuba University Art Degree Show 2023 Poster | Wallify",
+        "metaDescription": "Striking Japanese exhibition poster for University of Tsukuba Degree Show 2023 featuring optical geometric sculpture on vivid orange. Fine art print.",
+        "seoAltText": "Japanese graphic design exhibition poster with optical folding geometric helical sculpture on vibrant orange paper with bilingual typography."
     },
     {
         "id": "p124",
-        "title": "Abstract 124 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 124 – Vestkust Scandinavian Minimalist Abstract Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-124.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-124.webp"
+        "description": "Embrace refined Nordic simplicity and playful geometry with this Scandinavian abstract art print by Vestkust. Featuring rounded monochrome blocks intertwined with fluid ribbon paths and warm citrus yellow and orange accents on a soft grey backdrop, this piece introduces serene modern sophistication to living rooms and creative spaces.",
+        "label": "abstract-124.webp",
+        "seoTitle": "Vestkust Scandinavian Minimalist Abstract Poster | Wallify",
+        "metaDescription": "Clean Scandinavian abstract poster featuring looping lines, geometric shapes, and warm yellow and orange accents on soft grey. Minimalist wall decor.",
+        "seoAltText": "Scandinavian graphic design poster with rounded black and white rectangular blocks, looping white line-art, and yellow-orange geometric accents on grey."
     },
     {
         "id": "p125",
-        "title": "Abstract 125 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 125 – Frank Ocean White Ferrari Concert Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-125.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-125.webp"
+        "description": "Channel the ethereal emotion and raw vulnerability of Frank Ocean with this dreamy concert art print. Rendered in a nostalgic blue risograph grain with melted liquid typography and lyrical poetry from 'White Ferrari', this soulful poster is an essential tribute for dedicated fans and contemporary music connoisseurs.",
+        "label": "abstract-125.webp",
+        "seoTitle": "Frank Ocean White Ferrari Concert Art Poster | Wallify",
+        "metaDescription": "Moody blue risograph style poster of Frank Ocean singing with headphones, melted typography, and White Ferrari lyrics. Aesthetic R&B music wall art.",
+        "seoAltText": "Denim blue monochrome concert poster of Frank Ocean singing into a microphone with dripping melted typography and White Ferrari song lyrics."
     },
     {
         "id": "p126",
-        "title": "Abstract 126 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 126 – Cat Headphones Just Wanna Listen Music Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-126.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-126.webp"
+        "description": "Turn up the good vibes with this adorable, high-energy cat music poster. Featuring a halftone screenprint of an ecstatic cat belting out tunes through giant headphones surrounded by puffy orange spray-paint graffiti and starry textures, this delightful print brings infectious joy to bedrooms, recording booths, and dorms.",
+        "label": "abstract-126.webp",
+        "seoTitle": "Cat Headphones Just Wanna Listen Music Poster | Wallify",
+        "metaDescription": "Playful pop art poster of a singing cat in headphones: I Just Wanna Listen To Some Music! Cheerful pastel blue and orange wall decor for pet lovers.",
+        "seoAltText": "Vintage pop art poster of an ecstatic cat with eyes closed wearing headphones, framed by orange bubble graffiti reading I Just Wanna Listen To Some Music."
     },
     {
         "id": "p127",
-        "title": "Abstract 127 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 127 – Festivalle Sicily Mediterranean Music Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-127.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-127.webp"
+        "description": "Capture the electric spirit of Sicilian summer nights with this vibrant Festivalle Agrigento music poster. Splashed in dazzling cadmium orange, neon lime green, and Mediterranean azure with organic botanical shapes and eclectic festival lineups, this art print radiates warmth and musical euphoria in any room.",
+        "label": "abstract-127.webp",
+        "seoTitle": "Festivalle Sicily Mediterranean Music Poster | Wallify",
+        "metaDescription": "Vibrant orange, lime green, and cyan Mediterranean festival poster for Festivalle in Sicily with Ezra Collective and Apparat. Eclectic summer wall art.",
+        "seoAltText": "Saturated psychedelic festival poster with electric cyan organic shapes and lime green typography on bright orange for Festivalle Sicily."
     },
     {
         "id": "p128",
-        "title": "Abstract 128 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 128 – Sabrina Carpenter Don't Smile Kiss Pop Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-128.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-128.webp"
+        "description": "Add playful pop glamour and nostalgic sweetness to your walls with this Sabrina Carpenter 'Don't Smile' art print. Depicting the pop star in a vintage halftone screenprint complemented by a glossy red lipstick kiss and cursive typography, this chic poster makes an irresistible statement in fashion-forward bedrooms and dressing rooms.",
+        "label": "abstract-128.webp",
+        "seoTitle": "Sabrina Carpenter Don't Smile Kiss Pop Poster | Wallify",
+        "metaDescription": "Retro halftone pop art poster of Sabrina Carpenter with red lipstick kiss: Don't Smile Because It Happened. Trendy aesthetic bedroom wall decor.",
+        "seoAltText": "Vintage halftone screenprint poster of blonde singer Sabrina Carpenter with a red lipstick kiss graphic reading Don't Smile Because It Happened."
     },
     {
         "id": "p129",
-        "title": "Abstract 129 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 129 – Death Note Light Yagami and L Anime Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-129.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-129.webp"
+        "description": "Celebrate the ultimate battle of wits in anime history with this Death Note graphic dossier poster. Featuring Light Yagami (Kira) and master detective L framed in crimson and black confidential file layouts with Ryuk and iconic manga moments, this edgy art print is a masterclass in psychological anime aesthetics for any fan.",
+        "label": "abstract-129.webp",
+        "seoTitle": "Death Note Light Yagami and L Anime Art Poster | Wallify",
+        "metaDescription": "Edgy brutalist manga poster for Death Note featuring Light Yagami, L, and Ryuk with red and black dossier layouts. Iconic dark psychological anime art.",
+        "seoAltText": "Graphic design anime poster for Death Note with high-contrast red and black dossiers, portrait panels of Light Yagami and L Lawliet, and Shinigami Ryuk."
     },
     {
         "id": "p130",
-        "title": "Abstract 130 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 130 – Tame Impala Currents Album Tracklist Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-130.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-130.webp"
+        "description": "Immerse your space in the hypnotic sonic universe of Kevin Parker with this Tame Impala Currents album tracklist poster. Showcasing the legendary reflective chrome sphere creating turbulent liquid waves across deep purple linear currents alongside the full song list, this iconic print is a centerpiece for any vinyl corner or bedroom.",
+        "label": "abstract-130.webp",
+        "seoTitle": "Tame Impala Currents Album Tracklist Art Poster | Wallify",
+        "metaDescription": "Iconic psychedelic purple poster featuring Tame Impala's Currents metallic sphere, optical flow lines, and full album tracklist. Essential music decor.",
+        "seoAltText": "Psychedelic purple and black optical flow line poster with a reflective chrome sphere, gold title, and complete tracklist for Tame Impala's Currents."
     },
     {
         "id": "p131",
