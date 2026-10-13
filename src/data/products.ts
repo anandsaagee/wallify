@@ -1682,93 +1682,123 @@ export const products = [
     },
     {
         "id": "p141",
-        "title": "Abstract 141 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 141 – Japanese Tsubaki Camellia Botanical Art",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-141.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-141.webp"
+        "description": "Celebrate classic Japanese flora with this vintage botanical art print showcasing a textured coral-pink Tsubaki (Camellia japonica) flower blossom with elegant typography on cream paper.",
+        "label": "abstract-141.webp",
+        "seoTitle": "Japanese Tsubaki Camellia Flower Poster | Abstract Wall Art",
+        "metaDescription": "Vintage Japanese botanical poster featuring a coral-pink Tsubaki Camellia flower on textured cream paper. Elegant floral aesthetic wall decor.",
+        "seoAltText": "Japanese vintage botanical art print of a pink Camellia japonica blossom with Japanese typography on beige paper."
     },
     {
         "id": "p142",
-        "title": "Abstract 142 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 142 – Mumbai Vada Pav Street Food Pop Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-142.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-142.webp"
+        "description": "Capture the vibrant energy of Indian street food culture with this colorful pop art poster celebrating Mumbai's iconic Vada Pav, framed with vibrant sunburst rays, lotus motifs, and classic auto-rickshaws.",
+        "label": "abstract-142.webp",
+        "seoTitle": "Mumbai Vada Pav Street Food Pop Art Poster | Wallify Art",
+        "metaDescription": "Vibrant Indian pop art poster celebrating Mumbai Vada Pav with colorful sunburst rays, lotus petals, and auto rickshaws. Quirky kitchen wall decor.",
+        "seoAltText": "Colorful Mumbai pop art poster featuring a hand holding a Vada Pav burger with yellow sunburst rays and decorated auto rickshaws."
     },
     {
         "id": "p143",
-        "title": "Abstract 143 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 143 – Wanderlust Kinetic Typography Wave Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-143.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-143.webp"
+        "description": "Bring French summer festival vibes to your walls with this dynamic op-art typography poster featuring sliced 'Wanderlust' lettering intersected by sweeping cyan-blue and white kinetic waves.",
+        "label": "abstract-143.webp",
+        "seoTitle": "Wanderlust Typography Wave Poster | Abstract Graphic Print",
+        "metaDescription": "Dynamic Parisian summer festival art print featuring sliced Wanderlust typography with flowing cyan-blue and white waves. Modern graphic wall art.",
+        "seoAltText": "Modern graphic art print featuring sliced black Wanderlust typography intertwined with diagonal cyan-blue wave lines."
     },
     {
         "id": "p144",
-        "title": "Abstract 144 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 144 – Terracotta Citrus Slices Minimalist Print",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-144.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-144.webp"
+        "description": "Add warm Mediterranean warmth to your kitchen or dining room with this minimalist screenprint of stacked citrus wheel cross-sections rendered in earthy terracotta and rust tones.",
+        "label": "abstract-144.webp",
+        "seoTitle": "Terracotta Citrus Slices Art Poster | Kitchen Wall Decor",
+        "metaDescription": "Minimalist Mediterranean kitchen wall art print of stacked sliced citrus fruit wheels in warm terracotta rust on beige paper. Earthy dining decor.",
+        "seoAltText": "Minimalist screenprint poster showing a vertical stack of cut citrus fruit slices in terracotta red on cream background."
     },
     {
         "id": "p145",
-        "title": "Abstract 145 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 145 – Bauhaus Expo 1923 Op-Art Wavy Lines Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-145.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-145.webp"
+        "description": "Immerse your space in timeless avant-garde design with this Bauhaus Expo 1923 tribute poster, showcasing mesmerizing black and cream op-art distortion waves and geometric typography.",
+        "label": "abstract-145.webp",
+        "seoTitle": "Bauhaus Expo 1923 Wavy Op Art Poster | Retro German Design",
+        "metaDescription": "Hypnotic Bauhaus Expo 1923 wall poster featuring flowing black and cream op-art contour waves with geometric stencil typography. Avant-garde decor.",
+        "seoAltText": "Bauhaus Expo 1923 graphic poster with hypnotic black and cream optical illusion wavy stripes and geometric typography."
     },
     {
         "id": "p146",
-        "title": "Abstract 146 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 146 – Punk Rock Kitten Electric Guitar Zine Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-146.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-146.webp"
+        "description": "Channel 90s underground grunge energy with this photocopier zine-style punk poster featuring an electric guitar-shredding kitten, graffiti stars, and edgy DIY typography.",
+        "label": "abstract-146.webp",
+        "seoTitle": "Punk Rock Guitar Kitten Grunge Poster | Retro Zine Wall Art",
+        "metaDescription": "Edgy monochrome 90s punk zine poster featuring a kitten rocking an electric guitar with graffiti doodles and distressed typography. Cool indie art.",
+        "seoAltText": "Black and white punk rock zine collage poster of a kitten playing an electric guitar surrounded by graffiti stars and text."
     },
     {
         "id": "p147",
-        "title": "Abstract 147 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 147 – Marcos Valle & Azymuth Brazilian Jazz Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-147.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-147.webp"
+        "description": "Celebrate legendary Brazilian samba-jazz fusion with this vibrant tour art print, pairing bold sky blue, crimson, and sunflower yellow geometric blocks with radiant sunshine motifs.",
+        "label": "abstract-147.webp",
+        "seoTitle": "Marcos Valle & Azymuth Jazz Poster | Brazilian Tour Wall Art",
+        "metaDescription": "Vibrant Brazilian jazz funk tour poster for Azymuth and Marcos Valle in bold sky blue, crimson, and yellow color blocks with radiant sun motif.",
+        "seoAltText": "Colorful Brazilian music tour poster for Azymuth and Marcos Valle with abstract red and yellow geometric shapes on sky blue background."
     },
     {
         "id": "p148",
-        "title": "Abstract 148 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 148 – FC Barcelona 2015 Treble Champions Football Art",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-148.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-148.webp"
+        "description": "Relive football glory with this tribute poster to FC Barcelona's legendary 2014/15 Champions League victory, featuring Messi, Neymar, Suárez, and Xavi integrated into bold typography.",
+        "label": "abstract-148.webp",
+        "seoTitle": "FC Barcelona 2015 Champions Poster | Football Typography Art",
+        "metaDescription": "Commemorative FC Barcelona 2014/15 football poster featuring Messi, Neymar, and Suarez with the Champions League trophy in bold typography.",
+        "seoAltText": "Black and white FC Barcelona 2015 Champions League football poster featuring Messi, Neymar, Suarez, and Xavi inside bold Barcelona lettering."
     },
     {
         "id": "p149",
-        "title": "Abstract 149 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 149 – Lana Del Rey Red Duotone Vintage Music Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-149.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-149.webp"
+        "description": "Celebrate vintage Hollywood sadcore aesthetic with this dramatic crimson red duotone poster showcasing Lana Del Rey in concert portraits beneath repeating typography.",
+        "label": "abstract-149.webp",
+        "seoTitle": "Lana Del Rey Red Duotone Poster | Indie Singer Wall Art",
+        "metaDescription": "Dramatic crimson red duotone music poster featuring Lana Del Rey in vintage concert portraits with repeating stacked typography on black.",
+        "seoAltText": "Crimson red and black halftone music poster featuring Lana Del Rey singing into a microphone with stacked typography."
     },
     {
         "id": "p150",
-        "title": "Abstract 150 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 150 – IndieLisboa Cinema Festival Canary Yellow Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-150.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-150.webp"
+        "description": "Bring contemporary European cinema culture home with this vibrant IndieLisboa International Film Festival poster, pairing an expressive black ink splash with vivid cyan typography on canary yellow.",
+        "label": "abstract-150.webp",
+        "seoTitle": "IndieLisboa Film Festival Poster | European Cinema Wall Art",
+        "metaDescription": "Contemporary Portuguese film festival poster featuring an expressive black ink wing and cyan blue typography on bold canary yellow. Modern cine decor.",
+        "seoAltText": "Vibrant yellow IndieLisboa Film Festival poster with a textured black ink splash and bright cyan blue Portuguese typography."
     },
     {
         "id": "p151",
