@@ -2042,57 +2042,75 @@ export const products = [
     },
     {
         "id": "p171",
-        "title": "Abstract 171 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 171 – Calm Chaos Red & Cobalt Organic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-171.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-171.webp"
+        "description": "Explore the dynamic balance of tension and harmony with this modern exhibition poster, juxtaposing a jagged dark starburst against a fluid cobalt blue form on bright coral red.",
+        "label": "abstract-171.webp",
+        "seoTitle": "Calm Chaos Red & Cobalt Abstract Poster | Modern Wall Art",
+        "metaDescription": "Modern exhibition art poster featuring an interlocking dark jagged starburst and fluid cobalt blue organic shape on coral red with gradient auras.",
+        "seoAltText": "Contemporary abstract graphic poster with a dark spiky starburst interlocking with a fluid blue blob on vibrant red background."
     },
     {
         "id": "p172",
-        "title": "Abstract 172 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 172 – Observe Surreal Eye Rubik's Cube Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-172.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-172.webp"
+        "description": "Provoke thought with this surrealist graphic print, depicting a halftone hand holding a mysterious Rubik's cube composed of staring human eyes against vivid crimson.",
+        "label": "abstract-172.webp",
+        "seoTitle": "Observe Surreal Eye Rubik's Cube Poster | Conceptual Art",
+        "metaDescription": "Surrealist conceptual poster featuring a halftone hand holding a Rubik's cube of staring human eyes on vibrant crimson red. Mind-bending wall decor.",
+        "seoAltText": "Surrealist pop art poster of a halftone hand holding a Rubik's cube covered in staring human eyes on a red background."
     },
     {
         "id": "p173",
-        "title": "Abstract 173 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 173 – MS Dhoni Thala For A Reason Cricket Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-173.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-173.webp"
+        "description": "Celebrate the iconic legacy of MS Dhoni with this bold pop art cricket poster, featuring Dhoni's legendary mullet silhouette, sunglasses, and the cult 'Thala For A Reason' typography.",
+        "label": "abstract-173.webp",
+        "seoTitle": "MS Dhoni Thala For A Reason Poster | Indian Cricket Wall Art",
+        "metaDescription": "Cult Indian cricket tribute poster of MS Dhoni in sunglasses with his iconic vintage long hair and bold Thala For A Reason typography in yellow.",
+        "seoAltText": "MS Dhoni profile portrait poster with vintage long hairstyle and sunglasses beside bold yellow Thala For A Reason text."
     },
     {
         "id": "p174",
-        "title": "Abstract 174 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 174 – Mediterranean Sardines Mosaic Tile Art Print",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-174.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-174.webp"
+        "description": "Bring coastal European warmth into your dining space with this Mediterranean mosaic poster, showcasing five blue and white ceramic sardines swimming across a terracotta tile ground.",
+        "label": "abstract-174.webp",
+        "seoTitle": "Mediterranean Sardines Mosaic Poster | Coastal Tile Wall Art",
+        "metaDescription": "Vibrant Portuguese ceramic tile mosaic poster of five blue and white sardines swimming across a warm terracotta orange background. Kitchen art.",
+        "seoAltText": "Mediterranean mosaic tile art print featuring five cobalt blue and white sardines on a vibrant terracotta orange ceramic background."
     },
     {
         "id": "p175",
-        "title": "Abstract 175 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 175 – Rooh Afza Mohabbat Ka Sharbat Vintage Stamp",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-175.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-175.webp"
+        "description": "Savor the sweet nostalgia of Old Delhi with this vintage postage stamp poster celebrating Mohabbat Ka Sharbat, illustrated with fresh watermelon, blooming roses, and a Rooh Afza bottle.",
+        "label": "abstract-175.webp",
+        "seoTitle": "Rooh Afza Mohabbat Ka Sharbat Poster | Vintage Indian Art",
+        "metaDescription": "Vintage Indian postage stamp style poster illustrating Old Delhi's Mohabbat Ka Sharbat, Rooh Afza syrup, and watermelon in charming retro pink.",
+        "seoAltText": "Retro Indian postage stamp illustration of Mohabbat Ka Sharbat drink with watermelon slice, rose flower, and Rooh Afza bottle."
     },
     {
         "id": "p176",
-        "title": "Abstract 176 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 176 – Imtiaz Ali Rockstar Movie Tribute Film Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-176.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-176.webp"
+        "description": "Immerse yourself in the soulful passion of Imtiaz Ali's Rockstar with this cinematic editorial tribute poster, spotlighting Ranbir Kapoor as Jordan across gold halftone film stills.",
+        "label": "abstract-176.webp",
+        "seoTitle": "Rockstar Movie Tribute Poster | Ranbir Kapoor Jordan Art",
+        "metaDescription": "Cinematic Bollywood editorial tribute poster for Imtiaz Ali's Rockstar (2011) featuring Ranbir Kapoor as Jordan and Nargis Fakhri in gold halftone.",
+        "seoAltText": "Cinematic collage poster for the Bollywood movie Rockstar featuring Ranbir Kapoor with guitar and film stills in warm golden halftone."
     },
     {
         "id": "p177",
