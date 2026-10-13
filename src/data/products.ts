@@ -1202,93 +1202,123 @@ export const products = [
     },
     {
         "id": "p101",
-        "title": "Abstract 101 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 101 – Lionel Messi If You Quit Motivational Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-101.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-101.webp"
+        "description": "Fuel your relentless pursuit of greatness with this powerful Lionel Messi sports motivation poster. Featuring the football icon deep in thought sitting on a soccer ball alongside the sharp truth 'If you quit everyone was right about you', this print brings grit and dedication to gym spaces, bedrooms, and offices.",
+        "label": "abstract-101.webp",
+        "seoTitle": "Lionel Messi If You Quit Football Poster | Wallify",
+        "metaDescription": "Inspiring football poster of Lionel Messi crouched on a ball with quote: If you quit everyone was right about you. Perfect sports wall art for fans.",
+        "seoAltText": "Football motivation poster showing Lionel Messi sitting on a soccer ball during practice with the quote If you quit everyone was right about you."
     },
     {
         "id": "p102",
-        "title": "Abstract 102 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 102 – Che Guevara Red Star Pop Art Stencil Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-102.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-102.webp"
+        "description": "Showcase historic defiance and timeless graphic power with this Che Guevara silkscreen pop art poster. Crafted in iconic high-contrast black and crimson brushwork on a textured parchment background, this renowned revolutionary portrait makes an unforgettable bold statement in bedrooms, creative lofts, and home libraries.",
+        "label": "abstract-102.webp",
+        "seoTitle": "Che Guevara Red Star Pop Art Stencil Poster | Wallify",
+        "metaDescription": "Iconic silkscreen portrait poster of Che Guevara with red star beret on wood textured cream. Historic revolutionary art print for dorms & bedrooms.",
+        "seoAltText": "Jim Fitzpatrick style stencil screenprint poster of Che Guevara in black and red with a red star on his beret against a cream background."
     },
     {
         "id": "p103",
-        "title": "Abstract 103 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 103 – Tyler Durden Fight Club If Not Me Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-103.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-103.webp"
+        "description": "Embrace the anti-conformist attitude and raw intensity of Fight Club with this Tyler Durden cinematic art print. Depicting Brad Pitt in deep shadows smoking a cigarette overlaid with the unapologetic crimson challenge 'If Not Me, Then Who?', this cult film poster adds brooding coolness to modern living spaces and offices.",
+        "label": "abstract-103.webp",
+        "seoTitle": "Tyler Durden Fight Club If Not Me Art Poster | Wallify",
+        "metaDescription": "Dark cinematic poster of Tyler Durden from Fight Club smoking with bold red text: If Not Me, Then Who? Gritty cult movie wall art for modern rooms.",
+        "seoAltText": "Moody black and white cinematic poster of Brad Pitt as Tyler Durden smoking a cigarette with bold red centered text If Not Me, Then Who?."
     },
     {
         "id": "p104",
-        "title": "Abstract 104 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 104 – Rockstar Jordan Electric Guitar Bollywood Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-104.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-104.webp"
+        "description": "Ignite the rebellious spirit of musical devotion with this explosive Rockstar movie poster. Showcasing Ranbir Kapoor as Jordan fiercely shredding his electric guitar in high-contrast duotone tones with graffiti typography, this print is a tribute to musical passion, ideal for studios, jam rooms, and bedrooms.",
+        "label": "abstract-104.webp",
+        "seoTitle": "Rockstar Jordan Electric Guitar Bollywood Poster | Wallify",
+        "metaDescription": "Gritty sepia and black Bollywood poster of Ranbir Kapoor shredding guitar as Jordan in Rockstar. High-energy musical wall art for cinema fans.",
+        "seoAltText": "High-contrast collage poster of Ranbir Kapoor playing an electric guitar as Jordan from the Bollywood movie Rockstar with distressed text."
     },
     {
         "id": "p105",
-        "title": "Abstract 105 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 105 – Chai Tea House Retro Indian Packaging Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-105.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-105.webp"
+        "description": "Celebrate the heartwarming culture of subcontinental tea drinking with this vintage Chai Tea House packaging art print. Rendered in retro vermilion orange and cream with authentic Devanagari lettering and nostalgic family vignettes, it brings cheerful warmth and graphic charm to kitchens, breakfast nooks, and cafes.",
+        "label": "abstract-105.webp",
+        "seoTitle": "Chai Tea House Retro Indian Packaging Poster | Wallify",
+        "metaDescription": "Vibrant orange and cream vintage matchbox poster celebrating chai tea house with Devanagari script and retro illustrations. Fun kitchen wall art.",
+        "seoAltText": "Vintage orange matchbox packaging style art poster with bold Chai typography in English and Devanagari, featuring family and baby tea illustrations."
     },
     {
         "id": "p106",
-        "title": "Abstract 106 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 106 – Mohanlal Lalettan Vintage Pop Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-106.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-106.webp"
+        "description": "Pay homage to the undisputed king of Malayalam cinema with this vibrant Mohanlal Lalettan retro pop art poster. Blending a nostalgic portrait of the superstar with an electrifying purple and golden sunburst halo and typography frame, this artwork is a prized collector's tribute for cinema lovers and Kerala film fans.",
+        "label": "abstract-106.webp",
+        "seoTitle": "Mohanlal Lalettan Vintage Pop Art Poster | Wallify",
+        "metaDescription": "Colorful Malayalam cinema pop art poster of superstar Mohanlal with retro sunburst halo and Devanagari border. Essential Mollywood wall art for fans.",
+        "seoAltText": "Vintage pop art poster of Malayalam actor Mohanlal with mustache and kurta framed by a vibrant purple background and yellow sunburst."
     },
     {
         "id": "p107",
-        "title": "Abstract 107 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 107 – Lewis Hamilton With God All Things Possible Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-107.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-107.webp"
+        "description": "Celebrate faith, grit, and motorsport history with this triumphant Lewis Hamilton Formula 1 poster. Showing the legendary racing champion standing atop his race car celebrating before cheering crowds with the stirring reminder 'With God, all things are possible', this print inspires greatness in offices, workout spaces, and garages.",
+        "label": "abstract-107.webp",
+        "seoTitle": "Lewis Hamilton With God All Things Possible Poster | Wallify",
+        "metaDescription": "Inspiring F1 motorsport poster of Lewis Hamilton standing on his McLaren racecar with quote: With God All Things Are Possible. High-octane wall art.",
+        "seoAltText": "Motorsport art poster showing Formula 1 driver Lewis Hamilton in helmet standing on his race car under blue sky with With God all things are possible."
     },
     {
         "id": "p108",
-        "title": "Abstract 108 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 108 – Che Guevara Walking Red Stencil Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-108.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-108.webp"
+        "description": "Bring dramatic revolutionary momentum to your walls with this Che Guevara walking stencil poster. Depicting the iconic leader striding forward in military jacket against an electric crimson red background, this high-impact minimalist graphic print brings bold visual power to studios, offices, and gallery arrangements.",
+        "label": "abstract-108.webp",
+        "seoTitle": "Che Guevara Walking Red Stencil Art Poster | Wallify",
+        "metaDescription": "Striking red and black stencil poster of Che Guevara walking in military jacket with hair flowing. Dramatic revolutionary wall decor for modern lofts.",
+        "seoAltText": "High-contrast red and black graphic art print of Che Guevara walking forward in jacket and trousers with hair blowing in the wind."
     },
     {
         "id": "p109",
-        "title": "Abstract 109 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 109 – Powered By Chai Minimalist Indian Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-109.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-109.webp"
+        "description": "Declare your authentic fuel of choice with this witty Powered By Chai minimalist art print. Set against a rich crimson background with hand-drawn lettering incorporating a classic roadside cutting chai glass, this charming design is a playful, stylish addition to kitchen coffee stations, workspaces, and tea nooks.",
+        "label": "abstract-109.webp",
+        "seoTitle": "Powered By Chai Minimalist Indian Poster | Wallify",
+        "metaDescription": "Minimalist deep red poster featuring a street cutting chai glass forming the word Powered By Chai. Cute modern kitchen and tea corner wall art.",
+        "seoAltText": "Minimalist red graphic art poster with hand-drawn typography reading Powered By Chai with an authentic glass of cutting chai as the letter H."
     },
     {
         "id": "p110",
-        "title": "Abstract 110 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 110 – Coca-Cola Let It Flow Overflowing Can Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-110.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-110.webp"
+        "description": "Embrace raw emotional release and contemporary urban pop aesthetics with this Let It Flow Coca-Cola art print. Featuring a glistening, chilled red soda can bursting with fizzy foam set against bold distressed typography and editorial graphics, this poster injects dynamic color and youthful attitude into modern rooms.",
+        "label": "abstract-110.webp",
+        "seoTitle": "Coca-Cola Let It Flow Overflowing Can Art Poster | Wallify",
+        "metaDescription": "Modern pop art poster of an overflowing chilled Coca-Cola can with condensation and bold Let It Flow typography. Edgy urban wall art for trendy spaces.",
+        "seoAltText": "Graphic pop art poster of an opened Coca-Cola can overflowing with fizzing soda foam and water droplets with red script text reading Let It Flow."
     },
     {
         "id": "p111",
