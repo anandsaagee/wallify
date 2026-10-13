@@ -1322,93 +1322,123 @@ export const products = [
     },
     {
         "id": "p111",
-        "title": "Abstract 111 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 111 – Aam Panna Raw Mango Cooler Desi Stamp Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-111.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-111.webp"
+        "description": "Beat the heat with the nostalgic sweet-and-tangy flavors of summer in this Aam Panna vintage postage stamp art print. Depicting a chilled glass of spiced green mango cooler garnished with fresh mint leaves alongside orchard mangoes and rustic clay pots, this vibrant print brings culinary delight to dining areas and kitchens.",
+        "label": "abstract-111.webp",
+        "seoTitle": "Aam Panna Raw Mango Cooler Desi Stamp Poster | Wallify",
+        "metaDescription": "Retro green postage stamp poster celebrating refreshing raw mango aam panna with mint and lime. Vibrant desi summer drink art for kitchen & dining.",
+        "seoAltText": "Vintage green stamp art poster of a refreshing glass of Aam Panna cooler with fresh mint leaves, lime slices, and hanging raw green mangoes."
     },
     {
         "id": "p112",
-        "title": "Abstract 112 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 112 – Diet Coke Desi Truck Art Pop Culture Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-112.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-112.webp"
+        "description": "Fuse contemporary global pop culture with traditional desi kitsch in this vibrant Diet Coke art print. Featuring a frosted soda can held by an intricately mehndi-patterned hand set against kaleidoscopic truck-art vehicles, marigolds, and road sign collages, this witty print injects lively personality into kitchens and lounge areas.",
+        "label": "abstract-112.webp",
+        "seoTitle": "Diet Coke Desi Truck Art Pop Culture Poster | Wallify",
+        "metaDescription": "Playful Indian pop art poster featuring a Diet Coke can held by a mehndi hand surrounded by truck art and cultural motifs. Fun modern wall decor.",
+        "seoAltText": "Desi pop art collage poster of a chilled Diet Coke can held in a henna-painted hand amidst colorful Indian truck art patterns and Devanagari text."
     },
     {
         "id": "p113",
-        "title": "Abstract 113 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 113 – Never Never Never Give Up Typography Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-113.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-113.webp"
+        "description": "Build unshakeable resilience and unstoppable determination with this striking 'Never Never Never Give Up' typography poster. Featuring weathered, bold condensed block lettering stacked in an architectural four-tier grid on deep black, this print provides an enduring shot of daily motivation for offices, studios, and fitness spaces.",
+        "label": "abstract-113.webp",
+        "seoTitle": "Never Never Never Give Up Typography Poster | Wallify",
+        "metaDescription": "Bold black and tan grid typography poster: Never Never Never Give Up. High-contrast motivational resilience wall art for home gym, office, & dorm.",
+        "seoAltText": "Minimalist typography poster with distressed beige block lettering on a black background spelling out Never Never Never Give Up in a four-tier grid."
     },
     {
         "id": "p114",
-        "title": "Abstract 114 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 114 – Bugonia Yorgos Lanthimos Art Film Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-114.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-114.webp"
+        "description": "Celebrate cutting-edge auteur cinema and modernist graphic elegance with this Bugonia film art print. Designed with deconstructed Bauhaus-inspired geometric typography and undulating cyan contours against a rich rust-red field, this avant-garde poster brings sophisticated European design flair to modern living rooms and studios.",
+        "label": "abstract-114.webp",
+        "seoTitle": "Bugonia Yorgos Lanthimos Minimalist Art Film Poster | Wallify",
+        "metaDescription": "Avant-garde geometric cinema poster for Bugonia by Yorgos Lanthimos in rust and cyan. Sophisticated modernist wall art for cinephiles & designers.",
+        "seoAltText": "Abstract geometric film poster for Bugonia by Yorgos Lanthimos featuring deconstructed typography and flowing cyan shapes on a terracotta background."
     },
     {
         "id": "p115",
-        "title": "Abstract 115 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 115 – Let It Happen Tame Impala Psychedelic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-115.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-115.webp"
+        "description": "Immerse your space in kaleidoscopic neo-psychedelic wonder with this 'Let It Happen' music tribute poster. Featuring a gleaming liquid chrome sphere adrift amidst hypnotic flowing wave lines, celestial butterflies, and a mystical third eye, this print is an essential dreamscape centerpiece for indie music and vinyl record lovers.",
+        "label": "abstract-115.webp",
+        "seoTitle": "Let It Happen Tame Impala Psychedelic Art Poster | Wallify",
+        "metaDescription": "Hypnotic psychedelic collage poster inspired by Tame Impala's Currents: Let It Happen with chrome sphere and trippy colors. Vibrant music wall art.",
+        "seoAltText": "Surreal psychedelic music art poster with fluid optical lines, floating chrome sphere, iridescent figures, and centered text reading Let It Happen."
     },
     {
         "id": "p116",
-        "title": "Abstract 116 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 116 – Vagabond Musashi Sasaki Samurai Manga Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-116.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-116.webp"
+        "description": "Honor the legendary bushido journey of Takehiko Inoue's Vagabond with this refined Japanese manga editorial poster. Depicting Miyamoto Musashi and Sasaki Kojiro rendered in delicate black brush-ink against a stark crimson geometric field, this minimalist print is a must-have for anime fans and lovers of classical Japanese art.",
+        "label": "abstract-116.webp",
+        "seoTitle": "Vagabond Musashi Sasaki Samurai Manga Art Poster | Wallify",
+        "metaDescription": "Modernist Swiss editorial anime poster for Vagabond by Takehiko Inoue featuring Musashi and Kojiro with katanas. Elegant Japanese manga wall decor.",
+        "seoAltText": "Graphic design poster of samurai warriors Miyamoto Musashi and Kojiro from the manga Vagabond against a red color block on cream paper."
     },
     {
         "id": "p117",
-        "title": "Abstract 117 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 117 – Comédie de Genève Swiss Graphic Design Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-117.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-117.webp"
+        "description": "Infuse your interior with authentic European design sophistication through this Comédie de Genève exhibition art print. Combining a bold, enigmatic black geometric emblem with precision Swiss typography in vibrant crimson against a clean cream backdrop, this poster brings intellectual poise to creative studios and minimalist homes.",
+        "label": "abstract-117.webp",
+        "seoTitle": "Comédie de Genève Swiss Graphic Design Poster | Wallify",
+        "metaDescription": "Clean Swiss exhibition poster for Comédie de Genève Les Créatives featuring bold abstract black glyphs and red typography. Modern gallery art.",
+        "seoAltText": "Contemporary Swiss graphic design poster showcasing a bold black abstract star emblem and crisp red modernist typography on a cream background."
     },
     {
         "id": "p118",
-        "title": "Abstract 118 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 118 – Bauhaus Architecture Studio Paris Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-118.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-118.webp"
+        "description": "Celebrate the timeless visual logic of Bauhaus and De Stijl with this architectural exhibition poster from Paris. Featuring interlocking cobalt blue glyphs, bold crimson curves, and structural grid lines, this high-contrast geometric art print brings refined architectural modernism to contemporary living spaces and work studios.",
+        "label": "abstract-118.webp",
+        "seoTitle": "Bauhaus Architecture Studio Paris Art Poster | Wallify",
+        "metaDescription": "Geometric Bauhaus inspired architectural poster with primary blue and red shapes over a black grid. Sophisticated modern wall art for design lofts.",
+        "seoAltText": "Constructivist architectural art poster featuring bold interlocking royal blue, red, and black geometric typography over a minimalist grid."
     },
     {
         "id": "p119",
-        "title": "Abstract 119 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 119 – Klein Blue Op Art Fluid Marble Wave Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-119.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-119.webp"
+        "description": "Mesmerize your senses with the fluid elegance of this optical wave art print. Rendered in deep, radiant International Klein Blue on crisp white, its rhythmic undulating currents and twin vortexes create an enchanting sensation of organic movement, making it a stunning minimalist statement for modern living rooms and gallery walls.",
+        "label": "abstract-119.webp",
+        "seoTitle": "Klein Blue Op Art Fluid Marble Wave Art Poster | Wallify",
+        "metaDescription": "Hypnotic optical art poster in vibrant International Klein Blue with fluid psychedelic wavy marble ripples. Striking modern minimalist wall art.",
+        "seoAltText": "Abstract fluid wave painting poster featuring hypnotic cobalt blue undulating ripples and dual vortexes on a clean white background."
     },
     {
         "id": "p120",
-        "title": "Abstract 120 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 120 – Namaste India Cool Pink Elephant Pop Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-120.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-120.webp"
+        "description": "Add playful humor and kaleidoscopic desi color to your home with this Namaste India pop art print. Featuring a suave pink elephant in sunglasses and a floral summer shirt framed by an ornate Mughal arch and glowing truck-art carnival typography, this joyful artwork is guaranteed to spark smiles in living rooms and creative spaces.",
+        "label": "abstract-120.webp",
+        "seoTitle": "Namaste India Pink Elephant Pop Art Poster | Wallify",
+        "metaDescription": "Vibrant Indian kitsch pop art poster of a stylish pink elephant in sunglasses and floral shirt under a Mughal arch: Namaste India. Funky home decor.",
+        "seoAltText": "Colorful Indian pop art poster of a pink elephant wearing sunglasses and a yellow floral shirt framed by a decorative arch reading Namaste India."
     },
     {
         "id": "p121",
