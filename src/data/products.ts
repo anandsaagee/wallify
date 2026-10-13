@@ -481,93 +481,124 @@ export const products = [
     },
     {
         "id": "p41",
-        "title": "Abstract 041 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 041 – Kanye West Ye Masked Discography Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-041.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-041.webp"
+        "description": "A sleek black editorial music poster celebrating Kanye Omari West. Masked Ye in leather puffer jacket clutching his head, with complete studio discography list.",
+        "label": "abstract-041.webp",
+        "seoTitle": "Kanye West Ye Masked Discography Hip-Hop Poster",
+        "metaDescription": "Sleek Kanye West editorial poster with masked Ye in leather puffer jacket, titanium grillz & complete studio discography.",
+        "seoAltText": "Black editorial rap poster titled YE KANYE OMARI WEST featuring Kanye West in a full black mask and leather puffer jacket clutching his head, with teeth closeup and full album discography list"
     },
     {
         "id": "p42",
-        "title": "Abstract 042 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 042 – Frank Ocean Blonde Metal Punk Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-042.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-042.webp"
+        "description": "A gritty punk zine reinterpretation of Frank Ocean's 'Blonde'. High-contrast monochrome portrait with dripping red heavy metal typography and 'Good Guy' lyrics.",
+        "label": "abstract-042.webp",
+        "seoTitle": "Frank Ocean Blonde Red Metal Typography Art Poster",
+        "metaDescription": "Gritty Frank Ocean 'Blonde' poster in black & white photocopied punk style with dripping blood-red metal logo.",
+        "seoAltText": "Black and white photocopied punk zine poster of shirtless Frank Ocean covering his face with his hand beneath dripping jagged red metal typography reading blond with lyrics at the bottom"
     },
     {
         "id": "p43",
-        "title": "Abstract 043 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 043 – Playboi Carti YVL Arabic Calligraphy Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-043.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-043.webp"
+        "description": "An intense trap aesthetic poster for Playboi Carti. Gritty halftone snarling portrait with blank glowing eyes, braided hair, and bold crimson Arabic calligraphy.",
+        "label": "abstract-043.webp",
+        "seoTitle": "Playboi Carti YVL Arabic Typography Trap Poster",
+        "metaDescription": "Edgy Playboi Carti poster in black & white halftone with glowing white eyes and vivid crimson Arabic calligraphy on paper.",
+        "seoAltText": "Underground trap poster on textured white paper featuring a high-contrast halftone portrait of Playboi Carti snarling with solid white eyes and braided hair overlaid with red Arabic calligraphy"
     },
     {
         "id": "p44",
-        "title": "Abstract 044 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 044 – LeBron James No Risk No Story Masked Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-044.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-044.webp"
+        "description": "An intense basketball motivation poster featuring LeBron James during his masked Cavaliers era. Sweating with laser focus beneath the mantra: 'no risk no story.'",
+        "label": "abstract-044.webp",
+        "seoTitle": "LeBron James No Risk No Story Masked NBA Wall Poster",
+        "metaDescription": "Inspiring NBA poster of LeBron James in protective face mask with red headband and typography: 'no risk no story.'"
+,
+        "seoAltText": "Motivational basketball poster featuring an intense photograph of LeBron James adjusting his headband over a protective face mask while sweating, with bold white text reading no risk no story"
     },
     {
         "id": "p45",
-        "title": "Abstract 045 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 045 – ASAP Rocky Diamond Grillz Harlem Rap Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-045.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-045.webp"
+        "description": "A vibrant hip-hop streetwear poster for A$AP Rocky. Flashing diamond grillz, designer shades, glowing blue cityscape, and bold arched yellow collegiate typography.",
+        "label": "abstract-045.webp",
+        "seoTitle": "ASAP Rocky Diamond Grillz Hip-Hop Streetwear Poster",
+        "metaDescription": "Bold A$AP Rocky rap poster featuring shining diamond grillz, dark sunglasses, blue skyline, and yellow varsity type.",
+        "seoAltText": "Hip-hop poster on black background featuring ASAP Rocky smiling with glittering diamond grillz and sunglasses, with a glowing blue city skyline behind him and arched yellow varsity typography reading ASAP ROCKY"
     },
     {
         "id": "p46",
-        "title": "Abstract 046 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 046 – Travis Scott Cactus Jack Swiss Red Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-046.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-046.webp"
+        "description": "A modern Swiss-style graphic editorial poster for Travis Scott. Bold crimson red frame, extreme close-up eye and diamond grillz panels, and ultra-bold TRAVIS title.",
+        "label": "abstract-046.webp",
+        "seoTitle": "Travis Scott Cactus Jack Swiss Minimalist Rap Poster",
+        "metaDescription": "Modern Swiss-style Travis Scott rap poster with split eye & grillz photos, bold red panels, and 'TRAVIS' typography.",
+        "seoAltText": "Swiss-style graphic poster on black background featuring a bold red central card with huge typography TRAVIS, flanked by black-and-white close-up photo panels of Travis Scott's eyes and diamond grillz smile"
     },
     {
         "id": "p47",
-        "title": "Abstract 047 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 047 – Mike Tyson Halftone Boxing Champion Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-047.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-047.webp"
+        "description": "A raw vintage pop-art tribute to boxing legend 'Iron' Mike Tyson. Halftone screen print portrait with his trademark gold tooth grin, bruises, and red boxing gloves.",
+        "label": "abstract-047.webp",
+        "seoTitle": "Mike Tyson Boxing Champion Halftone Pop Art Poster",
+        "metaDescription": "Raw pop art boxing poster of 'Iron' Mike Tyson with comic halftone texture, gold tooth smile, and red boxing gloves.",
+        "seoAltText": "Vintage pop-art poster on distressed white paper featuring a large halftone portrait of heavyweight boxing legend Mike Tyson with his signature gap-toothed gold cap smile, facial scrapes, and bright red boxing gloves"
     },
     {
         "id": "p48",
-        "title": "Abstract 048 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 048 – Stranger Things Eleven Retro VHS Sci-Fi Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-048.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-048.webp"
+        "description": "A vibrant 80s retro VHS cassette style poster for Stranger Things. Illustrated Eleven with American flag blindfold, nosebleed, and iconic yellow patterned shirt.",
+        "label": "abstract-048.webp",
+        "seoTitle": "Stranger Things Eleven Retro 80s VHS Sci-Fi Poster",
+        "metaDescription": "Vibrant retro 80s Stranger Things poster featuring Eleven blindfolded with rainbow stripes and VHS tape packaging.",
+        "seoAltText": "Vintage 80s VHS video cassette style poster of Eleven from Stranger Things wearing an American flag blindfold with a nosebleed and yellow shirt, set against retro sunset stripes and the glowing red Stranger Things logo"
     },
     {
         "id": "p49",
-        "title": "Abstract 049 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 049 – Spider-Man Vintage Marvel Comic Cover Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-049.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-049.webp"
+        "description": "A classic vintage Marvel Comics cover art poster for Spider-Man. Peter Parker swinging above Manhattan rooftops with webs, speech bubble, and retro comic header.",
+        "label": "abstract-049.webp",
+        "seoTitle": "Spider-Man Vintage Marvel Comic Book Cover Wall Poster",
+        "metaDescription": "Classic vintage Marvel comic book cover poster of Spider-Man swinging above NYC rooftops with retro comic trade dress.",
+        "seoAltText": "Vintage Marvel Comics Group cover art poster featuring Spider-Man swinging through the air shooting webs over New York City rooftops, with the 12-cent price box, classic logo, and speech bubble reading Your Friendly Neighborhood Spider-Man"
     },
     {
         "id": "p50",
-        "title": "Abstract 050 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 050 – Bro It's Not That Deep Turtle Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-050.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-050.webp"
+        "description": "A humorous chill mental health quote poster. Navy and cream halftone illustration of a swimming sea turtle: 'Bro, It's Not That Deep. Let It Go.'",
+        "label": "abstract-050.webp",
+        "seoTitle": "Bro It's Not That Deep Sea Turtle Funny Wall Poster",
+        "metaDescription": "Chill navy & cream sea turtle poster with funny reminder: 'Bro, It's Not That Deep. Let It Go.' Zen wall decor.",
+        "seoAltText": "Minimalist navy blue and cream halftone poster featuring a calm illustrated sea turtle gliding through water with text reading Bro, It's Not That Deep. Let It Go."
     },
     {
         "id": "p51",
