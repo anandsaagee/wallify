@@ -1,93 +1,123 @@
 export const products = [
     {
         "id": "p1",
-        "title": "Abstract 001 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "How I Met Your Mother – Vintage Duotone TV Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-001.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-001.webp"
+        "description": "A striking duotone black-and-yellow tribute poster for How I Met Your Mother. Features the iconic umbrella scene and the full cast in a gritty newspaper-print aesthetic — perfect for any HIMYM fan's wall.",
+        "label": "abstract-001.webp",
+        "seoTitle": "How I Met Your Mother Vintage Duotone Fan Poster",
+        "metaDescription": "Bold black & yellow duotone HIMYM fan poster with cast collage and umbrella scene in a gritty print aesthetic.",
+        "seoAltText": "Duotone black and yellow How I Met Your Mother poster showing a man and woman with umbrella at the top and the full cast smiling below, with a large bold serif title and a show synopsis in small text at the bottom"
     },
     {
         "id": "p2",
-        "title": "Abstract 002 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "CHAOS – Wavy Minimalist Typography Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-002.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-002.webp"
+        "description": "A bold minimalist typography poster featuring the word CHAOS in oversized, psychedelic wavy letterforms on a cream background. A statement piece that blends graphic design with abstract art.",
+        "label": "abstract-002.webp",
+        "seoTitle": "CHAOS Wavy Typography Minimalist Wall Poster Art",
+        "metaDescription": "Bold 'CHAOS' typography poster with warped, wavy black letters on cream. Perfect minimalist statement wall art.",
+        "seoAltText": "Minimalist poster on a pale cream background with the single word CHAOS printed in enormous, thick, wavy-distorted black letters that undulate vertically across the entire frame in a psychedelic style"
     },
     {
         "id": "p3",
-        "title": "Abstract 003 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "The End of Evangelion – Dark Anime Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-003.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-003.webp"
+        "description": "An intense, dark fan poster for The End of Evangelion. Bold red and black design featuring a grotesque mecha beast skull, hypnotic spirals, Japanese kanji, and EVA lore text — pure anime nightmare fuel.",
+        "label": "abstract-003.webp",
+        "seoTitle": "The End of Evangelion Dark Anime Fan Art Poster",
+        "metaDescription": "Intense red & black Evangelion poster with mecha skull art, kanji text, and hypnotic spirals. Bold anime wall art.",
+        "seoAltText": "Dark red and black anime poster titled The End of Evangelion featuring a detailed illustration of a grotesque mecha skull creature on the left, hypnotic concentric spiral patterns on the right, Japanese kanji across the bottom, and lore text descriptions in small print throughout"
     },
     {
         "id": "p4",
-        "title": "Abstract 004 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Inception – Geometric Infinite Tunnel Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-004.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-004.webp"
+        "description": "A sleek geometric fan poster for Christopher Nolan's Inception. Deep red and black concentric rectangles form an infinite tunnel perspective with a lone silhouette sprinting toward the vanishing point. Tagline: The Dream Is Real.",
+        "label": "abstract-004.webp",
+        "seoTitle": "Inception Geometric Tunnel Movie Fan Art Poster",
+        "metaDescription": "Geometric Inception fan poster — bold red & black infinite tunnel with running silhouette. 'The Dream is Real.'",
+        "seoAltText": "Minimalist Inception movie poster with a deep red and black geometric design showing concentric nested rectangles forming an infinite tunnel perspective, a small white silhouette of a person running toward the center vanishing point, text reading The Dream Is Real at the top and Inception in large bold letters at the bottom, with A Film by Christopher Nolan in italics"
     },
     {
         "id": "p5",
-        "title": "Abstract 005 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Ramen – Retro Japanese Food Illustration Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-005.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-005.webp"
+        "description": "A vibrant retro-style Japanese Ramen poster in bold red and cream. Features an illustrated ramen bowl with chopsticks, kanji characters, vintage grid lines, and Japanese katakana text. A must-have for ramen lovers and Japanese culture fans.",
+        "label": "abstract-005.webp",
+        "seoTitle": "Ramen Retro Japanese Food Poster Wall Art Print",
+        "metaDescription": "Bold red & cream retro ramen poster with Japanese kanji, illustrated noodle bowl & vintage grid aesthetic.",
+        "seoAltText": "Retro Japanese ramen poster in red and cream colors with the bold word RAMEN at the top, a detailed illustration of a ramen bowl filled with noodles, soft-boiled egg, tofu, and chopsticks in the center, kanji characters for ramen on the left, Japanese katakana text, the numbers 2508 and 1958 in a banner, and vintage grid lines in the background"
     },
     {
         "id": "p6",
-        "title": "Abstract 006 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Highest in the Room – Travis Scott Sky Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-006.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-006.webp"
+        "description": "A dreamy surrealist music poster for Travis Scott's 'Highest in the Room.' A flaming wooden ladder rises through clouds into a starry blue sky, evoking ambition and the euphoric feeling of the hit song.",
+        "label": "abstract-006.webp",
+        "seoTitle": "Travis Scott Highest in the Room Surreal Music Poster",
+        "metaDescription": "Dreamy Travis Scott 'Highest in the Room' poster — flaming ladder through clouds into a starry sky. Surreal rap art.",
+        "seoAltText": "Surreal music poster for Travis Scott's song Highest in the Room showing a weathered wooden ladder rising vertically through white clouds into a blue starry sky, with the top rung engulfed in orange and yellow flames, the song title written in elegant white serif font across the middle, and a Parental Advisory sticker in the bottom corner"
     },
     {
         "id": "p7",
-        "title": "Abstract 007 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Interstellar – Sci-Fi Blueprint Fan Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-007.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-007.webp"
+        "description": "A stunning technical-blueprint-style fan poster for Christopher Nolan's Interstellar. Dark space aesthetic with a wormhole illustration, spacetime grid diagrams, astronaut silhouette, and physics schematics in deep navy and cream.",
+        "label": "abstract-007.webp",
+        "seoTitle": "Interstellar Sci-Fi Blueprint Fan Art Movie Poster",
+        "metaDescription": "Technical blueprint Interstellar poster — wormhole, spacetime grids & astronaut in dark navy and cream. Nolan art.",
+        "seoAltText": "Dark space-themed Interstellar movie poster with a navy blue and cream color scheme, featuring a silhouetted astronaut standing inside a swirling wormhole on the left, technical spacetime grid and wormhole diagrams on the right, cast names including Matthew McConaughey and Anne Hathaway at the top, and the film title Interstellar in large letters at the bottom with Christopher Nolan's credit"
     },
     {
         "id": "p8",
-        "title": "Abstract 008 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Art Speaks Without Words – Vintage Gold Editorial Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-008.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-008.webp"
+        "description": "A bold vintage editorial poster celebrating the philosophy of art. Black and gold color scheme with collaged classical artworks including the Mona Lisa, Michelangelo's Creation of Adam, and Goya's dark paintings. Slogans: 'Speak Without Words' and 'See Beyond the Surface.'",
+        "label": "abstract-008.webp",
+        "seoTitle": "Art Speaks Without Words Vintage Gold Editorial Poster",
+        "metaDescription": "Bold black & gold art philosophy poster with classical artworks, Mona Lisa, and powerful typography. Editorial wall art.",
+        "seoAltText": "Vintage editorial-style poster in black and gold featuring the large heading ART at the top, collaged classical artworks including the Mona Lisa, Michelangelo's Sistine Chapel hands, and Goya's demonic figure, bold typography reading Speak Without Words and See Beyond the Surface, and smaller blocks of philosophical text about the meaning of art"
     },
     {
         "id": "p9",
-        "title": "Abstract 009 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Manifest Your Dreams – Abstract Topographic Wave Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-009.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-009.webp"
+        "description": "A serene motivational poster with abstract topographic wave art. Deep red and black swirling lines form an eye-like focal point against a cream background. Titled 'Manifest Your Dreams' with the tagline 'Believe in your dreams; watch the universe align to make them reality.'",
+        "label": "abstract-009.webp",
+        "seoTitle": "Manifest Your Dreams Topographic Wave Motivational Poster",
+        "metaDescription": "Minimalist 'Manifest Your Dreams' poster with hypnotic red & black topographic wave art on cream. Motivational wall art.",
+        "seoAltText": "Minimalist motivational poster on cream background with the title Manifest Your Dreams at the top, a framed square artwork of deep red and black abstract topographic swirling wave lines that form an eye-like focal point in the center, and the tagline Believe In Your Dreams Watch The Universe Align To Make Them Reality at the bottom"
     },
     {
         "id": "p10",
-        "title": "Abstract 010 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Stressed Out? Not Giving A Sh*t? – Retro Humor Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-010.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-010.webp"
+        "description": "A hilarious vintage-parody humor poster in black, pale yellow, and blue. Three distressed figure panels with the tongue-in-cheek caption 'Stressed Out? Have You Tried… Not Giving A Shit? It Works Every Time!' A perfect ironic dorm room or office conversation piece.",
+        "label": "abstract-010.webp",
+        "seoTitle": "Stressed Out Retro Humor Parody Funny Wall Poster",
+        "metaDescription": "Vintage-parody humor poster — 'Stressed Out? Not Giving A Shit? It Works Every Time!' Bold black & yellow ironic wall art.",
+        "seoAltText": "Retro humor poster on black background with large pale yellow text reading Stressed Out? followed by Have You Tried in blue, three blue-tinted panels showing stressed figures clutching their head, and bold text at the bottom reading Not Giving A Shit? It Works Every Time in a mix of yellow and cream serif fonts"
     },
     {
         "id": "p11",
