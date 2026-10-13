@@ -1562,93 +1562,123 @@ export const products = [
     },
     {
         "id": "p131",
-        "title": "Abstract 131 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 131 – Rockstar Imtiaz Ali Jordan Heer Film Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-131.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-131.webp"
+        "description": "Immerse yourself in the tragic beauty and musical intensity of Imtiaz Ali's masterpiece with this Rockstar Bollywood film poster. Featuring iconic stills of Ranbir Kapoor as Jordan and Nargis Fakhri as Heer rendered in rich amber gold and shadow black with full film credits, this print is an essential tribute for Indian cinema lovers.",
+        "label": "abstract-131.webp",
+        "seoTitle": "Rockstar Jordan Heer Imtiaz Ali Film Art Poster | Wallify",
+        "metaDescription": "Warm amber Bollywood cinematic poster for Rockstar featuring Ranbir Kapoor as Jordan and Nargis Fakhri as Heer. Soulful movie wall art for fans.",
+        "seoAltText": "Cinematic Bollywood design poster of Ranbir Kapoor and Nargis Fakhri in Rockstar with amber and black movie stills and credits."
     },
     {
         "id": "p132",
-        "title": "Abstract 132 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 132 – Stressed Out Have You Tried Not Giving A Sh*t Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-132.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-132.webp"
+        "description": "Tackle daily stress with unapologetic humor and vintage flair with this 'Stressed Out' parody art print. Designed like a weathered metal tin sign with distressed serif typography and blue halftone vignettes of frazzled individuals, this cheeky poster is an instant mood-lifter for home offices, creative studios, and dorms.",
+        "label": "abstract-132.webp",
+        "seoTitle": "Stressed Out Not Giving A Sh*t Funny Art Poster | Wallify",
+        "metaDescription": "Funny vintage metal sign poster: Stressed Out? Have You Tried Not Giving A Sh*t? Humorous stress-relief wall decor for home office and bedroom.",
+        "seoAltText": "Vintage rusted sign style poster with distressed typography asking Stressed Out? Have You Tried Not Giving A Sh*t? It Works Every Time!."
     },
     {
         "id": "p133",
-        "title": "Abstract 133 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 133 – Porsche 911 Carrera Tame Impala Currents Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-133.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-133.webp"
+        "description": "Merge legendary automotive elegance with psych-rock visual aesthetics in this Porsche 911 Carrera 3.2 Currents art print. Showing the iconic German sports car parting hypnotic purple and magenta wave currents like a dream, this stylish crossover poster brings sophisticated synthwave energy to garages, offices, and living rooms.",
+        "label": "abstract-133.webp",
+        "seoTitle": "Porsche 911 Carrera Tame Impala Currents Poster | Wallify",
+        "metaDescription": "Retro synthwave art poster featuring a silver Porsche 911 Carrera gliding through purple Tame Impala Currents optical waves. Stylish auto wall decor.",
+        "seoAltText": "Automotive art poster of a silver Porsche 911 Carrera 3.2 cruising along rippling purple and pink optical currents inspired by Tame Impala."
     },
     {
         "id": "p134",
-        "title": "Abstract 134 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 134 – Entropy Art of Disintegration Gallery Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-134.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-134.webp"
+        "description": "Bring modern philosophical elegance to your interior with this Entropy (Art of Disintegration) gallery exhibition poster. Showcasing fluid black amoebic forms breaking down into delicate geometric dot matrices on a refined light-grey field, this minimalist European art print adds high-concept polish to contemporary living spaces.",
+        "label": "abstract-134.webp",
+        "seoTitle": "Entropy Art of Disintegration Minimalist Poster | Wallify",
+        "metaDescription": "Contemporary European exhibition poster for Entropy Art of Disintegration featuring black fluid amoebic forms and particle grids. Modern art decor.",
+        "seoAltText": "Minimalist European gallery poster showcasing black fluid organic shapes breaking apart into geometric dot grids on a soft grey field."
     },
     {
         "id": "p135",
-        "title": "Abstract 135 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 135 – Dandadan Okarun Awakened Yokai Manga Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-135.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-135.webp"
+        "description": "Celebrate the wild supernatural energy of Dandadan with this striking Okarun graphic manga poster. Highlighting dynamic contrasts between his timid schoolboy persona and his terrifying awakened Turbo Granny transformation in stark black ink and electric pink accents, this streetwear art print is a standout piece for anime enthusiasts.",
+        "label": "abstract-135.webp",
+        "seoTitle": "Dandadan Okarun Awakened Yokai Manga Art Poster | Wallify",
+        "metaDescription": "High-contrast black and pink manga poster of Okarun from Dandadan in both schoolboy and fierce Turbo Granny yokai form. Edgy anime wall decor.",
+        "seoAltText": "Graphic design manga poster featuring Okarun from Dandadan with pink accents, showcasing his human form and flaming awakened Turbo Granny form."
     },
     {
         "id": "p136",
-        "title": "Abstract 136 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 136 – Music Is More Than Sound Audiophile Vinyl Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-136.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-136.webp"
+        "description": "Celebrate the profound spiritual resonance of pure audio with this 'Music Is More Than Sound' graphic poster. Featuring moody coral-red duotone imagery of vintage turntables, crate-digging vinyl collections, and cassette tapes against deep black brutalist typography, this print is a stylish homage for musicians, DJs, and vinyl lovers.",
+        "label": "abstract-136.webp",
+        "seoTitle": "Music Is More Than Sound Audiophile Vinyl Poster | Wallify",
+        "metaDescription": "Moody black and coral brutalist poster: Music Is More Than Sound, featuring turntables, vinyl records, and cassette tapes. Perfect studio wall art.",
+        "seoAltText": "Brutalist graphic poster with red duotone photos of a vinyl record turntable, cassette tape, and DJ headphones titled Music Is More Than Sound."
     },
     {
         "id": "p137",
-        "title": "Abstract 137 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 137 – Lana Del Rey Ultraviolence Magazine Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-137.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-137.webp"
+        "description": "Embrace the cinematic melancholia and vintage Americana allure of Lana Del Rey with this Ultraviolence editorial tribute poster. Featuring intimate black-and-white portraits of the singer alongside historical album milestones in a clean zine layout, this aesthetic print adds moody glamour to bedrooms, dressing areas, and reading corners.",
+        "label": "abstract-137.webp",
+        "seoTitle": "Lana Del Rey Ultraviolence Vintage Art Poster | Wallify",
+        "metaDescription": "Chic black and white collage poster for Lana Del Rey's Ultraviolence album with vintage photography and album history. Aesthetic bedroom wall art.",
+        "seoAltText": "Black and white editorial zine poster of singer Lana Del Rey with a cigarette between her lips surrounded by Ultraviolence era photo cutouts."
     },
     {
         "id": "p138",
-        "title": "Abstract 138 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 138 – Mitski My Love Is Mine All Mine Lyric Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-138.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-138.webp"
+        "description": "Surrender to the poetic tender heartache of Mitski with this 'My Love Is Mine All Mine' lyric art print. Showcasing a luminous blue lily in bloom against a textured slate-blue denim background with folded paper textures and heartfelt song verses, this poster brings soulful beauty to bedroom galleries and quiet creative spaces.",
+        "label": "abstract-138.webp",
+        "seoTitle": "Mitski My Love Is Mine All Mine Lyric Art Poster | Wallify",
+        "metaDescription": "Ethereal blue denim poster featuring a glowing blue lily and poetic lyrics from Mitski's My Love Is Mine All Mine. Dreamy indie music wall art.",
+        "seoAltText": "Muted denim blue indie music poster featuring a glowing blue lily flower in bloom overlaid with lyrics from Mitski's My Love Is Mine All Mine."
     },
     {
         "id": "p139",
-        "title": "Abstract 139 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 139 – Growth Demands Discomfort Brutalist Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-139.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-139.webp"
+        "description": "Cultivate unwavering grit and mental endurance with this 'Growth Demands Discomfort' editorial poster. Featuring high-contrast risograph imagery of a rose piercing through concrete, a fragile sprouting seed, and an intrepid mountain climber paired with sobering truths about resilience, this print is essential daily motivation for study and gym walls.",
+        "label": "abstract-139.webp",
+        "seoTitle": "Growth Demands Discomfort Motivational Art Poster | Wallify",
+        "metaDescription": "Grainy monochrome editorial poster: Growth Demands Discomfort with a rose in concrete, seedling, and mountain climber. Inspiring wall art for offices.",
+        "seoAltText": "Black and white risograph poster featuring a rose growing from concrete, a sprouting seedling in hands, and a mountain climber titled Growth Demands Discomfort."
     },
     {
         "id": "p140",
-        "title": "Abstract 140 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 140 – Lana Del Rey The Weeknd Stargirl Interlude Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-140.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-140.webp"
+        "description": "Capture the sultry, nocturnal mystique of the iconic collaboration between Lana Del Rey and The Weeknd with this Stargirl art print. Rendered in an electric blue duotone against an intense crimson background with golden vintage lettering, this poster brings seductive cinematic energy to bedrooms, music lounges, and entertainment spaces.",
+        "label": "abstract-140.webp",
+        "seoTitle": "Lana Del Rey The Weeknd Stargirl Interlude Poster | Wallify",
+        "metaDescription": "Bold red and blue duotone poster of Lana Del Rey lighting a cigarette for Stargirl Interlude with The Weeknd. Moody R&B pop music wall art.",
+        "seoAltText": "High-contrast red and cobalt blue duotone poster of Lana Del Rey lighting a cigarette titled Stargirl with The Weeknd."
     },
     {
         "id": "p141",
