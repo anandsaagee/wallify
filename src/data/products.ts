@@ -1802,93 +1802,123 @@ export const products = [
     },
     {
         "id": "p151",
-        "title": "Abstract 151 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 151 – No Idea Blue Halftone Pigeon Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-151.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-151.webp"
+        "description": "Make an ironic graphic statement with this modern art print showcasing a royal blue halftone pigeon wearing a small cap paired with bold orange 'No Idea' typography.",
+        "label": "abstract-151.webp",
+        "seoTitle": "No Idea Blue Pigeon Typography Poster | Modern Graphic Art",
+        "metaDescription": "Bold ultramarine blue halftone pigeon poster with punchy orange No Idea typography on light grey paper. Contemporary ironic graphic wall art.",
+        "seoAltText": "Modern graphic art print featuring an ultramarine blue halftone pigeon and bold orange No Idea typography."
     },
     {
         "id": "p152",
-        "title": "Abstract 152 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 152 – Shah Rukh Khan Blue Halftone Bollywood Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-152.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-152.webp"
+        "description": "Channel 90s Bollywood grit with this retro blue and black halftone poster of Shah Rukh Khan lighting a cigarette, accented by gothic Blackletter typography.",
+        "label": "abstract-152.webp",
+        "seoTitle": "Shah Rukh Khan Blue Halftone Poster | 90s Bollywood Wall Art",
+        "metaDescription": "Retro blue halftone art print of 90s Shah Rukh Khan lighting a cigarette with gothic blackletter typography. Vintage Bollywood cinematic wall art.",
+        "seoAltText": "Blue and black halftone print of Bollywood actor Shah Rukh Khan lighting a cigarette beneath gothic typography."
     },
     {
         "id": "p153",
-        "title": "Abstract 153 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 153 – Japanese Ramune Soda Wave Retro Pop Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-153.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-153.webp"
+        "description": "Infuse your kitchen or dining area with playful Tokyo nostalgia with this retro Japanese Ramune marble soda poster, featuring stylized blue foaming waves and bold red Katakana.",
+        "label": "abstract-153.webp",
+        "seoTitle": "Japanese Ramune Soda Retro Poster | Japanese Pop Art Print",
+        "metaDescription": "Vibrant Japanese pop art poster featuring a Ramune marble soda bottle surrounded by swirling navy ocean waves and red Katakana text on cream.",
+        "seoAltText": "Retro Japanese pop art poster depicting a glass Ramune marble soda bottle with stylized ocean waves and red Katakana typography."
     },
     {
         "id": "p154",
-        "title": "Abstract 154 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 154 – Yale MFA Esoteric Rodeo Avant-Garde Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-154.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-154.webp"
+        "description": "Transform your gallery wall with this Yale School of Art MFA exhibition poster, featuring rich royal purple, emerald green, and yellow color blocks with deconstructed typography and kinetic white scribbles.",
+        "label": "abstract-154.webp",
+        "seoTitle": "Yale MFA Esoteric Rodeo Poster | Avant-Garde Graphic Art",
+        "metaDescription": "Avant-garde Yale MFA exhibition poster with bold purple and green shapes, yellow stripes, deconstructed typography, and energetic white scribbles.",
+        "seoAltText": "Yale MFA art exhibition poster with purple and green organic shapes, yellow stripes, arched text, and white expressive scribbles."
     },
     {
         "id": "p155",
-        "title": "Abstract 155 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 155 – Stussy 8-Ball Streetwear Graphic Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-155.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-155.webp"
+        "description": "Pay homage to iconic skate and streetwear culture with this minimalist monochrome art print, spotlighting the classic 8-ball billiards graphic and signature Stüssy script.",
+        "label": "abstract-155.webp",
+        "seoTitle": "Stussy 8 Ball Graphic Poster | Streetwear & Skate Wall Art",
+        "metaDescription": "Iconic monochrome streetwear art print featuring the classic 8-ball billiards graphic and signature Stüssy logo tags. Minimalist skate wall decor.",
+        "seoAltText": "Black and white streetwear poster featuring a large 8-ball billiards graphic with Stüssy handwritten script logos."
     },
     {
         "id": "p156",
-        "title": "Abstract 156 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 156 – Japanese Sakura Bonsai Tree Triptych Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-156.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-156.webp"
+        "description": "Invite serene hanami spring beauty into your home with this Japanese multi-panel art print displaying a blooming pink sakura bonsai tree, swirling petals, and elegant Kanji typography.",
+        "label": "abstract-156.webp",
+        "seoTitle": "Japanese Sakura Bonsai Poster | Cherry Blossom Wall Art",
+        "metaDescription": "Serene Japanese multi-panel botanical art print showcasing a blooming pink cherry blossom bonsai tree and drifting petals on vintage cream paper.",
+        "seoAltText": "Japanese graphic poster with three panels illustrating a blooming pink cherry blossom bonsai tree, falling petals, and Kanji characters."
     },
     {
         "id": "p157",
-        "title": "Abstract 157 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 157 – Y2K Grunge Don't Blink Star Collage Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-157.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-157.webp"
+        "description": "Bring 2000s indie sleaze energy to your walls with this Y2K grunge collage poster, pairing a bubblegum pink star motif with a retro halftone portrait and bold typography.",
+        "label": "abstract-157.webp",
+        "seoTitle": "Y2K Grunge Pop Art Poster | Don't Blink Aesthetic Wall Decor",
+        "metaDescription": "Y2K aesthetic zine poster featuring a pink star frame, halftone girl in retro sunglasses, and bold Don't Blink typography on black background.",
+        "seoAltText": "Y2K indie grunge collage poster featuring a pink star framing a halftone girl with cat-eye sunglasses and text reading Don't Blink."
     },
     {
         "id": "p158",
-        "title": "Abstract 158 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 158 – Sakura Floral Typography Botanical Art Print",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-158.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-158.webp"
+        "description": "Celebrate the delicate nature of spring with this modern Japanese Sakura typography poster, contrasting photographic cherry blossoms with liquid wavy lines and bold editorial lettering.",
+        "label": "abstract-158.webp",
+        "seoTitle": "Japanese Sakura Typography Poster | Cherry Blossom Art Print",
+        "metaDescription": "Modern Japanese botanical poster featuring dusty rose cherry blossoms, bold Sakura typography, and psychedelic wavy lines on textured cream paper.",
+        "seoAltText": "Japanese graphic art poster featuring bold Sakura lettering, delicate pink cherry blossoms, and wavy op-art contour stripes."
     },
     {
         "id": "p159",
-        "title": "Abstract 159 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 159 – Bauhaus Vinyl Record & Piano Music Art Print",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-159.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-159.webp"
+        "description": "Harmonize your decor with this Bauhaus-inspired music poster, blending vinyl record grooves, geometric red circles, and piano keys with Plato's timeless tribute to music.",
+        "label": "abstract-159.webp",
+        "seoTitle": "Bauhaus Vinyl Record Art Poster | Abstract Music Wall Decor",
+        "metaDescription": "Constructivist music art poster featuring vinyl record grooves, piano keys, geometric crimson circles, and a quote by Plato on beige parchment.",
+        "seoAltText": "Constructivist graphic poster featuring black vinyl record grooves, negative-space piano keys, red circles, and a music quote."
     },
     {
         "id": "p160",
-        "title": "Abstract 160 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 160 – Die Rakete Techno Camouflage Club Night Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-160.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-160.webp"
+        "description": "Immerse your space in European nightlife culture with this underground club art poster from Nuremberg's Die Rakete, featuring multi-color abstract camouflage shapes and horizontal scanlines.",
+        "label": "abstract-160.webp",
+        "seoTitle": "Die Rakete Techno Club Poster | Abstract Camouflage Wall Art",
+        "metaDescription": "Underground German techno club poster from Die Rakete featuring electric orange and blue camouflage shapes with scanlines on deep black.",
+        "seoAltText": "German electronic techno poster for Die Rakete featuring colorful camouflage pattern in orange, blue, and green with fine horizontal lines."
     },
     {
         "id": "p161",
