@@ -361,93 +361,123 @@ export const products = [
     },
     {
         "id": "p31",
-        "title": "Abstract 031 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 031 – Nike Malayalam Cheythek Just Do It Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-031.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-031.webp"
+        "description": "A witty minimalist typography poster parodying Nike's slogan in Malayalam: 'ചെയ്തേയ്' (Just Do It). Iconic white Nike swoosh on solid jet black background.",
+        "label": "abstract-031.webp",
+        "seoTitle": "Nike Malayalam Cheythek Minimalist Typographic Poster",
+        "metaDescription": "Witty Malayalam typography poster featuring the iconic Nike swoosh and regional slogan 'ചെയ്തേയ്' on black.",
+        "seoAltText": "Minimalist black and white poster featuring a clean white Nike swoosh logo centered on a pitch-black background with the Malayalam slang phrase Cheythek in bold white font beneath"
     },
     {
         "id": "p32",
-        "title": "Abstract 032 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 032 – Nivin Pauly Romantic Malayalam Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-032.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-032.webp"
+        "description": "A tender romantic Malayalam cinema poster featuring Nivin Pauly and Aishwarya Lekshmi in an intimate moment. Warm lighting and heartfelt romantic chemistry.",
+        "label": "abstract-032.webp",
+        "seoTitle": "Nivin Pauly Romantic Malayalam Cinema Wall Art Poster",
+        "metaDescription": "Heartwarming Malayalam movie poster featuring Nivin Pauly and Aishwarya Lekshmi in a tender romantic glance.",
+        "seoAltText": "Close-up romantic film still poster of Malayalam actor Nivin Pauly looking tenderly at actress Aishwarya Lekshmi as she smiles with her head resting on her arm in soft warm ambient light"
     },
     {
         "id": "p33",
-        "title": "Abstract 033 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 033 – Winners Don't Make Excuses Gym Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-033.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-033.webp"
+        "description": "A gritty motivational typography poster for gym and office decor. Weathered beige lettering on solid black: 'Winners Don't Make Excuses.' Pure hustle inspiration.",
+        "label": "abstract-033.webp",
+        "seoTitle": "Winners Don't Make Excuses Motivational Gym Poster",
+        "metaDescription": "Bold distressed typography poster — 'Winners Don't Make Excuses' in weathered cream on black. Gym & hustle art.",
+        "seoAltText": "Motivational fitness and hustle typography poster on a pitch-black background with distressed, weathered cream sans-serif letters boldly stating Winners Don't Make Excuses across four lines"
     },
     {
         "id": "p34",
-        "title": "Abstract 034 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 034 – Annayum Rasoolum Fahadh Faasil Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-034.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-034.webp"
+        "description": "An emotional two-panel romantic film poster for Rajeev Ravi's Malayalam classic Annayum Rasoolum. Fahadh Faasil and Andrea Jeremiah in an unforgettable candid gaze.",
+        "label": "abstract-034.webp",
+        "seoTitle": "Annayum Rasoolum Fahadh Faasil Malayalam Movie Poster",
+        "metaDescription": "Cult Malayalam romantic poster for Annayum Rasoolum featuring Fahadh Faasil and Andrea Jeremiah in tender movie stills.",
+        "seoAltText": "Two-panel cinematic poster from the Malayalam film Annayum Rasoolum showing Fahadh Faasil in a plaid shirt smiling lovingly at Andrea Jeremiah in a yellow salwar as she glances downward"
     },
     {
         "id": "p35",
-        "title": "Abstract 035 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 035 – Nalla Neram Varumayirikkum Nivin Pauly Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-035.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-035.webp"
+        "description": "A nostalgic Malayalam youth friendship poster featuring Nivin Pauly and friends with lavender typography: 'Nalla Neram Varumayirikkum' (Better times ahead).",
+        "label": "abstract-035.webp",
+        "seoTitle": "Nalla Neram Varumayirikkum Malayalam Friendship Poster",
+        "metaDescription": "Nostalgic Malayalam movie poster with Nivin Pauly & friends on a bridge with purple typography: Nalla Neram Varumayirikkum.",
+        "seoAltText": "Nostalgic lavender-toned photo poster showing Malayalam actor Nivin Pauly standing smiling on a village bridge with friends and a bicycle, overlaid with large modern purple typography reading NALLA NERAM VARUMAYIRIKKUM"
     },
     {
         "id": "p36",
-        "title": "Abstract 036 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 036 – ABCD Dulquer Salmaan Naya Paisa Illa Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-036.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-036.webp"
+        "description": "A hilarious cult comedy poster for Dulquer Salmaan's ABCD (2013). Dulquer and Jacob Gregory strutting with shopping bags and the hit anthem: 'Naya Paisa Illa Kayyil.'",
+        "label": "abstract-036.webp",
+        "seoTitle": "Dulquer Salmaan ABCD Naya Paisa Illa Malayalam Poster",
+        "metaDescription": "Funny Malayalam movie poster for Dulquer Salmaan's ABCD with Jacob Gregory and the iconic lyrics 'Naya Paisa Illa Kayyil.'",
+        "seoAltText": "Vibrant sky blue Malayalam movie poster for ABCD (2013) featuring Dulquer Salmaan in hippie kurta and sunglasses walking alongside Jacob Gregory in a Celtics jersey carrying shopping bags, with bold text NAYA PAISA ILLA KAYYIL"
     },
     {
         "id": "p37",
-        "title": "Abstract 037 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 037 – Premam Nalla Neram Varum Nivin Pauly Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-037.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-037.webp"
+        "description": "A vintage collage poster celebrating Malayalam blockbuster Premam. Nivin Pauly and friend sitting with chai beneath wavy melting lettering: 'Nalla Neram Varum.'",
+        "label": "abstract-037.webp",
+        "seoTitle": "Premam Nalla Neram Varum Nivin Pauly Malayalam Poster",
+        "metaDescription": "Vintage collage poster from Premam with Nivin Pauly & friend having chai under wavy 'Nalla Neram Varum' typography.",
+        "seoAltText": "Cardboard collage poster with masking tape and torn paper edges on maroon background featuring Nivin Pauly and his buddy from Premam having tea, under wavy melting white letters reading NALLA NERAM VARUM"
     },
     {
         "id": "p38",
-        "title": "Abstract 038 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 038 – Premalu Sachin Reenu Romantic Fan Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-038.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-038.webp"
+        "description": "An emotional three-panel romantic poster for Malayalam blockbuster Premalu. Naslen and Mamitha Baiju in poignant moments: 'I hope our paths cross again.'",
+        "label": "abstract-038.webp",
+        "seoTitle": "Premalu Naslen & Mamitha Baiju Romantic Movie Poster",
+        "metaDescription": "Emotional Malayalam romantic poster for Premalu featuring Naslen and Mamitha Baiju with heartfelt yellow typography quotes.",
+        "seoAltText": "Three-panel cinematic fan poster from the Malayalam film Premalu showing Mamitha Baiju tearful, an embrace by a vintage car, and Naslen looking longing and heartbroken, with bright yellow text reading I HOPE OUR PATHS CROSS AGAIN"
     },
     {
         "id": "p39",
-        "title": "Abstract 039 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 039 – VTV Vinnaithaandi Varuvaayaa Simbu Trisha Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-039.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-039.webp"
+        "description": "A striking selective-color fan poster for Gautham Menon's cult Tamil romance Vinnaithaandi Varuvaayaa. Simbu, Trisha in red saree, and the iconic line: 'I Love This Pain.'",
+        "label": "abstract-039.webp",
+        "seoTitle": "Vinnaithaandi Varuvaayaa VTV Simbu Trisha Movie Poster",
+        "metaDescription": "Cult Tamil movie poster for Vinnaithaandi Varuvaayaa in black & crimson featuring Simbu, Trisha, and 'I Love This Pain.'",
+        "seoAltText": "Selective color red, black, and white movie poster for Vinnaithaandi Varuvaayaa featuring Silambarasan Simbu at the top with text I Love This Pain, a parting handshake in the middle, and Trisha Krishnan looking back in her iconic red saree with the words THANK YOU"
     },
     {
         "id": "p40",
-        "title": "Abstract 040 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 040 – Fight Club 1999 David Fincher Retro Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-040.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-040.webp"
+        "description": "A stylish 1999 editorial fan poster for David Fincher's Fight Club. Red and cream duotone collage featuring Brad Pitt, Edward Norton, Marla Singer, and gritty movie stills.",
+        "label": "abstract-040.webp",
+        "seoTitle": "Fight Club 1999 David Fincher Retro Duotone Movie Poster",
+        "metaDescription": "Stylish Fight Club 1999 film poster in red & cream duotone collage featuring Brad Pitt, Edward Norton, and Marla Singer.",
+        "seoAltText": "Retro editorial movie poster for David Fincher's 1999 Fight Club in crimson red and cream duotone featuring Brad Pitt as Tyler Durden leaning back bruised, Edward Norton at a cafe, Marla Singer smoking, and the headline 1999 FIGHT CLUB with an R rating tag"
     },
     {
         "id": "p41",
