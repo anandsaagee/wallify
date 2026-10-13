@@ -962,93 +962,123 @@ export const products = [
     },
     {
         "id": "p81",
-        "title": "Abstract 081 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 081 – South Indian Filter Coffee Kaapi Stamp Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-081.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-081.webp"
+        "description": "Savor the rich tradition and aroma of South Indian morning rituals with this vintage Kaapi filter coffee postage stamp print. Featuring a frothy tumbler and dabarah cup surrounded by nostalgic vignettes of coffee beans and bustling tiffin rooms, this artwork adds cozy warmth to kitchen counters, dining spaces, or coffee bars.",
+        "label": "abstract-081.webp",
+        "seoTitle": "South Indian Filter Kaapi Coffee Stamp Poster | Wallify",
+        "metaDescription": "Vintage postage stamp poster celebrating traditional South Indian filter kaapi in a brass tumbler and dabarah cup. Charming cafe & kitchen wall art.",
+        "seoAltText": "Retro stamp art poster of frothy South Indian filter coffee pouring into a stainless steel tumbler and dabarah with Tamil Kaapi typography."
     },
     {
         "id": "p82",
-        "title": "Abstract 082 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 082 – Idli Chutney Sambar South Indian Breakfast Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-082.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-082.webp"
+        "description": "Celebrate the ultimate South Indian comfort meal with this charming Idli Chutney Sambar stamp poster. Illustrated in warm retro colors with bowls of tempered coconut chutney and aromatic sambar, this delicious food art print brings mouthwatering nostalgia and cheerful energy to kitchens, breakfast nooks, and restaurants.",
+        "label": "abstract-082.webp",
+        "seoTitle": "Idli Chutney Sambar South Indian Food Art Poster | Wallify",
+        "metaDescription": "Delightful retro stamp poster of steaming idlis, coconut chutney, and spicy sambar. Mouthwatering culinary wall art for kitchen & dining rooms.",
+        "seoAltText": "Vintage stamp art poster illustrating a platter of three soft idlis served with bowls of coconut chutney and steaming sambar titled The Perfect Trio."
     },
     {
         "id": "p83",
-        "title": "Abstract 083 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 083 – Che Guevara Red and Black Iconic Portrait Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-083.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-083.webp"
+        "description": "Make an unforgettable statement with this powerful graphic portrait of revolutionary icon Che Guevara. Rendered in vivid scarlet red and deep ink black with detailed crosshatch textures, this striking art print commands attention and infuses your room, study, or studio with historic conviction and bold visual energy.",
+        "label": "abstract-083.webp",
+        "seoTitle": "Che Guevara Red and Black Revolutionary Poster | Wallify",
+        "metaDescription": "High-contrast red and black portrait poster of Che Guevara in his iconic star beret. Bold revolutionary wall decor for bedrooms, dorms, and studios.",
+        "seoAltText": "Dramatic red and black graphic art print of revolutionary Che Guevara gazing upward wearing his iconic black beret with a star insignia."
     },
     {
         "id": "p84",
-        "title": "Abstract 084 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 084 – Bangladesh Chai Cutting Tea Stamp Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-084.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-084.webp"
+        "description": "Cherish the shared warmth of roadside tea stalls with this evocative Bangladesh Cutting Chai postage stamp art print. Decorated in rich royal blue and crisp cream with authentic Bengali script, this nostalgic artwork makes a heartwarming accent for reading corners, kitchens, or cozy tea stations.",
+        "label": "abstract-084.webp",
+        "seoTitle": "Bangladesh Cutting Chai Glass Stamp Art Poster | Wallify",
+        "metaDescription": "Vintage Bangladesh postage stamp poster featuring a glass of street cutting chai with Bengali typography. Soulful cultural wall art for tea lovers.",
+        "seoAltText": "Blue and cream Bangladesh postage stamp art poster featuring a glass of street cutting tea with Bengali calligraphy and English tea quote."
     },
     {
         "id": "p85",
-        "title": "Abstract 085 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 085 – Sugarcane Juice Ganne Ka Ras Desi Stamp Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-085.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-085.webp"
+        "description": "Relive the refreshing nostalgia of bustling Indian summer street corners with this Ganne Ka Ras sugarcane juice stamp poster. Rendered in vibrant greens and earthy yellow tones with linocut illustrations of mechanical press carts and lemon garnishes, it brings wholesome desi vibrancy to culinary spaces and juice bars.",
+        "label": "abstract-085.webp",
+        "seoTitle": "Sugarcane Juice Ganne Ka Ras Desi Stamp Poster | Wallify",
+        "metaDescription": "Retro green stamp poster celebrating fresh sugarcane juice with linocut street cart illustrations. Refreshing desi food wall art for kitchens & cafes.",
+        "seoAltText": "Vintage green postage stamp art poster of an iced glass of sugarcane juice with lemon slices and street vendor vignettes titled Ganne Ka Ras."
     },
     {
         "id": "p86",
-        "title": "Abstract 086 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 086 – Toxic Desi Pop Art Girl with Red Chilies Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-086.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-086.webp"
+        "description": "Unleash bold attitude and vibrant contemporary desi aesthetics with this Toxic pop art poster. Featuring an effortlessly cool woman with cat-eye glasses, jhumka earrings, and a halo of spicy red chilies, this playful graphic print adds punchy color and unapologetic humor to gallery walls and bedrooms.",
+        "label": "abstract-086.webp",
+        "seoTitle": "Toxic Desi Pop Art Girl with Red Chilies Poster | Wallify",
+        "metaDescription": "Edgy desi pop art poster of a girl with cat-eye glasses, jhumkas, and red chilies with bold Toxic typography. Vibrant modern art for bedrooms.",
+        "seoAltText": "Desi pop art stamp poster featuring a curly-haired woman wearing cat-eye glasses, bindi, and jhumkas surrounded by hot red chilies and Toxic text."
     },
     {
         "id": "p87",
-        "title": "Abstract 087 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 087 – Powered By God Archangel Michael Gothic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-087.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-087.webp"
+        "description": "Command strength and divine protection with this dramatic Archangel Michael graphic poster. Featuring a finely sculpted monochrome angel brandishing his sword above a vanquished demon, paired with bold scarlet typography, this print brings gothic intensity and spiritual conviction to workout rooms, studios, or personal spaces.",
+        "label": "abstract-087.webp",
+        "seoTitle": "Powered By God Archangel Michael Gothic Art Poster | Wallify",
+        "metaDescription": "Striking black and red gothic poster featuring Archangel Michael slaying a beast beneath bold Powered By God lettering. Powerful faith & gym wall art.",
+        "seoAltText": "Gothic brutalist poster of a winged Archangel Michael statue holding a sword over a dragon against a black background with bold red Powered By God text."
     },
     {
         "id": "p88",
-        "title": "Abstract 088 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 088 – David Goggins Why Can't You Motivational Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-088.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-088.webp"
+        "description": "Eliminate excuses and ignite supreme mental toughness with this high-contrast David Goggins motivational poster. Depicting the legendary endurance athlete in deep shadow overlaid with the piercing crimson challenge 'Why Can't You?', this print delivers relentless motivation for home gyms, study desks, and offices.",
+        "label": "abstract-088.webp",
+        "seoTitle": "David Goggins Why Can't You Motivational Poster | Wallify",
+        "metaDescription": "Intense dark David Goggins motivational poster with bold red typography reading Why Can't You? High-impact fitness wall art for home gyms & offices.",
+        "seoAltText": "High-contrast black and white portrait poster of David Goggins in a UFC jacket with bold red centered text asking Why Can't You?."
     },
     {
         "id": "p89",
-        "title": "Abstract 089 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 089 – Can We Trust The Media Editorial Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-089.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-089.webp"
+        "description": "Spark critical debate and intellectual curiosity with this thought-provoking retro editorial art print. Depicting a faceless suited figure behind a barrage of microphones under the headline 'Can We Really Trust The Media', this vintage-textured screenprint makes a compelling centerpiece for offices, study rooms, or reading lounges.",
+        "label": "abstract-089.webp",
+        "seoTitle": "Can We Trust The Media Editorial Vintage Poster | Wallify",
+        "metaDescription": "Thought-provoking retro political poster asking Can We Really Trust The Media with microphones and a question mark. Bold wall art for office & library.",
+        "seoAltText": "Retro editorial silkscreen poster of a suited figure with a question mark head surrounded by microphones, thumbs up, and thumbs down hands."
     },
     {
         "id": "p90",
-        "title": "Abstract 090 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 090 – Samosa Crispy Triangles Desi Food Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-090.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-090.webp"
+        "description": "Indulge your love for iconic Indian street food with this vintage Samosa Crispy Triangles stamp poster. Depicting perfectly spiced golden samosas alongside vibrant bowls of mint and tamarind chutney on a rich emerald background, this print brings mouthwatering personality and warmth to any kitchen or dining space.",
+        "label": "abstract-090.webp",
+        "seoTitle": "Samosa Crispy Triangles Desi Food Stamp Poster | Wallify",
+        "metaDescription": "Retro green stamp poster of golden crispy samosas served with mint and tamarind chutneys. Mouthwatering desi street food art for kitchens and cafes.",
+        "seoAltText": "Vintage stamp art poster featuring golden samosas with potato-pea filling, accompanied by bowls of green mint and sweet tamarind chutneys."
     },
     {
         "id": "p91",
