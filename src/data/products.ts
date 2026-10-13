@@ -121,93 +121,123 @@ export const products = [
     },
     {
         "id": "p11",
-        "title": "Abstract 011 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 011 – Manassu Mohan Retro Malayalam Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-011.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-011.webp"
+        "description": "A stunning retro South Indian indie poster featuring Malayalam typography, vintage portraits, and warm crimson tones. Artwork by Mohan with vibrant illustrated character design.",
+        "label": "abstract-011.webp",
+        "seoTitle": "Retro Malayalam Manassu Mohan Indie Art Poster",
+        "metaDescription": "Vibrant retro South Indian indie poster featuring Malayalam script, vintage portraits, and rich warm tones.",
+        "seoAltText": "Illustrated retro South Indian poster with large yellow Malayalam lettering at the top, a man in a colorful patterned robe holding a small red flower, a woman in a red saree looking down, a woman in an upper gold frame, and artist signature Mohan"
     },
     {
         "id": "p12",
-        "title": "Abstract 012 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 012 – Inner Balance Japanese Koi Fish Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-012.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-012.webp"
+        "description": "A serene Japanese design poster featuring two crimson koi fish circling blue waves in a yin-yang flow on dark textured background. Tagline: No Chaos. Just Flow.",
+        "label": "abstract-012.webp",
+        "seoTitle": "Inner Balance Japanese Koi Fish Yin Yang Wall Poster",
+        "metaDescription": "Minimalist Japanese yin-yang poster with red koi fish circling blue waves on dark textured background.",
+        "seoAltText": "Japanese minimalist poster on a dark charcoal textured background featuring two red koi fish swimming in a circular yin-yang formation around a blue rectangular ocean wave graphic, with modern typography reading Inner Balance, East-West, and No Chaos Just Flow"
     },
     {
         "id": "p13",
-        "title": "Abstract 013 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 013 – 70s Retro Groovy Floral Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-013.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-013.webp"
+        "description": "A playful 70s psychedelic floral abstract poster with wavy organic petals in vibrant pink, coral red, and warm yellow on cream paper. Perfect Danish pastel aesthetic decor.",
+        "label": "abstract-013.webp",
+        "seoTitle": "70s Retro Groovy Floral Danish Pastel Wall Art Poster",
+        "metaDescription": "Playful 70s retro psychedelic floral poster with organic pink and red wavy blossoms on off-white.",
+        "seoAltText": "Retro 70s abstract floral poster featuring two oversized stylized daisy blossoms with fluid, wavy petals in coral red and bubblegum pink with mustard yellow centers against a minimalist cream background"
     },
     {
         "id": "p14",
-        "title": "Abstract 014 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 014 – Brutalism Kawaii Anime Manga Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-014.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-014.webp"
+        "description": "An intense neo-brutalist anime manga collage poster in bold crimson and black. Features character eye panels, kawaii typography, and gritty cyberpunk Japanese street aesthetic.",
+        "label": "abstract-014.webp",
+        "seoTitle": "Brutalism Kawaii Anime Manga Red & Black Street Poster",
+        "metaDescription": "Bold neo-brutalist anime manga collage poster in stark red & black with expressive character eyes & Japanese typography.",
+        "seoAltText": "Neo-brutalist Japanese streetwear poster in high-contrast red and black with bold typography reading BRUTALISM and kawaii in hiragana, multiple comic panels showing anime character eyes in intense and angry expressions, an anime girl with heart eyes, and Japanese text columns"
     },
     {
         "id": "p15",
-        "title": "Abstract 015 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 015 – Brutal Cat Edgy Feline Graphic Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-015.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-015.webp"
+        "description": "An edgy neo-brutalist graphic poster in black and vivid coral duotone. Extreme close-up of an intense cat stare, wireframe grids, feline icons, and bold typography: Feline Brutalism.",
+        "label": "abstract-015.webp",
+        "seoTitle": "Brutal Cat Neo Brutalist Pink & Black Wall Poster",
+        "metaDescription": "Edgy neo-brutalist cat poster in neon pink & black duotone with intense feline stare, paw detail & wireframe graphics.",
+        "seoAltText": "Neo-brutalist graphic poster in black and vivid coral pink duotone featuring an extreme close-up of a cat's intense piercing gaze across the top, bold headline BRUTAL CAT, info panels with cat silhouette icons, a wireframe grid, and an extreme close-up of a fuzzy cat paw"
     },
     {
         "id": "p16",
-        "title": "Abstract 016 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 016 – Dev D Anurag Kashyap Cult Movie Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-016.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-016.webp"
+        "description": "A gritty indie cinema poster celebrating Anurag Kashyap's cult masterpiece Dev.D. Electric pink and black duotone with pixel title, brooding Abhay Deol portraits, and iconic Hindi dialogue.",
+        "label": "abstract-016.webp",
+        "seoTitle": "Dev D Anurag Kashyap Neon Noir Bollywood Movie Poster",
+        "metaDescription": "Gritty neon pink & black Dev.D cult movie poster featuring Abhay Deol, pixel title, and iconic dialogue.",
+        "seoAltText": "Cult Bollywood movie fan poster for Anurag Kashyap's Dev D in neon pink and black duotone featuring a pixel-style DEV D title at the top, a large brooding portrait of Abhay Deol, movie scene panels of drinking and romance, and the Hindi dialogue Teri Jholi Mein Khushi Hai at the bottom"
     },
     {
         "id": "p17",
-        "title": "Abstract 017 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 017 – Slow Down Snail Mental Wellness Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-017.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-017.webp"
+        "description": "A mindful vintage editorial poster reminding you to slow down. Features an intricate snail illustration, relaxing photo collages, and the reassuring message: Good Things Take Time, You're Doing Fine.",
+        "label": "abstract-017.webp",
+        "seoTitle": "Slow Down Good Things Take Time Vintage Snail Poster",
+        "metaDescription": "Calming vintage mental wellness poster with detailed snail illustration, relaxing photo collages, and 'Slow Down' typography.",
+        "seoAltText": "Vintage-style mental wellness poster on cream paper with dark navy typography reading Slow Down, Good Things Take Time, and You're Doing Fine, centered around a detailed engraving of a crawling garden snail with photo collages of people resting peacefully in nature"
     },
     {
         "id": "p18",
-        "title": "Abstract 018 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 018 – Monkey D Luffy Gear 5 One Piece Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-018.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-018.webp"
+        "description": "An iconic minimalist One Piece manga editorial poster. Three-panel triptych silhouette of Monkey D. Luffy laughing in his Sun God Nika Gear 5 awakening against the glowing full moon.",
+        "label": "abstract-018.webp",
+        "seoTitle": "Monkey D Luffy Gear 5 Sun God Nika Anime Art Poster",
+        "metaDescription": "Striking minimalist One Piece Gear 5 anime poster featuring Luffy's Sun God Nika silhouette against a full moon.",
+        "seoAltText": "Editorial manga poster on cream newsprint featuring a three-panel triptych silhouette of Monkey D. Luffy laughing in his Gear 5 Sun God Nika form against a giant glowing full moon, with Japanese katakana Gear 5 at the top, devil fruit names, and bounty details below"
     },
     {
         "id": "p19",
-        "title": "Abstract 019 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 019 – The Barca Boys Cactus Jack Streetwear Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-019.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-019.webp"
+        "description": "A gritty football streetwear poster featuring FC Barcelona stars Lewandowski, Lamine Yamal, Kounde, and Balde wearing Nike Cactus Jack jerseys on textured deep crimson.",
+        "label": "abstract-019.webp",
+        "seoTitle": "The Barca Boys FC Barcelona Cactus Jack Football Poster",
+        "metaDescription": "Gritty urban football poster featuring FC Barcelona stars Lewandowski and Yamal in Cactus Jack kits on crimson.",
+        "seoAltText": "Hip-hop streetwear style football poster titled THE BARCA BOYS on a crumpled dark crimson background, featuring monochrome portraits of FC Barcelona players Robert Lewandowski, Lamine Yamal, Jules Kounde, and Alejandro Balde wearing Nike Cactus Jack jerseys"
     },
     {
         "id": "p20",
-        "title": "Abstract 020 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 020 – TV Girl Who Really Cares Album Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-020.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-020.webp"
+        "description": "The definitive indie pop poster for TV Girl's 'Who Really Cares' (2016). Electric pink and blue duotone couple artwork with iconic typography and full 10-track song list.",
+        "label": "abstract-020.webp",
+        "seoTitle": "TV Girl Who Really Cares Album Art Music Wall Poster",
+        "metaDescription": "Iconic TV Girl 'Who Really Cares' indie music poster in vibrant pink & electric blue duotone with full tracklist.",
+        "seoAltText": "Intimate indie music poster featuring the iconic TV Girl album art for Who Really Cares in high-contrast hot pink and blue duotone, showing a man embracing a woman, wavy psychedelic lettering reading Who Really Cares 2016, and the complete 10-song tracklist"
     },
     {
         "id": "p21",
