@@ -1922,93 +1922,123 @@ export const products = [
     },
     {
         "id": "p161",
-        "title": "Abstract 161 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 161 – Keep Your Self Weird Psychedelic Art",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-161.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-161.webp"
+        "description": "Embrace individuality with this 70s psychedelic typography poster, featuring melting cream bubble letters reading 'Keep Your Self Weird' amidst hypnotic wavy contour lines.",
+        "label": "abstract-161.webp",
+        "seoTitle": "Keep Your Self Weird Psychedelic Poster | Trippy Wall Decor",
+        "metaDescription": "Retro 70s trippy psychedelic typography poster reading Keep Your Self Weird in melting cream bubble font on deep black. Quirky bedroom wall art.",
+        "seoAltText": "Psychedelic melting typography poster reading Keep Your Self Weird in cream bubble letters with wavy lines on black."
     },
     {
         "id": "p162",
-        "title": "Abstract 162 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 162 – Lionel Messi 2022 World Cup Goal Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-162.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-162.webp"
+        "description": "Commemorate football history with this graphic tribute to Lionel Messi's iconic 2022 World Cup goal against Mexico, combining action photography with albiceleste kinetic waves.",
+        "label": "abstract-162.webp",
+        "seoTitle": "Lionel Messi World Cup 2022 Goal Poster | Argentina Football",
+        "metaDescription": "Commemorative Lionel Messi World Cup 2022 football poster celebrating his iconic goal against Mexico with blue and gold kinetic waves on cream.",
+        "seoAltText": "Lionel Messi Argentina World Cup 2022 goal celebration poster with kinetic blue and gold stripes on cream background."
     },
     {
         "id": "p163",
-        "title": "Abstract 163 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 163 – BAP Versailles Visible Invisible Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-163.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-163.webp"
+        "description": "Elevate your interior with this French architecture biennale exhibition poster, pairing vivid yellow, tangerine orange, chocolate brown, and cyan blue cutouts in a striking split diptych.",
+        "label": "abstract-163.webp",
+        "seoTitle": "Versailles Architecture Biennale Poster | French Graphic Art",
+        "metaDescription": "Contemporary French architecture biennale poster for Visible Invisible at Versailles featuring bold split-color diptych in yellow, orange, and blue.",
+        "seoAltText": "Modern French exhibition poster diptych featuring abstract organic shapes in yellow, brown, orange, and cyan blue with bold text."
     },
     {
         "id": "p164",
-        "title": "Abstract 164 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 164 – Mentality Cyberpunk Acid Brutalism Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-164.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-164.webp"
+        "description": "Infuse your space with futuristic edge through this neo-brutalist cyberpunk poster, blending classical Roman sculpture, an engraved skull, and neon chartreuse accents on black.",
+        "label": "abstract-164.webp",
+        "seoTitle": "Mentality Cyberpunk Acid Poster | Neo Brutalist Wall Art",
+        "metaDescription": "Neo-brutalist cyberpunk poster featuring classical sculpture in neon green, engraved skull, tech barcodes, and bold Mentality typography.",
+        "seoAltText": "Neo-brutalist graphic poster with classical marble sculpture in neon green frame, skull graphic, and tall Mentality typography."
     },
     {
         "id": "p165",
-        "title": "Abstract 165 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 165 – Batman Dark Knight Gotham Collage Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-165.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-165.webp"
+        "description": "Unleash the shadows of Gotham with this noir Batman poster, featuring torn comic paper layers revealing the Dark Knight, Gotham City's skyline, and the Joker's manic smile.",
+        "label": "abstract-165.webp",
+        "seoTitle": "Batman Dark Knight Noir Collage Poster | Gotham City Art",
+        "metaDescription": "Dramatic torn paper collage poster of Batman cowl, Gotham City skyline, Joker smile, and vintage comic typography in high-contrast black and white.",
+        "seoAltText": "Black and white torn paper collage poster of Batman cowl with glowing eyes, Gotham City skyline, and Joker smile."
     },
     {
         "id": "p166",
-        "title": "Abstract 166 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 166 – You Must Create It Vintage Artist Studio Print",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-166.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-166.webp"
+        "description": "Ignite your creative spark with this retro 70s art studio motivational poster, showcasing an oil painter's palette, studio photography, and bold inspirational typography.",
+        "label": "abstract-166.webp",
+        "seoTitle": "You Must Create It Vintage Art Poster | Studio Decor Print",
+        "metaDescription": "Vintage 70s artist studio motivational poster featuring wooden paint palette, easel photos, and bold You Must Create It typography on aged paper.",
+        "seoAltText": "Vintage educational style art poster showing an artist paint palette and brushes with text reading You Must Create It."
     },
     {
         "id": "p167",
-        "title": "Abstract 167 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 167 – Hard Work Burnout Satirical Red Art Print",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-167.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-167.webp"
+        "description": "Capture the ironies of modern hustle culture with this provocative red risograph poster, featuring exhausted workers collapsed at desks amidst satirical skull doodles and intrusive thoughts.",
+        "label": "abstract-167.webp",
+        "seoTitle": "Hard Work Burnout Satirical Poster | Red Risograph Wall Art",
+        "metaDescription": "Provocative red screenprint poster satirizing hustle culture and office burnout with collapsed workers and skull doodles on off-white paper.",
+        "seoAltText": "Satirical red risograph poster depicting exhausted office workers collapsed on desks with text reading Hard Work Never Hurt Anybody."
     },
     {
         "id": "p168",
-        "title": "Abstract 168 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 168 – Tyler The Creator Flower Boy Collage Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-168.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-168.webp"
+        "description": "Celebrate Tyler, The Creator's iconic Flower Boy era with this surreal collage poster, featuring sunflowers blooming inside Tyler's head against a bright blue sky and sunflower fields.",
+        "label": "abstract-168.webp",
+        "seoTitle": "Tyler The Creator Flower Boy Poster | Can I Get A Kiss Art",
+        "metaDescription": "Surreal Tyler The Creator Flower Boy collage poster featuring sunflowers blooming from his head, blue sky, and Can I Get A Kiss typography.",
+        "seoAltText": "Surreal collage poster of Tyler The Creator with sunflowers blooming inside his head against a blue sky with Can I Get A Kiss text."
     },
     {
         "id": "p169",
-        "title": "Abstract 169 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 169 – You Can't Buy Time Retro Pop Art Clock Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-169.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-169.webp"
+        "description": "Remind yourself of what truly matters with this vibrant retro pop art poster, pairing a ticking vintage clock face with flying dollar bills and bold 'You Can't Buy Time' typography.",
+        "label": "abstract-169.webp",
+        "seoTitle": "You Can't Buy Time Pop Art Poster | Retro Clock Wall Decor",
+        "metaDescription": "Vibrant retro pop art poster in tomato red and green featuring a ticking clock with flying dollar bills and You Can't Buy Time typography.",
+        "seoAltText": "Retro pop art poster with green and cream text reading You Can't Buy Time above a vintage clock face with flying dollar bills."
     },
     {
         "id": "p170",
-        "title": "Abstract 170 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 170 – The Batman 2022 Robert Pattinson Halftone Art",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-170.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-170.webp"
+        "description": "Bring dark cinematic intensity to your room with this alternative poster for Matt Reeves' The Batman (2022), showcasing Robert Pattinson in black halftone against crimson red with Riddler ciphers.",
+        "label": "abstract-170.webp",
+        "seoTitle": "The Batman 2022 Robert Pattinson Poster | Dark Knight Art",
+        "metaDescription": "Cinematic alternative movie poster for The Batman (2022) featuring Robert Pattinson in halftone on crimson red with Riddler cipher typography.",
+        "seoAltText": "Alternative movie poster for The Batman featuring Robert Pattinson in cowl in halftone against a blood red background with cipher text."
     },
     {
         "id": "p171",
