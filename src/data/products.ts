@@ -722,93 +722,123 @@ export const products = [
     },
     {
         "id": "p61",
-        "title": "Abstract 061 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 061 – Slow Down You're Doing Fine Newspaper Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-061.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-061.webp"
+        "description": "A calming mental wellness quote poster. Cobalt blue hand-lettered typography across an authentic 1865 Chicago Times broadsheet: 'SLOW DOWN YOU'RE DOING FINE.'",
+        "label": "abstract-061.webp",
+        "seoTitle": "Slow Down You're Doing Fine Blue Newspaper Quote Poster",
+        "metaDescription": "Mindful positive affirmation poster with cobalt blue typography over antique 1865 newspaper print: 'Slow Down You're Doing Fine.'",
+        "seoAltText": "Positive mental health affirmation poster featuring bold cobalt blue hand-drawn letters reading SLOW DOWN YOU'RE DOING FINE overlaid across vintage 1865 Chicago Times newsprint"
     },
     {
         "id": "p62",
-        "title": "Abstract 062 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 062 – Try Or Die Distressed Skull Letterpress Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-062.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-062.webp"
+        "description": "A gritty hardcore motivational typography poster. Distressed navy letterpress text reading 'TRY OR DIE' with incorporated skull and crossbones on cream paper.",
+        "label": "abstract-062.webp",
+        "seoTitle": "Try Or Die Skull Distressed Letterpress Motivation Poster",
+        "metaDescription": "Hardcore motivation poster featuring weathered navy blue typography 'TRY OR DIE' with skull graphics on cream paper.",
+        "seoAltText": "Distressed vintage letterpress art print on cream paper with bold navy blue textured typography reading TRY OR DIE featuring embedded human skull and pirate crossbones graphics"
     },
     {
         "id": "p63",
-        "title": "Abstract 063 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 063 – Be Who You Want To Be Hourglass Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-063.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-063.webp"
+        "description": "A thought-provoking conceptual typography poster. Deep navy lettering on cream with an antique hourglass, silhouette portraits, and eyes: 'Be Who You Want To Be.'",
+        "label": "abstract-063.webp",
+        "seoTitle": "Be Who You Want To Be Hourglass Conceptual Wall Poster",
+        "metaDescription": "Inspirational identity poster featuring deep navy typography 'Be Who You Want To Be' with antique hourglass & silhouette art.",
+        "seoAltText": "Conceptual typography poster on off-white paper in deep navy blue ink reading Be Who You Want To Be, integrated with an antique glass hourglass, profile silhouettes, and gazing eyes"
     },
     {
         "id": "p64",
-        "title": "Abstract 064 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 064 – Sunburst Guitar Music Quotes Rock Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-064.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-064.webp"
+        "description": "A classic rock wall art poster. Gorgeous sunburst electric guitar surrounded by passionate music typography: 'Makes Me Wanna Party All Night', 'Rocks My World.'",
+        "label": "abstract-064.webp",
+        "seoTitle": "Sunburst Electric Guitar Music Quotes Rock Wall Poster",
+        "metaDescription": "Classic rock music room poster featuring a sunburst Les Paul electric guitar surrounded by inspiring music quotes & typography.",
+        "seoAltText": "Vintage music poster featuring a sunburst red and amber electric guitar centered on aged parchment paper surrounded by dynamic typography celebrating music and rock and roll lyrics"
     },
     {
         "id": "p65",
-        "title": "Abstract 065 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 065 – Ace of Hearts Vintage Playing Card Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-065.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-065.webp"
+        "description": "An elegant minimalist playing card art print. Embossed textured dark red heart in the center of an aged cream parchment Ace of Hearts with vintage corner vignettes.",
+        "label": "abstract-065.webp",
+        "seoTitle": "Ace of Hearts Vintage Playing Card Minimalist Poster",
+        "metaDescription": "Classic vintage playing card print featuring the Ace of Hearts with an embossed textured red heart on aged parchment.",
+        "seoAltText": "Minimalist vintage playing card wall art showing the Ace of Hearts on an aged cream parchment card with an embossed dark red heart emblem in the center and corner suit markings"
     },
     {
         "id": "p66",
-        "title": "Abstract 066 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 066 – Cristiano Ronaldo No Risk No Story Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-066.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-066.webp"
+        "description": "An energetic football sports poster featuring young Cristiano Ronaldo celebrating in his Manchester United Vodafone kit beneath the quote: 'no risk. no story.'",
+        "label": "abstract-066.webp",
+        "seoTitle": "Cristiano Ronaldo Man United No Risk No Story Poster",
+        "metaDescription": "Inspiring football poster of young Cristiano Ronaldo in red Manchester United kit celebrating with 'no risk. no story' quote.",
+        "seoAltText": "Dynamic sports poster of young Cristiano Ronaldo celebrating passionately in his red Manchester United jersey under bold glowing typography reading no risk no story"
     },
     {
         "id": "p67",
-        "title": "Abstract 067 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 067 – The Batman Men Are Brave Crimson Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-067.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-067.webp"
+        "description": "A striking minimalist DC superhero poster for The Batman (Robert Pattinson). Dark cowl in profile against crimson red with towering white typography: 'MEN ARE BRAVE.'",
+        "label": "abstract-067.webp",
+        "seoTitle": "The Batman Men Are Brave Robert Pattinson Wall Poster",
+        "metaDescription": "Striking red & black Batman poster featuring Robert Pattinson's cowl silhouette with bold white typography: 'MEN ARE BRAVE.'",
+        "seoAltText": "Minimalist comic poster featuring the dark masked profile of Robert Pattinson as The Batman against a rich crimson red background with large bold white condensed letters reading MEN ARE BRAVE"
     },
     {
         "id": "p68",
-        "title": "Abstract 068 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 068 – Fresh Nimboo Pani Indian Beverage Stamp Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-068.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-068.webp"
+        "description": "A charming Indian pop-art postage stamp print celebrating Nimboo Pani. Sparkling iced lemonade glass with mint leaves, lemon slices, and street stall illustrations.",
+        "label": "abstract-068.webp",
+        "seoTitle": "Fresh Nimboo Pani Retro Indian Postage Stamp Art Poster",
+        "metaDescription": "Vibrant retro Indian postage stamp poster featuring chilled Nimboo Pani lemonade with mint, lemon slices & street bazaar art.",
+        "seoAltText": "Retro Indian pop art poster styled as a green postage stamp featuring a tall glass of iced Nimboo Pani lemonade garnished with fresh mint leaves and lemons, with Hindi and English text"
     },
     {
         "id": "p69",
-        "title": "Abstract 069 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 069 – Charles Leclerc Ferrari Risk Over Regret Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-069.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-069.webp"
+        "description": "An inspiring Formula 1 racing poster featuring Ferrari driver Charles Leclerc giving a thumbs-up in his yellow helmet and red suit: 'risk is always better than regret.'",
+        "label": "abstract-069.webp",
+        "seoTitle": "Charles Leclerc Ferrari F1 Risk Over Regret Wall Poster",
+        "metaDescription": "Formula 1 motivation poster featuring Charles Leclerc in yellow Ferrari helmet giving a thumbs-up: 'risk is better than regret.'",
+        "seoAltText": "Motorsport motivation poster on black background featuring Ferrari F1 driver Charles Leclerc giving a thumbs up in his yellow racing helmet and red suit under white typography reading risk is always better than regret"
     },
     {
         "id": "p70",
-        "title": "Abstract 070 Minimalist Abstract Poster – Premium Matte Finish",
+        "title": "Abstract 070 – Che Guevara Cigar Revolutionary Pop Art Poster",
         "category": "Abstract",
         "basePrice": 49,
         "image": "/assets/abstract/abstract-070.webp",
-        "description": "Level up your space with this premium abstract wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "abstract-070.webp"
+        "description": "An iconic pop art portrait of revolutionary Che Guevara. High-contrast silkscreen illustration in red beret with silver star, smoking a cigar with rising smoke plumes.",
+        "label": "abstract-070.webp",
+        "seoTitle": "Che Guevara Cigar Revolutionary Pop Art Wall Poster",
+        "metaDescription": "Iconic Che Guevara pop art poster featuring the revolutionary in red beret smoking a cigar with stylized rising smoke on cream.",
+        "seoAltText": "High-contrast silkscreen pop art poster of Che Guevara wearing his red star beret and smoking a cigar with plumes of smoke rising against a minimalist cream background"
     },
     {
         "id": "p71",
