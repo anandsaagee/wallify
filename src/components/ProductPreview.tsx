@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { ShoppingBag, Zap, Check, Gift, Frame, Share2 } from 'lucide-react';
-import { SIZES, getFramePrice, getFrameStrikePrice } from '../data/config';
+import { SIZES, BULK_OFFERS, getFramePrice, getFrameStrikePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
 import { SEO } from './SEO';
@@ -59,12 +59,7 @@ const SizeButton: React.FC<{
   </button>
 );
 
-const BULK_OFFERS_INLINE = [
-  { buy: 5, free: 1 },
-  { buy: 7, free: 2 },
-  { buy: 10, free: 3 },
-  { buy: 20, free: 7 },
-] as const;
+// BULK_OFFERS is imported from ../data/config — single source of truth
 
 export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initialSizeId, onClose, onAddedToCart }) => {
   const defaultSize = SIZES.find((s) => s.id === initialSizeId) ?? SIZES[1];
@@ -423,13 +418,13 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
               </span>
             </div>
             <div className="grid grid-cols-2 gap-2">
-              {BULK_OFFERS_INLINE.map((o) => (
+              {BULK_OFFERS.map((o) => (
                 <div
                   key={o.buy}
                   className="bg-white/[0.04] rounded-xl p-2 text-center"
                 >
                   <p className="text-[10px] font-black text-white">Buy {o.buy}</p>
-                  <p className="text-[10px] font-bold text-primary">Get {o.free} FREE</p>
+                  <p className="text-[10px] font-bold text-primary">Get {o.getFree} FREE</p>
                 </div>
               ))}
             </div>
