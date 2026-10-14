@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ShoppingBag, Zap, Check, Gift, Frame, Share2 } from 'lucide-react';
 import { SIZES, BULK_OFFERS, getFramePrice, getFrameStrikePrice } from '../data/config';
 import { useCart } from '../hooks/useCart';
