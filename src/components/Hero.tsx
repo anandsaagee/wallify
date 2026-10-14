@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 // ── Stable random helpers ────────────────────────────────────────────────────
 function seedRandom(seed: number): number {
@@ -18,6 +18,196 @@ function getLiveOrdering(): number {
   const hourSeed = new Date().getHours();
   return Math.floor(seedRandom(hourSeed) * (max - min + 1)) + min;
 }
+
+// ── Poster pool — curated diverse sample across all categories ────────────────
+// We inject Cloudinary transformations at runtime: w_90,h_126,c_fill,q_auto:low,f_auto
+// This makes each image ~2-4 KB for near-instant loading
+const POSTER_POOL = [
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879347/wallify/assets/SPIRITUAL/SPIRITUAL-007.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879639/wallify/assets/mollywood/mollywood-115.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879646/wallify/assets/mollywood/mollywood-141.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879441/wallify/assets/automotive/automotive-036.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879501/wallify/assets/football/football-004.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879628/wallify/assets/mollywood/mollywood-072.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879421/wallify/assets/anime/anime-048.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879439/wallify/assets/automotive/automotive-029.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879737/wallify/assets/quotes/quotes-190.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879411/wallify/assets/anime/anime-009.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879508/wallify/assets/football/football-036.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879382/wallify/assets/abstract/abstract-063.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879504/wallify/assets/football/football-015.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879428/wallify/assets/anime/anime-063.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879750/wallify/assets/tamil/tamil-015.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879507/wallify/assets/football/football-029.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879683/wallify/assets/quotes/quotes-007.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879383/wallify/assets/abstract/abstract-071.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879681/wallify/assets/mollywood/mollywood-281.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879757/wallify/assets/tamil/tamil-041.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879360/wallify/assets/SPIRITUAL/SPIRITUAL-048.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879349/wallify/assets/SPIRITUAL/SPIRITUAL-015.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879479/wallify/assets/automotive/automotive-164.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879702/wallify/assets/quotes/quotes-071.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879689/wallify/assets/quotes/quotes-029.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879526/wallify/assets/football/football-082.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879556/wallify/assets/hollywood/hollywood-064.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879452/wallify/assets/automotive/automotive-071.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879450/wallify/assets/automotive/automotive-063.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879539/wallify/assets/hollywood/hollywood-030.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879323/wallify/assets/MUSIC/MUSIC-004.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879747/wallify/assets/tamil/tamil-002.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879353/wallify/assets/SPIRITUAL/SPIRITUAL-029.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879372/wallify/assets/abstract/abstract-027.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879367/wallify/assets/abstract/abstract-007.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879504/wallify/assets/football/football-014.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879504/wallify/assets/football/football-018.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879325/wallify/assets/MUSIC/MUSIC-012.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879431/wallify/assets/automotive/automotive-007.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879698/wallify/assets/quotes/quotes-058.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879332/wallify/assets/MUSIC/MUSIC-036.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879405/wallify/assets/abstract/abstract-164.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879448/wallify/assets/automotive/automotive-058.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879623/wallify/assets/mollywood/mollywood-058.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879375/wallify/assets/abstract/abstract-036.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879532/wallify/assets/hollywood/hollywood-007.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879413/wallify/assets/anime/anime-015.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879327/wallify/assets/MUSIC/MUSIC-018.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879325/wallify/assets/MUSIC/MUSIC-014.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879751/wallify/assets/tamil/tamil-018.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879642/wallify/assets/mollywood/mollywood-126.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879749/wallify/assets/tamil/tamil-009.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879345/wallify/assets/SPIRITUAL/SPIRITUAL-004.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879373/wallify/assets/abstract/abstract-029.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879381/wallify/assets/abstract/abstract-058.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879692/wallify/assets/quotes/quotes-036.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879507/wallify/assets/football/football-032.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879356/wallify/assets/SPIRITUAL/SPIRITUAL-036.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879621/wallify/assets/mollywood/mollywood-053.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879593/wallify/assets/hollywood/hollywood-165.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879326/wallify/assets/MUSIC/MUSIC-015.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879538/wallify/assets/hollywood/hollywood-028.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879560/wallify/assets/hollywood/hollywood-072.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879486/wallify/assets/automotive/automotive-190.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879608/wallify/assets/mollywood/mollywood-013.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879413/wallify/assets/anime/anime-016.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879551/wallify/assets/hollywood/hollywood-059.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879409/wallify/assets/anime/anime-004.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879749/wallify/assets/tamil/tamil-008.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879731/wallify/assets/quotes/quotes-164.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879430/wallify/assets/anime/anime-065.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879414/wallify/assets/anime/anime-018.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879751/wallify/assets/tamil/tamil-016.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879331/wallify/assets/MUSIC/MUSIC-032.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879330/wallify/assets/MUSIC/MUSIC-029.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879542/wallify/assets/hollywood/hollywood-037.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879759/wallify/assets/tamil/tamil-048.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879386/wallify/assets/abstract/abstract-080.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879394/wallify/assets/abstract/abstract-115.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879338/wallify/assets/MUSIC/MUSIC-055.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879519/wallify/assets/football/football-063.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879569/wallify/assets/hollywood/hollywood-090.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879460/wallify/assets/automotive/automotive-087.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879717/wallify/assets/quotes/quotes-117.webp",
+  "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879658/wallify/assets/mollywood/mollywood-178.webp",
+];
+
+// Inject Cloudinary optimisation transforms into a URL
+// Result: tiny 90×126 thumbnail, ~2–5 KB each
+function toThumbUrl(url: string): string {
+  return url.replace(
+    '/image/upload/',
+    '/image/upload/w_90,h_126,c_fill,q_auto:low,f_auto,e_brightness:-10/'
+  );
+}
+
+// Fisher-Yates shuffle
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ── Poster Background ─────────────────────────────────────────────────────────
+// Renders 3 rows of randomly-ordered poster thumbnails with different patterns.
+// Images are loaded lazily so they never block the main render.
+const PosterBackground: React.FC = () => {
+  // Shuffle once per mount (= random on every page visit)
+  const rows = useMemo(() => {
+    const shuffled = shuffle(POSTER_POOL);
+    // Split into 3 rows of ~28 each; wrap-around to fill gaps
+    const ROW_LEN = 28;
+    const row1 = shuffled.slice(0, ROW_LEN);
+    const row2 = shuffle([...shuffled]).slice(0, ROW_LEN);
+    const row3 = shuffle([...shuffled]).slice(0, ROW_LEN);
+    return [row1, row2, row3] as const;
+  }, []); // stable for component lifetime
+
+  // Row configurations: different heights + gap patterns for visual variety
+  const rowConfigs = [
+    { height: 108, gap: 6, offset: 0 },
+    { height: 90,  gap: 10, offset: -18 },
+    { height: 116, gap: 4,  offset: 12 },
+  ] as const;
+
+  return (
+    <div
+      className="absolute inset-0 overflow-hidden pointer-events-none select-none"
+      aria-hidden="true"
+    >
+      {/* Edge fade masks: left+right+top+bottom */}
+      <div
+        className="absolute inset-0 z-10"
+        style={{
+          background: `
+            linear-gradient(to right, #0a0a0a 0%, transparent 12%, transparent 88%, #0a0a0a 100%),
+            linear-gradient(to bottom, #0a0a0a 0%, transparent 18%, transparent 72%, #0a0a0a 100%)
+          `,
+        }}
+      />
+
+      {/* Poster rows */}
+      <div className="absolute inset-0 flex flex-col justify-around py-2">
+        {rows.map((row, rowIdx) => {
+          const cfg = rowConfigs[rowIdx];
+          return (
+            <div
+              key={rowIdx}
+              className="flex shrink-0"
+              style={{
+                gap: cfg.gap,
+                marginTop: cfg.offset,
+                opacity: 0.1,
+              }}
+            >
+              {/* Duplicate row for seamless fill on wide screens */}
+              {[...row, ...row].map((url, i) => (
+                <img
+                  key={`${rowIdx}-${i}`}
+                  src={toThumbUrl(url)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  width={64}
+                  height={cfg.height}
+                  style={{
+                    width: Math.round(cfg.height * 0.714), // ~poster aspect ratio
+                    height: cfg.height,
+                    objectFit: 'cover',
+                    borderRadius: 4,
+                    flexShrink: 0,
+                    display: 'block',
+                  }}
+                />
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 // ── Live Stats Widget ────────────────────────────────────────────────────────
 const LiveStats: React.FC = () => {
@@ -78,10 +268,15 @@ export const Hero: React.FC<{
         paddingBottom: '24px',
       }}
     >
-      {/* Background gradient */}
+      {/* ── Background layers (bottom → top) ── */}
+
+      {/* 1. Base gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-surface" />
 
-      {/* Decorative grid */}
+      {/* 2. Poster mosaic — random each visit, highly optimised thumbnails */}
+      <PosterBackground />
+
+      {/* 3. Decorative grid (very subtle) */}
       <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
         <div
           className="w-full h-full"
@@ -93,14 +288,14 @@ export const Hero: React.FC<{
         />
       </div>
 
-      {/* Radial glow */}
+      {/* 4. Radial glow */}
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full opacity-10 blur-[80px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #FACB15 0%, transparent 70%)' }}
         aria-hidden="true"
       />
 
-      {/* Content */}
+      {/* ── Foreground content ── */}
       <div className="relative z-10 text-center w-full max-w-lg mx-auto px-4 flex flex-col items-center gap-3 sm:gap-4">
 
         {/* Headline — compact single line on mobile */}
