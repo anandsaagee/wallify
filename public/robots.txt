@@ -1,4 +1,28 @@
+# WallifyStore robots.txt - Generated: 2026-10-17
+
 User-agent: *
 Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Allow: /category/
+Allow: /posters/
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /wallify-logo.jpg
 
 Sitemap: https://wallifystore.in/sitemap.xml
+Sitemap: https://wallifystore.in/sitemap-core.xml
+Sitemap: https://wallifystore.in/sitemap-abstract.xml
+Sitemap: https://wallifystore.in/sitemap-anime.xml
+Sitemap: https://wallifystore.in/sitemap-automotive.xml
+Sitemap: https://wallifystore.in/sitemap-football.xml
+Sitemap: https://wallifystore.in/sitemap-hollywood.xml
+Sitemap: https://wallifystore.in/sitemap-mollywood.xml
+Sitemap: https://wallifystore.in/sitemap-music.xml
+Sitemap: https://wallifystore.in/sitemap-quotes.xml
+Sitemap: https://wallifystore.in/sitemap-spiritual.xml
+Sitemap: https://wallifystore.in/sitemap-tamil.xml
