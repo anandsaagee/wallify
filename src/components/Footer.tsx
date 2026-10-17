@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
         {/* SEO Content Block */}
         <div className="max-w-2xl text-center px-2">
           <p className="font-body text-[11px] text-muted/60 leading-relaxed">
-            Looking for premium aesthetic wall posters to elevate your bedroom or hostel setup? At Wallify Store, we deliver museum-quality, HD wall posters across Kerala and all of India. Anime, JDM, movie, and custom posters — fade-resistant thick paper, vibrant colours, fast delivery.
+            Looking for premium aesthetic wall posters to elevate your bedroom or hostel setup? At Wallify Store, we deliver museum-quality, HD wall posters across Kerala and all of India. Anime, JDM, movie, and custom posters on fade-resistant thick paper with vibrant colours and fast delivery.
           </p>
         </div>
 

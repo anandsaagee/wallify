@@ -466,7 +466,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 className="w-full h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_20px_40px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed border border-primary/20"
               >
                 <Truck size={16} />
-                Order via WhatsApp — ₹{finalTotalWithShipping}
+                Order via WhatsApp · ₹{finalTotalWithShipping}
               </button>
             </div>
           </form>

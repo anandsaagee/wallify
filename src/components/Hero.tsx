@@ -20,8 +20,8 @@ function getLiveOrdering(): number {
 }
 
 // ── Poster pool — curated diverse sample across all categories ────────────────
-// We inject Cloudinary transformations at runtime: w_90,h_126,c_fill,q_auto:low,f_auto
-// This makes each image ~2-4 KB for near-instant loading
+// Cloudinary transforms injected at runtime: w_90,h_126,c_fill,q_auto:low,f_auto
+// Each image ~2-4 KB
 const POSTER_POOL = [
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879347/wallify/assets/SPIRITUAL/SPIRITUAL-007.webp",
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879639/wallify/assets/mollywood/mollywood-115.webp",
@@ -110,12 +110,11 @@ const POSTER_POOL = [
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879658/wallify/assets/mollywood/mollywood-178.webp",
 ];
 
-// Inject Cloudinary optimisation transforms into a URL
-// Result: tiny 90×126 thumbnail, ~2–5 KB each
+// Inject Cloudinary transforms: tiny poster thumb, ~2-5 KB each
 function toThumbUrl(url: string): string {
   return url.replace(
     '/image/upload/',
-    '/image/upload/w_90,h_126,c_fill,q_auto:low,f_auto,e_brightness:-10/'
+    '/image/upload/w_90,h_126,c_fill,q_auto:low,f_auto/'
   );
 }
 
@@ -129,59 +128,50 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// ── Responsive poster-size config ────────────────────────────────────────────
-// Pick sensible thumb sizes per breakpoint so rows always fill the screen
-// and never cause horizontal scroll on mobile.
+// ── Responsive poster-size config ─────────────────────────────────────────────
+// Tightly packed: gap=2px on all breakpoints, fills every pixel
 function getPosterConfig() {
   const w = typeof window !== 'undefined' ? window.innerWidth : 390;
-  // mobile  (<480px)  : small thumbs, tight gap
-  // tablet  (480-768) : medium thumbs
-  // desktop (>768)    : original larger thumbs
   if (w < 480) {
     return [
-      { height: 72,  gap: 4, offset:   0 },
-      { height: 60,  gap: 6, offset: -10 },
-      { height: 78,  gap: 3, offset:   8 },
+      { height: 76,  gap: 2, offset:   0, speed: 28 },
+      { height: 64,  gap: 2, offset:  -8, speed: 20, reverse: true },
+      { height: 82,  gap: 2, offset:   6, speed: 34 },
     ];
   }
   if (w < 768) {
     return [
-      { height: 90,  gap: 5, offset:   0 },
-      { height: 75,  gap: 8, offset: -14 },
-      { height: 96,  gap: 4, offset:  10 },
+      { height: 96,  gap: 2, offset:   0, speed: 32 },
+      { height: 80,  gap: 2, offset: -10, speed: 22, reverse: true },
+      { height: 104, gap: 2, offset:   8, speed: 38 },
     ];
   }
   return [
-    { height: 108, gap: 6, offset:   0 },
-    { height: 90,  gap: 10, offset: -18 },
-    { height: 116, gap: 4,  offset:  12 },
+    { height: 114, gap: 2, offset:   0, speed: 38 },
+    { height: 96,  gap: 2, offset: -14, speed: 26, reverse: true },
+    { height: 122, gap: 2, offset:  10, speed: 44 },
   ];
 }
 
-// How many images do we need to fill a row?
-// poster width ≈ height × 0.714 (3:4 ratio)
+// How many images fill a row? Poster w ≈ h × 0.714 (3:4 ratio)
+// ×3 to fully cover even ultra-wide displays (we use translate to loop)
 function countNeeded(h: number, gap: number): number {
   const vw = typeof window !== 'undefined' ? window.innerWidth : 390;
   const thumbW = Math.round(h * 0.714) + gap;
-  // ×2.5 to ensure rows fill even on large desktop / landscape
-  return Math.ceil((vw * 2.5) / thumbW);
+  return Math.ceil((vw * 3) / thumbW) + 4; // small safety buffer
 }
 
-// ── Poster Background ─────────────────────────────────────────────────────────
-// Renders 3 rows of randomly-ordered poster thumbnails with different patterns.
-// Images are loaded lazily so they never block the main render.
+// ── Poster Background ──────────────────────────────────────────────────────────
+// 3 rows, tightly packed, each row scrolls at its own speed in opposite directions.
+// Images lazy-loaded so they never affect LCP.
 const PosterBackground: React.FC = () => {
-  // Resolve config once on mount (window is available at this point)
   const [rowConfigs] = useState(() => getPosterConfig());
 
-  // Shuffle once per mount — different layout on every page visit
   const rows = useMemo(() => {
     const base = shuffle(POSTER_POOL);
     return rowConfigs.map((cfg, idx) => {
-      // Each row gets its own shuffle so patterns differ
       const s = idx === 0 ? base : shuffle([...base]);
       const need = countNeeded(cfg.height, cfg.gap);
-      // Repeat pool until we have enough images to fill the row
       const out: string[] = [];
       while (out.length < need) out.push(...s);
       return out.slice(0, need);
@@ -193,63 +183,80 @@ const PosterBackground: React.FC = () => {
       className="absolute inset-0 overflow-hidden pointer-events-none select-none"
       aria-hidden="true"
     >
-      {/* Poster rows — distributed vertically */}
+      {/* Inject keyframe animations */}
+      <style>{`
+        @keyframes posterScrollL {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        @keyframes posterScrollR {
+          from { transform: translateX(-50%); }
+          to   { transform: translateX(0); }
+        }
+      `}</style>
+
+      {/* Poster rows */}
       <div
         className="absolute inset-0 flex flex-col justify-around"
-        style={{ padding: '4px 0' }}
+        style={{ padding: '2px 0' }}
       >
         {rows.map((row, rowIdx) => {
           const cfg = rowConfigs[rowIdx];
           const thumbW = Math.round(cfg.height * 0.714);
+          const isReverse = (cfg as { reverse?: boolean }).reverse;
+          // Duplicate row for seamless infinite loop
+          const doubled = [...row, ...row];
+
           return (
             <div
               key={rowIdx}
-              className="flex shrink-0"
-              style={{
-                columnGap: cfg.gap,
-                marginTop: cfg.offset,
-                opacity: 0.11,
-                // prevent any chance of the row contributing to page width
-                maxWidth: '100vw',
-              }}
+              className="overflow-hidden"
+              style={{ marginTop: cfg.offset, flexShrink: 0 }}
             >
-              {row.map((url, i) => (
-                <img
-                  key={`${rowIdx}-${i}`}
-                  src={toThumbUrl(url)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width={thumbW}
-                  height={cfg.height}
-                  style={{
-                    width: thumbW,
-                    height: cfg.height,
-                    objectFit: 'cover',
-                    borderRadius: 3,
-                    flexShrink: 0,
-                    display: 'block',
-                  }}
-                />
-              ))}
+              <div
+                style={{
+                  display: 'flex',
+                  columnGap: cfg.gap,
+                  opacity: 0.18,
+                  width: 'max-content',
+                  animation: `${isReverse ? 'posterScrollR' : 'posterScrollL'} ${cfg.speed}s linear infinite`,
+                  willChange: 'transform',
+                }}
+              >
+                {doubled.map((url, i) => (
+                  <img
+                    key={`${rowIdx}-${i}`}
+                    src={toThumbUrl(url)}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width={thumbW}
+                    height={cfg.height}
+                    style={{
+                      width: thumbW,
+                      height: cfg.height,
+                      objectFit: 'cover',
+                      borderRadius: 3,
+                      flexShrink: 0,
+                      display: 'block',
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           );
         })}
       </div>
 
-      {/* Edge fade masks — stronger on sides to hide cut-off thumbs */}
+      {/* Edge fade masks */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: [
-            // left fade
-            'linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.7) 8%, transparent 18%)',
-            // right fade
-            'linear-gradient(to left,  #0a0a0a 0%, rgba(10,10,10,0.7) 8%, transparent 18%)',
-            // top fade
-            'linear-gradient(to bottom, #0a0a0a 0%, rgba(10,10,10,0.5) 10%, transparent 22%)',
-            // bottom fade
-            'linear-gradient(to top,    #0a0a0a 0%, rgba(10,10,10,0.5) 10%, transparent 22%)',
+            'linear-gradient(to right,  #0a0a0a 0%, rgba(10,10,10,0.75) 7%, transparent 16%)',
+            'linear-gradient(to left,   #0a0a0a 0%, rgba(10,10,10,0.75) 7%, transparent 16%)',
+            'linear-gradient(to bottom, #0a0a0a 0%, rgba(10,10,10,0.55) 9%, transparent 20%)',
+            'linear-gradient(to top,    #0a0a0a 0%, rgba(10,10,10,0.55) 9%, transparent 20%)',
           ].join(', '),
         }}
       />
@@ -276,7 +283,6 @@ const LiveStats: React.FC = () => {
 
   return (
     <div className="flex items-center gap-2 justify-center">
-      {/* Ordering Now */}
       <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulseDot shrink-0" />
         <span className="text-[10px] font-body font-semibold text-green-400 uppercase tracking-wider">
@@ -284,7 +290,6 @@ const LiveStats: React.FC = () => {
         </span>
       </div>
 
-      {/* Orders This Week */}
       <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
         <span className="text-[10px] font-body font-semibold text-primary uppercase tracking-wider">
@@ -316,16 +321,14 @@ export const Hero: React.FC<{
         paddingBottom: '24px',
       }}
     >
-      {/* ── Background layers (bottom → top) ── */}
-
       {/* 1. Base gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-surface" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-surface" />
 
-      {/* 2. Poster mosaic — random each visit, highly optimised thumbnails */}
+      {/* 2. Poster mosaic — random, tightly packed, animated */}
       <PosterBackground />
 
-      {/* 3. Decorative grid (very subtle) */}
-      <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+      {/* 3. Subtle grid overlay */}
+      <div className="absolute inset-0 opacity-[0.025]" aria-hidden="true">
         <div
           className="w-full h-full"
           style={{
@@ -338,39 +341,36 @@ export const Hero: React.FC<{
 
       {/* 4. Radial glow */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full opacity-10 blur-[80px] pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] h-[320px] rounded-full opacity-12 blur-[90px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #FACB15 0%, transparent 70%)' }}
         aria-hidden="true"
       />
 
-      {/* ── Foreground content ── */}
+      {/* Foreground content */}
       <div className="relative z-10 text-center w-full max-w-lg mx-auto px-4 flex flex-col items-center gap-3 sm:gap-4">
 
-        {/* Headline — compact single line on mobile */}
         {isMainH1 ? (
           <h1
-            className="font-display text-white leading-[1.1] tracking-tight text-center w-full"
-            style={{ fontSize: 'clamp(26px, 5.5vw, 52px)' }}
+            className="font-display text-white leading-[1.08] tracking-tight text-center w-full"
+            style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
-            Transform Your Walls{' '}
-            <span className="text-primary">with Wallify.</span>
+            Your Walls{' '}
+            <span className="text-primary">Define You.</span>
           </h1>
         ) : (
           <h2
-            className="font-display text-white leading-[1.1] tracking-tight text-center w-full"
-            style={{ fontSize: 'clamp(26px, 5.5vw, 52px)' }}
+            className="font-display text-white leading-[1.08] tracking-tight text-center w-full"
+            style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
-            Transform Your Walls{' '}
-            <span className="text-primary">with Wallify.</span>
+            Your Walls{' '}
+            <span className="text-primary">Define You.</span>
           </h2>
         )}
 
-        {/* Subheading */}
         <p className="font-body text-muted text-xs sm:text-sm max-w-[260px] sm:max-w-xs font-medium leading-relaxed">
           Premium posters at unbeatable prices.
         </p>
 
-        {/* ── Live Stats — compact inline pills ── */}
         <LiveStats />
 
         {/* CTA Buttons */}
@@ -379,7 +379,7 @@ export const Hero: React.FC<{
             onClick={onShopNow}
             className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] bg-primary text-black font-bold text-sm rounded-full transition-all duration-200 active:scale-95 hover:brightness-110 shadow-[0_8px_28px_rgba(250,203,21,0.3)]"
           >
-            Shop Now
+            Shop Posters
           </button>
           <button
             onClick={onExplore}

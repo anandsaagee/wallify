@@ -249,7 +249,10 @@ const AppContent: React.FC = () => {
               isMainH1={selectedCategory === 'All'}
             />
 
-            {/* 🔥 BEST SELLERS — directly after hero */}
+            {/* Categories first so users orient quickly */}
+            <FeaturedCategories onSelectCategory={setSelectedCategory} />
+
+            {/* Best sellers strip */}
             <HeroBestSellers
               products={products}
               onClick={handleProductClick}
@@ -281,7 +284,6 @@ const AppContent: React.FC = () => {
             )}
 
               <main className="pb-24">
-                <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
                 <div id="collection-header" className="px-4 mb-3 mt-8">
                   <div className="flex items-center justify-between">

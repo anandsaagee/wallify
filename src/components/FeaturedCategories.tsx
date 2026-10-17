@@ -62,7 +62,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       <div className="px-4 mb-4">
         <h2 className="font-display text-xl sm:text-2xl text-white">Shop by Category</h2>
         <p className="font-body text-[11px] text-muted mt-0.5 font-medium">
-          Starting from <span className="text-primary font-black">₹{FROM_PRICE}</span> — tap to explore
+          Starting from <span className="text-primary font-black">₹{FROM_PRICE}</span> · tap to explore
         </p>
       </div>
 

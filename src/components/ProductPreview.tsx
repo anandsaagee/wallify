@@ -505,7 +505,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           ) : (
             <>
               <Zap className="w-[18px] h-[18px]" aria-hidden="true" />
-              <span>{withFrame ? `Add Framed — ₹${totalPrice}` : `Add to Cart — ₹${totalPrice}`}</span>
+              <span>{withFrame ? `Add Framed · ₹${totalPrice}` : `Add to Cart · ₹${totalPrice}`}</span>
             </>
           )}
         </button>
