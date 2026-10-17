@@ -1,6 +1,6 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, useRef, useState } from 'react';
 import { products } from '../data/products';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { OptimizedImage } from './OptimizedImage';
 import { SIZES } from '../data/config';
 
@@ -56,6 +56,13 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
     [onSelectCategory]
   );
 
+  const secondaryRef = useRef<HTMLDivElement>(null);
+  const [scrollHintVisible, setScrollHintVisible] = useState(true);
+
+  const handleSecondaryScroll = useCallback(() => {
+    if (scrollHintVisible) setScrollHintVisible(false);
+  }, [scrollHintVisible]);
+
   return (
     <section className="py-5 sm:py-8" aria-label="Browse by Category">
       {/* Section header */}
@@ -109,11 +116,29 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
         ))}
       </div>
 
-      {/* ── Secondary: horizontal scroll row ─────────────────────────── */}
-      <div className="px-4">
+      {/* ── Secondary: horizontal scroll row with scroll hint ───────── */}
+      <div className="px-4 relative">
+        {/* Right-edge scroll nudge — fades out once user scrolls */}
+        {scrollHintVisible && (
+          <div
+            className="absolute right-4 top-0 bottom-0 z-10 flex items-center justify-end pointer-events-none"
+            style={{
+              width: 72,
+              background: 'linear-gradient(to right, transparent 0%, rgba(10,10,10,0.9) 50%, #0a0a0a 100%)',
+            }}
+          >
+            <div className="flex flex-col items-center gap-0.5 pr-1.5">
+              <ChevronRight className="w-4 h-4 text-white/70 animate-bounce" style={{ animationDuration: '1.1s' }} />
+              <span className="text-[8px] text-white/40 font-body font-semibold uppercase tracking-widest">more</span>
+            </div>
+          </div>
+        )}
+
         <div
+          ref={secondaryRef}
           className="flex gap-2 overflow-x-auto pb-1"
           style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
+          onScroll={handleSecondaryScroll}
         >
           {SECONDARY.map((cat) => (
             <a
@@ -137,7 +162,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
                 <h3 className="font-display text-[10px] sm:text-xs text-white leading-tight uppercase">
                   {cat.label}
                 </h3>
-                <p className="text-[8px] text-primary/80 font-body font-semibold mt-px hidden sm:block">
+                <p className="text-[8px] text-white/50 font-body font-semibold mt-px hidden sm:block">
                   {cat.sub}
                 </p>
               </div>

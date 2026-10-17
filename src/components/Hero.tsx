@@ -128,37 +128,42 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// ── Responsive poster-size config ─────────────────────────────────────────────
-// Tightly packed: gap=2px on all breakpoints, fills every pixel
+// ── Responsive poster-size config (5 rows, smaller heights) ──────────────────
+// 5 rows packed tightly — each slightly different height/speed for organic feel
 function getPosterConfig() {
   const w = typeof window !== 'undefined' ? window.innerWidth : 390;
   if (w < 480) {
     return [
-      { height: 76,  gap: 2, offset:   0, speed: 28 },
-      { height: 64,  gap: 2, offset:  -8, speed: 20, reverse: true },
-      { height: 82,  gap: 2, offset:   6, speed: 34 },
+      { height: 54,  gap: 2, offset:  0,  speed: 30 },
+      { height: 46,  gap: 2, offset: -5,  speed: 22, reverse: true },
+      { height: 58,  gap: 2, offset:  3,  speed: 36 },
+      { height: 48,  gap: 2, offset: -4,  speed: 20, reverse: true },
+      { height: 52,  gap: 2, offset:  4,  speed: 28 },
     ];
   }
   if (w < 768) {
     return [
-      { height: 96,  gap: 2, offset:   0, speed: 32 },
-      { height: 80,  gap: 2, offset: -10, speed: 22, reverse: true },
-      { height: 104, gap: 2, offset:   8, speed: 38 },
+      { height: 70,  gap: 2, offset:  0,  speed: 34 },
+      { height: 58,  gap: 2, offset: -8,  speed: 24, reverse: true },
+      { height: 76,  gap: 2, offset:  5,  speed: 40 },
+      { height: 60,  gap: 2, offset: -6,  speed: 22, reverse: true },
+      { height: 66,  gap: 2, offset:  4,  speed: 30 },
     ];
   }
   return [
-    { height: 114, gap: 2, offset:   0, speed: 38 },
-    { height: 96,  gap: 2, offset: -14, speed: 26, reverse: true },
-    { height: 122, gap: 2, offset:  10, speed: 44 },
+    { height: 88,  gap: 2, offset:  0,  speed: 40 },
+    { height: 72,  gap: 2, offset: -10, speed: 28, reverse: true },
+    { height: 94,  gap: 2, offset:  6,  speed: 46 },
+    { height: 76,  gap: 2, offset: -8,  speed: 24, reverse: true },
+    { height: 84,  gap: 2, offset:  5,  speed: 36 },
   ];
 }
 
 // How many images fill a row? Poster w ≈ h × 0.714 (3:4 ratio)
-// ×3 to fully cover even ultra-wide displays (we use translate to loop)
 function countNeeded(h: number, gap: number): number {
   const vw = typeof window !== 'undefined' ? window.innerWidth : 390;
   const thumbW = Math.round(h * 0.714) + gap;
-  return Math.ceil((vw * 3) / thumbW) + 4; // small safety buffer
+  return Math.ceil((vw * 3) / thumbW) + 4;
 }
 
 // ── Poster Background ──────────────────────────────────────────────────────────
@@ -217,7 +222,7 @@ const PosterBackground: React.FC = () => {
                 style={{
                   display: 'flex',
                   columnGap: cfg.gap,
-                  opacity: 0.18,
+                  opacity: 0.28,
                   width: 'max-content',
                   animation: `${isReverse ? 'posterScrollR' : 'posterScrollL'} ${cfg.speed}s linear infinite`,
                   willChange: 'transform',
@@ -248,15 +253,15 @@ const PosterBackground: React.FC = () => {
         })}
       </div>
 
-      {/* Edge fade masks */}
+      {/* Edge fade masks — gentle so posters stay visible */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: [
-            'linear-gradient(to right,  #0a0a0a 0%, rgba(10,10,10,0.75) 7%, transparent 16%)',
-            'linear-gradient(to left,   #0a0a0a 0%, rgba(10,10,10,0.75) 7%, transparent 16%)',
-            'linear-gradient(to bottom, #0a0a0a 0%, rgba(10,10,10,0.55) 9%, transparent 20%)',
-            'linear-gradient(to top,    #0a0a0a 0%, rgba(10,10,10,0.55) 9%, transparent 20%)',
+            'linear-gradient(to right,  #0a0a0a 0%, rgba(10,10,10,0.6) 6%, transparent 13%)',
+            'linear-gradient(to left,   #0a0a0a 0%, rgba(10,10,10,0.6) 6%, transparent 13%)',
+            'linear-gradient(to bottom, #0a0a0a 0%, rgba(10,10,10,0.4) 6%, transparent 14%)',
+            'linear-gradient(to top,    #0a0a0a 0%, rgba(10,10,10,0.4) 6%, transparent 14%)',
           ].join(', '),
         }}
       />
@@ -291,8 +296,8 @@ const LiveStats: React.FC = () => {
       </div>
 
       <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-        <span className="text-[10px] font-body font-semibold text-primary uppercase tracking-wider">
+        <span className="w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+        <span className="text-[10px] font-body font-semibold text-muted uppercase tracking-wider">
           {String(weeklyCount).padStart(2, '0')} this week
         </span>
       </div>
@@ -339,9 +344,9 @@ export const Hero: React.FC<{
         />
       </div>
 
-      {/* 4. Radial glow */}
+      {/* 4. Radial glow — subtle, reduced yellow */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] h-[320px] rounded-full opacity-12 blur-[90px] pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[260px] h-[260px] rounded-full opacity-[0.06] blur-[80px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #FACB15 0%, transparent 70%)' }}
         aria-hidden="true"
       />
@@ -355,7 +360,7 @@ export const Hero: React.FC<{
             style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
             Your Walls{' '}
-            <span className="text-primary">Define You.</span>
+            <span className="italic">Define You.</span>
           </h1>
         ) : (
           <h2
@@ -363,7 +368,7 @@ export const Hero: React.FC<{
             style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
             Your Walls{' '}
-            <span className="text-primary">Define You.</span>
+            <span className="italic">Define You.</span>
           </h2>
         )}
 
@@ -377,7 +382,7 @@ export const Hero: React.FC<{
         <div className="flex gap-2.5 w-full max-w-[300px] sm:max-w-none sm:w-auto">
           <button
             onClick={onShopNow}
-            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] bg-primary text-black font-bold text-sm rounded-full transition-all duration-200 active:scale-95 hover:brightness-110 shadow-[0_8px_28px_rgba(250,203,21,0.3)]"
+            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] bg-primary text-black font-bold text-sm rounded-full transition-all duration-200 active:scale-95 hover:brightness-110"
           >
             Shop Posters
           </button>
