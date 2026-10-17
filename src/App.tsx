@@ -230,7 +230,7 @@ const AppContent: React.FC = () => {
         type="website"
         jsonLd={seoJsonLd}
       />
-      <Header currentView={view} setView={handleSetView} />
+      <Header setView={handleSetView} />
 
       <div className={view === 'store' ? 'flex-1' : 'pt-24 flex-1'}>
         {/* CHECKOUT */}

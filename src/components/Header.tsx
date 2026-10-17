@@ -5,11 +5,10 @@ import { useCart } from '../hooks/useCart';
 type View = 'store' | 'checkout';
 
 interface HeaderProps {
-  currentView: View;
   setView: (view: View) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
+export const Header: React.FC<HeaderProps> = ({ setView }) => {
   const [scrolled, setScrolled] = useState(false);
   const { totals } = useCart();
 
