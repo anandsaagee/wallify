@@ -129,73 +129,104 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+// ── Responsive poster-size config ────────────────────────────────────────────
+// Pick sensible thumb sizes per breakpoint so rows always fill the screen
+// and never cause horizontal scroll on mobile.
+function getPosterConfig() {
+  const w = typeof window !== 'undefined' ? window.innerWidth : 390;
+  // mobile  (<480px)  : small thumbs, tight gap
+  // tablet  (480-768) : medium thumbs
+  // desktop (>768)    : original larger thumbs
+  if (w < 480) {
+    return [
+      { height: 72,  gap: 4, offset:   0 },
+      { height: 60,  gap: 6, offset: -10 },
+      { height: 78,  gap: 3, offset:   8 },
+    ];
+  }
+  if (w < 768) {
+    return [
+      { height: 90,  gap: 5, offset:   0 },
+      { height: 75,  gap: 8, offset: -14 },
+      { height: 96,  gap: 4, offset:  10 },
+    ];
+  }
+  return [
+    { height: 108, gap: 6, offset:   0 },
+    { height: 90,  gap: 10, offset: -18 },
+    { height: 116, gap: 4,  offset:  12 },
+  ];
+}
+
+// How many images do we need to fill a row?
+// poster width ≈ height × 0.714 (3:4 ratio)
+function countNeeded(h: number, gap: number): number {
+  const vw = typeof window !== 'undefined' ? window.innerWidth : 390;
+  const thumbW = Math.round(h * 0.714) + gap;
+  // ×2.5 to ensure rows fill even on large desktop / landscape
+  return Math.ceil((vw * 2.5) / thumbW);
+}
+
 // ── Poster Background ─────────────────────────────────────────────────────────
 // Renders 3 rows of randomly-ordered poster thumbnails with different patterns.
 // Images are loaded lazily so they never block the main render.
 const PosterBackground: React.FC = () => {
-  // Shuffle once per mount (= random on every page visit)
-  const rows = useMemo(() => {
-    const shuffled = shuffle(POSTER_POOL);
-    // Split into 3 rows of ~28 each; wrap-around to fill gaps
-    const ROW_LEN = 28;
-    const row1 = shuffled.slice(0, ROW_LEN);
-    const row2 = shuffle([...shuffled]).slice(0, ROW_LEN);
-    const row3 = shuffle([...shuffled]).slice(0, ROW_LEN);
-    return [row1, row2, row3] as const;
-  }, []); // stable for component lifetime
+  // Resolve config once on mount (window is available at this point)
+  const [rowConfigs] = useState(() => getPosterConfig());
 
-  // Row configurations: different heights + gap patterns for visual variety
-  const rowConfigs = [
-    { height: 108, gap: 6, offset: 0 },
-    { height: 90,  gap: 10, offset: -18 },
-    { height: 116, gap: 4,  offset: 12 },
-  ] as const;
+  // Shuffle once per mount — different layout on every page visit
+  const rows = useMemo(() => {
+    const base = shuffle(POSTER_POOL);
+    return rowConfigs.map((cfg, idx) => {
+      // Each row gets its own shuffle so patterns differ
+      const s = idx === 0 ? base : shuffle([...base]);
+      const need = countNeeded(cfg.height, cfg.gap);
+      // Repeat pool until we have enough images to fill the row
+      const out: string[] = [];
+      while (out.length < need) out.push(...s);
+      return out.slice(0, need);
+    });
+  }, [rowConfigs]);
 
   return (
     <div
       className="absolute inset-0 overflow-hidden pointer-events-none select-none"
       aria-hidden="true"
     >
-      {/* Edge fade masks: left+right+top+bottom */}
+      {/* Poster rows — distributed vertically */}
       <div
-        className="absolute inset-0 z-10"
-        style={{
-          background: `
-            linear-gradient(to right, #0a0a0a 0%, transparent 12%, transparent 88%, #0a0a0a 100%),
-            linear-gradient(to bottom, #0a0a0a 0%, transparent 18%, transparent 72%, #0a0a0a 100%)
-          `,
-        }}
-      />
-
-      {/* Poster rows */}
-      <div className="absolute inset-0 flex flex-col justify-around py-2">
+        className="absolute inset-0 flex flex-col justify-around"
+        style={{ padding: '4px 0' }}
+      >
         {rows.map((row, rowIdx) => {
           const cfg = rowConfigs[rowIdx];
+          const thumbW = Math.round(cfg.height * 0.714);
           return (
             <div
               key={rowIdx}
               className="flex shrink-0"
               style={{
-                gap: cfg.gap,
+                columnGap: cfg.gap,
                 marginTop: cfg.offset,
-                opacity: 0.1,
+                opacity: 0.11,
+                // prevent any chance of the row contributing to page width
+                maxWidth: '100vw',
               }}
             >
-              {/* Duplicate row for seamless fill on wide screens */}
-              {[...row, ...row].map((url, i) => (
+              {row.map((url, i) => (
                 <img
                   key={`${rowIdx}-${i}`}
                   src={toThumbUrl(url)}
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  width={64}
+                  width={thumbW}
                   height={cfg.height}
                   style={{
-                    width: Math.round(cfg.height * 0.714), // ~poster aspect ratio
+                    width: thumbW,
                     height: cfg.height,
                     objectFit: 'cover',
-                    borderRadius: 4,
+                    borderRadius: 3,
                     flexShrink: 0,
                     display: 'block',
                   }}
@@ -205,6 +236,23 @@ const PosterBackground: React.FC = () => {
           );
         })}
       </div>
+
+      {/* Edge fade masks — stronger on sides to hide cut-off thumbs */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: [
+            // left fade
+            'linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.7) 8%, transparent 18%)',
+            // right fade
+            'linear-gradient(to left,  #0a0a0a 0%, rgba(10,10,10,0.7) 8%, transparent 18%)',
+            // top fade
+            'linear-gradient(to bottom, #0a0a0a 0%, rgba(10,10,10,0.5) 10%, transparent 22%)',
+            // bottom fade
+            'linear-gradient(to top,    #0a0a0a 0%, rgba(10,10,10,0.5) 10%, transparent 22%)',
+          ].join(', '),
+        }}
+      />
     </div>
   );
 };
