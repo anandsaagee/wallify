@@ -2234,93 +2234,123 @@ export const products = [
     },
     {
         "id": "p187",
-        "title": "Anime 011 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Itachi Uchiha – Sharingan Eye Dark Naruto Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-011.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-011.webp"
+        "description": "A dramatic dark-red and black Naruto poster of Itachi Uchiha pointing a finger toward the viewer beneath a giant Sharingan eye symbol. Manga panel insets, kunai details, and the quotes 'One's Reality Might Be Another's Illusion' and 'Any technique is worthless before my eyes' frame a powerful fan tribute to the legendary Uchiha.",
+        "label": "anime-011.webp",
+        "seoTitle": "Itachi Uchiha Sharingan Dark Naruto Anime Poster",
+        "metaDescription": "Itachi Uchiha points forward beneath a crimson Sharingan eye — dark red Naruto manga collage anime poster.",
+        "seoAltText": "Dark red and black Naruto anime poster of Itachi Uchiha in Akatsuki cloak with red Sharingan eyes pointing finger at the viewer, a large Sharingan eye symbol above, manga panel insets of Itachi at top corners, a kunai illustration on the right, ITACHI UCHIHA title at the bottom, quote Any technique is worthless before my eyes in a box on the left"
     },
     {
         "id": "p188",
-        "title": "Anime 012 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Attack on Titan – The Rumbling Dark Graphic Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-012.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-012.webp"
+        "description": "A chilling black-and-red graphic poster for Attack on Titan's The Rumbling arc. The skeletal Founding Titan towers above an army of marching Colossal Titans in deep crimson tones. Newspaper-style 'The Rumbling' gothic title, 進撃の巨人 kanji, and lore text describing Year 854 and Eren Yeager's ultimate act fill the composition.",
+        "label": "anime-012.webp",
+        "seoTitle": "Attack on Titan The Rumbling Dark Graphic Anime Poster",
+        "metaDescription": "Eren's Founding Titan towers over marching Colossal Titans — AoT The Rumbling in stark red & black graphic art.",
+        "seoAltText": "Black and crimson red Attack on Titan anime poster with gothic The Rumbling title at the top above 進撃の巨人 kanji, the skeletal Founding Titan with arched spine over an army of Colossal Titans below, Year 854 Paradis Island Eren Yeager The Founding Titan subheadings, and lore text columns at the bottom"
     },
     {
         "id": "p189",
-        "title": "Anime 013 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Golden Sunset Demon Slayer Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-013.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-013.webp"
+        "description": "A vibrant, warmly lit Demon Slayer poster of Zenitsu Agatsuma standing with eyes closed, gripping his sword with both hands. His golden-yellow haori with white triangle pattern glows against a fiery orange sunset sky filled with dark clouds and embers — a serene yet powerful character portrait.",
+        "label": "anime-013.webp",
+        "seoTitle": "Zenitsu Agatsuma Demon Slayer Golden Sunset Anime Poster",
+        "metaDescription": "Zenitsu holds his sword with eyes closed in a glowing golden haori — warm sunset Demon Slayer portrait anime art.",
+        "seoAltText": "Vibrant Demon Slayer anime poster of Zenitsu Agatsuma in a golden-yellow haori with white triangle pattern standing with eyes closed, both hands gripping his sword upright, against a fiery orange and dark grey sunset sky with glowing embers"
     },
     {
         "id": "p190",
-        "title": "Anime 014 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Monkey D. Luffy – Sunny Sky One Piece Cheerful Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-014.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-014.webp"
+        "description": "A joyful, clean-line One Piece illustration of Monkey D. Luffy laughing with a wide grin while holding his straw hat against a bright blue sky filled with white billowing clouds and scattered cloud fragments. His orange shirt and yellow sash pop against the vivid blue sky — pure adventure energy.",
+        "label": "anime-014.webp",
+        "seoTitle": "Monkey D. Luffy One Piece Blue Sky Cheerful Anime Poster",
+        "metaDescription": "Luffy laughing in his straw hat under a bright blue sky full of clouds — cheerful One Piece clean-art anime poster.",
+        "seoAltText": "Clean-line anime poster of Monkey D. Luffy from One Piece laughing with a wide closed-eye grin, holding his straw hat with red band, wearing an orange button-up shirt, against a vivid blue sky filled with large white cumulus clouds and scattered cloud fragments"
     },
     {
         "id": "p191",
-        "title": "Anime 015 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Saitama – One Punch Man Hero Manga Collage Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-015.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-015.webp"
+        "description": "A bold One Punch Man poster featuring Saitama in his yellow superhero suit and red gloves with an intense determined expression. His name in large 'SAITAMA' bold letters flanks the left edge while surrounding manga panel collage artwork from the series fills the background — a tribute for OPM fans.",
+        "label": "anime-015.webp",
+        "seoTitle": "Saitama One Punch Man Hero Manga Collage Anime Poster",
+        "metaDescription": "Saitama in yellow suit & red gloves with intense stare — bold OPM manga panel collage anime poster art.",
+        "seoAltText": "One Punch Man anime poster of Saitama the bald hero in yellow jumpsuit, grey collar, and red boxing gloves with a serious intense expression, SAITAMA bold letters down the left, white cape visible over the shoulder, surrounded by a black-and-white manga panel collage background with action scenes and a GWEEEN speech bubble"
     },
     {
         "id": "p192",
-        "title": "Anime 016 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Eren Yeager – Human & Attack Titan Split Duality Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-016.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-016.webp"
+        "description": "A stark black-and-white Attack on Titan poster showing Eren Yeager's human face in profile on the left opposite the snarling Attack Titan on the right. 'EREN YEAGER' repeated three times and 戦え kanji anchor the dark design, with the quote 'I am free. Whatever I do, whatever I choose, I do it out of my own free will.'",
+        "label": "anime-016.webp",
+        "seoTitle": "Eren Yeager Human & Attack Titan Split Duality AoT Poster",
+        "metaDescription": "Eren's human face vs Attack Titan in stark B&W split — AoT duality poster with 戦え kanji & freedom quote.",
+        "seoAltText": "Black and white Attack on Titan anime poster with a split design — Eren Yeager's human profile with long dark hair and glasses on the left half, the snarling Attack Titan with sharp teeth on the right half, EREN YEAGER repeated three times at the top, 戦え kanji on the lower left, Attack Titan barcode label lower right, quote I am free along the bottom"
     },
     {
         "id": "p193",
-        "title": "Anime 017 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Toji Fushiguro – Grey Graphic Art Jujutsu Kaisen Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-017.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-017.webp"
+        "description": "A grey-toned graphic art variant of Toji Fushiguro from Jujutsu Kaisen, arms spread wide holding a chained weapon in the left hand and a long sword in the right. Bold red 'TOJI / Fushiguro' typography overlays the grey-washed background, with manga panel insets and the inscription 'To the One Who Left It All Behind'.",
+        "label": "anime-017.webp",
+        "seoTitle": "Toji Fushiguro Grey Graphic Art JJK Anime Poster",
+        "metaDescription": "Toji Fushiguro arms spread with chain & sword in grey graphic art — red TOJI typography JJK anime poster.",
+        "seoAltText": "Grey-toned Jujutsu Kaisen anime poster of Toji Fushiguro standing with arms outstretched holding a chain weapon on the left and a long sword on the right, bold red TOJI and cursive Fushiguro script in the centre, manga panel insets of close-up scenes at the bottom, text To the One Who Left It All Behind at the top on grey washed background"
     },
     {
         "id": "p194",
-        "title": "Anime 018 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Izuku Midoriya – Vigilante Dark Techwear MHA Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-018.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-018.webp"
+        "description": "A dark, grungy techwear-style My Hero Academia poster featuring Izuku Midoriya labeled as a Vigilante. 'IZUKU MIDORIYA' is bold-labelled at the top left while 'VIGILANTE' in large green text dominates the right. Manga panels show Deku and mech armour details, with Japanese text about the nature of vigilantism and an ALERT badge.",
+        "label": "anime-018.webp",
+        "seoTitle": "Izuku Midoriya Vigilante Dark Techwear MHA Anime Poster",
+        "metaDescription": "Deku as a vigilante in dark green techwear grunge — bold IZUKU MIDORIYA manga panel MHA anime wall poster.",
+        "seoAltText": "Dark green and black My Hero Academia anime poster labeled IZUKU MIDORIYA at top left and VIGILANTE in large green text on the right, manga panel of Deku in damaged outfit on the left, mech armour close-up centre right, ALERT badge at top right, Japanese parental advisory text in green boxes, and a Japanese text column about vigilantism at the bottom left"
     },
     {
         "id": "p195",
-        "title": "Anime 019 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Satoru Gojo – Young Manga Collage Jujutsu Kaisen Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-019.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-019.webp"
+        "description": "A black-and-white manga collage poster of a young Satoru Gojo from Jujutsu Kaisen. Centered without his blindfold and smiling with characteristic confidence, he is surrounded by multiple JJK manga panels showing dialogue and action scenes — 'Jujutsu High Second-Year Satoru Gojo', 'VOID / IMMEASURABLE', and 'Domain Expansion' text throughout.",
+        "label": "anime-019.webp",
+        "seoTitle": "Satoru Gojo Young Manga Collage JJK Anime Poster",
+        "metaDescription": "Young Gojo smiling at the centre of a JJK manga collage — Domain VOID IMMEASURABLE Jujutsu Kaisen panel art.",
+        "seoAltText": "Black and white Jujutsu Kaisen manga collage anime poster featuring a young Satoru Gojo without blindfold at center smiling with finger raised, surrounded by multiple JJK manga panels with dialogue including Expansion, Domain, VOID, IMMEASURABLE, Jujutsu High Second-Year Satoru Gojo label, and various character action scenes"
     },
     {
         "id": "p196",
-        "title": "Anime 020 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Super Saiyan – Tattoo Ink Art Dragon Ball Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-020.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-020.webp"
+        "description": "A raw, tattoo-ink-style Dragon Ball poster showing a massively muscular Super Saiyan with wild white spiky hair powering up in a fierce stance. Rendered in black-and-white with bold red slashes and large kanji in the background, this dark manga-meets-tattoo illustration captures the peak intensity of a Super Saiyan transformation.",
+        "label": "anime-020.webp",
+        "seoTitle": "Super Saiyan Dragon Ball Tattoo Ink Dark Anime Poster",
+        "metaDescription": "Massively muscular Super Saiyan in tattoo ink art — black, white & red Dragon Ball power-up anime wall poster.",
+        "seoAltText": "Tattoo-ink style Dragon Ball anime poster of a shirtless massively muscular Super Saiyan with white spiky hair powering up, monochrome black and white illustration with bold red diagonal slashes across the torso, large grey and red kanji characters in the background, fists clenched in an intense power-up stance"
     },
     {
         "id": "p197",
