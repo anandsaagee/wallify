@@ -2114,93 +2114,123 @@ export const products = [
     },
     {
         "id": "p177",
-        "title": "Anime 001 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Choso – Blood Manipulation Jujutsu Kaisen Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-001.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-001.webp"
+        "description": "A bold red-and-black graphic poster of Choso from Jujutsu Kaisen, featuring his iconic face markings, glowing red eyes, and jagged spiky hair surrounded by blood-splash tendrils. Large 'チョーソ' katakana and his character lore text fill the composition — a striking tribute for JJK fans.",
+        "label": "anime-001.webp",
+        "seoTitle": "Choso Jujutsu Kaisen Blood Manipulation Anime Poster",
+        "metaDescription": "Choso from JJK in a bold red & black graphic poster — face markings, blood tendrils & katakana typography.",
+        "seoAltText": "Red and black anime poster of Choso from Jujutsu Kaisen with spiky hair, face markings, glowing red eyes, blood splash tendrils, large katakana チョーソ text, and character bio columns on both sides"
     },
     {
         "id": "p178",
-        "title": "Anime 002 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Monkey D. Luffy – One Piece Bounty Dark Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-002.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-002.webp"
+        "description": "An intense dark One Piece poster dominated by bold red 'LUFFY' text at the top. Monkey D. Luffy stands in an open red coat holding his straw hat against a storm-lit crimson sky, while a small glowing Gear 5 Nika form appears below. Bounty details and Japanese 海賊王 kanji complete the composition.",
+        "label": "anime-002.webp",
+        "seoTitle": "Monkey D. Luffy One Piece Dark Bounty Anime Poster",
+        "metaDescription": "Luffy in red coat & straw hat on a stormy crimson sky — One Piece dark poster with Gear 5 Nika & 3B bounty.",
+        "seoAltText": "Dark red One Piece anime poster with bold LUFFY title at top, Monkey D. Luffy in open red coat holding straw hat against a lightning-lit crimson storm sky, a glowing Gear 5 Nika small figure below, 海賊王 kanji on the left, bounty 3,000,000,000 Belli text on the right"
     },
     {
         "id": "p179",
-        "title": "Anime 003 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Attack on Titan – Colossal Titan vs Survey Corps Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-003.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-003.webp"
+        "description": "The official Attack on Titan key visual: a lone Survey Corps soldier stands amid burning buildings as the massive Colossal Titan looms over a crumbling stone wall. Fiery orange smoke fills the sky behind the 'Attack on Titan / 進撃の巨人' title — cinematic and iconic.",
+        "label": "anime-003.webp",
+        "seoTitle": "Attack on Titan Colossal Titan Cinematic Anime Poster",
+        "metaDescription": "Official AoT key visual — Survey Corps soldier faces the Colossal Titan over a burning wall under a fiery sky.",
+        "seoAltText": "Official Attack on Titan anime poster with a Survey Corps soldier in dark uniform and ODM gear standing in a burning ruined city, the Colossal Titan cresting a massive stone wall overhead in a fiery orange smoky sky, Attack on Titan and 進撃の巨人 title in the center, Funimation logo at bottom"
     },
     {
         "id": "p180",
-        "title": "Anime 004 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Death Note – Ryuk Shinigami Silhouette Watercolor Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-004.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-004.webp"
+        "description": "A hauntingly atmospheric Death Note poster showing Ryuk as a winged Shinigami silhouette hovering in olive-green and sepia watercolor smoke. 'DEATH NOTE' is hand-lettered in jagged gothic font at the top — eerie, minimal, and instantly recognisable for any Death Note collector.",
+        "label": "anime-004.webp",
+        "seoTitle": "Death Note Ryuk Shinigami Silhouette Watercolor Poster",
+        "metaDescription": "Ryuk as a dark winged silhouette in olive watercolor smoke — gothic Death Note atmospheric anime art print.",
+        "seoAltText": "Gothic Death Note anime poster showing Ryuk the Shinigami as a dark winged silhouette with spiky hair and clawed hands floating in swirling olive-green and sepia watercolor smoke, with DEATH NOTE in jagged gothic font at the top center"
     },
     {
         "id": "p181",
-        "title": "Anime 005 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Chainsaw Man – Full Cast Key Visual Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-005.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-005.webp"
+        "description": "The official Chainsaw Man anime key visual featuring Denji, Makima, Aki, Power, Himeno, and Kishibe posed in front of a blue urban skyline, with the massive dark silhouette of the Chainsaw Man devil looming behind them. The bold yellow serrated 'CHAINSAW MAN' logo anchors the bottom.",
+        "label": "anime-005.webp",
+        "seoTitle": "Chainsaw Man Full Cast Official Key Visual Anime Poster",
+        "metaDescription": "Denji, Makima, Aki & Power in front of a city skyline — official Chainsaw Man key visual anime poster.",
+        "seoAltText": "Official Chainsaw Man anime poster featuring Denji with open mouth, Makima with red hair and amber eyes, dark-haired Aki, Power, Himeno, and Kishibe in business attire against a blue city skyline, the giant Chainsaw Man devil in dark silhouette behind them, bold yellow chainsaw-chain CHAINSAW MAN logo at the bottom"
     },
     {
         "id": "p182",
-        "title": "Anime 006 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Toji Fushiguro – Jujutsu Kaisen Arms Wide Graphic Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-006.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-006.webp"
+        "description": "A striking graphic poster of Toji Fushiguro from Jujutsu Kaisen, arms spread wide holding a chained sword in his left hand and a long blade in his right. Large red 'TOJI / Fushiguro' typography fills the background, alongside manga panel insets and his character bio — a bold design for JJK fans.",
+        "label": "anime-006.webp",
+        "seoTitle": "Toji Fushiguro JJK Arms Wide Graphic Art Anime Poster",
+        "metaDescription": "Toji Fushiguro arms spread with sword & chain — bold red TOJI typography, manga insets & character bio.",
+        "seoAltText": "Graphic Jujutsu Kaisen anime poster of Toji Fushiguro in black top and grey pants standing with arms outstretched, a chained sword in the left hand and a long black blade in the right, large red TOJI and cursive Fushiguro typography in the center, manga panel insets at the bottom, text reading To the One Who Left It All Behind at the top"
     },
     {
         "id": "p183",
-        "title": "Anime 007 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Death Note – 'How to Use It I' Rules Typography Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-007.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-007.webp"
+        "description": "A collector's art print recreating the iconic Death Note rule page. Stark white gothic handwritten text on a pure black background — 'The human whose name is written in this note shall die' — framed by ornate borders and a skull medallion. Haunting minimalism for any Death Note fan.",
+        "label": "anime-007.webp",
+        "seoTitle": "Death Note How To Use It Rules Typography Anime Poster",
+        "metaDescription": "'The human whose name is written shall die' — Death Note rule page in gothic white text on black. Iconic art.",
+        "seoAltText": "Death Note anime poster with pure black background and white gothic handwritten text reproducing the Death Note How to Use It I rules including The human whose name is written in this note shall die, ornate scroll corner decorations, skull medallion at the top, and Death Note title in gothic cross-style lettering"
     },
     {
         "id": "p184",
-        "title": "Anime 008 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Jujutsu Kaisen – Weekly Shonen Jump No.25 Cover Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-008.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-008.webp"
+        "description": "A vibrant recreation of the Weekly Shonen Jump No. 25 magazine cover celebrating Jujutsu Kaisen's 2nd anniversary. Yuji Itadori charges forward while Satoru Gojo (in sunglasses) and Megumi Fushiguro pose behind, against a bold pink, yellow, and green graphic background with 呪術廻戦 kanji.",
+        "label": "anime-008.webp",
+        "seoTitle": "Jujutsu Kaisen Weekly Jump No.25 2nd Anniversary Poster",
+        "metaDescription": "JJK's iconic Weekly Jump No.25 cover — Itadori, Gojo & Fushiguro in vivid pink-green-yellow manga magazine art.",
+        "seoAltText": "Vivid Jujutsu Kaisen anime poster styled as Weekly Shonen Jump magazine cover No.25 in pink, green, and yellow, featuring Yuji Itadori in red uniform at center, Satoru Gojo in sunglasses and green turtleneck above, Megumi Fushiguro with dark hair on the right, large 呪術廻戦 kanji title at the bottom, Jump logo at the top"
     },
     {
         "id": "p185",
-        "title": "Anime 009 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Death Note – L, Light & Ryuk Vintage Manga Print Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-009.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-009.webp"
+        "description": "A retro manga-cover art print for Death Note in warm pinkish-red duotone on a parchment-textured background. L stands in his casual crouch on the left, Ryuk the Shinigami grins in the centre, and Light Yagami holds the Death Note on the right, with creator credits and 'デス・ノート' in a bold banner.",
+        "label": "anime-009.webp",
+        "seoTitle": "Death Note L Light Ryuk Vintage Manga Art Anime Poster",
+        "metaDescription": "L, Ryuk & Light with the Death Note in warm retro pinkish manga art — vintage Death Note collector's print.",
+        "seoAltText": "Retro Death Note anime poster on parchment texture in pinkish-red duotone with L standing casually on the left, Ryuk the Shinigami grinning in the centre background, Light Yagami holding the Death Note on the right, bold DEATH-NOTE and デス・ノート banner at the top, Tsugumi Ohba and Takeshi Obata creator credits below the title"
     },
     {
         "id": "p186",
-        "title": "Anime 010 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Demon Slayer Ink Art Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-010.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-010.webp"
+        "description": "A beautiful ink-and-ukiyo-e-style Demon Slayer poster of Zenitsu Agatsuma crouching in a fast-draw sword stance. Rendered in monochrome ink lines on aged parchment with a bold crimson sun circle and a red stamp bearing his name in kanji — 我妻善逸 — a timeless piece of anime wall art.",
+        "label": "anime-010.webp",
+        "seoTitle": "Zenitsu Agatsuma Demon Slayer Ukiyo-e Ink Art Poster",
+        "metaDescription": "Zenitsu in a sword-draw crouch on aged parchment — Demon Slayer ink ukiyo-e art with red sun circle & kanji.",
+        "seoAltText": "Ink-style Demon Slayer anime poster of Zenitsu Agatsuma crouching in fast-draw sword stance in a haori coat, on aged cream parchment background, bold crimson circular sun motif behind him with decorative branching lines, red rectangular kanji stamp reading 我妻善逸 at bottom right"
     },
     {
         "id": "p187",
