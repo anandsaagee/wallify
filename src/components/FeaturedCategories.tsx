@@ -34,7 +34,7 @@ const scrollToCollection = () => {
 const FROM_PRICE = SIZES[0].price; // A6 = ₹29
 
 export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelectCategory }) => {
-  /** Build thumbnail map: category name → first product image */
+  /** Build thumbnail map: category name → random product image for that category on each visit */
   const thumbnails = useMemo(() => {
     const map: Record<string, string> = {};
     const allCats = [
@@ -42,8 +42,13 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       ...SECONDARY.map((c) => c.name),
     ];
     allCats.forEach((name) => {
-      const first = products.find((p) => p.category === name);
-      if (first) map[name] = first.image;
+      const catProducts = products.filter(
+        (p) => p.category.toLowerCase() === name.toLowerCase() && p.image
+      );
+      if (catProducts.length > 0) {
+        const randomIndex = Math.floor(Math.random() * catProducts.length);
+        map[name] = catProducts[randomIndex].image;
+      }
     });
     return map;
   }, []);
