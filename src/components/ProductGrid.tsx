@@ -76,9 +76,9 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform no-underline"
         style={{ animationDelay: animDelay, contain: 'layout style paint' }}
       >
-        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
+        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-black/8 relative">
           {!loaded && !error && (
-            <div className="absolute inset-0 bg-white/5 animate-pulse" aria-hidden="true" />
+            <div className="absolute inset-0 bg-black/5 animate-pulse" aria-hidden="true" />
           )}
           {error && (
             <div className="absolute inset-0 flex items-center justify-center bg-surface">
@@ -118,7 +118,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
             {product.category}
           </span>
-          <h3 className="text-xs font-semibold text-white truncate leading-tight">
+          <h3 className="text-xs font-semibold text-black truncate leading-tight">
             {cleanName}
           </h3>
           {/* Price shown inline — no modal needed to know the cost */}
@@ -126,7 +126,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
             <span className="text-[10px] font-black text-primary leading-none">
               from ₹{FROM_PRICE}
             </span>
-            <span className="text-[9px] text-white/30 font-medium leading-none line-through">
+            <span className="text-[9px] text-black/25 font-medium leading-none line-through">
               ₹{SIZES[0].strikePrice}
             </span>
           </div>

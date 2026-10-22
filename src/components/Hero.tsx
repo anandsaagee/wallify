@@ -258,10 +258,10 @@ const PosterBackground: React.FC = () => {
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: [
-            'linear-gradient(to right,  #0a0a0a 0%, rgba(10,10,10,0.6) 6%, transparent 13%)',
-            'linear-gradient(to left,   #0a0a0a 0%, rgba(10,10,10,0.6) 6%, transparent 13%)',
-            'linear-gradient(to bottom, #0a0a0a 0%, rgba(10,10,10,0.4) 6%, transparent 14%)',
-            'linear-gradient(to top,    #0a0a0a 0%, rgba(10,10,10,0.4) 6%, transparent 14%)',
+            'linear-gradient(to right,  #ffffff 0%, rgba(255,255,255,0.6) 6%, transparent 13%)',
+            'linear-gradient(to left,   #ffffff 0%, rgba(255,255,255,0.6) 6%, transparent 13%)',
+            'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.4) 6%, transparent 14%)',
+            'linear-gradient(to top,    #ffffff 0%, rgba(255,255,255,0.4) 6%, transparent 14%)',
           ].join(', '),
         }}
       />
@@ -288,15 +288,15 @@ const LiveStats: React.FC = () => {
 
   return (
     <div className="flex items-center gap-2 justify-center">
-      <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulseDot shrink-0" />
-        <span className="text-[10px] font-body font-semibold text-green-400 uppercase tracking-wider">
+      <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulseDot shrink-0" />
+        <span className="text-[10px] font-body font-semibold text-green-600 uppercase tracking-wider">
           {String(liveCount).padStart(2, '0')} ordering now
         </span>
       </div>
 
-      <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+      <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-black/30 shrink-0" />
         <span className="text-[10px] font-body font-semibold text-muted uppercase tracking-wider">
           {String(weeklyCount).padStart(2, '0')} this week
         </span>
@@ -356,7 +356,7 @@ export const Hero: React.FC<{
 
         {isMainH1 ? (
           <h1
-            className="font-display text-white leading-[1.08] tracking-tight text-center w-full"
+            className="font-display text-black leading-[1.08] tracking-tight text-center w-full"
             style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
             Your Walls{' '}
@@ -364,7 +364,7 @@ export const Hero: React.FC<{
           </h1>
         ) : (
           <h2
-            className="font-display text-white leading-[1.08] tracking-tight text-center w-full"
+            className="font-display text-black leading-[1.08] tracking-tight text-center w-full"
             style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
             Your Walls{' '}
@@ -388,7 +388,7 @@ export const Hero: React.FC<{
           </button>
           <button
             onClick={onExplore}
-            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] font-semibold text-white rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:bg-white/10 active:scale-95 transition-all duration-200 text-sm"
+            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] font-semibold text-black rounded-full border border-black/15 bg-black/[0.06] backdrop-blur-sm hover:bg-black/10 active:scale-95 transition-all duration-200 text-sm"
           >
             Explore
           </button>
@@ -418,13 +418,13 @@ export const Hero: React.FC<{
         {/* Trust indicators */}
         <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 text-[9px] sm:text-[10px] font-body font-semibold text-muted uppercase tracking-widest">
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/20" />Free Posters
+            <span className="w-3 h-px bg-black/20" />Free Posters
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/20" />Premium Quality
+            <span className="w-3 h-px bg-black/20" />Premium Quality
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/20" />Fast Delivery
+            <span className="w-3 h-px bg-black/20" />Fast Delivery
           </span>
         </div>
       </div>

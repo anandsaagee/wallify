@@ -72,7 +72,7 @@ export const FAQ: React.FC = () => {
           <HelpCircle className="w-3.5 h-3.5" />
           <span>Frequently Asked Questions</span>
         </div>
-        <h2 id="faq-heading" className="text-2xl sm:text-3xl font-display text-white">
+        <h2 id="faq-heading" className="text-2xl sm:text-3xl font-display text-black">
           Everything You Need to Know
         </h2>
         <p className="text-xs sm:text-sm text-muted mt-2 max-w-md mx-auto">
@@ -86,7 +86,7 @@ export const FAQ: React.FC = () => {
           return (
             <div
               key={index}
-              className="rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden transition-all duration-200 hover:border-white/15"
+              className="rounded-2xl border border-black/10 bg-black/[0.02] overflow-hidden transition-all duration-200 hover:border-black/20"
             >
               <button
                 type="button"
@@ -96,7 +96,7 @@ export const FAQ: React.FC = () => {
                 id={`faq-question-${index}`}
                 className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer select-none"
               >
-                <span className="font-semibold text-sm sm:text-base text-white/90">
+                <span className="font-semibold text-sm sm:text-base text-black/90">
                   {item.question}
                 </span>
                 <ChevronDown
@@ -111,7 +111,7 @@ export const FAQ: React.FC = () => {
                   id={`faq-answer-${index}`}
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
-                  className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-white/70 leading-relaxed border-t border-white/5"
+                  className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-black/70 leading-relaxed border-t border-black/8"
                 >
                   {item.answer}
                 </div>

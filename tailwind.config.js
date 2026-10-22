@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0a',
-        surface: '#111111',
-        card: '#1a1a1a',
-        border: '#2a2a2a',
+        background: '#ffffff',
+        surface: '#f5f5f5',
+        card: '#eeeeee',
+        border: '#e0e0e0',
         primary: '#FACB15',
-        muted: '#A1A1AA',
+        muted: '#555555',
       },
       fontFamily: {
         display: ['DM Serif Display', 'Georgia', 'serif'],

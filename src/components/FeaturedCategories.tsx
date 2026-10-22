@@ -67,7 +67,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
     <section className="py-5 sm:py-8" aria-label="Browse by Category">
       {/* Section header */}
       <div className="px-4 mb-4">
-        <h2 className="font-display text-xl sm:text-2xl text-white">Shop by Category</h2>
+        <h2 className="font-display text-xl sm:text-2xl text-black">Shop by Category</h2>
         <p className="font-body text-[11px] text-muted mt-0.5 font-medium">
           Starting from <span className="text-primary font-black">₹{FROM_PRICE}</span> · tap to explore
         </p>
@@ -124,12 +124,12 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
             className="absolute right-4 top-0 bottom-0 z-10 flex items-center justify-end pointer-events-none"
             style={{
               width: 72,
-              background: 'linear-gradient(to right, transparent 0%, rgba(10,10,10,0.9) 50%, #0a0a0a 100%)',
+              background: 'linear-gradient(to right, transparent 0%, rgba(245,245,245,0.9) 50%, #f5f5f5 100%)',
             }}
           >
             <div className="flex flex-col items-center gap-0.5 pr-1.5">
-              <ChevronRight className="w-4 h-4 text-white/70 animate-bounce" style={{ animationDuration: '1.1s' }} />
-              <span className="text-[8px] text-white/40 font-body font-semibold uppercase tracking-widest">more</span>
+              <ChevronRight className="w-4 h-4 text-black/50 animate-bounce" style={{ animationDuration: '1.1s' }} />
+              <span className="text-[8px] text-black/30 font-body font-semibold uppercase tracking-widest">more</span>
             </div>
           </div>
         )}
@@ -146,7 +146,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
               href={`/category/${cat.name.toLowerCase()}`}
               onClick={(e) => { e.preventDefault(); handleSelect(cat.name); }}
               style={{ contain: 'layout paint', minWidth: '110px' }}
-              className="group relative h-24 sm:h-28 rounded-xl overflow-hidden border border-white/10 transition-transform duration-200 ease-out active:scale-95 will-change-transform touch-manipulation shrink-0 flex-none"
+              className="group relative h-24 sm:h-28 rounded-xl overflow-hidden border border-black/10 transition-transform duration-200 ease-out active:scale-95 will-change-transform touch-manipulation shrink-0 flex-none"
             >
               {thumbnails[cat.name] && (
                 <OptimizedImage
