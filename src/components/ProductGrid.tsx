@@ -82,7 +82,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
           {error && (
             <div className="absolute inset-0 flex items-center justify-center bg-surface">
-              <span className="text-xs text-muted">Image unavailable</span>
+              <span className="text-xs text-black/60 font-medium">Image unavailable</span>
             </div>
           )}
           <OptimizedImage
@@ -107,7 +107,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
 
           {isHotDeal && !isBestSeller && (
-            <div className="absolute top-2 left-2 z-10 bg-rose-500 text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1 animate-pulse">
+            <div className="absolute top-2 left-2 z-10 bg-black text-primary border border-primary/30 text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1 animate-pulse">
               <Flame className="w-3 h-3 fill-current" />
               <span>Hot Deal</span>
             </div>
@@ -115,7 +115,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         </div>
 
         <div className="px-0.5 flex flex-col gap-0.5">
-          <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
+          <span className="text-[9px] text-black/60 font-bold uppercase tracking-wider truncate block">
             {product.category}
           </span>
           <h3 className="text-xs font-semibold text-black truncate leading-tight">
@@ -123,10 +123,10 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           </h3>
           {/* Price shown inline — no modal needed to know the cost */}
           <div className="flex items-center gap-1.5 mt-0.5">
-            <span className="text-[10px] font-black text-primary leading-none">
+            <span className="text-[10px] font-black bg-primary text-black px-1.5 py-0.5 rounded leading-none">
               from ₹{FROM_PRICE}
             </span>
-            <span className="text-[9px] text-black/25 font-medium leading-none line-through">
+            <span className="text-[9px] text-black/40 font-medium leading-none line-through">
               ₹{SIZES[0].strikePrice}
             </span>
           </div>
@@ -205,7 +205,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
       <div ref={sentinelRef} className="h-10 w-full mt-4" aria-hidden="true" />
       
       {displayedCount >= products.length && products.length > 0 && (
-        <p className="text-center text-[10px] text-muted font-medium mt-3 mb-8">
+        <p className="text-center text-[10px] text-black/60 font-semibold mt-3 mb-8">
           Showing all {products.length} posters
         </p>
       )}

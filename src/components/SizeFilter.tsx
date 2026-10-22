@@ -14,8 +14,8 @@ export const SizeFilter: React.FC<SizeFilterProps> = ({ selectedSize, onSelectSi
         aria-pressed={selectedSize === 'All'}
         className={`whitespace-nowrap px-4 py-2 min-h-[44px] rounded-full text-[11px] font-bold transition-all duration-200 border ${
           selectedSize === 'All'
-            ? 'bg-white/10 text-white border-white/20'
-            : 'bg-white/[0.03] text-muted border-white/[0.06] hover:bg-white/5'
+            ? 'bg-primary text-black font-black border-primary shadow-md shadow-primary/20'
+            : 'bg-black/5 text-black border-black/10 hover:bg-black/10 hover:border-black/20'
         }`}
       >
         All Sizes
@@ -29,12 +29,12 @@ export const SizeFilter: React.FC<SizeFilterProps> = ({ selectedSize, onSelectSi
             aria-pressed={isSelected}
             className={`whitespace-nowrap px-4 py-2 min-h-[44px] rounded-full text-[11px] font-bold transition-all duration-200 border flex items-center gap-1.5 ${
               isSelected
-                ? 'bg-primary/10 text-primary border-primary/30'
-                : 'bg-white/[0.03] text-muted border-white/[0.06] hover:bg-white/5'
+                ? 'bg-primary text-black font-black border-primary shadow-md shadow-primary/20'
+                : 'bg-black/5 text-black border-black/10 hover:bg-black/10 hover:border-black/20'
             }`}
           >
             <span>{size.label}</span>
-            <span className="text-[10px] opacity-60">₹{size.price}</span>
+            <span className={`text-[10px] ${isSelected ? 'text-black/80 font-black' : 'text-black/60 font-medium'}`}>₹{size.price}</span>
           </button>
         );
       })}

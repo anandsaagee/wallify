@@ -18,10 +18,10 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
     <section className="px-4 sm:px-5 mt-10 mb-12" aria-label="Best Sellers">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="font-display text-xl sm:text-2xl text-white flex items-center gap-2">
+          <h2 className="font-display text-xl sm:text-2xl text-black flex items-center gap-2">
             <span className="text-primary">🔥</span> Bestsellers
           </h2>
-          <p className="font-body text-[11px] text-muted mt-0.5 font-medium">Most loved by the community</p>
+          <p className="font-body text-[11px] text-black/70 mt-0.5 font-medium">Most loved by the community</p>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
             onKeyDown={(e) => e.key === 'Enter' && onClick(product)}
             aria-label={`View ${cleanName}`}
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-surface border border-white/5 relative">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-surface border border-black/8 relative">
               <OptimizedImage
                 src={product.image}
                 alt={cleanName}
@@ -51,15 +51,15 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
               />
               {/* Rank badge */}
-              <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-body font-black w-6 h-6 rounded-lg flex items-center justify-center border border-white/10">
+              <div className="absolute top-2 left-2 bg-black/80 backdrop-blur-md text-primary text-[10px] font-body font-black w-6 h-6 rounded-lg flex items-center justify-center border border-primary/20">
                 {index + 1}
               </div>
             </div>
             <div className="mt-2 px-0.5">
-              <h3 className="font-body text-xs font-semibold text-white truncate group-hover:text-primary transition-colors">
+              <h3 className="font-body text-xs font-semibold text-black truncate group-hover:text-primary transition-colors">
                 {cleanName}
               </h3>
-              <p className="font-body text-[10px] text-muted font-medium uppercase tracking-wider mt-0.5">
+              <p className="font-body text-[10px] text-black/60 font-semibold uppercase tracking-wider mt-0.5">
                 {product.category}
               </p>
             </div>

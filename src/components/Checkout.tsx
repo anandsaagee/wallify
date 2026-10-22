@@ -128,8 +128,8 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
         <div
           className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full mb-6 animate-spin"
         />
-        <h2 className="text-2xl font-black tracking-tighter mb-2 uppercase">Processing Order</h2>
-        <p className="text-muted text-sm max-w-[280px]">
+        <h2 className="text-2xl font-black tracking-tighter mb-2 uppercase text-black">Processing Order</h2>
+        <p className="text-black/70 text-sm max-w-[280px] font-medium">
           Please wait while we redirect you to WhatsApp to complete your order...
         </p>
       </div>
@@ -139,16 +139,16 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
   if (step === 'success') {
     return (
       <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
-        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-          <CheckCircle2 size={48} />
+        <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-black">
+          <CheckCircle2 size={48} className="text-black" />
         </div>
-        <h2 className="text-3xl font-black tracking-tighter mb-2">ORDER PLACED!</h2>
-        <p className="text-muted text-sm max-w-[280px] mb-8">
+        <h2 className="text-3xl font-black tracking-tighter mb-2 text-black">ORDER PLACED!</h2>
+        <p className="text-black/70 text-sm max-w-[280px] mb-8 font-medium">
           Thank you for your order. We'll send you a confirmation on WhatsApp shortly.
         </p>
         <button
           onClick={onBack}
-          className="w-full max-w-xs h-14 bg-white text-black font-black rounded-2xl active:scale-95 transition-all uppercase tracking-widest text-xs"
+          className="w-full max-w-xs h-14 bg-primary text-black font-black rounded-2xl active:scale-95 transition-all uppercase tracking-widest text-xs shadow-md shadow-primary/25 hover:brightness-105"
         >
           Back to Store
         </button>
@@ -165,12 +165,12 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
     >
       {/* Header */}
       <div className="flex items-center gap-4 mb-8">
-        <button onClick={onBack} className="p-2 -ml-2 text-muted hover:text-white transition-colors">
+        <button onClick={onBack} className="p-2 -ml-2 text-black hover:opacity-70 transition-opacity">
           <ChevronLeft size={24} />
         </button>
-        <h1 className="text-2xl font-black tracking-tighter uppercase">Your Bag</h1>
+        <h1 className="text-2xl font-black tracking-tighter uppercase text-black">Your Bag</h1>
         {totals.totalPaidItems > 0 && (
-          <span className="text-sm text-muted font-bold">
+          <span className="text-sm text-black/70 font-bold">
             {totals.totalPaidItems} item{totals.totalPaidItems > 1 ? 's' : ''}
           </span>
         )}
@@ -178,9 +178,9 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
 
       {paidItems.length === 0 && freeItems.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-24 text-center">
-          <ShoppingBag className="w-16 h-16 text-white/10 mb-4" />
-          <p className="text-white font-bold text-base">Your bag is empty</p>
-          <p className="text-muted text-sm mt-1">Add some posters to get started</p>
+          <ShoppingBag className="w-16 h-16 text-black/10 mb-4" />
+          <p className="text-black font-bold text-base">Your bag is empty</p>
+          <p className="text-black/60 text-sm mt-1 font-medium">Add some posters to get started</p>
           <button
             onClick={onBack}
             className="mt-6 px-6 py-3 bg-primary text-black font-bold rounded-full active:scale-95 transition-transform text-sm"
@@ -193,24 +193,24 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           {/* Paid Items */}
           {paidItems.length > 0 && (
             <div>
-              <h2 className="text-sm font-black uppercase tracking-widest text-white mb-4">
+              <h2 className="text-sm font-black uppercase tracking-widest text-black mb-4">
                 Selected Posters
               </h2>
               <div className="space-y-3">
                 {paidItems.map((item) => (
                   <div
                     key={item.variantId}
-                    className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.06] rounded-2xl p-3"
+                    className="flex items-center gap-4 bg-black/[0.03] border border-black/[0.06] rounded-2xl p-3"
                   >
                     <div className="shrink-0 w-16 h-20 rounded-xl overflow-hidden bg-surface">
                       <OptimizedImage src={item.image} alt={item.title} containerClassName="w-full h-full" className="w-full h-full" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-white truncate">{item.title}</p>
+                      <p className="text-sm font-bold text-black truncate">{item.title}</p>
                       <div className="flex items-center gap-1.5 mt-0.5">
-                        <p className="text-[10px] text-muted font-medium">{item.category} · {item.size}</p>
+                        <p className="text-[10px] text-black/60 font-semibold">{item.category} · {item.size}</p>
                         {item.withFrame && (
-                          <span className="text-[9px] font-black text-primary bg-primary/10 px-1.5 py-0.5 rounded-full uppercase tracking-wide">
+                          <span className="text-[9px] font-black text-black bg-primary px-1.5 py-0.5 rounded-full uppercase tracking-wide">
                             Framed
                           </span>
                         )}
@@ -225,26 +225,26 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                             }
                           }}
                           aria-label="Decrease quantity"
-                          className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center text-white/60 hover:bg-red-500/20 hover:text-red-400 active:scale-95 transition-all text-xs font-bold"
+                          className="w-7 h-7 rounded-lg bg-black/5 flex items-center justify-center text-black/50 hover:bg-red-500/20 hover:text-red-500 active:scale-95 transition-all text-xs font-bold"
                         >
                           -
                         </button>
-                        <span className="text-sm font-black text-white w-4 text-center">{item.quantity}</span>
+                        <span className="text-sm font-black text-black w-4 text-center">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.variantId, 1)}
                           aria-label="Increase quantity"
-                          className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center text-white/60 hover:bg-white/10 active:scale-95 transition-all text-xs font-bold"
+                          className="w-7 h-7 rounded-lg bg-black/5 flex items-center justify-center text-black/50 hover:bg-black/10 active:scale-95 transition-all text-xs font-bold"
                         >
                           +
                         </button>
                       </div>
                     </div>
                     <div className="shrink-0 text-right">
-                      <p className="text-sm font-black text-white">
+                      <p className="text-sm font-black text-black">
                         ₹{(item.price + (item.withFrame ? item.framePrice : 0)) * item.quantity}
                       </p>
                       {item.withFrame && (
-                        <p className="text-[9px] text-primary/70 font-medium mt-0.5">
+                        <p className="text-[9px] text-black/60 font-semibold mt-0.5">
                           incl. frame
                         </p>
                       )}
@@ -258,17 +258,17 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           {/* Mystery Free Poster Notice */}
           {totals.eligibleFreeGifts > 0 && (
             <div
-              className="bg-primary/[0.04] border border-primary/10 rounded-2xl p-5"
+              className="bg-primary/10 border border-primary/20 rounded-2xl p-5"
             >
               <div className="flex items-center gap-2 mb-2">
-                <Gift className="w-5 h-5 text-primary" />
-                <h2 className="text-sm font-black text-primary uppercase tracking-widest">
+                <Gift className="w-5 h-5 text-black" />
+                <h2 className="text-sm font-black text-black uppercase tracking-widest">
                   Mystery Rewards Unlocked!
                 </h2>
               </div>
 
-              <p className="text-xs text-muted font-medium leading-relaxed">
-                You've unlocked <span className="text-primary font-black">{totals.eligibleFreeGifts}</span> FREE mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''}! 
+              <p className="text-xs text-black/80 font-medium leading-relaxed">
+                You've unlocked <span className="bg-primary/30 text-black px-1.5 py-0.5 rounded font-black">{totals.eligibleFreeGifts}</span> FREE mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''}! 
                 These will be carefully selected and added to your package automatically.
               </p>
             </div>
@@ -276,10 +276,10 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
 
           {/* Free items (legacy view if no picker shown) */}
           {freeItems.length === 0 && totals.eligibleFreeGifts === 0 && paidItems.length > 0 && (
-            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-4">
+            <div className="bg-black/[0.02] border border-black/[0.06] rounded-2xl p-4">
               <div className="flex items-center gap-2">
-                <Gift className="w-4 h-4 text-muted" />
-                <p className="text-xs font-bold text-muted">
+                <Gift className="w-4 h-4 text-black/60" />
+                <p className="text-xs font-bold text-black/70">
                   Add {5 - totals.totalPaidItems} more poster{5 - totals.totalPaidItems > 1 ? 's' : ''} to unlock free picks
                 </p>
               </div>
@@ -287,24 +287,24 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           )}
 
           {/* Order Summary */}
-          <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 space-y-3">
-            <h3 className="text-[10px] font-black uppercase text-muted tracking-widest">Order Summary</h3>
+          <div className="bg-black/[0.03] border border-black/[0.06] rounded-2xl p-5 space-y-3">
+            <h3 className="text-[10px] font-black uppercase text-black/60 tracking-widest">Order Summary</h3>
 
             <div className="flex justify-between text-sm font-bold">
-              <span className="text-muted">Subtotal ({totals.totalPaidItems} items)</span>
-              <span className="text-white">₹{totals.subtotal}</span>
+              <span className="text-black/70">Subtotal ({totals.totalPaidItems} items)</span>
+              <span className="text-black font-black">₹{totals.subtotal}</span>
             </div>
 
             {totals.freeGiftCount > 0 && (
               <div className="flex justify-between text-sm font-bold">
-                <span className="text-green-400">Free Posters ({totals.freeGiftCount})</span>
-                <span className="text-green-400">₹0</span>
+                <span className="text-emerald-700">Free Posters ({totals.freeGiftCount})</span>
+                <span className="text-emerald-700">₹0</span>
               </div>
             )}
 
             <div className="flex justify-between text-sm font-bold">
-              <span className="text-muted">Delivery</span>
-              <span className="text-white">
+              <span className="text-black/70">Delivery</span>
+              <span className="text-black font-black">
                 {!shippingZone
                   ? 'Enter pincode below'
                   : bulkSurcharge > 0
@@ -314,26 +314,26 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
             </div>
             {bulkSurcharge > 0 && (
               <div className="flex justify-between text-xs font-bold">
-                <span className="text-amber-400/80">Bulk surcharge (&gt;25 posters)</span>
-                <span className="text-amber-400">+₹10</span>
+                <span className="text-amber-800">Bulk surcharge (&gt;25 posters)</span>
+                <span className="text-amber-800">+₹10</span>
               </div>
             )}
 
-            <div className="pt-3 border-t border-white/10 flex justify-between items-end">
-              <span className="text-sm font-black text-muted uppercase tracking-wider">Total</span>
-              <span className="text-2xl font-black text-primary">₹{finalTotalWithShipping}</span>
+            <div className="pt-3 border-t border-black/10 flex justify-between items-end">
+              <span className="text-sm font-black text-black/80 uppercase tracking-wider">Total</span>
+              <span className="text-2xl font-black text-black">₹{finalTotalWithShipping}</span>
             </div>
           </div>
 
           {/* Delivery notice */}
           {shippingZone ? (
-            <div className="flex items-start gap-3 bg-green-500/10 border border-green-500/20 rounded-2xl p-4">
-              <div className="shrink-0 w-8 h-8 rounded-xl bg-green-500/20 flex items-center justify-center">
-                <CheckCircle2 className="w-4 h-4 text-green-400" />
+            <div className="flex items-start gap-3 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-4">
+              <div className="shrink-0 w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                <CheckCircle2 className="w-4 h-4 text-emerald-700" />
               </div>
               <div>
-                <p className="text-xs font-bold text-green-400">Delivery to {formData.pincode} ({shippingZone.name})</p>
-                <p className="text-[11px] text-green-400/80 mt-0.5 leading-relaxed">
+                <p className="text-xs font-bold text-emerald-800">Delivery to {formData.pincode} ({shippingZone.name})</p>
+                <p className="text-[11px] text-emerald-700 mt-0.5 leading-relaxed font-medium">
                   Estimated delivery in {shippingZone.days}
                 </p>
               </div>
@@ -341,23 +341,23 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           ) : shippingError ? (
             <div className="flex items-start gap-3 bg-red-500/10 border border-red-500/20 rounded-2xl p-4">
               <div className="shrink-0 w-8 h-8 rounded-xl bg-red-500/20 flex items-center justify-center">
-                <Info className="w-4 h-4 text-red-400" />
+                <Info className="w-4 h-4 text-red-700" />
               </div>
               <div>
-                <p className="text-xs font-bold text-red-400">Delivery Unavailable</p>
-                <p className="text-[11px] text-red-400/80 mt-0.5 leading-relaxed">
+                <p className="text-xs font-bold text-red-800">Delivery Unavailable</p>
+                <p className="text-[11px] text-red-700 mt-0.5 leading-relaxed font-medium">
                   {shippingError}
                 </p>
               </div>
             </div>
           ) : (
-            <div className="flex items-start gap-3 bg-white/[0.03] border border-white/[0.04] rounded-2xl p-4">
+            <div className="flex items-start gap-3 bg-black/[0.03] border border-black/[0.04] rounded-2xl p-4">
               <div className="shrink-0 w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                <Info className="w-4 h-4 text-blue-400" />
+                <Info className="w-4 h-4 text-blue-600" />
               </div>
               <div>
-                <p className="text-xs font-bold text-white/80">Delivery Charges Apply</p>
-                <p className="text-[11px] text-muted mt-0.5 leading-relaxed">
+                <p className="text-xs font-bold text-black/80">Delivery Charges Apply</p>
+                <p className="text-[11px] text-black/60 mt-0.5 leading-relaxed font-medium">
                   Enter your pincode to calculate delivery charges. Orders above 25 posters incur an extra ₹10 surcharge.
                 </p>
               </div>
@@ -368,37 +368,37 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           <form onSubmit={handleSubmit} className="space-y-8 pb-12">
             {step === 'details' && (
               <div className="space-y-6">
-                <div className="flex items-center gap-3 pb-2 border-b border-white/5">
-                  <MapPin size={18} className="text-primary" />
-                  <h2 className="text-sm font-black uppercase tracking-widest">Delivery Address</h2>
+                <div className="flex items-center gap-3 pb-2 border-b border-black/8">
+                  <MapPin size={18} className="text-black" />
+                  <h2 className="text-sm font-black uppercase tracking-widest text-black">Delivery Address</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black uppercase text-muted ml-1">Full Name</label>
+                    <label className="text-[10px] font-black uppercase text-black/70 ml-1">Full Name</label>
                     <div className="relative">
-                      <User size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/50" />
+                      <User size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-black/40" />
                       <input
                         required
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm focus:border-primary/50 outline-none transition-colors"
+                        className="w-full bg-black/5 border border-black/10 rounded-xl pl-10 pr-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                         placeholder="Your name"
                       />
                     </div>
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black uppercase text-muted ml-1">Phone</label>
+                    <label className="text-[10px] font-black uppercase text-black/70 ml-1">Phone</label>
                     <div className="relative">
-                      <Phone size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/50" />
+                      <Phone size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-black/40" />
                       <input
                         required
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm focus:border-primary/50 outline-none transition-colors"
+                        className="w-full bg-black/5 border border-black/10 rounded-xl pl-10 pr-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                         placeholder="0000000000"
                       />
                     </div>
@@ -406,38 +406,38 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-black uppercase text-muted ml-1">Address</label>
+                  <label className="text-[10px] font-black uppercase text-black/70 ml-1">Address</label>
                   <textarea
                     required
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 outline-none transition-colors resize-none"
+                    className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                     placeholder="Door No, Street, Landmark..."
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black uppercase text-muted ml-1">City</label>
+                    <label className="text-[10px] font-black uppercase text-black/70 ml-1">City</label>
                     <input
                       required
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 outline-none transition-colors"
+                      className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                       placeholder="City"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black uppercase text-muted ml-1">Pincode</label>
+                    <label className="text-[10px] font-black uppercase text-black/70 ml-1">Pincode</label>
                     <input
                       required
                       name="pincode"
                       value={formData.pincode}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 outline-none transition-colors"
+                      className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                       placeholder="682001"
                     />
                   </div>
@@ -446,12 +446,12 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
             )}
 
             <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex gap-4 items-start mt-6">
-              <div className="p-2 bg-primary/20 rounded-lg text-primary">
+              <div className="p-2 bg-primary/20 rounded-lg text-black">
                 <ShieldCheck size={20} />
               </div>
               <div>
-                <h3 className="text-sm font-black uppercase tracking-tight">Direct WhatsApp Order</h3>
-                <p className="text-xs text-muted mt-1 font-medium">We'll verify and process your order securely via WhatsApp.</p>
+                <h3 className="text-sm font-black uppercase tracking-tight text-black">Direct WhatsApp Order</h3>
+                <p className="text-xs text-black/70 mt-1 font-medium">We'll verify and process your order securely via WhatsApp.</p>
               </div>
             </div>
 

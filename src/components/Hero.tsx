@@ -297,7 +297,7 @@ const LiveStats: React.FC = () => {
 
       <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-black/30 shrink-0" />
-        <span className="text-[10px] font-body font-semibold text-muted uppercase tracking-wider">
+        <span className="text-[10px] font-body font-semibold text-black/70 uppercase tracking-wider">
           {String(weeklyCount).padStart(2, '0')} this week
         </span>
       </div>
@@ -360,7 +360,7 @@ export const Hero: React.FC<{
             style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
             Your Walls{' '}
-            <span className="italic">Define You.</span>
+            <span className="italic text-black underline decoration-primary decoration-4 underline-offset-4">Define You.</span>
           </h1>
         ) : (
           <h2
@@ -368,11 +368,11 @@ export const Hero: React.FC<{
             style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
           >
             Your Walls{' '}
-            <span className="italic">Define You.</span>
+            <span className="italic text-black underline decoration-primary decoration-4 underline-offset-4">Define You.</span>
           </h2>
         )}
 
-        <p className="font-body text-muted text-xs sm:text-sm max-w-[260px] sm:max-w-xs font-medium leading-relaxed">
+        <p className="font-body text-black/70 text-xs sm:text-sm max-w-[260px] sm:max-w-xs font-medium leading-relaxed">
           Premium posters at unbeatable prices.
         </p>
 
@@ -382,13 +382,13 @@ export const Hero: React.FC<{
         <div className="flex gap-2.5 w-full max-w-[300px] sm:max-w-none sm:w-auto">
           <button
             onClick={onShopNow}
-            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] bg-primary text-black font-bold text-sm rounded-full transition-all duration-200 active:scale-95 hover:brightness-110"
+            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] bg-primary text-black font-bold text-sm rounded-full transition-all duration-200 active:scale-95 hover:brightness-110 shadow-md shadow-primary/25"
           >
             Shop Posters
           </button>
           <button
             onClick={onExplore}
-            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] font-semibold text-black rounded-full border border-black/15 bg-black/[0.06] backdrop-blur-sm hover:bg-black/10 active:scale-95 transition-all duration-200 text-sm"
+            className="font-body flex-1 sm:flex-none sm:w-auto px-6 py-3 min-h-[44px] font-semibold text-black rounded-full border border-black/15 bg-black/[0.04] backdrop-blur-sm hover:bg-black/10 active:scale-95 transition-all duration-200 text-sm"
           >
             Explore
           </button>
@@ -406,17 +406,17 @@ export const Hero: React.FC<{
             <path fill="#fff" d="M34.6 13.4A14.9 14.9 0 0 0 24 9C16.3 9 10 15.3 10 23c0 2.5.7 4.9 1.9 7L10 39l9.3-1.9a15 15 0 0 0 4.7.8C31.7 38 38 31.7 38 24c0-4-1.6-7.8-3.4-10.6zM24 35.7c-2.1 0-4.2-.6-6-1.6l-.4-.3-4.4.9.9-4.3-.3-.5A12.1 12.1 0 0 1 12 23c0-6.6 5.4-12 12-12 3.2 0 6.2 1.2 8.5 3.5A11.9 11.9 0 0 1 36 23c0 6.6-5.4 12-12 12zm6.6-9c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.3.4-1 1.1-1.2 1.3-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6z" />
           </svg>
           <div className="flex flex-col text-left">
-            <span className="font-body text-[#25D366] font-semibold text-xs group-hover:text-white transition-colors duration-200">
+            <span className="font-body text-[#15803d] font-semibold text-xs transition-colors duration-200">
               Customize your poster or frame
             </span>
-            <span className="font-body text-[10px] text-[#25D366]/70 font-medium group-hover:text-white/70 transition-colors duration-200">
+            <span className="font-body text-[10px] text-[#15803d]/80 font-medium transition-colors duration-200">
               Posters Free · Frames from ₹349
             </span>
           </div>
         </a>
 
         {/* Trust indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 text-[9px] sm:text-[10px] font-body font-semibold text-muted uppercase tracking-widest">
+        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 text-[9px] sm:text-[10px] font-body font-semibold text-black/70 uppercase tracking-widest">
           <span className="flex items-center gap-1.5">
             <span className="w-3 h-px bg-black/20" />Free Posters
           </span>

@@ -68,8 +68,8 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       {/* Section header */}
       <div className="px-4 mb-4">
         <h2 className="font-display text-xl sm:text-2xl text-black">Shop by Category</h2>
-        <p className="font-body text-[11px] text-muted mt-0.5 font-medium">
-          Starting from <span className="text-primary font-black">₹{FROM_PRICE}</span> · tap to explore
+        <p className="font-body text-[11px] text-black/70 mt-0.5 font-medium">
+          Starting from <span className="bg-primary text-black font-black px-1.5 py-0.5 rounded text-[10px]">₹{FROM_PRICE}</span> · tap to explore
         </p>
       </div>
 
@@ -104,7 +104,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
 
             {/* Overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-3">
-              <h3 className="font-display text-xs sm:text-sm text-white leading-tight">
+              <h3 className="font-display text-xs sm:text-sm text-white group-hover:text-primary transition-colors leading-tight">
                 {cat.label}
               </h3>
               <div className="flex items-center gap-1 text-primary font-body font-semibold text-[9px] sm:text-[10px] mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity duration-200">
@@ -159,10 +159,10 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
 
               {/* Overlay */}
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2">
-                <h3 className="font-display text-[10px] sm:text-xs text-white leading-tight uppercase">
+                <h3 className="font-display text-[10px] sm:text-xs text-white group-hover:text-primary transition-colors leading-tight uppercase">
                   {cat.label}
                 </h3>
-                <p className="text-[8px] text-white/50 font-body font-semibold mt-px hidden sm:block">
+                <p className="text-[8px] text-primary font-body font-semibold mt-px hidden sm:block">
                   {cat.sub}
                 </p>
               </div>

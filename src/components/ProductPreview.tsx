@@ -42,18 +42,18 @@ const SizeButton: React.FC<{
     aria-pressed={isSelected}
     className={`flex flex-col items-center justify-center min-h-[56px] px-2 py-3 rounded-2xl border-2 transition-all duration-200 active:scale-95 ${
       isSelected
-        ? 'border-primary bg-primary/10 shadow-[0_0_16px_rgba(250,203,21,0.15)]'
-        : 'border-white/8 bg-white/[0.03] hover:border-white/20'
+        ? 'border-primary bg-primary text-black shadow-md shadow-primary/20'
+        : 'border-black/10 bg-black/[0.03] hover:border-black/20 text-black'
     }`}
   >
-    <span className={`text-base font-black leading-none ${isSelected ? 'text-primary' : 'text-white'}`}>
+    <span className="text-base font-black leading-none text-black">
       {size.label}
     </span>
-    <span className="text-[9px] font-semibold text-white/40 mt-1">{size.dim}</span>
-    <span className={`text-[11px] font-black mt-1 flex gap-1 items-baseline ${isSelected ? 'text-primary' : 'text-white/60'}`}>
+    <span className={`text-[9px] font-semibold mt-1 ${isSelected ? 'text-black/80 font-bold' : 'text-black/50'}`}>{size.dim}</span>
+    <span className="text-[11px] font-black mt-1 flex gap-1 items-baseline text-black">
       <span>₹{size.price}</span>
       {size.strikePrice && (
-        <span className="line-through text-white/30 text-[9px] font-medium">₹{size.strikePrice}</span>
+        <span className={`line-through text-[9px] font-medium ${isSelected ? 'text-black/60' : 'text-black/40'}`}>₹{size.strikePrice}</span>
       )}
     </span>
   </button>
@@ -255,7 +255,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
       >
         {/* Product Image with visible figcaption */}
         <div className="px-4 pt-1 flex justify-center">
-          <figure className="w-full max-h-[48dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-black/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col">
+          <figure className="w-full max-h-[48dvh] max-w-[320px] aspect-[3/4] overflow-hidden rounded-xl border border-black/10 bg-surface shadow-[0_8px_32px_rgba(0,0,0,0.12)] flex flex-col">
             <div className="flex-1 min-h-0 relative">
               <OptimizedImage
                 src={product.image}
@@ -265,7 +265,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
                 className="w-full h-full"
               />
             </div>
-            <figcaption className="text-[10px] text-white/60 text-center py-1.5 px-3 bg-black/70 border-t border-white/5 font-medium tracking-wide">
+            <figcaption className="text-[10px] text-black/70 text-center py-1.5 px-3 bg-surface border-t border-black/10 font-medium tracking-wide">
               {captionText}
             </figcaption>
           </figure>
@@ -275,10 +275,10 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
         <div className="px-4 pt-3">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <span className="text-[10px] font-black text-primary uppercase tracking-widest">
+              <span className="text-[10px] font-black text-black bg-primary px-2 py-0.5 rounded uppercase tracking-wider shadow-sm">
                 {product.category}
               </span>
-              <h1 className="text-lg font-black text-white leading-tight mt-1 tracking-tight">
+              <h1 className="text-lg font-black text-black leading-tight mt-1 tracking-tight">
                 {cleanTitle}
               </h1>
             </div>
@@ -286,20 +286,20 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
               type="button"
               onClick={handleShare}
               aria-label="Share poster link"
-              className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all text-xs font-semibold text-white/80"
+              className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 border border-black/10 hover:bg-black/10 active:scale-95 transition-all text-xs font-bold text-black"
             >
-              <Share2 className="w-3.5 h-3.5 text-primary" />
+              <Share2 className="w-3.5 h-3.5 text-black" />
               <span>{copied ? 'Copied!' : 'Share'}</span>
             </button>
           </div>
           <div className="flex items-baseline gap-2 mt-2 flex-wrap">
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-black text-primary">₹{totalPrice}</span>
+              <span className="text-2xl font-black text-black">₹{totalPrice}</span>
               {totalStrikePrice > 0 && (
-                <span className="text-sm font-semibold text-white/30 line-through">₹{totalStrikePrice}</span>
+                <span className="text-sm font-semibold text-black/40 line-through">₹{totalStrikePrice}</span>
               )}
             </div>
-            <span className="text-sm text-white/40 font-medium ml-1">
+            <span className="text-sm text-black/70 font-semibold ml-1">
               {withFrame ? 'Framed poster' : 'Single poster'}
             </span>
           </div>
@@ -307,7 +307,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Size Selection */}
         <div className="px-4 pt-3">
-          <p className="text-[11px] font-extrabold text-white/50 uppercase tracking-widest mb-2">
+          <p className="text-[11px] font-extrabold text-black uppercase tracking-widest mb-2">
             Select Size
           </p>
           <div className="grid grid-cols-4 gap-2">
@@ -333,39 +333,39 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
                 aria-pressed={withFrame}
                 className={`w-full flex items-center justify-between gap-3 p-3.5 rounded-2xl border-2 transition-all duration-200 active:scale-[0.98] ${
                   withFrame
-                    ? 'border-primary bg-primary/10 shadow-[0_0_20px_rgba(250,203,21,0.12)]'
-                    : 'border-white/10 bg-white/[0.03] hover:border-white/20'
+                    ? 'border-primary bg-primary/10 shadow-[0_0_20px_rgba(250,203,21,0.18)]'
+                    : 'border-black/10 bg-black/[0.02] hover:border-black/20'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
                   <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                    withFrame ? 'bg-primary/20 text-primary' : 'bg-white/5 text-white/40'
+                    withFrame ? 'bg-primary text-black' : 'bg-black/5 text-black/50'
                   }`}>
                     <Frame className="w-4 h-4" />
                   </div>
                   <div className="text-left">
-                    <p className={`text-xs font-black uppercase tracking-wide ${withFrame ? 'text-primary' : 'text-white'}`}>
+                    <p className="text-xs font-black uppercase tracking-wide text-black">
                       Add Frame
                     </p>
-                    <p className="text-[10px] text-white/40 font-medium mt-0.5">
+                    <p className="text-[10px] text-black/60 font-medium mt-0.5">
                       Premium frame
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <div className="flex flex-col items-end mr-1">
-                    <span className={`text-sm font-black leading-none ${withFrame ? 'text-primary' : 'text-white/60'}`}>
+                    <span className="text-sm font-black leading-none text-black">
                       +₹{framePrice}
                     </span>
                     {frameStrikePrice && (
-                      <span className="text-[10px] font-semibold text-white/30 line-through mt-0.5">
+                      <span className="text-[10px] font-semibold text-black/40 line-through mt-0.5">
                         ₹{frameStrikePrice}
                       </span>
                     )}
                   </div>
                   {/* Toggle pill */}
                   <div className={`relative w-10 h-5 rounded-full transition-colors duration-200 ${
-                    withFrame ? 'bg-primary' : 'bg-white/20'
+                    withFrame ? 'bg-primary' : 'bg-black/20'
                   }`}>
                     <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200 ${
                       withFrame ? 'translate-x-5' : 'translate-x-0.5'
@@ -378,8 +378,8 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
             <div
               className="flex items-center gap-2 px-1 transition-opacity duration-150"
             >
-              <Frame className="w-3.5 h-3.5 text-white/20" />
-              <p className="text-[10px] text-white/25 font-medium">
+              <Frame className="w-3.5 h-3.5 text-black/30" />
+              <p className="text-[10px] text-black/50 font-medium">
                 Frames available for A5 &amp; A4 only
               </p>
             </div>
@@ -391,16 +391,16 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           <div
             className="px-4 pt-3 overflow-hidden transition-all duration-300"
           >
-            <div className="bg-primary/5 border border-primary/10 rounded-2xl p-3 flex items-center gap-3">
-              <div className="shrink-0 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Gift className="w-4 h-4 text-primary" />
+            <div className="bg-primary/10 border border-primary/20 rounded-2xl p-3 flex items-center gap-3">
+              <div className="shrink-0 w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center">
+                <Gift className="w-4 h-4 text-black" />
               </div>
               <div>
-                <p className="text-xs font-bold text-white">
-                  You are <span className="text-primary">{freeIndicator.away}</span>{' '}
+                <p className="text-xs font-bold text-black">
+                  You are <span className="bg-primary/30 text-black px-1.5 py-0.5 rounded font-black">{freeIndicator.away}</span>{' '}
                   item{freeIndicator.away > 1 ? 's' : ''} away from a free poster
                 </p>
-                <p className="text-[10px] text-muted font-medium mt-0.5">
+                <p className="text-[10px] text-black/60 font-medium mt-0.5">
                   Buy {freeIndicator.threshold} posters total to unlock free picks
                 </p>
               </div>
@@ -410,21 +410,21 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Bulk Offer Banner */}
         <div className="px-4 pt-3">
-          <div className="bg-white/5 border border-white/5 rounded-2xl p-3">
+          <div className="bg-black/[0.03] border border-black/10 rounded-2xl p-3">
             <div className="flex items-center gap-1.5 mb-2">
-              <Gift className="w-3.5 h-3.5 text-primary" />
-              <span className="text-[11px] font-black text-primary uppercase tracking-widest">
-                Bulk Offers
+              <Gift className="w-3.5 h-3.5 text-black" />
+              <span className="text-[11px] font-black text-black uppercase tracking-widest">
+                <span className="text-primary mr-1">✦</span>Bulk Offers
               </span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               {BULK_OFFERS.map((o) => (
                 <div
                   key={o.buy}
-                  className="bg-white/[0.04] rounded-xl p-2 text-center"
+                  className="bg-surface border border-black/5 rounded-xl p-2 text-center"
                 >
-                  <p className="text-[10px] font-black text-white">Buy {o.buy}</p>
-                  <p className="text-[10px] font-bold text-primary">Get {o.getFree} FREE</p>
+                  <p className="text-[10px] font-black text-black">Buy {o.buy}</p>
+                  <p className="text-[10px] font-black text-black bg-primary/25 rounded px-1.5 py-0.5 mt-0.5 inline-block">Get {o.getFree} FREE</p>
                 </div>
               ))}
             </div>
@@ -433,14 +433,14 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Unique SEO Product Description & Paper Details */}
         <div className="px-4 pt-3">
-          <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-3.5">
-            <h2 className="text-[11px] font-black text-white/70 uppercase tracking-wider mb-1.5">
+          <div className="bg-black/[0.02] border border-black/10 rounded-2xl p-3.5">
+            <h2 className="text-[11px] font-black text-black uppercase tracking-wider mb-1.5">
               About This Wall Print
             </h2>
-            <p className="text-xs text-white/60 leading-relaxed font-body">
+            <p className="text-xs text-black/80 leading-relaxed font-body">
               {productDescription}
             </p>
-            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] text-white/50">
+            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-black/10 text-[10px] text-black/70 font-medium">
               <div>• 300 GSM Archival Matte Paper</div>
               <div>• Fade-Resistant HD Pigment Inks</div>
               <div>• Glare-Free Smooth Texture</div>
@@ -454,7 +454,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           <a
             href={`/category/${product.category.toLowerCase()}`}
             onClick={(e) => { e.preventDefault(); onClose?.(); }}
-            className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
+            className="inline-flex items-center gap-1 text-xs font-bold text-black hover:underline decoration-primary decoration-2"
           >
             Explore more {product.category} Wall Art →
           </a>
@@ -462,7 +462,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Delivery Info */}
         <div className="px-4 pt-2.5 pb-4">
-          <p className="text-[10px] font-medium text-white/30 leading-relaxed">
+          <p className="text-[10px] font-medium text-black/50 leading-relaxed">
             * Delivery charges will be calculated based on your pincode.
           </p>
         </div>
@@ -470,7 +470,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
       {/* Sticky CTA Bar — safe-area-inset-bottom ensures it clears home indicator */}
       <div
-        className="shrink-0 flex gap-2.5 px-4 pt-3 bg-gradient-to-t from-surface from-80% to-surface/95 border-t border-white/5"
+        className="shrink-0 flex gap-2.5 px-4 pt-3 bg-gradient-to-t from-surface from-80% to-surface/95 border-t border-black/10"
         style={{ paddingBottom: 'max(14px, env(safe-area-inset-bottom))' }}
       >
         <button
@@ -479,7 +479,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
           className={`shrink-0 w-[52px] h-[52px] rounded-2xl border-[1.5px] flex items-center justify-center transition-all duration-200 active:scale-90 ${
             cartState === 'added'
               ? 'bg-emerald-500 text-black border-emerald-500 scale-105 shadow-[0_0_20px_rgba(16,185,129,0.4)]'
-              : 'bg-white text-black border-white hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]'
+              : 'bg-black/5 text-black border-black/15 hover:bg-black/10 shadow-sm'
           }`}
         >
           {cartState === 'added' ? (

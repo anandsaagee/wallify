@@ -68,14 +68,14 @@ export const FAQ: React.FC = () => {
       />
       
       <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-3">
-          <HelpCircle className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-black text-xs font-black uppercase tracking-wider mb-3 shadow-sm">
+          <HelpCircle className="w-3.5 h-3.5 text-black" />
           <span>Frequently Asked Questions</span>
         </div>
         <h2 id="faq-heading" className="text-2xl sm:text-3xl font-display text-black">
           Everything You Need to Know
         </h2>
-        <p className="text-xs sm:text-sm text-muted mt-2 max-w-md mx-auto">
+        <p className="text-xs sm:text-sm text-black/70 mt-2 max-w-md mx-auto font-medium">
           Got questions about our prints, sizes, frames, or delivery? We’ve got answers.
         </p>
       </div>
@@ -96,12 +96,12 @@ export const FAQ: React.FC = () => {
                 id={`faq-question-${index}`}
                 className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer select-none"
               >
-                <span className="font-semibold text-sm sm:text-base text-black/90">
+                <span className="font-bold text-sm sm:text-base text-black">
                   {item.question}
                 </span>
                 <ChevronDown
-                  className={`w-4 h-4 text-primary shrink-0 transition-transform duration-300 ${
-                    isOpen ? 'rotate-180 text-primary' : 'text-white/40'
+                  className={`w-4 h-4 shrink-0 transition-transform duration-300 ${
+                    isOpen ? 'rotate-180 text-black' : 'text-black/50'
                   }`}
                 />
               </button>
@@ -111,7 +111,7 @@ export const FAQ: React.FC = () => {
                   id={`faq-answer-${index}`}
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
-                  className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-black/70 leading-relaxed border-t border-black/8"
+                  className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-black/80 font-medium leading-relaxed border-t border-black/8"
                 >
                   {item.answer}
                 </div>

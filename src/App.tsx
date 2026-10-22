@@ -222,7 +222,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-white flex flex-col">
+    <div className="min-h-screen bg-background text-black flex flex-col">
       <SEO 
         title={activeCategorySeo.metaTitle}
         description={activeCategorySeo.metaDescription}
@@ -263,17 +263,17 @@ const AppContent: React.FC = () => {
               <div className="px-4 mb-6 transition-all duration-300">
                 <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
                   <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <Gift className="w-6 h-6 text-primary" />
+                    <Gift className="w-6 h-6 text-black" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-black text-white uppercase tracking-tight">
+                    <p className="text-sm font-black text-black uppercase tracking-tight">
                       Reward Unlocked!
                     </p>
-                    <p className="text-xs text-muted font-medium mt-0.5">
+                    <p className="text-xs text-black/70 font-medium mt-0.5">
                       You have {totals.eligibleFreeGifts} free mystery poster{totals.eligibleFreeGifts > 1 ? 's' : ''} unlocked!{' '}
                       <button
                         onClick={() => handleSetView('checkout')}
-                        className="text-primary font-bold ml-1 hover:underline"
+                        className="text-black font-black underline decoration-primary decoration-2 ml-1 hover:opacity-80"
                       >
                         View in bag →
                       </button>
@@ -288,19 +288,19 @@ const AppContent: React.FC = () => {
                 <div id="collection-header" className="px-4 mb-3 mt-8">
                   <div className="flex items-center justify-between">
                     {selectedCategory === 'All' ? (
-                      <h2 className="text-2xl sm:text-3xl font-display text-white tracking-tight">
+                      <h2 className="text-2xl sm:text-3xl font-display text-black tracking-tight">
                         {activeCategorySeo.h1}
                       </h2>
                     ) : (
-                      <h1 className="text-2xl sm:text-3xl font-display text-white tracking-tight">
+                      <h1 className="text-2xl sm:text-3xl font-display text-black tracking-tight">
                         {activeCategorySeo.h1}
                       </h1>
                     )}
-                    <span className="text-xs text-muted font-body font-medium bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+                    <span className="text-xs text-black/70 font-body font-bold bg-black/5 px-2.5 py-1 rounded-full border border-black/10">
                       {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white/70 font-body mt-2 leading-relaxed max-w-2xl">
+                  <p className="text-xs sm:text-sm text-black/70 font-body mt-2 leading-relaxed max-w-2xl">
                     {activeCategorySeo.snippet}
                   </p>
                 </div>
@@ -308,17 +308,17 @@ const AppContent: React.FC = () => {
 
                 <div className="px-4 mt-3">
                   <div className="relative">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-black/50" />
                     <input
                       type="search"
                       placeholder="Search posters..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-muted focus:border-primary/30 outline-none transition-colors"
+                      className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-black/[0.04] border border-black/10 text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                     />
                     {searchQuery && (
                       <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2">
-                        <X className="w-4 h-4 text-muted" />
+                        <X className="w-4 h-4 text-black/50" />
                       </button>
                     )}
                   </div>
@@ -340,10 +340,10 @@ const AppContent: React.FC = () => {
                 ) : (
                   <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
                     <span className="text-5xl mb-4">🎨</span>
-                    <p className="text-white font-bold text-base">No posters found</p>
+                    <p className="text-black font-bold text-base">No posters found</p>
                     <button
                       onClick={handleClearFilters}
-                      className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm"
+                      className="mt-5 px-6 py-2.5 rounded-full bg-primary text-black font-bold text-sm shadow-md shadow-primary/20"
                     >
                       Clear filters
                     </button>
@@ -363,18 +363,18 @@ const AppContent: React.FC = () => {
         <div 
           role="status"
           aria-live="polite"
-          className="fixed top-20 left-1/2 z-[90] flex items-center gap-3 px-4 py-3 bg-[#18181b]/95 border border-primary/30 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl animate-toastIn max-w-[92vw]"
+          className="fixed top-20 left-1/2 z-[90] flex items-center gap-3 px-4 py-3 bg-white border-2 border-primary rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl animate-toastIn max-w-[92vw]"
         >
-          <div className="w-8 h-10 rounded-lg overflow-hidden bg-black/40 border border-white/10 shrink-0">
+          <div className="w-8 h-10 rounded-lg overflow-hidden bg-surface border border-black/10 shrink-0">
             <img src={cartToast.image} alt={cartToast.title} className="w-full h-full object-cover" />
           </div>
           <div className="text-left min-w-0 pr-1">
-            <p className="text-xs font-black text-white flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping" />
+            <p className="text-xs font-black text-black flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-primary inline-block animate-ping" />
               Added to bag
             </p>
-            <p className="text-[11px] text-white/80 font-medium truncate max-w-[170px] sm:max-w-[240px]">
-              {cartToast.title} <span className="text-primary font-bold">({cartToast.size})</span>
+            <p className="text-[11px] text-black/70 font-medium truncate max-w-[170px] sm:max-w-[240px]">
+              {cartToast.title} <span className="text-black font-black">({cartToast.size})</span>
             </p>
           </div>
           <button
@@ -382,7 +382,7 @@ const AppContent: React.FC = () => {
               setCartToast(null);
               handleSetView('checkout');
             }}
-            className="shrink-0 px-3 py-1.5 rounded-xl bg-primary text-black font-black text-xs hover:brightness-110 active:scale-95 transition-all ml-1"
+            className="shrink-0 px-3 py-1.5 rounded-xl bg-primary text-black font-black text-xs hover:brightness-110 active:scale-95 transition-all ml-1 shadow-sm"
           >
             View Bag →
           </button>

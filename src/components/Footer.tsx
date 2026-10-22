@@ -18,31 +18,31 @@ export const Footer: React.FC = () => {
           </h3>
         </div>
 
-        <p className="font-body text-sm text-muted max-w-sm text-center leading-relaxed">
+        <p className="font-body text-sm text-black/80 max-w-sm text-center leading-relaxed font-medium">
           Premium posters at unbeatable prices. Transform your walls today.
         </p>
 
         {/* SEO Content Block */}
         <div className="max-w-2xl text-center px-2">
-          <p className="font-body text-[11px] text-muted/60 leading-relaxed">
+          <p className="font-body text-[11px] text-black/60 leading-relaxed font-medium">
             Looking for premium aesthetic wall posters to elevate your bedroom or hostel setup? At Wallify Store, we deliver museum-quality, HD wall posters across Kerala and all of India. Anime, JDM, movie, and custom posters on fade-resistant thick paper with vibrant colours and fast delivery.
           </p>
         </div>
 
         {/* SEO Internal Links */}
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-2xl px-4 font-body text-[11px] font-semibold text-muted/80">
-          <span className="text-muted/60">Explore:</span>
-          <a href="/category/anime" className="hover:text-primary transition-colors hover:underline">Anime Posters</a>
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-2xl px-4 font-body text-[11px] font-bold text-black/80">
+          <span className="text-black/50">Explore:</span>
+          <a href="/category/anime" className="text-black hover:underline decoration-primary decoration-2 transition-colors">Anime Posters</a>
           <span className="text-black/20">•</span>
-          <a href="/category/hollywood" className="hover:text-primary transition-colors hover:underline">Cinema &amp; Hollywood</a>
+          <a href="/category/hollywood" className="text-black hover:underline decoration-primary decoration-2 transition-colors">Cinema &amp; Hollywood</a>
           <span className="text-black/20">•</span>
-          <a href="/category/automotive" className="hover:text-primary transition-colors hover:underline">JDM &amp; Supercars</a>
+          <a href="/category/automotive" className="text-black hover:underline decoration-primary decoration-2 transition-colors">JDM &amp; Supercars</a>
           <span className="text-black/20">•</span>
-          <a href="/category/mollywood" className="hover:text-primary transition-colors hover:underline">Malayalam Posters</a>
+          <a href="/category/mollywood" className="text-black hover:underline decoration-primary decoration-2 transition-colors">Malayalam Posters</a>
           <span className="text-black/20">•</span>
-          <a href="/category/football" className="hover:text-primary transition-colors hover:underline">Football Art</a>
+          <a href="/category/football" className="text-black hover:underline decoration-primary decoration-2 transition-colors">Football Art</a>
           <span className="text-black/20">•</span>
-          <a href="/category/quotes" className="hover:text-primary transition-colors hover:underline">Motivational Quotes</a>
+          <a href="/category/quotes" className="text-black hover:underline decoration-primary decoration-2 transition-colors">Motivational Quotes</a>
         </div>
 
         {/* Instagram */}
@@ -52,13 +52,13 @@ export const Footer: React.FC = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-3 rounded-full border border-black/15 bg-black/5 hover:bg-black/10 transition-colors group shadow-sm hover:shadow-md min-h-[44px]"
         >
-          <Instagram size={18} className="text-muted group-hover:text-primary transition-colors" />
-          <span className="font-body text-sm font-semibold text-muted group-hover:text-black transition-colors">
+          <Instagram size={18} className="text-black group-hover:text-black transition-colors" />
+          <span className="font-body text-sm font-bold text-black transition-colors">
             @wallifystore.in
           </span>
         </a>
 
-        <p className="font-body text-xs text-muted/40 text-center">
+        <p className="font-body text-xs text-black/50 text-center font-medium">
           © {new Date().getFullYear()} WallifyStore. All rights reserved.
         </p>
       </div>
