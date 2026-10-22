@@ -3,7 +3,6 @@ import { products } from './data/products';
 import { useProductFilters } from './hooks/useProductFilters';
 import { Header } from './components/Header';
 import { CategoryFilter } from './components/CategoryFilter';
-import { SizeFilter } from './components/SizeFilter';
 import { ProductGrid } from './components/ProductGrid';
 import { BottomSheet } from './components/BottomSheet';
 import { ProductPreview } from './components/ProductPreview';
@@ -15,7 +14,6 @@ import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
 import { HeroBestSellers } from './components/HeroBestSellers';
 import { FeaturedCategories } from './components/FeaturedCategories';
-import { Pricing } from './components/Pricing';
 import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
@@ -325,10 +323,8 @@ const AppContent: React.FC = () => {
                 </div>
 
                 <CategoryFilter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
-                <SizeFilter selectedSize={selectedSize} onSelectSize={setSelectedSize} />
 
-                {/* Minimized Price and Offer details under categories */}
-                <Pricing />
+                {/* Bulk offer details under categories */}
                 <BulkOffers />
 
                 {/* ✅ GRID UPDATED */}
