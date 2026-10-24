@@ -21,7 +21,7 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
           <h2 className="font-display text-xl sm:text-2xl text-white flex items-center gap-2">
             <span className="text-primary">🔥</span> Bestsellers
           </h2>
-          <p className="font-body text-[11px] text-muted mt-0.5 font-medium">Most loved by the community</p>
+          <p className="font-body text-xs sm:text-sm text-muted mt-0.5 font-medium">Most loved by the community</p>
         </div>
       </div>
 
@@ -51,15 +51,15 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
               />
               {/* Rank badge */}
-              <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-body font-black w-6 h-6 rounded-lg flex items-center justify-center border border-white/10">
+              <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[11px] font-body font-black w-6 h-6 rounded-lg flex items-center justify-center border border-white/10">
                 {index + 1}
               </div>
             </div>
             <div className="mt-2 px-0.5">
-              <h3 className="font-body text-xs font-semibold text-white truncate group-hover:text-primary transition-colors">
+              <h3 className="font-body text-xs sm:text-sm font-semibold text-white truncate group-hover:text-primary transition-colors">
                 {cleanName}
               </h3>
-              <p className="font-body text-[10px] text-muted font-medium uppercase tracking-wider mt-0.5">
+              <p className="font-body text-[11px] text-muted font-medium uppercase tracking-wider mt-0.5">
                 {product.category}
               </p>
             </div>

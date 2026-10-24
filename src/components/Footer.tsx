@@ -24,13 +24,18 @@ export const Footer: React.FC = () => {
 
         {/* SEO Content Block */}
         <div className="max-w-2xl text-center px-2">
-          <p className="font-body text-[11px] text-muted/60 leading-relaxed">
-            Looking for premium aesthetic wall posters to elevate your bedroom or hostel setup? At Wallify Store, we deliver museum-quality, HD wall posters across Kerala and all of India. Anime, JDM, movie, and custom posters on fade-resistant thick paper with vibrant colours and fast delivery.
+          <p className="font-body text-xs text-muted/70 leading-relaxed">
+            Looking for premium aesthetic wall posters to elevate your bedroom or hostel setup?
+            At Wallify Store, we deliver museum-quality, HD wall posters across Kerala and all of India.
+            Anime, JDM, movie, and custom posters on fade-resistant thick paper with vibrant colours and fast delivery.
           </p>
         </div>
 
         {/* SEO Internal Links */}
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-2xl px-4 font-body text-[11px] font-semibold text-muted/60">
+        <nav
+          aria-label="Category navigation"
+          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-2xl px-4 font-body text-xs font-semibold text-muted/70"
+        >
           <span className="text-muted/40">Explore:</span>
           <a href="/category/anime" className="hover:text-primary transition-colors hover:underline">Anime Posters</a>
           <span className="text-white/10">•</span>
@@ -43,7 +48,7 @@ export const Footer: React.FC = () => {
           <a href="/category/football" className="hover:text-primary transition-colors hover:underline">Football Art</a>
           <span className="text-white/10">•</span>
           <a href="/category/quotes" className="hover:text-primary transition-colors hover:underline">Motivational Quotes</a>
-        </div>
+        </nav>
 
         {/* Instagram */}
         <a
@@ -58,7 +63,7 @@ export const Footer: React.FC = () => {
           </span>
         </a>
 
-        <p className="font-body text-xs text-muted/40 text-center">
+        <p className="font-body text-xs text-muted/50 text-center">
           © {new Date().getFullYear()} WallifyStore. All rights reserved.
         </p>
       </div>

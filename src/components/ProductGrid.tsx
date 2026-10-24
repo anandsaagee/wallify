@@ -18,7 +18,6 @@ export interface Product {
 }
 
 // ─── Shared IntersectionObserver hook ────────────────────────────────────────
-// One observer for the entire page — far more efficient than one per card.
 type ObserverCallback = (visible: boolean) => void;
 
 function useIntersectionObserver(
@@ -48,19 +47,16 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
     const [error, setError] = useState(false);
 
     const isBestSeller = useMemo(() => {
-      // Deterministic randomness based on ID for consistency within a session
       const numId = parseInt(product.id.replace(/\D/g, ''), 10);
       return !isNaN(numId) && numId > 0 && numId % 12 === 0;
     }, [product.id]);
 
     const isHotDeal = useMemo(() => {
       const numId = parseInt(product.id.replace(/\D/g, ''), 10);
-      // Let's make hot deals different from best sellers
       return !isNaN(numId) && numId > 0 && (numId + 3) % 15 === 0;
     }, [product.id]);
 
     const animDelay = useMemo(() => `${Math.min(index, 12) * 30}ms`, [index]);
-    // Use SEO slug with subject name — matches routing + canonical URL pattern
     const cleanName = useMemo(() => getCleanPosterName(product.title), [product.title]);
     const slug = useMemo(() => getProductSlug(product), [product]);
     const productHref = `/posters/${product.category.toLowerCase()}/${slug}`;
@@ -99,7 +95,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-150" />
 
           {isBestSeller && (
-            <div className="absolute top-2 left-2 z-10 bg-primary text-black text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1">
+            <div className="absolute top-2 left-2 z-10 bg-primary text-black text-[10px] sm:text-[11px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1">
               <TrendingUp className="w-3 h-3" />
               <span className="hidden sm:inline">Best Seller</span>
               <span className="sm:hidden">Hot</span>
@@ -107,26 +103,26 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
 
           {isHotDeal && !isBestSeller && (
-            <div className="absolute top-2 left-2 z-10 bg-rose-500 text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1 animate-pulse">
+            <div className="absolute top-2 left-2 z-10 bg-rose-500 text-white text-[10px] sm:text-[11px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1 animate-pulse">
               <Flame className="w-3 h-3 fill-current" />
               <span>Hot Deal</span>
             </div>
           )}
         </div>
 
+        {/* Card info — bigger text for mobile readability */}
         <div className="px-0.5 flex flex-col gap-0.5">
-          <span className="text-[9px] text-muted font-bold uppercase tracking-wider truncate block">
+          <span className="text-[10px] sm:text-[11px] text-muted font-bold uppercase tracking-wider truncate block">
             {product.category}
           </span>
-          <h3 className="text-xs font-semibold text-white truncate leading-tight">
+          <h3 className="text-xs sm:text-sm font-semibold text-white truncate leading-tight">
             {cleanName}
           </h3>
-          {/* Price shown inline — no modal needed to know the cost */}
           <div className="flex items-center gap-1.5 mt-0.5">
-            <span className="text-[10px] font-black text-primary leading-none">
+            <span className="text-[11px] sm:text-xs font-black text-primary leading-none">
               from ₹{FROM_PRICE}
             </span>
-            <span className="text-[9px] text-white/30 font-medium leading-none line-through">
+            <span className="text-[10px] text-white/30 font-medium leading-none line-through">
               ₹{SIZES[0].strikePrice}
             </span>
           </div>
@@ -135,7 +131,6 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
     );
   }
 );
-
 
 ProductCard.displayName = 'ProductCard';
 
@@ -167,7 +162,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
     [displayedCount, products.length]
   );
 
-  // Pre-load images 600px before they enter the viewport — reduces perceived load time
   const observerOptions = useMemo(() => ({ rootMargin: '600px' }), []);
   
   useIntersectionObserver(
@@ -176,7 +170,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
     observerOptions
   );
 
-  // Memoize individual card click handlers to avoid creating new fns on every render
   const cardClickHandlers = useMemo(
     () => new Map(pageProducts.map((p) => [p.id, () => onProductClick(p)])),
     [pageProducts, onProductClick]
@@ -188,7 +181,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
       style={{ overscrollBehavior: 'contain' }}
       className="overscroll-contain"
     >
-      {/* Grid container */}
       <div
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 px-4 sm:px-5 lg:px-7"
       >
@@ -205,7 +197,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, onProductCli
       <div ref={sentinelRef} className="h-10 w-full mt-4" aria-hidden="true" />
       
       {displayedCount >= products.length && products.length > 0 && (
-        <p className="text-center text-[10px] text-muted font-medium mt-3 mb-8">
+        <p className="text-center text-xs text-muted font-medium mt-3 mb-8">
           Showing all {products.length} posters
         </p>
       )}

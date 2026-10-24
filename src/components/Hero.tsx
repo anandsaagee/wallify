@@ -287,17 +287,17 @@ const LiveStats: React.FC = () => {
   }, [weeklyCount]);
 
   return (
-    <div className="flex items-center gap-2 justify-center">
+    <div className="flex items-center gap-2 justify-center flex-wrap">
       <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulseDot shrink-0" />
-        <span className="text-[10px] font-body font-semibold text-green-400 uppercase tracking-wider">
+        <span className="text-xs font-body font-semibold text-green-400 uppercase tracking-wider">
           {String(liveCount).padStart(2, '0')} ordering now
         </span>
       </div>
 
       <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
-        <span className="text-[10px] font-body font-semibold text-muted uppercase tracking-wider">
+        <span className="text-xs font-body font-semibold text-muted uppercase tracking-wider">
           {String(weeklyCount).padStart(2, '0')} this week
         </span>
       </div>
@@ -372,8 +372,9 @@ export const Hero: React.FC<{
           </h2>
         )}
 
-        <p className="font-body text-muted text-xs sm:text-sm max-w-[260px] sm:max-w-xs font-medium leading-relaxed">
+        <p className="font-body text-muted text-sm sm:text-base max-w-[280px] sm:max-w-sm font-medium leading-relaxed">
           Premium posters at unbeatable prices.
+          <span className="hidden sm:inline"> Transform your space today.</span>
         </p>
 
         <LiveStats />
@@ -416,15 +417,15 @@ export const Hero: React.FC<{
         </a>
 
         {/* Trust indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 text-[9px] sm:text-[10px] font-body font-semibold text-muted uppercase tracking-widest">
+        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[11px] sm:text-xs font-body font-semibold text-muted/80 uppercase tracking-widest">
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/20" />Free Posters
+            <span className="w-3 h-px bg-white/30" />Free Posters
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/20" />Premium Quality
+            <span className="w-3 h-px bg-white/30" />Premium Quality
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/20" />Fast Delivery
+            <span className="w-3 h-px bg-white/30" />Fast Delivery
           </span>
         </div>
       </div>
