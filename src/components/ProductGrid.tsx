@@ -72,13 +72,13 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform no-underline"
         style={{ animationDelay: animDelay, contain: 'layout style paint' }}
       >
-        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-white/5 relative">
+        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-black/8 relative">
           {!loaded && !error && (
-            <div className="absolute inset-0 bg-white/5 animate-pulse" aria-hidden="true" />
+            <div className="absolute inset-0 bg-black/5 animate-pulse" aria-hidden="true" />
           )}
           {error && (
             <div className="absolute inset-0 flex items-center justify-center bg-surface">
-              <span className="text-xs text-muted">Image unavailable</span>
+              <span className="text-xs text-black/60 font-medium">Image unavailable</span>
             </div>
           )}
           <OptimizedImage

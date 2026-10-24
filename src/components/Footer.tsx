@@ -3,7 +3,7 @@ import { Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-background/95 border-t border-white/5 mt-auto">
+    <footer className="w-full bg-background/95 border-t border-black/8 mt-auto">
       <div className="container mx-auto px-4 py-10 flex flex-col items-center justify-center gap-5">
 
         {/* Brand with logo */}
@@ -13,12 +13,12 @@ export const Footer: React.FC = () => {
             alt="Wallify logo"
             className="w-9 h-9 rounded-xl object-cover"
           />
-          <h3 className="font-display text-2xl sm:text-3xl text-white">
+          <h3 className="font-display text-2xl sm:text-3xl text-black">
             WallifyStore<span className="text-primary">.</span>
           </h3>
         </div>
 
-        <p className="font-body text-sm text-muted max-w-sm text-center leading-relaxed">
+        <p className="font-body text-sm text-black/80 max-w-sm text-center leading-relaxed font-medium">
           Premium posters at unbeatable prices. Transform your walls today.
         </p>
 
@@ -55,10 +55,10 @@ export const Footer: React.FC = () => {
           href="https://www.instagram.com/wallifystore.in/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group shadow-sm hover:shadow-md min-h-[44px]"
+          className="flex items-center gap-2 px-5 py-3 rounded-full border border-black/15 bg-black/5 hover:bg-black/10 transition-colors group shadow-sm hover:shadow-md min-h-[44px]"
         >
-          <Instagram size={18} className="text-muted group-hover:text-primary transition-colors" />
-          <span className="font-body text-sm font-semibold text-muted group-hover:text-white transition-colors">
+          <Instagram size={18} className="text-black group-hover:text-black transition-colors" />
+          <span className="font-body text-sm font-bold text-black transition-colors">
             @wallifystore.in
           </span>
         </a>

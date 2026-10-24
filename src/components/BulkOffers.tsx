@@ -10,7 +10,7 @@ export const BulkOffers: React.FC = () => {
           <span className="text-xs font-black text-primary uppercase tracking-widest">
             Bulk Offers
           </span>
-          <div className="h-[1px] flex-1 bg-white/10" />
+          <div className="h-[1px] flex-1 bg-black/10" />
         </div>
 
         <div className="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">

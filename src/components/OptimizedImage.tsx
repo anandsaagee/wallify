@@ -71,7 +71,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps & { priority?: boolean
       />
 
       {hasError && (
-        <div className="absolute inset-0 bg-white/5 flex flex-col items-center justify-center text-muted text-[10px] text-center p-4">
+        <div className="absolute inset-0 bg-surface flex flex-col items-center justify-center text-black/60 font-semibold text-[10px] text-center p-4">
           <span className="text-xl mb-2">🖼️</span>
           Image Unavailable
         </div>

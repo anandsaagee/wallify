@@ -10,7 +10,7 @@ export const Pricing: React.FC = () => {
           <span className="text-xs font-black text-primary uppercase tracking-widest">
             Pricing
           </span>
-          <div className="h-[1px] flex-1 bg-white/10" />
+          <div className="h-[1px] flex-1 bg-black/10" />
         </div>
         
         <div className="grid grid-cols-4 gap-2 sm:gap-3">

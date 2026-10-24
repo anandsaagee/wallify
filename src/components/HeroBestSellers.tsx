@@ -18,7 +18,7 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
     <section className="px-4 sm:px-5 mt-10 mb-12" aria-label="Best Sellers">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="font-display text-xl sm:text-2xl text-white flex items-center gap-2">
+          <h2 className="font-display text-xl sm:text-2xl text-black flex items-center gap-2">
             <span className="text-primary">🔥</span> Bestsellers
           </h2>
           <p className="font-body text-xs sm:text-sm text-muted mt-0.5 font-medium">Most loved by the community</p>
@@ -42,7 +42,7 @@ export const HeroBestSellers: React.FC<Props> = ({ products, onClick }) => {
             onKeyDown={(e) => e.key === 'Enter' && onClick(product)}
             aria-label={`View ${cleanName}`}
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-surface border border-white/5 relative">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-surface border border-black/8 relative">
               <OptimizedImage
                 src={product.image}
                 alt={cleanName}

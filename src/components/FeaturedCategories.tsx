@@ -34,7 +34,7 @@ const scrollToCollection = () => {
 const FROM_PRICE = SIZES[0].price;
 
 export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelectCategory }) => {
-  /** Build thumbnail map: category name → first product image */
+  /** Build thumbnail map: category name → random product image for that category on each visit */
   const thumbnails = useMemo(() => {
     const map: Record<string, string> = {};
     const allCats = [
@@ -42,8 +42,13 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
       ...SECONDARY.map((c) => c.name),
     ];
     allCats.forEach((name) => {
-      const first = products.find((p) => p.category === name);
-      if (first) map[name] = first.image;
+      const catProducts = products.filter(
+        (p) => p.category.toLowerCase() === name.toLowerCase() && p.image
+      );
+      if (catProducts.length > 0) {
+        const randomIndex = Math.floor(Math.random() * catProducts.length);
+        map[name] = catProducts[randomIndex].image;
+      }
     });
     return map;
   }, []);
@@ -104,7 +109,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
 
             {/* Overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-3">
-              <h3 className="font-display text-xs sm:text-sm text-white leading-tight">
+              <h3 className="font-display text-xs sm:text-sm text-white group-hover:text-primary transition-colors leading-tight">
                 {cat.label}
               </h3>
               <div className="flex items-center gap-1 text-primary font-body font-semibold text-[10px] sm:text-xs mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity duration-200">
@@ -124,7 +129,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
             className="absolute right-4 top-0 bottom-0 z-10 flex items-center justify-end pointer-events-none"
             style={{
               width: 72,
-              background: 'linear-gradient(to right, transparent 0%, rgba(10,10,10,0.9) 50%, #0a0a0a 100%)',
+              background: 'linear-gradient(to right, transparent 0%, rgba(245,245,245,0.9) 50%, #f5f5f5 100%)',
             }}
           >
             <div className="flex flex-col items-center gap-0.5 pr-1.5">
@@ -146,7 +151,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
               href={`/category/${cat.name.toLowerCase()}`}
               onClick={(e) => { e.preventDefault(); handleSelect(cat.name); }}
               style={{ contain: 'layout paint', minWidth: '110px' }}
-              className="group relative h-24 sm:h-28 rounded-xl overflow-hidden border border-white/10 transition-transform duration-200 ease-out active:scale-95 will-change-transform touch-manipulation shrink-0 flex-none"
+              className="group relative h-24 sm:h-28 rounded-xl overflow-hidden border border-black/10 transition-transform duration-200 ease-out active:scale-95 will-change-transform touch-manipulation shrink-0 flex-none"
             >
               {thumbnails[cat.name] && (
                 <OptimizedImage
