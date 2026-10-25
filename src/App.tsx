@@ -14,6 +14,7 @@ import { CartProvider, useCart } from './hooks/useCart';
 import { Hero } from './components/Hero';
 import { HeroBestSellers } from './components/HeroBestSellers';
 import { FeaturedCategories } from './components/FeaturedCategories';
+import { ReviewCarousel } from './components/ReviewCarousel';
 import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
@@ -255,6 +256,9 @@ const AppContent: React.FC = () => {
               products={products}
               onClick={handleProductClick}
             />
+
+            {/* Customer Reviews */}
+            <ReviewCarousel />
 
             {/* Inline Reward Banner */}
             {showFreeGiftBanner && (
