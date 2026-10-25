@@ -2594,93 +2594,123 @@ export const products = [
     },
     {
         "id": "p217",
-        "title": "Anime 041 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Seventh Form Thunder God Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-041.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-041.webp"
+        "description": "A vivid yellow and orange Demon Slayer manga layout poster highlighting Zenitsu Agatsuma's Seventh Form strike, paired with an intense determined portrait, battle panels, and Japanese character monologues.",
+        "label": "anime-041.webp",
+        "seoTitle": "Zenitsu Seventh Form Thunder God Demon Slayer Poster",
+        "metaDescription": "Zenitsu Agatsuma Seventh Form Flaming Thunder God manga layout poster with determined portrait & Japanese monologues — Demon Slayer art.",
+        "seoAltText": "Vivid yellow and orange Demon Slayer manga page poster of Zenitsu Agatsuma featuring his Seventh Form battle scene, intense close-up portrait with golden eyes, and Japanese monologue text"
     },
     {
         "id": "p218",
-        "title": "Anime 042 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Tanjiro Kamado – Cyber Streetwear Red Demon Slayer Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-042.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-042.webp"
+        "description": "A bold red-and-black cyber streetwear art print of Tanjiro Kamado from Demon Slayer, featuring his checkered haori, hanafuda earrings, Sun Breathing marks, and technical graphic typography.",
+        "label": "anime-042.webp",
+        "seoTitle": "Tanjiro Kamado Red Cyber Streetwear Anime Poster",
+        "metaDescription": "Tanjiro Kamado in high-contrast red & black graphic techwear design with katana, checkered haori & barcode — Demon Slayer poster.",
+        "seoAltText": "High-contrast red and black graphic design poster of Tanjiro Kamado with sword drawn and checkered haori, flanked by Sun Breathing manga panels, Japanese kanji, and barcode graphic"
     },
     {
         "id": "p219",
-        "title": "Anime 043 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Toji Fushiguro – Dark Zenin Cursed Spirit JJK Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-043.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-043.webp"
+        "description": "A gritty dark textured Jujutsu Kaisen poster featuring Toji Fushiguro brandishing chained weapons with his inventory curse, bold red TOJI typography, Zenin kanji, and intense manga action panels.",
+        "label": "anime-043.webp",
+        "seoTitle": "Toji Fushiguro Dark Zenin Weapons JJK Anime Poster",
+        "metaDescription": "Toji Fushiguro with cursed spirit & chain weapons on textured black with red TOJI title & Zenin kanji — gritty JJK poster.",
+        "seoAltText": "Gritty textured black and red Jujutsu Kaisen anime poster showing Toji Fushiguro with arms outstretched holding chained inverted spear and katana, with inventory curse wrapped around torso, red TOJI lettering, and Zenin kanji"
     },
     {
         "id": "p220",
-        "title": "Anime 044 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Trafalgar Law – 3 Billion Bounty Wanted One Piece Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-044.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-044.webp"
+        "description": "The official 3,000,000,000 Belli One Piece Wanted bounty poster for the 'Surgeon of Death' Trafalgar D. Water Law, showing his confident smirk under his spotted cap with Kikoku sword resting on his shoulder.",
+        "label": "anime-044.webp",
+        "seoTitle": "Trafalgar Law 3 Billion Bounty Wanted One Piece Poster",
+        "metaDescription": "Trafalgar Law 3B Belli One Piece wanted poster — Surgeon of Death with spotted cap, smirk & Kikoku blade on aged parchment.",
+        "seoAltText": "Aged paper One Piece bounty poster reading WANTED DEAD OR ALIVE TRAFALGAR LAW with a 3,000,000,000 Belli bounty, showing Law smirking beneath his spotted white hat with his sword Kikoku on his shoulder"
     },
     {
         "id": "p221",
-        "title": "Anime 045 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Roronoa Zoro – 320 Million Bounty Wanted One Piece Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-045.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-045.webp"
+        "description": "A classic One Piece Wanted bounty poster featuring Roronoa Zoro with a 320,000,000 Belli bounty, donning his dark bandana, eye scar, triple earrings, and sword clenched firmly in his teeth.",
+        "label": "anime-045.webp",
+        "seoTitle": "Roronoa Zoro 320 Million Bounty Wanted One Piece Poster",
+        "metaDescription": "Roronoa Zoro 320M Belli One Piece wanted poster with dark bandana, scarred eye & sword in mouth on vintage parchment.",
+        "seoAltText": "Vintage parchment One Piece bounty poster reading WANTED DEAD OR ALIVE RORONOA ZORO with a 320,000,000 Belli bounty, showing Zoro in dark bandana with eye scar and sword in his mouth"
     },
     {
         "id": "p222",
-        "title": "Anime 046 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Monkey D. Luffy – Gear 5 Nika 3 Billion Bounty Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-046.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-046.webp"
+        "description": "The iconic 3,000,000,000 Belli One Piece Wanted poster showcasing Monkey D. Luffy in his awakened Gear 5 Sun God Nika form, laughing joyously with flame-like white hair and swirling steam clouds.",
+        "label": "anime-046.webp",
+        "seoTitle": "Luffy Gear 5 Nika 3 Billion Bounty One Piece Poster",
+        "metaDescription": "Monkey D. Luffy in Gear 5 Sun God Nika form laughing on his 3 Billion Belli One Piece wanted poster — iconic anime wall art.",
+        "seoAltText": "One Piece anime bounty poster reading WANTED DEAD OR ALIVE MONKEY D. LUFFY with a 3,000,000,000 Belli bounty, depicting Luffy in Gear 5 Sun God Nika form laughing joyfully with white flame hair and hand on his head"
     },
     {
         "id": "p223",
-        "title": "Anime 047 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Vinsmoke Sanji – 1.2 Billion Bounty Wanted One Piece Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-047.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-047.webp"
+        "description": "A fiery One Piece Wanted bounty poster for 'Black Leg' Vinsmoke Sanji boasting a 1,200,000,000 Belli bounty, featuring his cigarette smirk, blonde bangs, and blazing orange flames on vintage parchment.",
+        "label": "anime-047.webp",
+        "seoTitle": "Vinsmoke Sanji 1.2 Billion Bounty Wanted One Piece Poster",
+        "metaDescription": "Vinsmoke Sanji 1.2B Belli One Piece wanted poster — Black Leg smirking with lit cigarette amidst orange flames on aged parchment.",
+        "seoAltText": "Aged One Piece bounty poster reading WANTED DEAD OR ALIVE VINSMOKE SANJI with a 1,200,000,000 Belli bounty, showing blonde Sanji with a cigarette in his mouth and blazing flames in the background"
     },
     {
         "id": "p224",
-        "title": "Anime 048 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Portgas D. Ace – 500 Million Bounty Wanted One Piece Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-048.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-048.webp"
+        "description": "The legendary 500,000,000 Belli One Piece Wanted poster for 'Fire Fist' Portgas D. Ace, showing his orange hat, red beads, Whitebeard pirate tattoo across his back, and confident profile on aged paper.",
+        "label": "anime-048.webp",
+        "seoTitle": "Portgas D Ace 500 Million Bounty Wanted One Piece Poster",
+        "metaDescription": "Portgas D. Ace 500M Belli One Piece wanted poster — Fire Fist with Whitebeard back tattoo, orange hat & red beads on parchment.",
+        "seoAltText": "Vintage One Piece bounty poster reading WANTED DEAD OR ALIVE PORTGAS D. ACE with a 500,000,000 Belli bounty, showing Ace from behind with orange hat, red bead necklace, and Whitebeard tattoo on his back"
     },
     {
         "id": "p225",
-        "title": "Anime 049 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Satoru Gojo – The Honored One Awakening JJK Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-049.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-049.webp"
+        "description": "A powerful Jujutsu Kaisen tribute poster capturing Satoru Gojo's transcendent awakening with a macro view of his azure Six Eyes, bold typography, and his ecstatic 'Honored One' proclamation outlined in crimson.",
+        "label": "anime-049.webp",
+        "seoTitle": "Satoru Gojo The Honored One Awakening JJK Anime Poster",
+        "metaDescription": "Satoru Gojo awakened with glowing Six Eyes close-up & red aura laughing pose — JJK 'The Honored One' anime wall poster.",
+        "seoAltText": "Jujutsu Kaisen poster showing Satoru Gojo with radiant Six Eyes close-up at top, bold GOJO SATORU and The Honored One title, and Gojo laughing in red aura outline with character lore text"
     },
     {
         "id": "p226",
-        "title": "Anime 050 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Choso – A Pintura Da Morte Red Graphic JJK Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-050.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-050.webp"
+        "description": "A dramatic high-contrast crimson and black Jujutsu Kaisen poster featuring Choso with his distinctive blood nose-stripe, bold 'A Pintura Da Morte' typography, and lore detailing his bond with Yuji Itadori.",
+        "label": "anime-050.webp",
+        "seoTitle": "Choso A Pintura Da Morte Red Graphic JJK Anime Poster",
+        "metaDescription": "Choso from JJK in high-contrast red & black graphic design with bold A Pintura Da Morte typography & Yuji lore — anime poster.",
+        "seoAltText": "Bold red and black Jujutsu Kaisen poster of Choso in profile with facial blood stripe, featuring large vertical A Pintura Da Morte lettering, Japanese kanji 脹相, and character lore about the Death Painting Wombs"
     },
     {
         "id": "p227",
