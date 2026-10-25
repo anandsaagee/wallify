@@ -248,6 +248,9 @@ const AppContent: React.FC = () => {
               isMainH1={selectedCategory === 'All'}
             />
 
+            {/* Customer Reviews — right below hero trust strip, above Shop by Category */}
+            <ReviewCarousel />
+
             {/* Categories first so users orient quickly */}
             <FeaturedCategories onSelectCategory={setSelectedCategory} />
 
@@ -256,9 +259,6 @@ const AppContent: React.FC = () => {
               products={products}
               onClick={handleProductClick}
             />
-
-            {/* Customer Reviews */}
-            <ReviewCarousel />
 
             {/* Inline Reward Banner */}
             {showFreeGiftBanner && (
