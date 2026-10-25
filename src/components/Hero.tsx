@@ -128,34 +128,38 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// ── Responsive poster-size config (5 rows, smaller heights) ──────────────────
-// 5 rows packed tightly — each slightly different height/speed for organic feel
+// ── Responsive poster-size config (5 rows, large + gapless) ─────────────────
+// Heights sized so 5 rows fill the hero height with zero gaps.
+// Slower speeds for a calm, premium feel.
 function getPosterConfig() {
   const w = typeof window !== 'undefined' ? window.innerWidth : 390;
   if (w < 480) {
+    // Mobile: 5 rows × ~100px ≈ 500px fills hero
     return [
-      { height: 54,  gap: 2, offset:  0,  speed: 30 },
-      { height: 46,  gap: 2, offset: -5,  speed: 22, reverse: true },
-      { height: 58,  gap: 2, offset:  3,  speed: 36 },
-      { height: 48,  gap: 2, offset: -4,  speed: 20, reverse: true },
-      { height: 52,  gap: 2, offset:  4,  speed: 28 },
+      { height: 100, gap: 0, offset:  0,  speed: 55 },
+      { height: 100, gap: 0, offset:  0,  speed: 45, reverse: true },
+      { height: 100, gap: 0, offset:  0,  speed: 60 },
+      { height: 100, gap: 0, offset:  0,  speed: 40, reverse: true },
+      { height: 100, gap: 0, offset:  0,  speed: 50 },
     ];
   }
   if (w < 768) {
+    // Tablet: 5 rows × ~130px ≈ 650px
     return [
-      { height: 70,  gap: 2, offset:  0,  speed: 34 },
-      { height: 58,  gap: 2, offset: -8,  speed: 24, reverse: true },
-      { height: 76,  gap: 2, offset:  5,  speed: 40 },
-      { height: 60,  gap: 2, offset: -6,  speed: 22, reverse: true },
-      { height: 66,  gap: 2, offset:  4,  speed: 30 },
+      { height: 130, gap: 0, offset:  0,  speed: 60 },
+      { height: 130, gap: 0, offset:  0,  speed: 48, reverse: true },
+      { height: 130, gap: 0, offset:  0,  speed: 66 },
+      { height: 130, gap: 0, offset:  0,  speed: 44, reverse: true },
+      { height: 130, gap: 0, offset:  0,  speed: 54 },
     ];
   }
+  // Desktop: 5 rows × ~160px ≈ 800px
   return [
-    { height: 88,  gap: 2, offset:  0,  speed: 40 },
-    { height: 72,  gap: 2, offset: -10, speed: 28, reverse: true },
-    { height: 94,  gap: 2, offset:  6,  speed: 46 },
-    { height: 76,  gap: 2, offset: -8,  speed: 24, reverse: true },
-    { height: 84,  gap: 2, offset:  5,  speed: 36 },
+    { height: 160, gap: 0, offset:  0,  speed: 70 },
+    { height: 160, gap: 0, offset:  0,  speed: 55, reverse: true },
+    { height: 160, gap: 0, offset:  0,  speed: 76 },
+    { height: 160, gap: 0, offset:  0,  speed: 50, reverse: true },
+    { height: 160, gap: 0, offset:  0,  speed: 64 },
   ];
 }
 
@@ -200,10 +204,10 @@ const PosterBackground: React.FC = () => {
         }
       `}</style>
 
-      {/* Poster rows */}
+      {/* Poster rows — stretch-fill the hero with no gaps */}
       <div
-        className="absolute inset-0 flex flex-col justify-around"
-        style={{ padding: '2px 0' }}
+        className="absolute inset-0 flex flex-col"
+        style={{ padding: 0, gap: 0 }}
       >
         {rows.map((row, rowIdx) => {
           const cfg = rowConfigs[rowIdx];
@@ -215,8 +219,8 @@ const PosterBackground: React.FC = () => {
           return (
             <div
               key={rowIdx}
-              className="overflow-hidden"
-              style={{ marginTop: cfg.offset, flexShrink: 0 }}
+              className="overflow-hidden flex-1"
+              style={{ flexShrink: 0, minHeight: 0 }}
             >
               <div
                 style={{

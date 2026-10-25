@@ -66,12 +66,12 @@ export const Header: React.FC<HeaderProps> = ({ setView }) => {
         >
           <img
             src="/wallify-logo.jpg"
-            alt="Wallify logo"
-            className="w-7 h-7 rounded-lg object-cover"
+            alt="Wallify Store logo"
+            className="w-10 h-10 rounded-xl object-cover shadow-sm"
           />
           <span
             className="font-display text-gray-900 whitespace-nowrap leading-none"
-            style={{ fontSize: 'clamp(18px, 4vw, 26px)' }}
+            style={{ fontSize: 'clamp(20px, 4.5vw, 30px)' }}
           >
             WallifyStore<span className="text-primary">.</span>
           </span>
