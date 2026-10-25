@@ -72,7 +72,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
     <section className="py-5 sm:py-8" aria-label="Browse by Category">
       {/* Section header */}
       <div className="px-4 mb-4">
-        <h2 className="font-display text-xl sm:text-2xl text-white">Shop by Category</h2>
+        <h2 className="font-display text-xl sm:text-2xl text-gray-900">Shop by Category</h2>
         <p className="font-body text-xs sm:text-sm text-muted mt-1 font-medium">
           Starting from <span className="text-primary font-black">₹{FROM_PRICE}</span> · tap to explore
         </p>
@@ -86,7 +86,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
             href={`/category/${cat.name.toLowerCase()}`}
             onClick={(e) => { e.preventDefault(); handleSelect(cat.name); }}
             style={{ contain: 'layout paint' }}
-            className="group relative h-44 sm:h-56 w-full rounded-2xl overflow-hidden border border-white/10 transition-transform duration-200 ease-out sm:hover:scale-[1.03] active:scale-95 will-change-transform touch-manipulation block"
+            className="group relative h-44 sm:h-56 w-full rounded-2xl overflow-hidden border border-black/10 transition-transform duration-200 ease-out sm:hover:scale-[1.03] active:scale-95 will-change-transform touch-manipulation block"
           >
             {/* Price badge */}
             <div className="absolute top-2 right-2 z-20 bg-black/70 text-primary text-[10px] sm:text-[11px] font-black px-2 py-0.5 rounded-full border border-primary/30 backdrop-blur-sm">
@@ -109,7 +109,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
 
             {/* Overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-3">
-              <h3 className="font-display text-xs sm:text-sm text-white group-hover:text-primary transition-colors leading-tight">
+              <h3 className="font-display text-xs sm:text-sm text-white leading-tight">
                 {cat.label}
               </h3>
               <div className="flex items-center gap-1 text-primary font-body font-semibold text-[10px] sm:text-xs mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity duration-200">
@@ -133,8 +133,8 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
             }}
           >
             <div className="flex flex-col items-center gap-0.5 pr-1.5">
-              <ChevronRight className="w-4 h-4 text-white/70 animate-bounce" style={{ animationDuration: '1.1s' }} />
-              <span className="text-[10px] text-white/40 font-body font-semibold uppercase tracking-widest">more</span>
+              <ChevronRight className="w-4 h-4 text-gray-500 animate-bounce" style={{ animationDuration: '1.1s' }} />
+              <span className="text-[10px] text-gray-400 font-body font-semibold uppercase tracking-widest">more</span>
             </div>
           </div>
         )}
@@ -167,7 +167,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({ onSelect
                 <h3 className="font-display text-xs text-white leading-tight">
                   {cat.label}
                 </h3>
-                <p className="text-[10px] text-white/50 font-body font-semibold mt-px hidden sm:block">
+                <p className="text-[10px] text-white/60 font-body font-semibold mt-px hidden sm:block">
                   {cat.sub}
                 </p>
               </div>

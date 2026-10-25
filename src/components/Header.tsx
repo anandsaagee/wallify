@@ -31,8 +31,8 @@ export const Header: React.FC<HeaderProps> = ({ setView }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-black/8 shadow-sm'
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-md border-b border-black/10 shadow-sm'
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
       style={{
         paddingTop:    `max(${scrolled ? '10px' : '14px'}, env(safe-area-inset-top))`,
@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ setView }) => {
           href="https://www.instagram.com/wallifystore.in/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/8 transition-colors duration-200 text-black/80 hover:text-black"
+          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 transition-colors duration-200 text-gray-500 hover:text-primary"
           aria-label="Follow on Instagram"
         >
           <Instagram size={18} />
@@ -70,10 +70,10 @@ export const Header: React.FC<HeaderProps> = ({ setView }) => {
             className="w-7 h-7 rounded-lg object-cover"
           />
           <span
-            className="font-display text-black whitespace-nowrap leading-none font-bold"
+            className="font-display text-gray-900 whitespace-nowrap leading-none"
             style={{ fontSize: 'clamp(18px, 4vw, 26px)' }}
           >
-            WallifyStore<span className="text-primary font-black">.</span>
+            WallifyStore<span className="text-primary">.</span>
           </span>
         </a>
 
@@ -84,16 +84,16 @@ export const Header: React.FC<HeaderProps> = ({ setView }) => {
           className="group relative flex items-center gap-2 bg-black/5 border border-black/10 rounded-2xl px-3 sm:px-4 min-h-[44px] hover:bg-black/10 transition-all duration-200 active:scale-95"
         >
           <div className="relative">
-            <ShoppingBag size={18} className="text-black transition-colors duration-200" />
+            <ShoppingBag size={18} className="text-gray-700 group-hover:text-primary transition-colors duration-200" />
             {totals.totalPaidItems > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 bg-primary text-black text-[9px] font-body font-black w-4 h-4 rounded-full flex items-center justify-center shadow-sm">
+              <span className="absolute -top-1.5 -right-1.5 bg-primary text-black text-[9px] font-body font-black w-4 h-4 rounded-full flex items-center justify-center">
                 {totals.totalPaidItems > 99 ? '99+' : totals.totalPaidItems}
               </span>
             )}
           </div>
           <div className="hidden sm:block text-left">
-            <p className="font-body text-[8px] font-black uppercase tracking-widest text-black/60 leading-none">Bag</p>
-            <p className="font-body text-xs font-black text-black mt-0.5">
+            <p className="font-body text-[8px] font-bold uppercase tracking-widest text-gray-400 leading-none">Bag</p>
+            <p className="font-body text-xs font-bold text-gray-900 mt-0.5 group-hover:text-primary transition-colors duration-200">
               ₹{totals.finalTotal}
             </p>
           </div>

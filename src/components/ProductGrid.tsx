@@ -4,7 +4,6 @@ import { ITEMS_PER_PAGE, SIZES } from '../data/config';
 import { OptimizedImage } from './OptimizedImage';
 import { getCleanPosterName, getProductSlug } from '../utils/seoHelpers';
 
-// Lowest poster price for the inline "from ₹X" badge
 const FROM_PRICE = SIZES[0].price;
 
 export interface Product {
@@ -17,7 +16,6 @@ export interface Product {
   seoAltText?: string;
 }
 
-// ─── Shared IntersectionObserver hook ────────────────────────────────────────
 type ObserverCallback = (visible: boolean) => void;
 
 function useIntersectionObserver(
@@ -40,7 +38,6 @@ function useIntersectionObserver(
   }, [ref, options]);
 }
 
-// ─── ProductCard ──────────────────────────────────────────────────────────────
 const ProductCard: React.FC<{ product: Product; onClick: () => void; index: number }> = memo(
   ({ product, onClick, index }) => {
     const [loaded, setLoaded] = useState(false);
@@ -72,13 +69,13 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
         className="group cursor-pointer flex flex-col gap-1.5 active:scale-[0.97] transition-transform duration-150 will-change-transform no-underline"
         style={{ animationDelay: animDelay, contain: 'layout style paint' }}
       >
-        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface border border-black/8 relative">
+        <div className="aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 border border-black/8 relative">
           {!loaded && !error && (
             <div className="absolute inset-0 bg-black/5 animate-pulse" aria-hidden="true" />
           )}
           {error && (
-            <div className="absolute inset-0 flex items-center justify-center bg-surface">
-              <span className="text-xs text-black/60 font-medium">Image unavailable</span>
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+              <span className="text-xs text-muted">Image unavailable</span>
             </div>
           )}
           <OptimizedImage
@@ -92,7 +89,7 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
               loaded ? 'opacity-100' : 'opacity-0'
             }`}
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-150" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-150" />
 
           {isBestSeller && (
             <div className="absolute top-2 left-2 z-10 bg-primary text-black text-[10px] sm:text-[11px] font-black px-2 py-0.5 rounded-md uppercase tracking-tight shadow-md flex items-center gap-1">
@@ -110,19 +107,18 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
           )}
         </div>
 
-        {/* Card info — bigger text for mobile readability */}
         <div className="px-0.5 flex flex-col gap-0.5">
           <span className="text-[10px] sm:text-[11px] text-muted font-bold uppercase tracking-wider truncate block">
             {product.category}
           </span>
-          <h3 className="text-xs sm:text-sm font-semibold text-white truncate leading-tight">
+          <h3 className="text-xs sm:text-sm font-semibold text-gray-900 truncate leading-tight">
             {cleanName}
           </h3>
           <div className="flex items-center gap-1.5 mt-0.5">
             <span className="text-[11px] sm:text-xs font-black text-primary leading-none">
               from ₹{FROM_PRICE}
             </span>
-            <span className="text-[10px] text-white/30 font-medium leading-none line-through">
+            <span className="text-[10px] text-gray-400 font-medium leading-none line-through">
               ₹{SIZES[0].strikePrice}
             </span>
           </div>
@@ -134,7 +130,6 @@ const ProductCard: React.FC<{ product: Product; onClick: () => void; index: numb
 
 ProductCard.displayName = 'ProductCard';
 
-// ─── ProductGrid ──────────────────────────────────────────────────────────────
 interface ProductGridProps {
   products: Product[];
   onProductClick: (product: Product) => void;

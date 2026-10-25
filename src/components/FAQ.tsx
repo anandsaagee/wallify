@@ -111,7 +111,7 @@ export const FAQ: React.FC = () => {
                   id={`faq-answer-${index}`}
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
-                  className="px-4 sm:px-5 pb-5 pt-1 text-sm text-white/75 leading-relaxed border-t border-white/5"
+                  className="px-4 sm:px-5 pb-5 pt-1 text-sm text-gray-700 leading-relaxed border-t border-black/10"
                 >
                   {item.answer}
                 </div>

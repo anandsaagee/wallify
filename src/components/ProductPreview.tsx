@@ -265,7 +265,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
                 className="w-full h-full"
               />
             </div>
-            <figcaption className="text-[11px] text-white/60 text-center py-1.5 px-3 bg-black/70 border-t border-white/5 font-medium tracking-wide">
+            <figcaption className="text-[11px] text-white/60 text-center py-1.5 px-3 bg-black/70 border-t border-black/20 font-medium tracking-wide">
               {captionText}
             </figcaption>
           </figure>
@@ -433,14 +433,14 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Unique SEO Product Description & Paper Details */}
         <div className="px-4 pt-3">
-          <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-3.5">
-            <h2 className="text-xs font-black text-white/70 uppercase tracking-wider mb-1.5">
+          <div className="bg-black/[0.03] border border-black/10 rounded-2xl p-3.5">
+            <h2 className="text-xs font-black text-gray-700 uppercase tracking-wider mb-1.5">
               About This Wall Print
             </h2>
-            <p className="text-sm text-white/65 leading-relaxed font-body">
+            <p className="text-sm text-gray-700/80 leading-relaxed font-body">
               {productDescription}
             </p>
-            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-white/5 text-xs text-white/50">
+            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-black/10 text-xs text-gray-700/70">
               <div>• 300 GSM Archival Matte Paper</div>
               <div>• Fade-Resistant HD Pigment Inks</div>
               <div>• Glare-Free Smooth Texture</div>
@@ -462,7 +462,7 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
 
         {/* Delivery Info */}
         <div className="px-4 pt-2.5 pb-4">
-          <p className="text-xs font-medium text-white/40 leading-relaxed">
+          <p className="text-xs font-medium text-gray-700/60 leading-relaxed">
             * Delivery charges will be calculated based on your pincode.
           </p>
         </div>

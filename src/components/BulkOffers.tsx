@@ -17,13 +17,13 @@ export const BulkOffers: React.FC = () => {
           {BULK_OFFERS.map((offer) => (
             <div
               key={offer.buy}
-              className="shrink-0 bg-white/[0.03] border border-white/[0.06] rounded-xl p-3 sm:p-3.5 flex items-center gap-3"
+              className="shrink-0 bg-black/[0.03] border border-black/[0.08] rounded-xl p-3 sm:p-3.5 flex items-center gap-3"
             >
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                 <Gift className="w-4 h-4 text-primary" />
               </div>
               <div className="whitespace-nowrap">
-                <p className="text-xs sm:text-sm font-black text-white">
+                <p className="text-xs sm:text-sm font-black text-gray-900">
                   Buy {offer.buy}{' '}
                   <span className="text-primary">+ Get {offer.getFree} Free</span>
                 </p>

@@ -8,11 +8,8 @@ interface BottomSheetProps {
 }
 
 export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, children }) => {
-  // isMounted tracks DOM presence (stays true during exit animation)
   const [isMounted, setIsMounted] = useState(isOpen);
-  // isActive controls the CSS transition state (opacity, transform)
   const [isActive, setIsActive] = useState(false);
-  // Cache children so content doesn't abruptly vanish while sliding down
   const cachedChildren = useRef<React.ReactNode>(children);
   const scrollYRef = useRef<number>(0);
 
@@ -20,19 +17,16 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
     cachedChildren.current = children;
   }
 
-  // Handle open / close animation sequencing
   useEffect(() => {
     if (isOpen) {
       scrollYRef.current = window.scrollY;
 
-      // Lock background scroll without shifting scroll position
       const prevOverflow = document.body.style.overflow;
       const prevOverscroll = document.body.style.overscrollBehavior;
       document.body.style.overflow = 'hidden';
       document.body.style.overscrollBehavior = 'none';
 
       setIsMounted(true);
-      // Double rAF ensures the initial offscreen/opacity-0 state is painted first
       const rAF = requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           setIsActive(true);
@@ -43,13 +37,11 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
         cancelAnimationFrame(rAF);
         document.body.style.overflow = prevOverflow;
         document.body.style.overscrollBehavior = prevOverscroll;
-        // Verify scroll position was not displaced
         if (Math.abs(window.scrollY - scrollYRef.current) > 2) {
           window.scrollTo({ top: scrollYRef.current, behavior: 'instant' });
         }
       };
     } else {
-      // Trigger smooth exit transition
       setIsActive(false);
       const timer = setTimeout(() => {
         setIsMounted(false);
@@ -75,13 +67,13 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
 
   return (
     <>
-      {/* Backdrop with smooth fade */}
+      {/* Backdrop — stays dark for modal readability */}
       <div
         onClick={onClose}
         onTouchMove={(e) => e.preventDefault()}
         className="fixed inset-0 z-[100] transition-opacity duration-300 ease-out"
         style={{
-          background: 'rgba(0,0,0,0.75)',
+          background: 'rgba(0,0,0,0.55)',
           backdropFilter: 'blur(6px)',
           WebkitBackdropFilter: 'blur(6px)',
           opacity: isActive ? 1 : 0,
@@ -89,12 +81,12 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
         }}
       />
 
-      {/* Sheet dialog with smooth slide & fade */}
+      {/* Sheet — white surface, dark text */}
       <div
         role="dialog"
         aria-modal="true"
         aria-label="Product details"
-        className="fixed bottom-0 left-0 right-0 mx-auto z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] sm:max-w-[440px] bg-surface rounded-t-3xl border-t border-black/10 shadow-[0_-16px_80px_rgba(0,0,0,0.2)] overflow-hidden will-change-transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+        className="fixed bottom-0 left-0 right-0 mx-auto z-[110] flex flex-col max-h-[85dvh] sm:max-h-[80vh] sm:max-w-[440px] bg-white rounded-t-3xl border-t border-black/10 shadow-[0_-16px_80px_rgba(0,0,0,0.18)] overflow-hidden will-change-transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
         style={{
           transform: isActive ? 'translateY(0)' : 'translateY(100%)',
           opacity: isActive ? 1 : 0.2,
@@ -106,14 +98,14 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
       >
         <div className="shrink-0 relative">
           <div className="flex justify-center pt-3 pb-2">
-            <div className="w-10 h-1 rounded-full bg-black/20" />
+            <div className="w-10 h-1 rounded-full bg-black/15" />
           </div>
           <button
             onClick={onClose}
             aria-label="Close"
-            className="absolute top-3.5 right-4 z-30 w-10 h-10 rounded-full bg-black/5 flex items-center justify-center transition-transform duration-150 active:scale-90 hover:bg-black/10"
+            className="absolute top-3.5 right-4 z-30 w-10 h-10 rounded-full bg-black/[0.06] flex items-center justify-center transition-transform duration-150 active:scale-90 hover:bg-black/10"
           >
-            <X className="w-5 h-5 text-black" />
+            <X className="w-5 h-5 text-gray-700" />
           </button>
         </div>
         {children || cachedChildren.current}

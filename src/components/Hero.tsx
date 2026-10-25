@@ -288,15 +288,15 @@ const LiveStats: React.FC = () => {
 
   return (
     <div className="flex items-center gap-2 justify-center flex-wrap">
-      <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulseDot shrink-0" />
-        <span className="text-xs font-body font-semibold text-green-400 uppercase tracking-wider">
+      <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulseDot shrink-0" />
+        <span className="text-xs font-body font-semibold text-green-700 uppercase tracking-wider">
           {String(liveCount).padStart(2, '0')} ordering now
         </span>
       </div>
 
-      <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+      <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
         <span className="text-xs font-body font-semibold text-muted uppercase tracking-wider">
           {String(weeklyCount).padStart(2, '0')} this week
         </span>
@@ -333,12 +333,12 @@ export const Hero: React.FC<{
       <PosterBackground />
 
       {/* 3. Subtle grid overlay */}
-      <div className="absolute inset-0 opacity-[0.025]" aria-hidden="true">
+      <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true">
         <div
           className="w-full h-full"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+              'linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
@@ -417,15 +417,15 @@ export const Hero: React.FC<{
         </a>
 
         {/* Trust indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[11px] sm:text-xs font-body font-semibold text-muted/80 uppercase tracking-widest">
+        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[11px] sm:text-xs font-body font-semibold text-muted uppercase tracking-widest">
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/30" />Free Posters
+            <span className="w-3 h-px bg-black/20" />Free Posters
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/30" />Premium Quality
+            <span className="w-3 h-px bg-black/20" />Premium Quality
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-px bg-white/30" />Fast Delivery
+            <span className="w-3 h-px bg-black/20" />Fast Delivery
           </span>
         </div>
       </div>

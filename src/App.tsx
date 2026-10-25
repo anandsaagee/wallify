@@ -294,11 +294,11 @@ const AppContent: React.FC = () => {
                         {activeCategorySeo.h1}
                       </h1>
                     )}
-                    <span className="text-xs text-muted font-body font-medium bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                    <span className="text-xs text-muted font-body font-medium bg-black/5 px-3 py-1 rounded-full border border-black/10">
                       {filteredProducts.length} poster{filteredProducts.length !== 1 ? 's' : ''}
                     </span>
                   </div>
-                  <p className="text-sm text-white/70 font-body mt-2 leading-relaxed max-w-2xl">
+                  <p className="text-sm text-gray-700 font-body mt-2 leading-relaxed max-w-2xl">
                     {activeCategorySeo.snippet}
                   </p>
                 </div>
