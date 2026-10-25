@@ -2206,7 +2206,7 @@ export const products = [
         "label": "anime-008.webp",
         "seoTitle": "Jujutsu Kaisen Weekly Jump No.25 2nd Anniversary Poster",
         "metaDescription": "JJK's iconic Weekly Jump No.25 cover — Itadori, Gojo & Fushiguro in vivid pink-green-yellow manga magazine art.",
-        "seoAltText": "Vivid Jujutsu Kaisen anime poster styled as Weekly Shonen Jump magazine cover No.25 in pink, green, and yellow, featuring Yuji Itadori in red uniform at center, Satoru Gojo in sunglasses and green turtleneck above, Megumi Fushiguro with dark hair on the right, large 呪術廻戦 kanji title at the bottom, Jump logo at the top"
+        "seoAltText": "Vivid Jujutsu Kaisen anime poster styled as Weekly Shonen Jump magazine cover No.25, featuring Yuji Itadori at center, Nobara Kugisaki holding a bouquet on left, Satoru Gojo in sunglasses, Megumi Fushiguro on right, and large 呪術廻戦 kanji title at bottom"
     },
     {
         "id": "p185",
