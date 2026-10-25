@@ -2714,93 +2714,123 @@ export const products = [
     },
     {
         "id": "p227",
-        "title": "Anime 051 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Mikasa Ackerman – Survey Corps Dual Blades AoT Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-051.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-051.webp"
+        "description": "A high-contrast black-and-red Attack on Titan graphic poster of Mikasa Ackerman wielding dual blades in mid-air ODM gear, backed by the Wings of Freedom crest and manga memory panels.",
+        "label": "anime-051.webp",
+        "seoTitle": "Mikasa Ackerman Survey Corps Attack on Titan Poster",
+        "metaDescription": "Mikasa Ackerman in mid-air ODM gear with dual blades, Wings of Freedom crest & manga memory panels — bold Attack on Titan poster.",
+        "seoAltText": "Graphic black and red Attack on Titan poster of Mikasa Ackerman leaping with dual swords in ODM gear, bold MIKASA title, Scout Regiment emblem, and manga panel memories"
     },
     {
         "id": "p228",
-        "title": "Anime 052 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Eren Yeager – Founding Titan Duality Red AoT Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-052.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-052.webp"
+        "description": "A dark crimson Attack on Titan duality poster featuring Eren Yeager with titan marks labeled 'Suicidal Blockhead' alongside the smoking profile of the Founding Titan and his poignant temporal monologue.",
+        "label": "anime-052.webp",
+        "seoTitle": "Eren Yeager Founding Titan Attack on Titan Anime Poster",
+        "metaDescription": "Eren Yeager alongside the smoking Founding Titan in crimson split panels with barcode & Founder power monologue — dark AoT poster.",
+        "seoAltText": "Dark red and black Attack on Titan poster with Eren Yeager on the left labeled Suicidal Blockhead, the smoking profile of the Founding Titan with barcode on the right, and Eren's Founder's power quote below"
     },
     {
         "id": "p229",
-        "title": "Anime 053 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Solo Leveling – Sung Jinwoo & Shadow Army Season 2 Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-053.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-053.webp"
+        "description": "The official Solo Leveling: Arise from the Shadow poster featuring Sung Jinwoo with glowing purple eyes commanding his fearsome Shadow Army, including Igris, Iron, and Tank rising in luminous blue flames.",
+        "label": "anime-053.webp",
+        "seoTitle": "Solo Leveling Sung Jinwoo Shadow Army Anime Poster",
+        "metaDescription": "Sung Jinwoo with glowing purple eyes summoning his Shadow Army in cyan flames — official Solo Leveling Season 2 key visual poster.",
+        "seoAltText": "Solo Leveling anime poster featuring Sung Jinwoo looking upward with glowing violet eyes as his shadow soldiers including knight Igris and shadow bear Tank rise in brilliant cyan-blue energy flames"
     },
     {
         "id": "p230",
-        "title": "Anime 054 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Demon Slayer – Hashira & Main Cast Wheel Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-054.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-054.webp"
+        "description": "A vibrant Demon Slayer circular collage poster bringing together Tanjiro, Nezuko, Zenitsu, and Inosuke alongside Hashira Rengoku, Tengen, Giyu, and Shinobu radiating around the Kimetsu no Yaiba emblem.",
+        "label": "anime-054.webp",
+        "seoTitle": "Demon Slayer Hashira & Main Cast Wheel Anime Poster",
+        "metaDescription": "Demon Slayer wheel poster featuring Tanjiro, Nezuko, Zenitsu, Inosuke, Rengoku, Tengen, Giyu & Shinobu around the central emblem.",
+        "seoAltText": "Vibrant circular segmented Demon Slayer anime poster featuring Tanjiro, Nezuko, Zenitsu, Inosuke, Flame Hashira Rengoku, Sound Hashira Tengen, Water Hashira Giyu, and Insect Hashira Shinobu around the title logo"
     },
     {
         "id": "p231",
-        "title": "Anime 055 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Mahoraga – Divine General Shikigami Jujutsu Kaisen Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-055.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-055.webp"
+        "description": "A bold monochrome Jujutsu Kaisen shikigami art print featuring Divine General Mahoraga, depicting the Dharmachakra adaptation wheel, arm-blade, and bold 'The One Who Adapts to All' typography.",
+        "label": "anime-055.webp",
+        "seoTitle": "Mahoraga Divine General Shikigami JJK Anime Poster",
+        "metaDescription": "Divine General Mahoraga with eight-spoked Dharmachakra wheel & arm-blade in monochrome Jujutsu Kaisen graphic poster art.",
+        "seoAltText": "Black and white Jujutsu Kaisen poster of shikigami Divine General Mahoraga with winged helm, eight-spoked wheel above its head, forearm blade, Japanese kanji 魔虚羅, and The One Who Adapts to All text"
     },
     {
         "id": "p232",
-        "title": "Anime 056 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Ryomen Sukuna – Malevolent Shrine Domain Handsign JJK Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-056.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-056.webp"
+        "description": "A striking dark Jujutsu Kaisen poster showing Ryomen Sukuna making his iconic Malevolent Shrine Domain Expansion hand sign in white robes with glowing red eyes against towering red SUKUNA typography.",
+        "label": "anime-056.webp",
+        "seoTitle": "Ryomen Sukuna Malevolent Shrine Domain JJK Anime Poster",
+        "metaDescription": "Ryomen Sukuna forming the Malevolent Shrine hand sign in white kimono with glowing red eyes & stacked red typography — JJK poster.",
+        "seoAltText": "Dark Jujutsu Kaisen poster of Ryomen Sukuna with black facial markings and glowing red eyes forming his domain expansion hand sign in white kimono against stacked red SUKUNA typography"
     },
     {
         "id": "p233",
-        "title": "Anime 057 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Manjiro Sano – Invincible Mikey Tokyo Revengers Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-057.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-057.webp"
+        "description": "A vintage editorial Tokyo Revengers art print celebrating 'Invincible Mikey' Manjiro Sano, featuring a gritty close-up portrait with bloodied lips, bold gold typography, and iconic manga action panels.",
+        "label": "anime-057.webp",
+        "seoTitle": "Manjiro Sano Invincible Mikey Tokyo Revengers Poster",
+        "metaDescription": "Manjiro Sano 'Invincible Mikey' from Tokyo Revengers in vintage editorial collage with gold typography & manga panels — anime art.",
+        "seoAltText": "Vintage cream and black Tokyo Revengers poster of Manjiro Sano (Mikey) with blood on his mouth and intense eyes, bold gold MIKEY title, Tokyo Manji Gang details, and manga panel insets"
     },
     {
         "id": "p234",
-        "title": "Anime 058 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Shigeo Kageyama – Mob Psycho 100 Psychedelic Retro Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-058.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-058.webp"
+        "description": "A vibrant retro pop-art poster of Shigeo Kageyama from Mob Psycho 100, featuring psychic energy floating rocks against red hypnotic waves, deadpan and smiling expressions, and Dimple typography.",
+        "label": "anime-058.webp",
+        "seoTitle": "Shigeo Kageyama Mob Psycho 100 Retro Graphic Poster",
+        "metaDescription": "Shigeo Kageyama with psychic telekinesis, red psychedelic waves & character expressions in retro Mob Psycho 100 poster art.",
+        "seoAltText": "Retro graphic Mob Psycho 100 poster featuring Shigeo Kageyama floating rocks against red wavy hypnotic lines, bold SHIGEO typography with spirit Dimple, and multiple comic facial expressions below"
     },
     {
         "id": "p235",
-        "title": "Anime 059 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Taro Sakamoto – Halftone Assassin Sakamoto Days Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-059.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-059.webp"
+        "description": "A stylish halftone pop-art poster of Taro Sakamoto from Sakamoto Days in his legendary slim hitman days, accented with bold yellow typography, red color blocking, and squad manga panels.",
+        "label": "anime-059.webp",
+        "seoTitle": "Taro Sakamoto Assassin Sakamoto Days Anime Art Poster",
+        "metaDescription": "Young slim Taro Sakamoto with glasses in stylish halftone pop-art, bold yellow SAKAMOTO DAYS typography & squad panels — anime art.",
+        "seoAltText": "Halftone pop-art manga poster of slim Taro Sakamoto from Sakamoto Days with round glasses and hair bun in profile, bold yellow and red SAKAMOTO DAYS typography, and panels of Shin and Lu"
     },
     {
         "id": "p236",
-        "title": "Anime 060 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Itachi Uchiha – Shadows of Sacrifice Anbu Naruto Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-060.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-060.webp"
+        "description": "A profound dark Naruto tribute poster to Itachi Uchiha titled 'Shadows of Sacrifice', featuring his kasa hat Sharingan reveal, Anbu porcelain mask, and lore chronicling his devotion to peace.",
+        "label": "anime-060.webp",
+        "seoTitle": "Itachi Uchiha Shadows of Sacrifice Naruto Anime Poster",
+        "metaDescription": "Itachi Uchiha lifting his straw travel hat with glowing Sharingan eyes, Anbu mask & 'Shadows of Sacrifice' lore — dark Naruto poster.",
+        "seoAltText": "Black and red Naruto poster featuring Itachi Uchiha lifting his straw kasa hat to reveal glowing Sharingan eyes, with an Anbu mask portrait, sword stance, and Shadows of Sacrifice character lore"
     },
     {
         "id": "p237",
