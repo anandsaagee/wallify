@@ -2834,48 +2834,63 @@ export const products = [
     },
     {
         "id": "p237",
-        "title": "Anime 061 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Itachi Uchiha – Tsukuyomi & Clan Tragedy Naruto Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-061.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-061.webp"
+        "description": "A multi-panel dark editorial Naruto poster of Itachi Uchiha, highlighting his Akatsuki cloak, Mangekyo Sharingan eye close-up, kunai stance, Uchiha crests, and clan tragedy lore.",
+        "label": "anime-061.webp",
+        "seoTitle": "Itachi Uchiha Tsukuyomi & Clan Tragedy Naruto Poster",
+        "metaDescription": "Itachi Uchiha in Akatsuki cloak with kunai knife, Mangekyo Sharingan eye close-up & Uchiha clan crests — dark Naruto poster.",
+        "seoAltText": "Graphic black and red Naruto poster of Itachi Uchiha in Akatsuki cloak holding a kunai knife, with large UCHIHA lettering, Mangekyo Sharingan eye panel, and Uchiha clan crest symbols"
     },
     {
         "id": "p238",
-        "title": "Anime 062 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Attack on Titan – The Rumbling Coordinate Path Art Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-062.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-062.webp"
+        "description": "A haunting woodcut-style Attack on Titan poster titled 'RUMBLING', capturing Eren's skeletal Founding Titan over marching Colossals, the desperate crowd raising a child, and the glowing Path coordinate tree.",
+        "label": "anime-062.webp",
+        "seoTitle": "Attack on Titan The Rumbling Coordinate Path Poster",
+        "metaDescription": "Haunting monochrome AoT poster of the Rumbling: skeletal Founding Titan, marching Colossals, trampling crowds & the Path coordinate tree.",
+        "seoAltText": "Monochrome linocut style Attack on Titan poster featuring Eren's skeletal Founding Titan over marching Colossal Titans, a crowd lifting a baby, and Eren's silhouette before the glowing Path tree with bold RUMBLING title"
     },
     {
         "id": "p239",
-        "title": "Anime 063 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Tokyo Revengers – Mikey vs Izana Tenjiku Showdown Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-063.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-063.webp"
+        "description": "A tense Tokyo Revengers key visual poster featuring the iconic face-to-face showdown between Toman leader Mikey in black uniform and Tenjiku boss Izana Kurokawa in his crimson coat amidst shipping containers.",
+        "label": "anime-063.webp",
+        "seoTitle": "Tokyo Revengers Mikey vs Izana Tenjiku Showdown Poster",
+        "metaDescription": "Mikey in Toman uniform faces Tenjiku leader Izana Kurokawa in red coat — iconic Tokyo Revengers shipping container showdown poster.",
+        "seoAltText": "Tokyo Revengers anime poster showing a side-profile face-off between Izana Kurokawa in red Tenjiku uniform and Manjiro Sano (Mikey) in black Toman jacket with bold TOKYO REVENGERS title below"
     },
     {
         "id": "p240",
-        "title": "Anime 064 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Satoru Gojo – Domain Expansion Void Immeasurable Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-064.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-064.webp"
+        "description": "An intricate black-and-white Jujutsu Kaisen manga collage poster featuring Satoru Gojo making his signature Domain Expansion hand sign, surrounded by iconic panels of his high school years and Infinite Void.",
+        "label": "anime-064.webp",
+        "seoTitle": "Satoru Gojo Domain Expansion Void JJK Manga Poster",
+        "metaDescription": "Satoru Gojo with blindfold making his Domain Expansion hand sign amid iconic manga collage panels — Jujutsu Kaisen wall poster art.",
+        "seoAltText": "Black and white Jujutsu Kaisen manga collage poster of Satoru Gojo in black blindfold making his domain expansion hand sign, surrounded by action panels reading Domain Expansion and Void Immeasurable"
     },
     {
         "id": "p241",
-        "title": "Anime 065 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Naruto Uzumaki – Sage Mode & Seventh Hokage Orange Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-065.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-065.webp"
+        "description": "A bold orange-and-black graphic art poster celebrating Naruto Uzumaki, featuring his Sage Mode glowing orange eyes, Kurama fox skull art, the Seventh Hokage cloak, and Team 7 manga panels.",
+        "label": "anime-065.webp",
+        "seoTitle": "Naruto Uzumaki Sage Mode Seventh Hokage Anime Poster",
+        "metaDescription": "Naruto Uzumaki in striking orange & black graphic layout with Sage Mode glowing eyes, Seventh Hokage cloak & Kurama skull art — anime poster.",
+        "seoAltText": "Bold orange and black graphic anime poster of Naruto Uzumaki featuring a close-up of his glowing orange Sage Mode eyes, Kurama fox skull illustration, Seventh Hokage cloak view, and Team 7 panels"
     },
     {
         "id": "p242",
