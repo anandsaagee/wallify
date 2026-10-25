@@ -55,9 +55,84 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
       />
     </noscript>
+  <!-- Static JSON-LD: visible to crawlers before JS runs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "WallifyStore",
+        "url": "https://wallifystore.in",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://wallifystore.in/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "WallifyStore",
+        "url": "https://wallifystore.in",
+        "logo": "https://wallifystore.in/wallify-logo.jpg",
+        "description": "Premium HD wall posters in India — Anime, Automotive, Mollywood, Hollywood, Football, Quotes and more. Fast Kerala delivery.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "ml"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/wallifystore",
+          "https://wa.me/917736497186"
+        ]
+      }
+    ]
+  }
+  </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- noscript: meaningful fallback for crawlers without JS -->
+      <noscript>
+        <style>
+          body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; color: #111; }
+          .ns-wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+          h1 { font-size: 2rem; margin-bottom: 8px; }
+          p { color: #444; line-height: 1.6; }
+          .ns-cats { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+          .ns-cats a { padding: 10px 20px; background: #FACB15; color: #111; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
+          .ns-cats a:hover { opacity: 0.8; }
+          .ns-footer { margin-top: 32px; font-size: 0.85rem; color: #888; }
+        </style>
+        <div class="ns-wrap">
+          <h1>WallifyStore — Premium HD Wall Posters India</h1>
+          <p>
+            Shop 1,400+ premium HD wall posters across Anime, Automotive, Mollywood, Hollywood,
+            Football, Music, Quotes, Spiritual and Abstract categories. Thick 300 GSM matte paper,
+            vibrant archival inks, fast Kerala delivery.
+          </p>
+          <div class="ns-cats">
+            <a href="/category/anime">Anime Posters</a>
+            <a href="/category/automotive">Car Posters</a>
+            <a href="/category/mollywood">Mollywood Posters</a>
+            <a href="/category/hollywood">Hollywood Posters</a>
+            <a href="/category/football">Football Posters</a>
+            <a href="/category/music">Music Posters</a>
+            <a href="/category/quotes">Quote Posters</a>
+            <a href="/category/spiritual">Spiritual Posters</a>
+            <a href="/category/abstract">Abstract Posters</a>
+            <a href="/category/tamil">Tamil Posters</a>
+          </div>
+          <p>📦 Free delivery on orders above ₹499 &nbsp;|&nbsp; 🖼️ Premium 300 GSM print &nbsp;|&nbsp; ⚡ Same-day dispatch</p>
+          <p class="ns-footer">
+            WallifyStore &copy; 2024 &nbsp;|&nbsp;
+            <a href="https://wa.me/917736497186">WhatsApp: +91 77364 97186</a> &nbsp;|&nbsp;
+            <a href="https://wallifystore.in">wallifystore.in</a>
+          </p>
+        </div>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

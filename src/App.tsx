@@ -174,7 +174,7 @@ const AppContent: React.FC = () => {
               '@type': 'Organization',
               name: 'WallifyStore',
               url: 'https://wallifystore.in',
-              logo: 'https://wallifystore.in/logo.png',
+              logo: 'https://wallifystore.in/wallify-logo.jpg',
               description: 'Online store selling premium HD wall posters and framed room art in India.',
               contactPoint: {
                 '@type': 'ContactPoint',
