@@ -2474,93 +2474,123 @@ export const products = [
     },
     {
         "id": "p207",
-        "title": "Anime 031 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Choso – Jujutsu Kaisen Crying Death Painting Manga Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-031.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-031.webp"
+        "description": "A gritty black-and-white Jujutsu Kaisen manga collage poster featuring Choso with his signature face marking, crying tears, flanked by vertical kanji and death painting womb lore.",
+        "label": "anime-031.webp",
+        "seoTitle": "Choso Jujutsu Kaisen Crying Manga Collage Anime Poster",
+        "metaDescription": "Choso from JJK with crying tears, signature face stripe & manga action panels — black & white Jujutsu Kaisen art print.",
+        "seoAltText": "Black and white Jujutsu Kaisen manga collage poster of Choso with a tear running down his face, bold CHOSO typography, vertical red-bordered 呪術廻戦 kanji, and Death Painting Womb character lore"
     },
     {
         "id": "p208",
-        "title": "Anime 032 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Madara Uchiha – Six Paths Sage Mode Naruto Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-032.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-032.webp"
+        "description": "A striking monochrome and red Naruto poster showcasing Madara Uchiha in Six Paths Sage mode holding his Shakujo staff with floating Truth-Seeking Orbs, towering Uchiha typography, and glowing Sharingan eyes below.",
+        "label": "anime-032.webp",
+        "seoTitle": "Madara Uchiha Six Paths Sage Mode Naruto Anime Poster",
+        "metaDescription": "Madara Uchiha in Six Paths Sage mode with Truth-Seeking Orbs & glowing red Sharingan eyes — dramatic Naruto wall poster.",
+        "seoAltText": "Monochrome and red Naruto anime poster of Madara Uchiha in white Six Paths Sage cloak with floating truth-seeking orbs, bold white UCHIHA typography, and close-up glowing red Sharingan eyes at bottom"
     },
     {
         "id": "p209",
-        "title": "Anime 033 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Satoru Gojo – Blue Editorial Honored One JJK Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-033.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-033.webp"
+        "description": "A vintage blue and cream editorial manga print of Satoru Gojo from Jujutsu Kaisen, capturing his euphoric 'I Alone Am The Honored One' awakening scene with marbled graphics and quote typography.",
+        "label": "anime-033.webp",
+        "seoTitle": "Satoru Gojo Blue Editorial Honored One JJK Anime Poster",
+        "metaDescription": "Vintage indigo manga collage of Satoru Gojo laughing with speech bubble 'I Alone Am The Honored One' — stylish JJK wall art.",
+        "seoAltText": "Blue and cream vintage manga poster of Satoru Gojo laughing with head thrown back and speech bubble reading I Alone Am The Honored One, accompanied by marbled pattern and Jujutsu Kaisen kanji"
     },
     {
         "id": "p210",
-        "title": "Anime 034 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Makima – Chainsaw Man Golden Ringed Eyes Editorial Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-034.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-034.webp"
+        "description": "An editorial Chainsaw Man poster focused on Makima's hypnotic golden spiral eyes, complemented by Japanese typography, manga panel insets, and lore detailing the Control Devil.",
+        "label": "anime-034.webp",
+        "seoTitle": "Makima Chainsaw Man Golden Spiral Eyes Anime Poster",
+        "metaDescription": "Makima from Chainsaw Man featuring her hypnotic golden spiral eyes, manga panels & Control Devil editorial layout — bold anime poster.",
+        "seoAltText": "Editorial anime poster of Makima from Chainsaw Man highlighting a close-up of her piercing amber spiral eyes, bold MAKIMA typography with red kanji slash, and manga insets of her in formal attire"
     },
     {
         "id": "p211",
-        "title": "Anime 035 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Praying Nichirin Sword Demon Slayer Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-035.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-035.webp"
+        "description": "A radiant Demon Slayer poster of Zenitsu Agatsuma bowing in reverent concentration with hands folded in prayer over his sword hilt, illuminated by a brilliant halo of yellow sunburst rays.",
+        "label": "anime-035.webp",
+        "seoTitle": "Zenitsu Agatsuma Praying Sword Demon Slayer Anime Poster",
+        "metaDescription": "Zenitsu Agatsuma praying over his Nichirin sword hilt against a radiant yellow sunburst halo — luminous Demon Slayer art print.",
+        "seoAltText": "Bright yellow Demon Slayer anime poster depicting Zenitsu Agatsuma with hands folded in prayer over his sword hilt against a glowing white circular halo and radiating yellow sunbeams"
     },
     {
         "id": "p212",
-        "title": "Anime 036 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Thunder Breathing Lightning Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-036.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-036.webp"
+        "description": "An electrifying Demon Slayer art print capturing Zenitsu Agatsuma in side profile, eyes closed in deep focus as searing yellow thunderbolts blaze from his temples amidst a fiery golden lightning storm.",
+        "label": "anime-036.webp",
+        "seoTitle": "Zenitsu Thunder Breathing Lightning Demon Slayer Poster",
+        "metaDescription": "Zenitsu Agatsuma in side profile channeling Thunder Breathing with golden lightning blazing across his brow — intense Demon Slayer art.",
+        "seoAltText": "Demon Slayer anime poster showing Zenitsu Agatsuma in profile with eyes closed as bright golden lightning bolts arc violently from his temple against a dark fiery yellow and orange backdrop"
     },
     {
         "id": "p213",
-        "title": "Anime 037 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Thunderclap and Flash Multi-Panel Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-037.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-037.webp"
+        "description": "A dynamic yellow Demon Slayer collage poster celebrating Zenitsu Agatsuma, showcasing his fierce glowing eyes, sword-drawing crouch, and blazing Thunderclap and Flash strikes across multiple framed panels.",
+        "label": "anime-037.webp",
+        "seoTitle": "Zenitsu Thunderclap and Flash Demon Slayer Anime Poster",
+        "metaDescription": "Multi-panel Demon Slayer poster of Zenitsu Agatsuma in Thunderclap and Flash action stances with glowing golden eyes — vivid anime art.",
+        "seoAltText": "Vibrant yellow Demon Slayer anime poster featuring Zenitsu Agatsuma across four panels: glowing yellow eyes, Thunderclap and Flash sword dash, low sword-draw crouch, and close-up determined gaze"
     },
     {
         "id": "p214",
-        "title": "Anime 038 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Zenitsu Agatsuma – Cyber Streetwear Yellow Demon Slayer Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-038.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-038.webp"
+        "description": "A modern black-and-yellow streetwear style poster of Zenitsu Agatsuma from Demon Slayer, featuring a katana pose, technical hazard bars, barcode accents, and yellow manga panel insets.",
+        "label": "anime-038.webp",
+        "seoTitle": "Zenitsu Agatsuma Yellow Cyber Streetwear Anime Poster",
+        "metaDescription": "Zenitsu Agatsuma in high-contrast yellow & black graphic techwear design with katana, manga panels & barcode — Demon Slayer poster.",
+        "seoAltText": "Black and bright yellow graphic design poster of Zenitsu Agatsuma holding his katana upright, surrounded by techwear hazard stripes, barcode, Japanese kanji 我妻善逸, and yellow manga portrait panels"
     },
     {
         "id": "p215",
-        "title": "Anime 039 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Nezuko Kamado – Cyber Neon Pink Streetwear Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-039.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-039.webp"
+        "description": "A stylish neon pink and black streetwear art print of Nezuko Kamado from Demon Slayer, featuring her iconic bamboo muzzle, demon awakening form with horn, barcode details, and graphic typography.",
+        "label": "anime-039.webp",
+        "seoTitle": "Nezuko Kamado Cyber Neon Pink Streetwear Anime Poster",
+        "metaDescription": "Nezuko Kamado in striking neon pink and black streetwear graphic layout with bamboo muzzle, demon horn panels & barcode — Demon Slayer art.",
+        "seoAltText": "Neon pink and black graphic Demon Slayer poster of Nezuko Kamado with bamboo muzzle at center, flanked by demon horn awakening panels, running chibi illustration, Japanese kanji, and barcode graphic"
     },
     {
         "id": "p216",
-        "title": "Anime 040 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Inosuke Hashibira – Dual Swords Cyber Blue Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-040.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-040.webp"
+        "description": "An electric blue and black graphic poster of Inosuke Hashibira from Demon Slayer, showcasing him in his boar mask brandishing dual serrated swords, with unmasked manga panels and streetwear typography.",
+        "label": "anime-040.webp",
+        "seoTitle": "Inosuke Hashibira Dual Swords Cyber Blue Anime Poster",
+        "metaDescription": "Inosuke Hashibira in electric blue techwear layout with boar mask & dual serrated swords — Demon Slayer graphic wall poster.",
+        "seoAltText": "Electric blue and black graphic anime poster of Inosuke Hashibira wearing his boar mask and holding crossed serrated dual blades, surrounded by unmasked manga insets, barcode, and INOSUKE HASHIBIRA typography"
     },
     {
         "id": "p217",
