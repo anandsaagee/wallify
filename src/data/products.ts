@@ -2338,7 +2338,7 @@ export const products = [
         "label": "anime-019.webp",
         "seoTitle": "Satoru Gojo Young Manga Collage JJK Anime Poster",
         "metaDescription": "Young Gojo smiling at the centre of a JJK manga collage — Domain VOID IMMEASURABLE Jujutsu Kaisen panel art.",
-        "seoAltText": "Black and white Jujutsu Kaisen manga collage anime poster featuring a young Satoru Gojo without blindfold at center smiling with finger raised, surrounded by multiple JJK manga panels with dialogue including Expansion, Domain, VOID, IMMEASURABLE, Jujutsu High Second-Year Satoru Gojo label, and various character action scenes"
+        "seoAltText": "Black and white Jujutsu Kaisen manga collage anime poster featuring Satoru Gojo in black blindfold and dark uniform at center making a domain hand sign, surrounded by manga panels showing young Gojo in sunglasses, speech bubbles like Domain Expansion VOID IMMEASURABLE, and action scenes"
     },
     {
         "id": "p196",
