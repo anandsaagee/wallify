@@ -304,6 +304,17 @@ const LiveStats: React.FC = () => {
     </div>
   );
 };
+const reviews = [
+  { name: 'Rahul', platform: 'whatsapp', rating: 5, comment: 'Stunning quality!' },
+  { name: 'Anand', platform: 'insta', rating: 4, comment: 'Love the colors.' },
+  { name: 'Saagee', platform: 'whatsapp', rating: 5, comment: 'Best posters ever.' },
+  { name: 'Shahin', platform: 'insta', rating: 4, comment: 'Great vibe, crisp print.' },
+  { name: 'Muhammed', platform: 'whatsapp', rating: 5, comment: 'Top notch, fast delivery.' },
+  { name: 'Devika', platform: 'insta', rating: 4, comment: 'Looks amazing on wall.' },
+  { name: 'Gopika', platform: 'whatsapp', rating: 5, comment: 'Superb detail, love it.' },
+  { name: 'Aysha', platform: 'insta', rating: 4, comment: 'Perfect for home.' },
+  { name: 'Christina', platform: 'whatsapp', rating: 5, comment: 'Impressed with quality.' },
+];
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
 export const Hero: React.FC<{
@@ -428,6 +439,58 @@ export const Hero: React.FC<{
             <span className="w-3 h-px bg-black/20" />Fast Delivery
           </span>
         </div>
+
+        {/* ── Customer Reviews ──────────────────────────────── */}
+        <div
+          className="w-full overflow-x-auto pb-1"
+          style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' } as React.CSSProperties}
+        >
+          <div className="flex gap-3 px-1" style={{ width: 'max-content' }}>
+            {reviews.map((r, i) => (
+              <div
+                key={i}
+                className="w-52 flex-shrink-0 bg-white border border-black/10 rounded-2xl p-3.5 shadow-sm text-left"
+              >
+                {/* Stars */}
+                <div className="flex items-center gap-0.5 mb-2">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <svg
+                      key={s}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className={`h-3.5 w-3.5 ${s <= r.rating ? 'text-yellow-400' : 'text-gray-200'}`}
+                      fill="currentColor"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+                {/* Comment */}
+                <p className="text-xs text-gray-700 font-body leading-relaxed">{r.comment}</p>
+                {/* Name + platform */}
+                <div className="mt-2.5 flex items-center justify-between gap-2">
+                  <span className="text-xs font-semibold text-gray-900 font-body">{r.name}</span>
+                  {r.platform === 'whatsapp' ? (
+                    <span className="flex items-center gap-1 text-[10px] text-green-700 font-medium bg-green-50 border border-green-200 rounded-full px-2 py-0.5 shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="h-2.5 w-2.5" fill="currentColor">
+                        <path d="M16 2C8.28 2 2 8.28 2 16c0 2.44.65 4.73 1.78 6.72L2 30l7.46-1.75A13.93 13.93 0 0016 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.18 0-4.23-.6-5.99-1.64l-.43-.26-4.43 1.04 1.06-4.31-.28-.45A11.46 11.46 0 014.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.3-8.57c-.34-.17-2.02-.99-2.33-1.1-.31-.11-.54-.17-.77.17-.23.34-.88 1.1-1.08 1.33-.2.23-.4.25-.74.08-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.08-.17-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59H10.9c-.2 0-.51.08-.78.4-.26.31-1.02 1-1.02 2.43s1.04 2.82 1.19 3.01c.14.2 2.05 3.13 4.97 4.39.69.3 1.23.48 1.65.61.7.22 1.33.19 1.83.11.56-.08 1.72-.7 1.97-1.38.24-.67.24-1.25.17-1.37-.07-.12-.28-.2-.59-.34z"/>
+                      </svg>
+                      WhatsApp
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-1 text-[10px] text-pink-700 font-medium bg-pink-50 border border-pink-200 rounded-full px-2 py-0.5 shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.352 3.608 1.327.975.975 1.265 2.242 1.327 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.352 2.633-1.327 3.608-.975.975-2.242 1.265-3.608 1.327-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.352-3.608-1.327-.975-.975-1.265-2.242-1.327-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.058-1.366.317-2.379 1.21-3.272.894-.893 1.99-1.152 3.272-1.21C8.332.012 8.735 0 12 0zm0-2.163C8.735 0 8.332.012 7.052.07 5.77.128 4.673.386 3.78 1.28c-.893.894-1.152 1.99-1.21 3.272C2.012 5.735 2 6.138 2 9.5s.012 3.765.07 5.048c.058 1.282.317 2.379 1.21 3.272.894.894 1.99 1.152 3.272 1.21C8.332 19.988 8.735 20 12 20s3.668-.012 4.948-.07c1.282-.058 2.379-.317 3.272-1.21.894-.893 1.152-1.99 1.21-3.272.058-1.283.07-1.686.07-5.048s-.012-3.765-.07-5.048c-.058-1.282-.317-2.378-1.21-3.272-.893-.894-1.99-1.152-3.272-1.21C15.668.012 15.265 0 12 0z"/>
+                      </svg>
+                      Instagram
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
