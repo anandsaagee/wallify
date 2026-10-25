@@ -2354,93 +2354,123 @@ export const products = [
     },
     {
         "id": "p197",
-        "title": "Anime 021 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Eren Yeager – Attack on Titan I Will Keep Moving Forward Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-021.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-021.webp"
+        "description": "A dramatic Attack on Titan poster featuring Eren Yeager with titan marks under his eyes, flanked by bold Japanese kanji for freedom and moving forward. Mikasa and Armin panels rest beneath the declaration 'Freedom is worth any cost' on aged parchment.",
+        "label": "anime-021.webp",
+        "seoTitle": "Eren Yeager Attack on Titan Moving Forward Poster",
+        "metaDescription": "Eren Yeager with titan marks, kanji for freedom & moving forward, plus Mikasa & Armin panels — dramatic AoT poster.",
+        "seoAltText": "Aged parchment Attack on Titan poster featuring Eren Yeager with titan marks under his eyes, bold red FORWARD and I Will Keep Moving Forward text at top, vertical kanji for freedom and moving forward, with Mikasa Ackerman and Armin Arlert panels at bottom"
     },
     {
         "id": "p198",
-        "title": "Anime 022 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Bleach – Thousand-Year Blood War Key Visual Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-022.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-022.webp"
+        "description": "The official Bleach: Thousand-Year Blood War anime poster showcasing Ichigo Kurosaki charging forward alongside Renji, Rukia, Orihime, Chad, and Uryu, while the villain Yhwach looms menacingly in crimson shadows.",
+        "label": "anime-022.webp",
+        "seoTitle": "Bleach Thousand-Year Blood War Key Visual Anime Poster",
+        "metaDescription": "Official Bleach TYBW poster with Ichigo Kurosaki, Rukia, Renji, Uryu & Yhwach looming in crimson shadows. Bold anime art.",
+        "seoAltText": "Bleach Thousand-Year Blood War anime poster featuring Ichigo Kurosaki with orange hair charging forward with sword, flanked by Renji, Rukia, Chad, Orihime, and Uryu, beneath the towering crimson silhouette of Yhwach with bold white BLEACH logo"
     },
     {
         "id": "p199",
-        "title": "Anime 023 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Itachi Uchiha – Tsukuyomi Vortex Akatsuki Naruto Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-023.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-023.webp"
+        "description": "An intense dark Naruto poster featuring Itachi Uchiha standing in his iconic Akatsuki cloud cloak beneath a colossal swirling red Tsukuyomi vortex and a flock of shadowy black crows amidst glowing crimson embers.",
+        "label": "anime-023.webp",
+        "seoTitle": "Itachi Uchiha Tsukuyomi Vortex Akatsuki Naruto Poster",
+        "metaDescription": "Itachi Uchiha in Akatsuki cloak under a swirling red Tsukuyomi vortex with flying crows and glowing embers — dark Naruto poster.",
+        "seoAltText": "Dark fantasy Naruto anime poster showing Itachi Uchiha in black Akatsuki cloak with red clouds standing beneath a massive swirling crimson vortex containing a red Sharingan eye, surrounded by flying black crows and glowing embers"
     },
     {
         "id": "p200",
-        "title": "Anime 024 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Jujutsu Kaisen – Tokyo High Quartet & Cursed Flesh Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-024.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-024.webp"
+        "description": "Key visual anime poster for Jujutsu Kaisen featuring Satoru Gojo, Yuji Itadori, Megumi Fushiguro, and Nobara Kugisaki channeling cursed energy against a monstrous backdrop of Sukuna's reaching hands and giant eye.",
+        "label": "anime-024.webp",
+        "seoTitle": "Jujutsu Kaisen Gojo Itadori Fushiguro Nobara Anime Poster",
+        "metaDescription": "Tokyo Jujutsu High quartet: Gojo, Yuji, Megumi & Nobara channeling cursed energy against Sukuna's flesh domain. Vibrant JJK art.",
+        "seoAltText": "Jujutsu Kaisen anime poster featuring Satoru Gojo with blindfold, Yuji Itadori with blue cursed energy, Megumi Fushiguro, and Nobara Kugisaki against a dark red backdrop of grotesque clutching cursed hands and a giant eye"
     },
     {
         "id": "p201",
-        "title": "Anime 025 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Attack on Titan – Freedom Running to the Tree Anime Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-025.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-025.webp"
+        "description": "A nostalgic and emotional Attack on Titan art print showing young Eren, Mikasa, and Armin running up a grassy hill toward the solitary tree, beneath bold distressed 'FREEDOM' typography and soaring black birds.",
+        "label": "anime-025.webp",
+        "seoTitle": "Attack on Titan Freedom Running to the Tree Anime Poster",
+        "metaDescription": "Young Eren, Mikasa & Armin running uphill toward the iconic tree under bold distressed FREEDOM typography. Emotional AoT art print.",
+        "seoAltText": "Gritty vintage Attack on Titan poster showing young Eren, Mikasa, and Armin seen from behind running up a hill toward a lone tree, beneath large distressed black FREEDOM lettering and silhouette birds in flight"
     },
     {
         "id": "p202",
-        "title": "Anime 026 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Monkey D. Luffy – 300 Million Bounty Wanted One Piece Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-026.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-026.webp"
+        "description": "The classic 300,000,000 Belli One Piece Wanted poster for Monkey D. Luffy, rendered in a hand-drawn textured aesthetic on aged parchment with his iconic wide grin, straw hat, and Marine stamp.",
+        "label": "anime-026.webp",
+        "seoTitle": "Monkey D Luffy 300 Million Bounty Wanted One Piece Poster",
+        "metaDescription": "Classic 300M Belli One Piece wanted poster of smiling Monkey D. Luffy in straw hat — hand-drawn vintage parchment style.",
+        "seoAltText": "One Piece anime bounty poster styled on aged weathered paper reading WANTED DEAD OR ALIVE MONKEY D. LUFFY with a 300,000,000 Belli bounty, showing Luffy grinning broadly in his straw hat with Usopp in the background"
     },
     {
         "id": "p203",
-        "title": "Anime 027 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Tanjiro Kamado – Blue Newspaper Collage Demon Slayer Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-027.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-027.webp"
+        "description": "A sophisticated editorial art print of Tanjiro Kamado from Demon Slayer in profile, rendered in cool indigo and cream tones with newspaper typography collage texturing his uniform, hanafuda earrings, and bold blue kanji.",
+        "label": "anime-027.webp",
+        "seoTitle": "Tanjiro Kamado Demon Slayer Blue Collage Anime Poster",
+        "metaDescription": "Tanjiro Kamado in side profile with hanafuda earring, rendered in deep blue newspaper typography collage — stylish Demon Slayer art.",
+        "seoAltText": "Stylized indigo blue and cream Demon Slayer anime poster showing Tanjiro Kamado in profile with hanafuda earring, his uniform textured with vintage newspaper clippings, alongside bold vertical Japanese calligraphy"
     },
     {
         "id": "p204",
-        "title": "Anime 028 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Attack on Titan – Born Free Ymir & Rumbling Manga Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-028.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-028.webp"
+        "description": "A dark multi-panel Attack on Titan grunge poster featuring Ymir accused by pointing hands, Eren's piercing titan eyes, and child Eren spreading his arms over the red Colossal Titans with the quote 'We're born free.'",
+        "label": "anime-028.webp",
+        "seoTitle": "Attack on Titan Born Free Ymir & Rumbling Manga Poster",
+        "metaDescription": "Multi-panel AoT manga poster: Ymir surrounded by pointing hands, Eren's glowing eyes & child Eren over the Rumbling Titans.",
+        "seoAltText": "Dark grunge Attack on Titan poster with Ymir surrounded by pointing hands at top, Eren's intense green eyes in center panels, bold ATTACK ON TITAN title with Born Free quote, and child Eren arms wide over red Colossal Titans below"
     },
     {
         "id": "p205",
-        "title": "Anime 029 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Satoru Gojo – The Honored One Six Eyes Jujutsu Kaisen Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-029.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-029.webp"
+        "description": "A striking Jujutsu Kaisen tribute poster celebrating Satoru Gojo as 'The Honored One'. Highlights a vivid close-up of his crystalline Six Eyes above his euphoric awakened pose and the iconic quote 'Throughout heaven and earth, I alone am the honored one.'",
+        "label": "anime-029.webp",
+        "seoTitle": "Satoru Gojo The Honored One Six Eyes JJK Anime Poster",
+        "metaDescription": "Satoru Gojo with crystalline Six Eyes & euphoric awakened pose — bold JJK 'The Honored One' typography anime wall poster.",
+        "seoAltText": "Textured Jujutsu Kaisen poster of Satoru Gojo featuring a close-up of his radiant blue Six Eyes at top, bold title The Honored One, quote Throughout heaven and earth I alone am the honored one, and awakened Gojo laughing in a red aura outline"
     },
     {
         "id": "p206",
-        "title": "Anime 030 Minimalist Anime Poster – Premium Matte Finish",
+        "title": "Goku Ultra Instinct – Silver Hair Crimson Dragon Ball Poster",
         "category": "Anime",
         "basePrice": 49,
         "image": "/assets/anime/anime-030.webp",
-        "description": "Level up your space with this HD anime print. Printed on high-quality, fade-resistant paper, this aesthetic room decor provides a stunning premium matte finish perfect for any room.",
-        "label": "anime-030.webp"
+        "description": "A powerful Dragon Ball Super poster showing Goku in Ultra Instinct form with shimmering silver hair and intense eyes, shirtless with muscular battle detail against a bold crimson backdrop with dynamic black brushstroke kanji.",
+        "label": "anime-030.webp",
+        "seoTitle": "Goku Ultra Instinct Silver Hair Dragon Ball Anime Poster",
+        "metaDescription": "Goku in Ultra Instinct form with silver spiky hair & battle-worn muscular build against bold crimson kanji art — Dragon Ball poster.",
+        "seoAltText": "Dragon Ball anime art poster featuring shirtless Goku in Ultra Instinct form with spiky silver hair and silver eyes, battle scratches on muscular torso, red martial arts pants, and clenched fists against a bright red background with black kanji calligraphy"
     },
     {
         "id": "p207",
