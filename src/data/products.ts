@@ -8380,15 +8380,6 @@ export const products = [
         "label": "mollywood-041.webp"
     },
     {
-        "id": "p778",
-        "title": "Mollywood 042 Minimalist Mollywood Poster – Premium Matte Finish",
-        "category": "Mollywood",
-        "basePrice": 49,
-        "image": "/assets/mollywood/mollywood-042.webp",
-        "description": "Level up your space with this premium mollywood wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "mollywood-042.webp"
-    },
-    {
         "id": "p779",
         "title": "Mollywood 043 Minimalist Mollywood Poster – Premium Matte Finish",
         "category": "Mollywood",
