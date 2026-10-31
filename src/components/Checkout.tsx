@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingBag, ChevronLeft, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
+import { FanArtNotice } from './FanArtNotice';
 
 interface CheckoutProps {
   onBack: () => void;
@@ -322,6 +323,11 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
             <div className="pt-3 border-t border-black/10 flex justify-between items-end">
               <span className="text-sm font-black text-black/80 uppercase tracking-wider">Total</span>
               <span className="text-2xl font-black text-black">₹{finalTotalWithShipping}</span>
+            </div>
+
+            {/* Fan-art / unofficial merchandise notice */}
+            <div className="pt-3 border-t border-black/[0.06]">
+              <FanArtNotice />
             </div>
           </div>
 

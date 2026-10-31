@@ -18,11 +18,21 @@ import { ReviewCarousel } from './components/ReviewCarousel';
 import { BulkOffers } from './components/BulkOffers';
 import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
+import { ContentPolicyPage } from './components/ContentPolicyPage';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
 import { trackProductClick } from './utils/bestSellerTracker';
 import { getCleanPosterName, getProductSlug } from './utils/seoHelpers';
 
-type View = 'store' | 'checkout';
+type View = 'store' | 'checkout' | 'content-policy';
+
+/** Resolve the initial view from the URL on first load */
+function getInitialView(): View {
+  if (typeof window === 'undefined') return 'store';
+  const path = window.location.pathname.toLowerCase();
+  if (path === '/content-policy') return 'content-policy';
+  if (path === '/checkout') return 'checkout';
+  return 'store';
+}
 
 interface ProductData {
   id: string;
@@ -66,7 +76,7 @@ function getInitialProduct(): ProductData | null {
 }
 
 const AppContent: React.FC = () => {
-  const [view, setView] = useState<View>('store');
+  const [view, setView] = useState<View>(getInitialView);
   const { totals } = useCart();
 
   const {
@@ -96,16 +106,28 @@ const AppContent: React.FC = () => {
     }, 3200);
   }, []);
 
-  // Sync modal state with browser back/forward buttons
+  // Sync view and modal state with browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.toLowerCase();
-      if (!path.startsWith('/posters/')) {
+      if (path === '/content-policy') {
+        setView('content-policy');
         setSelectedProduct(null);
-      } else {
+        return;
+      }
+      if (path === '/checkout') {
+        setView('checkout');
+        setSelectedProduct(null);
+        return;
+      }
+      if (path.startsWith('/posters/')) {
+        setView('store');
         const prod = getInitialProduct();
         if (prod) setSelectedProduct(prod);
+        return;
       }
+      setView('store');
+      setSelectedProduct(null);
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -139,6 +161,12 @@ const AppContent: React.FC = () => {
 
   const handleSetView = useCallback((nextView: View) => {
     setView(nextView);
+    const pathMap: Record<View, string> = {
+      store: '/',
+      checkout: '/checkout',
+      'content-policy': '/content-policy',
+    };
+    window.history.pushState({}, '', pathMap[nextView]);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
@@ -232,6 +260,11 @@ const AppContent: React.FC = () => {
       <Header setView={handleSetView} />
 
       <div className={view === 'store' ? 'flex-1' : 'pt-24 flex-1'}>
+        {/* CONTENT POLICY PAGE */}
+        {view === 'content-policy' && (
+          <ContentPolicyPage />
+        )}
+
         {/* CHECKOUT */}
         {view === 'checkout' && (
           <div>

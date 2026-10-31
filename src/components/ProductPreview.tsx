@@ -4,6 +4,7 @@ import { SIZES, BULK_OFFERS, getFramePrice, getFrameStrikePrice } from '../data/
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
 import { SEO } from './SEO';
+import { FanArtNotice } from './FanArtNotice';
 import {
   getCleanPosterName,
   getProductSlug,
@@ -461,10 +462,15 @@ export const ProductPreview: React.FC<ProductPreviewProps> = ({ product, initial
         </div>
 
         {/* Delivery Info */}
-        <div className="px-4 pt-2.5 pb-4">
+        <div className="px-4 pt-2.5">
           <p className="text-xs font-medium text-gray-700/60 leading-relaxed">
             * Delivery charges will be calculated based on your pincode.
           </p>
+        </div>
+
+        {/* Fan-art / unofficial merchandise notice */}
+        <div className="px-4 pt-2.5 pb-4">
+          <FanArtNotice />
         </div>
       </div>
 

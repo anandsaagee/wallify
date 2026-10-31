@@ -63,6 +63,24 @@ export const Footer: React.FC = () => {
           </span>
         </a>
 
+        {/* Legal links */}
+        <nav
+          aria-label="Legal"
+          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4 font-body text-xs font-semibold text-muted"
+        >
+          <a
+            href="/content-policy"
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.pushState({}, '', '/content-policy');
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }}
+            className="hover:text-primary transition-colors hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 rounded-sm"
+          >
+            Copyright &amp; Content Policy
+          </a>
+        </nav>
+
         <p className="font-body text-xs text-gray-400 text-center">
           © {new Date().getFullYear()} WallifyStore. All rights reserved.
         </p>
