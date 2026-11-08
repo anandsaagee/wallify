@@ -1,4 +1,4 @@
-# WallifyStore robots.txt - Generated: 2026-10-25
+# WallifyStore robots.txt - Generated: 2026-10-31
 
 User-agent: *
 Allow: /
