@@ -11381,57 +11381,75 @@ export const products = [
     },
     {
         "id": "p1089",
-        "title": "MUSIC 071 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 071 – Michael Jackson Spotlight Tiptoe Dance Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-071.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-071.webp"
+        "description": "An iconic stage photography poster of Michael Jackson frozen in his famous tiptoe dance stand under a single spotlight in fedora, sequin jacket, and glove.",
+        "label": "MUSIC-071.webp",
+        "seoTitle": "Michael Jackson Tiptoe Dance Stage Wall Poster",
+        "metaDescription": "Iconic Michael Jackson poster capturing his legendary tiptoe dance freeze in black sequin jacket, fedora, and white glove under stage spotlight.",
+        "seoAltText": "Stage photography poster of Michael Jackson performing his iconic on-tiptoe dance stand in a black sequin jacket, fedora, and single white glove"
     },
     {
         "id": "p1090",
-        "title": "MUSIC 072 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 072 – Agust D Suga Future's Gonna Be Okay Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-072.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-072.webp"
+        "description": "A soulful live concert zine poster of Agust D (BTS Suga) playing acoustic guitar during the D-DAY Tour with the uplifting lyric Future's Gonna Be Okay.",
+        "label": "MUSIC-072.webp",
+        "seoTitle": "Agust D Suga Future's Gonna Be Okay Live Poster",
+        "metaDescription": "Inspiring live concert poster of BTS Suga (Agust D) playing guitar with Future's Gonna Be Okay script and member-signed guitar photos.",
+        "seoAltText": "Live concert zine poster of Agust D (BTS Suga) playing a signed acoustic guitar with Future's Gonna Be Okay text and Snooze song lyrics below"
     },
     {
         "id": "p1091",
-        "title": "MUSIC 073 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 073 – BTS Rock N Roll Live Punk Zine Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-073.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-073.webp"
+        "description": "A high-contrast punk rock zine flyer poster celebrating BTS. Showcases all seven members in edgy rock styling alongside an electric guitar and speaker amps.",
+        "label": "MUSIC-073.webp",
+        "seoTitle": "BTS Rock N Roll Live Punk Rock Zine Art Poster",
+        "metaDescription": "Underground punk rock zine flyer poster of BTS with all seven members in rock outfits, electric guitar graphic, and vintage halftone typography.",
+        "seoAltText": "Black and white punk rock zine style flyer poster of BTS members in rock fashion with an electric guitar in foreground and speaker stack graphics"
     },
     {
         "id": "p1092",
-        "title": "MUSIC 074 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 074 – Deep Purple Machine Head 1972 Tour Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-074.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-074.webp"
+        "description": "An authentic 1972 psychedelic concert tour poster for Deep Purple's Machine Head tour. Features bubbly typography, hypnotic purple optical waves, and band portraits.",
+        "label": "MUSIC-074.webp",
+        "seoTitle": "Deep Purple Machine Head 1972 Psychedelic Poster",
+        "metaDescription": "Vintage 1972 Deep Purple Machine Head concert poster with psychedelic purple optical waves, classic band portraits, and Alabama gig billing.",
+        "seoAltText": "Vintage 1970s psychedelic concert poster for Deep Purple Machine Head Tour 1972 with purple optical wave lines and illustrated band portraits"
     },
     {
         "id": "p1093",
-        "title": "MUSIC 075 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 075 – BTS Suga Min Yoongi Daechwita Punk Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-075.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-075.webp"
+        "description": "A bold black and white punk zine style poster spotlighting Min Yoongi (BTS Suga). Features a stencil portrait in a black beret with Daechwita lyrics and speaker amps.",
+        "label": "MUSIC-075.webp",
+        "seoTitle": "BTS Suga Min Yoongi Daechwita Punk Art Poster",
+        "metaDescription": "High-contrast black & white punk rock zine poster of BTS Suga (Min Yoongi) in a beret with bold Daechwita lyrics and concert speaker graphics.",
+        "seoAltText": "Black and white punk rock zine poster of BTS member Min Yoongi wearing a beret and striped shirt with Daechwita lyrics and concert speaker stack"
     },
     {
         "id": "p1094",
-        "title": "MUSIC 076 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 076 – Arctic Monkeys Graphic Waveform Indie Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-076.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-076.webp"
+        "description": "A retro graphic indie rock poster celebrating Arctic Monkeys. Combines member eye contact strips, live concert photography, vertical soundwave art, and band history.",
+        "label": "MUSIC-076.webp",
+        "seoTitle": "Arctic Monkeys Graphic Waveform Indie Rock Poster",
+        "metaDescription": "Retro graphic indie rock poster of Arctic Monkeys featuring live stage performance photo, member eye strips, soundwave graphic, and band bio.",
+        "seoAltText": "Retro graphic band poster of Arctic Monkeys with live concert stage photo, member eye close-ups, giant vertical soundwave line, and globe graphics"
     },
     {
         "id": "p1095",
