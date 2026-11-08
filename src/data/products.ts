@@ -11021,93 +11021,123 @@ export const products = [
     },
     {
         "id": "p1059",
-        "title": "MUSIC 041 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 041 – Queen Freddie Mercury Radio Ga Ga Comic Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-041.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-041.webp"
+        "description": "A fun retro comic book tribute poster celebrating Queen's Radio Ga Ga. Illustrates Freddie Mercury raising his fist atop Darth Vader's shoulders with classic pop lyrics and vintage newsprint distressing.",
+        "label": "MUSIC-041.webp",
+        "seoTitle": "Queen Freddie Mercury Radio Ga Ga Comic Art Poster",
+        "metaDescription": "Retro comic book art poster of Queen's Freddie Mercury singing atop Darth Vader with bold Radio Ga Ga typography and vintage comic book distressing.",
+        "seoAltText": "Retro comic book cover art poster of Freddie Mercury in an I Don't Like Star Wars shirt sitting on Darth Vader's shoulders under giant yellow Radio Ga Ga lettering"
     },
     {
         "id": "p1060",
-        "title": "MUSIC 042 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 042 – BTS Hooligan Cyber Grunge Sword Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-042.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-042.webp"
+        "description": "An intense dark cyber-grunge art poster featuring BTS and their fierce Hooligan track concept. Highlights dynamic portraits of all seven members sliced by a medieval broadsword over eerie crimson stage lights.",
+        "label": "MUSIC-042.webp",
+        "seoTitle": "BTS Hooligan Cyber Grunge Sword K-Pop Art Poster",
+        "metaDescription": "Edgy cyber-grunge BTS poster for Hooligan featuring all seven members, medieval sword illustration, dark red stage lighting, and spreading roots.",
+        "seoAltText": "Dark cyberpunk music poster of BTS with all seven members in black streetwear, stylized Hooligan typography impaled by a sword, and glowing red lighting"
     },
     {
         "id": "p1061",
-        "title": "MUSIC 043 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 043 – BTS Arirang Red & Black Punk Lineup Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-043.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-043.webp"
+        "description": "An energetic punk rock collage poster commemorating BTS and their Arirang 5th album concept. Showcases high-contrast stenciled member portraits over a crimson splash block with numbered tags and graffiti lettering.",
+        "label": "MUSIC-043.webp",
+        "seoTitle": "BTS Arirang Red & Black Punk Lineup Art Poster",
+        "metaDescription": "Dynamic red & black punk art poster of BTS with high-contrast stencil portraits of all seven members, graffiti Arirang typography, and album notes.",
+        "seoAltText": "Punk rock style poster of BTS featuring high-contrast black and white stencil portraits of all seven members against a bright red splashed background with Arirang text"
     },
     {
         "id": "p1062",
-        "title": "MUSIC 044 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 044 – Taylor Swift Reputation Gothic Newspaper Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-044.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-044.webp"
+        "description": "A dark gothic newspaper collage poster celebrating Taylor Swift's Reputation. Features dramatic monochrome portraits, Old English blackletter typography, and iconic album track titles across newsprint columns.",
+        "label": "MUSIC-044.webp",
+        "seoTitle": "Taylor Swift Reputation Gothic Newspaper Art Poster",
+        "metaDescription": "Moody black & white Taylor Swift Reputation poster with striking gothic blackletter typography, newsprint tracklist clippings, and studio portraits.",
+        "seoAltText": "Newspaper collage style poster of Taylor Swift for Reputation featuring portrait cutouts, bold blackletter typography, and newsprint columns of track titles"
     },
     {
         "id": "p1063",
-        "title": "MUSIC 045 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 045 – Michael Jackson Bad Classic Album Cover Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-045.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-045.webp"
+        "description": "The legendary 1987 Bad album cover poster of Michael Jackson. Features Michael in his iconic buckle-studded black leather jacket on a crisp white backdrop with red graffiti Bad lettering and bold vertical name typography.",
+        "label": "MUSIC-045.webp",
+        "seoTitle": "Michael Jackson Bad Classic Album Cover Wall Poster",
+        "metaDescription": "Iconic 1987 Michael Jackson Bad album cover poster featuring Michael in his buckled black leather jacket with red spray-paint logo on clean white.",
+        "seoAltText": "Official album cover style poster of Michael Jackson in his buckle-embellished black leather jacket and trousers with red graffiti BAD logo against pure white"
     },
     {
         "id": "p1064",
-        "title": "MUSIC 046 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 046 – Led Zeppelin Jimmy Page Double Neck Guitar Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-046.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-046.webp"
+        "description": "A vintage rock magazine tribute poster featuring Led Zeppelin guitar virtuoso Jimmy Page. Captures Jimmy arching back while playing his iconic red double-neck Gibson guitar amidst concert stage smoke and bold headlines.",
+        "label": "MUSIC-046.webp",
+        "seoTitle": "Led Zeppelin Jimmy Page Double Neck Guitar Poster",
+        "metaDescription": "Vintage rock magazine poster of Led Zeppelin guitarist Jimmy Page playing his legendary double-neck Gibson guitar on stage under smoky spotlights.",
+        "seoAltText": "Black and white rock magazine style poster of Led Zeppelin guitarist Jimmy Page leaning backward playing a double-neck electric guitar on stage under spotlights"
     },
     {
         "id": "p1065",
-        "title": "MUSIC 047 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 047 – Billie Eilish Happier Than Ever Neon Green Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-047.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-047.webp"
+        "description": "A sleek modern editorial poster honoring Billie Eilish and Happier Than Ever. Showcases Billie's soft gaze and glass jewelry framed by oversized lime green typographic borders on a deep textured charcoal backdrop.",
+        "label": "MUSIC-047.webp",
+        "seoTitle": "Billie Eilish Happier Than Ever Neon Green Poster",
+        "metaDescription": "Moody editorial poster of Billie Eilish with green hair highlights framed by bold neon green typography on a textured dark charcoal background.",
+        "seoAltText": "Editorial music poster of Billie Eilish resting chin on hand with green lighting framed by bold neon green Billie Eilish and Happier Than Ever typography"
     },
     {
         "id": "p1066",
-        "title": "MUSIC 048 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 048 – Michael Jackson Billie Jean Illuminated Tile Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-048.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-048.webp"
+        "description": "An iconic tribute poster to Michael Jackson's Billie Jean music video. Features Michael in his black leather suit and red bow tie stepping onto the famous glowing sidewalk tile against a rich navy blue canvas.",
+        "label": "MUSIC-048.webp",
+        "seoTitle": "Michael Jackson Billie Jean Illuminated Tile Poster",
+        "metaDescription": "Classic Michael Jackson Billie Jean poster showing him stepping on the famous glowing sidewalk paving tile in penny loafers against deep navy blue.",
+        "seoAltText": "Music video tribute poster of Michael Jackson dancing onto a glowing illuminated sidewalk tile in penny loafers beneath red cursive Billie Jean script"
     },
     {
         "id": "p1067",
-        "title": "MUSIC 049 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 049 – Michael Jackson 2026 Biopic Movie Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-049.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-049.webp"
+        "description": "A cinematic movie tribute poster celebrating the four legendary eras of Michael Jackson. Displays Michael's journey from Jackson 5 child prodigy to Motown 25 icon in vibrant retro panels against royal blue.",
+        "label": "MUSIC-049.webp",
+        "seoTitle": "Michael Jackson 2026 Biopic Movie Art Poster",
+        "metaDescription": "Cinematic movie tribute poster for the 2026 Michael Jackson biopic showcasing four eras of Michael dancing across vibrant retro graphic panels.",
+        "seoAltText": "Cinematic movie poster for the Michael Jackson biopic showing four figures representing his career eras from the Jackson 5 to Billie Jean against blue"
     },
     {
         "id": "p1068",
-        "title": "MUSIC 050 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 050 – BTS Life Goes On Streetwear Fashion Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-050.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-050.webp"
+        "description": "A colorful high-fashion streetwear collage poster spotlighting BTS. Features all seven members in trendy designer outfits and retro accessories set against an energetic electric purple backdrop with repeating Life Goes On text.",
+        "label": "MUSIC-050.webp",
+        "seoTitle": "BTS Life Goes On Streetwear Fashion Art Poster",
+        "metaDescription": "Vibrant purple fashion magazine poster of BTS featuring all seven members in eclectic designer streetwear with bold Life Goes On typography.",
+        "seoAltText": "Vibrant purple fashion collage poster of K-pop group BTS with all seven members in stylish streetwear outfits including bucket hats, sunglasses, and blazers"
     },
     {
         "id": "p1069",
