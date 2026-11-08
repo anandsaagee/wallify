@@ -10901,93 +10901,123 @@ export const products = [
     },
     {
         "id": "p1049",
-        "title": "MUSIC 031 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 031 – Guns N' Roses Sweet Child O' Mine Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-031.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-031.webp"
+        "description": "A vintage 1988 UK tour poster for Guns N' Roses and their breakout single Sweet Child O' Mine. Features monochrome band photography, bold orange typography, and Donington Park concert billing.",
+        "label": "MUSIC-031.webp",
+        "seoTitle": "Guns N' Roses Sweet Child O' Mine Tour Rock Poster",
+        "metaDescription": "Vintage Guns N' Roses UK tour poster for Sweet Child O' Mine with classic black & white band photo, bold orange text, and Donington Park billing.",
+        "seoAltText": "Vintage rock poster of Guns N' Roses seated on the floor under bold orange lettering for Sweet Child O' Mine, Appetite for Destruction, and Donington Park"
     },
     {
         "id": "p1050",
-        "title": "MUSIC 032 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 032 – BTS Arirang King Are Back 2026 Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-032.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-032.webp"
+        "description": "A minimalist brutalist concept poster for BTS titled Arirang: King Are Back 2026. Highlights monochrome photography of all seven members in formal black suits, Korean folk poetry, and modern typography.",
+        "label": "MUSIC-032.webp",
+        "seoTitle": "BTS Arirang King Are Back Brutalist Music Poster",
+        "metaDescription": "High-contrast brutalist BTS poster for Arirang 2026 featuring formal suit group portraits, English folk poetry, and bold graphic design.",
+        "seoAltText": "Brutalist graphic poster of BTS in formal suits seated and standing from behind with bold Arirang typography, 2026 comeback title, and member credits"
     },
     {
         "id": "p1051",
-        "title": "MUSIC 033 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 033 – Agust D Suga Haegeum John Wick Style Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-033.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-033.webp"
+        "description": "An intense cinematic action poster honoring Agust D (BTS Suga) and Haegeum. Inspired by John Wick, it shows Yoongi surrounded by aimed handguns under glowing neon orange Hanja calligraphy and dark moody lighting.",
+        "label": "MUSIC-033.webp",
+        "seoTitle": "Agust D Suga Haegeum Action Cinema Music Poster",
+        "metaDescription": "Cinematic John Wick inspired poster of BTS Suga (Agust D) surrounded by gun barrels with glowing neon orange Haegeum Hanja calligraphy.",
+        "seoAltText": "Cinematic action poster of Agust D (Suga) in a black suit surrounded by aimed pistols with glowing orange neon Haegeum Hanja characters below"
     },
     {
         "id": "p1052",
-        "title": "MUSIC 034 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 034 – AC/DC Highway to Hell 1979 Tour Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-034.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-034.webp"
+        "description": "A rugged vintage 1979 concert poster for AC/DC's Highway to Hell tour in Oakland, California. Features the classic band lineup with Angus Young in devil horns, heavy woodcut typography, and lightning logo.",
+        "label": "MUSIC-034.webp",
+        "seoTitle": "AC/DC Highway to Hell 1979 Concert Gig Poster",
+        "metaDescription": "Vintage 1979 AC/DC Highway to Hell concert tour poster featuring Angus Young with devil horns, classic band portrait, and retro Oakland gig dates.",
+        "seoAltText": "Vintage concert poster for AC/DC Highway to Hell 1979 Tour Oakland with Angus Young in devil horns, band portrait, and retro boxed ticket typography"
     },
     {
         "id": "p1053",
-        "title": "MUSIC 035 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 035 – The Beatles Abbey Road Zebra Crossing Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-035.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-035.webp"
+        "description": "The legendary Abbey Road crosswalk scene by The Beatles in stunning clarity. Depicts George, Paul, Ringo, and John stepping across the London zebra crossing under open blue skies with classic bold serif title lettering.",
+        "label": "MUSIC-035.webp",
+        "seoTitle": "The Beatles Abbey Road Zebra Crossing Music Poster",
+        "metaDescription": "Iconic The Beatles Abbey Road crosswalk poster showing George, Paul, Ringo, and John walking across London's famous zebra crossing under a blue sky.",
+        "seoAltText": "The Beatles Abbey Road album poster showing George Harrison, Paul McCartney, Ringo Starr, and John Lennon walking across the famous London crosswalk"
     },
     {
         "id": "p1054",
-        "title": "MUSIC 036 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 036 – BTS Now You See Me Editorial Fashion Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-036.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-036.webp"
+        "description": "A high-fashion editorial poster celebrating BTS as 2020 Entertainers of the Year. Captures all seven members in tailored suits on a warm terracotta background with modern perspective typography and official accolades.",
+        "label": "MUSIC-036.webp",
+        "seoTitle": "BTS Now You See Me Editorial Fashion Art Poster",
+        "metaDescription": "High-fashion editorial poster of BTS in sharp tailored suits against a warm terracotta backdrop with dynamic Now You See Me perspective typography.",
+        "seoAltText": "Editorial music poster of all seven BTS members in elegant modern suits standing on a warm terracotta background with diagonal graphic lines and typography"
     },
     {
         "id": "p1055",
-        "title": "MUSIC 037 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 037 – Coldplay Viva La Vida Monochrome Sofa Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-037.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-037.webp"
+        "description": "A classic high-contrast monochrome poster of Coldplay during their Viva La Vida era. Shows Will Champion, Guy Berryman, Chris Martin, and Jonny Buckland gathered on an ornate vintage sofa under bold white lettering.",
+        "label": "MUSIC-037.webp",
+        "seoTitle": "Coldplay Viva La Vida Monochrome Band Wall Poster",
+        "metaDescription": "Striking black & white Coldplay poster featuring Chris Martin and bandmates on an ornate sofa with bold Viva La Vida album title typography.",
+        "seoAltText": "Black and white band photography poster of Coldplay members seated together on an ornate vintage couch beneath bold block Coldplay and Viva La Vida titles"
     },
     {
         "id": "p1056",
-        "title": "MUSIC 038 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 038 – Michael Jackson Thriller 1983 Film Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-038.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-038.webp"
+        "description": "A vintage film collage tribute poster for Michael Jackson's 1983 masterpiece Thriller. Highlights Michael's legendary dance moves, his werewolf and zombie transformations, film strip eyes, and handwritten-style red lyrics.",
+        "label": "MUSIC-038.webp",
+        "seoTitle": "Michael Jackson Thriller 1983 Short Film Poster",
+        "metaDescription": "Vintage newspaper style tribute poster for Michael Jackson's 1983 Thriller featuring dance poses, creature transformations, and blood-red lyrics.",
+        "seoAltText": "Retro newspaper-style collage poster for Michael Jackson Thriller featuring his dancing figure, three transformation portraits, film strip, and red lyrics"
     },
     {
         "id": "p1057",
-        "title": "MUSIC 039 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 039 – The Beatles Hey Jude Monochrome 1968 Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-039.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-039.webp"
+        "description": "A refined monochrome art print commemorating The Beatles and Hey Jude. Features the iconic Abbey Road crosswalk silhouette, timeless lyrics, and elegant 1968 single credits on a clean gallery white background.",
+        "label": "MUSIC-039.webp",
+        "seoTitle": "The Beatles Hey Jude 1968 Monochrome Art Poster",
+        "metaDescription": "Minimalist black & white The Beatles poster featuring the Abbey Road zebra crossing, Hey Jude lyrics, and vintage 1968 single release credits.",
+        "seoAltText": "High-contrast black and white screenprint poster of The Beatles crossing Abbey Road with Hey Jude title, famous song lyrics, and 1968 release details"
     },
     {
         "id": "p1058",
-        "title": "MUSIC 040 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 040 – Kendrick Lamar DAMN. 2017 Tracklist Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-040.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-040.webp"
+        "description": "A powerful hip-hop art poster honoring Kendrick Lamar's Pulitzer-winning album DAMN. Displays a gritty mesh-textured portrait of Kendrick with bold red DAMN typography over his eyes and full 14-song tracklist.",
+        "label": "MUSIC-040.webp",
+        "seoTitle": "Kendrick Lamar DAMN. 2017 Album Tracklist Poster",
+        "metaDescription": "Bold Kendrick Lamar DAMN. poster featuring gritty textured monochrome portrait, striking red typography over the eyes, and full 2017 tracklist.",
+        "seoAltText": "Minimalist hip-hop poster of Kendrick Lamar with textured halftone face, red DAMN stamps over his eyes, giant red DAMN title, and full 14-track listing"
     },
     {
         "id": "p1059",
