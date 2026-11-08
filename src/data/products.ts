@@ -11141,93 +11141,123 @@ export const products = [
     },
     {
         "id": "p1069",
-        "title": "MUSIC 051 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 051 – BTS RM Kim Namjoon Punk Rock Zine Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-051.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-051.webp"
+        "description": "An edgy black and white punk zine style poster spotlighting BTS leader Kim Namjoon (RM). Showcases a high-contrast stencil portrait with lightning bolts, speaker stacks, and fierce Mic Drop lyrics.",
+        "label": "MUSIC-051.webp",
+        "seoTitle": "BTS RM Kim Namjoon Retro Punk Zine Art Poster",
+        "metaDescription": "High-contrast black & white punk rock zine poster of BTS leader RM (Kim Namjoon) featuring stencil portrait art and bold Mic Drop lyrics.",
+        "seoAltText": "Black and white punk rock zine poster of BTS leader Kim Namjoon leaning forward with eyebrow tattoo, lightning graphics, and Mic Drop lyric caption"
     },
     {
         "id": "p1070",
-        "title": "MUSIC 052 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 052 – Nirvana In Utero Anatomical Angel Collage Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-052.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-052.webp"
+        "description": "A comprehensive grunge collage poster paying tribute to Nirvana's In Utero. Combines the iconic anatomical angel, Kurt Cobain's sticker-covered guitar, live stage photos, handwritten notes, and lyrics.",
+        "label": "MUSIC-052.webp",
+        "seoTitle": "Nirvana In Utero Anatomical Angel Grunge Poster",
+        "metaDescription": "Vintage sepia grunge Nirvana poster featuring In Utero anatomical angel, Kurt Cobain's Vandalism guitar, handwritten notes, and famous lyrics.",
+        "seoAltText": "Vintage sepia and maroon grunge collage poster of Nirvana featuring the In Utero anatomical angel, Kurt Cobain playing guitar, and Heart-Shaped Box lyrics"
     },
     {
         "id": "p1071",
-        "title": "MUSIC 053 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 053 – Michael Jackson 2026 Retrowave Movie Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-053.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-053.webp"
+        "description": "A vibrant synthwave movie poster celebrating Michael Jackson. Features a sunset vector portrait, a silhouette moonwalking toward a glowing red horizon, the sequined glove, and the gates of Neverland Ranch.",
+        "label": "MUSIC-053.webp",
+        "seoTitle": "Michael Jackson 2026 Synthwave Movie Poster",
+        "metaDescription": "Vibrant retrowave sunset movie poster for Michael Jackson 2026 showing him moonwalking toward a crimson sun, sequin glove, and Neverland gates.",
+        "seoAltText": "Synthwave movie poster of Michael Jackson with warm sunset vector portrait above him moonwalking down a red highway towards a setting sun and Neverland"
     },
     {
         "id": "p1072",
-        "title": "MUSIC 054 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 054 – 2Pac All Eyez on Me Cyberpunk Neon Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-054.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-054.webp"
+        "description": "A dark surveillance-themed hip-hop art poster honoring 2Pac's All Eyez on Me. Contrasts hot pink neon lettering against intense halftone staring eyes and retro static TV monitors on deep black.",
+        "label": "MUSIC-054.webp",
+        "seoTitle": "2Pac All Eyez on Me Cyberpunk Neon Music Poster",
+        "metaDescription": "Striking hot pink and black cyberpunk poster for 2Pac's All Eyez on Me with intense halftone staring eyes, static TV screens, and bold typography.",
+        "seoAltText": "High-contrast black and hot pink poster for 2Pac All Eyez on Me featuring watchful halftone eyes peering from darkness and glowing static television monitors"
     },
     {
         "id": "p1073",
-        "title": "MUSIC 055 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 055 – Music Makes Me Feel Alive Punk Skeleton Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-055.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-055.webp"
+        "description": "A vintage punk rock sign poster proclaiming Music Makes Me Feel Alive. Depicts a mohawk skeleton shredding electric guitar alongside a skeleton bassist and floating dusty roses on aged teal canvas.",
+        "label": "MUSIC-055.webp",
+        "seoTitle": "Music Makes Me Feel Alive Punk Skeleton Poster",
+        "metaDescription": "Retro punk rock poster featuring mohawk skeleton guitarists rocking out among floating roses with Music Makes Me Feel Alive vintage banner text.",
+        "seoAltText": "Vintage metal sign style poster of a punk skeleton with mohawk playing an electric guitar surrounded by floating roses and banner reading Music Makes Me Feel Alive"
     },
     {
         "id": "p1074",
-        "title": "MUSIC 056 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 056 – Michael Jackson Thriller 80s Anime Style Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-056.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-056.webp"
+        "description": "A Japanese 1980s anime style art poster inspired by Michael Jackson's Thriller. Depicts anime Michael walking down an alleyway with his date, casting a terrifying werewolf shadow onto the brick wall.",
+        "label": "MUSIC-056.webp",
+        "seoTitle": "Michael Jackson Thriller 80s Anime Art Poster",
+        "metaDescription": "Retro 80s anime illustration poster of Michael Jackson's Thriller showing him in red leather jacket with Ola Ray casting a monstrous werewolf shadow.",
+        "seoAltText": "Retro 1980s Japanese anime style poster of Michael Jackson and Ola Ray walking through a dark city alley with a spotlight casting a monstrous werewolf shadow"
     },
     {
         "id": "p1075",
-        "title": "MUSIC 057 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 057 – Michael Jackson Man in the Mirror Collage Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-057.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-057.webp"
+        "description": "An intricate scrapbook tribute poster for Michael Jackson. Overlays a lifelike digital portrait and yellow signature onto iconic handwritten lyrics from Man in the Mirror, Beat It, and Billie Jean.",
+        "label": "MUSIC-057.webp",
+        "seoTitle": "Michael Jackson Man in the Mirror Lyrics Poster",
+        "metaDescription": "Detailed scrapbook collage poster of Michael Jackson with signature over handwritten lyric notes from Man in the Mirror, Beat It, and Billie Jean.",
+        "seoAltText": "Multi-layered music scrapbook collage poster of Michael Jackson featuring portrait with yellow signature over handwritten lyric notes and concert clippings"
     },
     {
         "id": "p1076",
-        "title": "MUSIC 058 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 058 – Queen Freddie Mercury Bohemian Rhapsody Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-058.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-058.webp"
+        "description": "A vibrant synthwave portrait poster of Queen's Freddie Mercury. Illustrates Freddie in his iconic white tank top with his legendary Live Aid silhouette glowing on his chest amidst retro purple scanline typography.",
+        "label": "MUSIC-058.webp",
+        "seoTitle": "Freddie Mercury Bohemian Rhapsody Synthwave Poster",
+        "metaDescription": "Vibrant purple and magenta synthwave poster of Queen's Freddie Mercury featuring his Live Aid stage silhouette and Bohemian Rhapsody movie tagline.",
+        "seoAltText": "Pop art vector poster of Freddie Mercury in white tank top with silhouette of him performing at Live Aid on his chest against neon purple scanlines"
     },
     {
         "id": "p1077",
-        "title": "MUSIC 059 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 059 – BTS Jungkook GOLDEN Brutalist Album Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-059.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-059.webp"
+        "description": "A dark modern brutalist art poster honoring BTS Jungkook and his solo album GOLDEN. Highlights a halftone portrait showing his intricate sleeve tattoo, complete 11-track list, and Seven lyrics.",
+        "label": "MUSIC-059.webp",
+        "seoTitle": "BTS Jungkook GOLDEN Brutalist Solo Album Poster",
+        "metaDescription": "Dark brutalist art poster of BTS Jungkook for GOLDEN featuring his tattooed sleeve, full 11-song tracklist, and lyrics on textured monochrome panels.",
+        "seoAltText": "Dark brutalist music poster of BTS member Jungkook in beanie displaying his tattooed sleeve arm with bold GOLDEN title, tracklist box, and lyrics below"
     },
     {
         "id": "p1078",
-        "title": "MUSIC 060 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 060 – Jaafar Jackson Michael Biopic Movie Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-060.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-060.webp"
+        "description": "The official movie tribute poster for Lionsgate's Michael biopic. Features Jaafar Jackson beaming in the iconic red Beat It jacket with metallic mesh shoulders and aviator sunglasses beneath gleaming 3D gold script.",
+        "label": "MUSIC-060.webp",
+        "seoTitle": "Jaafar Jackson Michael Biopic Film Wall Poster",
+        "metaDescription": "Official style movie poster for the Michael biopic starring Jaafar Jackson in the red Beat It jacket and aviator sunglasses under 3D gold script.",
+        "seoAltText": "Cinematic poster for the Michael biopic featuring Jaafar Jackson in the red zipper Beat It jacket and aviator sunglasses under polished 3D gold script"
     },
     {
         "id": "p1079",
