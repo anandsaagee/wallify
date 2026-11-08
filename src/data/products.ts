@@ -10661,93 +10661,123 @@ export const products = [
     },
     {
         "id": "p1029",
-        "title": "MUSIC 011 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 011 – Bob Marley One Love Rasta Pop Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-011.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-011.webp"
+        "description": "An iconic Bob Marley One Love tribute poster featuring vibrant Rasta red, gold, and green pop art blocking. Highlights the reggae legend in distressed stencil typography that brings positive vibes and reggae energy to any room.",
+        "label": "MUSIC-011.webp",
+        "seoTitle": "Bob Marley One Love Rasta Pop Art Music Poster",
+        "metaDescription": "Vibrant Bob Marley One Love poster with Rasta green and red blocks, pop art stencil portrait, and distressed white lettering.",
+        "seoAltText": "Bold pop art music poster of Bob Marley with dreadlocks in gold highlight against red and green blocks, framed with distressed One Love and Bob Marley typography"
     },
     {
         "id": "p1030",
-        "title": "MUSIC 012 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 012 – Michael Jackson Bad Cyberpunk Red Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-012.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-012.webp"
+        "description": "An intense neon red and black graphic tribute poster celebrating Michael Jackson's Bad era. Features leather-jacket portraits, album sales achievements, soundwave graphics, and the iconic spray-painted red Bad logo.",
+        "label": "MUSIC-012.webp",
+        "seoTitle": "Michael Jackson Bad Cyberpunk Neon Red Poster",
+        "metaDescription": "High-tech neon red and black Michael Jackson Bad era poster featuring leather jacket portraits, album stats, HUD graphics, and graffiti logo.",
+        "seoAltText": "Cyberpunk editorial poster of Michael Jackson in neon red and black featuring Bad era portraits, intense eye close-up, Billboard stats, and spray-paint Bad logo"
     },
     {
         "id": "p1031",
-        "title": "MUSIC 013 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 013 – Michael Jackson Thriller Horror Movie Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-013.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-013.webp"
+        "description": "A thrilling retro horror movie style poster honoring Michael Jackson's landmark short film Thriller. Depicts zombie Michael reaching forward alongside misty graveyards, the werecat monster, and full cinematic billing credits.",
+        "label": "MUSIC-013.webp",
+        "seoTitle": "Michael Jackson Thriller Horror Movie Tribute Poster",
+        "metaDescription": "Classic 80s horror movie style poster for Michael Jackson's Thriller with zombie makeup portrait, misty graveyard scene, and bloody red title font.",
+        "seoAltText": "Retro 80s horror movie poster of Michael Jackson as a zombie in a red jacket reaching forward, with a werecat creature, moonlit cemetery, and red Thriller title"
     },
     {
         "id": "p1032",
-        "title": "MUSIC 014 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 014 – Queen Freddie Mercury Don't Stop Me Now Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-014.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-014.webp"
+        "description": "A dynamic monochrome tribute poster for Queen front-man Freddie Mercury singing Don't Stop Me Now. Showcases Freddie live on stage with microphone in hand, bold lyrics, the official Queen crest, and studio recording details.",
+        "label": "MUSIC-014.webp",
+        "seoTitle": "Queen Freddie Mercury Don't Stop Me Now Poster",
+        "metaDescription": "Bold black & white Queen poster featuring Freddie Mercury live on stage with microphone, iconic Don't Stop Me Now lyrics, and royal crest logo.",
+        "seoAltText": "Black and white stage photograph poster of Freddie Mercury singing into a microphone with fist clenched beneath giant bold Don't Stop Me Now typography and Queen crest"
     },
     {
         "id": "p1033",
-        "title": "MUSIC 015 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 015 – BTS Comic Pop Art ARMY Sunglasses Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-015.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-015.webp"
+        "description": "A vibrant pop art comic panel poster featuring all seven BTS members in retro sunglasses reflecting the yellow ARMY fandom moniker. Illustrated in bold comic book outlines and bright red halftone Ben-Day dots.",
+        "label": "MUSIC-015.webp",
+        "seoTitle": "BTS Comic Book Pop Art ARMY Sunglasses Poster",
+        "metaDescription": "Retro comic book pop art poster of BTS with all seven members wearing stylish sunglasses reflecting the word ARMY over a red halftone dot background.",
+        "seoAltText": "Comic book style illustrated poster of all seven BTS members wearing sunglasses reflecting the word ARMY in yellow letters across red halftone dotted panels"
     },
     {
         "id": "p1034",
-        "title": "MUSIC 016 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 016 – Gorillaz Demon Days Orange Profile Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-016.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-016.webp"
+        "description": "A stylish Gorillaz tribute poster featuring side-profile character art of 2-D, Murdoc Niccals, and Russel Hobbs. Accentuated by a vivid orange graphic backdrop, playful humor text, and complete band member lore.",
+        "label": "MUSIC-016.webp",
+        "seoTitle": "Gorillaz Demon Days Virtual Band Art Wall Poster",
+        "metaDescription": "Vibrant orange and cream Gorillaz art poster with profile illustrations of 2-D, Murdoc, and Russel, humorous band notes, and virtual member credits.",
+        "seoAltText": "Graphic art poster of virtual band Gorillaz showing side-profile character portraits of 2-D, Murdoc, and Russel on an orange background with band credits and genres below"
     },
     {
         "id": "p1035",
-        "title": "MUSIC 017 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 017 – ABBA 1979 Stockholm Concert Tour Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-017.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-017.webp"
+        "description": "A vintage 1979 Stockholm concert tour poster for Swedish pop icons ABBA. Showcases Agnetha, Björn, Benny, and Anni-Frid in retro 70s flares leaning on a classic limousine with authentic Polar Music tour typography.",
+        "label": "MUSIC-017.webp",
+        "seoTitle": "ABBA 1979 Stockholm Concert Tour Wall Art Poster",
+        "metaDescription": "Vintage 1979 ABBA concert tour poster featuring the four members in bell-bottom outfits posing by a limousine with classic Stockholm tour typography.",
+        "seoAltText": "Vintage concert poster for ABBA The Tour October 20 1979 in Stockholm Sweden, featuring Agnetha, Bjorn, Benny, and Anni-Frid posing beside a black limousine in 1970s fashion"
     },
     {
         "id": "p1036",
-        "title": "MUSIC 018 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 018 – BTS Jungkook Pulp Fiction Parody Movie Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-018.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-018.webp"
+        "description": "An edgy cinema crossover poster combining BTS maknae Jeon Jungkook with Quentin Tarantino's Pulp Fiction. Features Jungkook in a dark jacket, weathered vintage magazine distressing, and a complete BTS cast credit block.",
+        "label": "MUSIC-018.webp",
+        "seoTitle": "BTS Jungkook Pulp Fiction Movie Parody Art Poster",
+        "metaDescription": "Grindhouse vintage Pulp Fiction movie parody poster starring BTS Jeon Jungkook with distressed retro magazine textures and full member credits.",
+        "seoAltText": "Retro pulp magazine style poster featuring BTS member Jeon Jungkook in a black jacket beneath weathered yellow Pulp Fiction title typography with BTS member names listed down the side"
     },
     {
         "id": "p1037",
-        "title": "MUSIC 019 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 019 – BTS V Kim Taehyung Punk Rock Zine Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-019.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-019.webp"
+        "description": "A gritty black and white punk zine style poster spotlighting BTS member Kim Taehyung (V). Showcases a raw graphic stencil portrait with concert speakers, lightning graphics, and poignant Blue & Grey song lyrics.",
+        "label": "MUSIC-019.webp",
+        "seoTitle": "BTS V Kim Taehyung Retro Punk Zine Art Poster",
+        "metaDescription": "High-contrast black & white punk rock zine poster of BTS V (Kim Taehyung) featuring stencil portrait art, speaker amps, and Blue & Grey lyrics.",
+        "seoAltText": "Black and white punk rock zine poster of BTS member Kim Taehyung with face paint, lightning bolts, concert speaker stack, and Blue & Grey lyric caption below"
     },
     {
         "id": "p1038",
-        "title": "MUSIC 020 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 020 – Michael Jackson Thriller Varsity Jacket Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-020.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-020.webp"
+        "description": "A sleek minimalist tribute poster to the King of Pop Michael Jackson. Features an illustrated badge of Michael in his famous red and yellow Thriller varsity jacket, periodic table KING elements, and golden serif typography.",
+        "label": "MUSIC-020.webp",
+        "seoTitle": "Michael Jackson Thriller Varsity Jacket Art Poster",
+        "metaDescription": "Sleek black Michael Jackson poster featuring him in his red Thriller varsity jacket, KING periodic elements, and elegant gold Dangerous typography.",
+        "seoAltText": "Minimalist dark poster of Michael Jackson wearing his red and yellow letterman M varsity jacket inside a circular medallion with periodic table KING tiles and gold Dangerous text"
     },
     {
         "id": "p1039",
