@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { products } from './data/products';
 import { useProductFilters } from './hooks/useProductFilters';
 import { Header } from './components/Header';
@@ -94,6 +94,48 @@ const AppContent: React.FC = () => {
   const [cartToast, setCartToast] = useState<{ title: string; image: string; size: string } | null>(null);
   const [cartBouncing, setCartBouncing] = useState(false);
   const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Search autocomplete state
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [activeSuggestion, setActiveSuggestion] = useState(-1);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Build suggestions from the full product list (not filtered) so users can discover
+  const suggestions = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q || q.length < 2) return [];
+    const seen = new Set<string>();
+    const results: Array<{ label: string; product: typeof products[0] }> = [];
+    for (const p of products) {
+      if (results.length >= 8) break;
+      // Prefer seoTitle as the display label (more descriptive than raw title)
+      const label = (p.seoTitle || p.title).replace(/\s+–\s+.*$/, '').trim();
+      if (seen.has(label)) continue;
+      const haystack = [
+        p.title,
+        p.seoTitle || '',
+        p.description || '',
+        p.seoAltText || '',
+        p.category,
+      ].join(' ').toLowerCase();
+      if (haystack.includes(q)) {
+        seen.add(label);
+        results.push({ label, product: p });
+      }
+    }
+    return results;
+  }, [searchQuery]);
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleAddedToCart = useCallback((product: ProductData, sizeLabel: string) => {
     setCartToast({ title: product.title, image: product.image, size: sizeLabel });
@@ -341,20 +383,94 @@ const AppContent: React.FC = () => {
                 </div>
 
 
-                <div className="px-4 mt-3">
+                <div className="px-4 mt-3" ref={searchContainerRef}>
                   <div className="relative">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-black/50" />
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-black/50 pointer-events-none" />
                     <input
+                      id="poster-search"
                       type="search"
-                      placeholder="Search posters..."
+                      placeholder="Search posters by name, style, or theme..."
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      autoComplete="off"
+                      onChange={(e) => {
+                        setSearchQuery(e.target.value);
+                        setShowSuggestions(true);
+                        setActiveSuggestion(-1);
+                      }}
+                      onFocus={() => searchQuery.trim().length >= 2 && setShowSuggestions(true)}
+                      onKeyDown={(e) => {
+                        if (!showSuggestions || suggestions.length === 0) return;
+                        if (e.key === 'ArrowDown') {
+                          e.preventDefault();
+                          setActiveSuggestion((prev) => Math.min(prev + 1, suggestions.length - 1));
+                        } else if (e.key === 'ArrowUp') {
+                          e.preventDefault();
+                          setActiveSuggestion((prev) => Math.max(prev - 1, -1));
+                        } else if (e.key === 'Enter' && activeSuggestion >= 0) {
+                          e.preventDefault();
+                          setSearchQuery(suggestions[activeSuggestion].label);
+                          setShowSuggestions(false);
+                          setActiveSuggestion(-1);
+                        } else if (e.key === 'Escape') {
+                          setShowSuggestions(false);
+                          setActiveSuggestion(-1);
+                        }
+                      }}
                       className="w-full pl-10 pr-10 py-3 text-sm rounded-2xl bg-black/[0.04] border border-black/10 text-black placeholder:text-black/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                     />
                     {searchQuery && (
-                      <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2">
+                      <button
+                        onClick={() => { setSearchQuery(''); setShowSuggestions(false); }}
+                        className="absolute right-3 top-1/2 -translate-y-1/2"
+                        aria-label="Clear search"
+                      >
                         <X className="w-4 h-4 text-black/50" />
                       </button>
+                    )}
+
+                    {/* Autocomplete Suggestions Dropdown */}
+                    {showSuggestions && suggestions.length > 0 && (
+                      <div
+                        role="listbox"
+                        aria-label="Search suggestions"
+                        className="absolute left-0 right-0 top-full mt-1.5 z-50 bg-white border border-black/10 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] overflow-hidden"
+                      >
+                        <p className="px-3.5 pt-2.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-black/40">
+                          Matching Posters
+                        </p>
+                        {suggestions.map((s, i) => (
+                          <button
+                            key={i}
+                            role="option"
+                            aria-selected={i === activeSuggestion}
+                            onMouseDown={(e) => {
+                              e.preventDefault();
+                              setSearchQuery(s.label);
+                              setShowSuggestions(false);
+                              setActiveSuggestion(-1);
+                            }}
+                            className={`w-full flex items-center gap-3 px-3.5 py-2 text-left transition-colors ${
+                              i === activeSuggestion
+                                ? 'bg-primary/10 text-black'
+                                : 'hover:bg-black/[0.04] text-black/80'
+                            }`}
+                          >
+                            <div className="w-8 h-9 rounded-lg overflow-hidden shrink-0 bg-black/5">
+                              <img
+                                src={s.product.image}
+                                alt=""
+                                className="w-full h-full object-cover"
+                                loading="lazy"
+                              />
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <p className="text-sm font-semibold truncate leading-tight">{s.label}</p>
+                              <p className="text-[11px] text-black/40 font-medium">{s.product.category}</p>
+                            </div>
+                            <Search className="w-3.5 h-3.5 text-black/20 shrink-0" />
+                          </button>
+                        ))}
+                      </div>
                     )}
                   </div>
                 </div>

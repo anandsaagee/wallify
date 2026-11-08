@@ -49,13 +49,17 @@ export function useProductFilters() {
   }, []);
 
   const filteredProducts = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
     const filtered = products.filter((p) => {
       const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
       const matchesSearch =
-        !searchQuery.trim() ||
-        p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.category.toLowerCase().includes(searchQuery.toLowerCase());
-      
+        !q ||
+        p.title.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        (p.seoTitle && p.seoTitle.toLowerCase().includes(q)) ||
+        (p.description && p.description.toLowerCase().includes(q)) ||
+        (p.seoAltText && p.seoAltText.toLowerCase().includes(q));
+
       return matchesCategory && matchesSearch;
     });
 
