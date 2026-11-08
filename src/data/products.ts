@@ -10541,93 +10541,123 @@ export const products = [
     },
     {
         "id": "p1019",
-        "title": "MUSIC 001 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 001 – Michael Jackson Live Neon Yellow Duotone Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-001.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-001.webp"
+        "description": "An electrifying duotone Michael Jackson wall art poster in vibrant yellow and deep black. Features the King of Pop singing passionately at a microphone stand with bold script lettering for a striking music room statement.",
+        "label": "MUSIC-001.webp",
+        "seoTitle": "Michael Jackson Live Yellow Duotone Music Poster",
+        "metaDescription": "Vibrant yellow & black duotone Michael Jackson poster featuring the King of Pop performing live with vintage microphone and script signature art.",
+        "seoAltText": "High-contrast duotone yellow and black music poster of Michael Jackson performing passionately into a stage microphone with bold yellow script signature Michael in front"
     },
     {
         "id": "p1020",
-        "title": "MUSIC 002 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 002 – Guns N' Roses Use Your Illusion Album Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-002.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-002.webp"
+        "description": "The legendary Guns N' Roses Use Your Illusion album art poster featuring Mark Kostabi's split color pop-art illustration. Contrasting vibrant yellow and deep blue panels showcase the iconic seated sketching figure and draped statue.",
+        "label": "MUSIC-002.webp",
+        "seoTitle": "Guns N' Roses Use Your Illusion Rock Album Poster",
+        "metaDescription": "Iconic Guns N' Roses Use Your Illusion poster with split yellow and blue Raphael-inspired artwork and bold distressed typography.",
+        "seoAltText": "Guns N' Roses Use Your Illusion album cover poster with red header text, split yellow and blue panels depicting the Raphael School of Athens sketching figure, and distressed blue title text"
     },
     {
         "id": "p1021",
-        "title": "MUSIC 003 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 003 – The Weeknd Retro Blue Vector Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-003.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-003.webp"
+        "description": "A smooth deep blue vector art poster honoring The Weeknd. Showcases Abel Tesfaye in dark shades with retro 70s bubble typography and biographical details, bringing sleek R&B aesthetic to your gallery wall.",
+        "label": "MUSIC-003.webp",
+        "seoTitle": "The Weeknd Retro Blue Vector Art Music Poster",
+        "metaDescription": "Sleek deep blue vector portrait poster of The Weeknd wearing sunglasses, with 70s groovy bubble typography and artist biography text.",
+        "seoAltText": "Stylized blue and black vector portrait poster of The Weeknd wearing dark sunglasses with hand on chin beneath puffy retro white typography and career biography text below"
     },
     {
         "id": "p1022",
-        "title": "MUSIC 004 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 004 – BTS Butter Retro Cosmic Collage Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-004.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-004.webp"
+        "description": "A vibrant retro sci-fi collage poster for BTS and their smash single Butter. Features all seven members Jin, Suga, J-Hope, RM, Jimin, V, and Jungkook set against neon streaks, starry nebulae, and vintage paper textures.",
+        "label": "MUSIC-004.webp",
+        "seoTitle": "BTS Butter K-Pop Retro Collage Wall Art Poster",
+        "metaDescription": "Retro cosmic BTS poster for Butter featuring all seven members with glowing yellow script, starry space background, and vintage print texture.",
+        "seoAltText": "Colorful cosmic collage poster of K-pop group BTS featuring Jin, Suga, J-Hope, RM, Jimin, V, and Jungkook with retro yellow Butter script over a starry galaxy background"
     },
     {
         "id": "p1023",
-        "title": "MUSIC 005 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 005 – Lana Del Rey Ultraviolence Halftone Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-005.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-005.webp"
+        "description": "A moody dark editorial poster celebrating Lana Del Rey's Ultraviolence. Features high-contrast halftone portraits, vintage typewriter typography, polaroid snapshots, and album history in a timeless indie aesthetic.",
+        "label": "MUSIC-005.webp",
+        "seoTitle": "Lana Del Rey Ultraviolence Halftone Music Poster",
+        "metaDescription": "Gritty Lana Del Rey Ultraviolence editorial poster with retro halftone cigarette portrait, polaroid photos, and vintage album press clippings.",
+        "seoAltText": "Black and white newspaper-style editorial poster of Lana Del Rey for Ultraviolence featuring a large halftone portrait of her lighting a cigarette, surrounded by smaller polaroids and album review articles"
     },
     {
         "id": "p1024",
-        "title": "MUSIC 006 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 006 – Deftones Saturday Night Wrist Grunge Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-006.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-006.webp"
+        "description": "An atmospheric gothic grunge music poster for Deftones and their 2006 album Saturday Night Wrist. Blends dripping white typography, a soaring white owl, dark castle spires, and occult symbols for true alt-metal devotees.",
+        "label": "MUSIC-006.webp",
+        "seoTitle": "Deftones Saturday Night Wrist Grunge Alt-Metal Poster",
+        "metaDescription": "Dark gothic grunge Deftones poster featuring Saturday Night Wrist theme with dripping white logo, flying white owl, gothic spires, and occult symbols.",
+        "seoAltText": "Dark gothic Deftones poster with dripping white typography, flying white barn owl, gothic architecture spires, close-up human eye, and 2006 Saturday Night Wrist album text"
     },
     {
         "id": "p1025",
-        "title": "MUSIC 007 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 007 – BTS Jimin Retro Punk Rock Zine Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-007.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-007.webp"
+        "description": "A high-contrast black and white punk zine style poster spotlighting Park Jimin of BTS. Features raw stencil portraiture, bold Rock 'n Roll typography, lightning bolts, and Dynamite lyrics for an edgy street aesthetic.",
+        "label": "MUSIC-007.webp",
+        "seoTitle": "BTS Jimin Retro Punk Rock Zine Art Poster",
+        "metaDescription": "High-contrast black and white punk rock zine poster of BTS Park Jimin featuring stencil portrait, lightning graphics, and Dynamite song lyrics.",
+        "seoAltText": "Black and white stencil art poster of BTS member Park Jimin looking upward, with Rock 'n Roll headline, lightning bolts, concert speaker stack, and Dynamite lyric subtitle"
     },
     {
         "id": "p1026",
-        "title": "MUSIC 008 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 008 – Michael Jackson Dangerous Movie Style Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-008.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-008.webp"
+        "description": "A cinematic movie-style tribute poster for Michael Jackson's Dangerous. Depicts Michael in his legendary tailored suit, black fedora, and white armband with warm amber lighting and authentic retro credit block typography.",
+        "label": "MUSIC-008.webp",
+        "seoTitle": "Michael Jackson Dangerous Retro Movie Poster",
+        "metaDescription": "Cinematic Michael Jackson poster designed as a retro movie poster for Dangerous, featuring the King of Pop in fedora suit with full billing credits.",
+        "seoAltText": "Cinematic poster of Michael Jackson in a black suit, fedora hat, and white armband against a warm brown backdrop with large yellow Dangerous title and film billing block below"
     },
     {
         "id": "p1027",
-        "title": "MUSIC 009 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 009 – BTS Young & Wild & Free Pop Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-009.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-009.webp"
+        "description": "A playful pop art poster celebrating BTS with vintage packaging flair. Features all seven members in candid 2018 Love Yourself era portraits, colorful retro candy stripes, and nostalgic comic badge graphics.",
+        "label": "MUSIC-009.webp",
+        "seoTitle": "BTS Young & Wild & Free Retro Pop Art Poster",
+        "metaDescription": "Playful retro pop art poster of BTS featuring colorful portraits of all seven members, vintage cereal box aesthetics, and candy-striped borders.",
+        "seoAltText": "Retro pop-art style poster of K-pop group BTS featuring smiling cutout portraits of all seven members inside colorful red, blue, and yellow striped borders with vintage E rating badge"
     },
     {
         "id": "p1028",
-        "title": "MUSIC 010 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 010 – Jeff Buckley Lover You Should've Come Over Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-010.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-010.webp"
+        "description": "A soulful stage tribute poster honoring Jeff Buckley. Captures the iconic singer-songwriter performing Lover You Should've Come Over with acoustic guitar and microphone under intimate, dramatic concert stage illumination.",
+        "label": "MUSIC-010.webp",
+        "seoTitle": "Jeff Buckley Lover You Should've Come Over Poster",
+        "metaDescription": "Intimate Jeff Buckley concert poster featuring him singing at the mic with acoustic guitar, handwritten-style lyrics, and bold vintage typography.",
+        "seoAltText": "Moody stage photography poster of Jeff Buckley singing into a microphone while playing acoustic guitar in dramatic warm lighting with song title and lyrics from Lover You Should've Come Over"
     },
     {
         "id": "p1029",
