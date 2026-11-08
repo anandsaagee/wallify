@@ -22,6 +22,7 @@ import { ContentPolicyPage } from './components/ContentPolicyPage';
 import { Search, X, Gift, ShoppingBag } from 'lucide-react';
 import { trackProductClick } from './utils/bestSellerTracker';
 import { getCleanPosterName, getProductSlug } from './utils/seoHelpers';
+import { getImageUrl } from './utils/imageUrl';
 
 type View = 'store' | 'checkout' | 'content-policy';
 
@@ -455,9 +456,9 @@ const AppContent: React.FC = () => {
                                 : 'hover:bg-black/[0.04] text-black/80'
                             }`}
                           >
-                            <div className="w-8 h-9 rounded-lg overflow-hidden shrink-0 bg-black/5">
+                            <div className="w-10 h-12 rounded-lg overflow-hidden shrink-0 bg-black/5 border border-black/[0.06]">
                               <img
-                                src={s.product.image}
+                                src={getImageUrl(s.product.image, { width: 80 })}
                                 alt=""
                                 className="w-full h-full object-cover"
                                 loading="lazy"
