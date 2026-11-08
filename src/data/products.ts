@@ -10781,93 +10781,123 @@ export const products = [
     },
     {
         "id": "p1039",
-        "title": "MUSIC 021 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 021 – Radiohead Let Down Angel OK Computer Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-021.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-021.webp"
+        "description": "A haunting alt-rock collage poster inspired by Radiohead's Let Down from OK Computer. Features a classical winged angel statue silhouette, distressed lyrical cutouts, and gritty paper textures.",
+        "label": "MUSIC-021.webp",
+        "seoTitle": "Radiohead Let Down OK Computer Angel Wall Poster",
+        "metaDescription": "Haunting Radiohead OK Computer art poster featuring a classical winged angel statue with Let Down lyrics and textured vintage collage typography.",
+        "seoAltText": "Grunge art poster honoring Radiohead and OK Computer with a classical draped winged angel statue silhouette, Let Down lyrics, and torn paper collage typography"
     },
     {
         "id": "p1040",
-        "title": "MUSIC 022 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 022 – Michael Jackson Dirty Diana Retro Comic Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-022.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-022.webp"
+        "description": "A striking retro comic book cover poster tribute to Michael Jackson's Dirty Diana. Portrays Michael from behind facing Diana's mysterious face with blood-red title typography and dramatic comic speech bubbles.",
+        "label": "MUSIC-022.webp",
+        "seoTitle": "Michael Jackson Dirty Diana Retro Comic Wall Poster",
+        "metaDescription": "Vintage comic book style Michael Jackson poster for Dirty Diana with bold red lettering, Comics Code badge, and dramatic lyric speech bubbles.",
+        "seoAltText": "Retro 1980s comic book cover art poster of Michael Jackson for Dirty Diana showing him from behind facing a giant blue portrait of Diana with red title text"
     },
     {
         "id": "p1041",
-        "title": "MUSIC 023 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 023 – BTS Jimin FACE Liquid Chrome Solo Album Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-023.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-023.webp"
+        "description": "A modern futuristic art poster honoring BTS Jimin's solo debut album FACE. Combines an intimate portrait with floating liquid chrome lettering, the Circle of Resonance symbol, and complete album tracklisting.",
+        "label": "MUSIC-023.webp",
+        "seoTitle": "BTS Jimin FACE Hardware Solo Debut Album Poster",
+        "metaDescription": "Futuristic liquid chrome art poster of BTS Jimin for his solo album FACE featuring close-up portrait, Circle of Resonance graphics, and tracklist.",
+        "seoAltText": "Futuristic art poster of BTS member Jimin with lip ring overlaid with warped liquid chrome FACE lettering, Circle of Resonance quotes, and full tracklist"
     },
     {
         "id": "p1042",
-        "title": "MUSIC 024 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 024 – Bon Jovi Wanted Dead or Alive Western Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-024.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-024.webp"
+        "description": "A classic Western outlaw tribute poster celebrating Bon Jovi's rock anthem Wanted Dead or Alive. Features vintage band halftone photography, decorative stars, and rugged frontier woodblock typography.",
+        "label": "MUSIC-024.webp",
+        "seoTitle": "Bon Jovi Wanted Dead or Alive Western Rock Poster",
+        "metaDescription": "Vintage Western outlaw style Bon Jovi poster featuring the 80s band in leather and fringe with distressed Wanted Dead or Alive typography and stars.",
+        "seoAltText": "Western style Wanted Dead or Alive rock poster of Bon Jovi featuring band members in 1980s leather outfits on aged parchment with red slab-serif lettering"
     },
     {
         "id": "p1043",
-        "title": "MUSIC 025 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 025 – BTS Fake Love Monochrome Sculpture Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-025.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-025.webp"
+        "description": "An artistic monochrome music poster inspired by BTS and their hit Fake Love. Highlights a dramatic marble hand sculpture, member choreography silhouettes, and minimalist editorial typography.",
+        "label": "MUSIC-025.webp",
+        "seoTitle": "BTS Fake Love Monochrome Marble Art Wall Poster",
+        "metaDescription": "Dramatic black & white BTS poster for Fake Love featuring surreal swirling marble hand sculpture, choreography silhouettes, and editorial credits.",
+        "seoAltText": "Monochrome black and white poster for BTS Fake Love with swirling marble sculpture of hands covering a face, member dance silhouettes, and production credits"
     },
     {
         "id": "p1044",
-        "title": "MUSIC 026 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 026 – Michael Jackson King of Pop Halftone Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-026.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-026.webp"
+        "description": "A bold graphic tribute poster of Michael Jackson tipping his fedora. Features a stark high-contrast black and white halftone silhouette layered over deep red block typography proclaiming him the King of Pop.",
+        "label": "MUSIC-026.webp",
+        "seoTitle": "Michael Jackson King of Pop Fedora Silhouette Poster",
+        "metaDescription": "Stark black & white halftone silhouette poster of Michael Jackson tipping his fedora hat with bold crimson red King of Pop typography in background.",
+        "seoAltText": "High-contrast black and white halftone silhouette poster of Michael Jackson tipping his fedora hat framed against bold red King of Pop block lettering"
     },
     {
         "id": "p1045",
-        "title": "MUSIC 027 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 027 – Guns N' Roses Appetite for Destruction Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-027.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-027.webp"
+        "description": "A vintage concert art poster celebrating Guns N' Roses and Appetite for Destruction. Features stylized band portraits, radiant sunburst rays, blooming crimson roses, and twin crossed revolvers in classic rock flair.",
+        "label": "MUSIC-027.webp",
+        "seoTitle": "Guns N' Roses Appetite for Destruction Rock Poster",
+        "metaDescription": "Vintage Guns N' Roses concert poster with Axl Rose, Slash, and band members framed by sunburst rays, crossed revolvers, and lush blooming red roses.",
+        "seoAltText": "Vintage Guns N' Roses rock poster featuring illustrated band members Duff, Slash, Axl Rose, Steven, and Izzy above crossed revolvers and red roses"
     },
     {
         "id": "p1046",
-        "title": "MUSIC 028 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 028 – Arctic Monkeys AM Era Monochrome Band Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-028.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-028.webp"
+        "description": "A sleek monochrome tribute poster for Arctic Monkeys and their iconic AM album era. Features Alex Turner and bandmates in sharp tailored suits, the famous AM soundwave graphic, and hit track names.",
+        "label": "MUSIC-028.webp",
+        "seoTitle": "Arctic Monkeys AM Band Monochrome Music Poster",
+        "metaDescription": "Sleek black & white Arctic Monkeys AM album era poster featuring the four band members in sharp suits, oscillating soundwave logo, and AM tracklist.",
+        "seoAltText": "Black and white chiaroscuro poster of Arctic Monkeys members Alex Turner, Nick O'Malley, Jamie Cook, and Matt Helders with AM soundwave logo and tracklist"
     },
     {
         "id": "p1047",
-        "title": "MUSIC 029 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 029 – BTS Jimin WHO Neon Noir Street Solo Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-029.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-029.webp"
+        "description": "A cinematic neon noir art poster capturing BTS Jimin in his solo track WHO. Features moody midnight city streets, glowing cyan record storefronts, bold red headline typography, and lyrics.",
+        "label": "MUSIC-029.webp",
+        "seoTitle": "BTS Jimin WHO Neon Noir Street Wall Art Poster",
+        "metaDescription": "Cinematic urban noir poster of BTS Jimin for WHO featuring nighttime neon city streets, glowing record shop signs, and bold red typography.",
+        "seoAltText": "Atmospheric night photography poster of BTS Jimin walking down a neon-lit city street past glowing cyan record stores under bold red WHO? title typography"
     },
     {
         "id": "p1048",
-        "title": "MUSIC 030 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 030 – The Weeknd After Dark Neon Crimson Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-030.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-030.webp"
+        "description": "A moody cinematic music poster honoring The Weeknd. Features Abel Tesfaye in silhouette wearing a leather trench coat bathed in sultry crimson red neon with bold sunshine yellow typography.",
+        "label": "MUSIC-030.webp",
+        "seoTitle": "The Weeknd After Dark Neon Crimson Music Poster",
+        "metaDescription": "Moody neon noir poster of The Weeknd enveloped in deep crimson red stage lighting with bold yellow After Dark typography and cinematic taglines.",
+        "seoAltText": "Cinematic crimson red profile silhouette poster of The Weeknd in a leather coat with bold yellow After Dark title and atmospheric neon noir taglines"
     },
     {
         "id": "p1049",
