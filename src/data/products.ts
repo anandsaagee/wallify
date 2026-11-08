@@ -11261,93 +11261,123 @@ export const products = [
     },
     {
         "id": "p1079",
-        "title": "MUSIC 061 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 061 – BTS Press Conference Monochrome Art Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-061.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-061.webp"
+        "description": "A sophisticated monochrome group portrait poster of BTS gathered around a press conference table with vintage microphones beneath a bold pop red title.",
+        "label": "MUSIC-061.webp",
+        "seoTitle": "BTS Press Conference Monochrome Group Art Poster",
+        "metaDescription": "Chic black & white BTS press conference poster featuring all seven members around microphones beneath bold red logo lettering.",
+        "seoAltText": "Black and white photography poster of BTS members seated around a conference table with broadcast microphones beneath giant red BTS lettering"
     },
     {
         "id": "p1080",
-        "title": "MUSIC 062 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 062 – Michael Jackson Beat It Halftone Live Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-062.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-062.webp"
+        "description": "An electrifying live concert poster of Michael Jackson performing in his buckle jacket. Features a monochrome stage photo backed by giant red graffiti Beat It lettering with halftone dots.",
+        "label": "MUSIC-062.webp",
+        "seoTitle": "Michael Jackson Beat It Live Stage Halftone Poster",
+        "metaDescription": "Dynamic Michael Jackson live concert poster with black & white stage photo and giant red halftone graffiti Beat It title text.",
+        "seoAltText": "Monochrome live performance poster of Michael Jackson in a buckle jacket holding a microphone against giant red halftone graffiti lettering reading Beat It"
     },
     {
         "id": "p1081",
-        "title": "MUSIC 063 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 063 – Red Hot Chili Peppers Vintage Band Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-063.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-063.webp"
+        "description": "A warm candid band poster of the Red Hot Chili Peppers. Features Anthony Kiedis, Flea, John Frusciante, and Chad Smith laughing together beneath bold red woodblock typography and asterisk logo.",
+        "label": "MUSIC-063.webp",
+        "seoTitle": "Red Hot Chili Peppers Vintage Rock Band Poster",
+        "metaDescription": "Candid vintage poster of the Red Hot Chili Peppers featuring Anthony Kiedis, Flea, John Frusciante, and Chad Smith with iconic red asterisk logo.",
+        "seoAltText": "Vintage band photo poster of the Red Hot Chili Peppers with John Frusciante, Anthony Kiedis, Chad Smith, and Flea laughing together beneath red logo text"
     },
     {
         "id": "p1082",
-        "title": "MUSIC 064 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 064 – Michael Jackson The King Gothic Metal Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-064.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-064.webp"
+        "description": "An edgy gothic streetwear poster honoring Michael Jackson. Blends flaming red metal typography, a vinyl discography wheel, Smooth Criminal fedora suit silhouette, and live vocal performance art.",
+        "label": "MUSIC-064.webp",
+        "seoTitle": "Michael Jackson The King Gothic Metal Music Poster",
+        "metaDescription": "Dark gothic streetwear poster of Michael Jackson featuring flaming metal typography, vinyl discography wheel, and Smooth Criminal white suit photo.",
+        "seoAltText": "Gothic music poster of Michael Jackson with dripping metal Michael title, vinyl record discography, red crown, and full-length white fedora suit photo"
     },
     {
         "id": "p1083",
-        "title": "MUSIC 065 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 065 – BTS Jungkook Closer to You Fashion Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-065.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-065.webp"
+        "description": "A high-fashion streetwear poster celebrating BTS Jungkook's single Closer to You featuring Major Lazer. Highlights Jungkook in a bomber jacket and Calvin Klein jeans with emotive song lyrics.",
+        "label": "MUSIC-065.webp",
+        "seoTitle": "BTS Jungkook Closer to You Streetwear Art Poster",
+        "metaDescription": "Chic fashion collage poster of BTS Jungkook for Closer to You in a black bomber jacket and Calvin Klein denim with romantic lyric typography.",
+        "seoAltText": "Streetwear fashion poster of BTS Jungkook in a black bomber jacket and Calvin Klein denim with Closer to You song lyrics and newspaper collage accents"
     },
     {
         "id": "p1084",
-        "title": "MUSIC 066 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 066 – Michael Jackson 1958-2009 Memorial Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-066.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-066.webp"
+        "description": "A powerful memorial concert poster honoring Michael Jackson (1958–2009). Depicts Michael singing passionately in a sequin jacket with bold red typography and delicate signature script.",
+        "label": "MUSIC-066.webp",
+        "seoTitle": "Michael Jackson 1958-2009 Memorial Tribute Poster",
+        "metaDescription": "Striking black, white, and red memorial poster of Michael Jackson performing in a sequin jacket with 1958-2009 dates and signature script.",
+        "seoAltText": "High-contrast black, white, and red memorial poster of Michael Jackson singing into a microphone in a sequin jacket with 1958-2009 and signature script"
     },
     {
         "id": "p1085",
-        "title": "MUSIC 067 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 067 – Michael Jackson You Rock My World Film Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-067.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-067.webp"
+        "description": "A cinematic movie tribute poster for Michael Jackson's You Rock My World. Features a noir montage of Michael in his fedora alongside Marlon Brando and Chris Tucker under warm amber nightclub lighting.",
+        "label": "MUSIC-067.webp",
+        "seoTitle": "Michael Jackson You Rock My World Movie Poster",
+        "metaDescription": "Cinematic gangster noir movie poster for Michael Jackson's You Rock My World with Chris Tucker, Marlon Brando, and Waterfront Hotel billing.",
+        "seoAltText": "Cinematic film poster for Michael Jackson You Rock My World featuring Michael in a fedora, Chris Tucker, Marlon Brando, and Waterfront Hotel billing block"
     },
     {
         "id": "p1086",
-        "title": "MUSIC 068 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 068 – Michael Jackson Beat It Retro 1983 Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-068.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-068.webp"
+        "description": "A bold retro pop art poster celebrating Michael Jackson's 1983 anthem Beat It. Showcases a fierce cyan stencil portrait of Michael contrasted against fiery red with iconic song lyrics and production credits.",
+        "label": "MUSIC-068.webp",
+        "seoTitle": "Michael Jackson Beat It Retro 1983 Pop Art Poster",
+        "metaDescription": "Fiery red and cyan stencil art poster of Michael Jackson for Beat It featuring iconic 1983 release date, lyrics, and vintage screenprint style.",
+        "seoAltText": "High-contrast pop art poster of Michael Jackson with cyan tinted snarling expression on a bright red background with white Beat It title and lyrics"
     },
     {
         "id": "p1087",
-        "title": "MUSIC 069 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 069 – Nirvana Nevermind Live Stage Concert Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-069.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-069.webp"
+        "description": "An intense monochrome live concert photography poster commemorating Nirvana's Nevermind era. Captures Kurt Cobain thrashing guitar on stage beside Dave Grohl and Krist Novoselic with wavy album typography.",
+        "label": "MUSIC-069.webp",
+        "seoTitle": "Nirvana Nevermind Live Stage Concert Wall Poster",
+        "metaDescription": "Raw black & white live concert poster of Nirvana featuring Kurt Cobain headbanging with guitar, stage contact strips, and wavy Nevermind typography.",
+        "seoAltText": "Monochrome live concert photography poster of Nirvana with Kurt Cobain thrashing his guitar on stage, photo film strips, and wavy Nevermind text"
     },
     {
         "id": "p1088",
-        "title": "MUSIC 070 Minimalist Music Poster – Premium Matte Finish",
+        "title": "Music 070 – Michael Jackson King of Pop Neon Duotone Poster",
         "category": "Music",
         "basePrice": 49,
         "image": "/assets/MUSIC/MUSIC-070.webp",
-        "description": "Level up your space with this premium music wall poster. Printed on high-quality, fade-resistant paper, this HD aesthetic wall art provides a stunning premium matte finish perfect for any room.",
-        "label": "MUSIC-070.webp"
+        "description": "A vibrant duotone concert collage poster honoring Michael Jackson. Features Michael performing live in his white buckle jacket illuminated by neon red and ice blue dual lighting, surrounded by career milestone portraits.",
+        "label": "MUSIC-070.webp",
+        "seoTitle": "Michael Jackson King of Pop Neon Duotone Poster",
+        "metaDescription": "Vibrant red and ice blue duotone collage poster of Michael Jackson live on stage with microphone, art deco King of Pop typography, and signature.",
+        "seoAltText": "Vibrant neon red and blue duotone live concert poster of Michael Jackson singing into a mic in white buckle jacket surrounded by performance portraits"
     },
     {
         "id": "p1089",
