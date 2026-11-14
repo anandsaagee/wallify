@@ -5546,93 +5546,123 @@ export const products = [
     },
     {
         "id": "p1449",
-        "title": "Automotive A1-001",
+        "title": "Porsche 911 GT3 RS Navy Blue Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-001.jpg",
-        "description": "High-quality automotive poster – Automotive A1-001.",
-        "label": "a1-001.jpg"
+        "description": "A clean, graphic Porsche 911 GT3 RS spec poster in navy blue featuring performance stats and bold racing-inspired typography.",
+        "label": "a1-001.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Navy Blue Performance Spec Poster",
+        "metaDescription": "Bold graphic Porsche 911 GT3 RS poster in navy blue showcasing 525HP specs, side profile view, and clean racing-inspired design.",
+        "seoAltText": "Graphic automotive poster for the Porsche 911 GT3 RS showing a navy blue sports coupe in side profile on a white and dark-blue split background, with large bold PORSCHE and 911 GT3RS typography, the Porsche crest, and stats panels showing 525 HP, 296 km/h top speed, and 3.2s 0-100 km/h, plus a descriptive technical paragraph at the bottom."
     },
     {
         "id": "p1450",
-        "title": "Automotive A1-002",
+        "title": "Toyota GR Supra Widebody Knight Chrome Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-002.jpg",
-        "description": "High-quality automotive poster – Automotive A1-002.",
-        "label": "a1-002.jpg"
+        "description": "Aggressive chrome Toyota GR Supra widebody poster on a dark background with bold orange typography and KNIGHT branding.",
+        "label": "a1-002.jpg",
+        "seoTitle": "Toyota GR Supra Widebody Knight Chrome Car Poster",
+        "metaDescription": "Aggressive chrome Toyota GR Supra widebody poster on black with bold orange SUPRA lettering, Rohana wheels, and KNIGHT branding.",
+        "seoAltText": "Dark car poster with large bold orange SUPRA text on a black background, featuring a widebody chrome-grey Toyota GR Supra with a large rear wing, Rohana-branded windshield, and low aggressive stance, the Toyota logo at the top, a small reference image bottom-left, text in Indonesian describing the Supra, and the word KNIGHT in white at the bottom right."
     },
     {
         "id": "p1451",
-        "title": "Automotive A1-003",
+        "title": "BMW M3 E30 Classic Retro Automotive Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-003.jpg",
-        "description": "High-quality automotive poster – Automotive A1-003.",
-        "label": "a1-003.jpg"
+        "description": "Vintage-inspired BMW M3 E30 poster in teal and gold, featuring the iconic sports saloon in side profile with classic typography.",
+        "label": "a1-003.jpg",
+        "seoTitle": "BMW M3 E30 Classic Navy Retro Automotive Poster",
+        "metaDescription": "Retro-styled BMW M3 E30 automotive poster on teal with classic gold serif typography, close side-profile view, and BBS-style wheels.",
+        "seoAltText": "Retro automotive poster on a deep teal-blue background with large gold serif E30 and BMW M3 lettering in the upper left, the BMW roundel in the top right corner, a close-up side view of a dark navy BMW E30 M3 showing the front bumper, wire-spoke wheels, and flared fenders, alongside a column of descriptive text about the M3."
     },
     {
         "id": "p1452",
-        "title": "Automotive A1-004",
+        "title": "Porsche 964 RWB Widebody Mountain Sky Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-004.jpg",
-        "description": "High-quality automotive poster – Automotive A1-004.",
-        "label": "a1-004.jpg"
+        "description": "Stunning Porsche 964 RWB widebody poster with pastel pink mountain sky, reflective road, and bold PORSCHE text overlay.",
+        "label": "a1-004.jpg",
+        "seoTitle": "Porsche 964 RWB Widebody White Mountain Poster",
+        "metaDescription": "Stunning Porsche 964 RWB widebody poster with pastel pink mountain sky, moody reflective road, and bold PORSCHE text overlay.",
+        "seoAltText": "Artistic automotive poster for the Porsche 964 RWB showing a white wide-body 911 on a wet reflective road with its mirror image below, a dramatic pink-purple mountain and cloud background, the PORSCHE text in large letters overlaid in a gradient and outlined style with 964 RWB label, and descriptive text about the RWB build by Akira Nakai at the bottom."
     },
     {
         "id": "p1453",
-        "title": "Automotive A1-005",
+        "title": "Porsche 911 GT3 RS Race Livery Motorsport Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-005.jpg",
-        "description": "High-quality automotive poster – Automotive A1-005.",
-        "label": "a1-005.jpg"
+        "description": "High-energy Porsche 911 GT3 RS racing poster with white/red Mobil 1 livery, number 92, and bold red PORSCHE typography.",
+        "label": "a1-005.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Race Livery Motorsport Poster",
+        "metaDescription": "High-intensity Porsche 911 GT3 RS race poster in white/red Mobil 1 livery, number 92, shot from rear angle on wet track.",
+        "seoAltText": "Bold red and black Porsche racing poster featuring the rear three-quarter view of a white and red racing-liveried Porsche 911 GT3 RS with number 92 on the door, Mobil 1, Esso, and PRO sponsor logos, a large distorted PORSCHE wordmark across the center in neon red, THE 911 GT3 RS title in the lower left, and a motivation-quote text block."
     },
     {
         "id": "p1454",
-        "title": "Automotive A1-006",
+        "title": "Bugatti Chiron Deep Purple Hypercar Wall Art",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-006.jpg",
-        "description": "High-quality automotive poster – Automotive A1-006.",
-        "label": "a1-006.jpg"
+        "description": "Dramatic deep-purple Bugatti Chiron hypercar poster with bold white BUGATTI typography and EB110 SS subtitle. Luxurious wall art.",
+        "label": "a1-006.jpg",
+        "seoTitle": "Bugatti Chiron Deep Purple Hypercar Wall Poster",
+        "metaDescription": "Dramatic deep-purple Bugatti Chiron hypercar poster with bold BUGATTI typography and EB110 SS subtitle. Luxury wall art.",
+        "seoAltText": "Dark blue and purple Bugatti automotive poster featuring a glossy deep violet Bugatti Chiron supercar in center frame, large bold white BUGATTI letters filling the middle background, the number 16 at the top left, two detail thumbnail images at the bottom right showing the rear and interior, the text Bugatti EB110 SS with timeless power subtitle, and a paragraph about the marque."
     },
     {
         "id": "p1455",
-        "title": "Automotive A1-007",
+        "title": "Lexus LFA White V10 Supercar Nighttime Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-007.jpg",
-        "description": "High-quality automotive poster – Automotive A1-007.",
-        "label": "a1-007.jpg"
+        "description": "Editorial Lexus LFA supercar poster shot at night, showcasing the iconic white coupe with V10 Sound by Yamaha branding.",
+        "label": "a1-007.jpg",
+        "seoTitle": "Lexus LFA White V10 Supercar Nighttime Poster",
+        "metaDescription": "Editorial Lexus LFA supercar poster shot at night showcasing the white coupe from behind with V10 Sound by Yamaha branding.",
+        "seoAltText": "Magazine-style Lexus LFA automotive poster showing a white Lexus LFA supercar from the rear three-quarter angle in a nighttime setting at what appears to be a car show, with large white LFA and Lexus lettering at the top, V10 Sound by Yamaha text at the bottom left, a tagline Inspired by my thoughts and a paragraph describing the LFA."
     },
     {
         "id": "p1456",
-        "title": "Automotive A1-008",
+        "title": "Porsche 911 GT3 RS Acid Yellow Tri-Panel Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-008.jpg",
-        "description": "High-quality automotive poster – Automotive A1-008.",
-        "label": "a1-008.jpg"
+        "description": "Vibrant acid-yellow Porsche 911 GT3 RS poster with bold PORSCHE 911 lettering and a striking three-panel detail composition.",
+        "label": "a1-008.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Acid Yellow Tri-Panel Poster",
+        "metaDescription": "Vibrant acid-yellow Porsche 911 GT3 RS poster with bold PORSCHE 911 lettering and triple-panel detail composition.",
+        "seoAltText": "Bold yellow automotive poster for the Porsche 911 GT3 RS featuring the full yellow sports car in the lower half with large black PORSCHE 911 lettering below it, GT3RS text in the upper left, three vertical panel close-up details at the top showing the headlight area, center wheel, and rear spoiler, plus performance specs of 473HP and 307km/h."
     },
     {
         "id": "p1457",
-        "title": "Automotive A1-009",
+        "title": "Porsche 911 Silver Cherry Blossom History Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-009.jpg",
-        "description": "High-quality automotive poster – Automotive A1-009.",
-        "label": "a1-009.jpg"
+        "description": "Cinematic Porsche 911 poster set among blooming purple-pink cherry blossoms at night, with elegant pink PORSCHE 911 title text.",
+        "label": "a1-009.jpg",
+        "seoTitle": "Porsche 911 Silver Cherry Blossom History Poster",
+        "metaDescription": "Cinematic Porsche 911 poster set among blooming cherry blossoms at night, silver coupe with large pink PORSCHE 911 title.",
+        "seoAltText": "Dark cinematic Porsche 911 automotive poster with a silver Porsche 911 sports car with a large rear wing positioned among vivid purple-pink cherry blossom flowers at night, the Porsche crest at the top center, large pink PORSCHE and 911 text overlaid on the mid-section, and an editorial paragraph titled A Brief History of the Porsche 911 in two columns at the bottom."
     },
     {
         "id": "p1458",
-        "title": "Automotive A1-010",
+        "title": "Koenigsegg Jesko Maroon Hypercar Graffiti Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-010.jpg",
-        "description": "High-quality automotive poster – Automotive A1-010.",
-        "label": "a1-010.jpg"
+        "description": "Striking Koenigsegg Jesko hypercar poster in deep matte maroon with graffiti-style typography and 1600HP performance stats.",
+        "label": "a1-010.jpg",
+        "seoTitle": "Koenigsegg Jesko Maroon Hypercar Graffiti Poster",
+        "metaDescription": "Koenigsegg Jesko hypercar poster in deep matte maroon with bold graffiti-style lettering and 1600HP performance stats.",
+        "seoAltText": "Dark maroon Koenigsegg Jesko hypercar poster on a dusty rose gradient background, featuring the gunmetal and maroon hypercar viewed from the front three-quarter angle with large bold KOENIGSEGG lettering in pink-grey across the center, graffiti-style lettering at the top, and a stat panel at the bottom showing 1280 kg dry weight, 1600 HP, 2.5 sec 0-400-0 km/h, 480+ km/h top speed, and 5.8L V8 twin turbo engine."
     },
     {
         "id": "p1459",
