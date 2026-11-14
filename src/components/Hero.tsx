@@ -136,30 +136,30 @@ function getPosterConfig() {
   if (w < 480) {
     // Mobile: 5 rows × ~100px ≈ 500px fills hero
     return [
-      { height: 100, gap: 0, offset:  0,  speed: 55 },
-      { height: 100, gap: 0, offset:  0,  speed: 45, reverse: true },
-      { height: 100, gap: 0, offset:  0,  speed: 60 },
-      { height: 100, gap: 0, offset:  0,  speed: 40, reverse: true },
-      { height: 100, gap: 0, offset:  0,  speed: 50 },
+      { height: 100, gap: 0, offset:  0,  speed: 110 },
+      { height: 100, gap: 0, offset:  0,  speed: 90,  reverse: true },
+      { height: 100, gap: 0, offset:  0,  speed: 120 },
+      { height: 100, gap: 0, offset:  0,  speed: 80,  reverse: true },
+      { height: 100, gap: 0, offset:  0,  speed: 100 },
     ];
   }
   if (w < 768) {
     // Tablet: 5 rows × ~130px ≈ 650px
     return [
-      { height: 130, gap: 0, offset:  0,  speed: 60 },
-      { height: 130, gap: 0, offset:  0,  speed: 48, reverse: true },
-      { height: 130, gap: 0, offset:  0,  speed: 66 },
-      { height: 130, gap: 0, offset:  0,  speed: 44, reverse: true },
-      { height: 130, gap: 0, offset:  0,  speed: 54 },
+      { height: 130, gap: 0, offset:  0,  speed: 120 },
+      { height: 130, gap: 0, offset:  0,  speed: 96,  reverse: true },
+      { height: 130, gap: 0, offset:  0,  speed: 132 },
+      { height: 130, gap: 0, offset:  0,  speed: 88,  reverse: true },
+      { height: 130, gap: 0, offset:  0,  speed: 108 },
     ];
   }
   // Desktop: 5 rows × ~160px ≈ 800px
   return [
-    { height: 160, gap: 0, offset:  0,  speed: 70 },
-    { height: 160, gap: 0, offset:  0,  speed: 55, reverse: true },
-    { height: 160, gap: 0, offset:  0,  speed: 76 },
-    { height: 160, gap: 0, offset:  0,  speed: 50, reverse: true },
-    { height: 160, gap: 0, offset:  0,  speed: 64 },
+    { height: 160, gap: 0, offset:  0,  speed: 140 },
+    { height: 160, gap: 0, offset:  0,  speed: 110, reverse: true },
+    { height: 160, gap: 0, offset:  0,  speed: 152 },
+    { height: 160, gap: 0, offset:  0,  speed: 100, reverse: true },
+    { height: 160, gap: 0, offset:  0,  speed: 128 },
   ];
 }
 
