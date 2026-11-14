@@ -5666,93 +5666,123 @@ export const products = [
     },
     {
         "id": "p1459",
-        "title": "Automotive A1-011",
+        "title": "Porsche 911 GT3 RS Red Performance Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-011.jpg",
-        "description": "High-quality automotive poster – Automotive A1-011.",
-        "label": "a1-011.jpg"
+        "description": "Bold crimson and white Porsche 911 GT3 RS spec poster with performance stats, the iconic crest, and clean graphic layout.",
+        "label": "a1-011.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Red Performance Spec Poster",
+        "metaDescription": "Bold red and white Porsche 911 GT3 spec poster with 525HP performance stats, clean split-panel design, and crimson branding.",
+        "seoAltText": "Automotive spec poster for the Porsche 911 showing a Guards Red sports coupe in side profile against a white and crimson background split by a vertical dark column, with large PORSCHE and 911 lettering at the top, the Porsche crest, and stats panels showing 525 HP, 292 km/h top speed, and 3.2s 0-100 km/h time."
     },
     {
         "id": "p1460",
-        "title": "Automotive A1-012",
+        "title": "Koenigsegg CC850 JDM Anime Livery Garage Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-012.jpg",
-        "description": "High-quality automotive poster – Automotive A1-012.",
-        "label": "a1-012.jpg"
+        "description": "Vibrant Koenigsegg CC850 hypercar poster with colourful anime-inspired floral livery and a dramatic graffiti garage backdrop.",
+        "label": "a1-012.jpg",
+        "seoTitle": "Koenigsegg CC850 JDM Anime Livery Garage Poster",
+        "metaDescription": "Vibrant Koenigsegg CC850 poster with colourful Japanese anime-inspired floral livery, neon pink title, and graffiti garage background.",
+        "seoAltText": "Dark automotive poster in a graffiti-covered garage setting featuring a Koenigsegg CC850 hypercar with a beige and pink floral anime-style livery, large glowing pink CC850 and KOENIGSEGG lettering overlaid at the top, a Club branding badge, and a paragraph describing the CC850 at the bottom."
     },
     {
         "id": "p1461",
-        "title": "Automotive A1-013",
+        "title": "Chevrolet Camaro SS Bumblebee Edition Yellow Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-013.jpg",
-        "description": "High-quality automotive poster – Automotive A1-013.",
-        "label": "a1-013.jpg"
+        "description": "Iconic Chevrolet Camaro SS Bumblebee Edition poster in vivid yellow with black racing stripes and a detailed spec sheet.",
+        "label": "a1-013.jpg",
+        "seoTitle": "Chevrolet Camaro SS Bumblebee Edition Yellow Poster",
+        "metaDescription": "Bold Chevrolet Camaro SS Bumblebee Edition poster in yellow and black with spec sheet, 455HP engine data, on clean white.",
+        "seoAltText": "Clean white automotive poster for the Chevrolet Camaro SS Bumblebee Edition featuring the yellow muscle car with black racing stripes from the front three-quarter angle, the Chevrolet bowtie logo top-left, large CAMARO title and BUMBLEBEE EDITION subtitle in gold, the SS badge faded behind the car, and specification data showing 6.2L V8 455HP engine, 165mph top speed, and 4.0 second 0-60."
     },
     {
         "id": "p1462",
-        "title": "Automotive A1-014",
+        "title": "Nissan GT-R R34 Blue Retro JDM Magazine Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-014.jpg",
-        "description": "High-quality automotive poster – Automotive A1-014.",
-        "label": "a1-014.jpg"
+        "description": "Retro JDM magazine-style Nissan Skyline GT-R R34 poster in deep blue with iconic taillights and Japanese typography.",
+        "label": "a1-014.jpg",
+        "seoTitle": "Nissan GT-R R34 Blue Retro JDM Magazine Poster",
+        "metaDescription": "Retro-style Nissan Skyline GTR R34 poster in deep blue with Japanese text, iconic round taillights, and MOTION OVER EMOTION.",
+        "seoAltText": "Japanese street-magazine-inspired automotive poster for the Nissan Skyline GT-R R34 showing an extreme close-up of the rear of a blue car with the iconic round red-glowing taillights dominating the lower half, large bold blue GTR and R34 lettering in the top left, Japanese kanji paragraph describing the Skyline, NISSAN branding top right, and MOTION OVER EMOTION text at the bottom."
     },
     {
         "id": "p1463",
-        "title": "Automotive A1-015",
+        "title": "McLaren Senna Silver Dihedral Doors Open Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-015.jpg",
-        "description": "High-quality automotive poster – Automotive A1-015.",
-        "label": "a1-015.jpg"
+        "description": "Clean tribute McLaren Senna poster in silver-grey on white, dihedral doors raised, honouring the F1 legend's legacy.",
+        "label": "a1-015.jpg",
+        "seoTitle": "McLaren Senna Silver Dihedral Doors Open Poster",
+        "metaDescription": "Elegant McLaren Senna tribute poster in silver on a clean background, dihedral doors raised, honouring Ayrton Senna legacy.",
+        "seoAltText": "Clean white automotive poster for the McLaren Senna showing the light silver-grey hypercar viewed from the front with both dihedral doors raised open, the McLaren wordmark logo at the top center, large bold MCLAREN and SENNA lettering as a watermark behind the car, and a paragraph at the bottom describing the Senna as a tribute to Ayrton Senna the Formula One champion."
     },
     {
         "id": "p1464",
-        "title": "Automotive A1-016",
+        "title": "Porsche 911 GT3 Pink Anime Edition Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-016.jpg",
-        "description": "High-quality automotive poster – Automotive A1-016.",
-        "label": "a1-016.jpg"
+        "description": "Unique Cars × Anime crossover Porsche 911 GT3 poster in pink featuring the Hitori Gotoh character alongside the iconic GT3.",
+        "label": "a1-016.jpg",
+        "seoTitle": "Porsche 911 GT3 Pink Anime Hitori Gotoh Poster",
+        "metaDescription": "Unique Porsche 911 GT3 Cars x Anime poster in pink featuring Hitori Gotoh character alongside the rear of a pink 911 GT3.",
+        "seoAltText": "Pink-toned Cars and Anime crossover automotive poster for the Porsche 911 GT3 showing the rear three-quarter of a pink Porsche 911 GT3 with large rear wing, the anime character Hitori Gotoh illustrated to the left in a pink hoodie and plaid skirt, large pink PORSCHE typography overlaid in the center, 911 GT3 and Hitori Gotoh labels, and a text block about the 996-generation GT3 at the bottom."
     },
     {
         "id": "p1465",
-        "title": "Automotive A1-017",
+        "title": "BMW M4 CSL 2023 Purple Performance Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-017.jpg",
-        "description": "High-quality automotive poster – Automotive A1-017.",
-        "label": "a1-017.jpg"
+        "description": "Sleek 2023 BMW M4 CSL spec poster in vivid metallic purple with clean white layout, 550PS engine data, and EU spec badge.",
+        "label": "a1-017.jpg",
+        "seoTitle": "BMW M4 CSL Purple Performance Spec Poster 2023",
+        "metaDescription": "Sleek 2023 BMW M4 CSL spec poster in vivid metallic purple, 550PS, 307km/h, with minimal white design. EU Spec.",
+        "seoAltText": "Minimalist white automotive spec poster for the BMW M4 CSL showing a side profile of a metallic purple BMW M4 CSL coupe with black carbon roof, red brake calipers, and black multi-spoke wheels, large muted purple M4 letters filling the background, CSL in bold black below the car, BMW and 2023 EU SPEC labels at the top, and a full spec grid showing 3.0L inline-6, 550PS, 650Nm, 307km/h, and 3.7s 0-100."
     },
     {
         "id": "p1466",
-        "title": "Automotive A1-018",
+        "title": "Ferrari F40 Red Three-Panel Built for Drivers Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-018.jpg",
-        "description": "High-quality automotive poster – Automotive A1-018.",
-        "label": "a1-018.jpg"
+        "description": "Iconic Ferrari F40 poster in classic Rosso Corsa red with a three-panel studio composition and Prancing Horse badge.",
+        "label": "a1-018.jpg",
+        "seoTitle": "Ferrari F40 Red Three-Panel Built for Drivers Poster",
+        "metaDescription": "Iconic Ferrari F40 poster in classic red with three-panel studio composition, Prancing Horse badge, and spectacular detail.",
+        "seoAltText": "Light grey studio automotive poster for the Ferrari F40 featuring the classic red supercar in a large front three-quarter view in the lower half, three dark panel thumbnails at the top showing the left profile, an interior cockpit with the Ferrari steering wheel, and the rear view with large wing, FERRARI F40 as the headline, BUILT FOR THE DRIVERS subtitle, the Ferrari prancing horse badge, and performance specs including 471HP and 2.9L twin turbo."
     },
     {
         "id": "p1467",
-        "title": "Automotive A1-019",
+        "title": "BMW E30 Classic Red Forest Road Movie Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-019.jpg",
-        "description": "High-quality automotive poster – Automotive A1-019.",
-        "label": "a1-019.jpg"
+        "description": "Cinematic BMW E30 classic series poster showing a red coupe on a misty forest road, styled like a vintage film poster.",
+        "label": "a1-019.jpg",
+        "seoTitle": "BMW E30 Classic Red Forest Road Movie Poster",
+        "metaDescription": "Cinematic BMW E30 classic series poster showing a red coupe on a forest road, styled like a vintage film poster.",
+        "seoAltText": "Vintage movie-poster-styled automotive print for the BMW E30 showing a lowered red BMW E30 coupe with period-correct triple headlights and BRS 8222 plate on a misty forest road, large bold THE CLASSIC SERIES and BMW E30 header text in weathered style, a descriptive paragraph about the E30 at the bottom alongside Restricted R-rating and Dolby Digital logos styled like a film poster."
     },
     {
         "id": "p1468",
-        "title": "Automotive A1-020",
+        "title": "McLaren 750S Deep Purple Studio Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-020.jpg",
-        "description": "High-quality automotive poster – Automotive A1-020.",
-        "label": "a1-020.jpg"
+        "description": "Dramatic McLaren 750S poster in deep violet studio lighting with dihedral doors open wide and a full 750PS spec sheet.",
+        "label": "a1-020.jpg",
+        "seoTitle": "McLaren 750S Deep Purple Studio Spec Poster",
+        "metaDescription": "Dramatic McLaren 750S poster in deep violet studio lighting, dihedral doors open, with full 750PS spec sheet below.",
+        "seoAltText": "Dark purple studio automotive spec poster for the McLaren 750S showing the violet supercar viewed head-on with both dihedral doors open wide, large bold MCLAREN letters filling the deep purple background, 750S number plate visible, McLaren Automotive and Crafted Engineered Relentless branding at the top, Born To Perform 560S on the side, and a full specification table at the bottom showing 4.0L twin-turbo V8, 750PS, 800Nm, 332km/h, and 1,389kg weight."
     },
     {
         "id": "p1469",
