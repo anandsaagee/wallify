@@ -5786,93 +5786,123 @@ export const products = [
     },
     {
         "id": "p1469",
-        "title": "Automotive A1-021",
+        "title": "BMW E30 M3 Burgundy Widebody Graffiti Art Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-021.jpg",
-        "description": "High-quality automotive poster – Automotive A1-021.",
-        "label": "a1-021.jpg"
+        "description": "Aggressive widebody BMW E30 M3 coupe in deep metallic burgundy with gold wheels set against vibrant purple street-art graffiti.",
+        "label": "a1-021.jpg",
+        "seoTitle": "BMW E30 M3 Burgundy Widebody Graffiti Art Poster",
+        "metaDescription": "Striking burgundy widebody BMW E30 M3 coupe with gold wheels against bold purple spray paint graffiti wall art on matte poster.",
+        "seoAltText": "Widebody classic BMW E30 M3 coupe in metallic deep burgundy with gold deep-dish rims, slammed stance, front lip, and purple graffiti tag behind it."
     },
     {
         "id": "p1470",
-        "title": "Automotive A1-022",
+        "title": "BMW E30 Green Comic Art Multi-Panel Drift Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-022.jpg",
-        "description": "High-quality automotive poster – Automotive A1-022.",
-        "label": "a1-022.jpg"
+        "description": "Dynamic comic-book style illustration of a forest green BMW E30 drift car surrounded by action-packed detail panels and tire smoke.",
+        "label": "a1-022.jpg",
+        "seoTitle": "BMW E30 Green Comic Art Multi-Panel Drift Poster",
+        "metaDescription": "Graphic comic-style illustration poster of a green BMW E30 drifting in tire smoke with wheel and taillight detail panels.",
+        "seoAltText": "Multi-panel comic-style automotive poster of a dark green BMW E30 drift coupe producing tire smoke, with large white E30 text and inset wheel details."
     },
     {
         "id": "p1471",
-        "title": "Automotive A1-023",
+        "title": "Ford Mustang GT Blue Widebody 5.0L V8 Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-023.jpg",
-        "description": "High-quality automotive poster – Automotive A1-023.",
-        "label": "a1-023.jpg"
+        "description": "Striking electric blue Ford Mustang GT widebody coupe with orange rim lips, black racing stripes, bold FORD typography and specs.",
+        "label": "a1-023.jpg",
+        "seoTitle": "Ford Mustang GT Blue Widebody 5.0L V8 Poster",
+        "metaDescription": "Powerful blue Ford Mustang GT widebody with orange-lip wheels, giant white FORD typography, and 5.0L V8 performance details.",
+        "seoAltText": "Electric blue widebody Ford Mustang GT sports coupe with orange lip wheels and black hood stripe, set against large white FORD typography and spec text."
     },
     {
         "id": "p1472",
-        "title": "Automotive A1-024",
+        "title": "BMW E30 Black Classic Coupe High-Angle Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-024.jpg",
-        "description": "High-quality automotive poster – Automotive A1-024.",
-        "label": "a1-024.jpg"
+        "description": "Sleek black BMW E30 coupe captured from an overhead aerial angle under palm shadows with warm retro yellow BMW typography.",
+        "label": "a1-024.jpg",
+        "seoTitle": "BMW E30 Black Classic Coupe High-Angle Poster",
+        "metaDescription": "Classic black BMW E30 coupe under palm tree shadows with bold yellow retro BMW typography and historical heritage description.",
+        "seoAltText": "Overhead high-angle view of a pristine black BMW E30 coupe with sunroof and silver basketweave wheels under palm fronds, with yellow retro BMW typography."
     },
     {
         "id": "p1473",
-        "title": "Automotive A1-025",
+        "title": "Porsche 911 964 Turbo Synthwave Sunset Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-025.jpg",
-        "description": "High-quality automotive poster – Automotive A1-025.",
-        "label": "a1-025.jpg"
+        "description": "Dreamy synthwave aesthetic Porsche 911 (964) Turbo widebody in soft blue with glowing neon accents, cherry blossoms, and wet reflection.",
+        "label": "a1-025.jpg",
+        "seoTitle": "Porsche 911 964 Turbo Synthwave Sunset Poster",
+        "metaDescription": "Synthwave style Porsche 911 964 Turbo widebody reflecting on wet tarmac with neon blue light trails, cherry blossom, and giant 911.",
+        "seoAltText": "Classic Porsche 911 964 Turbo with widebody kit reflecting on wet ground beneath pink cherry blossoms, glowing blue neon ribbon, and giant 911 text."
     },
     {
         "id": "p1474",
-        "title": "Automotive A1-026",
+        "title": "Lamborghini Revuelto Matte Grey Hybrid V12 Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-026.jpg",
-        "description": "High-quality automotive poster – Automotive A1-026.",
-        "label": "a1-026.jpg"
+        "description": "Menacing matte grey Lamborghini Revuelto V12 hybrid supercar poster featuring multi-panel design, red calipers, and 747 kW specs.",
+        "label": "a1-026.jpg",
+        "seoTitle": "Lamborghini Revuelto Matte Grey Hybrid V12 Poster",
+        "metaDescription": "Dark matte grey Lamborghini Revuelto hybrid supercar poster featuring technical specs, 747kW output, multi-panel design, and badge.",
+        "seoAltText": "Matte dark grey Lamborghini Revuelto V12 hybrid supercar shown in side profile with inset three-panel closeups of wheels and headlights, plus spec data."
     },
     {
         "id": "p1475",
-        "title": "Automotive A1-027",
+        "title": "BMW M5 F90 Urban Green Performance Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-027.jpg",
-        "description": "High-quality automotive poster – Automotive A1-027.",
-        "label": "a1-027.jpg"
+        "description": "High-performance BMW M5 F90 sports sedan in pale metallic green with custom mesh wheels, split front/rear perspective, and M Power badges.",
+        "label": "a1-027.jpg",
+        "seoTitle": "BMW M5 F90 Urban Green Performance Spec Poster",
+        "metaDescription": "High-performance BMW M5 F90 sedan poster in light metallic green with split front and rear views, custom wheels, and M Power specs.",
+        "seoAltText": "Modern BMW M5 F90 sport sedan in light sage green with silver multi-spoke rims, showing both rear and front angles divided by bold white BMW M5 typography."
     },
     {
         "id": "p1476",
-        "title": "Automotive A1-028",
+        "title": "Porsche 911 GT3 RS Baby Blue Track Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-028.jpg",
-        "description": "High-quality automotive poster – Automotive A1-028.",
-        "label": "a1-028.jpg"
+        "description": "Track-ready Porsche 911 GT3 RS in vibrant light blue with white racing stripes, massive rear wing, studio reflection, and engine specs.",
+        "label": "a1-028.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Baby Blue Track Spec Poster",
+        "metaDescription": "Striking Porsche 911 GT3 RS poster in baby blue with white stripes, large rear wing, studio reflections, and 4.0L flat-six specs.",
+        "seoAltText": "Light blue Porsche 911 GT3 RS track supercar with white center stripes, black wing, and reflective floor, flanked by large white PORSCHE typography."
     },
     {
         "id": "p1477",
-        "title": "Automotive A1-029",
+        "title": "BMW E30 White Coupe Underground Garage Graffiti Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-029.jpg",
-        "description": "High-quality automotive poster – Automotive A1-029.",
-        "label": "a1-029.jpg"
+        "description": "Classic Alpine White BMW E30 coupe with glowing amber headlights parked in a dark industrial garage beneath bold white graffiti tag art.",
+        "label": "a1-029.jpg",
+        "seoTitle": "BMW E30 White Coupe Garage Graffiti Poster",
+        "metaDescription": "Alpine White BMW E30 coupe with glowing amber headlights inside an underground garage featuring bold white graffiti street art.",
+        "seoAltText": "White BMW E30 coupe with amber glowing headlights centered in a dark concrete parking garage under a dripping white spray paint WAVY graffiti piece."
     },
     {
         "id": "p1478",
-        "title": "Automotive A1-030",
+        "title": "Porsche 911 GT3 RS Racing Yellow Multi-Angle Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-030.jpg",
-        "description": "High-quality automotive poster – Automotive A1-030.",
-        "label": "a1-030.jpg"
+        "description": "Dynamic multi-angle poster of the Porsche 911 GT3 RS in brilliant Racing Yellow featuring aerial, rear, and profile perspectives with specs.",
+        "label": "a1-030.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Racing Yellow Multi-Angle Poster",
+        "metaDescription": "Brilliant Racing Yellow Porsche 911 GT3 RS multi-angle collage poster with swan-neck wing, aerial views, Porsche crest, and specs.",
+        "seoAltText": "Vibrant yellow Porsche 911 GT3 RS sports car presented in an artistic spiral collage featuring top-down, rear, and three-quarter angles with technical specs."
     },
     {
         "id": "p1479",
