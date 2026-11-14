@@ -5906,93 +5906,123 @@ export const products = [
     },
     {
         "id": "p1479",
-        "title": "Automotive A1-031",
+        "title": "Hindustan Contessa Mafia Edition Red Sedan Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-031.jpg",
-        "description": "High-quality automotive poster – Automotive A1-031.",
-        "label": "a1-031.jpg"
+        "description": "Classic Hindustan Motors Contessa sedan in fiery red Mafia Edition featuring smoked headlights, custom wheels, and technical specs.",
+        "label": "a1-031.jpg",
+        "seoTitle": "Hindustan Contessa Mafia Edition Red Sedan Poster",
+        "metaDescription": "Classic red Hindustan Motors Contessa Mafia Edition sedan poster with multi-panel details, Isuzu turbodiesel specs, and smoke burnout.",
+        "seoAltText": "Crimson red Hindustan Motors Contessa Mafia Edition sedan smoking its rear tires on red road lines with inset front, rear, and wheel details."
     },
     {
         "id": "p1480",
-        "title": "Automotive A1-032",
+        "title": "BMW M4 GT3 Motorsport Livery Track Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-032.jpg",
-        "description": "High-quality automotive poster – Automotive A1-032.",
-        "label": "a1-032.jpg"
+        "description": "High-intensity BMW M4 GT3 endurance race car poster in pixel camo livery, featuring track specs (590HP, 300 km/h) and multi-angle design.",
+        "label": "a1-032.jpg",
+        "seoTitle": "BMW M4 GT3 Motorsport Livery Track Spec Poster",
+        "metaDescription": "BMW M4 GT3 endurance race car poster in digital camo livery with 590HP specs, multi-angle action shots, and BMW Motorsport branding.",
+        "seoAltText": "BMW M4 GT3 track racing car with digital blue and red camouflage livery, showing front three-quarter, side profile, and rear wing angles with specs."
     },
     {
         "id": "p1481",
-        "title": "Automotive A1-033",
+        "title": "Porsche 911 GT3 RS Python Green Track Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-033.jpg",
-        "description": "High-quality automotive poster – Automotive A1-033.",
-        "label": "a1-033.jpg"
+        "description": "Electric Python Green Porsche 911 GT3 RS supercar poster featuring three detail panels of the swan-neck wing, wheels, and 525HP specs.",
+        "label": "a1-033.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Python Green Track Poster",
+        "metaDescription": "Vivid Python Green Porsche 911 GT3 RS poster with swan-neck wing detail panels, Porsche Motorsport crest, and 525 HP track stats.",
+        "seoAltText": "Bright lime green Porsche 911 GT3 RS with black aero trim and swan-neck rear wing on green background with three upper detail panels and engine specs."
     },
     {
         "id": "p1482",
-        "title": "Automotive A1-034",
+        "title": "Iran Khodro Paykan White Classic Sedan Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-034.jpg",
-        "description": "High-quality automotive poster – Automotive A1-034.",
-        "label": "a1-034.jpg"
+        "description": "Vintage tribute poster to Iran Khodros iconic Paykan sedan in clean white against a striking black and white split backdrop with history text.",
+        "label": "a1-034.jpg",
+        "seoTitle": "Iran Khodro Paykan White Classic Sedan Poster",
+        "metaDescription": "Historic Iran Khodro Paykan classic white sedan tribute poster with bold typography and nostalgic Queen of Iran Roads history text.",
+        "seoAltText": "Front straight-on view of an ivory white Iran Khodro Paykan classic sedan on dark asphalt with a white center stripe and Paykan logo above."
     },
     {
         "id": "p1483",
-        "title": "Automotive A1-035",
+        "title": "Porsche 911 GT3 RS Miami Blue Racing Stripes Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-035.jpg",
-        "description": "High-quality automotive poster – Automotive A1-035.",
-        "label": "a1-035.jpg"
+        "description": "High-performance Porsche 911 GT3 RS in vibrant Miami Blue with dual white racing stripes, rear wing aero, and detailed chassis shots.",
+        "label": "a1-035.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Miami Blue Racing Stripes Poster",
+        "metaDescription": "Vibrant Miami Blue Porsche 911 GT3 RS track poster with twin white racing stripes, aero wing, dual detail insets, and technical data.",
+        "seoAltText": "Miami Blue Porsche 911 GT3 RS coupe with dual white center stripes, massive carbon wing, and two lower detail panels showing wheel and rear dual exhaust."
     },
     {
         "id": "p1484",
-        "title": "Automotive A1-036",
+        "title": "Porsche 911 GT3 R Le Mans Endurance Racing Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-036.jpg",
-        "description": "High-quality automotive poster – Automotive A1-036.",
-        "label": "a1-036.jpg"
+        "description": "Cyber-aesthetic Le Mans endurance poster of the Porsche 911 GT3 R race car with illuminated red taillights, Endless wing, and race decals.",
+        "label": "a1-036.jpg",
+        "seoTitle": "Porsche 911 GT3 R Le Mans Endurance Racing Poster",
+        "metaDescription": "Futuristic Le Mans endurance racing poster featuring the Porsche 911 GT3 R with glowing taillights, Endless wing, and tactical typography.",
+        "seoAltText": "Rear three-quarter view of a white Porsche 911 GT3 R Le Mans race car with Goodyear tires and glowing red taillight under bold red INTERVAL typography."
     },
     {
         "id": "p1485",
-        "title": "Automotive A1-037",
+        "title": "Porsche 911 GT3 RS Velvet Vortex Pastel Pink Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-037.jpg",
-        "description": "High-quality automotive poster – Automotive A1-037.",
-        "label": "a1-037.jpg"
+        "description": "Elegant pastel pink tribute poster of the Porsche 911 GT3 RS Velvet Vortex with rose gold wheel accents and angled detail panels.",
+        "label": "a1-037.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Velvet Vortex Pink Poster",
+        "metaDescription": "Dreamy pastel pink Porsche 911 GT3 RS Velvet Vortex poster with rose-accented aero wheels, rear wing panels, and Porsche crest.",
+        "seoAltText": "Pearl white Porsche 911 GT3 RS with pink aero accents parked on pink ground with three angled upper inset panels showcasing wing and wheel details."
     },
     {
         "id": "p1486",
-        "title": "Automotive A1-038",
+        "title": "Mercedes-Benz W140 S-Class Red Vintage Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-038.jpg",
-        "description": "High-quality automotive poster – Automotive A1-038.",
-        "label": "a1-038.jpg"
+        "description": "Regal garnet red Mercedes-Benz W140 S-Class sedan poster on vintage parchment with cockpit, executive interior, and exterior angles.",
+        "label": "a1-038.jpg",
+        "seoTitle": "Mercedes-Benz W140 S-Class Red Vintage Spec Poster",
+        "metaDescription": "Classic garnet red Mercedes-Benz W140 S-Class poster featuring multi-angle views, luxury interior insets, and flagship history text.",
+        "seoAltText": "Garnet red Mercedes-Benz W140 S-Class luxury sedan on textured paper backdrop, accompanied by interior cockpit insets and technical specifications."
     },
     {
         "id": "p1487",
-        "title": "Automotive A1-039",
+        "title": "BMW M3 E30 Dakar Yellow Spec Sheet Art Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-039.jpg",
-        "description": "High-quality automotive poster – Automotive A1-039.",
-        "label": "a1-039.jpg"
+        "description": "Iconic Dakar Yellow BMW M3 E30 sports coupe poster with giant M3 typography, M sport interior insets, and full technical spec breakdown.",
+        "label": "a1-039.jpg",
+        "seoTitle": "BMW M3 E30 Dakar Yellow Spec Sheet Art Poster",
+        "metaDescription": "Iconic Dakar Yellow BMW M3 E30 poster with giant yellow typography, M sport cockpit insets, 200HP engine specs, and M tricolor badge.",
+        "seoAltText": "Dakar Yellow BMW E30 M3 sports coupe on a dark reflective surface with giant yellow M3 letters, cockpit seat insets, and 2.3L engine performance data."
     },
     {
         "id": "p1488",
-        "title": "Automotive A1-040",
+        "title": "BMW E34 Black Executive Sedan Night Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-040.jpg",
-        "description": "High-quality automotive poster – Automotive A1-040.",
-        "label": "a1-040.jpg"
+        "description": "Menacing metallic black BMW E34 sedan under moody underground lighting, featuring glowing amber corner lamps and 4.0L V8 performance specs.",
+        "label": "a1-040.jpg",
+        "seoTitle": "BMW E34 Black Executive Sedan Night Spec Poster",
+        "metaDescription": "Deep black BMW E34 sedan poster captured under dramatic night reflections with amber lights, multi-panel details, and 286 HP specs.",
+        "seoAltText": "Gloss black BMW E34 sedan parked in a moody dark garage with amber turn signals illuminated, multi-panel reflection details, and 4.0L V8 stats."
     },
     {
         "id": "p1489",
