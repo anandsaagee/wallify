@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { isSaleActive, SALE } from '../utils/sale';
 import anniversaryImg from '../assets/anniversary-sale.jpg';
 
-const SESSION_KEY = 'wallify_sale_modal_v3';
+const SESSION_KEY = 'wallify_sale_modal_v4';
 
 export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) => {
   const [mounted, setMounted] = useState(false);
@@ -32,28 +32,24 @@ export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) 
     <>
       <style>{`
         @keyframes saleIn {
-          0%   { opacity:0; transform:scale(0.86) translateY(24px); }
-          65%  { transform:scale(1.02) translateY(-3px); }
+          0%   { opacity:0; transform:scale(0.86) translateY(28px); }
+          65%  { transform:scale(1.025) translateY(-3px); }
           100% { opacity:1; transform:scale(1) translateY(0); }
         }
         @keyframes saleOut {
-          to { opacity:0; transform:scale(0.92) translateY(16px); }
+          to { opacity:0; transform:scale(0.9) translateY(16px); }
         }
-        @keyframes floatBadge {
-          0%,100% { transform:translateY(0) rotate(-3deg); }
-          50%      { transform:translateY(-4px) rotate(-3deg); }
+        @keyframes pulseCta {
+          0%,100% { box-shadow:0 0 0 0 rgba(185,28,28,.55); }
+          50%      { box-shadow:0 0 0 10px rgba(185,28,28,0); }
         }
         @keyframes shimmerGold {
           0%   { background-position:-200% center; }
           100% { background-position: 200% center; }
         }
-        @keyframes pulseCta {
-          0%,100% { box-shadow:0 0 0 0 rgba(185,28,28,.5); }
-          50%      { box-shadow:0 0 0 8px rgba(185,28,28,0); }
-        }
-        .sale-in  { animation:saleIn  .5s cubic-bezier(.34,1.4,.64,1) forwards; }
+        .sale-in  { animation:saleIn  .52s cubic-bezier(.34,1.4,.64,1) forwards; }
         .sale-out { animation:saleOut .32s ease forwards; }
-        .float-badge { animation:floatBadge 2.6s ease-in-out infinite; }
+        .cta-pulse { animation:pulseCta 2s ease-in-out infinite; }
         .shimmer-gold {
           background:linear-gradient(90deg,#92400e 0%,#d97706 25%,#fef3c7 50%,#d97706 75%,#92400e 100%);
           background-size:200% auto;
@@ -61,96 +57,96 @@ export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) 
           -webkit-text-fill-color:transparent;
           animation:shimmerGold 2.4s linear infinite;
         }
-        .cta-pulse { animation:pulseCta 2s ease-in-out infinite; }
       `}</style>
 
       {/* Backdrop */}
       <div
         className={`fixed inset-0 z-[200] flex items-center justify-center p-4
-          transition-opacity duration-300 ${visible ? 'opacity-100' : 'opacity-0'}`}
-        style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(5px)' }}
+          transition-opacity duration-300 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        style={{ background: 'rgba(0,0,0,0.68)', backdropFilter: 'blur(6px)' }}
         onClick={dismiss}
       >
-        {/* Card — max 340px wide, compact */}
+        {/* Card */}
         <div
-          className={visible ? 'sale-in' : 'sale-out'}
-          style={{ width: '100%', maxWidth: 340 }}
+          className={`relative w-full overflow-hidden rounded-2xl shadow-2xl ${visible ? 'sale-in' : 'sale-out'}`}
+          style={{ maxWidth: 320 }}
           onClick={e => e.stopPropagation()}
         >
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl"
-            style={{ background: '#fff' }}>
+          {/* ── Full-bleed image ── */}
+          <img
+            src={anniversaryImg}
+            alt="1st Anniversary Sale"
+            className="w-full block"
+            style={{ display: 'block', width: '100%', height: 'auto' }}
+            draggable={false}
+          />
 
-            {/* ── Close button ── */}
-            <button
-              aria-label="Close"
-              onClick={dismiss}
-              className="absolute top-2 right-2 z-30 w-7 h-7 rounded-full bg-black/50 hover:bg-black/70 active:scale-90 transition-all flex items-center justify-center text-white text-xs font-bold"
-            >✕</button>
+          {/* ── Close button (top-right, over image) ── */}
+          <button
+            aria-label="Close"
+            onClick={dismiss}
+            className="absolute top-2.5 right-2.5 z-30 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold transition-all active:scale-90"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1.5px solid rgba(255,255,255,0.25)' }}
+          >✕</button>
 
-            {/* ── Image (top half) ── */}
-            <div className="relative w-full" style={{ height: 200 }}>
-              <img
-                src={anniversaryImg}
-                alt="1st Anniversary Sale"
-                className="w-full h-full object-cover object-center"
-                draggable={false}
-              />
+          {/* ── Gradient overlay — dark bottom over image ── */}
+          <div
+            className="absolute inset-x-0 bottom-0 z-10"
+            style={{
+              background: 'linear-gradient(to top, rgba(10,2,2,0.97) 0%, rgba(10,2,2,0.9) 42%, rgba(10,2,2,0.5) 68%, transparent 100%)',
+              paddingTop: 80,
+            }}
+          >
+            <div className="px-4 pb-4 pt-0">
 
-              {/* Floating discount badge */}
-              <div
-                className="float-badge absolute bottom-3 left-3 rounded-xl px-2.5 py-1.5 border-2 border-white/40 shadow-lg"
-                style={{ background: 'linear-gradient(135deg,#b91c1c,#dc2626)' }}
-              >
-                <p className="text-white font-black text-xl leading-none">{SALE.discountPct}%</p>
-                <p className="text-white/90 font-black text-[8px] uppercase tracking-wider">OFF</p>
-              </div>
-            </div>
-
-            {/* ── Offer panel (dark bottom) ── */}
-            <div
-              className="px-4 pt-3 pb-4"
-              style={{ background: 'linear-gradient(160deg,#1c0505,#2d0808)' }}
-            >
               {/* Title */}
-              <p className="text-center font-black text-base leading-tight mb-0.5">
+              <p className="text-center font-black text-sm leading-tight mb-0.5">
                 <span className="shimmer-gold">Exclusive Anniversary Offers</span>
               </p>
-              <p className="text-center text-white/50 text-[10px] font-semibold mb-3 tracking-wide">
-                Original prices unchanged · Auto-applied at checkout
+              <p className="text-center text-white/50 text-[9px] font-semibold mb-3 tracking-wide uppercase">
+                Original prices unchanged · Auto-applied
               </p>
 
-              {/* Two offer rows */}
+              {/* Offer rows */}
               <div className="space-y-2 mb-3">
 
                 {/* 10% off */}
-                <div className="flex items-center gap-2.5 bg-white/[0.07] border border-white/10 rounded-xl px-3 py-2.5">
+                <div
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5"
+                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
+                >
                   <div
-                    className="shrink-0 w-9 h-9 rounded-lg flex flex-col items-center justify-center shadow"
-                    style={{ background: 'linear-gradient(135deg,#b91c1c,#dc2626)' }}
+                    className="shrink-0 w-9 h-9 rounded-lg flex flex-col items-center justify-center"
+                    style={{ background: 'linear-gradient(135deg,#b91c1c,#dc2626)', boxShadow: '0 4px 12px rgba(185,28,28,0.5)' }}
                   >
                     <span className="text-white font-black text-sm leading-none">{SALE.discountPct}%</span>
                     <span className="text-white/80 font-black text-[7px] uppercase">OFF</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-black text-xs leading-tight">10% Off on All Posters</p>
-                    <p className="text-white/50 text-[9px] font-semibold mt-0.5">No coupon needed · Applied automatically</p>
+                    <p className="text-white/50 text-[9px] font-medium mt-0.5">No coupon · Applied at checkout</p>
                   </div>
-                  <span className="shrink-0 text-[9px] font-black text-green-400 bg-green-400/15 px-1.5 py-0.5 rounded-md border border-green-400/25">
+                  <span className="shrink-0 font-black text-[9px] text-green-400 px-1.5 py-0.5 rounded-md"
+                    style={{ background: 'rgba(74,222,128,0.15)', border: '1px solid rgba(74,222,128,0.3)' }}>
                     AUTO
                   </span>
                 </div>
 
                 {/* Free delivery */}
-                <div className="flex items-center gap-2.5 bg-white/[0.07] border border-white/10 rounded-xl px-3 py-2.5">
+                <div
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5"
+                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
+                >
                   <div
-                    className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-lg shadow"
-                    style={{ background: 'linear-gradient(135deg,#047857,#059669)' }}
+                    className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-base"
+                    style={{ background: 'linear-gradient(135deg,#047857,#059669)', boxShadow: '0 4px 12px rgba(5,150,105,0.4)' }}
                   >🚚</div>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-black text-xs leading-tight">Free Delivery on All Orders</p>
-                    <p className="text-white/50 text-[9px] font-semibold mt-0.5">Anywhere in India · Zero delivery charges</p>
+                    <p className="text-white/50 text-[9px] font-medium mt-0.5">Anywhere in India · Zero charges</p>
                   </div>
-                  <span className="shrink-0 text-[9px] font-black text-green-400 bg-green-400/15 px-1.5 py-0.5 rounded-md border border-green-400/25">
+                  <span className="shrink-0 font-black text-[9px] text-green-400 px-1.5 py-0.5 rounded-md"
+                    style={{ background: 'rgba(74,222,128,0.15)', border: '1px solid rgba(74,222,128,0.3)' }}>
                     FREE
                   </span>
                 </div>
@@ -160,11 +156,16 @@ export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) 
               {/* CTA */}
               <button
                 onClick={handleShopNow}
-                className="cta-pulse w-full py-3 rounded-xl font-black text-white text-xs uppercase tracking-widest active:scale-95 transition-transform border border-red-400/30"
-                style={{ background: 'linear-gradient(135deg,#b91c1c,#dc2626,#be123c)' }}
+                className="cta-pulse w-full py-3 rounded-xl font-black text-white text-xs uppercase tracking-widest active:scale-95 transition-transform"
+                style={{
+                  background: 'linear-gradient(135deg,#b91c1c 0%,#dc2626 60%,#be123c 100%)',
+                  boxShadow: '0 8px 24px rgba(185,28,28,0.5)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                }}
               >
                 🎉 Shop the Sale Now →
               </button>
+
             </div>
           </div>
         </div>

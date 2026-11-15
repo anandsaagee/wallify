@@ -275,9 +275,16 @@ export const Hero: React.FC<{
         aria-hidden="true"
       />
 
-      {/* Foreground content */}
-      <div className="relative z-10 text-center w-full max-w-lg mx-auto px-4 flex flex-col items-center gap-3 sm:gap-4">
-
+      {/* Foreground content — white radial glow keeps text readable over poster mosaic */}
+      <div
+        className="relative z-10 text-center w-full max-w-lg mx-auto px-4 flex flex-col items-center gap-3 sm:gap-4"
+        style={{
+          /* Soft white halo behind all text — invisible on plain white BG, only shows over posters */
+          background: 'radial-gradient(ellipse 85% 85% at 50% 48%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0.55) 60%, transparent 100%)',
+          borderRadius: '50%',
+          padding: 'clamp(16px, 4vw, 32px)',
+        }}
+      >
         {/* Anniversary Sale modal — pops in after 700ms */}
         <SaleBanner onShopNow={onShopNow} />
 
