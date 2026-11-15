@@ -3,15 +3,12 @@ import { createPortal } from 'react-dom';
 import { isSaleActive, SALE } from '../utils/sale';
 import anniversaryImg from '../assets/anniversary-sale.jpg';
 
-const SESSION_KEY = 'wallify_sale_modal_v6';
-
 export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) => {
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!isSaleActive()) return;
-    if (sessionStorage.getItem(SESSION_KEY)) return;
     const t = setTimeout(() => {
       setMounted(true);
       requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)));
@@ -21,7 +18,6 @@ export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) 
 
   const dismiss = () => {
     setVisible(false);
-    sessionStorage.setItem(SESSION_KEY, '1');
     setTimeout(() => setMounted(false), 350);
   };
 

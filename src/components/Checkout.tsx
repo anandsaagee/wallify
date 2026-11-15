@@ -393,19 +393,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 </p>
               </div>
             </div>
-          ) : (
-            <div className="flex items-start gap-3 bg-black/[0.03] border border-black/[0.04] rounded-2xl p-4">
-              <div className="shrink-0 w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                <Info className="w-4 h-4 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-black/80">Delivery Charges Apply</p>
-                <p className="text-[11px] text-black/60 mt-0.5 leading-relaxed font-medium">
-                  Enter your pincode to calculate delivery charges. Orders above 25 posters incur an extra ₹10 surcharge.
-                </p>
-              </div>
-            </div>
-          )}
+          ) : null}
 
           {/* Checkout form */}
           <form onSubmit={handleSubmit} className="space-y-8 pb-12">
