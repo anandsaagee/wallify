@@ -6026,183 +6026,243 @@ export const products = [
     },
     {
         "id": "p1489",
-        "title": "Automotive A1-041",
+        "title": "Porsche 911 GT3 RS White Minimalist Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-041.jpg",
-        "description": "High-quality automotive poster – Automotive A1-041.",
-        "label": "a1-041.jpg"
+        "description": "Clean off-white Porsche 911 GT3 RS poster with five-spoke black wheels, swan-neck aero wing, multi-panel insets, and 525HP specs.",
+        "label": "a1-041.jpg",
+        "seoTitle": "Porsche 911 GT3 RS White Minimalist Spec Poster",
+        "metaDescription": "Minimalist white Porsche 911 GT3 RS poster featuring black 5-spoke wheels, swan-neck wing detail panels, and 525 HP track performance specs.",
+        "seoAltText": "Pure white Porsche 911 GT3 RS sports car with black multi-spoke rims and swan-neck wing, with three vertical detail panels and specs below."
     },
     {
         "id": "p1490",
-        "title": "Automotive A1-042",
+        "title": "Nissan Skyline GT-R R34 Silver JDM Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-042.jpg",
-        "description": "High-quality automotive poster – Automotive A1-042.",
-        "label": "a1-042.jpg"
+        "description": "Gritty halftone JDM poster of the Nissan Skyline GT-R R34 in silver with iconic glowing round taillights, RB26DETT specs, and red script.",
+        "label": "a1-042.jpg",
+        "seoTitle": "Nissan Skyline GT-R R34 Silver JDM Poster",
+        "metaDescription": "Classic silver Nissan Skyline GT-R R34 poster with glowing round red taillights, bold halftone SKYLINE text, and RB26DETT AWD specs.",
+        "seoAltText": "Silver Nissan Skyline GT-R R34 viewed from the rear with iconic glowing quad round taillights, giant dark SKYLINE lettering, and Japanese text."
     },
     {
         "id": "p1491",
-        "title": "Automotive A1-043",
+        "title": "Ford Mustang Shelby GT500 Red Cobra Art Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-043.jpg",
-        "description": "High-quality automotive poster – Automotive A1-043.",
-        "label": "a1-043.jpg"
+        "description": "Fierce Ford Mustang Shelby GT500 in deep candy red with black racing stripes, glowing headlights, cobra badge, and warped MUSTANG typography.",
+        "label": "a1-043.jpg",
+        "seoTitle": "Ford Mustang Shelby GT500 Red Cobra Art Poster",
+        "metaDescription": "Aggressive red Ford Mustang Shelby GT500 poster with black stripes, glowing cobra grille badge, warped typography, and muscle car specs.",
+        "seoAltText": "Front straight-on view of a deep red Shelby GT500 Mustang with illuminated LED headlights and cobra badge below stylized vertical MUSTANG typography."
     },
     {
         "id": "p1492",
-        "title": "Automotive A1-044",
+        "title": "Dodge Viper GT Metallic Purple V10 Muscle Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-044.jpg",
-        "description": "High-quality automotive poster – Automotive A1-044.",
-        "label": "a1-044.jpg"
+        "description": "Dynamic graphic poster of the 645HP Dodge Viper GT in striking metallic purple with dual white racing stripes and engineering telemetry.",
+        "label": "a1-044.jpg",
+        "seoTitle": "Dodge Viper GT Purple V10 Muscle Car Poster",
+        "metaDescription": "Striking purple Dodge Viper GT poster with twin white racing stripes, 8.4L V10 specs, 645 horsepower telemetry, and aggressive styling.",
+        "seoAltText": "Metallic purple Dodge Viper GT with white racing stripes in a multi-angle dynamic layout with telemetry charts and technical wheel sketch."
     },
     {
         "id": "p1493",
-        "title": "Automotive A1-045",
+        "title": "Porsche 911 GT3 RS Crimson Red Neon Studio Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-045.jpg",
-        "description": "High-quality automotive poster – Automotive A1-045.",
-        "label": "a1-045.jpg"
+        "description": "Dazzling crimson red 2018 Porsche 911 GT3 RS reflecting on a wet glossy floor surrounded by glowing red neon light bars and bold typography.",
+        "label": "a1-045.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Crimson Neon Studio Poster",
+        "metaDescription": "Striking crimson red 2018 Porsche 911 GT3 RS surrounded by glowing red neon tubes and glossy floor reflections with bold PORSCHE logo.",
+        "seoAltText": "Front three-quarter angle of a glossy red Porsche 911 GT3 RS reflecting off a mirrored floor in a dark studio lit by vertical red neon tube lights."
     },
     {
         "id": "p1494",
-        "title": "Automotive A1-046",
+        "title": "Porsche 911 GT3 Red Glow Neon Showroom Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-046.jpg",
-        "description": "High-quality automotive poster – Automotive A1-046.",
-        "label": "a1-046.jpg"
+        "description": "Moody neon-lit showroom art featuring a gleaming red Porsche 911 GT3 with brilliant floor reflections and high-contrast red bar lighting.",
+        "label": "a1-046.jpg",
+        "seoTitle": "Porsche 911 GT3 Red Glow Neon Showroom Poster",
+        "metaDescription": "Vibrant red Porsche 911 GT3 parked in an immersive red neon light tunnel with floor reflections and bold minimalist typography.",
+        "seoAltText": "Glossy red Porsche 911 GT3 RS sports car bathed in vivid vertical red neon strip lighting with mirror reflection and white PORSCHE banner."
     },
     {
         "id": "p1495",
-        "title": "Automotive A1-047",
+        "title": "McLaren Senna White Pink Street Art Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-047.jpg",
-        "description": "High-quality automotive poster – Automotive A1-047.",
-        "label": "a1-047.jpg"
+        "description": "Custom McLaren Senna hypercar in two-tone white and candy pink with pink wheels, street art graffiti tag, and Ayrton Senna tribute text.",
+        "label": "a1-047.jpg",
+        "seoTitle": "McLaren Senna White Pink Street Art Poster",
+        "metaDescription": "Unique white and candy pink McLaren Senna hypercar poster with pink rims, urban graffiti tag, and Ayrton Senna tribute history text.",
+        "seoAltText": "White McLaren Senna with candy pink aerodynamic accents and matching pink wheels set against a blush pink background with street graffiti tag."
     },
     {
         "id": "p1496",
-        "title": "Automotive A1-048",
+        "title": "Ferrari LaFerrari Black Hypercar Spec Sheet Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-048.jpg",
-        "description": "High-quality automotive poster – Automotive A1-048.",
-        "label": "a1-048.jpg"
+        "description": "Ultra-sleek Nero black Ferrari LaFerrari hybrid hypercar poster on brushed silver with silver 5-spoke wheels, Prancing Horse, and 963HP specs.",
+        "label": "a1-048.jpg",
+        "seoTitle": "Ferrari LaFerrari Black Hypercar Spec Poster",
+        "metaDescription": "Sleek black Ferrari LaFerrari hypercar on brushed silver with Prancing Horse badge, 963-horsepower V12 hybrid specs, and production data.",
+        "seoAltText": "Glossy black Ferrari LaFerrari hypercar on textured silver gradient background with large watermark FERRARI lettering and technical performance specs."
     },
     {
         "id": "p1497",
-        "title": "Automotive A1-049",
+        "title": "BMW M4 G82 Satin Silver Widebody Stance Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-049.jpg",
-        "description": "High-quality automotive poster – Automotive A1-049.",
-        "label": "a1-049.jpg"
+        "description": "Stanced BMW M4 G82 coupe in satin silver with widebody kit, black mesh wheels, cockpit interior inset, graffiti art, and 503 HP specs.",
+        "label": "a1-049.jpg",
+        "seoTitle": "BMW M4 G82 Satin Silver Widebody Stance Poster",
+        "metaDescription": "Aggressive satin silver BMW M4 G82 widebody coupe poster with black wheels, carbon cockpit details, graffiti accents, and 503HP specs.",
+        "seoAltText": "Satin silver widebody BMW M4 G82 coupe with slammed stance and black wheels, accompanied by three upper detail panels and spray graffiti tag."
     },
     {
         "id": "p1498",
-        "title": "Automotive A1-050",
+        "title": "Lamborghini Huracan STO Blu Laufey Orange Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-050.jpg",
-        "description": "High-quality automotive poster – Automotive A1-050.",
-        "label": "a1-050.jpg"
+        "description": "Track-bred Lamborghini Huracán STO in Blu Laufey blue with vivid Arancio orange accents, top-down aero view, and roaring V10 description.",
+        "label": "a1-050.jpg",
+        "seoTitle": "Lamborghini Huracan STO Blu Laufey Orange Poster",
+        "metaDescription": "Striking light blue and orange Lamborghini Huracan STO poster featuring side profile, top-down aerial view, and racing heritage text.",
+        "seoAltText": "Side profile of an electric blue Lamborghini Huracan STO with orange aerodynamic accents, shark fin, and three vertical detail insets above."
     },
     {
         "id": "p1499",
-        "title": "Automotive A1-051",
+        "title": "Audi R8 LMS GT2 Anime Zoro Green Neon Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-051.jpg",
-        "description": "High-quality automotive poster – Automotive A1-051.",
-        "label": "a1-051.jpg"
+        "description": "Bold crossover of motorsport and anime: a white Audi R8 LMS GT2 race car blazing in neon green, with One Piece's Zoro leaping above the cockpit. Wild wall art for car and anime fans alike.",
+        "label": "a1-051.jpg",
+        "seoTitle": "Audi R8 LMS GT2 x One Piece Zoro Neon Green Car Poster",
+        "metaDescription": "Audi R8 LMS GT2 race car meets anime art — Roronoa Zoro leaps above neon green accents and bold GT2 branding.",
+        "seoAltText": "White Audi R8 LMS GT2 race car with aero kit and green-rimmed tyres shot in a racetrack garage setting; the central panel shows a close-up of the front diffuser and green wheel rim; in the upper background, the One Piece anime character Roronoa Zoro is illustrated mid-leap wielding three swords with green energy effects; Audi four-ring badge at top-left; One Piece pirate skull logo at top-right; large neon green R8 LMS letters fill the background; GT2 subtitle in green italic font; a paragraph describing the Audi R8 LMS GT2 at the bottom."
     },
     {
         "id": "p1500",
-        "title": "Automotive A1-052",
+        "title": "BMW M3 E30 1986 Classic German Performance Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-052.jpg",
-        "description": "High-quality automotive poster – Automotive A1-052.",
-        "label": "a1-052.jpg"
+        "description": "Celebrate the legend that changed motorsport. This vintage-style BMW M3 E30 poster pays tribute to the 1986 icon — 192HP inline-four, flared fenders, and pure driving precision.",
+        "label": "a1-052.jpg",
+        "seoTitle": "BMW M3 E30 1986 Classic German Performance Poster",
+        "metaDescription": "Vintage-style BMW M3 E30 poster celebrating the 1986 icon — 192HP inline-four, flared fenders, and motorsport heritage on dark textured background.",
+        "seoAltText": "Dark textured automotive heritage poster with THE BMW M3 E30 ENTERED THE SCENE IN 1986 header and ENGINEERED TO PERFORM label in the top corners; the BMW roundel in weathered blue and white at the top right; a small side-profile schematic line drawing of the E30 M3 on the left; the ///M3 logo with BMW M tricolour stripes prominently centred; THE ULTIMATE DRIVING MACHINE tagline below; a white BMW M3 E30 coupe with gold BBS-style wheels on a reflective dark surface with German plate M-ST 347; engine specs at the bottom right: 2.3L I4 192hp 6750rpm, 0-60 mph 6.7 sec, 146mph top speed, 5-speed manual; CLASSIC GERMAN PERFORMANCE text banner at the base."
     },
     {
         "id": "p1501",
-        "title": "Automotive A1-053",
+        "title": "BMW M4 Competition Floral Studio Wall Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-053.jpg",
-        "description": "High-quality automotive poster – Automotive A1-053.",
-        "label": "a1-053.jpg"
+        "description": "Beauty meets performance. This pristine white BMW M4 Competition G82 coupe is framed by blooming white lilies in a dreamy studio setting, showcasing 510HP, carbon diffuser, and quad exhausts.",
+        "label": "a1-053.jpg",
+        "seoTitle": "BMW M4 Competition White Floral Studio Wall Poster",
+        "metaDescription": "Rear view of a white BMW M4 Competition coupe surrounded by white lilies — elegant meets performance in a serene pale studio setting.",
+        "seoAltText": "Minimalist studio automotive poster showing the rear three-quarter view of a glossy alpine white BMW M4 Competition G82 coupe on a reflective pale grey surface; the lower-left carries the BMW M stripe logo, M4 Competition text; a large bunch of white lily flowers and gypsophila sprays burst from the upper-right corner; the car displays a carbon-fibre rear diffuser, quad oval exhaust pipes, M4 Competition badge on the boot lid, LED L-shaped taillights, and black multi-spoke M Performance wheels; bottom specifications list Top Speed 250KM/H, 0-100KM/H 3.9SEC, Power 510HP 650NM, Drivetrain RWD; BMW roundel at lower right."
     },
     {
         "id": "p1502",
-        "title": "Automotive A1-054",
+        "title": "Mazda MX-5 Miata 1989 Classic Red Roadster Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-054.jpg",
-        "description": "High-quality automotive poster – Automotive A1-054.",
-        "label": "a1-054.jpg"
+        "description": "Back to where it all started. This clean minimalist poster captures the original 1989 red Mazda MX-5 Miata in side profile against a bold red circle — a timeless JDM roadster icon.",
+        "label": "a1-054.jpg",
+        "seoTitle": "Mazda MX-5 Miata Red 1989 Retro Roadster Poster",
+        "metaDescription": "Clean minimalist poster of the 1989 red Mazda MX-5 Miata roadster with a large red circle backdrop, bold 1989 year text, and JDM heritage notes.",
+        "seoAltText": "Minimal cream-background automotive poster with large bold MAZDA wordmark and MX-5 subtitle in black at the top; a small oval Miata badge in the top left; a large red circle dominates the centre; in front of it a first-generation red Mazda MX-5 Miata NA convertible in side profile with the soft top folded, silver alloy wheels, and pop-up headlights retracted; below the car a large bold 1989 numeral with three coloured dots in red, black, and grey; to the right a paragraph describing the production history and naming conventions for the American, Japanese, and European markets."
     },
     {
         "id": "p1503",
-        "title": "Automotive A1-055",
+        "title": "Lexus SC300 Red JDM Sports Coupe Graffiti Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-055.jpg",
-        "description": "High-quality automotive poster – Automotive A1-055.",
-        "label": "a1-055.jpg"
+        "description": "Street culture meets JDM luxury. A glossy red Lexus SC300 coupe commands a tropical driveway beneath oversized white bubble LEXUS graffiti lettering. Pure JDM energy.",
+        "label": "a1-055.jpg",
+        "seoTitle": "Lexus SC300 Red JDM Sports Coupe Graffiti Poster",
+        "metaDescription": "Red Lexus SC300 coupe in a lush tropical driveway topped with oversized white bubble LEXUS graffiti lettering. Pure JDM street culture wall art.",
+        "seoAltText": "Cinematic automotive poster by AIXALDESIGN showing a glossy red Lexus SC300 two-door coupe facing front-centre in a tropical driveway surrounded by green foliage; a second red vehicle is partially visible in the background; in the foreground are large overlaid white bubble-style graffiti letters spelling LEXUS with red outlines and drop shadows; at the bottom, small white text describes the SC300 as a luxury sports coupe produced from 1991 to 2001 with 3.0-litre V6 engine and 225 horsepower."
     },
     {
         "id": "p1504",
-        "title": "Automotive A1-056",
+        "title": "Nissan GT-R R35 Widebody Weathered Kanji Urban Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-056.jpg",
-        "description": "High-quality automotive poster – Automotive A1-056.",
-        "label": "a1-056.jpg"
+        "description": "Raw, battle-hardened and unstoppable. This Nissan GT-R R35 widebody poster channels pure Japanese street racing energy with cracked red kanji panels and a weathered, war-ready aesthetic.",
+        "label": "a1-056.jpg",
+        "seoTitle": "Nissan GT-R R35 Widebody Weathered Urban Poster",
+        "metaDescription": "Battle-worn white Nissan GT-R R35 widebody against cracked red kanji panels — raw Japanese street racing aesthetic in a dramatic editorial layout.",
+        "seoAltText": "Dramatic editorial automotive poster of a modified white Nissan GT-R R35 with widebody flares, large front splitter, and dark multi-spoke wheels with red pinstripe rims in a slight low-angle front three-quarter view; the upper two-thirds of the background is split into fragmented panels of cracked and weathered red paint overlaid with large bold Japanese kanji characters; the right side features small GT-R text in vertical script, horizontal stripe elements, and fine-print technical annotations; the lower half is a dark reflective floor."
     },
     {
         "id": "p1505",
-        "title": "Automotive A1-057",
+        "title": "BMW M4 CS Grey Widebody Racetrack Rain Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-057.jpg",
-        "description": "High-quality automotive poster – Automotive A1-057.",
-        "label": "a1-057.jpg"
+        "description": "Built for the track, unstoppable on the street. This dark cinematic poster captures the BMW M4 CS with widebody kit and orange wheels reflected in rain-soaked asphalt — drama meets precision.",
+        "label": "a1-057.jpg",
+        "seoTitle": "BMW M4 CS Grey Widebody Urban Rain Poster",
+        "metaDescription": "Moody grey BMW M4 CS with widebody kit and orange wheels reflected in rain-soaked urban streets — dramatic racetrack-inspired automotive art.",
+        "seoAltText": "Dark cinematic automotive poster by Dewan Shopneel Shakhir with DESIGNED FOR THE RACETRACK header; BMW roundel badge in top-left corner with orange accent ring; large bold white BMW text fills the mid-background; a wide-body grey BMW M4 CS in front three-quarter view sits on a wet reflective dark street amid warm orange-illuminated urban building facades; the car has an aggressive widebody kit, widened arches, large splitter, and bright orange-finished alloy wheels; to the bottom-right are BMW M4 label in bold italic and a paragraph describing the M4 CS; two inset detail images at the lower-left show the M grille badge and front splitter; a barcode decoration at the lower right."
     },
     {
         "id": "p1506",
-        "title": "Automotive A1-058",
+        "title": "Porsche 911 GT3 RS Pink Illustration Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-058.jpg",
-        "description": "High-quality automotive poster – Automotive A1-058.",
-        "label": "a1-058.jpg"
+        "description": "Make a statement in pink. This striking illustrated Porsche 911 GT3 RS poster features the track icon in blush pink with bold PORSCHE typography, 518HP specs, and a large fixed rear wing.",
+        "label": "a1-058.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Pink Art Spec Wall Poster",
+        "metaDescription": "Eye-catching pink Porsche 911 GT3 RS illustration poster with bold PORSCHE typography, 518HP specs, and clean monochrome side profile.",
+        "seoAltText": "Illustrated automotive poster on a rose-pink background; at the top the word PORSCHE is printed in small sans-serif text with the Porsche crest at the top right; the number 911 appears in grey above the large PORSCHE wordmark in tall semi-transparent white letters filling the full width; below, a full side-profile illustration of a pink Porsche 911 GT3 RS shows a large fixed rear wing, wide rear tyres, gold multi-spoke centre-lock wheels, GT3RS decal on the door sill, and deep front diffuser; below the car three spec items in small white text: 296 KM/H top speed, 4.0 L engine, 518 HP; a paragraph about the GT3 RS at the bottom; two logos at the base."
     },
     {
         "id": "p1507",
-        "title": "Automotive A1-059",
+        "title": "Koenigsegg Jesko White Hypercar Golden Gate Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-059.jpg",
-        "description": "High-quality automotive poster – Automotive A1-059.",
-        "label": "a1-059.jpg"
+        "description": "Swedish hypercar meets iconic landmark. A white Koenigsegg Jesko sits before the Golden Gate Bridge under a glowing pink dusk sky, with bold JESKO typography and 1600HP twin-turbo V8 lore.",
+        "label": "a1-059.jpg",
+        "seoTitle": "Koenigsegg Jesko White Hypercar Bridge Poster",
+        "metaDescription": "White Koenigsegg Jesko parked before the Golden Gate Bridge at a pink dusk sky — ultimate Swedish hypercar meets iconic San Francisco backdrop.",
+        "seoAltText": "Cinematic sunset automotive poster designed by JOYBOY; a white Koenigsegg Jesko hypercar is parked in profile on a coastal road directly in front of the Golden Gate Bridge under a warm pink-purple dusk sky; large bold pink JESKO letters with dimensional white outlines overlay the lower sky; a small inset thumbnail of the Jesko in the lower-left; a text panel to the right carries the KOENISEGG JESKO title in pink and a paragraph about the Jesko as a limited-production Swedish mid-engine hypercar with a 5.0-litre twin-turbo V8 producing up to 1600 horsepower on E85 and the Light Speed Transmission."
     },
     {
         "id": "p1508",
-        "title": "Automotive A1-060",
+        "title": "BMW 850Ci E31 Black Grand Tourer Vintage Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-060.jpg",
-        "description": "High-quality automotive poster – Automotive A1-060.",
-        "label": "a1-060.jpg"
+        "description": "Timeless elegance from Bavaria. This editorial BMW 850Ci E31 poster on deep crimson celebrates the iconic 1990–1999 grand touring coupe in glossy black — poised, powerful, and unforgettable.",
+        "label": "a1-060.jpg",
+        "seoTitle": "BMW 850Ci E31 Black Vintage Grand Tourer Poster",
+        "metaDescription": "Timeless BMW 850Ci E31 poster on a deep crimson background with elegant cream serif typography celebrating the 1990-1999 grand touring icon.",
+        "seoAltText": "Elegant editorial automotive poster on a deep burgundy-crimson background; at the top left, large cream serif 8 series text and bold BMW label; the BMW roundel badge in the top right corner; a paragraph about the BMW 850Ci from the E31 generation 1990-1999 as a grand touring car at the upper left; the main image shows a black BMW 850Ci E31 coupe in front three-quarter view on a reflective red-tinted studio surface with covered pop-up headlights, clean body lines, and silver cross-spoke BBS-style alloys; at the bottom in small tracking-spaced text: BMW 850Ci — E31, 1990-1999."
     },
     {
         "id": "p1509",
