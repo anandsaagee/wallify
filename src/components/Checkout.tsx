@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, ChevronLeft, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift } from 'lucide-react';
+import { ShoppingBag, ChevronLeft, Truck, ShieldCheck, MapPin, Phone, User, CheckCircle2, Info, Gift, Tag } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { OptimizedImage } from './OptimizedImage';
 import { FanArtNotice } from './FanArtNotice';
+import { isSaleActive, SALE } from '../utils/sale';
 
 interface CheckoutProps {
   onBack: () => void;
@@ -56,8 +57,11 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
     }
   }, [formData.pincode]);
 
+  const saleOn = isSaleActive();
   const bulkSurcharge = totals.totalPaidItems > 25 ? 10 : 0;
-  const shippingCharge = shippingZone ? shippingZone.charge + bulkSurcharge : 0;
+  // Free delivery during anniversary sale
+  const baseShipping = shippingZone ? shippingZone.charge + bulkSurcharge : 0;
+  const shippingCharge = saleOn ? 0 : baseShipping;
   const finalTotalWithShipping = totals.finalTotal + shippingCharge;
 
   const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -101,8 +105,13 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
         message += `${itemNum}. ${totals.eligibleFreeGifts}x Mystery Poster${totals.eligibleFreeGifts > 1 ? 's' : ''} — FREE\n`;
       }
       
-      message += `\n💰 *SUBTOTAL: ₹${totals.finalTotal}*\n`;
-      message += `🚚 *DELIVERY (${shippingZone?.name}): ₹${shippingZone?.charge}${bulkSurcharge > 0 ? ` + ₹${bulkSurcharge} bulk surcharge` : ''}*\n`;
+      message += `\n💰 *SUBTOTAL: ₹${totals.subtotal}*\n`;
+      if (saleOn && totals.saleDiscount > 0) {
+        message += `🎉 *ANNIVERSARY SALE -${SALE.discountPct}% DISCOUNT: -₹${totals.saleDiscount}*\n`;
+        message += `🚚 *DELIVERY: FREE (Anniversary Sale)*\n`;
+      } else {
+        message += `🚚 *DELIVERY (${shippingZone?.name}): ₹${shippingZone?.charge}${bulkSurcharge > 0 ? ` + ₹${bulkSurcharge} bulk surcharge` : ''}*\n`;
+      }
       message += `💰 *TOTAL AMOUNT: ₹${finalTotalWithShipping}*\n`;
       message += `--------------------------\n`;
       message += `_Sent via Wallify Store_`;
@@ -176,6 +185,22 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
           </span>
         )}
       </div>
+
+      {/* Anniversary Sale strip */}
+      {isSaleActive() && (
+        <div className="mb-6 flex items-center gap-3 bg-gradient-to-r from-red-600 to-rose-500 rounded-2xl px-4 py-3 shadow-md shadow-red-500/30">
+          <Tag size={16} className="text-white shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-white font-black text-xs uppercase tracking-wider">🎉 Anniversary Sale Applied!</p>
+            <p className="text-white/80 text-[10px] font-semibold mt-0.5">
+              {SALE.discountPct}% off + Free Delivery — no code needed
+            </p>
+          </div>
+          <span className="shrink-0 bg-white text-red-600 font-black text-sm px-2.5 py-1 rounded-xl">
+            -{SALE.discountPct}%
+          </span>
+        </div>
+      )}
 
       {paidItems.length === 0 && freeItems.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-24 text-center">
@@ -296,6 +321,16 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
               <span className="text-black font-black">₹{totals.subtotal}</span>
             </div>
 
+            {/* Anniversary sale discount */}
+            {saleOn && totals.saleDiscount > 0 && (
+              <div className="flex justify-between text-sm font-bold">
+                <span className="text-red-600 flex items-center gap-1">
+                  <Tag size={12} /> {SALE.discountPct}% Anniversary Discount
+                </span>
+                <span className="text-red-600">−₹{totals.saleDiscount}</span>
+              </div>
+            )}
+
             {totals.freeGiftCount > 0 && (
               <div className="flex justify-between text-sm font-bold">
                 <span className="text-emerald-700">Free Posters ({totals.freeGiftCount})</span>
@@ -305,8 +340,10 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
 
             <div className="flex justify-between text-sm font-bold">
               <span className="text-black/70">Delivery</span>
-              <span className="text-black font-black">
-                {!shippingZone
+              <span className={saleOn ? 'text-red-600 font-black' : 'text-black font-black'}>
+                {saleOn
+                  ? '🎉 FREE'
+                  : !shippingZone
                   ? 'Enter pincode below'
                   : bulkSurcharge > 0
                   ? `₹${shippingZone.charge} + ₹${bulkSurcharge}`
@@ -472,7 +509,9 @@ export const Checkout: React.FC<CheckoutProps> = ({ onBack }) => {
                 className="w-full h-14 bg-primary text-black font-black rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-[0_20px_40px_rgba(250,203,21,0.3)] uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed border border-primary/20"
               >
                 <Truck size={16} />
-                Order via WhatsApp · ₹{finalTotalWithShipping}
+                {saleOn
+                  ? `Order via WhatsApp · ₹${finalTotalWithShipping} 🎉`
+                  : `Order via WhatsApp · ₹${finalTotalWithShipping}`}
               </button>
             </div>
           </form>

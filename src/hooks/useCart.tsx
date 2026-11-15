@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import { SIZES, getEligibleFreeItems, getFramePrice } from '../data/config';
+import { getSaleDiscount } from '../utils/sale';
 
 export interface CartItem {
   variantId: string;
@@ -19,10 +20,11 @@ export interface CartItem {
 export interface CartTotals {
   totalPaidItems: number;
   subtotal: number;
+  saleDiscount: number;      // amount saved via anniversary sale (0 when not active)
   freeGiftCount: number;
   eligibleFreeGifts: number;
   totalItems: number;
-  finalTotal: number;
+  finalTotal: number;        // subtotal − saleDiscount
 }
 
 interface CartContextType {
@@ -61,13 +63,16 @@ function computeTotals(cart: CartItem[]): CartTotals {
   const freeGiftCount = freeItems.reduce((sum, item) => sum + item.quantity, 0);
   const eligibleFreeGifts = getEligibleFreeItems(totalPaidItems);
 
+  const saleDiscount = getSaleDiscount(subtotal);
+
   return {
     totalPaidItems,
     subtotal,
+    saleDiscount,
     freeGiftCount,
     eligibleFreeGifts,
     totalItems: totalPaidItems + freeGiftCount,
-    finalTotal: subtotal,
+    finalTotal: subtotal - saleDiscount,
   };
 }
 

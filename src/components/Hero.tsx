@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
+import { SaleBanner } from './SaleBanner';
 
 // ── Stable live-stats helpers ─────────────────────────────────────────────────
 function seedRandom(seed: number): number {
@@ -275,6 +276,9 @@ export const Hero: React.FC<{
 
       {/* Foreground content */}
       <div className="relative z-10 text-center w-full max-w-lg mx-auto px-4 flex flex-col items-center gap-3 sm:gap-4">
+
+        {/* Anniversary Sale banner — animated popup */}
+        <SaleBanner />
 
         {isMainH1 ? (
           <h1
