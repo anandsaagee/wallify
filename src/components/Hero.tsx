@@ -275,11 +275,11 @@ export const Hero: React.FC<{
         aria-hidden="true"
       />
 
-      {/* Foreground content — radial white glow, smooth rounded corners, covers all text */}
+      {/* Foreground content — soft frosted pill, posters visible through it */}
       <div
         className="relative z-10 text-center w-full max-w-lg mx-auto flex flex-col items-center gap-3 sm:gap-4"
         style={{
-          background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.92) 40%, rgba(255,255,255,0.72) 68%, rgba(255,255,255,0.18) 85%, transparent 100%)',
+          background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.52) 45%, rgba(255,255,255,0.18) 72%, transparent 100%)',
           borderRadius: '2.5rem',
           padding: 'clamp(20px, 5vw, 40px) clamp(16px, 4vw, 32px)',
         }}
