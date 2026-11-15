@@ -1,151 +1,209 @@
 import React, { useState, useEffect } from 'react';
-import { isSaleActive, saleDaysLeft, SALE } from '../utils/sale';
+import { isSaleActive, SALE } from '../utils/sale';
 
-// ── Anniversary Sale Banner ───────────────────────────────────────────────────
-// Mounts as an animated pill on the Hero. Dismissable per session.
-// Only renders during the active sale window.
+// ── Anniversary Sale Modal Popup ──────────────────────────────────────────────
+// Full-screen modal with the anniversary image + offer details.
+// Pops in with a spring animation after a short delay.
+// Dismissable: once per session (sessionStorage).
 
-const SESSION_KEY = 'wallify_sale_dismissed_v1';
+const SESSION_KEY = 'wallify_sale_modal_dismissed_v2';
 
-export const SaleBanner: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+export const SaleBanner: React.FC<{ onShopNow?: () => void }> = ({ onShopNow }) => {
   const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!isSaleActive()) return;
-    // Don't show if dismissed this session
     if (sessionStorage.getItem(SESSION_KEY)) return;
 
-    // Slight delay so it pops in after the hero renders
     const t = setTimeout(() => {
       setMounted(true);
-      requestAnimationFrame(() => setVisible(true));
-    }, 600);
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => setVisible(true))
+      );
+    }, 700);
     return () => clearTimeout(t);
   }, []);
 
-  if (!mounted) return null;
+  const dismiss = () => {
+    setVisible(false);
+    sessionStorage.setItem(SESSION_KEY, '1');
+    setTimeout(() => setMounted(false), 400);
+  };
 
-  const days = saleDaysLeft();
+  const handleShopNow = () => {
+    dismiss();
+    onShopNow?.();
+  };
+
+  if (!mounted) return null;
 
   return (
     <>
       <style>{`
-        @keyframes salePop {
-          0%   { opacity: 0; transform: translateY(-16px) scale(0.92); }
-          60%  { transform: translateY(4px) scale(1.02); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
+        @keyframes modalBackdropIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
         }
-        @keyframes saleShimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position: 200% center; }
+        @keyframes modalBackdropOut {
+          from { opacity: 1; }
+          to   { opacity: 0; }
         }
-        @keyframes salePulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
-          50%       { box-shadow: 0 0 0 8px rgba(220,38,38,0); }
+        @keyframes modalCardIn {
+          0%   { opacity: 0; transform: scale(0.82) translateY(32px); }
+          65%  { transform: scale(1.03) translateY(-4px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
         }
-        @keyframes saleFlicker {
-          0%, 100% { opacity: 1; }
-          48%       { opacity: 1; }
-          50%       { opacity: 0.7; }
-          52%       { opacity: 1; }
+        @keyframes modalCardOut {
+          from { opacity: 1; transform: scale(1); }
+          to   { opacity: 0; transform: scale(0.9) translateY(20px); }
         }
-        .sale-banner-enter {
-          animation: salePop 0.55s cubic-bezier(0.34,1.56,0.64,1) forwards;
+        @keyframes shimmerGold {
+          0%   { background-position: -300% center; }
+          100% { background-position: 300% center; }
         }
-        .sale-shimmer-text {
-          background: linear-gradient(
-            90deg,
-            #fff 0%, #fca5a5 30%, #fff 50%, #fca5a5 70%, #fff 100%
+        @keyframes pulseRed {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(185,28,28,0.5); }
+          50%       { box-shadow: 0 0 0 10px rgba(185,28,28,0); }
+        }
+        @keyframes floatBadge {
+          0%, 100% { transform: translateY(0px) rotate(-2deg); }
+          50%       { transform: translateY(-5px) rotate(-2deg); }
+        }
+        @keyframes confettiSpin {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+
+        .sale-backdrop-in  { animation: modalBackdropIn  0.3s ease forwards; }
+        .sale-backdrop-out { animation: modalBackdropOut 0.35s ease forwards; }
+        .sale-card-in      { animation: modalCardIn  0.55s cubic-bezier(0.34,1.4,0.64,1) forwards; }
+        .sale-card-out     { animation: modalCardOut 0.35s ease forwards; }
+
+        .shimmer-gold {
+          background: linear-gradient(90deg,
+            #b45309 0%, #d97706 20%, #fbbf24 40%, #fef3c7 50%,
+            #fbbf24 60%, #d97706 80%, #b45309 100%
           );
-          background-size: 200% auto;
+          background-size: 300% auto;
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: saleShimmer 2.4s linear infinite;
+          animation: shimmerGold 2.5s linear infinite;
         }
-        .sale-pulse {
-          animation: salePulse 2s ease-in-out infinite;
-        }
-        .sale-dot-flicker {
-          animation: saleFlicker 3s ease-in-out infinite;
-        }
+
+        .pulse-red-btn { animation: pulseRed 2s ease-in-out infinite; }
+        .float-badge   { animation: floatBadge 2.8s ease-in-out infinite; }
       `}</style>
 
+      {/* Backdrop */}
       <div
-        className={`relative z-20 w-full max-w-sm mx-auto ${visible ? 'sale-banner-enter' : 'opacity-0'}`}
-        role="banner"
-        aria-label="Anniversary Sale"
+        className={`fixed inset-0 z-[100] flex items-center justify-center p-4
+          ${visible ? 'sale-backdrop-in' : 'sale-backdrop-out'}`}
+        style={{ background: 'rgba(0,0,0,0.72)', backdropFilter: 'blur(6px)' }}
+        onClick={dismiss}
       >
+        {/* Modal card — stop propagation so clicks inside don't close */}
         <div
-          className="sale-pulse relative overflow-hidden rounded-2xl border border-red-500/40 bg-gradient-to-br from-red-600 via-red-500 to-rose-600 px-4 py-3 shadow-xl shadow-red-600/40 cursor-default select-none"
+          className={`relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl
+            ${visible ? 'sale-card-in' : 'sale-card-out'}`}
+          onClick={(e) => e.stopPropagation()}
+          style={{ background: '#fff' }}
         >
-          {/* Noise/grain texture overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.07] pointer-events-none"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-              backgroundSize: '100px 100px',
-            }}
-          />
+          {/* ── Close button ── */}
+          <button
+            aria-label="Close sale popup"
+            onClick={dismiss}
+            className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 active:scale-90 transition-all flex items-center justify-center text-white text-sm font-bold backdrop-blur-sm border border-white/20"
+          >
+            ✕
+          </button>
 
-          {/* Top row: sale name + dismiss */}
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2 min-w-0">
-              {/* Live dot */}
-              <span className="sale-dot-flicker shrink-0 w-2 h-2 rounded-full bg-white shadow-[0_0_6px_2px_rgba(255,255,255,0.7)]" />
-              <span className="sale-shimmer-text text-[11px] font-black uppercase tracking-[0.15em] truncate">
-                🎉 1st Anniversary Sale
-              </span>
-            </div>
+          {/* ── Anniversary Image ── */}
+          <div className="relative w-full" style={{ aspectRatio: '1 / 1' }}>
+            <img
+              src="/anniversary-sale.jpg"
+              alt="1st Anniversary Sale"
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
 
-            {/* Dismiss */}
-            <button
-              aria-label="Dismiss sale banner"
-              onClick={() => {
-                setVisible(false);
-                setTimeout(() => setMounted(false), 300);
-                sessionStorage.setItem(SESSION_KEY, '1');
-              }}
-              className="shrink-0 w-5 h-5 rounded-full bg-white/20 hover:bg-white/30 active:scale-90 transition-all flex items-center justify-center text-white/80 text-[10px] font-bold leading-none"
+            {/* Floating 10% OFF badge on top of image */}
+            <div
+              className="float-badge absolute top-4 left-4 bg-gradient-to-br from-red-600 to-rose-700 rounded-2xl px-3 py-2 shadow-xl border-2 border-white/30"
+              style={{ boxShadow: '0 8px 24px rgba(185,28,28,0.5)' }}
             >
-              ✕
-            </button>
+              <p className="text-white font-black text-2xl leading-none">10%</p>
+              <p className="text-white/90 font-black text-[9px] uppercase tracking-widest">OFF</p>
+            </div>
           </div>
 
-          {/* Offer details */}
-          <div className="mt-2 flex items-center gap-3">
-            {/* 10% off pill */}
-            <div className="shrink-0 flex flex-col items-center bg-white rounded-xl px-3 py-1.5 shadow-md">
-              <span className="text-red-600 font-black text-lg leading-none">10%</span>
-              <span className="text-red-500 font-black text-[9px] uppercase tracking-widest leading-none mt-0.5">OFF</span>
-            </div>
+          {/* ── Offer Details Panel ── */}
+          <div className="bg-gradient-to-b from-[#1a0505] to-[#2d0a0a] px-5 pb-5 pt-4">
 
-            <div className="flex-1 min-w-0">
-              <p className="text-white font-black text-sm leading-tight">
-                Everything in the store
-              </p>
-              <div className="flex items-center gap-1.5 mt-1 flex-wrap">
-                <span className="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white/30 flex items-center gap-1">
-                  🚚 Free Delivery
-                </span>
-                <span className="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white/30">
-                  All Orders
+            {/* Headline */}
+            <p className="text-center font-black text-lg leading-tight mb-1">
+              <span className="shimmer-gold">Exclusive Sale Offers</span>
+            </p>
+            <p className="text-center text-white/60 text-[11px] font-semibold mb-4 tracking-wide">
+              Original prices unchanged · Discount applied at checkout
+            </p>
+
+            {/* Offer pills */}
+            <div className="space-y-2.5 mb-5">
+
+              {/* 10% off row */}
+              <div className="flex items-center gap-3 bg-white/[0.07] border border-white/10 rounded-2xl px-4 py-3">
+                <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 flex flex-col items-center justify-center shadow-lg">
+                  <span className="text-white font-black text-sm leading-none">10%</span>
+                  <span className="text-white/80 font-black text-[8px] uppercase leading-none mt-0.5">OFF</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-black text-sm">10% Off on All Posters</p>
+                  <p className="text-white/55 text-[10px] font-semibold mt-0.5 leading-snug">
+                    Automatically deducted · No coupon needed
+                  </p>
+                </div>
+                <span className="shrink-0 text-green-400 font-black text-xs bg-green-400/15 px-2 py-1 rounded-lg border border-green-400/25">
+                  AUTO
                 </span>
               </div>
-            </div>
-          </div>
 
-          {/* Countdown / deadline */}
-          <div className="mt-2.5 pt-2 border-t border-white/20 flex items-center justify-between">
-            <span className="text-white/80 text-[10px] font-semibold">
-              Ends Dec 31 · No code needed
-            </span>
-            {days > 0 && (
-              <span className="text-white font-black text-[11px] bg-white/20 px-2 py-0.5 rounded-lg border border-white/30">
-                {days}d left
-              </span>
-            )}
+              {/* Free delivery row */}
+              <div className="flex items-center gap-3 bg-white/[0.07] border border-white/10 rounded-2xl px-4 py-3">
+                <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-600 to-emerald-700 flex items-center justify-center shadow-lg">
+                  <span className="text-white text-xl">🚚</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-black text-sm">Free Delivery on All Orders</p>
+                  <p className="text-white/55 text-[10px] font-semibold mt-0.5 leading-snug">
+                    Anywhere in India · No minimum order
+                  </p>
+                </div>
+                <span className="shrink-0 text-green-400 font-black text-xs bg-green-400/15 px-2 py-1 rounded-lg border border-green-400/25">
+                  FREE
+                </span>
+              </div>
+
+            </div>
+
+            {/* CTA */}
+            <button
+              onClick={handleShopNow}
+              className="pulse-red-btn w-full py-3.5 rounded-2xl font-black text-white text-sm uppercase tracking-widest transition-all active:scale-95 border border-red-400/30"
+              style={{
+                background: 'linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #be123c 100%)',
+                boxShadow: '0 12px 32px rgba(185,28,28,0.45)',
+              }}
+            >
+              🎉 Shop the Sale Now
+            </button>
+
+            {/* Fine print */}
+            <p className="text-center text-white/35 text-[10px] font-medium mt-3 leading-snug">
+              Limited time only · Auto-applied · No code needed
+            </p>
+
           </div>
         </div>
       </div>

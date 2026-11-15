@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { SaleBanner } from './SaleBanner';
+import { isSaleActive, SALE } from '../utils/sale';
 
 // ── Stable live-stats helpers ─────────────────────────────────────────────────
 function seedRandom(seed: number): number {
@@ -277,8 +278,8 @@ export const Hero: React.FC<{
       {/* Foreground content */}
       <div className="relative z-10 text-center w-full max-w-lg mx-auto px-4 flex flex-col items-center gap-3 sm:gap-4">
 
-        {/* Anniversary Sale banner — animated popup */}
-        <SaleBanner />
+        {/* Anniversary Sale modal — pops in after 700ms */}
+        <SaleBanner onShopNow={onShopNow} />
 
         {isMainH1 ? (
           <h1
@@ -304,6 +305,16 @@ export const Hero: React.FC<{
         </p>
 
         <LiveStats />
+
+        {/* Persistent sale pill — always visible during sale */}
+        {isSaleActive() && (
+          <div
+            className="flex items-center gap-2 px-4 py-2 rounded-xl border border-red-500/30 bg-red-500/10 text-xs font-body font-black text-red-700 uppercase tracking-widest"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulseDot shrink-0" />
+            🎉 {SALE.discountPct}% OFF + Free Delivery — Anniversary Sale
+          </div>
+        )}
 
         {/* CTA Buttons */}
         <div className="flex gap-2.5 w-full max-w-[300px] sm:max-w-none sm:w-auto">
