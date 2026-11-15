@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 
-// ── Stable random helpers ────────────────────────────────────────────────────
+// ── Stable live-stats helpers ─────────────────────────────────────────────────
 function seedRandom(seed: number): number {
   const x = Math.sin(seed + 1) * 10000;
   return x - Math.floor(x);
@@ -11,8 +11,7 @@ function getWeeklyOrders(): number {
   return Math.floor(seedRandom(daySeed + 100) * 58) + 42;
 }
 
-function getLiveOrdering(): number {
-  const weekly = getWeeklyOrders();
+function getLiveOrdering(weekly: number): number {
   const max = weekly - 5;
   const min = Math.max(10, Math.floor(weekly * 0.3));
   const hourSeed = new Date().getHours();
@@ -20,9 +19,7 @@ function getLiveOrdering(): number {
 }
 
 // ── Poster pool — curated diverse sample across all categories ────────────────
-// Cloudinary transforms injected at runtime: w_90,h_126,c_fill,q_auto:low,f_auto
-// Each image ~2-4 KB
-const POSTER_POOL = [
+const POSTER_POOL: readonly string[] = [
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879347/wallify/assets/SPIRITUAL/SPIRITUAL-007.webp",
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879639/wallify/assets/mollywood/mollywood-115.webp",
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879646/wallify/assets/mollywood/mollywood-141.webp",
@@ -110,16 +107,13 @@ const POSTER_POOL = [
   "https://res.cloudinary.com/dkwx4bacj/image/upload/v1790879658/wallify/assets/mollywood/mollywood-178.webp",
 ];
 
-// Inject Cloudinary transforms: tiny poster thumb, ~2-5 KB each
+// Cloudinary: tiny poster thumb ~2-5 KB each
 function toThumbUrl(url: string): string {
-  return url.replace(
-    '/image/upload/',
-    '/image/upload/w_90,h_126,c_fill,q_auto:low,f_auto/'
-  );
+  return url.replace('/image/upload/', '/image/upload/w_90,h_126,c_fill,q_auto:low,f_auto/');
 }
 
-// Fisher-Yates shuffle
-function shuffle<T>(arr: T[]): T[] {
+// Fisher-Yates shuffle — truly random on each call
+function shuffle<T>(arr: readonly T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -128,136 +122,77 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// ── Responsive poster-size config (5 rows, large + gapless) ─────────────────
-// Heights sized so 5 rows fill the hero height with zero gaps.
-// Slower speeds for a calm, premium feel.
-function getPosterConfig() {
+// Row height responsive config (5 rows, no gaps)
+interface RowConfig {
+  height: number;
+}
+
+function getPosterConfig(): RowConfig[] {
   const w = typeof window !== 'undefined' ? window.innerWidth : 390;
-  if (w < 480) {
-    // Mobile: 5 rows × ~100px ≈ 500px fills hero
-    return [
-      { height: 100, gap: 0, offset:  0,  speed: 110 },
-      { height: 100, gap: 0, offset:  0,  speed: 90,  reverse: true },
-      { height: 100, gap: 0, offset:  0,  speed: 120 },
-      { height: 100, gap: 0, offset:  0,  speed: 80,  reverse: true },
-      { height: 100, gap: 0, offset:  0,  speed: 100 },
-    ];
-  }
-  if (w < 768) {
-    // Tablet: 5 rows × ~130px ≈ 650px
-    return [
-      { height: 130, gap: 0, offset:  0,  speed: 120 },
-      { height: 130, gap: 0, offset:  0,  speed: 96,  reverse: true },
-      { height: 130, gap: 0, offset:  0,  speed: 132 },
-      { height: 130, gap: 0, offset:  0,  speed: 88,  reverse: true },
-      { height: 130, gap: 0, offset:  0,  speed: 108 },
-    ];
-  }
-  // Desktop: 5 rows × ~160px ≈ 800px
-  return [
-    { height: 160, gap: 0, offset:  0,  speed: 140 },
-    { height: 160, gap: 0, offset:  0,  speed: 110, reverse: true },
-    { height: 160, gap: 0, offset:  0,  speed: 152 },
-    { height: 160, gap: 0, offset:  0,  speed: 100, reverse: true },
-    { height: 160, gap: 0, offset:  0,  speed: 128 },
-  ];
+  const height = w < 480 ? 100 : w < 768 ? 130 : 160;
+  return Array.from({ length: 5 }, () => ({ height }));
 }
 
-// How many images fill a row? Poster w ≈ h × 0.714 (3:4 ratio)
-function countNeeded(h: number, gap: number): number {
+// How many posters fill a row (3:4 aspect ratio)
+function countNeeded(h: number): number {
   const vw = typeof window !== 'undefined' ? window.innerWidth : 390;
-  const thumbW = Math.round(h * 0.714) + gap;
-  return Math.ceil((vw * 3) / thumbW) + 4;
+  const thumbW = Math.round(h * 0.714);
+  return Math.ceil(vw / thumbW) + 2; // just enough to fill viewport + 2 buffer
 }
 
-// ── Poster Background ──────────────────────────────────────────────────────────
-// 3 rows, tightly packed, each row scrolls at its own speed in opposite directions.
-// Images lazy-loaded so they never affect LCP.
+// ── Static Poster Background (no animation) ───────────────────────────────────
 const PosterBackground: React.FC = () => {
-  const [rowConfigs] = useState(() => getPosterConfig());
-
   const rows = useMemo(() => {
-    const base = shuffle(POSTER_POOL);
-    return rowConfigs.map((cfg, idx) => {
-      const s = idx === 0 ? base : shuffle([...base]);
-      const need = countNeeded(cfg.height, cfg.gap);
+    const configs = getPosterConfig();
+    return configs.map((cfg) => {
+      const need = countNeeded(cfg.height);
+      const pool = shuffle(POSTER_POOL);
       const out: string[] = [];
-      while (out.length < need) out.push(...s);
-      return out.slice(0, need);
+      while (out.length < need) out.push(...pool);
+      return { height: cfg.height, images: out.slice(0, need) };
     });
-  }, [rowConfigs]);
+  }, []); // computed once per mount — new random order every page load
 
   return (
     <div
       className="absolute inset-0 overflow-hidden pointer-events-none select-none"
       aria-hidden="true"
     >
-      {/* Inject keyframe animations */}
-      <style>{`
-        @keyframes posterScrollL {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-        @keyframes posterScrollR {
-          from { transform: translateX(-50%); }
-          to   { transform: translateX(0); }
-        }
-      `}</style>
-
-      {/* Poster rows — stretch-fill the hero with no gaps */}
-      <div
-        className="absolute inset-0 flex flex-col"
-        style={{ padding: 0, gap: 0 }}
-      >
+      {/* Poster rows — static grid filling the hero */}
+      <div className="absolute inset-0 flex flex-col" style={{ gap: 0 }}>
         {rows.map((row, rowIdx) => {
-          const cfg = rowConfigs[rowIdx];
-          const thumbW = Math.round(cfg.height * 0.714);
-          const isReverse = (cfg as { reverse?: boolean }).reverse;
-          // Duplicate row for seamless infinite loop
-          const doubled = [...row, ...row];
-
+          const thumbW = Math.round(row.height * 0.714);
           return (
             <div
               key={rowIdx}
-              className="overflow-hidden flex-1"
-              style={{ flexShrink: 0, minHeight: 0 }}
+              className="flex-1 overflow-hidden"
+              style={{ display: 'flex', gap: 0, minHeight: 0 }}
             >
-              <div
-                style={{
-                  display: 'flex',
-                  columnGap: cfg.gap,
-                  opacity: 0.28,
-                  width: 'max-content',
-                  animation: `${isReverse ? 'posterScrollR' : 'posterScrollL'} ${cfg.speed}s linear infinite`,
-                  willChange: 'transform',
-                }}
-              >
-                {doubled.map((url, i) => (
-                  <img
-                    key={`${rowIdx}-${i}`}
-                    src={toThumbUrl(url)}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width={thumbW}
-                    height={cfg.height}
-                    style={{
-                      width: thumbW,
-                      height: cfg.height,
-                      objectFit: 'cover',
-                      borderRadius: 3,
-                      flexShrink: 0,
-                      display: 'block',
-                    }}
-                  />
-                ))}
-              </div>
+              {row.images.map((url, i) => (
+                <img
+                  key={`${rowIdx}-${i}`}
+                  src={toThumbUrl(url)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  width={thumbW}
+                  height={row.height}
+                  style={{
+                    width: thumbW,
+                    height: '100%',
+                    objectFit: 'cover',
+                    flexShrink: 0,
+                    display: 'block',
+                    opacity: 0.28,
+                  }}
+                />
+              ))}
             </div>
           );
         })}
       </div>
 
-      {/* Edge fade masks — gentle so posters stay visible */}
+      {/* Edge fade masks */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
@@ -273,52 +208,35 @@ const PosterBackground: React.FC = () => {
   );
 };
 
-// ── Live Stats Widget ────────────────────────────────────────────────────────
+// ── Live Stats Widget ─────────────────────────────────────────────────────────
 const LiveStats: React.FC = () => {
-  const [weeklyCount] = useState(getWeeklyOrders());
-  const [liveCount, setLiveCount] = useState(getLiveOrdering());
-
-  useEffect(() => {
-    const tick = () => {
-      setLiveCount((prev) => {
-        const delta = Math.random() > 0.5 ? 1 : -1;
-        const next = prev + delta;
-        return Math.max(10, Math.min(weeklyCount - 5, next));
-      });
-    };
-    const id = setInterval(tick, 28000);
-    return () => clearInterval(id);
-  }, [weeklyCount]);
+  const weekly = getWeeklyOrders();
+  const live = getLiveOrdering(weekly);
 
   return (
     <div className="flex items-center gap-2 justify-center flex-wrap">
       <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulseDot shrink-0" />
         <span className="text-xs font-body font-semibold text-green-700 uppercase tracking-wider">
-          {String(liveCount).padStart(2, '0')} ordering now
+          {String(live).padStart(2, '0')} ordering now
         </span>
       </div>
-
       <div className="flex items-center gap-2 bg-black/5 border border-black/10 rounded-xl px-3 py-2">
         <span className="w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
         <span className="text-xs font-body font-semibold text-muted uppercase tracking-wider">
-          {String(weeklyCount).padStart(2, '0')} this week
+          {String(weekly).padStart(2, '0')} this week
         </span>
       </div>
     </div>
   );
 };
 
-// ── Hero ─────────────────────────────────────────────────────────────────────
+// ── Hero ──────────────────────────────────────────────────────────────────────
 export const Hero: React.FC<{
   onShopNow: () => void;
   onExplore: () => void;
   isMainH1?: boolean;
-}> = ({
-  onShopNow,
-  onExplore,
-  isMainH1 = true,
-}) => {
+}> = ({ onShopNow, onExplore, isMainH1 = true }) => {
   return (
     <section
       className="relative flex items-center justify-center overflow-hidden"
@@ -333,7 +251,7 @@ export const Hero: React.FC<{
       {/* 1. Base gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-surface" />
 
-      {/* 2. Poster mosaic — random, tightly packed, animated */}
+      {/* 2. Static poster mosaic — randomised fresh each page load */}
       <PosterBackground />
 
       {/* 3. Subtle grid overlay */}
@@ -348,7 +266,7 @@ export const Hero: React.FC<{
         />
       </div>
 
-      {/* 4. Radial glow — subtle, reduced yellow */}
+      {/* 4. Radial glow */}
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[260px] h-[260px] rounded-full opacity-[0.06] blur-[80px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #FACB15 0%, transparent 70%)' }}
@@ -432,7 +350,6 @@ export const Hero: React.FC<{
             <span className="w-3 h-px bg-black/20" />Fast Delivery
           </span>
         </div>
-
 
       </div>
     </section>
