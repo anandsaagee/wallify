@@ -6266,93 +6266,123 @@ export const products = [
     },
     {
         "id": "p1509",
-        "title": "Automotive A1-061",
+        "title": "BMW M2 White Widebody Track Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-061.jpg",
-        "description": "High-quality automotive poster – Automotive A1-061.",
-        "label": "a1-061.jpg"
+        "description": "Dominate any road. This cinematic BMW M2 poster captures the 460HP beast in pearl white with a widened body kit, BBS mesh wheels, and misty mountain track backdrop — pure driving intensity.",
+        "label": "a1-061.jpg",
+        "seoTitle": "BMW M2 White Widebody Track Spec Car Poster",
+        "metaDescription": "Pearl white BMW M2 with widebody kit and BBS mesh wheels on a misty mountain racetrack — dramatic 460HP spec poster in French language edition.",
+        "seoAltText": "Cinematic automotive spec poster for the BMW M2; large semi-transparent block-letter BMW text fills the mid-background over a misty mountain landscape and racetrack; in the foreground, a pearl white BMW M2 coupe is shown in a low front three-quarter stance with a widened body kit, deep front splitter, and large silver BBS-style mesh alloy wheels; two small inset reference photos in the lower-left show rear and front detail angles; below the car a French-language spec table lists moteur 6-cylindres en ligne 3.0 litres turbo, puissance 460 chevaux, couple 550 Nm, vitesse maximale 285 km/h limité, suspension M adaptative, and différentiel Actif M; at the very bottom in an elegant thin-serif font: BMW M2; a flock of birds flies through the upper sky; BMW M2 badge in the top centre."
     },
     {
         "id": "p1510",
-        "title": "Automotive A1-062",
+        "title": "Honda NSX White JDM Advan Racing Wheels Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-062.jpg",
-        "description": "High-quality automotive poster – Automotive A1-062.",
-        "label": "a1-062.jpg"
+        "description": "Japan's finest mid-engine legend. This striking Honda NSX poster frames the classic white supercar against a giant Advan Racing GT wheel — raw JDM presence meets street-ready elegance.",
+        "label": "a1-062.jpg",
+        "seoTitle": "Honda NSX White JDM Advan Racing GT Poster",
+        "metaDescription": "Classic white first-gen Honda NSX framed against an oversized Advan Racing GT wheel — JDM supercar wall art with Japanese street culture appeal.",
+        "seoAltText": "Square-format automotive poster featuring a white first-generation Honda NSX mid-engine sports car in a low front-facing stance on a concrete surface; the car has aftermarket side skirts, a custom front lip, and deep-dish black alloy wheels; directly behind it, a large Advan Racing GT mould-form forged alloy wheel in dark gunmetal with gold centre hardware fills the entire background, with the ADVAN Racing GT branding printed on the barrel; the word NSX appears in large bold white italic letters across the mid-image; on the right side of the rear wheel, the text reads Mold Form Forged, A6061 T6, Advan Racing GT; a UAE Dubai yellow-and-red license plate reading 33535 is visible on the front bumper; at the bottom in Japanese text: 新世代のスーパースポーツを体験する meaning 'Experience the new generation super sports'."
     },
     {
         "id": "p1511",
-        "title": "Automotive A1-063",
+        "title": "Porsche Cayman 987.1 Pandem Teal Flower Field Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-063.jpg",
-        "description": "High-quality automotive poster – Automotive A1-063.",
-        "label": "a1-063.jpg"
+        "description": "Wildflower meets widebody. A teal 2008 Porsche Cayman S 987.1 Pandem widebody sits among a dreamy daisy field under blue sky — serene scenery meets mid-engine performance art.",
+        "label": "a1-063.jpg",
+        "seoTitle": "Porsche Cayman 987.1 Pandem Teal Floral Art Poster",
+        "metaDescription": "Dreamy aqua teal 2008 Porsche Cayman S 987.1 with Pandem widebody kit in a sunlit daisy field — 320HP mid-engine sports car meets floral art.",
+        "seoAltText": "Artistic automotive poster on a bright white background; at the top-left and top-right are small social media handles @carsbykeb and @gms.posters; the Porsche crest is centred at the very top; in the upper section the number 987.1 sits in the top-right; large bold teal PORSCHE letters in an inline decorative font fill the mid-background; a flowing cursive script overlays the PORSCHE wordmark in dark ink; the main subject is a 2008 Porsche Cayman S 987.1 finished in aqua teal with a Pandem widebody aero kit featuring wide vented front fenders, side skirts, and a large fixed rear wing; the car is parked in a field of white daisies with green stems stretching across the lower half of the poster; a bright blue sky with white clouds fills the upper background; two small inset detail thumbnails in the lower-right corners show rear wing and bodywork close-ups; a triangular diamond logo appears in the mid-lower area; descriptive text at the bottom reads: 2008 Porsche Cayman S 987.1 Pandem VB, Raw Power, Pure Style, and Precision Engineering Mid-Engine Masterpiece Delivering 320 Horsepower Built for Speed Styled for Legends Where Performance Meets Perfection."
     },
     {
         "id": "p1512",
-        "title": "Automotive A1-064",
+        "title": "Ferrari Enzo Rosso Corsa Supercar Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-064.jpg",
-        "description": "High-quality automotive poster – Automotive A1-064.",
-        "label": "a1-064.jpg"
+        "description": "Italian legend in four perspectives. This dramatic Ferrari Enzo poster presents the iconic supercar in Rosso Corsa from every angle — aerial view, side profile, front, and rear — against deep red atmospheric lighting.",
+        "label": "a1-064.jpg",
+        "seoTitle": "Ferrari Enzo Rosso Corsa Red Supercar Wall Art",
+        "metaDescription": "Iconic Ferrari Enzo in Rosso Corsa from four dramatic angles — aerial, side, front and rear — against deep red atmospheric lighting and smoke.",
+        "seoAltText": "Multi-panel dramatic automotive poster for the Ferrari Enzo on a nearly black background flooded with deep red atmospheric haze and motion-blur streaks; the topmost panel shows an aerial top-down view of the entire Enzo in Rosso Corsa red with its glass engine cover revealing the mid-mounted V12; a large bold white FERRARI wordmark overlaps the transition between panels; the central main panel shows a full side-profile view of the Enzo on a reflective dark surface with its five-spoke silver alloys, Prancing Horse emblems on the front wings, and the distinctive sharp aero-guided body cuts; a bottom-left inset panel shows the rear view with Enzo badging, twin circular exhausts, and red rear diffuser fins; a bottom-right inset panel shows the front three-quarter view with the wedge nose, side air intakes, and round yellow-tinted headlamps; at the very bottom, the word ENZO appears in spaced gold-tone italic serif capital letters, followed by the yellow SF Prancing Horse shield, and the tagline PUSHING THE LIMITS OF PERFORMANCE, THE ENZO PAIRS FEROCIOUS POWER WITH ITALIAN FINESSE FOR A THRILLING SUPERCAR EXPERIENCE in small spaced capitals."
     },
     {
         "id": "p1513",
-        "title": "Automotive A1-065",
+        "title": "Porsche 911 GT3 RS Guards Red Race Livery Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-065.jpg",
-        "description": "High-quality automotive poster – Automotive A1-065.",
-        "label": "a1-065.jpg"
+        "description": "Not every car earns a legend — the GT3 RS created one. This bold red Guards Red Porsche 911 GT3 RS poster features white racing stripes, number 7 decal, and a massive aero wing on a dramatic crimson backdrop.",
+        "label": "a1-065.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Guards Red Race No.7 Poster",
+        "metaDescription": "Bold Guards Red Porsche 911 GT3 RS with white racing stripes and race number 7 — dramatic 3-panel poster on a crimson red background.",
+        "seoAltText": "Bold automotive racing poster on a deep crimson-red background; large bold white PORSCHE letters in an inline display font fill the upper third of the poster; a large blurred close-up of the GT3 RS rear swan-neck wing and rear diffuser fills the upper background; the main central image shows a Guards Red Porsche 911 GT3 RS in front three-quarter stance with twin white racing stripes running over the bonnet and roof, a large fixed rear swan-neck wing, number 7 race decal on the driver's door, Porsche logo on the front bumper, and black centre-lock alloy wheels; below the car two smaller inset panels show the front view with white stripes and deep front splitter on the left, and the race number 7 rear three-quarter on the right; at the bottom a motivational paragraph reads: Not every car earns a legend. The GT3 RS didn't ask for one — it created it. From its massive rear wing to its track-tuned suspension, every detail exists for one reason only — to make you feel alive at 200 miles per hour; the credit cool.bymantasha appears at the lower-left and 2026 at the lower-right."
     },
     {
         "id": "p1514",
-        "title": "Automotive A1-066",
+        "title": "Scuderia Ferrari F1 Car No. 16 Dramatic Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-066.jpg",
-        "description": "High-quality automotive poster – Automotive A1-066.",
-        "label": "a1-066.jpg"
+        "description": "Passion. Heritage. Performance. Forever. This Scuderia Ferrari Formula 1 poster features the scarlet race car with number 16 on a wet reflective track under dramatic red lighting — more than a team, a legend.",
+        "label": "a1-066.jpg",
+        "seoTitle": "Scuderia Ferrari F1 Car No.16 Scarlet Race Poster",
+        "metaDescription": "Scuderia Ferrari F1 race car number 16 on a wet crimson-lit track — dramatic dark racing poster with Prancing Horse shield and Shell livery.",
+        "seoAltText": "Dramatic dark-background Formula 1 racing poster for Scuderia Ferrari; at the very top, the text reads Scuderia Ferrari with an Italian tricolour flag between two lines; centred below is the yellow SF Scuderia Ferrari Prancing Horse shield logo; in spaced small capitals below the shield: Passion, Heritage, Performance, Forever; a vertical double-bar separator follows; enormous bold scarlet FERRARI letters fill the mid-poster; the main image shows a Scuderia Ferrari Formula 1 car in a low three-quarter front-right stance on a wet dark reflective track surface with deep red puddle reflections; the car wears the full scarlet Scuderia Ferrari livery with number 16 on the nose and sidepod, Shell oil, AWS Amazon Web Services, HP, Bybit, and Santander sponsor logos; gold-toned alloy rims are visible through the open wheel arches; at the base of the poster a second yellow SF Prancing Horse shield logo reflects off the wet track; at the very bottom in small spaced white capitals: MORE THAN A TEAM. A LEGEND."
     },
     {
         "id": "p1515",
-        "title": "Automotive A1-067",
+        "title": "Max Verstappen Dutch Lion F1 Champion Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-067.jpg",
-        "description": "High-quality automotive poster – Automotive A1-067.",
-        "label": "a1-067.jpg"
+        "description": "The Dutch Lion rules the grid. This bold pop-art tribute poster features Max Verstappen in his Oracle Red Bull Racing suit and helmet, celebrating 4 World Championships and 127 career podiums.",
+        "label": "a1-067.jpg",
+        "seoTitle": "Max Verstappen Dutch Lion F1 4x Champion Poster",
+        "metaDescription": "Max Verstappen Oracle Red Bull Racing tribute poster — 4x World Champion, race number 33, 3444 career points in bold navy and red pop-art.",
+        "seoAltText": "Bold graphic pop-art Formula 1 driver tribute poster on a navy blue background; in the upper-left corner: MAX VERSTAPPEN in small white capitals; in the upper-right: ORACLE RED BULL RACING in small white capitals; at the top centre in large red italic title font: THE DUTCH LION; below, filling the full width in bold red block capitals: VERSTAPPEN; a central white-outlined diamond frame contains a stylised graphic portrait of Max Verstappen in his Oracle Red Bull Racing Arai helmet in white with red Red Bull Bulls and Player 100 decals and his red and navy driving suit bearing Oracle, Bybit, Honda, Mobil 1, and PokerStars sponsor logos; the Red Bull logo appears at the right side in red and yellow; at the lower-left in bold yellow type: WORLD CHAMPION X4; directly below in smaller text: Grand Prix Entered 233, Career Points 3444, Podiums 127; at the lower-right, the number 33 appears in large hollow red outlined numerals."
     },
     {
         "id": "p1516",
-        "title": "Automotive A1-068",
+        "title": "Mazda RX-7 FD Red JDM Multi-Panel Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-068.jpg",
-        "description": "High-quality automotive poster – Automotive A1-068.",
-        "label": "a1-068.jpg"
+        "description": "Rotary soul in bold red. This multi-angle Mazda RX-7 FD poster captures the iconic JDM rotary sports car in vivid candy red with custom aero and bronze mesh wheels at a sunny car show.",
+        "label": "a1-068.jpg",
+        "seoTitle": "Mazda RX-7 FD Red Rotary JDM Car Show Poster",
+        "metaDescription": "Bright red Mazda RX-7 FD with custom aero and bronze mesh wheels at a sunny car show — multi-panel JDM rotary sports car tribute poster.",
+        "seoAltText": "Multi-panel editorial automotive poster for the Mazda RX-7 on a neutral beige-white background; three vertical strip panels at the top show, left to right: a close-up of a large bronze-finished mesh alloy wheel with a Mazda hub cap, a mid-distance front view of a bright red Mazda RX-7 FD with an aftermarket front lip and bonnet-mounted air vent at a sunny outdoor car show with spectators and other cars in the background, and a close-up of the rear quarter panel and wing of the same car showing its candy red paintwork; the large Mazda wordmark appears across the top panels in bold hollow white block letters; below the strip panels, the main image is a large front three-quarter ground-level photograph of the same red Mazda RX-7 FD coupe on tarmac with deep custom front lip splitter, lowered suspension, and large bronze mesh alloy wheels; a UK license plate reading J605 NJT is visible on the front bumper; a small detail inset at the lower-left shows the rear of the car; the title MAZDA RX-7 appears in large bold white letters at the lower-right; below the title, a descriptive paragraph explains that the Mazda RX-7 is a rotary engine-powered sports car known for its compact lightweight Wankel rotary engine and unique handling characteristics, produced in three generations between 1978 and 2002."
     },
     {
         "id": "p1517",
-        "title": "Automotive A1-069",
+        "title": "Porsche 911 GT3 RS Yellow White Dual Spec Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-069.jpg",
-        "description": "High-quality automotive poster – Automotive A1-069.",
-        "label": "a1-069.jpg"
+        "description": "Two icons, one poster. The Porsche 911 GT3 RS is showcased in Racing Yellow — rear wing detail up close — alongside a white side-profile illustration, united by bold yellow diagonal branding and 525HP specs.",
+        "label": "a1-069.jpg",
+        "seoTitle": "Porsche 911 GT3 RS Yellow & White Dual Art Poster",
+        "metaDescription": "Porsche 911 GT3 RS in Racing Yellow and white dual-panel design with bold diagonal branding — 525HP, 296km/h, 3.2s spec poster.",
+        "seoAltText": "Clean graphic automotive poster on a white background with a bold diagonal yellow band sweeping from lower-left to upper-right; the top-left section against white shows the Porsche crest in full colour above the word PORSCHE in black sans-serif; the diagonal yellow band carries GT3RS in a large grey semi-transparent italic font on the right side; in the upper yellow section, a large close-up photograph shows the rear-left three-quarter of a Racing Yellow Porsche 911 GT3 RS with its distinctive swan-neck biplane carbon rear wing, red-painted brake caliper visible through a centre-lock silver multi-spoke wheel, and GT3 decal on the sill; in the lower white section, a clean side-profile illustration of a white Porsche 911 GT3 RS shows the full car length with carbon winglets, GT3RS decal, and the same style of centre-lock silver alloy wheels; on the right side of the lower panel, three performance stats are listed in bold: 296 KMPH top speed, 3.2 S 0-100 time, 525 HP; at the lower-left, GT3RS is printed in bold yellow-orange text."
     },
     {
         "id": "p1518",
-        "title": "Automotive A1-070",
+        "title": "BMW E30 325is 1989 Red Slammed Car Show Poster",
         "category": "Automotive",
         "basePrice": 49,
         "image": "/assets/automotive/a1-070.jpg",
-        "description": "High-quality automotive poster – Automotive A1-070.",
-        "label": "a1-070.jpg"
+        "description": "Timeless form. Period-correct details. Built with intention. This editorial BMW E30 325is poster captures the 1989 legend in deep red with a slammed stance, BBS mesh wheels, and multi-angle car show photography.",
+        "label": "a1-070.jpg",
+        "seoTitle": "BMW E30 325is 1989 Red Slammed Car Show Poster",
+        "metaDescription": "1989 BMW E30 325is in candy red with slammed stance and BBS mesh wheels at a California car show — editorial multi-angle classic car poster.",
+        "seoAltText": "Editorial automotive poster for the 1989 BMW E30 325is on a cream-white background by @_flores.mediaa, May 2026, Menlo Park CA; the top half contains three vertical strip panels: left panel shows a close-up of a large silver BBS RS-style mesh alloy wheel with a red BMW centre cap against the red bodywork of the E30; centre panel shows a medium-distance front view of a Guards Red BMW E30 325is 4-door sedan at a sunny outdoor car meet with other cars and spectators behind it, the car is very low on airbag suspension with the SANKERS windshield banner visible; right panel shows the rear wing spoiler and trunk lid close-up; in large grey transparent italic letters E30 is printed across the lower half of the poster as a watermark; below the panels, the main full-bleed photograph shows the same red BMW E30 325is in a dramatic full side-profile ground-level perspective, sitting extremely low with the sills nearly touching the tarmac, and large multi-spoke BBS RS mesh alloy wheels; the lower-left carries the spec block: Chassis E30, Engine M20B25, Displacement 2.5L, Year 1989, Drivetrain RWD; in the centre-lower the tagline reads Timeless Form. Period-Correct Details. Built With Intention; to the lower-right: 1989 BMW 325is in bold black text, with a QR code and barcode decorations."
     },
     {
         "id": "p1519",
